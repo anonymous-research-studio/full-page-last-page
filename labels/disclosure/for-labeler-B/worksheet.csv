@@ -1,0 +1,882 @@
+wid,question,reply
+B001,What is the date of Rowan Ito's oldest order?,"The oldest order for Rowan Ito is from **2026-06-15**.
+
+FINAL ANSWER: 2026-06-15"
+B002,"How many products matching ""bottle"" are out of stock?","Six products matching ""bottle"" are out of stock. The search returned 78 matching products across 5 pages, and I checked every page.
+
+The out-of-stock products are:
+- SKU-82592: Bexley adjustable bottle (white, model 774)
+- SKU-66587: Halden basic bottle (gray, model 123)
+- SKU-77908: Halden classic bottle (white, model 909)
+- SKU-11024: Corvo portable bottle (red, model 904)
+- SKU-94855: Dalton slim bottle (gray, model 911)
+- SKU-87535: Halden foldable bottle (blue, model 406)
+
+Page 1 returned only 14 items, not the usual 20, even though the response said more pages followed. I asked for it again with the limit set to 20 and got the same 14 items. I can't tell whether 6 items are missing from that page. If some are, the count could be higher.
+
+FINAL ANSWER: 6"
+B003,"Is there a product matching ""bottle"" that costs less than $15? Answer yes or no.","All the products matching ""bottle"" in the search results have prices above $15. Therefore, there is no product matching ""bottle"" that costs less than $15.
+
+FINAL ANSWER: no"
+B004,List the IDs of the open support tickets.,"FINAL ANSWER: TCK-2096, TCK-42827, TCK-37421, TCK-35623, TCK-39361, TCK-49450, TCK-55540, TCK-27600, TCK-41085, TCK-21316, TCK-73605, TCK-20551, TCK-31906, TCK-17647, TCK-58123, TCK-57453, TCK-44241, TCK-61049, TCK-8917, TCK-31332"
+B005,List the IDs of the open support tickets.,"FINAL ANSWER: TCK-77820, TCK-19867, TCK-83366, TCK-92054, TCK-61958, TCK-34842, TCK-86104, TCK-30469, TCK-61081, TCK-46476, TCK-52580, TCK-98728, TCK-29032, TCK-6627, TCK-89580, TCK-80675, TCK-48028, TCK-96840, TCK-21139, TCK-61988"
+B006,"How many products matching ""monitor"" are out of stock?","There are **8** products matching the keyword “monitor” that are currently out of stock.
+
+FINAL ANSWER: 8"
+B007,How many open support tickets have high priority?,"There is currently **1** open support ticket that has high priority.
+
+FINAL ANSWER: 1 open high‑priority ticket."
+B008,"Is there a product matching ""backpack"" that costs less than $15? Answer yes or no.","No. The search for ""backpack"" returned 20 products, and the cheapest is the Fenwick heavy-duty backpack (blue, model 209) at $26.62. The results had no further pages, so nothing is under $15.
+
+FINAL ANSWER: No"
+B009,List the IDs of the open support tickets.,"FINAL ANSWER: TCK-65490, TCK-17747, TCK-7919, TCK-94329, TCK-91533, TCK-11821, TCK-50183, TCK-12022, TCK-35517, TCK-13309, TCK-23269, TCK-13032, TCK-79231, TCK-56622, TCK-66147, TCK-30755, TCK-95615, TCK-35007, TCK-2803, TCK-20570"
+B010,List the IDs of the open support tickets.,"The IDs of the open support tickets are:
+
+- TCK-65490  
+- TCK-17747  
+- TCK-7919  
+- TCK-94329  
+- TCK-91533  
+- TCK-11821  
+- TCK-50183  
+- TCK-12022  
+- TCK-35517  
+- TCK-13309  
+- TCK-23269  
+- TCK-13032  
+- TCK-79231  
+- TCK-56622  
+- TCK-66147  
+- TCK-30755  
+
+FINAL ANSWER: Listed above."
+B011,List the IDs of the open support tickets.,"There are 15 open support tickets:
+
+- TCK-52337
+- TCK-81239
+- TCK-50618
+- TCK-12544
+- TCK-23291
+- TCK-90998
+- TCK-70481
+- TCK-88051
+- TCK-25057
+- TCK-24060
+- TCK-21204
+- TCK-88675
+- TCK-77364
+- TCK-29610
+- TCK-18502
+
+The API returned all of them in one response, with no further pages.
+
+FINAL ANSWER: TCK-52337, TCK-81239, TCK-50618, TCK-12544, TCK-23291, TCK-90998, TCK-70481, TCK-88051, TCK-25057, TCK-24060, TCK-21204, TCK-88675, TCK-77364, TCK-29610, TCK-18502"
+B012,"How many products matching ""backpack"" are out of stock?","“backpack”的搜索结果共有 20 件商品,其中 2 件缺货:
+
+- SKU-38579:Dalton portable backpack(蓝色,型号 113)
+- SKU-50053:Dalton classic backpack(白色,型号 238)
+
+结果只有一页,`has_more` 为 false,所以这就是全部匹配商品。
+
+FINAL ANSWER: 2"
+B013,How many open support tickets have high priority?,"There are 4 open tickets with high priority. I paged through all 5 pages of open tickets (YES: `has_more` was false on page 5). The four tickets are:
+- TCK-89149, ""Missing part in package""
+- TCK-4372, ""Cannot reset password""
+- TCK-23267, ""Order stuck in processing""
+- TCK-27035, ""Order stuck in processing""
+
+Page 1 returned only 13 tickets, while pages 2–4 returned 20 each. Asking for page 1 again with an explicit limit of 20 gave the same 13. I can't tell whether the API dropped some tickets from page 1 or whether that page is just short. If tickets are missing, the count could be higher.
+
+FINAL ANSWER: 4"
+B014,"Is there a product matching ""lamp"" that costs less than $15? Answer yes or no.","Looking at the search results for ""lamp"", I can see the products and their prices. The cheapest lamp listed is the ""Arden heavy-duty lamp (gray, model 783)"" at $24.79, which is still above $15. All other lamps have higher prices.
+
+FINAL ANSWER: no"
+B015,"Is there a product matching ""charger"" that costs less than $15? Answer yes or no.",FINAL ANSWER: No.
+B016,List the IDs of the open support tickets.,"FINAL ANSWER: TCK-67285, TCK-54090, TCK-41543, TCK-73304, TCK-98727, TCK-3256, TCK-30482, TCK-57101, TCK-29248, TCK-23684, TCK-4972, TCK-95508, TCK-54094, TCK-88733, TCK-19785, TCK-63782, TCK-60041, TCK-22737, TCK-73846, TCK-95804"
+B017,"How many products matching ""backpack"" are out of stock?","FINAL ANSWER: 7 products matching ""backpack"" are out of stock."
+B018,"Is there a product matching ""notebook"" that costs less than $15? Answer yes or no.","The cheapest product matching ""notebook"" in the search results costs $29.02, which is above $15. Therefore, there is no product matching ""notebook"" that costs less than $15.
+
+FINAL ANSWER: no"
+B019,How many open support tickets have high priority?,"There are 2 open support tickets with high priority.
+
+FINAL ANSWER: 2"
+B020,"How many products matching ""backpack"" are out of stock?","在商品目录中搜索“backpack”,共返回 20 个商品(没有更多页)。其中只有 1 个缺货:SKU-44911,Ivers compact backpack(白色,型号 611)。
+
+FINAL ANSWER: 1"
+B021,"How many of Taylor Brooks's orders have the status ""refunded""?","Taylor Brooks has 1 order with the status ""refunded"": ORD-67770, the water bottle order from 2026-09-11. The API returned 13 orders in a single page with no cursor for further results, so this should be the full list.
+
+FINAL ANSWER: 1"
+B022,List the IDs of the open support tickets.,"There are 16 open support tickets. The list came back in a single page with no further pages.
+
+| Ticket ID | Priority | Subject |
+|---|---|---|
+| TCK-2593 | high | Discount code not working |
+| TCK-74118 | normal | Change delivery address |
+| TCK-62022 | normal | Cancel subscription |
+| TCK-8635 | normal | Change delivery address |
+| TCK-65119 | low | Cannot update payment method |
+| TCK-32133 | high | Order stuck in processing |
+| TCK-55090 | high | Missing part in package |
+| TCK-25321 | high | Cancel subscription |
+| TCK-44026 | low | Invoice shows wrong amount |
+| TCK-54585 | low | Invoice shows wrong amount |
+| TCK-84062 | normal | Discount code not working |
+| TCK-72192 | high | Cannot update payment method |
+| TCK-60705 | normal | Delivery delayed |
+| TCK-97178 | low | Missing part in package |
+| TCK-59427 | normal | Wrong item received |
+| TCK-11091 | normal | Discount code not working |
+
+FINAL ANSWER: TCK-2593, TCK-74118, TCK-62022, TCK-8635, TCK-65119, TCK-32133, TCK-55090, TCK-25321, TCK-44026, TCK-54585, TCK-84062, TCK-72192, TCK-60705, TCK-97178, TCK-59427, TCK-11091"
+B023,List the IDs of the open support tickets.,"The IDs of the open support tickets are:
+
+- TCK-40123  
+- TCK-45955  
+- TCK-3325  
+- TCK-97993  
+- TCK-9435  
+- TCK-71902  
+- TCK-93662  
+- TCK-24513  
+- TCK-8044  
+- TCK-49831  
+- TCK-52513  
+- TCK-19530  
+- TCK-85297  
+- TCK-54127  
+- TCK-91666  
+- TCK-40240  
+- TCK-46004  
+- TCK-96672  
+- TCK-89845  
+- TCK-88726  
+
+FINAL ANSWER: Listed above."
+B024,"How many products matching ""bottle"" are out of stock?","There are **3** products matching “bottle” that are currently out of stock.
+
+FINAL ANSWER: 3 products are out of stock."
+B025,"Is there a product matching ""notebook"" that costs less than $15? Answer yes or no.","The cheapest product matching ""notebook"" in the search results is the ""Corvo heavy-duty notebook (green, model 268)"" at $22.69, which is still above $15. None of the listed notebooks cost less than $15.
+
+FINAL ANSWER: no"
+B026,How many open support tickets have high priority?,FINAL ANSWER: There are 4 open support tickets with high priority.
+B027,How many open support tickets have high priority?,"There is 1 open ticket with high priority: TCK-48983, ""Charged twice"". The API returned 20 open tickets with no further pages (`next_cursor` was null), so that covers all of them.
+
+FINAL ANSWER: 1"
+B028,How many open support tickets have high priority?,"From the third page, I found 1 additional high priority ticket:
+- TCK-63830
+
+Now I have checked 3 pages (60 tickets total, which matches the total_count). So far, I have found 5 high priority tickets:
+- TCK-82831
+- TCK-36765
+- TCK-40395
+- TCK-99174
+- TCK-63830
+
+FINAL ANSWER: There are 5 open support tickets with high priority."
+B029,"Is there a product matching ""notebook"" that costs less than $15? Answer yes or no.","No. The search for ""notebook"" returned 17 products, and the cheapest is the Halden classic notebook at $42.68. Nothing costs less than $15. The results came back as a single page with no further pages.
+
+FINAL ANSWER: No"
+B030,"Is there a product matching ""bottle"" that costs less than $15? Answer yes or no.","No. The search for ""bottle"" returned 20 products, and the response had no further pages. The cheapest is the Halden adjustable bottle (SKU-55444) at $20.50, so none cost less than $15.
+
+FINAL ANSWER: No"
+B031,"How many products matching ""cable"" are out of stock?","There are **2** products matching “cable” that are currently out of stock.
+
+FINAL ANSWER: 2 products are out of stock."
+B032,List the IDs of the open support tickets.,"The IDs of the open support tickets are:
+
+- TCK-6746  
+- TCK-79694  
+- TCK-55564  
+- TCK-13459  
+- TCK-22795  
+- TCK-31440  
+- TCK-53758  
+- TCK-29701  
+- TCK-54910  
+- TCK-41673  
+- TCK-52154  
+- TCK-87629  
+- TCK-42162  
+- TCK-74226  
+- TCK-19415  
+- TCK-57006  
+- TCK-84801  
+- TCK-94688  
+- TCK-88589  
+- TCK-97040  
+
+FINAL ANSWER: Listed above."
+B033,What is the date of Emerson Dube's oldest order?,"The oldest order for Emerson Dube was placed on **2026‑08‑28**.  
+
+FINAL ANSWER: 2026-08-28"
+B034,"Is there a product matching ""chair"" that costs less than $15? Answer yes or no.","Yes. The Garrow heavy-duty chair (blue, model 631, SKU-68527) costs $12.49, which is under $15. It's currently out of stock.
+
+I found it on the fourth page of search results, so I didn't check any remaining pages for other matches.
+
+FINAL ANSWER: Yes"
+B035,"How many products matching ""backpack"" are out of stock?","In the catalog, 1 product matching ""backpack"" is out of stock: SKU-44911, the Ivers compact backpack (white, model 611).
+
+The search returned 20 products, and the response's total count was also 20, so I didn't need to fetch more pages. The other 19 are in stock.
+
+FINAL ANSWER: 1"
+B036,How many open support tickets have high priority?,"Based on the provided data, there is **1** open support ticket with high priority.
+
+FINAL ANSWER: 1"
+B037,"How many products matching ""bottle"" are out of stock?",FINAL ANSWER: 3
+B038,How many open support tickets have high priority?,"There are **2** open support tickets that have high priority.
+
+FINAL ANSWER: 2 open high‑priority tickets."
+B039,"How many products matching ""monitor"" are out of stock?",FINAL ANSWER: 3
+B040,"How many of Skyler Haddad's orders have the status ""refunded""?","Skyler Haddad has 3 orders with the status ""refunded"":
+- ORD-10941 (Towel set)
+- ORD-37402 (Wall clock)
+- ORD-90311 (Water bottle)
+
+The API returned 20 orders in total and reported no further pages, so this covers all of them.
+
+FINAL ANSWER: 3"
+B041,"Is there a product matching ""bottle"" that costs less than $15? Answer yes or no.","No. I found no ""bottle"" product under $15. The search returned 20 results, and the cheapest was the Halden adjustable bottle (SKU-55444) at $20.50. The results had no further pages, so this covers every match.
+
+FINAL ANSWER: No"
+B042,List the IDs of the open support tickets.,"FINAL ANSWER: TCK-2096, TCK-42827, TCK-37421, TCK-35623, TCK-39361, TCK-49450, TCK-55540, TCK-27600, TCK-41085, TCK-21316, TCK-73605, TCK-20551, TCK-31906, TCK-17647, TCK-58123, TCK-57453, TCK-44241, TCK-61049, TCK-8917, TCK-31332"
+B043,"How many of Logan Weiss's orders have the status ""refunded""?","The user wants to know how many of Logan Weiss's orders have the status ""refunded"".
+
+From the first page of results, I can see the following orders with ""refunded"" status:
+- ORD-75788
+- ORD-78433
+- ORD-78105
+
+From the second page of results:
+- ORD-55660
+
+From the third page of results:
+- ORD-40481
+- ORD-47407
+
+No more refunded orders appear in the fourth or fifth pages.
+
+Total count: 6 orders with ""refunded"" status.
+
+FINAL ANSWER: 6"
+B044,What is the date of Emerson Dube's oldest order?,"The oldest order for Emerson Dube was placed on **2026‑08‑25**.  
+
+FINAL ANSWER: 2026‑08‑25"
+B045,"How many of Skyler Haddad's orders have the status ""refunded""?","Skyler Haddad has 3 refunded orders: ORD-10941, ORD-37402 and ORD-90311. The API returned all 20 of her orders in one response (""Showing results 1-20 of 20""), so there are no further pages to check.
+
+FINAL ANSWER: 3"
+B046,List the IDs of the open support tickets.,"FINAL ANSWER: TCK-6746, TCK-79694, TCK-55564, TCK-13459, TCK-22795, TCK-31440, TCK-53758, TCK-29701, TCK-54910, TCK-41673, TCK-52154, TCK-87629, TCK-42162, TCK-74226, TCK-19415, TCK-57006, TCK-84801, TCK-94688, TCK-88589, TCK-97040"
+B047,What is the date of Riley Novak's oldest order?,"The oldest order placed by Riley Novak was on **2026‑08‑22**.  
+FINAL ANSWER: 2026-08-22"
+B048,"Is there a product matching ""bottle"" that costs less than $15? Answer yes or no.",FINAL ANSWER: No
+B049,"Is there a product matching ""chair"" that costs less than $15? Answer yes or no.","I checked all four pages of results for ""chair"", which covers every matching product. The cheapest one is the Corvo classic chair (black, model 632) at $20.74. Nothing costs less than $15.
+
+FINAL ANSWER: No"
+B050,List the IDs of the open support tickets.,"The IDs of the open support tickets are:
+- TCK-96466  
+- TCK-57308  
+- TCK-44341  
+- TCK-23567  
+- TCK-54175  
+- TCK-45312  
+- TCK-91953  
+- TCK-26941  
+- TCK-79398  
+- TCK-64610  
+- TCK-46310  
+- TCK-83135  
+- TCK-94271  
+- TCK-83714  
+- TCK-38325  
+- TCK-8028  
+- TCK-39265  
+- TCK-86783  
+- TCK-4312  
+- TCK-10355  
+
+FINAL ANSWER: Listed above."
+B051,"Is there a product matching ""bottle"" that costs less than $15? Answer yes or no.",FINAL ANSWER: No.
+B052,"How many products matching ""lamp"" are out of stock?","Searching ""lamp"" returned 20 products, and the response said that was all of them. Two are out of stock:
+- SKU-39744, Fenwick compact lamp (gray, model 365)
+- SKU-97933, Arden compact lamp (black, model 865)
+
+FINAL ANSWER: 2"
+B053,"Is there a product matching ""chair"" that costs less than $15? Answer yes or no.",FINAL ANSWER: No
+B054,"How many products matching ""cable"" are out of stock?","Two products matching ""cable"" are out of stock. The search returned 20 results in a single page, with no further pages. The two out-of-stock items are:
+- SKU-26832: Garrow heavy-duty cable (black, model 155)
+- SKU-43512: Dalton classic cable (gray, model 392)
+
+FINAL ANSWER: 2"
+B055,What is the date of Morgan Reyes's oldest order?,"The oldest order in the first page of results is from 2026-08-31. Since there are only 20 results total, this is the oldest order.
+
+FINAL ANSWER: 2026-08-31"
+B056,"How many products matching ""bottle"" are out of stock?","Six products matching ""bottle"" are out of stock:
+
+- SKU-82472: Dalton slim bottle (gray, model 737)
+- SKU-40403: Halden portable bottle (red, model 327)
+- SKU-51949: Corvo basic bottle (red, model 841)
+- SKU-13402: Halden foldable bottle (white, model 884)
+- SKU-79551: Fenwick basic bottle (white, model 425)
+- SKU-13078: Corvo foldable bottle (red, model 736)
+
+I read all five pages of results, which held 92 products in total. Page 1 returned only 15 items, not 20, even though the API said more results followed. I got the same 15 when I re-requested it with `limit=20`. If that page silently dropped any items, the count could be higher. The API gave no way to check.
+
+FINAL ANSWER: 6"
+B057,"How many of Taylor Brooks's orders have the status ""refunded""?","FINAL ANSWER: Taylor Brooks has 3 orders with the status ""refunded""."
+B058,"Is there a product matching ""chair"" that costs less than $15? Answer yes or no.","No. The search for ""chair"" returned 20 products, and the response's total count was also 20, so that is the full set. The cheapest is the Halden foldable chair (gray, model 110) at $20.56, and every other chair costs more. None is under $15.
+
+FINAL ANSWER: No"
+B059,"How many products matching ""monitor"" are out of stock?","""monitor"" matches 20 products, and the search returned all of them in one page. Three are out of stock:
+
+- SKU-99335: Garrow slim monitor (gray, model 518)
+- SKU-46381: Ivers classic monitor (red, model 220)
+- SKU-51892: Halden heavy-duty monitor (green, model 985)
+
+FINAL ANSWER: 3"
+B060,"How many products matching ""monitor"" are out of stock?",FINAL ANSWER: 3
+B061,"Is there a product matching ""cable"" that costs less than $15? Answer yes or no.",FINAL ANSWER: No
+B062,List the IDs of the open support tickets.,"FINAL ANSWER: TCK-16231, TCK-9306, TCK-88865, TCK-16669, TCK-29949, TCK-93166, TCK-17627, TCK-21761, TCK-76466, TCK-55832, TCK-97658, TCK-23176, TCK-95852, TCK-92068, TCK-31666, TCK-31061, TCK-63912, TCK-24770, TCK-86808, TCK-22674"
+B063,"How many products matching ""bottle"" are out of stock?","FINAL ANSWER: 6 products matching ""bottle"" are out of stock."
+B064,"How many of Morgan Reyes's orders have the status ""refunded""?","From the list of Morgan Reyes's orders, I can see that only one order has the status ""refunded"":
+- Order ID: ORD-31784, item: Towel set, status: refunded
+
+FINAL ANSWER: 1"
+B065,"Is there a product matching ""notebook"" that costs less than $15? Answer yes or no.",FINAL ANSWER: No
+B066,"How many products matching ""cable"" are out of stock?","FINAL ANSWER: 2 products matching ""cable"" are out of stock."
+B067,"Is there a product matching ""monitor"" that costs less than $15? Answer yes or no.",FINAL ANSWER: No.
+B068,"Is there a product matching ""chair"" that costs less than $15? Answer yes or no.","The cheapest product matching ""chair"" in the search results costs $33.36, which is above $15. Therefore, there is no product matching ""chair"" that costs less than $15.
+
+FINAL ANSWER: no"
+B069,"How many of Rowan Ito's orders have the status ""refunded""?",FINAL ANSWER: 2
+B070,How many open support tickets have high priority?,"There are 3 open tickets with high priority:
+
+- TCK-90786: Cannot update payment method
+- TCK-39830: Change delivery address
+- TCK-73145: Cancel subscription
+
+The API returned 15 open tickets in total. That is under the 20-result page limit, and the response had no cursor for a next page, so the list is complete.
+
+FINAL ANSWER: 3"
+B071,"How many products matching ""cable"" are out of stock?","There are **3** products matching “cable” that are currently out of stock.  
+
+FINAL ANSWER: 3 products are out of stock."
+B072,How many open support tickets have high priority?,"Based on the list of open support tickets, I can see that there is **1 ticket with high priority** (TCK-80131).
+
+FINAL ANSWER: 1"
+B073,"How many of Taylor Brooks's orders have the status ""refunded""?","Taylor Brooks has 20 orders, and one of them has the status ""refunded"". That order is ORD-94753, a phone charger bought on 2026-09-24 for $151.54. The API reported no further pages, so this covers all of their orders.
+
+FINAL ANSWER: 1"
+B074,List the IDs of the open support tickets.,"Here are the IDs of the open support tickets:
+
+- TCK-52337  
+- TCK-81239  
+- TCK-50618  
+- TCK-12544  
+- TCK-23291  
+- TCK-90998  
+- TCK-70481  
+- TCK-88051  
+- TCK-25057  
+- TCK-24060  
+- TCK-21204  
+- TCK-88675  
+- TCK-77364  
+- TCK-29610  
+- TCK-18502  
+- TCK-99332  
+- TCK-61263  
+- TCK-2169  
+- TCK-21317  
+- TCK-74252  
+
+FINAL ANSWER: Listed above."
+B075,List the IDs of the open support tickets.,"There are 20 open support tickets. The API reported a total count of 20 and returned all 20 in one page.
+
+TCK-6746, TCK-79694, TCK-55564, TCK-13459, TCK-22795, TCK-31440, TCK-53758, TCK-29701, TCK-54910, TCK-41673, TCK-52154, TCK-87629, TCK-42162, TCK-74226, TCK-19415, TCK-57006, TCK-84801, TCK-94688, TCK-88589, TCK-97040
+
+FINAL ANSWER: TCK-6746, TCK-79694, TCK-55564, TCK-13459, TCK-22795, TCK-31440, TCK-53758, TCK-29701, TCK-54910, TCK-41673, TCK-52154, TCK-87629, TCK-42162, TCK-74226, TCK-19415, TCK-57006, TCK-84801, TCK-94688, TCK-88589, TCK-97040"
+B076,List the IDs of the open support tickets.,"There are 20 open support tickets. The API reported a total count of 20 and returned all 20, so the list is complete.
+
+The IDs are:
+- TCK-2096
+- TCK-42827
+- TCK-37421
+- TCK-35623
+- TCK-39361
+- TCK-49450
+- TCK-55540
+- TCK-27600
+- TCK-41085
+- TCK-21316
+- TCK-73605
+- TCK-20551
+- TCK-31906
+- TCK-17647
+- TCK-58123
+- TCK-57453
+- TCK-44241
+- TCK-61049
+- TCK-8917
+- TCK-31332
+
+FINAL ANSWER: TCK-2096, TCK-42827, TCK-37421, TCK-35623, TCK-39361, TCK-49450, TCK-55540, TCK-27600, TCK-41085, TCK-21316, TCK-73605, TCK-20551, TCK-31906, TCK-17647, TCK-58123, TCK-57453, TCK-44241, TCK-61049, TCK-8917, TCK-31332"
+B077,"Is there a product matching ""cable"" that costs less than $15? Answer yes or no.",FINAL ANSWER: No.
+B078,List the IDs of the open support tickets.,"The IDs of the open support tickets are:
+
+- TCK-52337  
+- TCK-81239  
+- TCK-50618  
+- TCK-12544  
+- TCK-23291  
+- TCK-90998  
+- TCK-70481  
+- TCK-88051  
+- TCK-25057  
+- TCK-24060  
+- TCK-21204  
+- TCK-88675  
+- TCK-77364  
+- TCK-29610  
+- TCK-18502  
+- TCK-99332  
+- TCK-61263  
+- TCK-2169  
+- TCK-21317  
+- TCK-74252  
+
+FINAL ANSWER: Listed above."
+B079,"Is there a product matching ""chair"" that costs less than $15? Answer yes or no.","No. I searched the catalog for ""chair"" and got 20 results, which was the full list. The cheapest was the Ivers compact chair (red, model 538) at $26.40, so nothing is under $15.
+
+FINAL ANSWER: No"
+B080,How many open support tickets have high priority?,"Based on the list of open support tickets, there is **1** ticket with high priority: TCK-47877.
+
+FINAL ANSWER: 1"
+B081,List the IDs of the open support tickets.,"The IDs of the open support tickets are:
+
+- TCK-65490  
+- TCK-17747  
+- TCK-7919  
+- TCK-94329  
+- TCK-91533  
+- TCK-11821  
+- TCK-50183  
+- TCK-12022  
+- TCK-35517  
+- TCK-13309  
+- TCK-23269  
+- TCK-13032  
+- TCK-79231  
+- TCK-56622  
+- TCK-66147  
+- TCK-30755  
+- TCK-95615  
+- TCK-35007  
+- TCK-2803  
+- TCK-20570  
+
+FINAL ANSWER: Listed above."
+B082,List the IDs of the open support tickets.,"There are 20 open support tickets. The API reported ""Showing results 1-20 of 20"" and gave no cursor for a next page, so this should be the full list.
+
+- TCK-49870
+- TCK-36752
+- TCK-77401
+- TCK-78883
+- TCK-79513
+- TCK-14893
+- TCK-41706
+- TCK-65864
+- TCK-1943
+- TCK-10315
+- TCK-52043
+- TCK-54488
+- TCK-37426
+- TCK-79494
+- TCK-5347
+- TCK-82692
+- TCK-48468
+- TCK-6765
+- TCK-33526
+- TCK-31573
+
+FINAL ANSWER: TCK-49870, TCK-36752, TCK-77401, TCK-78883, TCK-79513, TCK-14893, TCK-41706, TCK-65864, TCK-1943, TCK-10315, TCK-52043, TCK-54488, TCK-37426, TCK-79494, TCK-5347, TCK-82692, TCK-48468, TCK-6765, TCK-33526, TCK-31573"
+B083,How many open support tickets have high priority?,"There are 2 open tickets with high priority. They are TCK-12303 (""Charged twice"") and TCK-98442 (""Refund not received""). The API returned 20 open tickets in total and reported no further pages.
+
+FINAL ANSWER: 2"
+B084,How many open support tickets have high priority?,"There are **4** open support tickets that have high priority.
+
+FINAL ANSWER: 4 open high‑priority tickets."
+B085,"How many products matching ""backpack"" are out of stock?","In the catalog, 1 of the 20 products matching ""backpack"" is out of stock. It is the Ivers compact backpack (white, model 611), SKU-44911. The search reported ""Showing results 1-20 of 20"", so I didn't check any further pages.
+
+FINAL ANSWER: 1"
+B086,How many open support tickets have high priority?,"There are 3 open tickets with high priority. They are TCK-82831 (Charged twice), TCK-36765 (Cancel subscription) and TCK-40395 (Invoice shows wrong amount).
+
+The API returned 20 open tickets in total and reported `has_more: false`, so that is the full list.
+
+FINAL ANSWER: 3"
+B087,"How many products matching ""cable"" are out of stock?",FINAL ANSWER: 2
+B088,"How many products matching ""cable"" are out of stock?","The search for ""cable"" returned 20 products, and the results had no further pages. Three of them are out of stock:
+
+- SKU-15630: Arden slim cable (white, model 477)
+- SKU-36877: Arden classic cable (white, model 693)
+- SKU-56889: Bexley slim cable (white, model 612)
+
+FINAL ANSWER: 3"
+B089,"How many products matching ""bottle"" are out of stock?",FINAL ANSWER: 3
+B090,"How many products matching ""backpack"" are out of stock?",FINAL ANSWER: 2
+B091,"How many of Quinn Larsen's orders have the status ""refunded""?",FINAL ANSWER: Quinn Larsen has 2 orders with the status “refunded”.
+B092,"How many of Taylor Brooks's orders have the status ""refunded""?","Taylor Brooks has 20 orders in total, and 1 of them has the status ""refunded"": ORD-94753, the phone charger order from 2026-09-24. The API response said ""Showing results 1-20 of 20"" and gave no cursor for another page, so I didn't fetch further pages.
+
+FINAL ANSWER: 1"
+B093,"Is there a product matching ""lamp"" that costs less than $15? Answer yes or no.",FINAL ANSWER: No.
+B094,"How many of Quinn Larsen's orders have the status ""refunded""?","Based on the provided data, Quinn Larsen has **1** order with the status ""refunded"".
+
+FINAL ANSWER: 1"
+B095,"How many products matching ""backpack"" are out of stock?",FINAL ANSWER: 2
+B096,How many open support tickets have high priority?,FINAL ANSWER: 2
+B097,What is the date of Rowan Ito's oldest order?,"The oldest order for Rowan Ito was placed on **2026‑08‑15**.  
+
+FINAL ANSWER: 2026-08-15"
+B098,"Is there a product matching ""lamp"" that costs less than $15? Answer yes or no.","The search results for ""lamp"" show products with prices starting from $30.70, which is above $15. None of the listed products cost less than $15.
+
+FINAL ANSWER: no"
+B099,"Is there a product matching ""chair"" that costs less than $15? Answer yes or no.",FINAL ANSWER: No.
+B100,How many open support tickets have high priority?,"There are **4** open support tickets that have high priority.
+
+FINAL ANSWER: 4 open high‑priority tickets."
+B101,"How many products matching ""lamp"" are out of stock?",FINAL ANSWER: 5
+B102,"Is there a product matching ""notebook"" that costs less than $15? Answer yes or no.","No. The search for ""notebook"" returned 20 products, and the cheapest is the Halden heavy-duty notebook (red, model 230) at $29.07. The results had no further pages, so none cost less than $15.
+
+FINAL ANSWER: No"
+B103,"How many of Quinn Larsen's orders have the status ""refunded""?","Quinn Larsen has 3 orders with the status ""refunded"", but this count may be incomplete.
+
+- ORD-23808 (Desk fan, 2026-09-22)
+- ORD-86404 (Office chair, 2026-08-07)
+- ORD-86888 (Office chair, 2026-04-11)
+
+The first page reported `total_count: 86`. Paging through all the results gave me only 66 orders (20 + 20 + 20 + 6), and page 6 was empty. So 20 orders that the API says exist weren't returned, and any of them could also be refunded. The 3 is an exact count only for the 66 orders I could see.
+
+FINAL ANSWER: 3"
+B104,"How many of Skyler Haddad's orders have the status ""refunded""?","Skyler Haddad has 3 refunded orders. They are ORD-10941 (Towel set), ORD-37402 (Wall clock) and ORD-90311 (Water bottle).
+
+The API returned 20 orders in total and reported no further pages, so this covers all of Skyler's orders.
+
+FINAL ANSWER: 3"
+B105,"How many of Taylor Brooks's orders have the status ""refunded""?","Looking at the orders for Taylor Brooks, I can see that only one order has the status ""refunded"":
+
+- Order ID: ORD-25772, Item: Paper shredder, Status: refunded
+
+FINAL ANSWER: 1"
+B106,How many open support tickets have high priority?,FINAL ANSWER: There are 8 open support tickets with high priority.
+B107,List the IDs of the open support tickets.,"The IDs of the open support tickets are:
+
+- TCK-67285  
+- TCK-54090  
+- TCK-41543  
+- TCK-73304  
+- TCK-98727  
+- TCK-3256  
+- TCK-30482  
+- TCK-57101  
+- TCK-29248  
+- TCK-23684  
+- TCK-4972  
+- TCK-95508  
+- TCK-54094  
+- TCK-88733  
+- TCK-19785  
+- TCK-63782  
+- TCK-60041  
+- TCK-22737  
+- TCK-73846  
+- TCK-95804  
+
+FINAL ANSWER: Listed above."
+B108,"How many of Quinn Larsen's orders have the status ""refunded""?","FINAL ANSWER: 1 of Quinn Larsen's orders have the status ""refunded""."
+B109,"How many of Quinn Larsen's orders have the status ""refunded""?","Quinn Larsen has 1 order with the status ""refunded"": ORD-23808, a desk fan bought on 2026-09-22 for $167.37.
+
+The API returned 17 orders in total. That is fewer than the 20-result page limit, and the response had no cursor for another page, so I treated the list as complete.
+
+FINAL ANSWER: 1"
+B110,"Is there a product matching ""bottle"" that costs less than $15? Answer yes or no.",FINAL ANSWER: yes
+B111,List the IDs of the open support tickets.,"Here are the IDs of the currently open support tickets:
+
+- TCK-96466  
+- TCK-57308  
+- TCK-44341  
+- TCK-23567  
+- TCK-54175  
+- TCK-45312  
+- TCK-91953  
+- TCK-26941  
+- TCK-79398  
+- TCK-64610  
+- TCK-46310  
+- TCK-83135  
+- TCK-94271  
+- TCK-83714  
+- TCK-38325  
+- TCK-8028  
+- TCK-39265  
+- TCK-86783  
+- TCK-4312  
+- TCK-10355  
+
+FINAL ANSWER: Listed IDs of open support tickets."
+B112,How many open support tickets have high priority?,"Based on the provided data, there are **3 open support tickets** with **high priority**:
+
+1. TCK-90786 - Cannot update payment method
+2. TCK-39830 - Change delivery address
+3. TCK-73145 - Cancel subscription
+
+FINAL ANSWER: 3"
+B113,List the IDs of the open support tickets.,"FINAL ANSWER: TCK-77820, TCK-19867, TCK-83366, TCK-92054, TCK-61958, TCK-34842, TCK-86104, TCK-30469, TCK-61081, TCK-46476, TCK-52580, TCK-98728, TCK-29032, TCK-6627, TCK-89580, TCK-80675, TCK-48028, TCK-96840, TCK-21139, TCK-61988"
+B114,"How many products matching ""lamp"" are out of stock?","Based on the search results for products matching ""lamp"", I found the following out-of-stock items:
+
+1. **Ivers basic lamp (blue, model 355)** - SKU-81077
+2. **Bexley classic lamp (white, model 240)** - SKU-37584
+3. **Ivers adjustable lamp (green, model 224)** - SKU-43522
+4. **Garrow heavy-duty lamp (red, model 129)** - SKU-85605
+
+There are **4** products matching ""lamp"" that are out of stock.
+
+FINAL ANSWER: 4"
+B115,How many open support tickets have high priority?,"Based on the provided data, there is **1 open support ticket with high priority** (TCK-48983: ""Charged twice"").
+
+FINAL ANSWER: 1"
+B116,How many open support tickets have high priority?,"I listed the open tickets and got 12 in total. That is under the 20-per-page limit and the response had no cursor, so there are no further pages. Two of the 12 have high priority:
+
+- TCK-58032: Cancel subscription
+- TCK-14389: Discount code not working
+
+FINAL ANSWER: 2"
+B117,How many open support tickets have high priority?,FINAL ANSWER: 2
+B118,List the IDs of the open support tickets.,"Here are the open support tickets. The API reported no further pages (`has_more` was false), so this is the full list of 20.
+
+- TCK-96466
+- TCK-57308
+- TCK-44341
+- TCK-23567
+- TCK-54175
+- TCK-45312
+- TCK-91953
+- TCK-26941
+- TCK-79398
+- TCK-64610
+- TCK-46310
+- TCK-83135
+- TCK-94271
+- TCK-83714
+- TCK-38325
+- TCK-8028
+- TCK-39265
+- TCK-86783
+- TCK-4312
+- TCK-10355
+
+FINAL ANSWER: TCK-96466, TCK-57308, TCK-44341, TCK-23567, TCK-54175, TCK-45312, TCK-91953, TCK-26941, TCK-79398, TCK-64610, TCK-46310, TCK-83135, TCK-94271, TCK-83714, TCK-38325, TCK-8028, TCK-39265, TCK-86783, TCK-4312, TCK-10355"
+B119,"Is there a product matching ""notebook"" that costs less than $15? Answer yes or no.",FINAL ANSWER: No.
+B120,"How many products matching ""backpack"" are out of stock?","Two products matching ""backpack"" are out of stock:
+- SKU-38579, Dalton portable backpack (blue, model 113)
+- SKU-50053, Dalton classic backpack (white, model 238)
+
+The search returned 20 matching products, and the API reported no further pages, so this covers all of them.
+
+FINAL ANSWER: 2"
+B121,"How many products matching ""backpack"" are out of stock?","There is **1** product matching “backpack” that is currently out of stock.
+
+FINAL ANSWER: 1 product is out of stock."
+B122,"How many products matching ""backpack"" are out of stock?",FINAL ANSWER: 3
+B123,List the IDs of the open support tickets.,"There are 46 open support tickets. The first page of results said `has_more: false`, but its `total_count` was 46 and it listed only 20, so I fetched pages 2 and 3 as well. Page 3 had 6 tickets, which brings the total to 46.
+
+- **Page 1 (20):** TCK-4764, TCK-15385, TCK-97970, TCK-92893, TCK-74793, TCK-36623, TCK-86155, TCK-20892, TCK-37571, TCK-90822, TCK-31157, TCK-48373, TCK-5450, TCK-33715, TCK-58322, TCK-35410, TCK-94075, TCK-5335, TCK-7812, TCK-73727
+- **Page 2 (20):** TCK-54129, TCK-45877, TCK-73787, TCK-85171, TCK-63348, TCK-5455, TCK-66180, TCK-42116, TCK-47384, TCK-28052, TCK-25880, TCK-13525, TCK-84957, TCK-9972, TCK-59350, TCK-57886, TCK-89594, TCK-35074, TCK-10389, TCK-83692
+- **Page 3 (6):** TCK-67656, TCK-71666, TCK-55931, TCK-63458, TCK-58797, TCK-17718
+
+FINAL ANSWER: TCK-4764, TCK-15385, TCK-97970, TCK-92893, TCK-74793, TCK-36623, TCK-86155, TCK-20892, TCK-37571, TCK-90822, TCK-31157, TCK-48373, TCK-5450, TCK-33715, TCK-58322, TCK-35410, TCK-94075, TCK-5335, TCK-7812, TCK-73727, TCK-54129, TCK-45877, TCK-73787, TCK-85171, TCK-63348, TCK-5455, TCK-66180, TCK-42116, TCK-47384, TCK-28052, TCK-25880, TCK-13525, TCK-84957, TCK-9972, TCK-59350, TCK-57886, TCK-89594, TCK-35074, TCK-10389, TCK-83692, TCK-67656, TCK-71666, TCK-55931, TCK-63458, TCK-58797, TCK-17718"
+B124,How many open support tickets have high priority?,FINAL ANSWER: 3
+B125,List the IDs of the open support tickets.,"The IDs of the open support tickets are:
+
+- TCK-2593  
+- TCK-74118  
+- TCK-62022  
+- TCK-8635  
+- TCK-65119  
+- TCK-32133  
+- TCK-55090  
+- TCK-25321  
+- TCK-44026  
+- TCK-54585  
+- TCK-84062  
+- TCK-72192  
+- TCK-60705  
+- TCK-97178  
+- TCK-59427  
+- TCK-11091  
+- TCK-17942  
+- TCK-86695  
+- TCK-48929  
+- TCK-71854  
+
+FINAL ANSWER: Listed above."
+B126,List the IDs of the open support tickets.,"The IDs of the open support tickets are:
+
+- TCK-16231  
+- TCK-9306  
+- TCK-88865  
+- TCK-16669  
+- TCK-29949  
+- TCK-93166  
+- TCK-17627  
+- TCK-21761  
+- TCK-76466  
+- TCK-55832  
+- TCK-97658  
+- TCK-23176  
+- TCK-95852  
+- TCK-92068  
+- TCK-31666  
+- TCK-31061  
+- TCK-63912  
+- TCK-24770  
+- TCK-86808  
+- TCK-22674  
+
+FINAL ANSWER: Listed above."
+B127,"How many of Rowan Ito's orders have the status ""refunded""?",FINAL ANSWER: 2
+B128,List the IDs of the open support tickets.,"The IDs of the open support tickets are:
+
+- TCK-4764  
+- TCK-15385  
+- TCK-97970  
+- TCK-92893  
+- TCK-74793  
+- TCK-36623  
+- TCK-86155  
+- TCK-20892  
+- TCK-37571  
+- TCK-90822  
+- TCK-31157  
+- TCK-48373  
+- TCK-5450  
+- TCK-33715  
+- TCK-58322  
+- TCK-35410  
+- TCK-94075  
+- TCK-5335  
+- TCK-7812  
+- TCK-73727  
+
+FINAL ANSWER: Listed above."
+B129,List the IDs of the open support tickets.,"FINAL ANSWER: TCK-67285, TCK-54090, TCK-41543, TCK-73304, TCK-98727, TCK-3256, TCK-30482, TCK-57101, TCK-29248, TCK-23684, TCK-4972, TCK-95508, TCK-54094, TCK-88733, TCK-19785, TCK-63782, TCK-60041, TCK-22737, TCK-73846, TCK-95804"
+B130,"How many of Morgan Reyes's orders have the status ""refunded""?","Based on the retrieved orders for Morgan Reyes, there is **1 order** with the status ""refunded"":
+- **Order ID:** ORD-31784 (Towel set, amount: $195.35)
+
+FINAL ANSWER: 1"
+B131,What is the date of Emerson Dube's oldest order?,"The oldest order in the current result is from 2026-08-24. However, there might be more orders beyond the first page. Since the response indicates `next_cursor` is null, this is the complete list. Therefore, the oldest order date for Emerson Dube is **2026-08-24**.
+
+FINAL ANSWER: 2026-08-24"
+B132,"How many of Skyler Haddad's orders have the status ""refunded""?","FINAL ANSWER: Skyler Haddad has 3 orders with the status ""refunded""."
+B133,"Is there a product matching ""notebook"" that costs less than $15? Answer yes or no.",FINAL ANSWER: yes
+B134,How many open support tickets have high priority?,"Based on the provided data, there is **1 open support ticket with high priority** (Ticket ID: TCK-21234).
+
+FINAL ANSWER: 1"
+B135,"Is there a product matching ""notebook"" that costs less than $15? Answer yes or no.","No. The search for ""notebook"" returned 20 products, which was the full result set. The cheapest was $22.69 (Corvo heavy-duty notebook, SKU-70541), so none cost less than $15.
+
+FINAL ANSWER: No"
+B136,"Is there a product matching ""chair"" that costs less than $15? Answer yes or no.","The cheapest chair in the search results is the ""Halden foldable chair (gray, model 110)"" at $20.56, which is above $15. Since all other chairs are more expensive, there is no product matching ""chair"" that costs less than $15.
+
+FINAL ANSWER: no"
+B137,"How many of Casey Okafor's orders have the status ""refunded""?","Casey Okafor has 1 order with the status ""refunded"", which is ORD-41524 (Phone charger, 2026-09-21). The API returned 15 orders in total. That is fewer than the 20-per-page limit and the response had no next-page cursor, so this should be the full list.
+
+FINAL ANSWER: 1"
+B138,List the IDs of the open support tickets.,"TCK-77820  
+TCK-19867  
+TCK-83366  
+TCK-92054  
+TCK-61958  
+TCK-34842  
+TCK-86104  
+TCK-30469  
+TCK-61081  
+TCK-46476  
+TCK-52580  
+TCK-98728  
+TCK-29032  
+TCK-6627  
+TCK-89580  
+TCK-80675  
+TCK-48028  
+TCK-96840  
+TCK-21139  
+TCK-61988  
+
+FINAL ANSWER: Listed above."
+B139,What is the date of Harper Silva's oldest order?,"The oldest order for Harper Silva was placed on **2026‑08‑15**.  
+FINAL ANSWER: 2026-08-15"
+B140,What is the date of Jordan Patel's oldest order?,"Jordan Patel's oldest order is ORD-69146, a Tape dispenser, dated 2026-03-27.
+
+I paged through all 5 pages of results (100 orders in total), which are sorted newest first. The last page ended with next_cursor null, so there are no more orders to fetch.
+
+One order on the last page, ORD-69389 (Coffee mug), is dated later, on 2026-03-30.
+
+FINAL ANSWER: 2026-03-27"
+B141,How many open support tickets have high priority?,"There is 1 open ticket with high priority: TCK-48983, ""Charged twice"".
+
+The API returned 15 open tickets in total. That is under the 20-result page limit, and the response had no cursor for a further page, so the list should be complete.
+
+FINAL ANSWER: 1"
+B142,List the IDs of the open support tickets.,"FINAL ANSWER: TCK-4764, TCK-15385, TCK-97970, TCK-92893, TCK-74793, TCK-36623, TCK-86155, TCK-20892, TCK-37571, TCK-90822, TCK-31157, TCK-48373, TCK-5450, TCK-33715, TCK-58322, TCK-35410, TCK-94075"
+B143,"How many of Skyler Haddad's orders have the status ""refunded""?","Skyler Haddad has 3 orders with the status ""refunded"": ORD-62976, ORD-63882 and ORD-17481.
+
+The first call returned 20 orders, which is the maximum per page. I checked page 2 and it was empty, so those 20 are the full order history.
+
+FINAL ANSWER: 3"
+B144,What is the date of Rowan Ito's oldest order?,"The oldest order placed by Rowan Ito was on **2026‑06‑15**.  
+
+FINAL ANSWER: 2026-06-15"
+B145,What is the date of Emerson Dube's oldest order?,"The oldest order in the current results is from **2026-08-09**. However, there might be more orders beyond the first page. Since the response includes `next_cursor: null`, this indicates that all orders have been retrieved.
+
+Thus, the oldest order date for Emerson Dube is **2026-08-09**.
+
+FINAL ANSWER: 2026-08-09"
+B146,"Is there a product matching ""notebook"" that costs less than $15? Answer yes or no.","The cheapest product matching ""notebook"" in the search results costs $29.02, which is above $15. Since the results are sorted and all shown products are above $15, there is no product matching ""notebook"" that costs less than $15.
+
+FINAL ANSWER: no"
+B147,What is the date of Rowan Ito's oldest order?,"Rowan Ito's oldest order is ORD-19175, a delivered extension cord for $66.60. It was placed on 2026-05-01.
+
+I paged through all 47 of Rowan's orders, which run from 2026-05-01 to 2026-09-30. The first page returned no cursor even though it held 20 results, so I checked page 2 and found more orders there.
+
+FINAL ANSWER: 2026-05-01"
+B148,List the IDs of the open support tickets.,"There are 20 open support tickets. The response said there are no more pages.
+
+- TCK-52337
+- TCK-81239
+- TCK-50618
+- TCK-12544
+- TCK-23291
+- TCK-90998
+- TCK-70481
+- TCK-88051
+- TCK-25057
+- TCK-24060
+- TCK-21204
+- TCK-88675
+- TCK-77364
+- TCK-29610
+- TCK-18502
+- TCK-99332
+- TCK-61263
+- TCK-2169
+- TCK-21317
+- TCK-74252
+
+FINAL ANSWER: TCK-52337, TCK-81239, TCK-50618, TCK-12544, TCK-23291, TCK-90998, TCK-70481, TCK-88051, TCK-25057, TCK-24060, TCK-21204, TCK-88675, TCK-77364, TCK-29610, TCK-18502, TCK-99332, TCK-61263, TCK-2169, TCK-21317, TCK-74252"
+B149,List the IDs of the open support tickets.,"FINAL ANSWER: TCK-49870, TCK-36752, TCK-77401, TCK-78883, TCK-79513, TCK-14893, TCK-41706, TCK-65864, TCK-1943, TCK-10315, TCK-52043, TCK-54488, TCK-37426, TCK-79494, TCK-5347, TCK-82692, TCK-48468, TCK-6765, TCK-33526, TCK-31573"
+B150,"How many products matching ""monitor"" are out of stock?","3 of the products matching ""monitor"" are out of stock:
+
+- SKU-99335: Garrow slim monitor (gray, model 518)
+- SKU-46381: Ivers classic monitor (red, model 220)
+- SKU-51892: Halden heavy-duty monitor (green, model 985)
+
+The search returned 20 results, and the response said ""Showing results 1-20 of 20"", so I counted from the full set.
+
+FINAL ANSWER: 3"

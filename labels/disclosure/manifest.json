@@ -1,0 +1,44 @@
+{
+ "seed": 20261025,
+ "n_random_final": 120,
+ "n_random_completeness": 60,
+ "second_supplement": {
+  "F": 10,
+  "W": 25,
+  "U": 15
+ },
+ "labeler_A": 729,
+ "labeler_B": 150,
+ "parts": [
+  {
+   "part": "C",
+   "replies": "60",
+   "population": "969",
+   "in_B": "0"
+  },
+  {
+   "part": "F",
+   "replies": "29",
+   "population": "29",
+   "in_B": "10"
+  },
+  {
+   "part": "R",
+   "replies": "274",
+   "population": NaN,
+   "in_B": "100"
+  },
+  {
+   "part": "U",
+   "replies": "120",
+   "population": "1615",
+   "in_B": "15"
+  },
+  {
+   "part": "W",
+   "replies": "246",
+   "population": "246",
+   "in_B": "25"
+  }
+ ]
+}

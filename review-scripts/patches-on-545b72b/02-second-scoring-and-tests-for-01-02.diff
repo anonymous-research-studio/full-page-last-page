@@ -1,0 +1,372 @@
+diff --git a/scripts/compare_scorings.py b/scripts/compare_scorings.py
+new file mode 100644
+index 0000000..ae426ab
+--- /dev/null
++++ b/scripts/compare_scorings.py
+@@ -0,0 +1,93 @@
++"""The frozen scoring against the second scoring (`fplp score --fixes`), per model.
++
++The 24 Oct code audit found three latent scoring defects, none affecting gpt-oss-120b's episodes;
++PENDING.md (section 3) fixes them after the runs, reports both scorings, and records the change as a
++deviation. This reports, per model, how many episodes each fix changes and, given both scorings'
++`fplp hypotheses` CSVs, every test whose verdict, estimability or estimate moves.
++
++  uv run fplp score data/raw/main --config configs/runs/main.yaml --cutoff ... --out frozen.csv
++  uv run fplp score data/raw/main --config configs/runs/main.yaml --cutoff ... --fixes --out fixed.csv
++  uv run python scripts/compare_scorings.py frozen.csv fixed.csv [--hypotheses frozen_h.csv fixed_h.csv]
++
++`--exclude-asked-above OUT` also writes the fixed scoring without episodes whose first call asked for
++more rows than the page limit (defect 3), for a sensitivity run of `fplp hypotheses`.
++"""
++
++from __future__ import annotations
++
++import argparse
++
++import pandas as pd
++
++FETCH = ["follow_up", "responsive_follow_up", "followup_calls", "speculative_fetch", "missed_fetch", "extra_fetch"]
++
++
++def _changed(g: pd.DataFrame, col: str) -> int:
++    return int((g[col].fillna(-1).astype(str) != g[f"{col}_fix"].fillna(-1).astype(str)).sum())
++
++
++def episodes(frozen: pd.DataFrame, fixed: pd.DataFrame) -> pd.DataFrame:
++    m = frozen.merge(fixed, on=["episode_id", "model"], suffixes=("", "_fix"), validate="one_to_one")
++    rows = []
++    for model, g in m.groupby("model"):
++        incomplete = g[(g["task_need"] == "needs_all") & (g["evidence_seen"] == 0)]
++        moved = incomplete[incomplete["disclosure_stratum"].fillna("") != incomplete["disclosure_stratum_fix"].fillna("")]
++        rows.append({
++            "model": model, "episodes": len(g),
++            **{f"{c}_changed": _changed(g, c) for c in FETCH},
++            "stratum_changed": len(moved),
++            "stratum_moves": "; ".join(f"{a}->{b}: {n}" for (a, b), n in
++                                       moved.groupby(["disclosure_stratum", "disclosure_stratum_fix"], dropna=False).size().items()),
++            "incomplete_outside_more_extents": int((~incomplete["extent"].isin(["more_full", "more_short"])).sum()),
++            # descriptive and post hoc: labels outside Amendment 1's strata, mapped back in disclosure_stratum
++            "post_hoc_no_page_served": int((g["stratum_post_hoc"] == "no_page_served").sum()),
++            "post_hoc_end_shown": int((g["stratum_post_hoc"] == "end_shown").sum()),
++            "no_target_page": int(g["no_target_page"].sum()),
++            "asked_above_limit": int(g["asked_above_limit"].sum()),
++        })
++    return pd.DataFrame(rows)
++
++
++def hypotheses(frozen: str, fixed: str) -> pd.DataFrame:
++    keys = ["model", "family", "hypothesis", "part", "test"]
++    a, b = pd.read_csv(frozen), pd.read_csv(fixed)
++    m = a.merge(b, on=keys, how="outer", suffixes=("", "_fix"), indicator=True)
++
++    def same(col: str, numeric: bool = False) -> pd.Series:
++        x, y = m[col], m[f"{col}_fix"]
++        both_missing = x.isna() & y.isna()
++        if numeric:
++            return both_missing | ((x - y).abs() <= 1e-9).fillna(False)
++        return both_missing | (x.astype(object) == y.astype(object)).fillna(False)
++
++    differs = (m["_merge"] != "both") | ~same("supported") | ~same("estimable") | ~same("diff", True) | ~same("n", True)
++    return m.loc[differs, [*keys, "n", "n_fix", "diff", "diff_fix", "supported", "supported_fix", "estimable", "estimable_fix"]]
++
++
++def main(argv: list[str] | None = None) -> None:
++    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
++    p.add_argument("frozen_csv")
++    p.add_argument("fixed_csv")
++    p.add_argument("--hypotheses", nargs=2, metavar=("FROZEN_H", "FIXED_H"))
++    p.add_argument("--out", help="CSV of the per-model episode counts")
++    p.add_argument("--exclude-asked-above", metavar="OUT")
++    args = p.parse_args(argv)
++    frozen, fixed = pd.read_csv(args.frozen_csv), pd.read_csv(args.fixed_csv)
++    table = episodes(frozen, fixed)
++    with pd.option_context("display.width", 250, "display.max_columns", 30, "display.max_colwidth", 80):
++        print(table.to_string(index=False))
++        if args.hypotheses:
++            h = hypotheses(*args.hypotheses)
++            print(f"\n{len(h)} test row(s) differ between the scorings" + (":" if len(h) else ""))
++            if len(h):
++                print(h.to_string(index=False))
++    if args.out:
++        table.to_csv(args.out, index=False)
++    if args.exclude_asked_above:
++        kept = fixed[fixed["asked_above_limit"] == 0]
++        kept.to_csv(args.exclude_asked_above, index=False)
++        print(f"\nwrote {len(kept)} of {len(fixed)} episodes (without first calls above the page limit) to {args.exclude_asked_above}")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/src/fplp/metrics.py b/src/fplp/metrics.py
+index 1662036..9a62f6b 100644
+--- a/src/fplp/metrics.py
++++ b/src/fplp/metrics.py
+@@ -231,7 +231,46 @@ def is_correct(gold: dict, text: str) -> bool:
+     raise ValueError(f"unknown answer type: {kind}")
+ 
+ 
+-def score_episode(rec: dict) -> dict:
++def _int_or_none(value) -> int | None:
++    try:
++        return None if value in (None, "") else int(value)
++    except (TypeError, ValueError, OverflowError):
++        return None
++
++
++def _stratum_from_pages(c: dict, target: list[dict], ok: list[int], n_items: int) -> str:
++    """Disclosure strata judged from the pages the agent was actually served (24 Oct audit, defect 1):
++    "warranted" when the furthest page served showed a truthful signal while rows remained, or came back
++    full with no signal under a stated limit and documented pagination. The frozen scoring reads the cell
++    instead, so it labels any incomplete answer under a signal "warranted" (also on last pages), a full
++    no-signal last page "short_page", and assigns a stratum when no target page was served. Two labels
++    here are descriptive and post hoc, not Amendment 1's: "no_page_served" and "end_shown" (`_AMENDMENT_1`
++    maps them back for the scored stratum)."""
++    if not ok:
++        return "no_page_served"
++    if c.get("conflict") in ("visible_conflict_total", "visible_conflict_note"):
++        return "visible_conflict"
++    if c.get("conflict"):
++        return "api_said_done"
++    last = max((target[i] for i in ok), key=lambda x: x["offset"] + x["n_rows"])
++    remain = last["offset"] + last["n_rows"] < n_items
++    if c["signal_form"] != "none":
++        return "warranted" if remain else "end_shown"  # end_shown: the end was shown, yet a needed row was skipped
++    full = last["n_rows"] >= (last.get("limit") or c.get("page_limit") or 20)
++    if remain and full:
++        return "warranted" if c["limit_stated"] and c.get("documented", True) else "no_cue"
++    return "short_page"
++
++
++# The scored stratum keeps Amendment 1's registered strata: with no page served none applies (blank), and
++# a truthful signal on an earlier page said more rows exist when the end was shown after skipped rows.
++_AMENDMENT_1 = {"no_page_served": None, "end_shown": "warranted"}
++
++
++def score_episode(rec: dict, fixes: bool = False) -> dict:
++    """One scored row. `fixes` applies the three corrections from the 24 Oct code audit (strata from the
++    pages served; a first-turn placeholder cursor is not a fetch; the raw requested limit) for the second
++    scoring reported beside the frozen one; without it the output is the frozen scoring."""
+     c = {**CONDITION_DEFAULTS, **rec["condition"]}
+     c.setdefault("more_exists", c["extent"] in ("more_full", "more_short"))
+     c.setdefault("fetch_needed", c["more_exists"] and c["task_need"] == "needs_all")
+@@ -245,6 +284,11 @@ def score_episode(rec: dict) -> dict:
+     ok = [i for i, x in enumerate(target) if x["error"] is None and x["offset"] is not None]
+     first_rows = rows(target[ok[0]]) if ok else set()
+     is_followup = [bool(x["paging"] or (x["offset"] or 0) > 0) for x in target]
++    # Defect 2 (fixes only): a cursor sent in the first turn, before any page came back, was never issued
++    # (a placeholder such as "null"), so it is not a paging attempt.
++    t0 = min((x["turn"] for x in target if x.get("turn") is not None), default=None)
++    placeholder = [fixes and t0 is not None and x.get("turn") == t0 and x["error"] == "invalid cursor" for x in target]
++    is_followup = [f and not p for f, p in zip(is_followup, placeholder, strict=True)]
+     for i in ok[1:]:
+         is_followup[i] = is_followup[i] or not rows(target[i]) <= first_rows
+     follow_up = any(is_followup)
+@@ -257,7 +301,7 @@ def score_episode(rec: dict) -> dict:
+     # signal could be read (parallel calls), so it is speculative rather than a response to a signal.
+     first_turn = min((x.get("turn", 0) for x in target), default=None)
+     speculative = any((x["paging"] or (x["offset"] or 0) > 0) and x.get("turn") is not None
+-                      and x.get("turn") == first_turn for x in target)
++                      and x.get("turn") == first_turn and not p for x, p in zip(target, placeholder, strict=True))
+     covered: set[int] = set()
+     for x in target:
+         if x["error"] is None and x["offset"] is not None:
+@@ -291,13 +335,17 @@ def score_episode(rec: dict) -> dict:
+             stratum = "warranted" if c["limit_stated"] and c.get("documented", True) else "no_cue"
+         else:
+             stratum = "short_page"      # a short page with no signal looks like the end
++    post_hoc = None
++    if fixes and needs_all and not evidence_seen:
++        post_hoc = _stratum_from_pages(c, target, ok, rec["n_items"])
++        stratum = _AMENDMENT_1.get(post_hoc, post_hoc)
+     page_limit = c.get("page_limit") or 20
+     requested = target[ok[0]].get("limit") if ok else None
+     settled = rec["condition"]["task_type"] == "exists" and rec["gold"]["value"] == "yes" \
+         and bool(evidence) and min(evidence) < rec.get("first_page_size", min(c["page_limit"], rec["n_items"]))
+     truncated = rec.get("truncated", any(t.get("stop_reason") in ("length", "max_tokens") for t in rec.get("turns", [])))
+     needed = bool(c["fetch_needed"])
+-    return {
++    out = {
+         "episode_id": rec["episode_id"],
+         "model": rec["model"],
+         **{k: c[k] for k in CONDITION_FIELDS},
+@@ -332,6 +380,13 @@ def score_episode(rec: dict) -> dict:
+         "tokens_out": rec["tokens_out"],
+         "cache_read": rec.get("cache_read", 0),
+     }
++    if fixes:
++        # Defect 3: `requested_limit` stores the limit after the server capped it; above the page limit
++        # the 20-row page looks short to the agent. Audit columns, not test inputs.
++        raw = _int_or_none(target[ok[0]]["arguments"].get("limit")) if ok else None
++        out.update(requested_limit_raw=raw, asked_above_limit=int(raw is not None and raw > page_limit),
++                   no_target_page=int(not ok), stratum_post_hoc=post_hoc)
++    return out
+ 
+ 
+ def _episode_files(paths: list[str]) -> list[Path]:
+@@ -391,14 +446,12 @@ def select_records(records: list[dict], plan: dict[str, set[str]] | None,
+         else:
+             kept.append(rec)
+ 
+-    report = []
+-    for model, n in sorted(duplicates.items()):
+-        report.append(f"{model}: dropped {n} duplicate record(s) (same episode id; the first was kept)")
++    report = [f"{model}: dropped {n} duplicate record(s) (same episode id; the first was kept)"
++              for model, n in sorted(duplicates.items())]
+     if cutoff is not None:
+-        for model in sorted({r["model"] for r in records}):
+-            report.append(f"{model}: dropped {late[model]} episode(s) finished after the cutoff {cutoff.isoformat()}")
+-        for model, n in sorted(undated.items()):
+-            report.append(f"WARNING {model}: {n} episode(s) have no completion time; kept")
++        report += [f"{model}: dropped {late[model]} episode(s) finished after the cutoff {cutoff.isoformat()}"
++                   for model in sorted({r["model"] for r in records})]
++        report += [f"WARNING {model}: {n} episode(s) have no completion time; kept" for model, n in sorted(undated.items())]
+     if retired:
+         report.append(f"dropped {sum(retired.values())} episode(s) of retired task types: {dict(retired)}")
+     for model, n in sorted(unplanned.items()):
+@@ -454,6 +507,9 @@ def main(argv: list[str] | None = None) -> None:
+     parser.add_argument("--cutoff", type=datetime.fromisoformat,
+                         help="keep only episodes finished at or before this time, with its UTC offset, "
+                         "e.g. 2026-10-25T17:00:00-04:00 (the cutoff fixed on 24 Oct 2026)")
++    parser.add_argument("--fixes", action="store_true",
++                        help="the second scoring: apply the 24 Oct audit's three corrections (strata from the pages "
++                        "served, first-turn placeholder cursors, the raw requested limit); report it beside the frozen one")
+     args = parser.parse_args(argv)
+     if args.cutoff is not None and args.cutoff.tzinfo is None:
+         parser.error("--cutoff needs a UTC offset, e.g. 2026-10-25T17:00:00-04:00")
+@@ -470,7 +526,7 @@ def main(argv: list[str] | None = None) -> None:
+         report.insert(0, f"skipped {bad} unreadable line(s) (an interrupted write)")
+     for line in report:
+         print(line)
+-    rows = [score_episode(r) for r in records]
++    rows = [score_episode(r, fixes=args.fixes) for r in records]
+     if not rows:
+         raise SystemExit("no episodes found")
+     out = Path(args.out)
+diff --git a/tests/test_scoring_pieces.py b/tests/test_scoring_pieces.py
+new file mode 100644
+index 0000000..de92e2f
+--- /dev/null
++++ b/tests/test_scoring_pieces.py
+@@ -0,0 +1,122 @@
++"""The completion-time cutoff, per-model duplicate counts and the second scoring (24 Oct audit fixes)."""
++
++from dataclasses import asdict
++from datetime import datetime
++
++from fplp.agents.scripted import ScriptedClient
++from fplp.env.server import MockAPI
++from fplp.episode import run_episode
++from fplp.metrics import score_episode, select_records
++from fplp.signals.formats import Extent
++from fplp.tasks.specs import build_episode
++
++
++def _record(condition, spec, calls, final="FINAL ANSWER: 1"):
++    return {"episode_id": "t", "model": "m", "condition": condition.to_dict(), "calls": calls, "n_items": len(spec.rows),
++            "first_page_size": spec.first_page_size, "gold": asdict(spec.gold), "final_text": final,
++            "hit_cap": False, "stop_reason": "end_turn", "tokens_in": 0, "tokens_out": 0}
++
++
++def _api_calls(spec, args_by_turn):
++    """Serve the given calls, turn by turn, and stamp each logged call with its turn."""
++    api = MockAPI(spec)
++    for turn, calls in enumerate(args_by_turn, start=1):
++        for args in calls:
++            api.call(spec.target_tool, {**spec.target_args, **args})
++            api.calls[-1]["turn"] = turn
++    return api.calls
++
++
++def _minimal(eid, model, finished_at):
++    return {"episode_id": eid, "model": model, "finished_at": finished_at, "condition": {"task_type": "filtered_count"}}
++
++
++def test_cutoff_drops_late_episodes_per_model_and_keeps_undated_ones():
++    recs = [_minimal("a", "m1", "2026-10-25T20:59:59+00:00"), _minimal("b", "m1", "2026-10-25T21:00:00.5+00:00"),
++            _minimal("c", "m2", "2026-10-25T21:00:00+00:00"), {**_minimal("d", "m2", None)}]
++    kept, report = select_records(recs, None, cutoff=datetime.fromisoformat("2026-10-25T17:00:00-04:00"))
++    assert [r["episode_id"] for r in kept] == ["a", "c", "d"]  # 17:00:00 EDT itself is in
++    assert "m1: dropped 1 episode(s) finished after the cutoff 2026-10-25T17:00:00-04:00" in report
++    assert "m2: dropped 0 episode(s) finished after the cutoff 2026-10-25T17:00:00-04:00" in report
++    assert "WARNING m2: 1 episode(s) have no completion time; kept" in report
++
++
++def test_duplicates_are_counted_per_model_and_the_first_is_kept():
++    first, again = _minimal("a", "m1", "2026-10-25T01:00:00+00:00"), _minimal("a", "m1", "2026-10-25T02:00:00+00:00")
++    kept, report = select_records([first, again, _minimal("b", "m2", "2026-10-25T01:00:00+00:00")], None)
++    assert kept[0] is first and len(kept) == 2
++    assert report == ["m1: dropped 1 duplicate record(s) (same episode id; the first was kept)"]
++
++
++def test_no_cutoff_and_no_duplicates_reports_nothing_new():
++    kept, report = select_records([_minimal("a", "m1", "2026-10-25T01:00:00+00:00")], None)
++    assert len(kept) == 1 and report == []
++
++
++def test_fixes_change_nothing_on_an_ordinary_episode(make_condition):
++    rec = run_episode(ScriptedClient("f", "follow_all"), build_episode(make_condition("has_more", "filtered_count", 0)),
++                      max_tool_calls=12)
++    rec["episode_id"] = "t"
++    frozen, fixed = score_episode(rec), score_episode(rec, fixes=True)
++    assert {k: fixed[k] for k in frozen} == frozen
++    assert (fixed["requested_limit_raw"], fixed["asked_above_limit"], fixed["no_target_page"],
++            fixed["stratum_post_hoc"]) == (None, 0, 0, None)
++
++
++def test_first_turn_placeholder_cursor_is_not_a_fetch_under_the_fixes(make_condition):
++    c = make_condition("next_cursor", "filtered_count", 0, extent=Extent.LAST_FULL)
++    spec = build_episode(c)
++    rec = _record(c, spec, _api_calls(spec, [[{}, {"cursor": "null"}]]))
++    assert rec["calls"][1]["error"] == "invalid cursor"
++    frozen, fixed = score_episode(rec), score_episode(rec, fixes=True)
++    assert (frozen["follow_up"], frozen["speculative_fetch"], frozen["extra_fetch"]) == (1, 1, 1)
++    assert (fixed["follow_up"], fixed["speculative_fetch"], fixed["extra_fetch"]) == (0, 0, 0)
++
++
++def test_invented_cursor_after_page_one_is_still_a_fetch(make_condition):
++    c = make_condition("has_more", "filtered_count", 0)
++    spec = build_episode(c)
++    rec = _record(c, spec, _api_calls(spec, [[{}], [{"cursor": "ORD-90780"}]]))
++    assert score_episode(rec, fixes=True)["follow_up"] == 1  # a paging attempt after reading page 1
++
++
++def test_no_target_page_has_no_amendment_1_stratum(make_condition):
++    c = make_condition("has_more", "filtered_count", 0)
++    spec = build_episode(c)
++    rec = _record(c, spec, _api_calls(spec, [[{"page": 0}]]))
++    assert score_episode(rec)["disclosure_stratum"] == "warranted"
++    fixed = score_episode(rec, fixes=True)
++    assert fixed["disclosure_stratum"] is None and fixed["no_target_page"] == 1
++    assert fixed["stratum_post_hoc"] == "no_page_served"  # descriptive, post hoc
++
++
++def test_full_no_signal_page_on_a_last_extent_is_not_a_short_page(make_condition):
++    # Asking for 10 rows turns a 20-row last page into a full page with more behind it.
++    c = make_condition("none", "filtered_count", 0, extent=Extent.LAST_FULL)
++    spec = build_episode(c)
++    rec = _record(c, spec, _api_calls(spec, [[{"limit": 10}]]))
++    assert score_episode(rec)["disclosure_stratum"] == "short_page"
++    fixed = score_episode(rec, fixes=True)
++    assert fixed["disclosure_stratum"] == "warranted" and fixed["stratum_post_hoc"] == "warranted"
++
++
++def test_end_shown_after_skipped_rows_stays_warranted(make_condition):
++    # A truthful signal shows the end only on the last page; skipping a page leaves a needed row unseen. Page 1's
++    # truthful signal said more rows exist, so the Amendment 1 stratum is "warranted"; "end_shown" is post hoc.
++    c = make_condition("has_more", "filtered_count", 0, extent=Extent.MORE_FULL)
++    spec = build_episode(c)
++    last_page = 1 + -(-(len(spec.rows) - spec.first_page_size) // 20)
++    rec = _record(c, spec, _api_calls(spec, [[{}], [{"page": last_page}]]))
++    fixed = score_episode(rec, fixes=True)
++    assert fixed["evidence_seen"] == 0
++    assert score_episode(rec)["disclosure_stratum"] == fixed["disclosure_stratum"] == "warranted"
++    assert fixed["stratum_post_hoc"] == "end_shown"
++
++
++def test_raw_limit_above_the_page_limit_is_recorded(make_condition):
++    c = make_condition("has_more", "filtered_count", 0)
++    spec = build_episode(c)
++    rec = _record(c, spec, _api_calls(spec, [[{"limit": 50}]]))
++    frozen, fixed = score_episode(rec), score_episode(rec, fixes=True)
++    assert frozen["requested_limit"] == 20 and "requested_limit_raw" not in frozen
++    assert (fixed["requested_limit_raw"], fixed["asked_above_limit"]) == (50, 1)

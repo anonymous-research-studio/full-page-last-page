@@ -1,0 +1,88 @@
+diff --git a/src/fplp/metrics.py b/src/fplp/metrics.py
+index da2fdec..1662036 100644
+--- a/src/fplp/metrics.py
++++ b/src/fplp/metrics.py
+@@ -41,7 +41,8 @@ the hand labels instead. No LLM judge is used. The seeded vocabularies avoid wor
+ match ("partial", "incomplete").
+ 
+ `fplp score --config` keeps only the episodes that config plans under the current model settings,
+-drops duplicates, and reports missing episodes and mixed code versions.
++drops duplicates, and reports missing episodes and mixed code versions. `--cutoff` keeps only episodes
++finished at or before a time (by `finished_at`); dropped duplicates and late episodes are counted per model.
+ """
+ 
+ from __future__ import annotations
+@@ -360,19 +361,29 @@ def _read_records(files: list[Path]) -> tuple[list[dict], int]:
+ 
+ 
+ def select_records(records: list[dict], plan: dict[str, set[str]] | None,
+-                   snapshots: dict[str, str] | None = None) -> tuple[list[dict], list[str]]:
++                   snapshots: dict[str, str] | None = None,
++                   cutoff: datetime | None = None) -> tuple[list[dict], list[str]]:
+     """Keep one record per episode id, from retained task types, and (given a plan of episode ids per
+-    model) only planned episodes. Returns the kept records and report lines; warnings name mixed code
+-    versions or settings, which mean the episodes did not all come from the same harness."""
++    model) only planned episodes; with `cutoff`, only episodes whose recorded completion time
++    (`finished_at`) is at or before it (the completion-time cutoff fixed on 24 Oct 2026). Returns the
++    kept records and report lines; warnings name mixed code versions or settings, which mean the
++    episodes did not all come from the same harness."""
+     from fplp.conditions import TASK_NEED
+ 
+     seen: set[str] = set()
+-    kept, duplicates, retired, unplanned = [], 0, Counter(), Counter()
++    kept, duplicates, retired, unplanned = [], Counter(), Counter(), Counter()
++    late, undated = Counter(), Counter()
+     for rec in records:
+         if rec["episode_id"] in seen:
+-            duplicates += 1
++            duplicates[rec["model"]] += 1
+             continue
+         seen.add(rec["episode_id"])
++        if cutoff is not None:
++            if not rec.get("finished_at"):
++                undated[rec["model"]] += 1  # logs from before the field existed; kept, and reported
++            elif datetime.fromisoformat(rec["finished_at"]) > cutoff:
++                late[rec["model"]] += 1
++                continue
+         if rec["condition"]["task_type"] not in TASK_NEED:
+             retired[rec["condition"]["task_type"]] += 1
+         elif plan is not None and rec["episode_id"] not in plan.get(rec["model"], set()):
+@@ -381,8 +392,13 @@ def select_records(records: list[dict], plan: dict[str, set[str]] | None,
+             kept.append(rec)
+ 
+     report = []
+-    if duplicates:
+-        report.append(f"dropped {duplicates} duplicate record(s) (same episode id; the first was kept)")
++    for model, n in sorted(duplicates.items()):
++        report.append(f"{model}: dropped {n} duplicate record(s) (same episode id; the first was kept)")
++    if cutoff is not None:
++        for model in sorted({r["model"] for r in records}):
++            report.append(f"{model}: dropped {late[model]} episode(s) finished after the cutoff {cutoff.isoformat()}")
++        for model, n in sorted(undated.items()):
++            report.append(f"WARNING {model}: {n} episode(s) have no completion time; kept")
+     if retired:
+         report.append(f"dropped {sum(retired.values())} episode(s) of retired task types: {dict(retired)}")
+     for model, n in sorted(unplanned.items()):
+@@ -435,7 +451,12 @@ def main(argv: list[str] | None = None) -> None:
+     parser.add_argument("--config", help="run config whose planned episodes to keep, e.g. configs/runs/main.yaml; "
+                         "also reports missing episodes (use it for every confirmatory analysis)")
+     parser.add_argument("--models-file", default="configs/models.yaml")
++    parser.add_argument("--cutoff", type=datetime.fromisoformat,
++                        help="keep only episodes finished at or before this time, with its UTC offset, "
++                        "e.g. 2026-10-25T17:00:00-04:00 (the cutoff fixed on 24 Oct 2026)")
+     args = parser.parse_args(argv)
++    if args.cutoff is not None and args.cutoff.tzinfo is None:
++        parser.error("--cutoff needs a UTC offset, e.g. 2026-10-25T17:00:00-04:00")
+ 
+     records, bad = _read_records(_episode_files(args.inputs))
+     snapshots = None
+@@ -443,7 +464,8 @@ def main(argv: list[str] | None = None) -> None:
+         from fplp.config import load_models
+ 
+         snapshots = {name: m["snapshot"] for name, m in load_models(args.models_file).items() if m.get("snapshot")}
+-    records, report = select_records(records, _plan(args.config, args.models_file) if args.config else None, snapshots)
++    records, report = select_records(records, _plan(args.config, args.models_file) if args.config else None, snapshots,
++                                     args.cutoff)
+     if bad:
+         report.insert(0, f"skipped {bad} unreadable line(s) (an interrupted write)")
+     for line in report:

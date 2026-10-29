@@ -1,0 +1,38 @@
+model                  episodes  est. $/episode  est. total  basis
+scripted-signal            5280            free           -  free (scripted)
+scripted-if-full           5280            free           -  free (scripted)
+scripted-hybrid            5280            free           -  free (scripted)
+estimated spend: $0.00
+scripted-signal: 0 done, 5280 to run
+scripted-signal: 528/5280 (0 failed, 0 empty) 0.0 min
+scripted-signal: 1056/5280 (0 failed, 0 empty) 0.0 min
+scripted-signal: 1584/5280 (0 failed, 0 empty) 0.0 min
+scripted-signal: 2112/5280 (0 failed, 0 empty) 0.0 min
+scripted-signal: 2640/5280 (0 failed, 0 empty) 0.0 min
+scripted-signal: 3168/5280 (0 failed, 0 empty) 0.0 min
+scripted-signal: 3696/5280 (0 failed, 0 empty) 0.0 min
+scripted-signal: 4224/5280 (0 failed, 0 empty) 0.0 min
+scripted-signal: 4752/5280 (0 failed, 0 empty) 0.0 min
+scripted-signal: finished, 0 failed; 0 tokens in (0 read from the prompt cache), 0 out
+scripted-if-full: 0 done, 5280 to run
+scripted-if-full: 528/5280 (0 failed, 0 empty) 0.0 min
+scripted-if-full: 1056/5280 (0 failed, 0 empty) 0.0 min
+scripted-if-full: 1584/5280 (0 failed, 0 empty) 0.0 min
+scripted-if-full: 2112/5280 (0 failed, 0 empty) 0.0 min
+scripted-if-full: 2640/5280 (0 failed, 0 empty) 0.0 min
+scripted-if-full: 3168/5280 (0 failed, 0 empty) 0.0 min
+scripted-if-full: 3696/5280 (0 failed, 0 empty) 0.0 min
+scripted-if-full: 4224/5280 (0 failed, 0 empty) 0.0 min
+scripted-if-full: 4752/5280 (0 failed, 0 empty) 0.0 min
+scripted-if-full: finished, 0 failed; 0 tokens in (0 read from the prompt cache), 0 out
+scripted-hybrid: 0 done, 5280 to run
+scripted-hybrid: 528/5280 (0 failed, 0 empty) 0.0 min
+scripted-hybrid: 1056/5280 (0 failed, 0 empty) 0.0 min
+scripted-hybrid: 1584/5280 (0 failed, 0 empty) 0.0 min
+scripted-hybrid: 2112/5280 (0 failed, 0 empty) 0.0 min
+scripted-hybrid: 2640/5280 (0 failed, 0 empty) 0.0 min
+scripted-hybrid: 3168/5280 (0 failed, 0 empty) 0.0 min
+scripted-hybrid: 3696/5280 (0 failed, 0 empty) 0.0 min
+scripted-hybrid: 4224/5280 (0 failed, 0 empty) 0.0 min
+scripted-hybrid: 4752/5280 (0 failed, 0 empty) 0.0 min
+scripted-hybrid: finished, 0 failed; 0 tokens in (0 read from the prompt cache), 0 out

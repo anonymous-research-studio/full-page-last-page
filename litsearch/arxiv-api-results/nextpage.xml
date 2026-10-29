@@ -1,0 +1,957 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/V3Z3fRX038q8HyBWwJeDY06GXKU</id>
+  <title>arXiv Query: search_query=(abs:"next page" OR abs:"more results" OR abs:"total count" OR abs:"result limit" OR abs:"page size") AND (abs:agent OR abs:agents OR abs:LLM OR abs:LLMs)&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:05:31Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(abs:%22next+page%22+OR+(abs:%22more+results%22+OR+(abs:%22total+count%22+OR+(abs:%22result+limit%22+OR+abs:%22page+size%22))))+AND+(abs:agent+OR+(abs:agents+OR+(abs:LLM+OR+abs:LLMs)))&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>34</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.24032v1</id>
+    <title>Visual Causal-chain Bookmarking: Retrieval-Weighted Credit Assignment for Reinforcement Learning from Delayed Reward</title>
+    <updated>2026-10-16T09:27:19Z</updated>
+    <link href="https://arxiv.org/abs/2610.24032v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.24032v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>RL agents trained on a single trajectory-level return face a credit-assignment problem: when a reward arrives many steps after the decision that caused it, every action gets the same signal regardless of causal responsibility. This paper studies Visual Causal-chain Bookmarking (VCBM), which concentrates credit on the decision points that determine an episode's return, via two instantiations. The first targets a fully observed, low-dimensional MDP (a delayed-reward watch-repair task), where VCBM statistically discovers which state components the agent causally controls and estimates per-decision-point action values directly, evaluated against ground truth and RUDDER, an LSTM-based baseline. VCBM converges to 95.07% correct decisions in a mean of 1,532.3 episodes across 20 seeds, versus RUDDER's slower, more variable convergence (mean 3,327.1 episodes; p&lt;0.001); VCBM's discovered causal structure exactly matches ground truth in all seeds. The second targets a partially observed, language-based setting: an LLM agent trained with Leave-One-Out PPO (LOOP) in AppWorld, where causal discovery is intractable and a structural heuristic (state-mutating tool calls) substitutes for it, with credit distributed via retrieval over episodic memory and blended with LOOP's advantage. Over 200 iterations on identical Qwen2.5-7B-Instruct/LoRA/FSDP2 configurations, VCBM-blended LOOP improves task success over plain LOOP (0.354 vs. 0.458), reduces final-step max importance weight, and improves token efficiency, with a small KL exception favouring LOOP. The watch-repair result supports the claim that weighting causally relevant steps is more sample-efficient than an undifferentiated baseline or a learned return-redistribution network; the AppWorld result, limited to one seed per arm by a 2-GPU budget, is a compute-limited demonstration at a harder, natural-language scale, not a statistical confirmation.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-16T09:27:19Z</published>
+    <arxiv:comment>9 pages, 2 figures, 5 tables. Master's dissertation research, University of Manchester</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Prathap Selvakumar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.37317v1</id>
+    <title>What Comes Next? Omni-StoryBench for Evaluating Story-Grounded Omnimodal Generation</title>
+    <updated>2026-09-29T11:53:15Z</updated>
+    <link href="https://arxiv.org/abs/2609.37317v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.37317v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Omnimodal evaluation should go beyond independent text, image, and speech production: individually plausible outputs may not express a coherent shared event. We introduce Omni-StoryBench, a story-grounded omnimodal benchmark evaluating whether models can coherently continue stories across image, narration, and speech. Each instance provides a current storybook page and structured next-page conditions, requiring models to generate the next illustration, narration, and spoken character utterance. Omni-StoryBench contains 900 rigorously validated story transitions from openly licensed children's books, with ground-truth next-page references and speech metadata. We evaluate systems with modality-specific metrics and consistency-centered LLM-as-a-judge rubrics for context preservation, condition following, reference consistency, and cross-modal coherence. Across 32 baseline configurations spanning orchestration, semi-orchestration, and native any-to-any paradigms, we find orchestration with strong VLM planning most reliable, while current native omnimodal models often struggle with output completeness and controllability. Our analysis shows text-side performance is associated with image and speech quality, but image generation and visual continuity form the clearest observed bottleneck among the evaluated configurations. These results position Omni-StoryBench as a system-level benchmark measuring coherent omnimodal generation beyond isolated modality quality.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T11:53:15Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Sieun Hyeon</name>
+    </author>
+    <author>
+      <name>Yejoon Lee</name>
+    </author>
+    <author>
+      <name>Mintaek Lim</name>
+    </author>
+    <author>
+      <name>Woojin Kim</name>
+    </author>
+    <author>
+      <name>Jaeik Kim</name>
+    </author>
+    <author>
+      <name>Jaeyoung Do</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.13592v1</id>
+    <title>BOOST: Concurrent Access to Host Memory and HBM to Accelerate LLM Inference</title>
+    <updated>2026-09-11T23:02:24Z</updated>
+    <link href="https://arxiv.org/abs/2609.13592v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.13592v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>GPU memory bandwidth and capacity limit throughput in large language model (LLM) inference. The GPU memory system consists of a primary tier of high-bandwidth memory (HBM) and a secondary tier of host memory connected via CPU-to-GPU interconnect. Current serving systems treat the tiers hierarchically: they serve exclusively from HBM when data fits, and otherwise prefetch data from host memory to HBM before use. In both cases, the host memory bandwidth is never well utilized. Prefetching expands capacity by utilizing host memory, but consumes HBM bandwidth for writes, reducing the bandwidth available for demand loads. We observe that fully utilizing both host and HBM bandwidth requires each wave of GPU threadblocks to access both tiers concurrently and in proportion to their bandwidth ratio. Existing bandwidth-proportional placement strategies fail to provide concurrency because they are not aware of GPU waves, and the large 2MB GPU page size.
+  This paper presents BOOST, the first runtime system that provides concurrent and proportional access to both GPU memory tiers, extracting the combined bandwidth of host memory and HBM for LLM inference without kernel changes. The key insight in BOOST is to use kernel access patterns to make page allocation and runtime data management wave-aware. For static model weights, BOOST applies modulo-based page placement that eliminates access-ratio variance; for dynamically provisioned attention key-value (KV) pairs, it makes the free KV page pool wave-aware. We integrate BOOST into vLLM and evaluate on a Grace Hopper system. At iso-batch size, BOOST improves Time-per-Output-Token (TPOT) by 4.3% over HBM-only serving, whereas prefetching degrades TPOT by 6%. In high-throughput serving, BOOST improves throughput by 31% on average, outperforming prefetching by 15%.</summary>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-11T23:02:24Z</published>
+    <arxiv:comment>15 pages, 22 Figures</arxiv:comment>
+    <arxiv:primary_category term="cs.DC"/>
+    <author>
+      <name>Anish Saxena</name>
+    </author>
+    <author>
+      <name>Jae Hyung Ju</name>
+    </author>
+    <author>
+      <name>Hritvik Taneja</name>
+    </author>
+    <author>
+      <name>Po-An Tsai</name>
+    </author>
+    <author>
+      <name>Aamer Jaleel</name>
+    </author>
+    <author>
+      <name>Christos Kozyrakis</name>
+    </author>
+    <author>
+      <name>Moinuddin Qureshi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.10400v1</id>
+    <title>A traffic management system for large and heterogeneous vehicles in narrow industrial environments</title>
+    <updated>2026-09-09T16:20:51Z</updated>
+    <link href="https://arxiv.org/abs/2609.10400v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.10400v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The coordination of Automated Guided Vehicles (AGVs) in high-density industrial environments represents a critical challenge within Logistics 4.0, as traditional traffic management methods often lead to inefficiencies caused by negotiation-based priority assignment. To overcome the resulting limitations, this paper presents an innovative AGV traffic management system based on a Lifelong Multi-Agent Path Finding (L-MAPF) algorithm operating on roadmaps generated with Non-Uniform Rational B-Splines (NURBS) curves. The approach guarantees locally optimal coordination and ensures safe operation of large and heterogeneous AGVs. Building on this concept, the proposed framework integrates a modified version of the Bounded Horizon Conflict Based Search (CBS) technique within a Rolling Horizon Conflict Resolution strategy, utilizing an extended time horizon for each agent to enable effective conflict resolution in corridors identified by a topological map. In contrast to state-of-the-art methods for AGV fleet traffic management, the proposed solution is designed for real-world, non-standardized (i.e., non-grid-like) industrial settings characterized by narrow bidirectional corridors and high-traffic density, where AGVs of various sizes and capabilities operate simultaneously. Key contributions include an anytime conflict resolution strategy with adaptive time horizon regulation, an execution layer for safe and standard-compliant interaction with real AGVs, and an advanced mechanism for deadlock detection and resolution. Experimental results obtained in realistic industrial environments demonstrate higher throughput, with improvements of up to 11% over a conventional rule-based traffic management system, a state-of-the-art industrial method, and a priority-based L-MAPF variant, while maintaining continuous operation and improved efficiency.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-09T16:20:51Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <arxiv:journal_ref>The International Journal of Robotics Research. 2026</arxiv:journal_ref>
+    <author>
+      <name>Alessandro Bonetti</name>
+    </author>
+    <author>
+      <name>Silvia Proia</name>
+    </author>
+    <author>
+      <name>Simone Guidetti</name>
+    </author>
+    <author>
+      <name>Lorenzo Sabattini</name>
+    </author>
+    <arxiv:doi>10.1177/02783649261470035</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1177/02783649261470035" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.27463v2</id>
+    <title>Rating the Raters: Rasch Measurement Theory for LLM Evaluation</title>
+    <updated>2026-09-01T23:00:58Z</updated>
+    <link href="https://arxiv.org/abs/2608.27463v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.27463v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLMs now sit on every side of evaluation: as examinees scored on benchmarks, judges of other models' outputs, and raters of human-generated content. Each paradigm can be viewed as a measurement problem, where a latent property of an object is probed with items from an instrument (e.g., benchmark) by judges or raters. Standard evaluation practices often neglect the contributions of each core component to the end result, limiting our understanding of what is being measured. Rasch measurement theory (RMT) is well-suited to this problem. RMT decomposes ordinal ratings into separable facets on a common scale. It further provides a battery of diagnostics that can identify miscalibrated measurements and rater biases. We present a case study of RMT applied to the LLM-as-rater paradigm using the Measuring Hate Speech corpus, whose construct was itself built under RMT. We fit a series of many-facet Rasch models to annotations from nine LLMs spanning families and capability levels. Our analyses show that LLMs systematically differ from human raters in severity, item-level calibration, question-order robustness, target-identity sensitivity, and rating scale use, all of which standard evaluation practice would largely obscure. Overall, we argue that RMT belongs in the toolkit for evaluating LLM-as-examinee, -judge, and -rater paradigms.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-14T18:32:15Z</published>
+    <arxiv:comment>Accepted to EMNLP 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Pratik S. Sachdeva</name>
+    </author>
+    <author>
+      <name>Nathan Boudol</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.07676v1</id>
+    <title>SkillCenter: A Large-Scale Source-Grounded Skill Library for Autonomous AI Agents</title>
+    <updated>2026-07-08T17:34:28Z</updated>
+    <link href="https://arxiv.org/abs/2607.07676v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.07676v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Autonomous AI agents can execute complex tasks with limited human review, yet they often lack the grounded operational knowledge to make their outputs not just executable but correct, secure, and maintainable. We introduce SkillCenter, to our knowledge the largest open skill library for agents by total count: 216,938 structured skills across 24 domain bundles. A SkillGate-filtered pipeline contributes 114,565 source-grounded skills from peer-reviewed journals, ArXiv, and over 24,000 technical sources, integrated with 102,373 community skills from GitHub and the ClawHub marketplace. We present the end-to-end framework that builds the pipeline subset: multi-source acquisition, an LLM-based quality gate (SkillGate), template-driven generation, iterative source-grounding, and quality-controlled publishing. Source grounding is a traceability guarantee: each retained claim maps to an exact quotation in its source. All skills ship as offline-searchable SQLite FTS5 bundles.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-08T17:34:28Z</published>
+    <arxiv:comment>44 pages, 5 figures. Code: https://github.com/LabRAI/SkillCenter ; Data: https://huggingface.co/datasets/Tommysha/skillcenter-bundles</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tianming Sha</name>
+    </author>
+    <author>
+      <name>Yue Zhao</name>
+    </author>
+    <author>
+      <name>Lichao Sun</name>
+    </author>
+    <author>
+      <name>Yushun Dong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.26666v2</id>
+    <title>PersistentKV: Page-Aware Decode Scheduling for Long-Context LLM Serving on Commodity GPUs</title>
+    <updated>2026-07-01T08:54:32Z</updated>
+    <link href="https://arxiv.org/abs/2606.26666v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.26666v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Autoregressive large language model (LLM) serving is increasingly limited by key-value (KV) cache movement rather than dense matrix multiplication. Modern paged-attention systems reduce fragmentation, and mature kernels like FlashInfer provide highly optimized decode attention. However, the best single-kernel implementation is not always the best serving schedule: low-active long-context decode can under-utilize GPUs, while mixed sequence lengths introduce tension between many exact-length launches and coarse padded batches.
+  We present PersistentKV, a native block-table decode attention engine and page-aware scheduling study for grouped-query attention (GQA). PersistentKV maps work by KV-head group, executes directly over native page tables, and adds a compact workqueue schedule executing only non-empty row-KV-head-sequence-split tasks.
+  On an RTX 3060 (FP16, page size 16, Hq=32, Hkv=8, d=128), a calibrated roofline-style policy selects FlashInfer for small active batches, PersistentKV sequence splitting for batch size 1 (B1) long-context steps, and PersistentKV workqueue scheduling for supported B8 long-context GQA steps. With cost-model constants fixed on calibration traces, five held-out seeds improve mean wall decode-token throughput by 1.04x to 1.08x on B8 bimodal, uniform, and Zipf-like workloads, and by 1.40x on a B1 bucketed trace. For the B4 boundary case and uncalibrated GQA ratios, the policy avoids regressions by routing to FlashInfer. We also report an attention-plus-MLP timing proxy and workload counters showing workqueue scheduling reduces launch fan-out from 16.00 to 2.00 launches per step on held-out bimodal B8. These results show that work assignment is a decisive serving-system variable.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-25T06:56:43Z</published>
+    <arxiv:comment>7 pages, 3 tables; workshop paper</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Muhammad Ahmed</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.07066v4</id>
+    <title>2.5-D Decomposition for LLM-Based Spatial Construction</title>
+    <updated>2026-07-11T16:40:21Z</updated>
+    <link href="https://arxiv.org/abs/2605.07066v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.07066v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Autonomous systems that build structures from natural-language instructions need reliable spatial reasoning, yet large language models (LLMs) make systematic coordinate errors when generating three-dimensional block placements. We present a neuro-symbolic pipeline based on 2.5-D decomposition: the LLM plans in the two-dimensional horizontal plane while a deterministic executor computes all vertical placements from column occupancy, eliminating an entire class of errors. On the Build What I Mean benchmark (160 rounds), GPT-4o-mini with this pipeline achieves 94.6% mean structural accuracy across 12 independent runs, within 3.0 percentage points of the 97.6% ceiling imposed by architect-agent errors that no builder-side improvement can address. This outperforms both GPT-4o at 90.3% and the best competing system at 76.3%. A controlled ablation confirms that 2.5-D decomposition is the dominant contributor, accounting for 28.7 percentage points of accuracy. The pipeline transfers directly to edge hardware: Nemotron-3 120B on an NVIDIA Jetson Thor AGX achieves 96.0% mean structural accuracy with the identical pipeline, slightly exceeding the cloud result. Expanding the system prompt by four targeted examples to exceed the model's 8,320-token prefix cache page size, combined with low-effort reasoning, reduces mean per-request latency by 3X to 19.7 seconds at 95.6% accuracy. The underlying principle, removing deterministic dimensions from the LLM's output space, applies to any autonomous construction or assembly task where gravity or other physical constraints fix one or more degrees of freedom. A transfer experiment on 500 IGLU collaborative building tasks confirms the effect generalizes beyond the primary benchmark.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-08T00:17:33Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Paul Whitten</name>
+    </author>
+    <author>
+      <name>Li-Jen Chen</name>
+    </author>
+    <author>
+      <name>Sharath Baddam</name>
+    </author>
+    <arxiv:doi>10.1109/NAECON70028.2026.11674959</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/NAECON70028.2026.11674959" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.03713v4</id>
+    <title>SPEC CPU2026: Characterization, Representativeness, and Cross-Suite Comparison</title>
+    <updated>2026-08-07T03:39:51Z</updated>
+    <link href="https://arxiv.org/abs/2605.03713v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.03713v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Specialized accelerators dominate AI workloads, but CPUs remain critical for latency-sensitive workloads, agentic AI, and many other everyday services. Their performance therefore shapes end-to-end system efficiency, raising the question of whether the latest SPEC CPU benchmarks change the architectural conclusions drawn from prior generations. We comprehensively characterize SPEC CPU2026 across nine recent Intel, AMD, Ampere, and Nvidia platforms to understand how the new suite differs from its predecessors and what new capabilities it introduces. We observe that compared with SPEC CPU2017, SPEC CPU2026 increases instruction volume, memory footprint, and instruction-cache stress.
+  We also compare SPEC CPU2026 with SPEC CPU2017, recent datacenter and machine learning suites DCPerf and MLPerf, and agentic AI probes, using microarchitectural metrics to understand how specialized suites resemble and differ from SPEC CPU suites. We note that SPEC CPU2026 remains a complementary general-purpose suite: closer to datacenter-like frontend pressure than prior CPU benchmark generations, yet less vector-intensive than MLPerf and less frontend-extreme than DCPerf. Importantly, the expanded frontend envelope closely matches emerging CPU-centric agentic AI workloads: an agentic pipeline's features fall inside SPEC CPU2026's behavioral spread, making the suite a ready-made evaluation proxy for this fast-growing workload class. Furthermore, case studies on page sizes and memory allocators, prefetching, compilers, ISA sensitivity, many-core scaling, and rolling round-robin (RRR) runs (new in SPEC CPU2026) demonstrate the suite's utility beyond aggregate scores. Overall, SPEC CPU2026 updates the standardized general-purpose CPU baseline for the next decade of architecture evaluation.</summary>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PF" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-05T13:02:55Z</published>
+    <arxiv:primary_category term="cs.AR"/>
+    <author>
+      <name>Ruihao Li</name>
+    </author>
+    <author>
+      <name>Andrew Jacob</name>
+    </author>
+    <author>
+      <name>Neeraja J. Yadwadkar</name>
+    </author>
+    <author>
+      <name>Lizy K. John</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.09749v1</id>
+    <title>R-LAM: Reproducibility-Constrained Large Action Models for Scientific Workflow Automation</title>
+    <updated>2026-01-12T12:13:14Z</updated>
+    <link href="https://arxiv.org/abs/2601.09749v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.09749v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Action Models (LAMs) extend large language models by enabling autonomous decision-making and tool execution, making them promising for automating scientific workflows. However, scientific workflows impose strict requirements on reproducibility, auditability, and deterministic execution, which are not satisfied by generic LLM-based agents. Unconstrained action generation can lead to silent state changes, non-deterministic executions, and irreproducible experimental results, limiting the applicability of LAMs in scientific settings.
+  In this paper, we propose R-LAM, a reproducibility-constrained framework for applying Large Action Models to scientific workflow automation. R-LAM introduces structured action schemas, deterministic execution policies, and explicit provenance tracking to ensure that every action and intermediate artifact is auditable and replayable. The framework supports failure-aware execution loops and controlled workflow forking, enabling iterative experimentation without compromising reproducibility.
+  We implement R-LAM as a lightweight Python framework and release it as an open-source PyPI package to facilitate reproducible research. An experimental evaluation of representative scientific workflows demonstrates that R-LAM improves reproducibility success rates and execution reliability compared to unconstrained LLM-based agents, while retaining adaptive control over workflow execution.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-12T12:13:14Z</published>
+    <arxiv:comment>9 pages, 3 figures, 1 Table, 2 Artifacts</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Suriya Sureshkumar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.02989v2</id>
+    <title>Mechanistic Interpretability of Large-Scale Counting in LLMs through a System-2 Strategy</title>
+    <updated>2026-04-21T22:36:16Z</updated>
+    <link href="https://arxiv.org/abs/2601.02989v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.02989v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs), despite strong performance on complex mathematical problems, exhibit systematic limitations in counting tasks. This issue arises from the architectural limits of transformers, where counting is performed across layers, leading to degraded precision for larger counting problems due to depth constraints. To address this limitation, we propose a simple test-time strategy inspired by System-2 cognitive processes that decomposes large counting tasks into smaller, independent sub-problems that the model can reliably solve. We evaluate this approach using observational and causal mediation analyses to understand the underlying mechanism of this System-2-like strategy. Our mechanistic analysis identifies key components: latent counts are computed and stored in the final item representations of each part, transferred to intermediate steps via dedicated attention heads, and aggregated in the final stage to produce the total count. Experimental results demonstrate that this strategy enables LLMs to surpass architectural limitations and achieve higher accuracy on large-scale counting tasks. This work provides mechanistic insight into System-2 counting in LLMs and presents a generalizable approach for improving and understanding their reasoning behavior.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-06T12:58:27Z</published>
+    <arxiv:comment>ACL 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Hosein Hasani</name>
+    </author>
+    <author>
+      <name>Mohammadali Banayeeanzade</name>
+    </author>
+    <author>
+      <name>Ali Nafisi</name>
+    </author>
+    <author>
+      <name>Sadegh Mohammadian</name>
+    </author>
+    <author>
+      <name>Fatemeh Askari</name>
+    </author>
+    <author>
+      <name>Mobin Bagherian</name>
+    </author>
+    <author>
+      <name>Amirmohammad Izadi</name>
+    </author>
+    <author>
+      <name>Mahdieh Soleymani Baghshah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.21559v1</id>
+    <title>X-CoT: Explainable Text-to-Video Retrieval via LLM-based Chain-of-Thought Reasoning</title>
+    <updated>2025-09-25T20:39:45Z</updated>
+    <link href="https://arxiv.org/abs/2509.21559v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.21559v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Prevalent text-to-video retrieval systems mainly adopt embedding models for feature extraction and compute cosine similarities for ranking. However, this design presents two limitations. Low-quality text-video data pairs could compromise the retrieval, yet are hard to identify and examine. Cosine similarity alone provides no explanation for the ranking results, limiting the interpretability. We ask that can we interpret the ranking results, so as to assess the retrieval models and examine the text-video data? This work proposes X-CoT, an explainable retrieval framework upon LLM CoT reasoning in place of the embedding model-based similarity ranking. We first expand the existing benchmarks with additional video annotations to support semantic understanding and reduce data bias. We also devise a retrieval CoT consisting of pairwise comparison steps, yielding detailed reasoning and complete ranking. X-CoT empirically improves the retrieval performance and produces detailed rationales. It also facilitates the model behavior and data quality analysis. Code and data are available at: https://github.com/PrasannaPulakurthi/X-CoT.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-25T20:39:45Z</published>
+    <arxiv:comment>12 pages, 7 figures. Accepted at EMNLP 2025 (Main Conference)</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <arxiv:journal_ref>Proc. EMNLP 2025, pages 31172-31183, Suzhou, China, Nov. 2025</arxiv:journal_ref>
+    <author>
+      <name>Prasanna Reddy Pulakurthi</name>
+    </author>
+    <author>
+      <name>Jiamian Wang</name>
+    </author>
+    <author>
+      <name>Majid Rabbani</name>
+    </author>
+    <author>
+      <name>Sohail Dianat</name>
+    </author>
+    <author>
+      <name>Raghuveer Rao</name>
+    </author>
+    <author>
+      <name>Zhiqiang Tao</name>
+    </author>
+    <arxiv:doi>10.18653/v1/2025.emnlp-main.1588</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.18653/v1/2025.emnlp-main.1588" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.19571v2</id>
+    <title>Agentic Scene Policies</title>
+    <updated>2026-10-07T01:53:33Z</updated>
+    <link href="https://arxiv.org/abs/2509.19571v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.19571v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Designing or learning robot policies that generalize zero-shot across a range of language instructions and objects is a core problem in robotics. Vision-Language-Action models (VLAs) learn such policies end-to-end by repurposing existing Vision-Language Models (VLMs), but generalization to new instructions and objects remains challenging. An alternative is to implement a modular policy by leveraging an explicit VLM-based 3D scene representation and motion planning. While modular policies show strong zero-shot potential, they typically retrieve objects based on semantics without explicit spatial reasoning, severely restricting their overall grounding capabilities. They also interact with objects using basic grasping and navigation skills. In this work, we address these limitations by unifying grounding capabilities and robot skills in a single agentic action space through a scene-agent tool interface. By leveraging part-level affordances, our skills generalize across diverse objects and enable zero-shot interactions such as unplugging chargers and opening drawers. We name the resulting framework Agentic Scene Policies (ASP). Through extensive real-world experiments, we show how ASP consistently outperforms leading VLAs in the zero-shot setting. We also demonstrate the extensibility of our framework by introducing a mobile version of ASP to tackle room-level queries. See our project page (https://montrealrobotics.ca/agentic-scene-policies.github.io/) for more results.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-23T20:56:00Z</published>
+    <arxiv:comment>Accepted to IROS 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Sacha Morin</name>
+    </author>
+    <author>
+      <name>Kumaraditya Gupta</name>
+    </author>
+    <author>
+      <name>Mahtab Sandhu</name>
+    </author>
+    <author>
+      <name>Charlie Gauthier</name>
+    </author>
+    <author>
+      <name>Francesco Argenziano</name>
+    </author>
+    <author>
+      <name>Kirsty Ellis</name>
+    </author>
+    <author>
+      <name>Liam Paull</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.20965v1</id>
+    <title>DrivingGaussian++: Towards Realistic Reconstruction and Editable Simulation for Surrounding Dynamic Driving Scenes</title>
+    <updated>2025-08-28T16:22:54Z</updated>
+    <link href="https://arxiv.org/abs/2508.20965v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.20965v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present DrivingGaussian++, an efficient and effective framework for realistic reconstructing and controllable editing of surrounding dynamic autonomous driving scenes. DrivingGaussian++ models the static background using incremental 3D Gaussians and reconstructs moving objects with a composite dynamic Gaussian graph, ensuring accurate positions and occlusions. By integrating a LiDAR prior, it achieves detailed and consistent scene reconstruction, outperforming existing methods in dynamic scene reconstruction and photorealistic surround-view synthesis. DrivingGaussian++ supports training-free controllable editing for dynamic driving scenes, including texture modification, weather simulation, and object manipulation, leveraging multi-view images and depth priors. By integrating large language models (LLMs) and controllable editing, our method can automatically generate dynamic object motion trajectories and enhance their realism during the optimization process. DrivingGaussian++ demonstrates consistent and realistic editing results and generates dynamic multi-view driving scenarios, while significantly enhancing scene diversity. More results and code can be found at the project site: https://xiong-creator.github.io/DrivingGaussian_plus.github.io</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-28T16:22:54Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Yajiao Xiong</name>
+    </author>
+    <author>
+      <name>Xiaoyu Zhou</name>
+    </author>
+    <author>
+      <name>Yongtao Wan</name>
+    </author>
+    <author>
+      <name>Deqing Sun</name>
+    </author>
+    <author>
+      <name>Ming-Hsuan Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.04337v2</id>
+    <title>Modelling and Classifying the Components of a Literature Review</title>
+    <updated>2026-02-09T20:58:49Z</updated>
+    <link href="https://arxiv.org/abs/2508.04337v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.04337v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Previous work has demonstrated that AI methods for analysing scientific literature benefit significantly from annotating sentences in papers according to their rhetorical roles, such as research gaps, results, limitations, extensions of existing methodologies, and others. Such representations also have the potential to support the development of a new generation of systems capable of producing high-quality literature reviews. However, achieving this goal requires the definition of a relevant annotation schema and effective strategies for large-scale annotation of the literature. This paper addresses these challenges in two ways: 1) it introduces a novel, unambiguous annotation schema that is explicitly designed for reliable automatic processing, and 2) it presents a comprehensive evaluation of a wide range of large language models (LLMs) on the task of classifying rhetorical roles according to this schema. To this end, we also present Sci-Sentence, a novel multidisciplinary benchmark comprising 700 sentences manually annotated by domain experts and 2,240 sentences automatically labelled using LLMs. We evaluate 37 LLMs on this benchmark, spanning diverse model families and sizes, using both zero-shot learning and fine-tuning approaches. The experiments reveal that modern LLMs achieve strong results on this task when fine-tuned on high-quality data, surpassing 96% F1, with both large proprietary models such as GPT-4o and lightweight open-source alternatives performing well. Moreover, augmenting the training set with semi-synthetic LLM-generated examples further boosts performance, enabling small encoders to achieve robust results and substantially improving several open decoder models.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-06T11:30:07Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Francisco Bolaños</name>
+    </author>
+    <author>
+      <name>Angelo Salatino</name>
+    </author>
+    <author>
+      <name>Francesco Osborne</name>
+    </author>
+    <author>
+      <name>Enrico Motta</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.03531v1</id>
+    <title>Faster MoE LLM Inference for Extremely Large Models</title>
+    <updated>2025-05-06T13:41:17Z</updated>
+    <link href="https://arxiv.org/abs/2505.03531v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.03531v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Sparse Mixture of Experts (MoE) large language models (LLMs) are gradually becoming the mainstream approach for ultra-large-scale models. Existing optimization efforts for MoE models have focused primarily on coarse-grained MoE architectures. With the emergence of DeepSeek Models, fine-grained MoE models are gaining popularity, yet research on them remains limited. Therefore, we want to discuss the efficiency dynamic under different service loads. Additionally, fine-grained models allow deployers to reduce the number of routed experts, both activated counts and total counts, raising the question of how this reduction affects the trade-off between MoE efficiency and performance. Our findings indicate that while deploying MoE models presents greater challenges, it also offers significant optimization opportunities. Reducing the number of activated experts can lead to substantial efficiency improvements in certain scenarios, with only minor performance degradation. Reducing the total number of experts provides limited efficiency gains but results in severe performance degradation. Our method can increase throughput by at least 10\% without any performance degradation. Overall, we conclude that MoE inference optimization remains an area with substantial potential for exploration and improvement.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-06T13:41:17Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Haoqi Yang</name>
+    </author>
+    <author>
+      <name>Luohe Shi</name>
+    </author>
+    <author>
+      <name>Qiwei Li</name>
+    </author>
+    <author>
+      <name>Zuchao Li</name>
+    </author>
+    <author>
+      <name>Ping Wang</name>
+    </author>
+    <author>
+      <name>Bo Du</name>
+    </author>
+    <author>
+      <name>Mengjia Shen</name>
+    </author>
+    <author>
+      <name>Hai Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2504.08727v3</id>
+    <title>Visual Chronicles: Using Multimodal LLMs to Analyze Massive Collections of Images</title>
+    <updated>2025-09-23T17:04:48Z</updated>
+    <link href="https://arxiv.org/abs/2504.08727v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.08727v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present a system using Multimodal LLMs (MLLMs) to analyze a large database with tens of millions of images captured at different times, with the aim of discovering patterns in temporal changes. Specifically, we aim to capture frequent co-occurring changes ("trends") across a city over a certain period. Unlike previous visual analyses, our analysis answers open-ended queries (e.g., "what are the frequent types of changes in the city?") without any predetermined target subjects or training labels. These properties cast prior learning-based or unsupervised visual analysis tools unsuitable. We identify MLLMs as a novel tool for their open-ended semantic understanding capabilities. Yet, our datasets are four orders of magnitude too large for an MLLM to ingest as context. So we introduce a bottom-up procedure that decomposes the massive visual analysis problem into more tractable sub-problems. We carefully design MLLM-based solutions to each sub-problem. During experiments and ablation studies with our system, we find it significantly outperforms baselines and is able to discover interesting trends from images captured in large cities (e.g., "addition of outdoor dining,", "overpass was painted blue," etc.). See more results and interactive demos at https://boyangdeng.com/visual-chronicles.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-11T17:55:45Z</published>
+    <arxiv:comment>ICCV 2025, Project page: https://boyangdeng.com/visual-chronicles , second and third listed authors have equal contributions</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Boyang Deng</name>
+    </author>
+    <author>
+      <name>Songyou Peng</name>
+    </author>
+    <author>
+      <name>Kyle Genova</name>
+    </author>
+    <author>
+      <name>Gordon Wetzstein</name>
+    </author>
+    <author>
+      <name>Noah Snavely</name>
+    </author>
+    <author>
+      <name>Leonidas Guibas</name>
+    </author>
+    <author>
+      <name>Thomas Funkhouser</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.04280v3</id>
+    <title>Mean-Field Analysis of Latent Variable Process Models on Dynamically Evolving Graphs with Feedback Effects</title>
+    <updated>2026-04-22T23:40:58Z</updated>
+    <link href="https://arxiv.org/abs/2502.04280v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.04280v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the mean-field limit of a generic class of dynamic co-evolving latent space networks motivated by the social and opinion dynamics literature. Such models include $n$ agents, whose opinions are given by latent stochastic processes, and a dynamic network process describing agent interactions. Models in this class incorporate (a) bi-directional feedback between the latent processes and the network process, (b) persistence effects, meaning that the network structure at the current time depends on the value of the latent processes at the current time but also on the network structure at the previous time instance and (c) localized interactions, meaning that individual agents do not have global information. We characterize the distributional limit of a random sample taken from the latent space network as the number of nodes in the network diverges. We describe the rich conditional probabilistic structure of the resulting limiting model which we use to establish the limiting behavior of the following quantities: (i) the empirical measure of the latent process, (ii) a conditional empirical measure relating the latent process to the network process and (iii) the network process graphon. In proving our main results, we derive a general conditional propagation of chaos result, which is of independent interest. Our novel approach to studying the limiting behavior of random samples proves to be a very useful methodology for fully grasping the asymptotic behavior of co-evolving particle systems. Numerical results are included to illustrate the theoretical findings.</summary>
+    <category term="math.PR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-06T18:27:13Z</published>
+    <arxiv:comment>69 pages, 5 figures, 2 tables</arxiv:comment>
+    <arxiv:primary_category term="math.PR"/>
+    <author>
+      <name>Ankan Ganguly</name>
+    </author>
+    <author>
+      <name>Konstantinos Spiliopoulos</name>
+    </author>
+    <author>
+      <name>Daniel Sussman</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2501.10711v5</id>
+    <title>Code Benchmarks Should Prioritize Rigor, Reliability, and Reproducibility</title>
+    <updated>2026-07-06T06:02:32Z</updated>
+    <link href="https://arxiv.org/abs/2501.10711v5" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2501.10711v5" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Code-related benchmarks play a critical role in evaluating large language models (LLMs), yet their quality fundamentally shapes how the community interprets model capabilities. In the past few years, awareness of benchmark quality has grown. Yet, after a decade-scale (2014-2025) survey over 672 code benchmarks, we observed a lag between growing awareness and actual practice. For example, in 2025 alone, the number of benchmarks that ignore code coverage when providing test cases nearly matches the total count accumulated across the previous ten years. In response, we take a clear position: Code benchmarks must prioritize rigor in benchmark construction, reliability in evaluation, and reproducibility in release. To operationalize this position, we introduce a code benchmark guideline HOW2BENCH with 55 checklists. Finally, our further human study also exposed that the current issues not only stem from the significant effort required, but also from a lack of awareness regarding their importance.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-01-18T09:51:57Z</published>
+    <arxiv:comment>66 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Jialun Cao</name>
+    </author>
+    <author>
+      <name>Yuk-Kit Chan</name>
+    </author>
+    <author>
+      <name>Zixuan Ling</name>
+    </author>
+    <author>
+      <name>Wenxuan Wang</name>
+    </author>
+    <author>
+      <name>Shuqing Li</name>
+    </author>
+    <author>
+      <name>Mingwei Liu</name>
+    </author>
+    <author>
+      <name>Ruixi Qiao</name>
+    </author>
+    <author>
+      <name>Yuting Han</name>
+    </author>
+    <author>
+      <name>Chaozheng Wang</name>
+    </author>
+    <author>
+      <name>Boxi Yu</name>
+    </author>
+    <author>
+      <name>Pinjia He</name>
+    </author>
+    <author>
+      <name>Shuai Wang</name>
+    </author>
+    <author>
+      <name>Zibin Zheng</name>
+    </author>
+    <author>
+      <name>Michael R. Lyu</name>
+    </author>
+    <author>
+      <name>Shing-Chi Cheung</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2407.10441v1</id>
+    <title>Enhancing Building Safety Design for Active Shooter Incidents: Exploration of Building Exit Parameters using Reinforcement Learning-Based Simulations</title>
+    <updated>2024-07-15T05:08:38Z</updated>
+    <link href="https://arxiv.org/abs/2407.10441v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2407.10441v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>With the alarming rise in active shooter incidents (ASIs) in the United States, enhancing public safety through building design has become a pressing need. This study proposes a reinforcement learning-based simulation approach addressing gaps in existing research that has neglected the dynamic behaviours of shooters. We developed an autonomous agent to simulate an active shooter within a realistic office environment, aiming to offer insights into the interactions between building design parameters and ASI outcomes. A case study is conducted to quantitatively investigate the impact of building exit numbers (total count of accessible exits) and configuration (arrangement of which exits are available or not) on evacuation and harm rates. Findings demonstrate that greater exit availability significantly improves evacuation outcomes and reduces harm. Exits nearer to the shooter's initial position hold greater importance for accessibility than those farther away. By encompassing dynamic shooter behaviours, this study offers preliminary insights into effective building safety design against evolving threats.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-07-15T05:08:38Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>31st EG-ICE International Workshop on Intelligent Computing in Engineering 2024</arxiv:journal_ref>
+    <author>
+      <name>Ruying Liu</name>
+    </author>
+    <author>
+      <name>Wanjing Wu</name>
+    </author>
+    <author>
+      <name>Burcin Becerik-Gerber</name>
+    </author>
+    <author>
+      <name>Gale M. Lucas</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2405.14314v4</id>
+    <title>Towards Efficient LLM Grounding for Embodied Multi-Agent Collaboration</title>
+    <updated>2025-09-29T06:44:00Z</updated>
+    <link href="https://arxiv.org/abs/2405.14314v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2405.14314v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Grounding the reasoning ability of large language models (LLMs) for embodied tasks is challenging due to the complexity of the physical world. Especially, LLM planning for multi-agent collaboration requires communication of agents or credit assignment as the feedback to re-adjust the proposed plans and achieve effective coordination. However, existing methods that overly rely on physical verification or self-reflection suffer from excessive and inefficient querying of LLMs. In this paper, we propose a novel framework for multi-agent collaboration that introduces Reinforced Advantage feedback (ReAd) for efficient self-refinement of plans. Specifically, we perform critic regression to learn a sequential advantage function from LLM-planned data, and then treat the LLM planner as an optimizer to generate actions that maximize the advantage function. It endows the LLM with the foresight to discern whether the action contributes to accomplishing the final task. We provide theoretical analysis by extending advantage-weighted regression in reinforcement learning to multi-agent systems. Experiments on Overcooked-AI and a difficult variant of RoCoBench show that ReAd surpasses baselines in success rate, and also significantly decreases the interaction steps of agents and query rounds of LLMs, demonstrating its high efficiency for grounding LLMs. More results are given at https://embodied-read.github.io</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-05-23T08:33:19Z</published>
+    <arxiv:comment>accepted by ACL'2025</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yang Zhang</name>
+    </author>
+    <author>
+      <name>Shixin Yang</name>
+    </author>
+    <author>
+      <name>Chenjia Bai</name>
+    </author>
+    <author>
+      <name>Fei Wu</name>
+    </author>
+    <author>
+      <name>Xiu Li</name>
+    </author>
+    <author>
+      <name>Zhen Wang</name>
+    </author>
+    <author>
+      <name>Xuelong Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2403.01012v5</id>
+    <title>Hilbert Space-Valued LQ Mean Field Games: An Infinite-Dimensional Analysis</title>
+    <updated>2025-08-08T21:55:28Z</updated>
+    <link href="https://arxiv.org/abs/2403.01012v5" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2403.01012v5" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper presents a comprehensive study of linear-quadratic (LQ) mean field games (MFGs) in Hilbert spaces, generalizing the classic LQ MFG theory to scenarios involving $N$ agents with dynamics governed by infinite-dimensional stochastic equations. In this framework, both state and control processes of each agent take values in separable Hilbert spaces. All agents are coupled through the average state of the population which appears in their linear dynamics and quadratic cost functional. Specifically, the dynamics of each agent incorporates an infinite-dimensional noise, namely a $Q$-Wiener process, and an unbounded operator. The diffusion coefficient of each agent is stochastic involving the state, control, and average state processes. We first study the well-posedness of a system of $N$ coupled semilinear infinite-dimensional stochastic evolution equations establishing the foundation of MFGs in Hilbert spaces. We then specialize to $N$-player LQ games described above and study the asymptotic behaviour as the number of agents, $N$, approaches infinity. We develop an infinite-dimensional variant of the Nash Certainty Equivalence principle and characterize a unique Nash equilibrium for the limiting MFG. Finally, we study the connections between the $N$-player game and the limiting MFG, demonstrating that the empirical average state converges to the mean field and that the resulting limiting best-response strategies form an $ε$-Nash equilibrium for the $N$-player game in Hilbert spaces.</summary>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.FA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.PR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-fin.MF" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-fin.RM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-03-01T22:21:43Z</published>
+    <arxiv:comment>31 pages</arxiv:comment>
+    <arxiv:primary_category term="math.OC"/>
+    <author>
+      <name>Hanchao Liu</name>
+    </author>
+    <author>
+      <name>Dena Firoozi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2311.06772v1</id>
+    <title>ChatAnything: Facetime Chat with LLM-Enhanced Personas</title>
+    <updated>2023-11-12T08:29:41Z</updated>
+    <link href="https://arxiv.org/abs/2311.06772v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2311.06772v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this technical report, we target generating anthropomorphized personas for LLM-based characters in an online manner, including visual appearance, personality and tones, with only text descriptions. To achieve this, we first leverage the in-context learning capability of LLMs for personality generation by carefully designing a set of system prompts. We then propose two novel concepts: the mixture of voices (MoV) and the mixture of diffusers (MoD) for diverse voice and appearance generation. For MoV, we utilize the text-to-speech (TTS) algorithms with a variety of pre-defined tones and select the most matching one based on the user-provided text description automatically. For MoD, we combine the recent popular text-to-image generation techniques and talking head algorithms to streamline the process of generating talking objects. We termed the whole framework as ChatAnything. With it, users could be able to animate anything with any personas that are anthropomorphic using just a few text inputs. However, we have observed that the anthropomorphic objects produced by current generative models are often undetectable by pre-trained face landmark detectors, leading to failure of the face motion generation, even if these faces possess human-like appearances because those images are nearly seen during the training (e.g., OOD samples). To address this issue, we incorporate pixel-level guidance to infuse human face landmarks during the image generation phase. To benchmark these metrics, we have built an evaluation dataset. Based on it, we verify that the detection rate of the face landmark is significantly increased from 57.0% to 92.5% thus allowing automatic face animation based on generated speech content. The code and more results can be found at https://chatanything.github.io/.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-11-12T08:29:41Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Yilin Zhao</name>
+    </author>
+    <author>
+      <name>Xinbin Yuan</name>
+    </author>
+    <author>
+      <name>Shanghua Gao</name>
+    </author>
+    <author>
+      <name>Zhijie Lin</name>
+    </author>
+    <author>
+      <name>Qibin Hou</name>
+    </author>
+    <author>
+      <name>Jiashi Feng</name>
+    </author>
+    <author>
+      <name>Daquan Zhou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2310.17555v1</id>
+    <title>Interactive Robot Learning from Verbal Correction</title>
+    <updated>2023-10-26T16:46:12Z</updated>
+    <link href="https://arxiv.org/abs/2310.17555v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2310.17555v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The ability to learn and refine behavior after deployment has become ever more important for robots as we design them to operate in unstructured environments like households. In this work, we design a new learning system based on large language model (LLM), OLAF, that allows everyday users to teach a robot using verbal corrections when the robot makes mistakes, e.g., by saying "Stop what you're doing. You should move closer to the cup." A key feature of OLAF is its ability to update the robot's visuomotor neural policy based on the verbal feedback to avoid repeating mistakes in the future. This is in contrast to existing LLM-based robotic systems, which only follow verbal commands or corrections but not learn from them. We demonstrate the efficacy of our design in experiments where a user teaches a robot to perform long-horizon manipulation tasks both in simulation and on physical hardware, achieving on average 20.0% improvement in policy success rate. Videos and more results are at https://ut-austin-rpl.github.io/olaf/</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-10-26T16:46:12Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Huihan Liu</name>
+    </author>
+    <author>
+      <name>Alice Chen</name>
+    </author>
+    <author>
+      <name>Yuke Zhu</name>
+    </author>
+    <author>
+      <name>Adith Swaminathan</name>
+    </author>
+    <author>
+      <name>Andrey Kolobov</name>
+    </author>
+    <author>
+      <name>Ching-An Cheng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2307.10472v1</id>
+    <title>Can Instruction Fine-Tuned Language Models Identify Social Bias through Prompting?</title>
+    <updated>2023-07-19T22:03:40Z</updated>
+    <link href="https://arxiv.org/abs/2307.10472v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2307.10472v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As the breadth and depth of language model applications continue to expand rapidly, it is increasingly important to build efficient frameworks for measuring and mitigating the learned or inherited social biases of these models. In this paper, we present our work on evaluating instruction fine-tuned language models' ability to identify bias through zero-shot prompting, including Chain-of-Thought (CoT) prompts. Across LLaMA and its two instruction fine-tuned versions, Alpaca 7B performs best on the bias identification task with an accuracy of 56.7%. We also demonstrate that scaling up LLM size and data diversity could lead to further performance gain. This is a work-in-progress presenting the first component of our bias mitigation framework. We will keep updating this work as we get more results.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-07-19T22:03:40Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Omkar Dige</name>
+    </author>
+    <author>
+      <name>Jacob-Junqi Tian</name>
+    </author>
+    <author>
+      <name>David Emerson</name>
+    </author>
+    <author>
+      <name>Faiza Khan Khattak</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2306.09304v3</id>
+    <title>Radars for Autonomous Driving: A Review of Deep Learning Methods and Challenges</title>
+    <updated>2023-09-27T22:05:40Z</updated>
+    <link href="https://arxiv.org/abs/2306.09304v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2306.09304v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Radar is a key component of the suite of perception sensors used for safe and reliable navigation of autonomous vehicles. Its unique capabilities include high-resolution velocity imaging, detection of agents in occlusion and over long ranges, and robust performance in adverse weather conditions. However, the usage of radar data presents some challenges: it is characterized by low resolution, sparsity, clutter, high uncertainty, and lack of good datasets. These challenges have limited radar deep learning research. As a result, current radar models are often influenced by lidar and vision models, which are focused on optical features that are relatively weak in radar data, thus resulting in under-utilization of radar's capabilities and diminishing its contribution to autonomous perception. This review seeks to encourage further deep learning research on autonomous radar data by 1) identifying key research themes, and 2) offering a comprehensive overview of current opportunities and challenges in the field. Topics covered include early and late fusion, occupancy flow estimation, uncertainty modeling, and multipath detection. The paper also discusses radar fundamentals and data representation, presents a curated list of recent radar datasets, and reviews state-of-the-art lidar and vision models relevant for radar research. For a summary of the paper and more results, visit the website: autonomous-radars.github.io.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-06-15T17:37:52Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Arvind Srivastav</name>
+    </author>
+    <author>
+      <name>Soumyajit Mandal</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2305.09627v1</id>
+    <title>Addressing computational challenges in physical system simulations with machine learning</title>
+    <updated>2023-05-16T17:31:50Z</updated>
+    <link href="https://arxiv.org/abs/2305.09627v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2305.09627v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we present a machine learning-based data generator framework tailored to aid researchers who utilize simulations to examine various physical systems or processes. High computational costs and the resulting limited data often pose significant challenges to gaining insights into these systems or processes. Our approach involves a two-step process: initially, we train a supervised predictive model using a limited simulated dataset to predict simulation outcomes. Subsequently, a reinforcement learning agent is trained to generate accurate, simulation-like data by leveraging the supervised model. With this framework, researchers can generate more accurate data and know the outcomes without running high computational simulations, which enables them to explore the parameter space more efficiently and gain deeper insights into physical systems or processes. We demonstrate the effectiveness of the proposed framework by applying it to two case studies, one focusing on earthquake rupture physics and the other on new material development.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.comp-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-05-16T17:31:50Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Sabber Ahamed</name>
+    </author>
+    <author>
+      <name>Md Mesbah Uddin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2305.13937v1</id>
+    <title>Multi-agent Continual Coordination via Progressive Task Contextualization</title>
+    <updated>2023-05-07T15:04:56Z</updated>
+    <link href="https://arxiv.org/abs/2305.13937v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2305.13937v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Cooperative Multi-agent Reinforcement Learning (MARL) has attracted significant attention and played the potential for many real-world applications. Previous arts mainly focus on facilitating the coordination ability from different aspects (e.g., non-stationarity, credit assignment) in single-task or multi-task scenarios, ignoring the stream of tasks that appear in a continual manner. This ignorance makes the continual coordination an unexplored territory, neither in problem formulation nor efficient algorithms designed. Towards tackling the mentioned issue, this paper proposes an approach Multi-Agent Continual Coordination via Progressive Task Contextualization, dubbed MACPro. The key point lies in obtaining a factorized policy, using shared feature extraction layers but separated independent task heads, each specializing in a specific class of tasks. The task heads can be progressively expanded based on the learned task contextualization. Moreover, to cater to the popular CTDE paradigm in MARL, each agent learns to predict and adopt the most relevant policy head based on local information in a decentralized manner. We show in multiple multi-agent benchmarks that existing continual learning methods fail, while MACPro is able to achieve close-to-optimal performance. More results also disclose the effectiveness of MACPro from multiple aspects like high generalization ability.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-05-07T15:04:56Z</published>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Lei Yuan</name>
+    </author>
+    <author>
+      <name>Lihe Li</name>
+    </author>
+    <author>
+      <name>Ziqian Zhang</name>
+    </author>
+    <author>
+      <name>Fuxiang Zhang</name>
+    </author>
+    <author>
+      <name>Cong Guan</name>
+    </author>
+    <author>
+      <name>Yang Yu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2301.04929v1</id>
+    <title>Heterogeneous Beliefs and Multi-Population Learning in Network Games</title>
+    <updated>2023-01-12T10:53:36Z</updated>
+    <link href="https://arxiv.org/abs/2301.04929v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2301.04929v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The effect of population heterogeneity in multi-agent learning is practically relevant but remains far from being well-understood. Motivated by this, we introduce a model of multi-population learning that allows for heterogeneous beliefs within each population and where agents respond to their beliefs via smooth fictitious play (SFP).We show that the system state -- a probability distribution over beliefs -- evolves according to a system of partial differential equations akin to the continuity equations that commonly desccribe transport phenomena in physical systems. We establish the convergence of SFP to Quantal Response Equilibria in different classes of games capturing both network competition as well as network coordination. We also prove that the beliefs will eventually homogenize in all network games. Although the initial belief heterogeneity disappears in the limit, we show that it plays a crucial role for equilibrium selection in the case of coordination games as it helps select highly desirable equilibria. Contrary, in the case of network competition, the resulting limit behavior is independent of the initialization of beliefs, even when the underlying game has many distinct Nash equilibria.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-01-12T10:53:36Z</published>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Shuyue Hu</name>
+    </author>
+    <author>
+      <name>Harold Soh</name>
+    </author>
+    <author>
+      <name>Georgios Piliouras</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2301.00704v1</id>
+    <title>Muse: Text-To-Image Generation via Masked Generative Transformers</title>
+    <updated>2023-01-02T14:43:38Z</updated>
+    <link href="https://arxiv.org/abs/2301.00704v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2301.00704v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present Muse, a text-to-image Transformer model that achieves state-of-the-art image generation performance while being significantly more efficient than diffusion or autoregressive models. Muse is trained on a masked modeling task in discrete token space: given the text embedding extracted from a pre-trained large language model (LLM), Muse is trained to predict randomly masked image tokens. Compared to pixel-space diffusion models, such as Imagen and DALL-E 2, Muse is significantly more efficient due to the use of discrete tokens and requiring fewer sampling iterations; compared to autoregressive models, such as Parti, Muse is more efficient due to the use of parallel decoding. The use of a pre-trained LLM enables fine-grained language understanding, translating to high-fidelity image generation and the understanding of visual concepts such as objects, their spatial relationships, pose, cardinality etc. Our 900M parameter model achieves a new SOTA on CC3M, with an FID score of 6.06. The Muse 3B parameter model achieves an FID of 7.88 on zero-shot COCO evaluation, along with a CLIP score of 0.32. Muse also directly enables a number of image editing applications without the need to fine-tune or invert the model: inpainting, outpainting, and mask-free editing. More results are available at https://muse-model.github.io</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-01-02T14:43:38Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Huiwen Chang</name>
+    </author>
+    <author>
+      <name>Han Zhang</name>
+    </author>
+    <author>
+      <name>Jarred Barber</name>
+    </author>
+    <author>
+      <name>AJ Maschinot</name>
+    </author>
+    <author>
+      <name>Jose Lezama</name>
+    </author>
+    <author>
+      <name>Lu Jiang</name>
+    </author>
+    <author>
+      <name>Ming-Hsuan Yang</name>
+    </author>
+    <author>
+      <name>Kevin Murphy</name>
+    </author>
+    <author>
+      <name>William T. Freeman</name>
+    </author>
+    <author>
+      <name>Michael Rubinstein</name>
+    </author>
+    <author>
+      <name>Yuanzhen Li</name>
+    </author>
+    <author>
+      <name>Dilip Krishnan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2212.04732v1</id>
+    <title>Fill in the Blank: Context-aware Automated Text Input Generation for Mobile GUI Testing</title>
+    <updated>2022-12-09T09:00:38Z</updated>
+    <link href="https://arxiv.org/abs/2212.04732v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2212.04732v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Automated GUI testing is widely used to help ensure the quality of mobile apps. However, many GUIs require appropriate text inputs to proceed to the next page which remains a prominent obstacle for testing coverage. Considering the diversity and semantic requirement of valid inputs (e.g., flight departure, movie name), it is challenging to automate the text input generation. Inspired by the fact that the pre-trained Large Language Model (LLM) has made outstanding progress in text generation, we propose an approach named QTypist based on LLM for intelligently generating semantic input text according to the GUI context. To boost the performance of LLM in the mobile testing scenario, we develop a prompt-based data construction and tuning method which automatically extracts the prompts and answers for model tuning. We evaluate QTypist on 106 apps from Google Play and the result shows that the passing rate of QTypist is 87%, which is 93% higher than the best baseline. We also integrate QTypist with the automated GUI testing tools and it can cover 42% more app activities, 52% more pages, and subsequently help reveal 122% more bugs compared with the raw tool.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-12-09T09:00:38Z</published>
+    <arxiv:comment>Accepted by IEEE/ACM International Conference on Software Engineering 2023 (ICSE 2023)</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Zhe Liu</name>
+    </author>
+    <author>
+      <name>Chunyang Chen</name>
+    </author>
+    <author>
+      <name>Junjie Wang</name>
+    </author>
+    <author>
+      <name>Xing Che</name>
+    </author>
+    <author>
+      <name>Yuekai Huang</name>
+    </author>
+    <author>
+      <name>Jun Hu</name>
+    </author>
+    <author>
+      <name>Qing Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2205.08913v2</id>
+    <title>Price Interpretability of Prediction Markets: A Convergence Analysis</title>
+    <updated>2023-11-09T15:19:21Z</updated>
+    <link href="https://arxiv.org/abs/2205.08913v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2205.08913v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Prediction markets are long known for prediction accuracy. This study systematically explores the fundamental properties of prediction markets, addressing questions about their information aggregation process and the factors contributing to their remarkable efficacy. We propose a novel multivariate utility (MU) based mechanism that unifies several existing automated market-making schemes. Using this mechanism, we establish the convergence results for markets comprised of risk-averse traders who have heterogeneous beliefs and repeatedly interact with the market maker. We demonstrate that the resulting limiting wealth distribution aligns with the Pareto efficient frontier defined by the utilities of all market participants. With the help of this result, we establish analytical and numerical results for the limiting price in different market models. Specifically, we show that the limiting price converges to the geometric mean of agent beliefs in exponential utility-based markets. In risk-measure-based markets, we construct a family of risk measures that satisfy the convergence criteria and prove that the price can converge to a unique level represented by the weighted power mean of agent beliefs. In broader markets with Constant Relative Risk Aversion (CRRA) utilities, we reveal that the limiting price can be characterized by systems of equations that encapsulate agent beliefs, risk parameters, and wealth. Despite the potential impact of traders' trading sequences on the limiting price, we establish a price invariance result for markets with a large trader population. Using this result, we propose an efficient approximation scheme for the limiting price.</summary>
+    <category term="q-fin.TR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-05-18T13:15:11Z</published>
+    <arxiv:primary_category term="q-fin.TR"/>
+    <author>
+      <name>Dian Yu</name>
+    </author>
+    <author>
+      <name>Jianjun Gao</name>
+    </author>
+    <author>
+      <name>Weiping Wu</name>
+    </author>
+    <author>
+      <name>Zizhuo Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1712.00547v2</id>
+    <title>Explainable AI: Beware of Inmates Running the Asylum Or: How I Learnt to Stop Worrying and Love the Social and Behavioural Sciences</title>
+    <updated>2017-12-05T04:23:25Z</updated>
+    <link href="https://arxiv.org/abs/1712.00547v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1712.00547v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In his seminal book `The Inmates are Running the Asylum: Why High-Tech Products Drive Us Crazy And How To Restore The Sanity' [2004, Sams Indianapolis, IN, USA], Alan Cooper argues that a major reason why software is often poorly designed (from a user perspective) is that programmers are in charge of design decisions, rather than interaction designers. As a result, programmers design software for themselves, rather than for their target audience, a phenomenon he refers to as the `inmates running the asylum'. This paper argues that explainable AI risks a similar fate. While the re-emergence of explainable AI is positive, this paper argues most of us as AI researchers are building explanatory agents for ourselves, rather than for the intended users. But explainable AI is more likely to succeed if researchers and practitioners understand, adopt, implement, and improve models from the vast and valuable bodies of research in philosophy, psychology, and cognitive science, and if evaluation of these models is focused more on people than on technology. From a light scan of literature, we demonstrate that there is considerable scope to infuse more results from the social and behavioural sciences into explainable AI, and present some key results from these fields that are relevant to explainable AI.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-12-02T04:21:14Z</published>
+    <arxiv:comment>IJCAI 2017 Workshop on Explainable Artificial Intelligence (XAI)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tim Miller</name>
+    </author>
+    <author>
+      <name>Piers Howe</name>
+    </author>
+    <author>
+      <name>Liz Sonenberg</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1109.6206v1</id>
+    <title>A Framework for Prefetching Relevant Web Pages using Predictive Prefetching Engine (PPE)</title>
+    <updated>2011-09-28T13:51:56Z</updated>
+    <link href="https://arxiv.org/abs/1109.6206v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1109.6206v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper presents a framework for increasing the relevancy of the web pages retrieved by the search engine. The approach introduces a Predictive Prefetching Engine (PPE) which makes use of various data mining algorithms on the log maintained by the search engine. The underlying premise of the approach is that in the case of cluster accesses, the next pages requested by users of the Web server are typically based on the current and previous pages requested. Based on same, rules are drawn which then lead the path for prefetching the desired pages. To carry out the desired task of prefetching the more relevant pages, agents have been introduced.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2011-09-28T13:51:56Z</published>
+    <arxiv:comment>9 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.IR"/>
+    <arxiv:journal_ref>IJCSI International Journal of Computer Science Issues, Vol. 7, Issue 6, November 2010 ISSN (Online): 1694-0814 www.IJCSI.org</arxiv:journal_ref>
+    <author>
+      <name> Jyoti</name>
+    </author>
+    <author>
+      <name>A. K. Sharma</name>
+    </author>
+    <author>
+      <name>Amit Goel</name>
+    </author>
+  </entry>
+</feed>

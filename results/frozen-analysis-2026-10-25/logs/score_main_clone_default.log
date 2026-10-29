@@ -1,0 +1,8 @@
+claude-sonnet-5-5: dropped 0 episode(s) finished after the cutoff 2026-10-25T17:00:00-04:00
+gpt-oss-120b: dropped 0 episode(s) finished after the cutoff 2026-10-25T17:00:00-04:00
+mistral-medium-3-5: dropped 0 episode(s) finished after the cutoff 2026-10-25T17:00:00-04:00
+claude-sonnet-5-5: 5280 of 5280 planned episodes scored, 0 missing
+gpt-oss-120b: 5280 of 5280 planned episodes scored, 0 missing
+mistral-medium-3-5: 5280 of 5280 planned episodes scored, 0 missing
+WARNING episodes come from 2 code versions: {'545b72bf89e946117185e626243c527dc6fb11b7': 10560, '467437b04c4f326507835ad43ae38407360ef23f': 5280}
+scored 15840 episodes -> <frozen-checkout>/data/processed/main_clone_default.csv

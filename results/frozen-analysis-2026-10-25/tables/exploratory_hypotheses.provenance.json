@@ -1,0 +1,13 @@
+{
+ "harness_version": "0.1.0",
+ "git_sha": "1b7f7762a891552ac4f963a954876b80f1d9cbf9",
+ "git_dirty": false,
+ "python": "3.12.13",
+ "openai_sdk": "3.35.1",
+ "anthropic_sdk": "1.15.0",
+ "created_at": "2026-10-25T17:42:07.483257+00:00",
+ "inputs": {
+  "data/processed/exploratory.csv.gz (gunzip first)": "4fbb98778727ee256d33f682e72c4d3a598e86e206fe526bfdabd1b25a8e9d7e"
+ },
+ "note": "input paths rewritten relative to the artifact root for anonymity; SHA-256 values unchanged"
+}

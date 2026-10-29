@@ -1,0 +1,290 @@
+{
+ "gpt-oss-120b (main, reference)": {
+  "episodes": 5280,
+  "unique_ids": 5280,
+  "ids_recompute": 5280,
+  "config_key_recomputes": 5280,
+  "n_items_match": 5280,
+  "provenance": {
+   "('467437b', False)": 5280
+  },
+  "turns": 15287,
+  "turn_snapshot_mismatch": 0,
+  "serving": {
+   "('Crusoe', 'openai/gpt-oss-120b')": 15287
+  },
+  "protocol": {
+   "empty_reply": 0,
+   "truncated": 0,
+   "hit_cap": 0
+  },
+  "refusals": "column absent",
+  "same_rows_groups": 500,
+  "same_rows_differing": 0,
+  "question_gold_groups": 500,
+  "question_gold_differing": 0,
+  "later_pages_conflict": {
+   "later pages": 641,
+   "truthful": 641
+  },
+  "untruthful_later_pages": [],
+  "continue_after_false_end": {
+   "page=2": 229,
+   "page=4": 2,
+   "page=3": 3,
+   "page=5": 2
+  },
+  "other_routes": {},
+  "target_flag_mismatch": 0,
+  "small_first_calls": 0,
+  "own_small_page_scored": 0,
+  "multi_call_turns": 0,
+  "speculative_scored": 0,
+  "fetch_mismatch": {},
+  "answer_diff": {},
+  "forced_final": [],
+  "completeness_residual": [
+   0,
+   []
+  ]
+ },
+ "mistral-medium-3-5 (main)": {
+  "episodes": 5280,
+  "unique_ids": 5280,
+  "ids_recompute": 5280,
+  "config_key_recomputes": 5280,
+  "n_items_match": 5280,
+  "provenance": {
+   "('545b72b', False)": 5280
+  },
+  "turns": 15576,
+  "turn_snapshot_mismatch": 0,
+  "serving": {
+   "('Mistral', 'mistralai/mistral-medium-3-5')": 15576
+  },
+  "protocol": {
+   "empty_reply": 0,
+   "truncated": 0,
+   "hit_cap": 2
+  },
+  "refusals": "column absent",
+  "same_rows_groups": 500,
+  "same_rows_differing": 0,
+  "question_gold_groups": 500,
+  "question_gold_differing": 0,
+  "later_pages_conflict": {
+   "later pages": 690,
+   "truthful": 690
+  },
+  "untruthful_later_pages": [],
+  "continue_after_false_end": {
+   "page=2": 170,
+   "page=4": 3,
+   "cursor": 55,
+   "page=5": 6
+  },
+  "other_routes": {},
+  "target_flag_mismatch": 0,
+  "small_first_calls": 10,
+  "own_small_page_scored": 10,
+  "multi_call_turns": 102,
+  "speculative_scored": 0,
+  "fetch_mismatch": {},
+  "answer_diff": {},
+  "forced_final": [
+   [
+    "61ee8938f420db63",
+    true,
+    0
+   ],
+   [
+    "06c3bfc3a4bd66f3",
+    true,
+    0
+   ]
+  ],
+  "completeness_residual": [
+   0,
+   []
+  ]
+ },
+ "claude-sonnet-5-5 (main)": {
+  "episodes": 5280,
+  "unique_ids": 5280,
+  "ids_recompute": 5280,
+  "config_key_recomputes": 5280,
+  "n_items_match": 5280,
+  "provenance": {
+   "('545b72b', False)": 5280
+  },
+  "turns": 17005,
+  "turn_snapshot_mismatch": 0,
+  "serving": {
+   "(None, 'claude-sonnet-5-5')": 17005
+  },
+  "protocol": {
+   "empty_reply": 0,
+   "truncated": 0,
+   "hit_cap": 7
+  },
+  "refusals": "column absent",
+  "same_rows_groups": 500,
+  "same_rows_differing": 0,
+  "question_gold_groups": 500,
+  "question_gold_differing": 0,
+  "later_pages_conflict": {
+   "later pages": 2020,
+   "truthful": 2020
+  },
+  "untruthful_later_pages": [],
+  "continue_after_false_end": {
+   "page=2": 683,
+   "page=4": 11,
+   "page=3": 16,
+   "page=5": 10
+  },
+  "other_routes": {},
+  "target_flag_mismatch": 0,
+  "small_first_calls": 0,
+  "own_small_page_scored": 0,
+  "multi_call_turns": 959,
+  "speculative_scored": 0,
+  "fetch_mismatch": {},
+  "answer_diff": {},
+  "forced_final": [
+   [
+    "6d02263a3622100e",
+    true,
+    0
+   ],
+   [
+    "0119bff2e4d09e72",
+    true,
+    0
+   ],
+   [
+    "0667b992dcbb7883",
+    true,
+    0
+   ],
+   [
+    "03cf21a2370e85d7",
+    true,
+    0
+   ],
+   [
+    "d7a373de4484972b",
+    true,
+    0
+   ],
+   [
+    "66cb1d94d21bd885",
+    true,
+    0
+   ],
+   [
+    "5a1e107606925d66",
+    true,
+    0
+   ]
+  ],
+  "completeness_residual": [
+   0,
+   []
+  ]
+ },
+ "nemotron-3-super (exploratory)": {
+  "episodes": 5274,
+  "unique_ids": 5274,
+  "ids_recompute": 5274,
+  "config_key_recomputes": 5274,
+  "n_items_match": 5274,
+  "provenance": {
+   "('545b72b', False)": 5274
+  },
+  "turns": 17914,
+  "turn_snapshot_mismatch": 0,
+  "serving": {
+   "('DeepInfra', 'nvidia/nemotron-3-super-120b-a12b')": 17914
+  },
+  "protocol": {
+   "empty_reply": 0,
+   "truncated": 0,
+   "hit_cap": 0
+  },
+  "refusals": "column absent",
+  "same_rows_groups": 500,
+  "same_rows_differing": 0,
+  "question_gold_groups": 500,
+  "question_gold_differing": 0,
+  "later_pages_conflict": {
+   "later pages": 923,
+   "truthful": 923
+  },
+  "untruthful_later_pages": [],
+  "continue_after_false_end": {
+   "page=2": 327,
+   "page=None": 8,
+   "page=3": 1,
+   "page=1": 1
+  },
+  "other_routes": {},
+  "target_flag_mismatch": 0,
+  "small_first_calls": 18,
+  "own_small_page_scored": 18,
+  "multi_call_turns": 0,
+  "speculative_scored": 0,
+  "fetch_mismatch": {},
+  "answer_diff": {},
+  "forced_final": [],
+  "completeness_residual": [
+   3,
+   [
+    "cbd71761e6fad9d1",
+    "0093816e625eecef",
+    "b340f23c38dffba9"
+   ]
+  ]
+ },
+ "gpt-oss-120b (robustness)": {
+  "episodes": 1600,
+  "unique_ids": 1600,
+  "ids_recompute": 1600,
+  "config_key_recomputes": 1600,
+  "n_items_match": 1600,
+  "provenance": {
+   "('545b72b', False)": 1600
+  },
+  "turns": 5088,
+  "turn_snapshot_mismatch": 0,
+  "serving": {
+   "('Crusoe', 'openai/gpt-oss-120b')": 5088
+  },
+  "protocol": {
+   "empty_reply": 0,
+   "truncated": 0,
+   "hit_cap": 0
+  },
+  "refusals": "column absent",
+  "same_rows_groups": 200,
+  "same_rows_differing": 0,
+  "question_gold_groups": 200,
+  "question_gold_differing": 0,
+  "later_pages_conflict": {},
+  "untruthful_later_pages": [],
+  "continue_after_false_end": {},
+  "other_routes": {},
+  "target_flag_mismatch": 0,
+  "small_first_calls": 0,
+  "own_small_page_scored": 0,
+  "multi_call_turns": 0,
+  "speculative_scored": 0,
+  "fetch_mismatch": {},
+  "answer_diff": {},
+  "forced_final": [],
+  "completeness_residual": [
+   0,
+   []
+  ]
+ }
+}

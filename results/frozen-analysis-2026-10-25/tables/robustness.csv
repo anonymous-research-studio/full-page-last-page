@@ -1,0 +1,9 @@
+model,check,test,rate_a,rate_b,n,diff,lo,hi,p,method
+gpt-oss-120b,C1a,"no signal, more rows exist: plain - default wording",0.62,0.31,100,0.31,0.1942452147887364,0.4135979224661656,7.84157236921601e-07,McNemar exact; Agresti-Min CI
+gpt-oss-120b,C1b,"no signal, real last page: plain - default wording",0.7142857142857143,0.4175824175824176,91,0.2967032967032967,0.18673082238537708,0.39391433890494554,4.628673195838928e-07,McNemar exact; Agresti-Min CI
+gpt-oss-120b,C1c,"has_more, more rows exist: plain - default wording",0.94,0.95,100,-0.01,-0.07053834673606028,0.05093050359880538,1.0,McNemar exact; Agresti-Min CI
+gpt-oss-120b,C1d,"has_more, real last page: plain - default wording",0.0,0.0,91,0.0,-0.02107488155419413,0.02107488155419413,1.0,McNemar exact; Agresti-Min CI
+gpt-oss-120b,C1e,"JSON note, more rows exist: plain - default wording",0.77,0.8,100,-0.03,-0.08346038358087433,0.024636854169109625,0.453125,McNemar exact; Agresti-Min CI
+gpt-oss-120b,C1f,"JSON note, real last page: plain - default wording",0.04395604395604396,0.07692307692307693,91,-0.03296703296703297,-0.10496862269720267,0.040452493664944605,0.548828125,McNemar exact; Agresti-Min CI
+gpt-oss-120b,C2a,real last page: total_matches - total_count,0.16483516483516483,0.32967032967032966,91,-0.16483516483516483,-0.25919362793163037,-0.06338701722965998,0.002599477767944336,McNemar exact; Agresti-Min CI
+gpt-oss-120b,C2b,more rows exist: total_matches - total_count,0.8,0.8,100,0.0,-0.03328193335518152,0.03328193335518152,1.0,McNemar exact; Agresti-Min CI

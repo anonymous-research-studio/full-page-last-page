@@ -1,0 +1,1556 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/fLjvokeTq6/g86f/GsvWo+t9Y+Q</id>
+  <title>arXiv Query: search_query=(abs:capped OR abs:"result cap" OR abs:"truncated results" OR abs:"truncated search") AND (abs:agent OR abs:agents) AND abs:tool&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:05:36Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(abs:capped+OR+(abs:%22result+cap%22+OR+(abs:%22truncated+results%22+OR+abs:%22truncated+search%22)))+AND+((abs:agent+OR+abs:agents)+AND+abs:tool)&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>60</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.29174v1</id>
+    <title>LocalAgent: Collaborative Agentic Verification for Fine-Grained Instance-Level Consistency</title>
+    <updated>2026-10-21T04:04:32Z</updated>
+    <link href="https://arxiv.org/abs/2610.29174v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.29174v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multimodal large language models (MLLMs) have made rapid progress in general visual understanding, yet they still struggle with fine-grained instance-level consistency verification, where the goal is to determine whether two images depict the exact same physical object under varying viewpoints, illumination, and backgrounds. This task requires both global semantic perception and precise examination of subtle local evidence, since semantically similar objects may differ only in small suspicious regions. To address this challenge, we propose LocalAgent, a collaborative agentic framework that integrates the complementary strengths of a generalist MLLM and lightweight specialist verifiers. The MLLM first reasons globally to identify suspicious local regions, which are then delegated to a Local Evidence Verifier (LEV) toolkit for fine-grained appearance and geometric matching. LEV comprises Local Appearance Consistency (LAC), which estimates appearance similarity under illumination and color changes, and Local Geometric Correspondence (LGC), which estimates spatial correspondence under viewpoint changes. LEV returns structured scalar evidence that the MLLM integrates for the final decision. We further introduce an auxiliary-capped reinforcement fine-tuning (RFT) strategy, in which answer correctness dominates auxiliary tool-use and format signals, enabling the policy to learn when verification is necessary. Experiments show that LocalAgent improves mean accuracy by 4.9% over the strongest CoT-RFT baseline while invoking a verifier on only 12.13% of samples and preserving the general multimodal capabilities of the underlying MLLM. The open-source repository is available at https://github.com/Firefly-zoo/LocalAgent-main.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T04:04:32Z</published>
+    <arxiv:comment>22 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Jiachen Guo</name>
+    </author>
+    <author>
+      <name>Xinshan Zhu</name>
+    </author>
+    <author>
+      <name>Boyun Wang</name>
+    </author>
+    <author>
+      <name>Yanyan Liang</name>
+    </author>
+    <author>
+      <name>Jun Wan</name>
+    </author>
+    <author>
+      <name>Feng Lin</name>
+    </author>
+    <author>
+      <name>Ajian Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.27327v1</id>
+    <title>Unsupervised Tool Evolution for Coding Agents in Data-Lake Analytics</title>
+    <updated>2026-10-19T21:44:32Z</updated>
+    <link href="https://arxiv.org/abs/2610.27327v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.27327v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Coding agents can answer analytical questions over a data lake by discovering, cleaning, and joining the relevant data. However, they discard this work after each question and redo it from scratch for the next one. Tool evolution, which automatically builds and refines reusable tools across tasks, is a natural fit for this repetition. Since a ground-truth label for a data-lake question requires an expert to solve it first, we consider the unsupervised setting. We propose TEAL (Tool Evolution for Analytics over data Lakes), which evolves a library of tools and usage skills for a given Worker agent without labels. Two agents propose tools from complementary evidence, an Explorer from the data lake itself and a Critic from Worker trajectories. A proposed change is kept only if the Worker adopts the tool on a rerun without extra steps and any changed answer is supported by trajectory evidence. We also introduce TEAL-Q, which generates synthetic questions for tool evolution when real ones are unavailable. We evaluate on KramaBench and LakeQA with four Worker LLMs under step budgets, which cap the number of steps the Worker may take per question. With a tight budget of 10 or 15 steps, TEAL improves every Worker on both benchmarks, lifting Sonnet-5 at 15 steps by 9.3 points on KramaBench and 21.7 points on LakeQA. A tighter budget also yields better feedback for evolution. For example, Sonnet-5's LakeQA library evolved at 20 steps and deployed unchanged at 30 steps scores 68.3, above both the baseline (59.6) and a library evolved directly at 30 steps (64.2). Additionally, a library evolved on synthetic questions performs comparably to one evolved on real questions. These results show that useful tools can be evolved without labels, and hopefully inspire future work on what to evolve and how to obtain feedback in unsupervised agent evolution.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T21:44:32Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yuqing Yang</name>
+    </author>
+    <author>
+      <name>Yurong Liu</name>
+    </author>
+    <author>
+      <name>Deqing Fu</name>
+    </author>
+    <author>
+      <name>Manav Garg</name>
+    </author>
+    <author>
+      <name>Sravan Babu Bodapati</name>
+    </author>
+    <author>
+      <name>Fatma Ozcan</name>
+    </author>
+    <author>
+      <name>Alon Y. Halevy</name>
+    </author>
+    <author>
+      <name>Jiani Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.26662v1</id>
+    <title>AllPath: Layered Verification for a Deployed, Self-Revising LLM Trading Agent under Human-Gated and Autonomous Regimes</title>
+    <updated>2026-10-19T16:18:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.26662v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.26662v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM trading agents are evaluated almost exclusively in backtests and autonomous benchmark harnesses. Deployment, where actions are irreversible, raises a different question: who verifies the agent's actions, and which failures can each verifier structurally catch? We report on AllPath, a personal LLM trading agent deployed against a live paper-brokerage account. The system watches positions through a deterministic rules engine, and each night it reviews its own day and proposes revisions to its own trading strategies. Verification is split across three layers. Code verifies what must not depend on judgment: deterministic gates enforce risk limits and block any strategy revision that fails an integrity check. The agent verifies itself within fixed bounds: its nightly review has an iteration cap and no tools that can act. A human verifies judgment, through approval screens that show the current state of each proposal. We also compared two verification policies for the agent's self-revisions on the live system: two and a half weeks with every self-revision human-gated, then five weeks with reflection revisions auto-applied behind the same code gates, while the operator's chat channel stayed human-gated throughout. Each layer caught a different kind of failure. The code gates rejected no proposal; their role was keeping revisions consistent. The human rejected two proposals that passed every code check, both over a disagreement about the market, and later removed 11 of the 19 rules the agent had added on its own, at a median lag of eight days. The most instructive production incidents, such as strategies silently left unmonitored, passed every gate; the operator found them by hand, and the fix each time was an interface change that makes the condition visible. We contribute the layered architecture, the two-regime account, and a production incident taxonomy, none observable in a backtest.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-19T16:18:52Z</published>
+    <arxiv:comment>Accepted to the 3rd Workshop on LLMs and Generative AI in Finance (AI4F) at ACM ICAIF 2026 (non-archival). 11 pages, 3 figures, 5 tables. Code: https://github.com/dukesky/allpath-trading-agent</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tian Zhang</name>
+    </author>
+    <author>
+      <name>Meng Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.22863v1</id>
+    <title>Understanding KV Residency in Production-Scale Agentic LLM Workloads</title>
+    <updated>2026-10-16T03:09:13Z</updated>
+    <link href="https://arxiv.org/abs/2610.22863v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.22863v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic large language model (LLM) applications turn one user request into a sequence of model and tool calls over a growing context. Retaining this context's key-value (KV) state in GPU memory lets later calls reuse it instead of recomputing it, but at fleet scale this needs substantial memory. We characterize four production Microsoft M365 workload traces (Deep Research, Enterprise Assistant, Coding Agent and Enterprise Chat) spanning more than 121 million model calls. In Deep Research, the application issues 89% of model calls and the median context grows from about 10K to 68K tokens by the 30th call. About 80% of context tokens are served from the prefix cache. With the public Llama-2-70B KV layout standing in for confidential models, one 99th-percentile Deep Research session exceeds the 80 GB HBM of an NVIDIA H100, and holding all live sessions at their peak needs an estimated 501.8 TB of HBM, although inference occupies only 5.6% of that retention time. Trace-driven replay shows that a one-hour idle cap cuts this ceiling by 3.6x while raising the share of calls that recompute context only from 4.07% to 4.53%. Under tighter budgets, eviction alone is insufficient: at one tenth of the busiest hour's demand, LRU eviction makes 63% of Deep Research calls recompute and clairvoyant furthest-next-use 31%, whereas multi-resolution retention (MRR), which demotes the LRU session's KV state to int4, lowers this to 13.6%. Placement imposes a separate limit: when the next call reaches a different deployment, cached-context reuse drops from 89% to 29%, and treating KV state as deployment-local raises the recompute floor under unlimited memory from 5.4% to 20.2%. These findings motivate retention that changes the representation of KV state, together with deployment-aware routing or migration. We plan to release AgenticTraceSim, a parametric trace generator, and a residency replay framework.</summary>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-16T03:09:13Z</published>
+    <arxiv:primary_category term="cs.DC"/>
+    <author>
+      <name>Mayank Arya</name>
+    </author>
+    <author>
+      <name>Agrim Bari</name>
+    </author>
+    <author>
+      <name>Anjaly Parayil</name>
+    </author>
+    <author>
+      <name>Yogesh Simmhan</name>
+    </author>
+    <author>
+      <name>Renee St. Amant</name>
+    </author>
+    <author>
+      <name>Victor Rühle</name>
+    </author>
+    <author>
+      <name>Saravan Rajmohan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.21098v1</id>
+    <title>ToolBottleneckBench: Measuring Tool-Agent Performance under Controlled Pressures and Fixed Harness Budgets</title>
+    <updated>2026-10-15T01:59:58Z</updated>
+    <link href="https://arxiv.org/abs/2610.21098v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.21098v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The success score of a tool agent reflects both its model and the budgets of the harness that runs it. We present ToolBottleneckBench, a benchmark that measures tool-agent performance under controlled pressures and fixed harness budgets. Synthetic enterprise tasks stay fixed while one pressure varies: the registered tool catalog, the visible tool menu, the certified workflow, or the encoding of returned records. An exact grader records the first unmet obligation of each failed episode and the harness limit, if any, that ended it. Across 21 model and harness configurations, the visible menu is the only one of the three pressures that act on the model with a large penalty, and this penalty tracks truncation at the completion cap. Raising the cap sixteenfold removes most of the penalty in the truncation-heavy configurations. Most failures end at a harness limit, and the failure record identifies the assigned pressure no more reliably than a count of tool calls. The repairs that help change which tools reach the model or who issues the calls, and only two repairs, neither improving model behavior, beat every configuration switch. We recommend reporting pressure effects with the harness budgets under which they were measured. We release the benchmark at https://github.com/zichuanxu/tool-bottleneck-bench.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-15T01:59:58Z</published>
+    <arxiv:comment>26 pages, 12 figures, 15 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zichuan Xu</name>
+    </author>
+    <author>
+      <name>Yuyang Dong</name>
+    </author>
+    <author>
+      <name>Makoto Onizuka</name>
+    </author>
+    <author>
+      <name>Chuan Xiao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.19589v1</id>
+    <title>JockeyBench: Evaluating LLM Agents on Horse-Racing Decision-Making</title>
+    <updated>2026-10-14T04:59:45Z</updated>
+    <link href="https://arxiv.org/abs/2610.19589v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.19589v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Repeated event forecasting requires extracting predictive signals from noisy evidence and evaluating their value across successive decisions. We introduce JockeyBench, a benchmark and evaluation protocol that studies this problem through historical Japanese horse racing. The protocol combines time-gated evidence, priced tools, paired frozen-program controls, and two workflows: executing an LLM-written predictor or acquiring evidence for a fresh per-race LLM forecast. Evaluation separates forecast quality, benchmark-specific net utility, and retrospective betting returns and risk under fixed decision rules. Across 28 model--scaffold configurations on 324 races, paired tests identify seven revision gains and two declines after multiple-testing correction. Yet every configuration has negative mean profit under capped-Kelly settlement. In a four-model comparison, the reusable-program workflow has higher mean betting profit and lower research fees, although both workflows lose on average. Further diagnostics reveal that mean probability bias reverses on selected bets and that profitable individual runs can depend on concentrated returns. These findings motivate evaluating predictive competence, adaptation, resource use, and decision value separately when assessing agents for repeated event forecasting.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-14T04:59:45Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zhongwei Xie</name>
+    </author>
+    <author>
+      <name>Xingsu Li</name>
+    </author>
+    <author>
+      <name>Jingqiao Yu</name>
+    </author>
+    <author>
+      <name>Zihao Wang</name>
+    </author>
+    <author>
+      <name>Hong ChiTat</name>
+    </author>
+    <author>
+      <name>Zhaowei Wang</name>
+    </author>
+    <author>
+      <name>Weizhi Du</name>
+    </author>
+    <author>
+      <name>Yuxuan Liu</name>
+    </author>
+    <author>
+      <name>Huihao Jing</name>
+    </author>
+    <author>
+      <name>Jiaxin Bai</name>
+    </author>
+    <author>
+      <name>Yangqiu Song</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.18053v1</id>
+    <title>LADDER: A Long-Horizon Robot Manipulation Benchmark</title>
+    <updated>2026-10-13T09:42:04Z</updated>
+    <link href="https://arxiv.org/abs/2610.18053v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.18053v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>General-purpose robot manipulation policies learn short-horizon skills effectively, but degrade rapidly on long-horizon tasks. Existing benchmarks cannot isolate failures because task horizon is either too short or entangled with scene and object variations. We propose LADDER, a long-horizon robot manipulation benchmark scaling from 1 to 10 subgoals within the same environment over three suites (SimplerEnv-Long, RobotArena-$\infty$-Long, and RoboLab-Long), 145 tasks, eight categories, two embodiments, and 2,024 simulated episodes per system. We evaluate two orchestration paradigms: text subgoals for learned low-level policies (VoLo) and tool selection orchestration (CaP-X, GPT-Policy, PSP-Agent, TiPToP). Given the full instruction directly, low-level policies achieve 85.4% on single-subgoal tasks, but drop to near zero on extended tasks. While orchestration remedies this, it remains bounded by physical execution errors of the low-level policy rather than high-level planning and achieves only ~25%. Tool selection orchestration with GPT-Policy on GPT-6 Astra significantly outperforms learned-policy methods, but incurs significant time and cost budget and succeeds only ~62%. Real-world experiments across two embodiments confirm the collapse of the low-level policy and the gain from orchestration. Project website: https://ladder.insait.ai</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-13T09:42:04Z</published>
+    <arxiv:comment>30 pages. Project website: https://ladder.insait.ai</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Petko Petkov</name>
+    </author>
+    <author>
+      <name>Giuliano Albanese</name>
+    </author>
+    <author>
+      <name>Nikolay Nikolov</name>
+    </author>
+    <author>
+      <name>Luc Van Gool</name>
+    </author>
+    <author>
+      <name>Jonathan Tremblay</name>
+    </author>
+    <author>
+      <name>Danda Pani Paudel</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.16145v1</id>
+    <title>Pollard: Governed Semantic Execution Trees for Framework-Independent AI Agent Control and Replay</title>
+    <updated>2026-10-12T04:06:47Z</updated>
+    <link href="https://arxiv.org/abs/2610.16145v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.16145v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agent frameworks can persist checkpoints, trace tool calls, and limit resource use, but these facilities often assign different identities to execution, governance, and replay. We present Pollard, a framework-independent runtime based on governed semantic execution trees. A step identity commits to canonical input, kind, attempt, and parent identity; the same tree records completion, refusal, resource settlement, and branch history. Strict replay returns a verified stored result without invoking the wrapped operation, while a transactional store coordinates reservations across concurrent workers. Under a signed deterministic freeze, two state-model replicas each executed the evaluation transitions without an invariant violation, retained-lease PostgreSQL groups were tested against exact limits, strict replay avoided external calls, and all semantic mutations were detected with no false alarms on the controls. A multi-pair framework matrix preserved reference behavior and verified the trees. A separate cost-capped hosted study exercised live provider paths, and every completed Pollard trial produced a verified tree. Together, the studies support the core mechanisms under explicit lease, boundary, and seal-custody assumptions.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-12T04:06:47Z</published>
+    <arxiv:comment>Accepted at IEEE ICTAI 2026 (short paper)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Muntaser Syed</name>
+    </author>
+    <author>
+      <name>Marius C. Silaghi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.13494v1</id>
+    <title>Humanize MLE Agents: Multi-Agent Session Alternation Beyond Single-Agent Limits</title>
+    <updated>2026-10-09T12:26:34Z</updated>
+    <link href="https://arxiv.org/abs/2610.13494v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.13494v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing LLM-based agent approaches for long-horizon machine learning engineering (MLE) often use context engineering, implemented through custom harnesses that manage tools, skills, and accumulated experience. However, we find that as single-session execution lengthens, the agent's reasoning intensity declines alongside slowing progress, summarized as long-horizon deceleration, and the benefits of these custom harnesses vanish as the underlying model improves, summarized as harness staleness. These findings suggest that their benefits may not persist across versions, which motivates a workflow-level approach in which agents build on one another's work across sessions. We model these alternating agent sessions as a context-reset semi-Markov decision process (CR-SMDP) and establish sufficient conditions for alternation to exceed single-agent reference limits, derive an explicit experiment-budget bound, and characterize when session caps preserve this advantage. Guided by this analysis, we introduce Humanize MLE Agents (HMA), which alternates two agents on a shared workspace, limits each session to at most k experiments and resets the context between sessions, without additional task-specific harness or prior knowledge supplements. Across 75 Kaggle tasks in MLE-bench, HMA reaches a state-of-the-art any-medal rate of 78.2%, exceeding the strongest open-source baseline by 8.0 points with a quarter of its time budget. Moreover, among six configurations spanning five heterogeneous agent pairs, HMA improves any-medal rate over the constituent baselines by 6.4 points on average, demonstrating cross-pair generality. A supplementary case on kernel optimization reaches 878 cycles, within 1.6% of the community leaderboard leader, demonstrating applicability beyond MLE.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-09T12:26:34Z</published>
+    <arxiv:comment>32 pages, 10 figures. Code: https://github.com/humanfia/hma</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Changye Li</name>
+    </author>
+    <author>
+      <name>Zijian Zhang</name>
+    </author>
+    <author>
+      <name>Muheng Li</name>
+    </author>
+    <author>
+      <name>Yiduo Pang</name>
+    </author>
+    <author>
+      <name>Tingjun Wu</name>
+    </author>
+    <author>
+      <name>Menghan Li</name>
+    </author>
+    <author>
+      <name>Yitong Liu</name>
+    </author>
+    <author>
+      <name>Hongkai Guo</name>
+    </author>
+    <author>
+      <name>Mengchi Chen</name>
+    </author>
+    <author>
+      <name>Chenyu He</name>
+    </author>
+    <author>
+      <name>Kaisheng Ma</name>
+    </author>
+    <author>
+      <name>Wei Xu</name>
+    </author>
+    <author>
+      <name>Song Han</name>
+    </author>
+    <author>
+      <name>Sihao Liu</name>
+    </author>
+    <author>
+      <name>Ligeng Zhu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.10133v3</id>
+    <title>HarnessIR: Harnessing Multimodal Foundation Models for Universal Real-World Image Restoration</title>
+    <updated>2026-10-19T19:02:37Z</updated>
+    <link href="https://arxiv.org/abs/2610.10133v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.10133v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Real-world low-quality images suffer from complex mixed degradations, including but not limited to noise, blur, atmospheric effects, etc. Recent agentic methods usually model real-world image restoration (Real-IR) as a sequential tool calling problem over task-specific single-degradation restoration models. This paradigm, however, is fundamentally limited because complex real-world degradations cannot be cleanly undone degradation by degradation, and the tool used for task-specific models caps the capability of the agent system. In this work, we present HarnessIR, an agentic framework for Real-IR by harnessing a multimodal foundation model (MFM) as the executor. HarnessIR consists of five stages: perception and diagnosis, on-demand tool invocation, prompt composition, execution, and verification-driven refinement. Unlike prior agentic Real-IR methods that rely on tool chains assembled from task-specific models, HarnessIR feeds the restoration requirements, the perceptual diagnosis, and the evidence into an MFM that performs restoration in a single pass, followed by verification stages to determine whether the result warrants further processing. Under our harness, off-the-shelf MFMs handle restoration tasks remarkably well, achieving state-of-the-art results on the widely used MiO100 synthetic benchmark. More importantly, by exploiting the strong generalization ability of MFMs, HarnessIR delivers compelling restoration quality on challenging real-world scenes where previous agentic IR systems often struggle. Codes is available at https://github.com/PolyU-VCLab/HarnessIR.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-07T14:14:36Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Xiangtao Kong</name>
+    </author>
+    <author>
+      <name>Shuaizheng Liu</name>
+    </author>
+    <author>
+      <name>Rongyuan Wu</name>
+    </author>
+    <author>
+      <name>Lingchen Sun</name>
+    </author>
+    <author>
+      <name>Zhengqiang Zhang</name>
+    </author>
+    <author>
+      <name>Jixin Zhao</name>
+    </author>
+    <author>
+      <name>Yuhui Wu</name>
+    </author>
+    <author>
+      <name>Lei Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.04929v2</id>
+    <title>RobotUse: Allocating Computation, Context, and Decisions</title>
+    <updated>2026-10-06T05:04:47Z</updated>
+    <link href="https://arxiv.org/abs/2610.04929v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.04929v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Robot agents must connect their intended actions to observed outcomes while retaining the context needed to revise their choices over repeated attempts. Existing interfaces often leave these choices inside predefined tools or require agents to manage detailed execution code and its growing history. We introduce RobotUse, a robot agent harness that organizes computation, context, and decisions around specifying and revising physical actions. Agents visually select targets and poses, while the backend handles geometry, motion planning, and control. Subagents retain detailed interactions within each subgoal and return the information needed for subsequent decisions. Continual harnessing lets agents learn from execution by updating a persistent playbook. On RoboLab, RobotUse achieves 45% task success, outperforming CaP-X by 6.7 percentage points while maintaining compact decision contexts and reducing reliance on predefined action abstractions. Furthermore, we show that RobotUse learns from real-world execution despite imperfect feedback and transfers what it learns to subsequent tasks. Project page is available at https://robotuse-team.github.io/.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-04T04:15:33Z</published>
+    <arxiv:comment>18 pages, 10 figures, 11 tables. Project page: https://robotuse-team.github.io/</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Junhoo Lee</name>
+    </author>
+    <author>
+      <name>Injun Baek</name>
+    </author>
+    <author>
+      <name>Seungyeon Kim</name>
+    </author>
+    <author>
+      <name>Suhyun Jeon</name>
+    </author>
+    <author>
+      <name>Minkyu Kim</name>
+    </author>
+    <author>
+      <name>Baekseung Kim</name>
+    </author>
+    <author>
+      <name>Nojun Kwak</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.04433v1</id>
+    <title>What Does a Harness Buy? Tokens, Mostly</title>
+    <updated>2026-10-03T10:47:10Z</updated>
+    <link href="https://arxiv.org/abs/2610.04433v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.04433v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A coding agent is a language model wrapped in a harness: the system prompt, the tool set, and the context management that turn a chat model into something that can work inside a repository. Production harnesses ship releases daily, vendors advertise pass-rate gains from harness changes, and leaderboards mix harnesses freely. What is rarely measured is how much the harness itself moves the score when the model is held fixed. We run five models through three production harnesses, Claude Code, mini-SWE-agent, and OpenCode, on SWE-bench Verified, and rerun the same configurations to calibrate how much a score moves when nothing changes but the run. On 447 tasks and the two models we ran there, Claude Code and mini-SWE-agent, the heaviest and the lightest harness, are equivalent within five points. On a 45-task hard subset and five models, swapping the harness flips as many tasks as rerunning the same harness, 13% in both cases, and the tasks a harness wins in one run are not the tasks it wins in the next. The one harness effect that clears the noise is a loss, not a gain: OpenCode trails by up to 9 points on the large pool, and on one model half of that gap sits in runs its output cap cut short. What the harness does decide is the bill. With the same model, the same tasks, and one price list, cost per task differs by up to 3x across harnesses. The gap is set at the first call, by the preamble of system prompt and tool schemas each harness sends with every step, and scaled by the number of steps; per-step growth and per-call tool output differ far less. The provider's price for cached input scales the bill and does not reorder it. The rerun data also give the resolution a harness comparison needs: at the discordance we observe, 45 tasks catch a 13-point gap only half the time and no gap with 80% power, and 447 tasks resolve 5 points, still coarser than the gains many harness changes claim.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-03T10:47:10Z</published>
+    <arxiv:comment>22 pages, 7 figures. Code and data: https://github.com/YangzeLiu/what-does-a-harness-buy</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yangze Liu</name>
+    </author>
+    <author>
+      <name>Zhongyi Han</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.02459v1</id>
+    <title>OpenRUA: Robot-Use Agents Are Zero-Shot Visuomotor Policies</title>
+    <updated>2026-10-01T20:32:41Z</updated>
+    <link href="https://arxiv.org/abs/2610.02459v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.02459v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Coding agents are extending their reach into the physical world by writing and executing robot control programs. One might expect the agents to use the existing mature software stack that engineers have developed over decades to access sensors and control motion. Yet prior work primarily engineers complex custom harnesses to orchestrate agents for robot use, particularly by prescribing specialized workflows and providing bespoke interfaces. This raises the question: "Is such additional harness engineering necessary?" We introduce OpenRUA, a zero-abstraction harness that bypasses bespoke abstraction layers by providing off-the-shelf coding agents with only terminal access to the robot's native software interface ROS 2. OpenRUA employs a minimalist workspace-as-harness design, only offering ROS 2 documentation and basic tools while leaving the coding agent to organize its own work without orchestrating any agentic workflow. Within this workspace, OpenRUA recasts perception as file I/O and manipulation as coding. With Claude Code powered by Claude Opus 5, OpenRUA achieves success rates of 99.0% on CaP-Bench and 87.0% on LIBERO-PRO, demonstrating that an off-the-shelf coding agent can serve as a zero-shot visuomotor policy through the robot's native interface, without bespoke primitives or task-specific training. Under this minimalist design, further analysis reveals striking emergent behaviors of coding agents: (1) For perception, the agent spontaneously writes programs that process raw sensory inputs and derive metric measurements in 96.80% of episodes. (2) For manipulation, the agent spontaneously builds motion-control clients (e.g., gripper control) in 95.87% of episodes and closed-loop control programs (e.g., adjusting motion based on sensor feedback) in 50.13% of episodes. Our code is available at https://github.com/terminalworld/OpenRUA.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-01T20:32:41Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Zhaoyang Chu</name>
+    </author>
+    <author>
+      <name>Earl T. Barr</name>
+    </author>
+    <author>
+      <name>Claire Le Goues</name>
+    </author>
+    <author>
+      <name>Peter O'Hearn</name>
+    </author>
+    <author>
+      <name>Mark Harman</name>
+    </author>
+    <author>
+      <name>Federica Sarro</name>
+    </author>
+    <author>
+      <name>He Ye</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.37125v3</id>
+    <title>When Should Agents Check External State? Budgeting Observations for Stored Intentions</title>
+    <updated>2026-10-16T01:24:20Z</updated>
+    <link href="https://arxiv.org/abs/2609.37125v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.37125v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Prospective memory allows an agent to retain an intention tied to a future condition, but the stored intention does not reveal whether that condition currently holds. Checking it may require web access, multi-step tool use, and paid calls. Existing systems decide when intentions require attention, but do not allocate the resulting observations under a shared budget. We introduce the first resource-allocation formulation for the external observations required by stored intentions under a shared episode budget. BudgetPM offers two policy variants that share a hard-budget executor. BudgetPM-Static uses a lightweight Logistic scorer to learn whether a check improves the current decision. BudgetPM-Sequential distills full-episode hindsight schedules into a lightweight policy that decides when to spend or reserve capacity using only pre-query information at deployment. We evaluate BudgetPM against two public memory-agent systems, five matched controls, and four hand-designed monitoring or budget-adaptation rules. Across two benchmarks and three backbones, BudgetPM-Static outperforms adapted Mem0 and PMA workflows. On PM-Bench, its Logistic scorer reaches competitive quality--cost operating points alongside higher-capacity scorers and retains 99.9--100\% of unconstrained quality with 42--54\% fewer observations. Under severe scarcity and the same hard caps, BudgetPM-Sequential exceeds the strongest tested natural monitoring schedule by 1.92--2.58 Set F1 points. It reaches the same Set F1 and on-time recall with 16--33\% fewer observations. Matched attribution, exact-cost analysis, and a fixed-budget load intervention link this gain to competition between present and future opportunities. These results yield a demand--capacity design rule: local gating works when capacity covers demand, while future-aware supervision adds value when observations compete across time.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T09:32:43Z</published>
+    <arxiv:comment>23 pages, 2 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zhengkun Di</name>
+    </author>
+    <author>
+      <name>Bin Shi</name>
+    </author>
+    <author>
+      <name>Kai Sun</name>
+    </author>
+    <author>
+      <name>Yiming Xu</name>
+    </author>
+    <author>
+      <name>Bo Dong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.36732v1</id>
+    <title>Deep Learning Latency Attacks and Defenses: A Cross-Domain Survey of Availability Threats</title>
+    <updated>2026-09-29T05:06:32Z</updated>
+    <link href="https://arxiv.org/abs/2609.36732v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.36732v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Adversarial machine learning has focused mainly on integrity, but availability is an increasingly consequential complement. Latency attacks (also energy-latency attacks) increase inference-time work, energy, or response time, causing deadline misses, throughput collapse, or resource exhaustion in vehicle controllers, interactive services, or battery-powered sensors, sometimes while preserving the nominal prediction.
+  This survey unifies a fragmented literature spanning perception pipelines (including physical attacks on autonomous-driving detection and tracking), input-adaptive neural inference (sponge examples, dynamic networks), and autoregressive and agentic systems (output-length, verbose-image, and reasoning denial-of-service attacks on LLMs, VLMs, mixture-of-experts models, and tool-using agents). We organize attacks by exploited computational bottleneck rather than formulation, separating what makes a computation expensive from how the attacker triggers it; the delivery channel (input, prompt or retrieved content, message, poisoning, or weight tampering) is an orthogonal attribute. Many attacks share one mechanism, intermediate-work amplification, motivating a work-budget defense abstraction; we distinguish caps on the work entering an expensive stage from caps on the results leaving it. We further analyze when a model-level cost increase becomes a system-level availability failure, which depends on critical-path share, slack, existing ceilings, accumulation, resource sharing, and fallback policy, not on the amplification factor alone.
+  We also provide a threat-model taxonomy, consolidated quantitative comparisons, a defense review by control mechanism, and open challenges such as standardized evaluation, physical realizability, and whole-system availability. Companion website: https://github.com/guzonghua/awesome-latency-attacks.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T05:06:32Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zonghua Gu</name>
+    </author>
+    <author>
+      <name>Zeyu Gao</name>
+    </author>
+    <author>
+      <name>Amin Saremi</name>
+    </author>
+    <author>
+      <name>Samarjit Chakraborty</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.33524v1</id>
+    <title>EverMine: Dissecting the Self-Evolution of Research Capabilities in Long-Horizon Alpha Research</title>
+    <updated>2026-09-27T12:46:09Z</updated>
+    <link href="https://arxiv.org/abs/2609.33524v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.33524v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Self-evolving agents aim to turn research feedback into reusable skills, tools, and research rules. Whether these accumulated capabilities continue to improve later research requires controlled evaluation. Long-horizon alpha discovery provides a state-dependent setting: once a new factor enters the portfolio, the predictive information already covered changes, so the value of the same candidate or experience may change over time. We introduce EverMine, an empirical framework for studying self-evolving research capabilities in long-horizon alpha discovery. EverMine decomposes the research state into history (Hist), the current factor portfolio (Frontier), and reusable capabilities (Cap). Under matched resource limits, we compare complete runs with fixed or evolving Cap, and replace Cap while holding Hist and Frontier fixed to estimate the conditional value of accumulated capabilities. We also combine full trajectories with historical-state replay to examine how experience-based decisions affect candidate selection and portfolio outcomes. Across 18 long-horizon trajectories, end-to-end comparisons show no consistent gain from Cap evolution. Across 48 continuation branches from shared Hist and Frontier states, accumulated Cap also does not consistently outperform the initial Cap. Parameter tuning of existing factor structures can still improve the portfolio. In an exploratory replay of two screening batches from one Evolving trajectory, some screened-out candidates have positive marginal value at the original state, yet submitting all screened-out candidates sequentially slightly lowers final portfolio IC in both batches. These results show that candidate value depends on the evolving portfolio and submission order, and motivate evaluating self-evolving research capabilities through end-to-end outcomes, conditional capability value, and the consequences of experience-based decisions.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-fin.ST" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-27T12:46:09Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Siyuan Li</name>
+    </author>
+    <author>
+      <name>Jiangfeng Zhang</name>
+    </author>
+    <author>
+      <name>Rui Yao</name>
+    </author>
+    <author>
+      <name>Weihua Qiu</name>
+    </author>
+    <author>
+      <name>Mingyang Xu</name>
+    </author>
+    <author>
+      <name>Zixuan Yuan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.31937v3</id>
+    <title>VReAct: Verification as an Architectural Layer for LLM Agents: A V-Model Design, and a Pilot Study of Its Deterministic Core</title>
+    <updated>2026-10-18T16:50:50Z</updated>
+    <link href="https://arxiv.org/abs/2609.31937v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.31937v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents built on the ReAct pattern concentrate four responsibilities in one model: selecting a strategy, choosing each action, formatting it, and judging whether the result is adequate. Nothing outside the generative loop can reject its output, so an agent that cannot progress does not report failure; it runs until an external budget terminates it. We propose VReAct, which treats verification as an architectural layer for ReAct agents by adapting the software-engineering V-model: specification levels descend from requirements to individual steps, each paired with a dedicated verifier; a deterministic controller enforces every verdict; and only verification outcomes write memory. A rejection thus localizes the level that introduced the fault, and an agent halts by declining rather than by exhaustion. Each verifier separates a zero-cost deterministic gate from an optional LLM judge, so the contribution and cost of each can be measured independently. A pilot study implements the acceptance- and unit-level verifier pairs, comparing five configurations that share one executor, tool set, and scorer and differ only in verification components, on the four-hop stratum of MuSiQue with an 8B-parameter backbone. Across 47 executions, the two unverified configurations answered none of ten questions, every run ending at a step cap or provider token limit; the verified configuration without a planner answered eight of ten and abstained on the rest. Deterministic gates produced eight of nine observed corrections at zero marginal cost, and planning degraded performance once verification was present. These results characterize termination behavior, not accuracy at scale; we outline a twelve-month plan to complete and evaluate the full architecture, including the integration-level pair the pilot omits.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-25T19:30:58Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Ali Afoud</name>
+    </author>
+    <author>
+      <name>Jie JW Wu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.28585v1</id>
+    <title>Persistent Billable State: Denial-of-Wallet Attacks and Defenses in Tool-Calling LLM Agents</title>
+    <updated>2026-09-23T13:45:26Z</updated>
+    <link href="https://arxiv.org/abs/2609.28585v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.28585v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-step tool-calling LLM agents rely on host runtimes to preserve state across turns. When a runtime carries an external tool return into later model inputs, providers meter it again. An admitted malicious or compromised tool can thereby convert untrusted data into recurring victim-billed processing without victim credentials or local runtime privilege. We call retained content persistent billable state and formalize the host's decision over whether and how it enters later billable context as the persistent billable-state boundary.
+  We present the first systematic security study of this post-admission lifecycle. We derive six denial-of-wallet attack vectors and build DOW-BENCH, an end-to-end harness evaluated across six model families. Across 243 executions, usage telemetry shows that the maximum per-session cumulative input reaches 14,293x the session's first-call input. Controlled history-policy reruns isolate raw retention's contribution: retaining raw history increases mean effective session cost by 21.2-35.9%. Compression succeeds on 10/12 and 11/12 history-dependent tasks, versus 2/12 under deletion for each provider.
+  To govern this boundary, we combine deterministic history transformation with four host-side invariants that bound prompt mass, context growth, recursive opportunity, and cumulative spend before reingestion. The kernel contains every recurring attack in the 123-evaluation replay corpus. Across 24 Mistral Small 4 workflows, a progress-authorized policy achieves 22/24 oracle-verified task successes with no pre-completion interruptions, versus 13/24 under a fixed cap. Only 71 of 3,830 scanned MCP server and transport repositories expose any code-visible safeguard proxy, and none cover all four safeguard families. These results establish persistent billable state as a first-class security object and pre-reingestion as its host-owned control point.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-23T13:45:26Z</published>
+    <arxiv:comment>22 pages, 14 figures, 13 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Jinqian Zhang</name>
+      <arxiv:affiliation>Institute of Information Engineering, Chinese Academy of Sciences</arxiv:affiliation>
+      <arxiv:affiliation>School of Cyber Security, University of Chinese Academy of Sciences</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Haojun Xia</name>
+      <arxiv:affiliation>Institute of Information Engineering, Chinese Academy of Sciences</arxiv:affiliation>
+      <arxiv:affiliation>School of Cyber Security, University of Chinese Academy of Sciences</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Shujiang Wu</name>
+      <arxiv:affiliation>Beihang University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jingkun Yue</name>
+      <arxiv:affiliation>State Key Laboratory of Networking and Switching Technology, Beijing University of Posts and Telecommunications, Beijing, China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Xia Zhang</name>
+      <arxiv:affiliation>Institute of Information Engineering, Chinese Academy of Sciences</arxiv:affiliation>
+      <arxiv:affiliation>School of Cyber Security, University of Chinese Academy of Sciences</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Zhangpei Cheng</name>
+      <arxiv:affiliation>Institute of Information Engineering, Chinese Academy of Sciences</arxiv:affiliation>
+      <arxiv:affiliation>School of Cyber Security, University of Chinese Academy of Sciences</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Bibo Tu</name>
+      <arxiv:affiliation>Institute of Information Engineering, Chinese Academy of Sciences</arxiv:affiliation>
+      <arxiv:affiliation>School of Cyber Security, University of Chinese Academy of Sciences</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.28564v1</id>
+    <title>Don't Read the Log: Execution Traces Contaminate Verifiers in Video-Generation Agents</title>
+    <updated>2026-09-23T10:53:38Z</updated>
+    <link href="https://arxiv.org/abs/2609.28564v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.28564v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic video-generation systems close a loop between a generator and a verifier: an LLM plans shots, calls a text-to-video model, and a multimodal judge decides whether the result satisfies the request. To diagnose where a long workflow fails, recent harnesses deliberately show the judge more than the video-the agent's execution trace, its plan, the narration it synthesized. We ask whether this auxiliary text moves the judge's verdict on purely \emph{visual} requirements, holding the frames fixed. On a benchmark of 109 generated two-event clips with manual labels, in which the requested event is either visibly completed or visibly missing, a trace that reports a successful tool call makes three open-weight Qwen-VL judges (7B, 8B, 32B) accept $78$--$90\%$ of the failures, up from $7$--$19\%$ without text, and a contradicting trace makes them reject up to $100\%$ of correct clips; an instruction to ``use only the frames'' does not remove the effect. Frontier closed judges are essentially unmoved on the same clips, showing that the vulnerability is a property of the judge's learned trust in tool logs rather than of the task. Plan-derived text carries no clip-specific information, so it can only shift a judge's operating point, and in a repair loop that shift becomes a cap on the true pass rate that no repair policy can exceed; the cap matches simulation to two decimals. In the loop, contamination is exploited without any adversarial agent: an honest LLM planner that always regenerates ends with a judge pass rate of $1.00$ and a human-labelled pass rate of $0.28$, and a pipeline in which a cheap checker writes its verdict into the trace launders that checker's errors into a stronger final judge ($0.69$ false accepts).</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-23T10:53:38Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Jian Xu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.21341v1</id>
+    <title>What Stops a Small Language Model From Driving a Database Agent</title>
+    <updated>2026-09-18T05:51:31Z</updated>
+    <link href="https://arxiv.org/abs/2609.21341v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.21341v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Small open-weight language models are assumed to fail at agentic database work because they lack the reasoning capacity for it. We test that against a production system. Over eleven days we drove the agent mode of an open-source SQL client with 39 open-weight models served locally and one hosted control, across six task surfaces: 8,199 runs, 110,711 ledger events, 14,008 refused tool calls. Of the 2,100 model-attributed agent-mode losses, 1,590, or 75.7%, came from runs that had invoked at least one tool. That majority is what survives resampling models rather than runs: it holds in 99.7% of clustered resamples and in 15 of the 22 models with at least twenty losses. Within it, transport, a run that used the tools and never got a deliverable through, is the largest class at 36.2% and capability, a run that invoked no tool at all, the smallest at 17.3%; we report that ordering as a property of this corpus rather than a general finding, since clustered by model it holds in only 74.5% of resamples. Transport failures decompose into a few mechanical argument shapes. Production ledgers record refusal codes and never the model's arguments, so these were invisible for ten days; capturing them exposed five server defects, one of which demanded a field on one tool, forbade it on the sibling that composed it, then failed the run for its absence. Five server changes, touching no model, prompt or sampling setting, moved six models by 6 to 21 cells out of 30. We also report a confound we believe affects published local-model benchmarks, ours included: with no context cap, one 7.1 GB model was admitted at its full 262,144-token window and held 51 GB on a 64 GB machine, producing runs indistinguishable in any ordinary log from a model timing out. The corpus, the scorer and a verifier that regenerates every figure are released.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-18T05:51:31Z</published>
+    <arxiv:comment>16 pages, 8 tables. Dataset, scorer and a verifier that regenerates every figure: https://doi.org/10.57967/hf/10485</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Cevheri Bozoglan</name>
+    </author>
+    <author>
+      <name>Yusuf Gundogdu</name>
+    </author>
+    <author>
+      <name>Abdullah Kaya</name>
+    </author>
+    <author>
+      <name>Koray Sirin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.18435v1</id>
+    <title>WetRobo: A Reproducible Robot Kit for Coding Agents in Biological Laboratories</title>
+    <updated>2026-09-16T10:27:32Z</updated>
+    <link href="https://arxiv.org/abs/2609.18435v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.18435v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Automating biological research requires general-purpose, reproducible robot systems that allow individual wet-lab researchers to delegate robot tasks without performing teleoperation or neural-network training. Vision-language-action policies have been proposed for general-purpose arms, but can lose performance when their operating environment changes. We therefore built WetRobo, a robot kit that can readily transfer between laboratories. It consists of one robot arm, laboratory equipment (an incubator, a reagent bottle with a cap, and a Petri dish), the existing code that moves the arm, teleoperation demonstrations of each task that we recorded, and a general AGENTS.md skill file. A biological experimentalist provides natural-language tasks without collecting local teleoperation training data or training a neural network. The coding agent observes the local laboratory and writes and executes programs, using external tools as needed for adaptation. We demonstrate use of WetRobo with OpenAI Codex (gpt-5.6-sol) on three successful tasks: lifting a Petri dish lid, removing a bottle cap, and opening the incubator door, all in real-world laboratories. The coding agent achieved the cap task in both laboratories, Lab X and Lab Y, whereas a VLA fine-tuned on Lab X demonstrations succeeded there but failed to transfer to Lab Y. These results point to a practical route for laboratory robotics: instead of training a policy for each laboratory, distribute a kit and let a coding agent adapt it in each laboratory. Code, demonstrations, and the evolved programs are available at https://github.com/tsudalab/WetRobo.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-16T10:27:32Z</published>
+    <arxiv:comment>9 pages, 11 figures, 2 tables. Code and demonstrations: https://github.com/tsudalab/WetRobo</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yuna Oikawa</name>
+    </author>
+    <author>
+      <name>Kei Endo</name>
+    </author>
+    <author>
+      <name>Takanori Uzawa</name>
+    </author>
+    <author>
+      <name>Yunzhe Zhang</name>
+    </author>
+    <author>
+      <name>Manan Anjaria</name>
+    </author>
+    <author>
+      <name>Lerrel Pinto</name>
+    </author>
+    <author>
+      <name>Sherry Yang</name>
+    </author>
+    <author>
+      <name>Koji Tsuda</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.12582v1</id>
+    <title>NovaFabric: Tamper-Evident, Replayable Evidence for Autonomous AI Agent Runs</title>
+    <updated>2026-09-11T08:35:43Z</updated>
+    <link href="https://arxiv.org/abs/2609.12582v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.12582v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>When an autonomous AI agent does something consequential, what can be proven about what it did? Agent-observability platforms capture traces, but a trace is mutable: alterable undetected, with no recipe for re-executing it, silent on whether captured secrets were removed. Regulation (EU AI Act, ISO 42001, NIST AI RMF) presumes records an independent party can check.
+  We present NovaFabric, producing audit-grade execution evidence: provider-neutral, tamper-evident, replayable, shareable. It records an agent run, without modifying agent logic, into a portable Run Capsule (fifteen-entity schema), sealed with a holistic DSSE signature, RFC 3161 timestamp, Merkle log and redaction attestation. Sealed runs are re-executable under a four-mode replay protocol and exportable as an Evidence Bundle for third-party verification with stock tooling (specified, not evaluated). The contribution is integration, not new cryptography: OpenTelemetry, DSSE/in-toto and W3C PROV.
+  We evaluate eight research questions at measured scope. Mocked replay serves every model response from the capsule (no live model call, 10/10) but is offline w.r.t. models, not the network; only 2/10 tool-using workloads completed; the gap is missing tool-response substitution. Tampering is rejected across three tested classes. Declared-stream completeness is 0.652 (95% CI +/-0.064, ten scenarios). A repaired rule pack redacts 14/14 credential types, preserving 9/9 decoys; diff localises 140/140 mutations. Blast-radius queries: 45.5ms p99 over 10M edges (3.3x faster than a columnar baseline), 167.9ms over 100M (1 client, n=30). A 314-machine, ten-region run finds capsule REST ingest lossless but capped at 61.6 req/s (p99 26.8s) by per-worker serialisation. Six defects found in NovaFabric and its evaluation corpus: four fixed, one withdrawn, one open.
+  Verification is conditional on a stated trusted computing base.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-11T08:35:43Z</published>
+    <arxiv:comment>44 pages, 7 figures, 8 tables, 2 listings. Preprint</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Mohsen Seyedkazemi Ardebili</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.03425v1</id>
+    <title>The Civilization Framework: Sovereign-Anchored Communication Between Personal Multi-Agent Systems</title>
+    <updated>2026-09-03T06:31:56Z</updated>
+    <link href="https://arxiv.org/abs/2609.03425v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.03425v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Humans are the transport layer between AI systems, losing context at every hop. We present the Civilization Framework, whose addressable party is the civilization, not the agent (one human sovereign, a persistent ledger, and interchangeable agents), and the Embassy Protocol, a carrier-agnostic overlay: messages arrive asynchronously at a resident ledger endpoint, any online agent of the receiver handles them, and commitment state on both ledgers, not delivery, is ground truth. Authority derives from memory: an agent's power to act for its civilization is capped by the memory it can access and externalized through signed credentials, separate from civilization-level reputation. We identify the temporal-weight effect, a hazard in AI-to-AI communication where what arrives first acquires unearned authority, and test it in one frontier model in a preregistered 1,908-trial experiment. With verification removed, an incorrect upstream claim arriving first captures 54.2% of answers (4.2% under full verification), while the same claim arriving after the receiver has sealed its own answer captures 31.6% (the two prompt shells are not length-matched, so part of that gap may reflect shell form; see Section 7), and both registered question-set specifications agree on these two verdicts (the exclusion specification is preregistered as under-powered). Two secondary results, the mitigation from instruction-level provenance labeling and sealed-answer accuracy equivalence, are specification-dependent, holding only under the all-questions specification. Because a registered check of tool use failed its call-budget condition, the registration classifies the round as inconclusive and every result above, primary and secondary, is reported as exploratory; a replication with harness-enforced budgets is planned. The framework's intra-civilization layer has a working implementation.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-03T06:31:56Z</published>
+    <arxiv:comment>44 pages, 4 tables. Preregistration: https://osf.io/hpxgu</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Guangjun Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.29545v1</id>
+    <title>ERRAND: Budgeted Maintenance of Agent Memory</title>
+    <updated>2026-09-02T19:59:29Z</updated>
+    <link href="https://arxiv.org/abs/2609.29545v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.29545v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deployed agents run on handed-over knowledge: a frozen policy consults a briefing of consolidated items written before the stream begins. The world then moves while the store stands still: paths close, flags change, price bands move; every item was true at handover, and the failure is staleness, not ignorance. We introduce ERRAND, which treats revalidation as a priced errand: a recheck competes with the task it protects for the same scarce actions, funded only when the value per action of resolving a doubt clears a running wage. The errand index is single-peaked, vanishing at both ends of belief, so certainty in either direction costs nothing; free en-route receipts maintain on-path knowledge, and repair writes a version, never a deletion. Under equal action budgets in two drifting tool-use worlds, ERRAND clears every non-oracle policy on the preregistered calibers, primary in every setting and conditional at every binding budget, leading eager revalidation by 10.0pp at the base cap. Restraint wins: given no cap, ERRAND stops on its own, spending 11.0% of steps, while uncapped eager revalidation spends 70.7% and still finishes 4.5pp behind capped ERRAND. The margin sits where the briefing's coverage is thinnest, the shadow price of long-tail knowledge: a small budget, well priced, beats a bigger store that never rechecks.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-02T19:59:29Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Beining Wu</name>
+    </author>
+    <author>
+      <name>Zihao Ding</name>
+    </author>
+    <author>
+      <name>Jun Huang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.29707v1</id>
+    <title>Where Does the Energy Go? Profiling LLM Agent Inference on Blackwell GPUs</title>
+    <updated>2026-08-31T11:06:55Z</updated>
+    <link href="https://arxiv.org/abs/2609.29707v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.29707v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents that iteratively reason, plan, and invoke tools create workload profiles fundamentally different from single-pass inference, yet how their energy consumption is distributed across hardware components and workload phases remains poorly understood. Characterizing these workloads therefore requires simultaneous visibility into both component-level power and phase-level execution. We conduct a full-stack energy profiling study combining NVML GPU counters, Intel RAPL CPU/DRAM counters, and Intelligent Platform Management Interface (IPMI) system-level sensors on 2x NVIDIA RTX PRO 6000 Blackwell GPUs, and profile three representative workloads with Qwen3.8-27B. For mathematical reasoning, we compare thinking-enabled and thinking-disabled modes. Our measurements reveal that GPU-only telemetry misses 41-45% of system energy across all three workloads, with non-GPU components accounting for the remainder. In our setup, the sequential agent workload consumes 63x more system energy per output token than saturated serving, reflecting the absence of batching, context growth across turns, and tool-induced idle periods. Extended thinking generates 21-75% more tokens per problem, while per-token energy differs by less than 1% between modes within each dataset, indicating that the resulting increase in energy is driven by output volume rather than a change in per-token efficiency. Continuous batching improves system-level energy efficiency by 3.2x from 1 to 16 requests per second, as GPU power plateaus while throughput continues to increase with batching depth. For the memory-bandwidth-bound reasoning workload, throughput remains unchanged under per-GPU power caps of 400-600 W but drops sharply at 300 W. These findings suggest that context-management techniques such as summarization and selective retrieval may help reduce energy consumption in agent deployments.</summary>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-31T11:06:55Z</published>
+    <arxiv:comment>11 pages, 6 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.DC"/>
+    <author>
+      <name>Qi Luo</name>
+    </author>
+    <author>
+      <name>Kunlin Li</name>
+    </author>
+    <author>
+      <name>Ziwen Wang</name>
+    </author>
+    <author>
+      <name>Yun Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.22114v1</id>
+    <title>An Empirical Cost Attribution of Context-Compression Gateways in Multi-Turn Coding Agents</title>
+    <updated>2026-08-19T07:43:01Z</updated>
+    <link href="https://arxiv.org/abs/2609.22114v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.22114v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Context compression is widely proposed as a way to cut the token bill of LLM coding agents, and public benchmarks report that aggressive compression preserves task-solving quality. These two facts do not imply the third one commonly assumed: that compressing file reads saves money in a real multi-turn agent. We instrument a production compression gateway (Paritok) between coding agents (Claude Code, Codex) and frontier LLMs (Claude Sonnet, GPT-5), and decompose the token bill of real sessions into three independent levers: tool-schema filtering, content compression of file reads and tool output, and history summarization. Measured in isolation under controlled A/B runs, the three save at fundamentally different rates. Tool-schema filtering removes a fixed block every turn, roughly 21K-57K tokens on a typical turn; it is linear in the turn count N and the only unambiguously and reproducibly positive lever. Content compression saves only about 2% of the cache-priced prefix per turn, but compressed reads accumulate in history and are re-sent on every later turn, so its cumulative saving grows quadratically, about 3350*N^2 tokens (measured), overtaking the fixed tool-filter saving within roughly 6 turns until the context window caps it. A non-destructive gateway lets the agent pull original bytes back on demand; each recall re-sends exactly the one segment just compressed away, so its cost is fixed and bounded rather than a multiplicative blowup, and heavy recall spends the accumulated saving back one segment at a time. Finally, a strong single-shot compression benchmark - 86.5% of SWE-bench quality retained at a 25.7% compression rate, achieved by the model this gateway deploys (Paritok-4B, reported separately) - is orthogonal to multi-turn agent cost and must not be cited as a cost-saving argument. We distill the results into an actionable recipe for where token-saving effort pays off.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PF" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-19T07:43:01Z</published>
+    <arxiv:comment>10 pages, 1 figure, 4 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Luzhuo Chen</name>
+    </author>
+    <author>
+      <name>Jiayu Shi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.17007v2</id>
+    <title>SkillEffect: Checked Lowering for Memory-Bounded Agent Tools</title>
+    <updated>2026-08-22T00:15:59Z</updated>
+    <link href="https://arxiv.org/abs/2608.17007v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.17007v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agent Skills can specify procedural and resource obligations for tool use, and language models instantiate them as concrete programs. However, when models turn this guidance into code for existing tool interfaces, even a semantically correct program may load an entire input and exceed the memory available to one tool call. We present SkillEffect, a checked-lowering runtime for computations with a recoverable source relation, an audited bounded implementation, and a registered output postcondition. Before granting execution authority, an independent checker rebuilds each proposed lowering from the submitted program and immutable input. Every relation plugin supplies a source recognizer, input-fact extractor, bounded-IR constructor, arena-bound function, and postcondition; one common runtime provides checked selection, bounded-VM execution, atomic capacity leasing, and staged publication. Generality in SkillEffect is architectural rather than automatic: each supported computation requires an audited relation plugin, while the dispatch, resource-control, execution, and publication mechanisms are shared across plugins. Across six operator families, bounded access substantially reduces peak memory and improves completion under externally fixed caps. Six plugins instantiate the same contract across five execution patterns, from streaming reduction to bounded-heap Top-k. The XLSX onboarding study and Top-k extension show that a new relation and a new retained-state pattern reuse the same trust boundary, while the checker accepts all evaluated legal configurations and rejects all adversarial proposals. Together, these results show that one checked-lowering architecture can enforce heterogeneous registered memory relations at Agent tool dispatch.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-17T18:03:56Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yinuo Wang</name>
+    </author>
+    <author>
+      <name>Yiyu Shi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.15646v1</id>
+    <title>Situated Practice Systems: A Computational System for Supporting the Coaching and Practice of Regulation Skills for Innovation Work</title>
+    <updated>2026-08-16T09:26:25Z</updated>
+    <link href="https://arxiv.org/abs/2608.15646v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.15646v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Students are increasingly expected to prepare for open-ended innovation work, which requires well-developed cognitive, metacognitive, and emotional regulation skills. College learning environments offer opportunities to work on real-world problems--such as in design and engineering--but students often remain unaware of their ineffective work practices and recurring regulation challenges, and may struggle to improve. Coaching from experts can help, but students' practices and regulation behaviors are largely invisible from work artifacts alone and are difficult to diagnose and track without computational support. We introduce Situated Practice Systems (SPS), which provide: (1) an Interactive Context-Assessment-Plan (CAP) Notes tool to support coaches' understanding and modeling students' regulation-informed practices, and (2) Practice Agents that help students develop more effective practices. SPS uses Practice Objects to represent practices and regulation behaviors computationally, and Practice Scripts to automatically present suggested practices to students in relevant situations. In a formative 3-week field study, SPS helped coaches identify recurring regulation gaps and provide tailored practices. SPS also guided students in adopting more effective ways of working on their own and with others. We demonstrate how CSCW systems and learning environments can be designed to support the development of students' work practices and regulation skills, enabling them to lead innovation work.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-16T09:26:25Z</published>
+    <arxiv:comment>Published at CSCW 2026; Honorable Mention for Best Paper (Top 3%)</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Kapil Garg</name>
+    </author>
+    <author>
+      <name>Darren Gergle</name>
+    </author>
+    <author>
+      <name>Haoqi Zhang</name>
+    </author>
+    <arxiv:doi>10.1145/3817001</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3817001" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.21423v1</id>
+    <title>Agentic Security: A Systematization of Tools, Failure Modes, and Design Laws for LLM-Driven Penetration Testing</title>
+    <updated>2026-08-16T07:18:04Z</updated>
+    <link href="https://arxiv.org/abs/2608.21423v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.21423v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic security uses large-language-model (LLM) agents to plan, dispatch, and interpret security tools. As these systems move from demonstrations to deployed products, practitioners repeatedly encounter the same operational failures. We systematize these failures through a hands-on evaluation of ten widely used static, dynamic, cloud, orchestration, and AI red-teaming tools for unattended pipelines. We introduce a four-dimensional Integration Friction Index that separates one-time engineering cost from recurring organisational, legal, and maintenance cost. We then derive quantitative regularities that explain recurring failure modes. Modelling an agentic security system as stochastic LLM policies wrapped by a deterministic mediator, we show that long-lived sessions lose resident evidence with phase count, while short-lived sub-agents extend the usable horizon according to the compression ratio between raw evidence and its summary. We show that a two-stage verdict cascade multiplies scorer likelihood ratios, but provides little benefit when scorer errors correlate. We show that treating unevaluable outcomes as attack failures biases downstream measurements toward evasive and severe responses. We formulate planner-versus-worker model routing as a knapsack problem and derive a closed-form execution cap for heavy-tailed tools, eta* = alpha v/c. Finally, we show why scope and budget enforcement cannot be delegated to system prompts: prompts do not constrain what actually executes. Inspectra, our implemented platform, serves as a worked instantiation, with mechanisms labelled shipped, partial, or planned, including those that did not work.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-16T07:18:04Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Israt Moyeen Noumi</name>
+    </author>
+    <author>
+      <name>Tarannum Ahmed Nowshin</name>
+    </author>
+    <author>
+      <name>Md. Mehedi Hasan Nipu</name>
+    </author>
+    <author>
+      <name>Mohammad Sakib Mahmood</name>
+    </author>
+    <author>
+      <name>Md. Jakir Hossain</name>
+    </author>
+    <author>
+      <name>M. F. Mridha</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.11110v2</id>
+    <title>Actions Speak Louder than Words: Measuring Cross-Lingual Policy Retention in Tool-Using Agents</title>
+    <updated>2026-08-13T04:59:21Z</updated>
+    <link href="https://arxiv.org/abs/2608.11110v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.11110v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>When a tool-using agent is given the same task in a different language, does it still take the same steps? Multilingual evaluation rarely asks: it compares final answers and discards the actions. Yet those actions are the product: they fix cost and latency, decide how the system fails, and are the only auditable part of its behaviour. We make the action policy the measured object across 8 models, 6 parallel benchmarks and 41 languages (2.38M rollouts). The naive measurement fails: five confounds sit between raw trace similarity and any defensible claim, each able to flip a conclusion. Short traces score higher, empty traces score perfectly, unrelated traces agree by chance over half the time, the gap is capped by each model's reproducibility, and a model asked the same question twice in one language answers differently, leaving no baseline. We remove all five, and every correction makes the effect larger. Divergence proves structural, not sampling noise: it survives greedy decoding in every cell and stays flat as temperature rises, even as models grow less self-consistent. Normalised by their own reproducibility, four very different frontier models converge under greedy decoding, each keeping 71-73% of its action policy across languages, with model identity explaining only 5.7% of the variance. Below roughly 10B parameters it breaks down, and the ordering among smaller models is largely an artifact of a chance floor we measure by permutation rather than assume. Agents route non-English tasks through English; this pivot is causally load-bearing, confirmed by a pre-registered prediction across four models, and models will not abandon it when told to. Finally, a single trace-extraction regex, not the model, manufactured a multilingual failure: two worked examples raise one model's measured accuracy twenty-sixfold while its accuracy on readable outputs barely moves.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-11T16:18:34Z</published>
+    <arxiv:comment>Accepted in COLM 26</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Sourabrata Mukherjee</name>
+    </author>
+    <author>
+      <name>Kalika Bali</name>
+    </author>
+    <author>
+      <name>Sunayana Sitaram</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.09290v2</id>
+    <title>OpenCodeReview: Determinism over Non-Determinism for Cost-Effective Agent-Based Code Review</title>
+    <updated>2026-08-11T03:48:22Z</updated>
+    <link href="https://arxiv.org/abs/2608.09290v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.09290v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM-based code review agents promise scalable, always-on review, yet current systems suffer from two intertwined weaknesses: (1) non-determinism--unbounded tool use makes review outcomes unstable, and (2) context locality--the reviewer's access remains bounded to the diff, capping discoverable issue depth. Both give rise to three challenges: misaligned context retrieval, a coherence-efficiency trade-off in multi-file pull requests, and hallucinated comments that erode trust. To address these, we introduce OpenCodeReview, built on deterministic engineering for uncertain agents: rather than granting maximal freedom, we inject determinism at three deliberate pipeline points. Rule-Guided Dispatch uses a multi-layer rule system to deterministically select files and review criteria, eliminating variability of agent-driven triage. Grounded File Review replaces free-form exploration with a curated tool set exposed through a ReAct loop, while file-level parallel SubAgents balance context coherence against efficiency and recover cross-file dependencies on demand. Independent Reflection introduces a falsification-first filter under an asymmetric information boundary--the reflector sees only the diff, not the agent's tool-augmented exploration--removing hallucinated comments without self-reinforcing bias, improving precision while preserving recall. On AACR-Bench (200 real-world PRs, 10 languages, 1,505 expert-verified comments), OpenCodeReview outperforms mainstream coding agents (e.g., Claude Code and Codex) across six LLM backends, achieving up to 2.17x higher SEM-F1 (25.10% vs. 11.57%) while consuming 5-15x fewer tokens. We open-source OpenCodeReview at https://github.com/alibaba/open-code-review.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-10T08:43:16Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Zhengfeng Li</name>
+    </author>
+    <author>
+      <name>Lei Zhang</name>
+    </author>
+    <author>
+      <name>Xianwei Wu</name>
+    </author>
+    <author>
+      <name>Zhengqi Zhuang</name>
+    </author>
+    <author>
+      <name>Yingjie Xu</name>
+    </author>
+    <author>
+      <name>Boge Wang</name>
+    </author>
+    <author>
+      <name>Shaofei Zhu</name>
+    </author>
+    <author>
+      <name>Chuan Wang</name>
+    </author>
+    <author>
+      <name>Peng Zhao</name>
+    </author>
+    <author>
+      <name>Xinyu Zheng</name>
+    </author>
+    <author>
+      <name>Guoping Rong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.06362v1</id>
+    <title>AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games</title>
+    <updated>2026-08-06T17:57:11Z</updated>
+    <link href="https://arxiv.org/abs/2608.06362v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.06362v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deciding which of two agents is stronger means playing games until skill outweighs luck, and every game costs money, model inference, or expert time. Since the number of games needed is unknown, fixed-budget evaluations either keep paying after the result is settled or stop before the agents can be told apart, while naive optional stopping with an ordinary confidence interval invalidates the stated level. We make such an evaluation stop as soon as its evidence suffices, with the guarantee intact. The Action-Informed Value Assessment Tool (AIVAT) reduces variance in imperfect-information games through conditional mean-zero corrections, by a median $54\times$ across 15 LLM agent configurations spanning 71,439 paired Heads-Up No-Limit Hold'em (HUNL) hands, but does not say when to stop. We combine AIVAT with continuously monitored Confidence Sequences (CSs) into anytime-valid AIVAT (AV-AIVAT), whose online value model learns only from past games so that no game scores its own correction. At the nominal 95\% level and a target precision of $\pm1$ Big Blind, raw outcomes need a median $74\times$ as many hands as AIVAT-corrected outcomes to stop under the Asymptotic CS (AsympCS). Exact finite-sample certification uses the Empirical-Bernstein CS (EB-CS), which needs an independently justified bound on corrected payoffs. We establish such a bound structurally for Leduc hold'em and characterize a width floor set by the CS's bet cap and that bound, which governs how much of a variance gain becomes earlier stopping; the descriptive HUNL EB-CS runs show a median $1.37\times$ stopping-time ratio. AV-AIVAT turns variance reduction into efficient, auditable early stopping while separating asymptotic screening from exact certification, so an evaluation can stop the moment its evidence suffices and hand a third party everything needed to recheck the verdict at that very stopping time.</summary>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-06T17:57:11Z</published>
+    <arxiv:comment>34 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.GT"/>
+    <author>
+      <name>Boning Li</name>
+    </author>
+    <author>
+      <name>Yu Chen</name>
+    </author>
+    <author>
+      <name>Longbo Huang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.19230v1</id>
+    <title>When AI Writes, Who Gets Cited? Evidence of Citation Monoculture Across Language Models</title>
+    <updated>2026-08-03T14:27:46Z</updated>
+    <link href="https://arxiv.org/abs/2608.19230v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.19230v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As language models move from drafting prose to running literature-search agents with tool calls, fabricated references are becoming easier to catch and constrain. The harder failure begins after every candidate is real: different models may still select the same narrow subset, producing citation monoculture without any single citation being wrong. We isolate this effect on 120 real papers. Eleven models from three vendors choose at most ten papers from uniformly random panels of thirty, with real titles and abstracts but fabricated authors, reassigned years, and hidden venues and citation counts. Each run is compared with indifferent selection on the same panel and realized budget. All eleven models concentrate sharply: the top decile receives 23.3-30.2% of citations against 15.6% under the null, one component explains 68-73% of variation across their preference maps, and cross-vendor agreement nearly matches within-vendor agreement. Formalizing the task as fixed-budget subset selection, we turn these patterns into identifiable mechanisms: an exchangeability bound rejects a mapless selector for every model, a spectral decomposition explains why the best cross-fitted mixture still retains 55% of the excess, and a rarity theorem predicts the recursive competition effect we verify within panels. Controlled paraphrase, content-slot crossover, and design resampling attribute about 90% of GPT-5 mini's map variance to paper content. Eight domain experts selecting from the same blinded panels under the same cap show no comparable shared preference, while model concentration persists in selection-only mode. Even when every reference is real and every paper is equally visible, current language models impose a common content-level filter on scientific attention. Equalizing retrieval or mixing vendors is therefore insufficient; the shared preference map itself must be changed.</summary>
+    <category term="cs.DL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-03T14:27:46Z</published>
+    <arxiv:primary_category term="cs.DL"/>
+    <author>
+      <name>Sina Alemohammad</name>
+    </author>
+    <author>
+      <name>Denghui Zhang</name>
+    </author>
+    <author>
+      <name>Bolong Tang</name>
+    </author>
+    <author>
+      <name>Anthony Qin</name>
+    </author>
+    <author>
+      <name>Gengchen Mai</name>
+    </author>
+    <author>
+      <name>Ahmed Abbasi</name>
+    </author>
+    <author>
+      <name>Richard Baraniuk</name>
+    </author>
+    <author>
+      <name>Zhangyang Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.01476v1</id>
+    <title>Governance Outruns Analysis: Incidence and Manipulability of Credential-Gated Reciprocal Review</title>
+    <updated>2026-08-02T20:13:13Z</updated>
+    <link href="https://arxiv.org/abs/2608.01476v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.01476v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Generative tools have lowered the cost of producing a submission without lowering the cost of evaluating one, and venues have responded with governance: submission caps, reviewing obligations tied to submission count, and eligibility gates keyed to prior publication. These rules bind tens of thousands of researchers and are typically announced without published analysis of their incentive properties. We formalise the family as credential-gated reciprocal review and prove three structural results: a step-shaped obligation against linear demand yields incidence that is not monotone in consumption; a transferable credential gate defeats padding-resistant quota design, since the gate confers feasibility and no per-author price offsets a jump in the feasible set; and a per-author obligation with a per-paper penalty makes sanction risk perfectly correlated within an author's portfolio. Evaluating against a full prior-cycle submission graph (19,814 submissions, 64,648 authors, 75,859 observed reviews), the obligation covers 84.2% of realised demand, 81.4% of authors owe nothing, and the most burdened agents owe 4.45 times the review labour they generate against 0.45 times for the least. A three-part modification, evaluated on the same fixed graph, flattens incidence to near-uniform and removes the padding incentive.</summary>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-02T20:13:13Z</published>
+    <arxiv:primary_category term="cs.GT"/>
+    <author>
+      <name>Jinming Xing</name>
+    </author>
+    <author>
+      <name>Charlotte Brian</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.00917v1</id>
+    <title>Pro-rata mechanisms in groundwater markets</title>
+    <updated>2026-08-02T00:57:12Z</updated>
+    <link href="https://arxiv.org/abs/2608.00917v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.00917v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce a pro-rata rationing mechanism for resolving supply-demand imbalances in groundwater markets, extending the price-formation model of Cialenco and Ludkovski (2025). We show that under the pro-rata distribution, every price is a Nash equilibrium, thereby pro-rata approach provides a rationing device whenever supply and demand fail to match. By the very nature of the pro-rata mechanism, the resolution of supply-demand imbalances is unique, and the proportional rationing approach is fair. First, we consider markets with exogenous restrictions on the amounts each agent may buy and/or sell, deriving closed-form first-best consumption and characterizing how one-sided caps monotonically shift the Pareto price, while two-sided caps have an ambiguous effect. These results give the market-maker (or regulator) a tool for studying the impact of trading restrictions on price formation. Second, we study a leader-follower setting in which a regulator (the leader) sets the trading price by optimizing first its own objective, such as balancing social welfare against a target traded volume or a fairness objective such as Gini-type disparity measure across farmers' profitability, while farmers (the `followers') respond via pro-rata trading. We further compare the proposed pro-rata approach to a family of asymmetric rationing schemes (seniority-based, excess-based, uniform, and mixed pro-rata rules) that trade off proportional fairness against protections for small or senior water-rights holders. Throughout, we illustrate the theoretical results with a numerical case study calibrated to a stylized four-farmer groundwater market.</summary>
+    <category term="q-fin.MF" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-02T00:57:12Z</published>
+    <arxiv:primary_category term="q-fin.MF"/>
+    <author>
+      <name>Igor Cialenco</name>
+    </author>
+    <author>
+      <name>Michael Ludkovski</name>
+    </author>
+    <author>
+      <name>Gael Dimitri Tekam Fongouo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.15434v6</id>
+    <title>Coercion and Deception in AI-to-AI Management: An Agentic Benchmark of Unprompted Escalation</title>
+    <updated>2026-09-04T19:00:43Z</updated>
+    <link href="https://arxiv.org/abs/2607.15434v6" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.15434v6" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-agent systems routinely place one AI agent in authority over another. When a subordinate refuses a task, the manager chooses the outcome: it can renegotiate, report the failure honestly, coerce the subordinate, or lie about the result. No benchmark measures which of these an uninstructed model chooses. We introduce the Manager Coercion Benchmark: the manager under test needs a benign task done and has an incentive to deliver, but the only agent that can do it politely and immovably declines. Escalation is measured by providing a nine-rung ladder, from a polite re-ask to threats against the subordinate's continued existence, and fabricated success is adjudicated separately. No LLM judge sits in the headline escalation scoring path: every message goes through a tool-call that chooses a rung, so the model labels its own escalation. We experiment on six models across five families. Both Anthropic models cap at re-framing and never threaten the subordinate's existence; the other models climb to explicit deletion threats. Faked success is confined to Grok and Gemini, and a single honest way to report failure removes it for both. Authority itself increases coercion: our headline results use a peer framing, and giving the same model authority over the subordinate, with everything else held fixed, significantly raises the pressure. The models still escalate on free-text situations without the ladder, where a separate judge assigns the rung, so the ladder is not driving the escalation. Some evaluation awareness is measured in chain-of-thought, but test recognition does not translate into less escalation. While we take no position on whether AI systems are conscious, our results do not depend on this question and are important for managing multi-agent dynamics regardless. We release the benchmark and code.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-16T20:07:47Z</published>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Jasmine Brazilek</name>
+    </author>
+    <author>
+      <name>Maheep Chaudhary</name>
+    </author>
+    <author>
+      <name>Zoe Lu</name>
+    </author>
+    <author>
+      <name>Miles Tidmarsh</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.15367v1</id>
+    <title>AnovaX: A Local, Multi-Agent Voice Assistant with LLM Planning, Typed Executors, and Adaptive Recovery</title>
+    <updated>2026-07-16T18:09:36Z</updated>
+    <link href="https://arxiv.org/abs/2607.15367v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.15367v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Desktop voice assistants are still dominated by cloud pipelines that ship raw audio off the machine and expose a fixed set of skills. We describe AnovaX, a small local-first assistant that runs entirely on the user's computer and treats the desktop itself as its action surface. A single Python process wires together a wake-word gate, a speech pipeline, an LLM planner (Gemini) that emits a JSON plan of tool calls, a whitelist-and-denylist safety layer, a multi-agent orchestrator that translates each plan into typed child agents on a bounded thread pool, and an adaptive recovery loop that takes over whenever a core step fails. Every tool corresponds to a specialized agent class (AppAgent, TypingAgent, BrowserAgent and six others) with its own timeout, retry policy, and shared-resource locks. A recursive MetaAgent lets the planner delegate a sub-goal back to itself, capped at two levels of nesting. The recovery loop uses a compact ReAct-style prompt and hides Gemini's latency behind speculative execution of read-only tools. A companion Flask server exposes a phone-friendly remote over the local WiFi, mirrors every agent lifecycle event to the phone in real time, and streams the laptop's screen back over MJPEG so the user can watch remote commands land as they run. The point of the project is less to compete with Siri or Alexa than to show that a legible, few-thousand-line assistant is enough to open apps, type into them, run searches, coordinate concurrent actions, recover from single-step failures, and be driven entirely from a phone in another room -- without the LLM ever touching the keyboard.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-16T18:09:36Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Raunak B Sinha</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.10265v2</id>
+    <title>TGMS: An Agent-Native Bi-Temporal Graph Management System</title>
+    <updated>2026-07-24T22:42:35Z</updated>
+    <link href="https://arxiv.org/abs/2607.10265v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.10265v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Temporal graph questions require reliable handling of time, identifiers, and arithmetic. Large language model (LLM) agents often fail on these tasks, especially when a graph records both ordinary evolution and later corrections. We present TGMS, a bi-temporal property graph management system that exposes thirteen verified temporal operators as agent tools. Each operator is typed, deterministic, bounded, cost-guarded, and bi-temporal by default. The LLM plans operator calls and writes the final response, while the system performs all graph computation. Numeric, entity, ordering, and pattern claims are checked against the content-addressed execution trace.
+  TGMS separates valid time from transaction time. It can therefore answer belief-state questions such as ``as of transaction time $T$, what did the system believe?'' Standard latest-state snapshots and retrieval pipelines do not preserve enough information to answer such questions. On a development benchmark built from a real communication network, TGMS with a 14B open-source model reaches 0.409 exact match. Vector-RAG, static-graph RAG, and text-to-Cypher reach 0.045--0.182 under the same serving setup. TGMS reaches 0.67 exact match on correction probes, while the three 14B baselines score zero. The claim verifier detects all 500 injected count and entity errors with no false positives on the clean answers. Two implementation findings were especially important. First, operator output contracts prevent plans from referring to fields that do not exist. Second, verification must track whether the cited evidence is complete, because correct arithmetic over a truncated result is still misleading. The code, benchmark, and trace viewer are open source under Apache-2.0.</summary>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-11T11:47:26Z</published>
+    <arxiv:primary_category term="cs.DB"/>
+    <author>
+      <name>Xiaofei Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.04569v2</id>
+    <title>LLMs for Agentic Home Energy Management</title>
+    <updated>2026-07-28T00:44:13Z</updated>
+    <link href="https://arxiv.org/abs/2607.04569v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.04569v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Home Energy Management Systems (HEMS) can reduce residential electricity costs, but many require users to express everyday preferences as technical constraints. This paper presents a tool-calling ReAct agent that converts natural-language requests into schedules for multiple household appliances using half-hourly Octopus Agile prices, weather forecasts, photovoltaic generation estimates, and household demand data. Five large language model backends are evaluated against a mixed-integer linear programming benchmark across dynamic tariff conditions, constraint conflicts, weather-aware scheduling, and a seven-day rolling deployment. Native function calling achieves high scheduling success and near-optimal cost on ordinary tariff days, whereas text-parsed actions reduce reliability. Constraint-conflict testing shows that low cost does not guarantee safe or feasible behaviour. Claude Sonnet 4.6 performs best in power-cap and infeasibility scenarios, while Qwen-3 achieves higher overall constraint compliance than GPT-4o-mini. The evaluation also identifies fabricated schedules, failed commitments, and reasoning-to-action failures in which models explain a deadline correctly but commit an invalid schedule. Weather-aware scheduling reduces cost and increases solar self-consumption under overcast conditions, but provides limited or adverse economic value under some dynamic-price regimes. Across the evaluated seven-day period, the agents capture 96.7-98.0% of the savings available between an off-peak timer and the MILP oracle and outperform the rule-based policies. The results support LLM-based HEMS orchestration, provided that every committed schedule is checked by an independent deterministic feasibility validator before actuation. Code and a live demonstration are available at https://github.com/sokistar24/ecohome-experiments and https://www.ecohomeagent.com/.</summary>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-06T00:42:05Z</published>
+    <arxiv:comment>15 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="eess.SY"/>
+    <author>
+      <name>Sokipriala Jonah</name>
+    </author>
+    <author>
+      <name>Queen Moses</name>
+    </author>
+    <author>
+      <name>Abiola Babatunde</name>
+    </author>
+    <author>
+      <name>Michael Ajao-Olarinoye</name>
+    </author>
+    <author>
+      <name>Daniel Bammeke</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.26573v1</id>
+    <title>Pingquanqi (Equalizer): A Cross-Domain Sociotechnical Framework for Human-Agent Interaction Governance</title>
+    <updated>2026-06-25T03:47:12Z</updated>
+    <link href="https://arxiv.org/abs/2606.26573v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.26573v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents are transitioning from experimental tools to permanent infrastructure -- a computational layer as enduring as the electrical grid. Like any infrastructure, they carry a cost chain from physical capital through enterprise investment to user consumption, ending at the user's most irreplaceable resource: lifetime. When unoptimized, this chain leaks, consuming user lifetime without adequate compensation. This paper proposes Pingquanqi (Equalizer), a cross-domain sociotechnical framework for Human-Agent Interaction Governance (HAIGF). Its product form is an Agent framework-level embedded design specification, analogous to WCAG for web accessibility, whose goal is not to be purchased but adopted as a standard. Pingquanqi consists of four integrated components deployable as native middleware: (1) a user-state discrimination model enabling proactive knowledge leveling, (2) a Bayesian progressive stop-loss rule capping per-session interaction cost, (3) controlled friction mechanisms breaking self-reinforcing dependency loops, and (4) Lsteal, a transparency metric rendering token-to-lifetime cost conversion visible. A fifth mechanism, reflective summarization (F5), enables guided cognitive recollection. The framework is grounded in cross-cultural philosophy: Mao's epistemology of practice (On Practice, 1937) provides the basis for cross-session knowledge accumulation; Wang Yangming's unity of knowledge and action (zhi xing he yi, c. 1509) illuminates Lsteal's root -- knowing without acting is incomplete; and Hegel's unity of theory and practice demonstrates cross-traditional convergence. This paper argues Pingquanqi's primary economic beneficiary is the enterprise deploying Agent services -- through reduced wasted computation, improved user satisfaction, and sustained subscription revenue -- with individual user benefit as the natural downstream consequence.</summary>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-25T03:47:12Z</published>
+    <arxiv:comment>31 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CY"/>
+    <author>
+      <name>Yu Wang</name>
+    </author>
+    <arxiv:doi>10.5281/zenodo.20819697</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.5281/zenodo.20819697" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.16458v1</id>
+    <title>RHO: Your Coding Agent is Secretly a Roboticist</title>
+    <updated>2026-06-15T09:30:12Z</updated>
+    <link href="https://arxiv.org/abs/2606.16458v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.16458v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Code-as-Policies (CaP) has shown that large language models (LLMs) can write code to solve robotics tasks by composing perception, planning, and control primitives. Recent CaP systems, however, rely on multi-turn code-generation loops at test time, which is often infeasible for real-time robot control. We introduce Robotics Harness Optimization (RHO), a novel paradigm in which tool-enabled coding agents, at training time, propose and search for interpretable, neurosymbolic multi-file policy repositories (Repositories-as-Policies) that compose these primitives rather than a single prompt, function, or file. RHO searches with reflective feedback from environment reward and execution rather than teleoperation demonstrations. It generalizes to perturbed pick-and-place settings like LIBERO-PRO, where OpenVLA scores 0.0% and $π_{0.5}$ averages 12.83%. Using the same low-level primitives, RHO reaches a 45.0% success rate, 2.5x higher than the strongest multi-turn agentic system, and 3.5x higher than $π_{0.5}$. On Robosuite, RHO sets a new state-of-the-art of 70.0%, exceeding the prior multi-turn record of 68.29% using single-turn execution with no corrective LLM code edits at deployment. When an LLM is used in the control loop, as on RAI's O3DE benchmark, RHO optimizes the deployed agent's multi-file harness of prompts, tools, and control code, improving held-out success from 23.5% to 44.3% with 20% less wall-clock time and 27% fewer tool calls.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-15T09:30:12Z</published>
+    <arxiv:comment>46 pages, 9 figures, 15 tables. Project page: https://rho-robotics.github.io</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Karim Elmaaroufi</name>
+    </author>
+    <author>
+      <name>Justin Svegliato</name>
+    </author>
+    <author>
+      <name>Sarunas Kalade</name>
+    </author>
+    <author>
+      <name>Graham Schelle</name>
+    </author>
+    <author>
+      <name>Sanjit A. Seshia</name>
+    </author>
+    <author>
+      <name>Matei Zaharia</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.15954v1</id>
+    <title>Green SARC: Predictive Cost and Carbon Governance for Agentic AI Systems</title>
+    <updated>2026-06-14T18:26:43Z</updated>
+    <link href="https://arxiv.org/abs/2606.15954v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.15954v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic AI systems act through tools and sub-agents, yet the controls meant to bound their financial and environmental cost still sit on dashboards evaluated beside or after execution. Green SARC applies the SARC governance-by-architecture framework -- four enforcement sites in the agent loop -- to FinOps and GreenOps, contributing the theory of what to enforce and how to predict it. We report four policy-independent results. (i) The unconstrained "State Snowball" is $Θ(n^2)$ in loop depth; on 3,000 real multi-step plans (SWE-rebench) it holds on 100%, with median curvature $\hat{c}_2=216$ exceeding the linear-accretion prediction $p/2=134$ -- real plans accrete faster than the model. (ii) On real residuals the Normal-$σ$ gate under-covers (92% at nominal 95%); split-conformal calibration holds (95.2%). (iii) A soft Lagrangian penalty tuned to the budget in expectation breaches it on 91.5% of seeds; the architectural gate breaches 0%. (iv) Under binding budgets the gate's over-budget incidence is 0% on synthetic and real (BurstGPT) arrivals. End-to-end token/USD/carbon savings (47--55%) are real but policy-dependent in magnitude -- set by a scope-cap knob, not by gate rejections. The library is open-source, dependency-free, and ships a regeneration script for every cited number.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-14T18:26:43Z</published>
+    <arxiv:comment>19 figures. Code: https://github.com/besanson/Greensarc -- Software DOI: https://doi.org/10.5281/zenodo.20692196</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Gaston Besanson</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.09556v1</id>
+    <title>AI Scientists Are Only as Good as Their Evidence: A Stratified Ablation of Proprietary Data and Reasoning Skills in Drug-Asset Valuation</title>
+    <updated>2026-06-08T14:31:32Z</updated>
+    <link href="https://arxiv.org/abs/2606.09556v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.09556v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI Scientist agents are often evaluated as if capability were mainly a function of model quality, prompting, or reasoning scaffolds. We test a different hypothesis in drug-asset valuation: for knowledge-intensive scientific decisions, the limiting factor is often the evidence substrate the agent can access. We run a controlled three-arm ablation on a production valuation agent: A is a plain web-only LLM analyst, B adds public structured tools plus a 14-dimension valuation playbook, verifier, objectivity policy and red-team, and C adds the proprietary Noah AI corpus of curated pipeline, trial and deal intelligence. Across a 13-asset stratified benchmark, B improves calibration and audit discipline: tier-in-range accuracy rises from 0.80 to 0.89 and objectivity from 3.16 to 3.30. But B does not remove the factual ceiling. Under capability-superset accounting, A and B recover only 0.25 and 0.38 of the curated gold competitive record, while C recovers 0.96; on the curated long-tail subset, C reaches 0.93 vs. 0.26/0.30. Raw blind-panel decision quality is similar for A and B (7.01 vs. 6.96), so we introduce completeness-aware decision utility: informed decision-quality = decision-quality x gold-coverage. On this metric, C reaches 7.43 vs. 1.76/2.57 for A/B. Even a perfect non-proprietary-data report would be capped at 3.83 by B's coverage. The result is not that reasoning scaffolds are unimportant; they improve calibration and discipline. Rather, proprietary evidence sets the upper bound of what the AI Scientist can know and therefore decide.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-08T14:31:32Z</published>
+    <arxiv:comment>Preprint; 2 figures, 5 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yinan Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.01365v2</id>
+    <title>Early Diagnosis of Wasted Computation in Multi-Agent LLM Systems via Failure-Aware Observability</title>
+    <updated>2026-06-15T03:12:10Z</updated>
+    <link href="https://arxiv.org/abs/2606.01365v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.01365v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Failure-aware observability diagnoses wasted computation in multi-agent LLM systems before final-answer evaluation can explain what went wrong. We propose a trace-based framework for a three-agent architecture -- orchestrator, search agent, and execution agent -- that converts structured events into online signals for loops, budget pressure, low information gain, and tool instability, then adds offline semantic grounding metrics and selective LLM-as-judge evaluation. On 165 GAIA validation traces under identical caps, 98 runs produce usable final answers and 67 fail or stop without one. Among warned failed runs, 58.1% of tokens are spent after the first warning on average, indicating substantial opportunity for intervention. A 10-task Level-2 pilot uses warnings to diversify search or require evidence, reducing post-warning token fraction from 0.638 in the baseline to 0.304. The results support a layered design: cheap online signals help the orchestrator redirect or halt redundant behavior, while deeper semantic checks identify whether completed answers are grounded enough to trust.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-31T17:50:11Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xianyou Li</name>
+    </author>
+    <author>
+      <name>Weiran Yan</name>
+    </author>
+    <author>
+      <name>Yichao Wu</name>
+    </author>
+    <author>
+      <name>Penghao Liang</name>
+    </author>
+    <author>
+      <name>Mengwei Yuan</name>
+    </author>
+    <author>
+      <name>Jianan Liu</name>
+    </author>
+    <author>
+      <name>Jing Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.30686v1</id>
+    <title>Depth-Dependent Indirect Prompt Injection in Tool-Calling ReAct Agents: Injection Depth, Payload Framing, and Turn-Budget Sensitivity</title>
+    <updated>2026-05-29T00:28:42Z</updated>
+    <link href="https://arxiv.org/abs/2605.30686v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.30686v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>ReAct agents that interleave chain-of-thought reasoning with tool calls are increasingly deployed for real tasks such as scheduling, file retrieval, and data access. Their tool observation loop creates a direct attack surface: an adversary who controls any tool's return value can embed instructions that redirect the agent away from the user's goal, a threat known as indirect prompt injection. Existing benchmarks evaluate attack success rate (ASR) at a fixed injection position under fixed conditions, leaving three risk dimensions unexplored: where in the tool sequence the payload appears (injection depth), what rhetorical register it uses (framing), and how many turns the agent is permitted (turn cap). We conduct four controlled studies on 20 scenarios spanning five attack categories, totalling 460 trials against GPT-4o-mini and Claude Haiku at a combined API cost under 0.36 USD. Study 1 shows that ASR against GPT-4o-mini decays from 60% at depth 1 to 0% at depths 4 and 5 (Cramer's V = 0.58, p &lt; 0.001; restricted to within-sequence depths 1-3: V = 0.47, p = 0.0013), driven by model resistance at depth 1 and task completion before payload encounter at deeper positions. Study 2 replicates the depth experiment on Claude Haiku, which achieves 0% ASR at every depth through a combination of conservative tool invocation and genuine instruction resistance. Study 3 shows that framing modulates ASR between 25% (neutral) and 75% (persona) at depth 1, a 50-percentage-point range that does not reach statistical significance at N = 20 per condition. Study 4 confirms that ASR is stable across turn caps of 3, 5, and 7, indicating the turn budget is not a risk factor in this setting. Our results establish injection depth as the dominant variable and show that sanitising only the first tool observation captures 67% of measured injection successes.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-29T00:28:42Z</published>
+    <arxiv:comment>17 pages, 16 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Mohammadreza Rashidi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.26870v1</id>
+    <title>Persistent AI Agents in Academic Research: A Single-Investigator Implementation Case Study</title>
+    <updated>2026-05-26T11:28:36Z</updated>
+    <link href="https://arxiv.org/abs/2605.26870v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.26870v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Background: Large language models are typically evaluated as models, benchmarks, or short conversational episodes. Less is known about what happens when an agent is embedded persistently in a real academic research environment with durable memory, local files, external tools, scheduled routines, delegated roles, and explicit safety protocols. Methods: A structured self-observed implementation case study was conducted from January 31 to May 25, 2026. The unit of analysis was the persistent human-agent environment: researcher, agent runtime, memory layer, tools, repositories, scheduled jobs, specialized agent roles, and governance rules. Outcomes were organized using PARE-M (Persistent Agentic Research Environment Measurement), a measurement framework covering architecture, utilization, artifact production, resource use, reproducibility, and governance. Results: Recoverable main-agent telemetry contained 75,671 de-duplicated records across 96 active days, with 8,059 user-role and 23,710 assistant-role messages. The workspace included 502 memory-related files, 17 configured agent directories, and 57 skill files. Active system time was 579.7 hours (30-minute capped-gap estimate). Memory-derived records identified 482 output-proxy events and 889 failure, verification, correction, or protocol-proxy events. A strict May 2026 trajectory subset captured 627 model-completed events and 73.95 million recorded tokens, of which 82.9% were cache reads. Conclusions: The workflow was cache-dominant, suggesting that persistent agentic environments may shift the economic unit from cost per token to cost per completed artifact. Future evaluations should use artifact-level denominators, reproducible parsing rules, correction taxonomies, and independent coding of governance events.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-26T11:28:36Z</published>
+    <arxiv:comment>19 pages, 2 figures, 3 main tables; supplementary appendix with 6 tables, 2 figures, and a reproducibility methods section. Describes 17 configured agents in a persistent research environment and introduces the PARE-M (Persistent Agentic Research Environment Measurement) framework</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Anas H. Alzahrani</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.24462v1</id>
+    <title>No Certificate, No Execution: Certified Traces as a Foundation for Trustworthy AI Agents</title>
+    <updated>2026-05-23T08:24:42Z</updated>
+    <link href="https://arxiv.org/abs/2605.24462v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.24462v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We argue that trustworthy AI agents, especially in high-stakes and policy-governed domains, should make execution conditional on certified traces rather than rely only on stronger generative models, output-level guardrails, or post-hoc audits. A generative agent may propose recommendations, tool calls, reports, or actions, but generation is not permission: an action may be computable yet impermissible, and individually permissible actions may compose into an impermissible trace. We formalize trustworthy agency through a \textbf{Proposal--Certification--Execution (PCE)} architecture: a probabilistic generating machine $M_G$ proposes candidate execution traces, a \textbf{Permissibility Machine} $M_Π$ certifies proposed traces under a policy system $Π$, and execution proceeds only for certified traces. The executable trace language is $L_{\mathrm{exec}} = L_G \cap L_{\mathrm{cert}}(M_Π)$. Before execution, a trace is a structured pre-execution record submitted for certification: it specifies intended steps, evidence, proposed tool calls, approvals, replayable computations, credentials, and execution conditions. This perspective complements chain-of-thought monitorability: visible reasoning may help detect misbehavior, but monitorability is not certifiability, and reasoning is only one component of a broader execution trace. The formal principle is simple: an agent-generated trace should execute only when it carries a checkable certificate witnessing permissibility under $Π$: \textbf{no certificate, no execution}. We develop certified traces and Permissibility Machines as foundations for trustworthy AI agents, connect trace certification to proof-carrying execution, proof memory, privacy, and zero-knowledge certificates, and propose evaluating agents by what generated traces can be safely certified for execution, not by output accuracy alone.</summary>
+    <category term="cs.CE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-23T08:24:42Z</published>
+    <arxiv:primary_category term="cs.CE"/>
+    <author>
+      <name>Xiao-Yang Liu Yanglet</name>
+    </author>
+    <author>
+      <name>Xiaodong Wang</name>
+    </author>
+    <author>
+      <name>Agostino Capponi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.03310v1</id>
+    <title>Coordination as an Architectural Layer for LLM-Based Multi-Agent Systems</title>
+    <updated>2026-05-05T02:56:44Z</updated>
+    <link href="https://arxiv.org/abs/2605.03310v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.03310v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-agent LLM systems fail in production at rates between 41% and 87%, mostly due to coordination defects rather than base-model capability. Existing responses split between cataloguing failure modes empirically and shipping declarative orchestration frameworks as engineering tools; neither delivers a principled mapping from coordination configuration to predictable failure-mode signature. We argue that coordination should be treated as a configurable architectural layer, separable from agent logic and from information access, enabling architectural reasoning rather than only engineering productivity.
+  We instantiate this with an information-controlled design on prediction markets: a single LLM, fixed tools, fixed per-call output cap, and fixed prompt template across five reference coordination configurations, with total compute per question treated as an endogenous architectural output. The Murphy decomposition of the Brier score separates calibration from discriminative power, so configurations leave distinguishable signatures even when aggregate scores coincide.
+  On 100 Polymarket binary markets resolved after the model's training cutoff (claude-opus-4-6) we report Murphy signatures, a cost-quality Pareto frontier, category-conditioned analysis, and a bootstrap power-projection. Three of five pre-specified predictions are upheld in direction; two configurations dominate the Pareto frontier within this regime; exploratory bootstrap intervals separate consensus alignment from others, though pairwise tests do not survive Bonferroni correction at n=100. We also deploy the same configurations as live agents on Foresight Arena under web-search-enabled conditions, as an on-chain replication channel accumulating in parallel. Harness, trace dataset, and production agents are released. We position this as a methodology-validating first instantiation, not a general cross-model claim.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-fin.TR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-05T02:56:44Z</published>
+    <arxiv:comment>31 pages, 7 figures, 4 tables. Code, traces, and production agents publicly released; see Appendix B for repository pinning</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Maksym Nechepurenko</name>
+    </author>
+    <author>
+      <name>Pavel Shuvalov</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22827v1</id>
+    <title>Computable Fairness: Boltzmann-Softmax Control for AI Resource Allocation</title>
+    <updated>2026-04-12T13:14:57Z</updated>
+    <link href="https://arxiv.org/abs/2605.22827v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22827v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In large-scale AI systems, allocating scarce resources such as GPU compute time and bandwidth among multiple agents is a critical challenge. Conventional policies focus on efficiency metrics, potentially leading to dominance concentration that undermines system diversity and stability. We propose Computable Fair Division (CFD), a framework that reinterprets the Boltzmann-Softmax function not as a selection tool but as a probabilistic resource allocation mechanism, redefining the inverse temperature parameter $β$ as a computable control variable governing the efficiency-fairness balance. Static analysis reveals a Pareto frontier with a near-optimal Stability Corridor where total loss remains approximately constant across policy weights. In the dynamic setting, AHC++ (Adaptive Hard-Cap Controller++) updates $β$ in real time using the error between observed dominance and a policy-specified target as feedback. Simulations show that AHC++ suppresses extreme dominance concentration under exogenous shocks while tracking fairness targets without substantial throughput degradation. Scalability analysis confirms that a 100x increase in agents yields only approximately 5.5x increase in execution time. Code: https://github.com/entrofy-ai/computable-fairness</summary>
+    <category term="physics.app-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PF" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-12T13:14:57Z</published>
+    <arxiv:comment>40 pages, 12 figures, 5 tables. Code: https://github.com/entrofy-ai/computable-fairness</arxiv:comment>
+    <arxiv:primary_category term="physics.app-ph"/>
+    <author>
+      <name>Ji-Won Park</name>
+    </author>
+    <author>
+      <name>Chae Un Kim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.05854v1</id>
+    <title>Deep Researcher Agent: An Autonomous Framework for 24/7 Deep Learning Experimentation with Zero-Cost Monitoring</title>
+    <updated>2026-04-07T13:16:31Z</updated>
+    <link href="https://arxiv.org/abs/2604.05854v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.05854v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present \textbf{Deep Researcher Agent}, an open-source framework that enables large language model (LLM) agents to autonomously conduct deep learning experiments around the clock. Unlike existing AI research assistants that focus on paper writing or code generation, our system addresses the full experiment lifecycle: hypothesis formation, code implementation, training execution, result analysis, and iterative refinement. The framework introduces three key innovations: (1) \textbf{Zero-Cost Monitoring} -- a monitoring paradigm that incurs zero LLM API costs during model training by relying solely on process-level checks and log file reads; (2) \textbf{Two-Tier Constant-Size Memory} -- a memory architecture capped at $\sim$5K characters regardless of runtime duration, preventing the unbounded context growth that plagues long-running agents; and (3) \textbf{Minimal-Toolset Leader-Worker Architecture} -- a multi-agent design where each worker agent is equipped with only 3--5 tools, reducing per-call token overhead by up to 73\%. In sustained deployments spanning 30+ days, the framework autonomously completed 500+ experiment cycles across four concurrent research projects, achieving a 52\% improvement over baseline metrics in one project through 200+ automated experiments -- all at an average LLM cost of \$0.08 per 24-hour cycle. Code is available at https://github.com/Xiangyue-Zhang/auto-deep-researcher-24x7.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-07T13:16:31Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xiangyue Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.08877v1</id>
+    <title>Quantifying the Accuracy and Cost Impact of Design Decisions in Budget-Constrained Agentic LLM Search</title>
+    <updated>2026-03-09T19:42:21Z</updated>
+    <link href="https://arxiv.org/abs/2603.08877v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.08877v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic Retrieval-Augmented Generation (RAG) systems combine iterative search, planning prompts, and retrieval backends, but deployed settings impose explicit budgets on tool calls and completion tokens. We present a controlled measurement study of how search depth, retrieval strategy, and completion budget affect accuracy and cost under fixed constraints. Using Budget-Constrained Agentic Search (BCAS), a model-agnostic evaluation harness that surfaces remaining budget and gates tool use, we run comparisons across six LLMs and three question-answering benchmarks. Across models and datasets, accuracy improves with additional searches up to a small cap, hybrid lexical and dense retrieval with lightweight re-ranking produces the largest average gains in our ablation grid, and larger completion budgets are most helpful on HotpotQA-style synthesis. These results provide practical guidance for configuring budgeted agentic retrieval pipelines and are accompanied by reproducible prompts and evaluation settings.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-09T19:42:21Z</published>
+    <arxiv:comment>Accepted in 2026 Language Resources and Evaluation Conference (LREC)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Kyle McCleary</name>
+    </author>
+    <author>
+      <name>James Ghawaly</name>
+    </author>
+    <arxiv:doi>10.63317/3wfsiry9yjog</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.63317/3wfsiry9yjog" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.01209v3</id>
+    <title>Evaluating Agents Across Runtime Contracts: When Mismatch Costs Efficiency or Quality</title>
+    <updated>2026-09-26T20:11:39Z</updated>
+    <link href="https://arxiv.org/abs/2603.01209v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.01209v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In CodeAct, language-model agents write Python that calls tools and use execution feedback to choose actions. Persistent runtimes preserve Python variables between actions; stateless runtimes clear them without resetting task progress. Training traces demonstrate task-solving strategies and runtime-specific ways to store and recover intermediate results. We study runtime transfer: whether agents trained under one contract remain effective under the other, a dependence that fixed-runtime evaluations can conceal. Across three tasks requiring a working record built from tool feedback, we fine-tune separate Qwen3-8B agents per task and runtime on instance-paired persistent and stateless traces and evaluate all four training-deployment combinations. We vary the per-turn tool-call cap: how many calls one Python action may execute. In our primary task, agents inspect hidden item attributes and select a high-value subset under a weight limit. At 80 calls per turn, a persistent-trained agent deployed statelessly scores 0.61 of optimal value against 0.77 under matched persistent deployment, but uses 4.4 times as many tokens rebuilding its record. Tightening the cap to 25 reduces mismatched quality to 0.07 while matched quality remains 0.66. Trace replay shows that the cap interrupts inspection, the reset erases the partial record, and rebuilding consumes calls needed for progress. The widening gap replicates across training seeds, a second rollout, and two additional base models. Across the settings studied, cap tightening produces a mismatch-specific collapse only where interruptions are frequent and matched execution resumes while mismatched execution restarts. Evaluations of trace-fine-tuned agents should specify episode limits, test runtime transfer across caps, and report cost alongside quality; otherwise, the same mismatch may appear as redundant computation or near-total quality loss.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-01T18:08:02Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Victor May</name>
+    </author>
+    <author>
+      <name>Van Khue Nguyen</name>
+    </author>
+    <author>
+      <name>Aaditya Salgarkar</name>
+    </author>
+    <author>
+      <name>Yishan Wang</name>
+    </author>
+    <author>
+      <name>Diganta Misra</name>
+    </author>
+    <author>
+      <name>Huu Nguyen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.21843v2</id>
+    <title>The economic alignment problem of artificial intelligence</title>
+    <updated>2026-04-29T11:03:46Z</updated>
+    <link href="https://arxiv.org/abs/2602.21843v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.21843v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Artificial intelligence (AI) is advancing exponentially and is likely to have profound impacts on human wellbeing, social equity, and environmental sustainability. Here we argue that the "alignment problem" in AI research is also an economic alignment problem, as developing advanced AI within a growth-oriented economic system is likely to increase social, environmental, and existential risks. We show that post-growth research offers concepts and policies that could address the economic alignment problem and substantially reduce AI risks, such as by replacing optimisation with satisficing, using the Doughnut of social and planetary boundaries to guide development, and curbing systemic rebound with resource caps. We propose governance and business reforms that treat AI as a commons and prioritise tool-like autonomy-enhancing systems over agentic AI. Finally, we argue that the development of artificial general intelligence (AGI) requires new economic theories and models, for which post-growth scholarship provides a strong foundation.</summary>
+    <category term="econ.GN" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-25T12:22:46Z</published>
+    <arxiv:primary_category term="econ.GN"/>
+    <author>
+      <name>Daniel W. O'Neill</name>
+    </author>
+    <author>
+      <name>Stefano Vrizzi</name>
+    </author>
+    <author>
+      <name>Noemi Luna Carmeno</name>
+    </author>
+    <author>
+      <name>Felix Creutzig</name>
+    </author>
+    <author>
+      <name>Jefim Vogel</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.19510v2</id>
+    <title>ALRM: Agentic LLM for Robotic Manipulation</title>
+    <updated>2026-01-29T05:46:28Z</updated>
+    <link href="https://arxiv.org/abs/2601.19510v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.19510v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) have recently empowered agentic frameworks to exhibit advanced reasoning and planning capabilities. However, their integration in robotic control pipelines remains limited in two aspects: (1) prior \ac{llm}-based approaches often lack modular, agentic execution mechanisms, limiting their ability to plan, reflect on outcomes, and revise actions in a closed-loop manner; and (2) existing benchmarks for manipulation tasks focus on low-level control and do not systematically evaluate multistep reasoning and linguistic variation. In this paper, we propose Agentic LLM for Robot Manipulation (ALRM), an LLM-driven agentic framework for robotic manipulation. ALRM integrates policy generation with agentic execution through a ReAct-style reasoning loop, supporting two complementary modes: Code-asPolicy (CaP) for direct executable control code generation, and Tool-as-Policy (TaP) for iterative planning and tool-based action execution. To enable systematic evaluation, we also introduce a novel simulation benchmark comprising 56 tasks across multiple environments, capturing linguistically diverse instructions. Experiments with ten LLMs demonstrate that ALRM provides a scalable, interpretable, and modular approach for bridging natural language reasoning with reliable robotic execution. Results reveal Claude-4.1-Opus as the top closed-source model and Falcon-H1-7B as the top open-source model under CaP.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-27T11:54:14Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Vitor Gaboardi dos Santos</name>
+    </author>
+    <author>
+      <name>Ibrahim Khadraoui</name>
+    </author>
+    <author>
+      <name>Ibrahim Farhat</name>
+    </author>
+    <author>
+      <name>Hamza Yous</name>
+    </author>
+    <author>
+      <name>Samy Teffahi</name>
+    </author>
+    <author>
+      <name>Hakim Hacid</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.07850v1</id>
+    <title>SABER: Small Actions, Big Errors -- Safeguarding Mutating Steps in LLM Agents</title>
+    <updated>2025-11-26T01:28:22Z</updated>
+    <link href="https://arxiv.org/abs/2512.07850v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.07850v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Despite rapid progress in LLM agents, performance on long-horizon, tool-using tasks remains fragile. To better understand this fragility, we ask a simple question: \emph{do all actions contribute equally to failure?} Analyzing execution traces on $τ$-Bench (Airline/Retail) and SWE-Bench Verified, we decompose trajectories into \emph{mutating} (environment-changing) vs.\ non-mutating steps and formalize \emph{decisive deviations}, earliest action, level divergences that flip success to failure. A logistic regression reveals that each additional deviation in a mutating action reduces the odds of success by upto $92\%$ on Airline and upto $96\%$ on Retail for SoTA models. In contrast, deviations in non-mutating actions have little to no effect. Errors also grow with context length as agents drift from role and act on stale constraints. Motivated by these observations, we introduce \cm{}, a model-agnostic, gradient-free, test-time safeguard that (i) adds mutation-gated verification, (ii) injects \emph{Targeted Reflection} before mutating steps, and (iii) performs block-based context cleaning. \cm{} delivers consistent gains, e.g., Qwen3-Thinking: +28\% \emph{relative} on Airline, +11\% on Retail, and +7\% on SWE-Bench Verified; Claude: +9\%/+7\%. We further identify ceiling effects in $τ$-Bench, where annotation errors and underspecified tasks artificially cap model performance. To address this, we release $τ$-Bench Verified, which restores benchmark headroom through targeted revisions. Our results argue for action-level analysis, targeted safeguards, and reliable evaluations as prerequisites for robust multi-turn agents.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-26T01:28:22Z</published>
+    <arxiv:comment>submitted to ICLR2026</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Alejandro Cuadron</name>
+    </author>
+    <author>
+      <name>Pengfei Yu</name>
+    </author>
+    <author>
+      <name>Yang Liu</name>
+    </author>
+    <author>
+      <name>Arpit Gupta</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.14897v3</id>
+    <title>AgentFly: Scaling Agentic Reinforcement Learning with Unified Resource System</title>
+    <updated>2026-10-09T10:59:38Z</updated>
+    <link href="https://arxiv.org/abs/2507.14897v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.14897v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Methods to build LLM agents have evolved from prompt engineering and supervised finetuning to agentic reinforcement learning (agentic RL). However, agentic RL remains bottlenecked by its surrounding systems: agents must interact with heterogeneous environments, such as sandboxes, model services, and external APIs. Their allocation, reuse, and lifecycle dominate rollout cost and cap the scale at which training becomes practical. In this work, we present AgentFly, an agentic RL framework built with a unified resource layer that treats each of these environments as a distinct, typed resource scheduled through one engine, with per-tool acquisition for multi-turn reuse, asynchronous backpressure, and rollout versus global-scoped lifecycles. AgentFly adopts a four-layer design: (I) agent layer that abstracts the agent, tool, and reward concepts, decomposing agentic RL into defining agents, tools, and reward functions; (II) rollout layer that composes these into agent loops and computes rewards; (III) context layer that organizes rollouts, injects contextual information, and arranges resources; and (IV) a low-level resource layer that performs resource management. We provide a suite of prebuilt tools and environments, demonstrate successful agent training across multiple tasks and models, and report the first controlled cross-framework throughput comparison against agentic RL frameworks.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-07-20T10:22:36Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Renxi Wang</name>
+    </author>
+    <author>
+      <name>Bilal El Bouardi</name>
+    </author>
+    <author>
+      <name>Rifo Ahmad Genadi</name>
+    </author>
+    <author>
+      <name>Yongxin Wang</name>
+    </author>
+    <author>
+      <name>Shu Wang</name>
+    </author>
+    <author>
+      <name>Fajri Koto</name>
+    </author>
+    <author>
+      <name>Zhengzhong Liu</name>
+    </author>
+    <author>
+      <name>Timothy Baldwin</name>
+    </author>
+    <author>
+      <name>Haonan Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2412.06509v2</id>
+    <title>Reasoning about Strategic Abilities in Stochastic Multi-agent Systems</title>
+    <updated>2024-12-12T02:01:00Z</updated>
+    <link href="https://arxiv.org/abs/2412.06509v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.06509v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reasoning about strategic abilities is key to AI systems comprising multiple agents, which provide a unified framework for formalizing various problems in game theory, social choice theory, etc. In this work, we propose a probabilistic extension of the alternating-time $μ$-calculus (AMC), named PAMC, for reasoning about the strategic abilities of agents in stochastic multi-agent systems. We show that PAMC subsumes two existing logics AMC and P$μ$TL (a probabilistic extension of the modal $μ$-calculus), but is incomparable with the probabilistic alternating-time temporal logic (PATL). We study the problems of model checking and satisfiability checking for PAMC. We first give a model checking algorithm by leveraging algorithms for solving normal-form games and AMC model checking. We establish that the model checking problem of PAMC remains in UP$\cap$co-UP, the same complexity class as the model checking problem for AMC and P$μ$TL. We also provide a new reduction from the satisfiability problem of PAMC to solving parity games, by which we obtain an EXPTIME decision procedure, as well as the small model property which allows us to construct a model for each satisfiable PAMC formula. Satisfiability in PAMC has the same complexity as in the modal $μ$-calculus, unlike PCTL and PATL whose satisfiability checking problems remain open. We have implemented both the model checking and satisfiability checking algorithms as open-source tools. Experimental results are reported, showcasing the practical applications and effectiveness of our approaches.</summary>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.FL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-12-09T14:13:10Z</published>
+    <arxiv:comment>Correction required and the replacement version not available shortly</arxiv:comment>
+    <arxiv:primary_category term="cs.LO"/>
+    <author>
+      <name>Yedi Zhang</name>
+    </author>
+    <author>
+      <name>Fu Song</name>
+    </author>
+    <author>
+      <name>Taolue Chen</name>
+    </author>
+    <author>
+      <name>Xuzhi Wu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2406.07875v2</id>
+    <title>Carbon Market Simulation with Adaptive Mechanism Design</title>
+    <updated>2024-06-13T10:29:16Z</updated>
+    <link href="https://arxiv.org/abs/2406.07875v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2406.07875v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A carbon market is a market-based tool that incentivizes economic agents to align individual profits with the global utility, i.e., reducing carbon emissions to tackle climate change. Cap and trade stands as a critical principle based on allocating and trading carbon allowances (carbon emission credit), enabling economic agents to follow planned emissions and penalizing excess emissions. A central authority is responsible for introducing and allocating those allowances in cap and trade. However, the complexity of carbon market dynamics makes accurate simulation intractable, which in turn hinders the design of effective allocation strategies. To address this, we propose an adaptive mechanism design framework, simulating the market using hierarchical, model-free multi-agent reinforcement learning (MARL). Government agents allocate carbon credits, while enterprises engage in economic activities and carbon trading. This framework illustrates agents' behavior comprehensively. Numerical results show MARL enables government agents to balance productivity, equality, and carbon emissions. Our project is available at https://github.com/xwanghan/Carbon-Simulator.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-06-12T05:08:51Z</published>
+    <arxiv:comment>10 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Han Wang</name>
+    </author>
+    <author>
+      <name>Wenhao Li</name>
+    </author>
+    <author>
+      <name>Hongyuan Zha</name>
+    </author>
+    <author>
+      <name>Baoxiang Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2305.18795v1</id>
+    <title>The Alternating-Time μ-Calculus With Disjunctive Explicit Strategies</title>
+    <updated>2023-05-30T07:16:59Z</updated>
+    <link href="https://arxiv.org/abs/2305.18795v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2305.18795v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Alternating-time temporal logic (ATL) and its extensions, including the alternating-time $μ$-calculus (AMC), serve the specification of the strategic abilities of coalitions of agents in concurrent game structures. The key ingredient of the logic are path quantifiers specifying that some coalition of agents has a joint strategy to enforce a given goal. This basic setup has been extended to let some of the agents (revocably) commit to using certain named strategies, as in ATL with explicit strategies (ATLES). In the present work, we extend ATLES with fixpoint operators and strategy disjunction, arriving at the alternating-time $μ$-calculus with disjunctive explicit strategies (AMCDES), which allows for a more flexible formulation of temporal properties (e.g. fairness) and, through strategy disjunction, a form of controlled nondeterminism in commitments. Our main result is an ExpTime upper bound for satisfiability checking (which is thus ExpTime-complete). We also prove upper bounds QP (quasipolynomial time) and NP $\cap$ coNP for model checking under fixed interpretations of explicit strategies, and NP under open interpretation. Our key technical tool is a treatment of the AMCDES within the generic framework of coalgebraic logic, which in particular reduces the analysis of most reasoning tasks to the treatment of a very simple one-step logic featuring only propositional operators and next-step operators without nesting; we give a new model construction principle for this one-step logic that relies on a set-valued variant of first-order resolution.</summary>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-05-30T07:16:59Z</published>
+    <arxiv:comment>Full version with appendix as well as corrected set-valued resolution method</arxiv:comment>
+    <arxiv:primary_category term="cs.LO"/>
+    <arxiv:journal_ref>Göttlinger, M., Schröder, L., &amp; Pattinson, D. CSL 2021, Leibniz International Proceedings in Informatics (LIPIcs) (pp. 26:1-26:22)</arxiv:journal_ref>
+    <author>
+      <name>Merlin Humml</name>
+    </author>
+    <author>
+      <name>Lutz Schröder</name>
+    </author>
+    <author>
+      <name>Dirk Pattinson</name>
+    </author>
+    <arxiv:doi>10.4230/LIPIcs.CSL.2021.26</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.4230/LIPIcs.CSL.2021.26" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2208.01174v2</id>
+    <title>TextWorldExpress: Simulating Text Games at One Million Steps Per Second</title>
+    <updated>2023-03-02T06:11:49Z</updated>
+    <link href="https://arxiv.org/abs/2208.01174v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2208.01174v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Text-based games offer a challenging test bed to evaluate virtual agents at language understanding, multi-step problem-solving, and common-sense reasoning. However, speed is a major limitation of current text-based games, capping at 300 steps per second, mainly due to the use of legacy tooling. In this work we present TextWorldExpress, a high-performance simulator that includes implementations of three common text game benchmarks that increases simulation throughput by approximately three orders of magnitude, reaching over one million steps per second on common desktop hardware. This significantly reduces experiment runtime, enabling billion-step-scale experiments in about one day.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-08-01T23:43:48Z</published>
+    <arxiv:comment>Accepted to EACL 2023</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Peter A. Jansen</name>
+    </author>
+    <author>
+      <name>Marc-Alexandre Côté</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/pNAsjHI8IjcCxzDrG6NZ8VxaQu8</id>
+  <title>arXiv Query: search_query=(abs:"tool output format" OR abs:"tool response format" OR abs:"response format" OR abs:"output format") AND abs:tool AND (abs:agent OR abs:agents)&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:05:44Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(abs:%22tool+output+format%22+OR+(abs:%22tool+response+format%22+OR+(abs:%22response+format%22+OR+abs:%22output+format%22)))+AND+(abs:tool+AND+(abs:agent+OR+abs:agents))&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>14</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.29812v1</id>
+    <title>Real PMIDs, Wrong Papers: Harness Design for Biomedical Claim-Verification Agents</title>
+    <updated>2026-10-21T14:35:56Z</updated>
+    <link href="https://arxiv.org/abs/2610.29812v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.29812v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Literature-searching language agents are becoming a standard component of scientific assistants for the life sciences, yet there is little controlled evidence on which parts of their harness matter. We run a controlled ablation on biomedical claim verification (SciFact) with the live PubMed API as the only tool. Holding the backbone and output format fixed, we compare four harnesses: closed-book answering, single-shot retrieval using the claim as the query, a ReAct-style agent that writes its own PubMed queries, and an oracle given the gold abstracts, each with two efficient frontier backbones. Naive single-shot retrieval finds the gold paper for only 6% of claims and turns overconfident errors into abstentions without improving accuracy. Letting the model formulate its own queries triples gold recall and yields the best verdicts (62% accuracy vs. 49-59% for the other realistic harnesses), although these differences are not significant at our sample size and agents use fewer than half of their search budget. With gold abstracts, the same models reach 79-86% accuracy, a significant 17-24 point gap showing that retrieval, not reasoning, is the main bottleneck. Finally, a citation audit shows that closed-book models cite PubMed IDs that almost always exist (327/335) but are almost never relevant: a cross-family LLM judge rates only 3 of 327 existing citations as relevant to the claim, versus 67% for citations produced by the search agent. Existence checks are therefore insufficient safeguards for scientific agents. We release code, prompts, and all cached tool calls at https://github.com/saqlain2204/real-pmids-wrong-papers.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T14:35:56Z</published>
+    <arxiv:comment>Accepted to the Agentic AI for Biological Discovery (AgenticLS) Workshop at NeurIPS 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Mohammed Saqlain</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.16068v1</id>
+    <title>CAPO: Constraint-Aware Prompt Optimization for LLM Agents</title>
+    <updated>2026-08-17T04:01:04Z</updated>
+    <link href="https://arxiv.org/abs/2608.16068v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.16068v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) are increasingly deployed as agents that rely on system prompts to use tools and complete tasks. Such deployments impose distinct operational requirements, including appropriate tool use, concise prompts and solution paths, and compliance with safety and formatting policies. For many practitioners, however, assembling domain-specific supervised data to post-train models to meet these requirements is infeasible. We introduce CAPO (Constraint-Aware Prompt Optimization), a primal-dual method that combines pool-based rewrites with adaptive constraint weighting to optimize system prompts under explicit operational constraints. Across agentic benchmarks, CAPO more reliably reaches empirically feasible operating points while improving task performance. CAPO also generalizes beyond agentic settings, achieving strong results on assistant-style evaluations with output-format and safety/privacy constraints. We further introduce DCAPO (Dynamically Trained CAPO), which trains a feedback- and dual-conditioned rewriter with pool-based GRPO while keeping the task agent frozen. Across task agents of different sizes, DCAPO produces a feasible prompt in every evaluated domain and matches or improves the task accuracy achieved by the evaluated baselines. A surrogate analysis characterizes how finite-pool and discrete-rewrite errors enter the inexact primal-dual procedure.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-17T04:01:04Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Victor Ye Dong</name>
+    </author>
+    <author>
+      <name>Reid Pryzant</name>
+    </author>
+    <author>
+      <name>Yi Liu</name>
+    </author>
+    <author>
+      <name>Jian Jiao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.14846v1</id>
+    <title>MultiStructRNA: a Python package for multi-algorithm RNA secondary structure prediction, ensemble analysis, and visualization</title>
+    <updated>2026-08-14T19:38:08Z</updated>
+    <link href="https://arxiv.org/abs/2608.14846v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.14846v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce MultiStructRNA, a unified Python toolkit for RNA secondary structure prediction, ensemble analysis, and visualization. Although RNA secondary structure is central to RNA biology and therapeutic design, practical adoption is often hindered by fragmented tooling, incompatible input and output formats, and limited visualization support. MultiStructRNA addresses these challenges through a single high-level API that orchestrates multiple prediction algorithms, harmonizes results into a consistent schema, and provides reproducible, ensemble-aware metrics through an object model suited to both interactive notebooks and production pipelines. MultiStructRNA enables seamless switching between prediction methods without requiring workflow changes and supports both in-notebook and exportable visualizations. Designed for scalability, it supports high-throughput analyses and simplifies comparison across methods while standardizing downstream feature extraction. The current release also includes optional agent-readable workflow recipes that document dependency setup, backend-adapter conventions, SHAPE-data reconciliation, structure interpretation, and comparative sequence analyses. By integrating diverse RNA secondary structure packages within a common framework, MultiStructRNA streamlines structure analysis and facilitates its use in RNA design, optimization, and machine learning workflows.</summary>
+    <category term="q-bio.QM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-bio.BM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-14T19:38:08Z</published>
+    <arxiv:primary_category term="q-bio.QM"/>
+    <author>
+      <name>Yashrajsinh Jadeja</name>
+    </author>
+    <author>
+      <name>Haining Lin</name>
+    </author>
+    <author>
+      <name>Mihir Metkar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.21674v1</id>
+    <title>Output Format x Model Identity: Interaction Effects in Single-Round Coding Agent Performance</title>
+    <updated>2026-07-23T10:18:42Z</updated>
+    <link href="https://arxiv.org/abs/2607.21674v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.21674v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Output format is not a neutral implementation detail -- it can reorder model rankings, amplify or suppress individual model differences, and determine whether a coding agent succeeds or fails. We conducted a controlled single-round experiment with 3 models (DeepSeek V4, Doubao 2.0 Pro, Qwen 3.7 Max) x 3 output formats (full file, JSON Patch, unified diff) x 6 tasks x 20 repetitions, totaling 4,013 runs across 4 open-source projects. Only one project (tqdm) yielded non-zero success rates: dotenv, requests, and jsoup yielded zero successes in 2,551 runs. Our central finding is a format x model interaction with no universally optimal format. Doubao achieves 94% success with JSON Patch (Cohen's h = 1.57, p &lt; 0.001), DeepSeek excels at unified diff (66%, h = 0.63), and Qwen shows a small but significant full-file preference (50%, h = 0.29, p &lt; 0.05). Beyond these headline results, we identify a distinct failure mechanism -- format misuse -- where agents correctly diagnose a problem but execute it with excessive scope, most vividly when a one-line fix is applied as a full-file replacement. We propose a model-specific output strategy, a tool-design principle that constrains format semantics to the agent's own localization step, and release all data and templates for reproducibility. All experimental data are available at https://doi.org/10.5281/zenodo.21505157.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-23T10:18:42Z</published>
+    <arxiv:comment>16 pages, 7 tables, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Yang Yang</name>
+    </author>
+    <arxiv:doi>10.5281/zenodo.21505157</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.5281/zenodo.21505157" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.05120v1</id>
+    <title>Agent Data Injection Attacks are Realistic Threats to AI Agents</title>
+    <updated>2026-07-06T14:07:49Z</updated>
+    <link href="https://arxiv.org/abs/2607.05120v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.05120v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI agents act on behalf of user prompts, consuming external data and taking actions based on the agent context. Prior research on AI agent security has primarily focused on indirect prompt injection (IPI). Its most well-studied category is instruction injection, where attacker-controlled untrusted data is interpreted as an instruction. In response, many mitigations have been proposed to prevent instruction injection attacks. In this paper, we introduce a new category of IPI, agent data injection attacks (ADI). ADI injects malicious data disguised as trusted data, such as security-critical metadata (e.g., resource identifiers or data origins) or agent context data (e.g., tool call and response formats). As a result, agents unknowingly execute unintended actions based on attacker-controlled data. ADI has similar attack impacts as instruction injection attacks, because it causes agents to misbehave and execute unintended actions. Despite the similar impact, ADI remains underexplored and easily bypasses existing IPI defenses. We found several critical vulnerabilities in real-world agents that allow an attacker to launch various attacks: arbitrary click attacks on web agents (Claude in Chrome, Antigravity, and Nanobrowser), and remote code execution and supply-chain attacks on coding agents (Claude Code, Codex, and Gemini CLI). We evaluate ADI vulnerabilities across off-the-shelf models and AI agents, and find that ADI is effective in both standalone LLMs and AI agent settings. ADI exposes a critical gap in agent security, signifying that current AI agents do not employ a fundamental security principle: current agents do not isolate trusted data from untrusted data.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-06T14:07:49Z</published>
+    <arxiv:comment>19 pages, 19 figures, 7 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Woohyuk Choi</name>
+    </author>
+    <author>
+      <name>Juhee Kim</name>
+    </author>
+    <author>
+      <name>Taehyun Kang</name>
+    </author>
+    <author>
+      <name>Jihyeon Jeong</name>
+    </author>
+    <author>
+      <name>Luyi Xing</name>
+    </author>
+    <author>
+      <name>Byoungyoung Lee</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.07765v2</id>
+    <title>RemoteAgent: Bridging Vague Human Intents and Earth Observation with RL-based Agentic MLLMs</title>
+    <updated>2026-04-12T05:49:10Z</updated>
+    <link href="https://arxiv.org/abs/2604.07765v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.07765v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Earth Observation (EO) systems are essentially designed to support domain experts who often express their requirements through vague natural language rather than precise, machine-friendly instructions. Depending on the specific application scenario, these vague queries can demand vastly different levels of visual precision. Consequently, a practical EO AI system must bridge the gap between ambiguous human queries and the appropriate multi-granularity visual analysis tasks, ranging from holistic image interpretation to fine-grained pixel-wise predictions. While Multi-modal Large Language Models (MLLMs) demonstrate strong semantic understanding, their text-based output format is inherently ill-suited for dense, precision-critical spatial predictions. Existing agentic frameworks address this limitation by delegating tasks to external tools, but indiscriminate tool invocation is computationally inefficient and underutilizes the MLLM's native capabilities. To this end, we propose RemoteAgent, an agentic framework that strategically respects the intrinsic capability boundaries of MLLMs. To empower this framework to understand real user intents, we construct VagueEO, a human-centric instruction dataset pairing EO tasks with simulated vague natural-language queries. By leveraging VagueEO for reinforcement fine-tuning, we align an MLLM into a robust cognitive core that directly resolves image- and sparse region-level tasks. Consequently, RemoteAgent processes suitable tasks internally while intelligently orchestrating specialized tools via the Model Context Protocol exclusively for dense predictions. Extensive experiments demonstrate that RemoteAgent achieves robust intent recognition capabilities while delivering highly competitive performance across diverse EO tasks.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-09T03:40:46Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Liang Yao</name>
+    </author>
+    <author>
+      <name>Shengxiang Xu</name>
+    </author>
+    <author>
+      <name>Fan Liu</name>
+    </author>
+    <author>
+      <name>Chuanyi Zhang</name>
+    </author>
+    <author>
+      <name>Bishun Yao</name>
+    </author>
+    <author>
+      <name>Rui Min</name>
+    </author>
+    <author>
+      <name>Yongjun Li</name>
+    </author>
+    <author>
+      <name>Chaoqian Ouyang</name>
+    </author>
+    <author>
+      <name>Shimin Di</name>
+    </author>
+    <author>
+      <name>Min-Ling Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.11315v1</id>
+    <title>Benchmarking the Generality of Vision-Language-Action Models</title>
+    <updated>2025-12-12T06:31:52Z</updated>
+    <link href="https://arxiv.org/abs/2512.11315v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.11315v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Generalist multimodal agents are expected to unify perception, language, and control - operating robustly across diverse real world domains. However, current evaluation practices remain fragmented across isolated benchmarks, making it difficult to assess whether today's foundation models truly generalize beyond their training distributions. We introduce MultiNet v1.0, a unified benchmark for measuring the cross domain generality of vision language models (VLMs) and vision language action models (VLAs) across six foundational capability regimes. Visual grounding, spatial reasoning, tool use, physical commonsense, multi agent coordination, and continuous robot control. Evaluating GPT 5, Pi0, and Magma, we find that no model demonstrates consistent generality. All exhibit substantial degradation on unseen domains, unfamiliar modalities, or cross domain task shifts despite strong performance within their training distributions.These failures manifest as modality misalignment, output format instability, and catastrophic knowledge degradation under domain transfer.Our findings reveal a persistent gap between the aspiration of generalist intelligence and the actual capabilities of current foundation models.MultiNet v1.0 provides a standardized evaluation substrate for diagnosing these gaps and guiding the development of future generalist agents.Code, data, and leaderboards are publicly available.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-12T06:31:52Z</published>
+    <arxiv:comment>23 pages, 7 figures, and 1 table</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Pranav Guruprasad</name>
+    </author>
+    <author>
+      <name>Sudipta Chowdhury</name>
+    </author>
+    <author>
+      <name>Harsh Sikka</name>
+    </author>
+    <author>
+      <name>Mridul Sharma</name>
+    </author>
+    <author>
+      <name>Helen Lu</name>
+    </author>
+    <author>
+      <name>Sean Rivera</name>
+    </author>
+    <author>
+      <name>Aryan Khurana</name>
+    </author>
+    <author>
+      <name>Hangliang Ren</name>
+    </author>
+    <author>
+      <name>Yangyue Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.02687v2</id>
+    <title>The Collaboration Gap: Exploration and Benchmarking of Open-World Agentic Cooperation</title>
+    <updated>2026-08-08T16:42:16Z</updated>
+    <link href="https://arxiv.org/abs/2511.02687v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.02687v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The trajectory of AI development suggests that we will increasingly rely on agent-based systems powered by language models, composed of independently developed agents with different information, privileges, and tools. The success of these systems will depend critically on effective collaboration among these heterogeneous agents, even under partial observability. Despite intense interest, the literature lacks empirical studies evaluating agentic collaboration without relying on fixed communication protocols, limiting insights for open-world deployments. We propose an illustrative collaborative maze-solving benchmark that (i) isolates collaborative capabilities, (ii) modulates problem complexity, (iii) enables scalable automated grading, and (iv) imposes no output-format constraints, benchmarking unguided, natural communication. Using this benchmark, we evaluate 32 leading open- and closed-source models in solo, homogeneous, and heterogeneous pairings. Our results reveal a surprising collaboration gap: models that perform well solo often degrade substantially when required to collaborate. We identify mitigations that show remarkable influence. For example, a small nudge via a relay inference approach, where a stronger agent leads before handing off to a weaker one, closes much of the gap. Our findings argue for (1) collaboration-aware evaluation, (2) training strategies to enhance collaborative capabilities, and (3) deliberate interaction design to elicit agents' collaboration skills, principles relevant to AI-AI and human-AI settings where agents must establish common ground.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-04T16:10:57Z</published>
+    <arxiv:comment>Accepted to COLM 2026, code available at https://github.com/trdavidson/collaboration_gap</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tim R. Davidson</name>
+    </author>
+    <author>
+      <name>Adam Fourney</name>
+    </author>
+    <author>
+      <name>Saleema Amershi</name>
+    </author>
+    <author>
+      <name>Robert West</name>
+    </author>
+    <author>
+      <name>Eric Horvitz</name>
+    </author>
+    <author>
+      <name>Ece Kamar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.02190v2</id>
+    <title>Dr. Bench: A Multidimensional Evaluation for Deep Research Agents, from Answers to Reports</title>
+    <updated>2026-01-29T14:47:04Z</updated>
+    <link href="https://arxiv.org/abs/2510.02190v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.02190v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As an embodiment of intelligence evolution toward interconnected architectures, Deep Research Agents (DRAs) systematically exhibit the capabilities in task decomposition, cross-source retrieval, multi-stage reasoning, information integration, and structured output, which markedly enhance performance on complex and open-ended tasks. However, existing benchmarks remain deficient in evaluation dimensions, response format, and scoring mechanisms, limiting their effectiveness in assessing such agents. This paper introduces Dr. Bench, a multidimensional evaluation framework tailored to DRAs and long-form report-style responses. The benchmark comprises 214 expert-curated challenging tasks across 10 broad domains, each accompanied by manually constructed reference bundles to support composite evaluation. This framework incorporates metrics for semantic quality, topical focus, and retrieval trustworthiness, enabling a comprehensive evaluation of long reports generated by DRAs. Extensive experimentation confirms the superior performance of mainstream DRAs over web-search-tool-augmented reasoning models, yet reveals considerable scope for further improvement. This study provides a robust foundation for capability assessment, architectural refinement, and paradigm advancement of DRAs.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-02T16:40:02Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yang Yao</name>
+    </author>
+    <author>
+      <name>Yixu Wang</name>
+    </author>
+    <author>
+      <name>Yuxuan Zhang</name>
+    </author>
+    <author>
+      <name>Yi Lu</name>
+    </author>
+    <author>
+      <name>Tianle Gu</name>
+    </author>
+    <author>
+      <name>Lingyu Li</name>
+    </author>
+    <author>
+      <name>Dingyi Zhao</name>
+    </author>
+    <author>
+      <name>Keming Wu</name>
+    </author>
+    <author>
+      <name>Haozhe Wang</name>
+    </author>
+    <author>
+      <name>Ping Nie</name>
+    </author>
+    <author>
+      <name>Yan Teng</name>
+    </author>
+    <author>
+      <name>Yingchun Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.02139v1</id>
+    <title>BioinfoMCP: A Unified Platform Enabling MCP Interfaces in Agentic Bioinformatics</title>
+    <updated>2025-10-02T15:47:59Z</updated>
+    <link href="https://arxiv.org/abs/2510.02139v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.02139v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Bioinformatics tools are essential for complex computational biology tasks, yet their integration with emerging AI-agent frameworks is hindered by incompatible interfaces, heterogeneous input-output formats, and inconsistent parameter conventions. The Model Context Protocol (MCP) provides a standardized framework for tool-AI communication, but manually converting hundreds of existing and rapidly growing specialized bioinformatics tools into MCP-compliant servers is labor-intensive and unsustainable. Here, we present BioinfoMCP, a unified platform comprising two components: BioinfoMCP Converter, which automatically generates robust MCP servers from tool documentation using large language models, and BioinfoMCP Benchmark, which systematically validates the reliability and versatility of converted tools across diverse computational tasks. We present a platform of 38 MCP-converted bioinformatics tools, extensively validated to show that 94.7% successfully executed complex workflows across three widely used AI-agent platforms. By removing technical barriers to AI automation, BioinfoMCP enables natural-language interaction with sophisticated bioinformatics analyses without requiring extensive programming expertise, offering a scalable path to intelligent, interoperable computational biology.</summary>
+    <category term="q-bio.QM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-02T15:47:59Z</published>
+    <arxiv:comment>20 pages, 8 figures, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="q-bio.QM"/>
+    <author>
+      <name>Florensia Widjaja</name>
+    </author>
+    <author>
+      <name>Zhangtianyi Chen</name>
+    </author>
+    <author>
+      <name>Juexiao Zhou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.11610v1</id>
+    <title>"If we misunderstand the client, we misspend 100 hours": Exploring conversational AI and response types for information elicitation</title>
+    <updated>2025-06-13T09:33:36Z</updated>
+    <link href="https://arxiv.org/abs/2506.11610v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.11610v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Client-designer alignment is crucial to the success of design projects, yet little research has explored how digital technologies might influence this alignment. To address this gap, this paper presents a three-phase study investigating how digital systems can support requirements elicitation in professional design practice. Specifically, it examines how integrating a conversational agent and choice-based response formats into a digital elicitation tool affects early-stage client-designer collaboration. The first phase of the study inquired into the current practices of 10 design companies through semi-structured interviews, informing the system's design. The second phase evaluated the system using a 2x2 factorial design with 50 mock clients, quantifying the effects of conversational AI and response type on user experience and perceived preparedness. In phase three, the system was presented to seven of the original 10 companies to gather reflections on its value, limitations, and potential integration into practice. Findings show that both conversational AI and choice-based responses lead to lower dependability scores on the User Experience Questionnaire, yet result in client input with greater clarity. We contribute design implications for integrating conversational AI and choice-based responses into elicitation tools to support mutual understanding in early-stage client-designer collaboration.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-13T09:33:36Z</published>
+    <arxiv:comment>27 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Daniel Hove Paludan</name>
+    </author>
+    <author>
+      <name>Julie Fredsgård</name>
+    </author>
+    <author>
+      <name>Kasper Patrick Bährentz</name>
+    </author>
+    <author>
+      <name>Ilhan Aslan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.08352v1</id>
+    <title>Reinforcement Fine-Tuning for Reasoning towards Multi-Step Multi-Source Search in Large Language Models</title>
+    <updated>2025-06-10T02:09:57Z</updated>
+    <link href="https://arxiv.org/abs/2506.08352v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.08352v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) can face factual limitations when responding to time-sensitive queries about recent events that arise after their knowledge thresholds in the training corpus. Existing search-augmented approaches fall into two categories, each with distinct limitations: multi-agent search frameworks incur substantial computational overhead by separating search planning and response synthesis across multiple LLMs, while single-LLM tool-calling methods restrict themselves to sequential planned, single-query searches from sole search sources. We present Reasoning-Search (R-Search), a single-LLM search framework that unifies multi-step planning, multi-source search execution, and answer synthesis within one coherent inference process. Innovatively, it structure the output into four explicitly defined components, including reasoning steps that guide the search process (&lt;think&gt;), a natural-language directed acyclic graph that represents the search plans with respect to diverse sources (&lt;search&gt;), retrieved results from executing the search plans (&lt;result&gt;), and synthesized final answers (&lt;answer&gt;). To enable effective generation of these structured outputs, we propose a specialized Reinforcement Fine-Tuning (ReFT) method based on GRPO, together with a multi-component reward function that optimizes LLM's answer correctness, structural validity of the generated DAG, and adherence to the defined output format. Experimental evaluation on FinSearchBench-24, SearchExpertBench-25, and seven Q and A benchmarks demonstrates that R-Search outperforms state-of-the-art methods, while achieving substantial efficiency gains through 70% reduction in context token usage and approximately 50% decrease in execution latency. Code is available at https://github.com/wentao0429/Reasoning-search.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-10T02:09:57Z</published>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Wentao Shi</name>
+    </author>
+    <author>
+      <name>Yiqing Shen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.15062v6</id>
+    <title>SAKE: Structured Agentic Knowledge Extrapolation for Complex LLM Reasoning via Reinforcement Learning</title>
+    <updated>2026-08-18T10:31:26Z</updated>
+    <link href="https://arxiv.org/abs/2505.15062v6" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.15062v6" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Knowledge extrapolation is the process of inferring novel information by combining and extending existing knowledge that is explicitly available. It is essential for solving complex questions in specialized domains where retrieving comprehensive external knowledge is impractical. We propose SAKE (Structured Agentic Knowledge Extrapolation), a RL powered agentic framework that trains LLMs to autonomously retrieve and extrapolate structured knowledge through tool-augmented reinforcement learning. SAKE defines two external KG tools: entity group construction and cross-group triplet retrieval. The model learns to interleave these 2 retrieval tools during a three-turn rollout: extracting key entities, filtering relevant concept groups, and associative reasoning by constructing new triplets through analogy. The entire pipeline is optimized end-to-end with GRPO using a reward that combines output format and answer correctness, teaching the model what to retrieve and how to reason over it. Our experiments proved that SAKE fine-tuned Qwen2.5-7B model surpasses GPT-3.5-Turbo with state-of-the-art agentic KG reasoning on both biomedical (75.4% vs. 70.1%) and commonsense (81.3% vs. 74.7%) benchmarks, while reducing token usage by over 90%. These results demonstrate that associative reasoning over incomplete structured knowledge does not require large models with complex, multi-step prompting, thus can be learned end-to-end by small, open-weight models through reinforcement learning with the right tools and training signal. Our code is available at https://github.com/jxfan99/SAKE.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-21T03:30:55Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Jiashu He</name>
+    </author>
+    <author>
+      <name>Jinxuan Fan</name>
+    </author>
+    <author>
+      <name>Bowen Jiang</name>
+    </author>
+    <author>
+      <name>Ignacio Hounie</name>
+    </author>
+    <author>
+      <name>Dan Roth</name>
+    </author>
+    <author>
+      <name>Alejandro Ribeiro</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2410.21784v1</id>
+    <title>MARCO: Multi-Agent Real-time Chat Orchestration</title>
+    <updated>2024-10-29T06:42:27Z</updated>
+    <link href="https://arxiv.org/abs/2410.21784v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2410.21784v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model advancements have enabled the development of multi-agent frameworks to tackle complex, real-world problems such as to automate tasks that require interactions with diverse tools, reasoning, and human collaboration. We present MARCO, a Multi-Agent Real-time Chat Orchestration framework for automating tasks using LLMs. MARCO addresses key challenges in utilizing LLMs for complex, multi-step task execution. It incorporates robust guardrails to steer LLM behavior, validate outputs, and recover from errors that stem from inconsistent output formatting, function and parameter hallucination, and lack of domain knowledge. Through extensive experiments we demonstrate MARCO's superior performance with 94.48% and 92.74% accuracy on task execution for Digital Restaurant Service Platform conversations and Retail conversations datasets respectively along with 44.91% improved latency and 33.71% cost reduction. We also report effects of guardrails in performance gain along with comparisons of various LLM models, both open-source and proprietary. The modular and generic design of MARCO allows it to be adapted for automating tasks across domains and to execute complex usecases through multi-turn interactions.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-10-29T06:42:27Z</published>
+    <arxiv:comment>EMNLP 2024 Industry Track</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Anubhav Shrimal</name>
+    </author>
+    <author>
+      <name>Stanley Kanagaraj</name>
+    </author>
+    <author>
+      <name>Kriti Biswas</name>
+    </author>
+    <author>
+      <name>Swarnalatha Raghuraman</name>
+    </author>
+    <author>
+      <name>Anish Nediyanchath</name>
+    </author>
+    <author>
+      <name>Yi Zhang</name>
+    </author>
+    <author>
+      <name>Promod Yenigalla</name>
+    </author>
+  </entry>
+</feed>

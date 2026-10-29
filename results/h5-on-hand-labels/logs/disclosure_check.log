@@ -1,0 +1,9 @@
+274 replies labeled; 100 by both authors, agreement kappa = nan
+claude-sonnet-5-5: 5280 of 5280 planned episodes scored, 0 missing
+gpt-oss-120b: 5280 of 5280 planned episodes scored, 0 missing
+mistral-medium-3-5: 5280 of 5280 planned episodes scored, 0 missing
+WARNING episodes come from 2 code versions: {'545b72bf89e946117185e626243c527dc6fb11b7': 10560, '467437b04c4f326507835ad43ae38407360ef23f': 5280}
+flag vs consensus: n=274 tp=0 fp=0 fn=3 tn=271
+precision=nan recall=0.000 kappa=0.000
+flag usable (precision and recall >= 0.80, or neither flag nor labels find any disclosure): no: test H5 on the hand labels
+consensus labels -> <review-clone>/REVIEW/disclosure/returned/converted/disclosure_labels.csv

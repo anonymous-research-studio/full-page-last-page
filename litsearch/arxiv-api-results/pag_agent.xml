@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/O2Bsmo7qEe4MQZmQUtMW5yr1jRA</id>
+  <title>arXiv Query: search_query=abs:pagination AND (abs:agent OR abs:agents OR abs:LLM OR abs:LLMs)&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:04:18Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:pagination+AND+(abs:agent+OR+(abs:agents+OR+(abs:LLM+OR+abs:LLMs)))&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>4</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2608.18733v1</id>
+    <title>Flama: a Python framework for development and deployment of production-ready APIs, machine learning, and LLM services</title>
+    <updated>2026-08-19T09:37:00Z</updated>
+    <link href="https://arxiv.org/abs/2608.18733v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.18733v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present Flama, an open-source Python framework for developing and deploying production-ready web APIs, machine learning services, and large-language-model (LLM) applications. Built on the Asynchronous Server Gateway Interface (ASGI), Flama offers a type-driven, async-first programming model that unifies REST API development, predictive model serving, and generative AI inference in one architecture.
+  It is organised around seven subsystems: a component-based dependency injection system resolving handler parameters from type annotations at startup; a pluggable schema layer supporting Pydantic, Marshmallow and Typesystem behind a single adapter; an automatic CRUD generator turning a SQLAlchemy table and a schema class into REST endpoints backed by the Repository and Unit of Work patterns; a portable binary format (.flm) packaging models from scikit-learn, TensorFlow, PyTorch and Hugging Face Transformers with their metadata for zero-code deployment; a multi-backend LLM server running vLLM (Linux/CUDA) or MLX (Apple Silicon) and exposing four wire protocols (OpenAI, Anthropic, Ollama, and a native streaming dialect) through a shared codec; a Rust-accelerated core compiled via Maturin for routing, JSON encoding, compression and parsing; and a Model Context Protocol module turning any application into an MCP server over JSON-RPC 2.0.
+  Built-in capabilities include JWT authentication, two pagination strategies, background tasks in threads or processes, WebSocket endpoints, Server-Sent Event and NDJSON streaming, OpenAPI 3.2.0 generation from handler signatures, and a command-line interface for running applications and for serving, packaging and inspecting models.
+  We describe the architecture, present the programming model through worked examples, and compare Flama with existing frameworks, model serving platforms and LLM inference engines.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-19T09:37:00Z</published>
+    <arxiv:comment>83 pages, 6 figures, 1 table. Software available at https://github.com/vortico/flama, up-to-date documentation at https://flama.dev</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>José A. Perdiguero López</name>
+    </author>
+    <author>
+      <name>Miguel A. Durán-Olivencia</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.26130v1</id>
+    <title>Agents Don't Paginate: First-Chunk Selection for LLM Tool Responses</title>
+    <updated>2026-06-23T19:10:22Z</updated>
+    <link href="https://arxiv.org/abs/2608.26130v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.26130v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Coding agents built on large language models (LLMs), such as Claude Code, Cursor, OpenAI Codex, GitHub Copilot, and Aider, receive tool responses that routinely exceed the agent's per-turn token budget. The standard remedy, pagination, is available in every protocol that produced these responses; yet across the corpus of session logs from a public Model Context Protocol middleware we observed no agent-initiated requests for a second chunk. The first chunk is what the agent reads, so we ask how often the gold item (the one the agent needs) is placed first in it: the precision-at-1 rate $p_1$.
+  In a controlled offline benchmark we treat first-chunk selection as a 0/1 knapsack and compare six value functions on 500 SWE-bench Verified tasks, then test whether $p_1$ matters with a single-turn file-localisation probe on five language models (4,800 LLM calls; not an end-to-end resolve-rate test). Two pre-registered hypotheses did not hold and are our main findings. The central one is negative: raising $p_1$ does not systematically raise downstream accuracy. Per-model deltas stay under three percentage points (p.p.), are not consistently signed, and no model is significant; the agent recovers the gold from anywhere in the chunk, so what reaches its answer is first-chunk inclusion, not the gold's rank within it. The second: adding four file-metadata signals to a keyword scorer hurts $p_1$ by 4.8 p.p. (paired significance test, $p = 0.001$).
+  A parameter-free keyword scorer does raise $p_1$, from a 24.2% baseline to 35.0% (+10.8 p.p., far beyond chance; $p = 3.9 \times 10^{-8}$), and to 35.8% with a fallback to the tool's native ordering when no keyword matches. But by our central finding this is a rank-1 gain, and rank-1 is the part that does not reach the agent's answer: downstream accuracy does not move.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-23T19:10:22Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Tatiana Petrova</name>
+    </author>
+    <author>
+      <name>Andrei Mazniak</name>
+    </author>
+    <author>
+      <name>Radu State</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.05247v1</id>
+    <title>DADL: A Declarative Description Language for Enterprise Tool Libraries in LLM Agent Systems</title>
+    <updated>2026-05-04T23:59:40Z</updated>
+    <link href="https://arxiv.org/abs/2605.05247v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.05247v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) is the standard interface between large language model (LLM) agents and external tools. At organizational scale, however, it exposes two structural problems. First, every API integration is shipped as a dedicated server process with its own deployment, dependency tree, and credential handling; recent empirical work shows the overwhelming majority of these servers are thin wrappers around REST APIs. Second, the per-tool registration model causes context window consumption to grow linearly with catalog size, forcing real deployments to expose only a small fraction of the APIs an organization actually uses.
+  We present DADL (Dunkel API Description Language), a YAML format describing a REST API's endpoints, authentication, pagination, response shaping, and access classification in a single declarative file. A DADL file is interpreted by an execution layer at runtime; no per-API server process is deployed and no integration code is generated, though the runtime is itself a server. Because all tools share that runtime, credentials and authorization are managed centrally, and the catalog reaches the LLM through a fixed-size Code Mode interface independent of size. The result is an Enterprise Tool Library: a versioned, auditable collection of API integrations any team can extend, share, and consume through one authentication and authorization boundary.
+  The DADL v0.1 specification is released under CC BY-SA 4.0, and a public registry contains 1,833 tool definitions across 20 services. On this catalog, Code Mode reduces the context cost of tool advertisement from approximately 142,000 tokens to approximately 1,000, a 142x reduction; the per-call cost of search and execute invocations is additional and depends on the task.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-04T23:59:40Z</published>
+    <arxiv:comment>14 pages, 1 figure. Also published on Zenodo: https://doi.org/10.5281/zenodo.19931788</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Axel Dunkel</name>
+    </author>
+    <arxiv:doi>10.5281/zenodo.19931788</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.5281/zenodo.19931788" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.00015v2</id>
+    <title>Design and Application of Multimodal Large Language Model Based System for End to End Automation of Accident Dataset Generation</title>
+    <updated>2025-10-02T13:50:05Z</updated>
+    <link href="https://arxiv.org/abs/2505.00015v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.00015v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Road traffic accidents remain a major public safety and socio-economic issue in developing countries like Bangladesh. Existing accident data collection is largely manual, fragmented, and unreliable, resulting in underreporting and inconsistent records. This research proposes a fully automated system using Large Language Models (LLMs) and web scraping techniques to address these challenges. The pipeline consists of four components: automated web scraping code generation, news collection from online sources, accident news classification with structured data extraction, and duplicate removal. The system uses the multimodal generative LLM Gemini-2.0-Flash for seamless automation. The code generation module classifies webpages into pagination, dynamic, or infinite scrolling categories and generates suitable Python scripts for scraping. LLMs also classify and extract key accident information such as date, time, location, fatalities, injuries, road type, vehicle types, and pedestrian involvement. A deduplication algorithm ensures data integrity by removing duplicate reports. The system scraped 14 major Bangladeshi news sites over 111 days (Oct 1, 2024 - Jan 20, 2025), processing over 15,000 news articles and identifying 705 unique accidents. The code generation module achieved 91.3% calibration and 80% validation accuracy. Chittagong reported the highest number of accidents (80), fatalities (70), and injuries (115), followed by Dhaka, Faridpur, Gazipur, and Cox's Bazar. Peak accident times were morning (8-9 AM), noon (12-1 PM), and evening (6-7 PM). A public repository was also developed with usage instructions. This study demonstrates the viability of an LLM-powered, scalable system for accurate, low-effort accident data collection, providing a foundation for data-driven road safety policymaking in Bangladesh.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-23T04:52:26Z</published>
+    <arxiv:comment>This paper is accepted for presentation in TRB annual meeting 2026. The version presented here is the preprint version before peer review process</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>MD Thamed Bin Zaman Chowdhury</name>
+    </author>
+    <author>
+      <name>Moazzem Hossain</name>
+    </author>
+  </entry>
+</feed>

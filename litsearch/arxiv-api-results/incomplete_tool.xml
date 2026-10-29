@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/bEUUF7qIGerMl4Z7Mx4NZIdz/l4</id>
+  <title>arXiv Query: search_query=abs:incomplete AND (abs:"tool output" OR abs:"tool outputs" OR abs:"tool response" OR abs:"tool responses" OR abs:"tool results")&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:04:52Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:incomplete+AND+(abs:%22tool+output%22+OR+(abs:%22tool+outputs%22+OR+(abs:%22tool+response%22+OR+(abs:%22tool+responses%22+OR+abs:%22tool+results%22))))&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>8</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2608.24368v2</id>
+    <title>From State to Action: OODA-Tool for Reliable Multi-Turn Tool Use</title>
+    <updated>2026-08-27T08:07:54Z</updated>
+    <link href="https://arxiv.org/abs/2608.24368v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.24368v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reliable multi-turn tool use requires an agent to preserve an evolving task state and ensure that each action remains consistent with it. However, direct function-calling and ReAct-style policies learn state tracking and action generation within the same autoregressive trajectory. This coupling creates state-action competition: the pressure to produce the next call can overwrite or ignore information accumulated earlier in the interaction. Inspired by Boyd's Observe-Orient-Decide-Act cycle, we introduce OODA-Tool, a typed closed-loop policy designed to mitigate this competition by separating state preservation from action realization. Rather than generating an action directly from the interaction history, OODA-Tool routes each decision through controller-checked intermediate states, ensuring that the final output remains grounded in the current task state. Specifically, Observe reconstructs the task state, Orient determines whether execution is warranted, Decide forms an admissible action structure, and Act realizes the external output. We evaluate OODA-Tool against direct function-calling and ReAct policies using Qwen3 models ranging from 0.6B to 14B across multi-turn, multi-tool, and incomplete-information settings. OODA-Tool consistently improves task success across model sizes, with larger gains on smaller models and on tasks whose actions depend strongly on information accumulated across turns and prior tool results. Controlled variants, stage-level ablations, and transfer evaluations further demonstrate the robustness of these improvements.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-25T10:27:25Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Rongfeng Guo</name>
+    </author>
+    <author>
+      <name>Yinxuan Huang</name>
+    </author>
+    <author>
+      <name>Yusen Wu</name>
+    </author>
+    <author>
+      <name>Maoqing Zhong</name>
+    </author>
+    <author>
+      <name>Yunlu Chen</name>
+    </author>
+    <author>
+      <name>Meng Tang</name>
+    </author>
+    <author>
+      <name>Teng Long</name>
+    </author>
+    <author>
+      <name>Vincent Tao Hu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.04289v1</id>
+    <title>SafeCommit: Certifying When Memory-Grounded Agents May Safely Act</title>
+    <updated>2026-08-04T23:44:35Z</updated>
+    <link href="https://arxiv.org/abs/2608.04289v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.04289v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Long-horizon agents increasingly use persistent memory and tools to take actions with external side effects. A central failure mode is premature commitment: an agent acts before resolving whether its memory grounding is stale, conflicting, incomplete, or corrupted. We formalize this problem as safe commitment under memory uncertainty and introduce SafeCommit, a risk controlled layer between agent reasoning and external execution. The layer constructs a calibrated set of plausible latent worlds from memory, observations, tool outputs, provenance, and policy constraints. It permits a side effectful action only when a conformal action certificate shows that the action is safe in every retained world. Otherwise, it selects a low-side-effect probe that targets the worlds blocking certification, or returns a conservative fallback. Under calibrated world coverage, the probability of an unsafe certified commit is at most the target level α; with imperfect world proposal, the bound separates calibration and representation error. A dependency-free controlled simulator illustrates the safety-utility tradeoff and reproduces all reported results with one command. The goal is to offer a concrete approach for deciding not only what an agent should do, but when the available evidence is sufficient to safely do it.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-04T23:44:35Z</published>
+    <arxiv:comment>14 pages, 6 tables, and 1 figure, target NeurIPS</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Mayur Akewar</name>
+    </author>
+    <author>
+      <name>Ravi Ranjan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.11061v1</id>
+    <title>Pando: Do Interpretability Methods Work When Models Won't Explain Themselves?</title>
+    <updated>2026-04-13T06:42:24Z</updated>
+    <link href="https://arxiv.org/abs/2604.11061v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.11061v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Mechanistic interpretability is often motivated for alignment auditing, where a model's verbal explanations can be absent, incomplete, or misleading. Yet many evaluations do not control whether black-box prompting alone can recover the target behavior, so apparent gains from white-box tools may reflect elicitation rather than internal signal; we call this the elicitation confounder. We introduce Pando, a model-organism benchmark that breaks this confound via an explanation axis: models are trained to produce either faithful explanations of the true rule, no explanation, or confident but unfaithful explanations of a disjoint distractor rule.
+  Across 720 finetuned models implementing hidden decision-tree rules, agents predict held-out model decisions from $10$ labeled query-response pairs, optionally augmented with one interpretability tool output. When explanations are faithful, black-box elicitation matches or exceeds all white-box methods; when explanations are absent or misleading, gradient-based attribution improves accuracy by 3-5 percentage points, and relevance patching, RelP, gives the largest gains, while logit lens, sparse autoencoders, and circuit tracing provide no reliable benefit. Variance decomposition suggests gradients track decision computation, which fields causally drive the output, whereas other readouts are dominated by task representation, biases toward field identity and value.
+  We release all models, code, and evaluation infrastructure.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-13T06:42:24Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Ziqian Zhong</name>
+    </author>
+    <author>
+      <name>Aashiq Muhamed</name>
+    </author>
+    <author>
+      <name>Mona T. Diab</name>
+    </author>
+    <author>
+      <name>Virginia Smith</name>
+    </author>
+    <author>
+      <name>Aditi Raghunathan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.01241v2</id>
+    <title>MCP-SandboxScan: WASM-based Secure Execution and Runtime Analysis for MCP Tools</title>
+    <updated>2026-06-22T15:20:42Z</updated>
+    <link href="https://arxiv.org/abs/2601.01241v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.01241v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-augmented Large Language Model (LLM) agents create a new supply-chain surface: Model Context Protocol (MCP) tools are installed like third-party packages, yet their outputs can enter the agent's reasoning context. This enables confused-deputy risks in which attacker-controlled inputs cause otherwise benign tools to exercise legitimate authority over files, environment variables, or network-facing operations and reflect sensitive or instruction-like content into LLM-visible fields. We present SandScope, an MCP-aware audit framework that combines runtime witness detection with semantic tool profiling. SandScope executes portable tools under WebAssembly System Interface (WASI) or drives unmodified MCP servers over standard input/output (stdio), extracts LLM-visible sinks from tool results and prompt/message fields, and reports auditable source-to-sink witnesses from environment, file, and tool-input sources while separately recording network-intent and egress evidence. Its semantic layer recovers declared capabilities from tools/list metadata and static registrations to characterize attack surface when execution is incomplete. We evaluate SandScope on controlled cross-language subjects, an evasion benchmark, and a 100-repository MCP corpus. SandScope completes shallow dynamic scans for 35 repositories and, through a broader semantic profiling pass, recovers metadata for 1,127 tools across 71 repositories, including 886 tools with security-sensitive declared capabilities. A schema-guided exploration pass over the 35 dynamically scanned repositories re-executes 33 and observes source-to-sink witnesses in 12. These results show that SandScope provides practical, auditable evidence for MCP tool risk through controlled execution, MCP-aware sink extraction, runtime witness reporting, and semantic capability profiling.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-03T17:25:38Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zhuoran Tan</name>
+    </author>
+    <author>
+      <name>Run Hao</name>
+    </author>
+    <author>
+      <name>Jeremy Singer</name>
+    </author>
+    <author>
+      <name>Yutian Tang</name>
+    </author>
+    <author>
+      <name>Christos Anagnostopoulos</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.01462v1</id>
+    <title>Quantum-Assisted Automatic Path-Planning for Robotic Quality Inspection in Industry 4.0</title>
+    <updated>2025-07-02T08:21:52Z</updated>
+    <link href="https://arxiv.org/abs/2507.01462v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.01462v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This work explores the application of hybrid quantum-classical algorithms to optimize robotic inspection trajectories derived from Computer-Aided Design (CAD) models in industrial settings. By modeling the task as a 3D variant of the Traveling Salesman Problem, incorporating incomplete graphs and open-route constraints, this study evaluates the performance of two D-Wave-based solvers against classical methods such as GUROBI and Google OR-Tools. Results across five real-world cases demonstrate competitive solution quality with significantly reduced computation times, highlighting the potential of quantum approaches in automation under Industry 4.0.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.ET" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-07-02T08:21:52Z</published>
+    <arxiv:comment>2 pages, 1 figure, paper accepted for presentation at the IEEE International Conference on Quantum Computing and Engineering (QCE)</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Eneko Osaba</name>
+    </author>
+    <author>
+      <name>Estibaliz Garrote</name>
+    </author>
+    <author>
+      <name>Pablo Miranda-Rodriguez</name>
+    </author>
+    <author>
+      <name>Alessia Ciacco</name>
+    </author>
+    <author>
+      <name>Itziar Cabanes</name>
+    </author>
+    <author>
+      <name>Aitziber Mancisidor</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2405.07960v5</id>
+    <title>AgentClinic: a multimodal agent benchmark to evaluate AI in simulated clinical environments</title>
+    <updated>2025-05-25T02:19:37Z</updated>
+    <link href="https://arxiv.org/abs/2405.07960v5" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2405.07960v5" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Evaluating large language models (LLM) in clinical scenarios is crucial to assessing their potential clinical utility. Existing benchmarks rely heavily on static question-answering, which does not accurately depict the complex, sequential nature of clinical decision-making. Here, we introduce AgentClinic, a multimodal agent benchmark for evaluating LLMs in simulated clinical environments that include patient interactions, multimodal data collection under incomplete information, and the usage of various tools, resulting in an in-depth evaluation across nine medical specialties and seven languages. We find that solving MedQA problems in the sequential decision-making format of AgentClinic is considerably more challenging, resulting in diagnostic accuracies that can drop to below a tenth of the original accuracy. Overall, we observe that agents sourced from Claude-3.5 outperform other LLM backbones in most settings. Nevertheless, we see stark differences in the LLMs' ability to make use of tools, such as experiential learning, adaptive retrieval, and reflection cycles. Strikingly, Llama-3 shows up to 92% relative improvements with the notebook tool that allows for writing and editing notes that persist across cases. To further scrutinize our clinical simulations, we leverage real-world electronic health records, perform a clinical reader study, perturb agents with biases, and explore novel patient-centric metrics that this interactive environment firstly enables.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-05-13T17:38:53Z</published>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Samuel Schmidgall</name>
+    </author>
+    <author>
+      <name>Rojin Ziaei</name>
+    </author>
+    <author>
+      <name>Carl Harris</name>
+    </author>
+    <author>
+      <name>Eduardo Reis</name>
+    </author>
+    <author>
+      <name>Jeffrey Jopling</name>
+    </author>
+    <author>
+      <name>Michael Moor</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2112.02560v2</id>
+    <title>A comment-driven evidence appraisal approach for decision-making when only uncertain evidence available</title>
+    <updated>2021-12-21T01:11:21Z</updated>
+    <link href="https://arxiv.org/abs/2112.02560v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2112.02560v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Purpose: To explore whether comments could be used as an assistant tool for heuristic decision-making, especially in cases where missing, incomplete, uncertain, or even incorrect evidence is acquired. Methods: Six COVID-19 drug candidates were selected from WHO clinical guidelines. Evidence-comment networks (ECNs) were completed of these six drug candidates based on evidence-comment pairs from all PubMed indexed COVID-19 publications with formal published comments. WHO guidelines were utilized to validate the feasibility of comment-derived evidence assertions as a fast decision supporting tool. Results: Out of 6 drug candidates, comment-derived evidence assertions of leading subgraphs of 5 drugs were consistent with WHO guidelines, and the overall comment sentiment of 6 drugs was aligned with WHO clinical guidelines. Additionally, comment topics were in accordance with the concerns of guidelines and evidence appraisal criteria. Furthermore, half of the critical comments emerged 4.5 months earlier than the date guidelines were published. Conclusions: Comment-derived evidence assertions have the potential as an evidence appraisal tool for heuristic decisions based on the accuracy, sensitivity, and efficiency of evidence-comment networks. In essence, comments reflect that academic communities do have a self-screening evaluation and self-purification (argumentation) mechanism, thus providing a tool for decision makers to filter evidence.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-12-05T13:15:48Z</published>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Shuang Wang</name>
+    </author>
+    <author>
+      <name>Jian Du</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1607.06515v1</id>
+    <title>The Role of PMESII Modeling in a Continuous Cycle of Anticipation and Action</title>
+    <updated>2016-07-21T21:52:14Z</updated>
+    <link href="https://arxiv.org/abs/1607.06515v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1607.06515v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The inevitable incompleteness of any collection of PMESII models, along with poorly understood methods for combining heterogeneous models, leads to major uncertainty regarding the reliability of computational tools. This uncertainty is further exacerbated by difficulties in validation of such tools. They should only be used as aids to human analysis and decision-making. A practitioner must wonder: how can we accommodate the uncertainty of a tool's results by applying human judgment appropriately?
+  In this paper, we describe two examples where planners and analysts used (or could have used) computational tools to obtain estimates of effects of various actions under consideration. Then they considered these computational estimates to draw their own conclusions regarding the effects that would likely emerge from proposed actions taken by the international mission.
+  The key idea, in both of our examples, is a continuous cycle of anticipations and actions; in each cycle computational estimates of effects help intervention managers determine appropriate actions, and then assessments of real-world outcomes guide the next increment of computational estimates. With a proper methodology, PMESII modeling tools can offer valuable insights and encourage learning, even if they will never produce fully accurate estimates useable in a customary, strictly predictive manner.</summary>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-07-21T21:52:14Z</published>
+    <arxiv:comment>A version of this paper appeared as a book chapter in Kott, A., &amp; Citrenbaum, G. (Eds.). Estimating Impact: A Handbook of Computational Methods and Models for Anticipating Economic, Social, Political and Security Effects in International Interventions. Springer, 2010</arxiv:comment>
+    <arxiv:primary_category term="cs.CY"/>
+    <author>
+      <name>Alexander Kott</name>
+    </author>
+    <author>
+      <name>Stephen Morse</name>
+    </author>
+  </entry>
+</feed>

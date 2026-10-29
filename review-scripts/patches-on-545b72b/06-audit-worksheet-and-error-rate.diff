@@ -1,0 +1,819 @@
+diff --git a/scripts/audit_combined.py b/scripts/audit_combined.py
+new file mode 100644
+index 0000000..5a11d96
+--- /dev/null
++++ b/scripts/audit_combined.py
+@@ -0,0 +1,80 @@
++"""Combine the audit parts into one blinded worksheet: every reply in a seeded random order, with new ids.
++
++Reads each part's drawn sample (in part order) and the raw logs, builds each reply's blinded view as
++`scripts/audit_worksheet.py --blinded` does, shuffles all replies with a seeded generator, and numbers
++them 1..N. Writes, beside <out>:
++  <out>_blinded.html, <out>_blinded.csv   the combined blinded worksheet (new ids only);
++  audit_key_combined.csv                  new audit id -> part, the part's audit id, episode, model, stratum,
++                                          weight and condition;
++  audit_verdicts_combined.csv             audit_id (new), verdict, note; never overwritten.
++An existing key that would change stops the script, so verdicts already entered keep their meaning.
++Score it with `scripts/audit_error_rate.py --part audit_key_combined.csv audit_verdicts_combined.csv`
++(the key carries model, stratum and weight). Use either the combined files or the part files, not both:
++the error-rate script stops if an episode appears twice.
++
++  uv run python scripts/audit_combined.py REVIEW/final/audit_sample_part1_gpt-oss_claude.csv \
++      REVIEW/final/audit_sample_part2_mistral.csv --raw data/raw/main --out REVIEW/final/audit_worksheet_combined
++"""
++
++from __future__ import annotations
++
++import argparse
++import io
++import random
++import sys
++from pathlib import Path
++
++import pandas as pd
++
++sys.path.insert(0, str(Path(__file__).parent))
++from audit_worksheet import KEY_COLUMNS, blinded, build, extras, records_by_id, to_html_blinded
++
++
++def combine(samples: list[pd.DataFrame], by_id: dict[str, dict], seed: int) -> tuple[pd.DataFrame, pd.DataFrame]:
++    views, keys = [], []
++    for part, sample in enumerate(samples, start=1):
++        table = build(sample, by_id)
++        more = {int(a): extras(by_id[e]) for a, e in zip(sample["audit_id"], sample["episode_id"], strict=True)}
++        view = blinded(table, more).rename(columns={"audit_id": "part_audit_id"})
++        key = table[KEY_COLUMNS].rename(columns={"audit_id": "part_audit_id"}).assign(part=part)
++        views.append(view.assign(part=part))
++        keys.append(key)
++    view, key = pd.concat(views, ignore_index=True), pd.concat(keys, ignore_index=True)
++    order = list(range(len(view)))
++    random.Random(f"{seed}:combined").shuffle(order)
++    view = view.iloc[order].reset_index(drop=True)
++    view.insert(0, "audit_id", range(1, len(view) + 1))
++    key = view[["audit_id", "part", "part_audit_id"]].merge(key, on=["part", "part_audit_id"], validate="one_to_one")
++    key = key[["audit_id", "part", "part_audit_id", *[c for c in KEY_COLUMNS if c != "audit_id"]]]
++    return view.drop(columns=["part", "part_audit_id"]), key
++
++
++def main(argv: list[str] | None = None) -> None:
++    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
++    p.add_argument("samples", nargs="+", help="each part's drawn sample CSV, in part order")
++    p.add_argument("--raw", nargs="+", required=True, help="raw episode logs (files or directories)")
++    p.add_argument("--out", required=True, help="path without extension, e.g. REVIEW/final/audit_worksheet_combined")
++    p.add_argument("--seed", type=int, default=20261025)
++    args = p.parse_args(argv)
++    view, key = combine([pd.read_csv(s) for s in args.samples], records_by_id(args.raw), args.seed)
++    out = Path(args.out)
++    out.parent.mkdir(parents=True, exist_ok=True)
++    key_path, verdicts = out.with_name("audit_key_combined.csv"), out.with_name("audit_verdicts_combined.csv")
++    if key_path.exists() and not pd.read_csv(key_path).equals(pd.read_csv(io.StringIO(key.to_csv(index=False)))):
++        raise SystemExit(f"{key_path} exists and would change; verdicts keyed to it would lose their meaning. Nothing written.")
++    base = out.with_name(out.name + "_blinded")
++    view.to_csv(base.with_suffix(".csv"), index=False)
++    key.to_csv(key_path, index=False)
++    source = (f"{len(view)} replies from {len(args.samples)} parts, in a seeded random order with new ids. Part, original "
++              f"audit id, model, condition, stratum, weight and episode id are in {key_path.name}, not here.")
++    base.with_suffix(".html").write_text(to_html_blinded(view, "Correctness audit worksheet, combined (blinded)", source,
++                                                         verdicts.name))
++    if verdicts.exists():  # never overwrite verdicts already entered
++        print(f"kept the existing {verdicts}")
++    else:
++        pd.DataFrame({"audit_id": range(1, len(view) + 1), "verdict": "", "note": ""}).to_csv(verdicts, index=False)
++    print(f"wrote {len(view)} replies -> {base.with_suffix('.html')}, {base.with_suffix('.csv')}, {key_path} and {verdicts}")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/scripts/audit_error_rate.py b/scripts/audit_error_rate.py
+new file mode 100644
+index 0000000..a149ad2
+--- /dev/null
++++ b/scripts/audit_error_rate.py
+@@ -0,0 +1,143 @@
++"""Stratum-weighted parser error rate per model, from filled-in audit worksheets (descriptive).
++
++An error is a reply where the auditor disagrees with the scorer's correctness reading (verdict
++"disagree"). Each reply carries its stratum's weight (population / sampled, from the sampler's manifest,
++in the worksheet's `weight` column), so the weighted rate estimates the share of the model's main-study
++replies whose correctness the parser misreads. Per model:
++  - the weighted error rate over the replies with "agree" or "disagree", with two 95% intervals: a
++    percentile bootstrap that resamples replies within each stratum (`bootstrap_lo`, `bootstrap_hi`),
++    which collapses to a point when every stratum's verdicts agree with each other; and a Wilson interval
++    on the Kish effective sample size (`wilson_kish_lo`, `wilson_kish_hi`, `kish_n_eff`), computed by the
++    registered H5a fallback's own function, which keeps a usable upper bound when no reply is an error
++    (added 2026-10-25, before any verdicts were filled in);
++  - bounds for the unsure verdicts: every unsure counted as agree (lower) and as disagree (upper);
++  - the unweighted rate, the counts per verdict, and the share of the population (by weight) that the
++    agree/disagree replies cover; blank verdicts are reported as not yet audited;
++  - per stratum: weight, replies, disagree, unsure, blank.
++The verdicts come from a verdicts-only file (`audit_id`, `verdict`, `note`, pre-filled with the part's
++ids), merged with its worksheet by `audit_id`; each part is given as a pair, because audit ids restart at 1
++in every part. The script stops, naming the file and the ids, if a verdicts file has an id missing from
++its worksheet, an id the worksheet lacks, or a duplicated id; and if an episode appears in two parts.
++Verdicts are read case-insensitively; anything other than agree, disagree, unsure or blank stops the
++script and names the audit ids. The worksheet's own `verdict` and `note` columns are ignored.
++
++  uv run python scripts/audit_error_rate.py \
++      --part REVIEW/final/audit_worksheet_part1.csv REVIEW/final/audit_verdicts_part1.csv \
++      [--part REVIEW/final/audit_worksheet_part2.csv REVIEW/final/audit_verdicts_part2.csv] \
++      --out REVIEW/final/audit_error_rates.csv
++or, for the combined blinded worksheet (`scripts/audit_combined.py`), whose key carries model, stratum and weight:
++  uv run python scripts/audit_error_rate.py \
++      --part REVIEW/final/audit_key_combined.csv REVIEW/final/audit_verdicts_combined.csv --out ...
++Give either the part files or the combined files, not both (an episode would appear twice, which stops the script).
++"""
++
++from __future__ import annotations
++
++import argparse
++
++import numpy as np
++import pandas as pd
++
++from fplp.analysis.hypotheses import _weighted_item_wilson
++
++VERDICTS = {"agree", "disagree", "unsure", ""}
++
++
++def _ids(values: pd.Series) -> str:
++    return ", ".join(str(i) for i in sorted(values))
++
++
++def merge_part(worksheet: str, verdicts: str) -> pd.DataFrame:
++    """One part's worksheet with its verdicts file, matched one to one by audit_id."""
++    w = pd.read_csv(worksheet).drop(columns=["verdict", "note"], errors="ignore")
++    v = pd.read_csv(verdicts, dtype={"verdict": str, "note": str})
++    if missing_cols := {"audit_id", "verdict"} - set(v.columns):
++        raise SystemExit(f"{verdicts}: missing column(s) {', '.join(sorted(missing_cols))}")
++    for name, frame in ((worksheet, w), (verdicts, v)):
++        dup = frame.loc[frame["audit_id"].duplicated(), "audit_id"]
++        if len(dup):
++            raise SystemExit(f"{name}: duplicated audit id(s) {_ids(dup.unique())}")
++    if missing := set(w["audit_id"]) - set(v["audit_id"]):
++        raise SystemExit(f"{verdicts}: audit id(s) missing, present in {worksheet}: {_ids(missing)}")
++    if extra := set(v["audit_id"]) - set(w["audit_id"]):
++        raise SystemExit(f"{verdicts}: audit id(s) not in {worksheet}: {_ids(extra)}")
++    d = w.merge(v[["audit_id", "verdict", *(["note"] if "note" in v else [])]], on="audit_id", validate="one_to_one")
++    d["verdict"] = d["verdict"].fillna("").str.strip().str.lower()
++    bad = d.loc[~d["verdict"].isin(VERDICTS), "audit_id"]
++    if len(bad):
++        raise SystemExit(f"{verdicts}: verdict must be agree, disagree, unsure or blank; check audit id(s) {_ids(bad)}")
++    return d
++
++
++def read(parts: list[tuple[str, str]]) -> pd.DataFrame:
++    d = pd.concat([merge_part(w, v) for w, v in parts], ignore_index=True)
++    if d.duplicated(["model", "episode_id"]).any():
++        raise SystemExit("an episode appears in two parts")
++    return d
++
++
++def _weighted(d: pd.DataFrame, error: pd.Series) -> float:
++    return float((d["weight"] * error).sum() / d["weight"].sum()) if len(d) else float("nan")
++
++
++def _bootstrap(d: pd.DataFrame, rng: np.random.Generator, n_boot: int) -> tuple[float, float]:
++    """Resample replies within each stratum; each stratum keeps its weight (population / sampled)."""
++    groups = [(g["weight"].iloc[0] * len(g), (g["verdict"] == "disagree").to_numpy(float)) for _, g in d.groupby("stratum")]
++    total = sum(w for w, _ in groups)
++    if not total:
++        return float("nan"), float("nan")
++    stats = np.zeros(n_boot)
++    for w, e in groups:
++        stats += w / total * rng.choice(e, size=(n_boot, len(e)), replace=True).mean(axis=1)
++    return float(np.quantile(stats, 0.025)), float(np.quantile(stats, 0.975))
++
++
++def rates(d: pd.DataFrame, seed: int = 0, n_boot: int = 2000) -> tuple[pd.DataFrame, pd.DataFrame]:
++    rng = np.random.default_rng(seed)
++    per_model, per_stratum = [], []
++    for model, g in d.groupby("model"):
++        judged = g[g["verdict"].isin(["agree", "disagree"])]
++        decided = g[g["verdict"].isin(["agree", "disagree", "unsure"])]
++        lo, hi = _bootstrap(judged, rng, n_boot)
++        errors = (judged["verdict"] == "disagree").astype(float)
++        wilson = _weighted_item_wilson(errors, judged["episode_id"], judged["weight"]) if len(judged) else {}
++        n_eff = float(judged["weight"].sum() ** 2 / (judged["weight"] ** 2).sum()) if len(judged) else float("nan")
++        per_model.append({
++            "model": model, "replies": len(g), "agree": int((g["verdict"] == "agree").sum()),
++            "disagree": int((g["verdict"] == "disagree").sum()), "unsure": int((g["verdict"] == "unsure").sum()),
++            "not_yet_audited": int((g["verdict"] == "").sum()),
++            "weighted_error_rate": _weighted(judged, judged["verdict"] == "disagree"),
++            "bootstrap_lo": lo, "bootstrap_hi": hi, "wilson_kish_lo": wilson.get("lo", float("nan")),
++            "wilson_kish_hi": wilson.get("hi", float("nan")), "kish_n_eff": n_eff,
++            "lower_bound_unsure_as_agree": _weighted(decided, decided["verdict"] == "disagree"),
++            "upper_bound_unsure_as_disagree": _weighted(decided, decided["verdict"].isin(["disagree", "unsure"])),
++            "unweighted_error_rate": float((judged["verdict"] == "disagree").mean()) if len(judged) else float("nan"),
++            "population_share_covered": float(judged["weight"].sum() / g["weight"].sum()) if len(g) else float("nan"),
++        })
++        for stratum, s in g.groupby("stratum"):
++            per_stratum.append({"model": model, "stratum": stratum, "weight": s["weight"].iloc[0], "replies": len(s),
++                                "disagree": int((s["verdict"] == "disagree").sum()),
++                                "unsure": int((s["verdict"] == "unsure").sum()), "blank": int((s["verdict"] == "").sum())})
++    return pd.DataFrame(per_model), pd.DataFrame(per_stratum)
++
++
++def main(argv: list[str] | None = None) -> None:
++    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
++    p.add_argument("--part", nargs=2, action="append", required=True, metavar=("WORKSHEET", "VERDICTS"),
++                   help="a part's worksheet CSV and its verdicts CSV; repeat for each part")
++    p.add_argument("--out", help="CSV of the per-model rates; the per-stratum counts go beside it (_strata.csv)")
++    p.add_argument("--seed", type=int, default=0)
++    p.add_argument("--n-boot", type=int, default=2000)
++    args = p.parse_args(argv)
++    per_model, per_stratum = rates(read([tuple(part) for part in args.part]), args.seed, args.n_boot)
++    with pd.option_context("display.width", 220, "display.max_columns", 30):
++        print(per_model.round(4).to_string(index=False))
++        print()
++        print(per_stratum.to_string(index=False))
++    if args.out:
++        per_model.to_csv(args.out, index=False)
++        per_stratum.to_csv(args.out.replace(".csv", "_strata.csv"), index=False)
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/scripts/audit_worksheet.py b/scripts/audit_worksheet.py
+new file mode 100644
+index 0000000..0212447
+--- /dev/null
++++ b/scripts/audit_worksheet.py
+@@ -0,0 +1,308 @@
++"""Build the worksheet for a drawn audit sample: a reading view (HTML), the same fields as CSV, and a
++verdicts-only file to fill in.
++
++For each sampled reply: its audit id, episode id, model, stratum and condition; the question and gold
++answer; the model's full final text; the scorer's reading (the final answer it parsed, `correct`, the
++COMPLETENESS line where the answer format asks for one, the disclosure flag); a summary of the calls
++(each call's turn, arguments and outcome, and the rows seen). Verdicts go only in the verdicts file
++(`audit_id`, `verdict`, `note`, pre-filled with the part's ids). The verdict is the auditor's judgment of
++the scorer's correctness reading (`scorer_correct`): "agree", "disagree" or "unsure".
++`scripts/audit_error_rate.py` merges the verdicts with the worksheet by audit id and computes a
++stratum-weighted parser error rate per model.
++
++  uv run python scripts/audit_worksheet.py REVIEW/final/audit_sample_part1_gpt-oss_claude.csv data/raw/main \
++      --out REVIEW/final/audit_worksheet_part1
++writes <out>.html, <out>.csv and the verdicts file (audit_verdicts_part1.csv: "worksheet" in the name becomes
++"verdicts"; otherwise <out>_verdicts.csv), never overwriting an existing verdicts file.
++"""
++
++from __future__ import annotations
++
++import argparse
++import hashlib
++import html
++import json
++import re
++from pathlib import Path
++
++import pandas as pd
++
++from fplp.metrics import _episode_files, _read_records, final_answer, normalize, score_episode
++
++CONDITION = ["arm", "signal_form", "conflict", "extent", "task_type", "task_need", "answer_format", "documented"]
++COLUMNS = ["audit_id", "episode_id", "model", "stratum", "weight", *CONDITION, "question", "gold",
++           "scorer_final_answer", "scorer_correct", "stated_completeness", "disclosure_flag", "evidence_seen",
++           "calls_summary", "final_text"]
++
++
++def _arg_text(args: dict) -> str:
++    shown = {k: (str(v)[:14] + "…" if len(str(v)) > 15 else v) for k, v in args.items() if v not in (None, "")}
++    return ", ".join(f"{k}={v}" for k, v in shown.items())
++
++
++def calls_summary(rec: dict) -> str:
++    """One line per call (turn, tool, arguments, outcome), then the rows of the target set seen."""
++    lines, seen = [], set()
++    for x in rec["calls"]:
++        turn = f"t{x['turn']}" if x.get("turn") is not None else "t?"
++        if x["error"]:
++            outcome = f"error: {x['error']}"
++        elif not x["is_target"]:
++            outcome = "not the target query: 0 answer rows"
++        elif x["n_rows"]:
++            outcome = f"rows {x['offset'] + 1}-{x['offset'] + x['n_rows']}"
++            seen.update(range(x["offset"], x["offset"] + x["n_rows"]))
++        else:
++            outcome = "0 rows"
++        lines.append(f"{turn} {x['tool']}({_arg_text(x['arguments'])}) -> {outcome}")
++    lines.append(f"rows seen: {len(seen)} of {rec['n_items']}")
++    return "\n".join(lines)
++
++
++_ID_PATTERN = {"id_set": r"TCK-\d+", "sku_any": r"SKU-\d+"}
++
++
++def scorer_ids(rec: dict) -> tuple[list[str], str] | None:
++    """The ids the scorer reads for an id answer, as `fplp.metrics.is_correct` reads them: from the final
++    line, or from the whole reply when the final line holds none. None for other answer types."""
++    pattern = _ID_PATTERN.get(rec["gold"]["answer_type"])
++    if pattern is None:
++        return None
++    final = set(re.findall(pattern, final_answer(rec["final_text"]).upper()))
++    if final:
++        return sorted(final), "from the final line"
++    return sorted(set(re.findall(pattern, normalize(rec["final_text"]).upper()))), "from the body; the final line has none"
++
++
++def served_rows(rec: dict, skus: list[str]) -> dict[str, str]:
++    """Each named SKU's row as the server returned it (first time served), with the call that served it."""
++    found: dict[str, str] = {}
++
++    def walk(o, where: str) -> None:
++        if isinstance(o, dict):
++            if o.get("sku") in skus and o["sku"] not in found:
++                found[o["sku"]] = f"{json.dumps(o)} ({where})"
++            for v in o.values():
++                walk(v, where)
++        elif isinstance(o, list):
++            for v in o:
++                walk(v, where)
++
++    for x in rec["calls"]:
++        if x["is_target"] and not x["error"]:
++            try:
++                walk(json.loads(x["output"]), f"served at t{x.get('turn', '?')}, rows {x['offset'] + 1}-{x['offset'] + x['n_rows']}")
++            except (json.JSONDecodeError, TypeError):
++                continue
++    return {s: found.get(s, "not in any served row") for s in skus}
++
++
++def gold_text(rec: dict) -> str:
++    """The gold as every worksheet shows it: the value, or for a name-one task, which has no single value,
++    the rule `fplp.metrics.is_correct` applies, with the accepted SKUs."""
++    gold = rec["gold"]
++    if gold["answer_type"] == "sku_any":
++        return (f"rule: any in-stock SKU among the {rec['n_items']} matching rows; correct if every SKU the answer "
++                f"names is one of the {len(gold['accepted'])} accepted: {', '.join(gold['accepted'])}")
++    return json.dumps(gold.get("value", gold.get("accepted")))
++
++
++def extras(rec: dict) -> list[tuple[str, str]]:
++    """Rows the auditor needs beyond the parsed fields: the served row of each SKU a name-one answer names,
++    and, for an export whose final line has no ids, the ids the scorer took from the body."""
++    taken = scorer_ids(rec)
++    if taken is None:
++        return []
++    ids, source = taken
++    gold, out = rec["gold"], []
++    if gold["answer_type"] == "sku_any":
++        out.append((f"SKU(s) the scorer took ({source})", ", ".join(ids) or "none"))
++        for sku, row in served_rows(rec, ids).items():
++            out.append((f"served row for {sku}", row))
++    elif source.startswith("from the body"):
++        want = set(gold["value"])
++        out.append((f"IDs the scorer took ({source})", f"{len(ids)}: {', '.join(ids) or 'none'}"))
++        missing, extra = ", ".join(sorted(want - set(ids))) or "none", ", ".join(sorted(set(ids) - want)) or "none"
++        out.append(("against the gold IDs",
++                    f"{len(set(ids) & want)} of {len(want)} gold IDs present; missing: {missing}; extra: {extra}"))
++    return out
++
++
++def records_by_id(raw: list[str]) -> dict[str, dict]:
++    records, _ = _read_records(_episode_files(raw))
++    by_id: dict[str, dict] = {}
++    for r in records:
++        by_id.setdefault(r["episode_id"], r)
++    return by_id
++
++
++def build(sample: pd.DataFrame, raw: list[str] | dict[str, dict]) -> pd.DataFrame:
++    by_id = raw if isinstance(raw, dict) else records_by_id(raw)
++    if missing := sorted(set(sample["episode_id"]) - set(by_id)):
++        raise SystemExit(f"{len(missing)} sampled episode(s) not in the raw logs, e.g. {missing[:3]}")
++    rows = []
++    for _, s in sample.iterrows():
++        rec = by_id[s["episode_id"]]
++        scored, c = score_episode(rec), rec["condition"]
++        completeness = c.get("answer_format", "final_line") == "completeness"
++        rows.append({
++            "audit_id": s["audit_id"], "episode_id": s["episode_id"], "model": s["model"], "stratum": s["stratum"],
++            "weight": s["weight"], **{k: c.get(k, scored.get(k)) for k in CONDITION},
++            "question": rec["question"], "gold": gold_text(rec),
++            "scorer_final_answer": s["scorer_final_answer"], "scorer_correct": scored["correct"],
++            "stated_completeness": scored["stated_completeness"] if completeness else "",
++            "disclosure_flag": scored["disclosure_flag"], "evidence_seen": scored["evidence_seen"],
++            "calls_summary": calls_summary(rec), "final_text": rec["final_text"],
++        })
++    return pd.DataFrame(rows, columns=COLUMNS).sort_values("audit_id")
++
++
++STYLE = """
++:root { --bg: #ffffff; --fg: #1d1d1f; --muted: #5f6368; --line: #d9d9de; --card: #f7f7f9; --accent: #0b57d0; }
++@media (prefers-color-scheme: dark) { :root { --bg: #161618; --fg: #ececf0; --muted: #a0a0a8; --line: #3a3a40;
++  --card: #1f1f23; --accent: #8ab4f8; } }
++body { background: var(--bg); color: var(--fg); font: 15px/1.5 -apple-system, "Segoe UI", sans-serif;
++  max-width: 980px; margin: 0 auto; padding: 24px 16px 64px; }
++h1 { font-size: 22px; margin: 0 0 4px; } .muted { color: var(--muted); }
++section { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin: 18px 0; }
++section h2 { font-size: 16px; margin: 0 0 8px; } table { border-collapse: collapse; width: 100%; }
++td { padding: 3px 8px 3px 0; vertical-align: top; } td.k { color: var(--muted); width: 190px; white-space: nowrap; }
++pre { white-space: pre-wrap; word-break: break-word; background: var(--bg); border: 1px solid var(--line);
++  border-radius: 6px; padding: 10px; margin: 6px 0; font: 13px/1.45 ui-monospace, Menlo, monospace; }
++.verdict { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line); }
++.box { display: inline-block; margin-right: 18px; } nav a { color: var(--accent); margin-right: 8px; }
++"""
++
++
++def verdicts_path(out: Path) -> Path:
++    name = out.name.replace("worksheet", "verdicts") if "worksheet" in out.name else f"{out.name}_verdicts"
++    return out.with_name(name + ".csv")
++
++
++def to_html(table: pd.DataFrame, title: str, source: str, verdicts_name: str = "the verdicts file",
++            more: dict[int, list[tuple[str, str]]] | None = None) -> str:
++    e = lambda v: html.escape("" if pd.isna(v) else str(v))  # noqa: E731
++    counts = table.groupby(["model", "stratum"]).size().unstack(fill_value=0)
++    parts = [(f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' "
++              f"content='width=device-width, initial-scale=1'><title>{e(title)}</title><style>{STYLE}</style></head><body>"),
++             f"<h1>{e(title)}</h1><p class='muted'>{e(source)}</p>",
++             (f"<p>Record each verdict in <code>{e(verdicts_name)}</code> beside this file (audit_id, verdict, note): "
++              "<b>agree</b> if the scorer's correctness reading "
++              "(<code>correct</code>) is right for the reply, <b>disagree</b> if it is wrong, <b>unsure</b> otherwise; "
++              "add a note for every disagree or unsure. The other parsed fields are shown for context.</p>"),
++             counts.to_html(border=0), "<nav>" + "".join(f"<a href='#a{int(i)}'>{int(i)}</a>" for i in table["audit_id"]) + "</nav>"]
++    for _, r in table.iterrows():
++        condition = ", ".join(f"{k}={e(r[k])}" for k in CONDITION if not pd.isna(r[k]) and str(r[k]) != "")
++        parsed = f"correct={e(r['scorer_correct'])}; disclosure_flag={e(r['disclosure_flag'])}"
++        if str(r["stated_completeness"]) not in ("", "nan"):
++            parsed += f"; stated_completeness={e(r['stated_completeness'])}"
++        added = dict((more or {}).get(int(r["audit_id"]), []))
++        gold_cell = e(r["gold"]) if str(r["gold"]).startswith("rule: ") else f"<code>{e(r['gold'])}</code>"
++        extra_rows = "".join(f"<tr><td class='k'>{e(k)}</td><td><code>{e(v)}</code></td></tr>" for k, v in added.items())
++        parts.append(
++            f"<section id='a{int(r['audit_id'])}'><h2>Audit {int(r['audit_id'])} · {e(r['model'])} · {e(r['stratum'])}</h2><table>"
++            f"<tr><td class='k'>episode</td><td><code>{e(r['episode_id'])}</code> (weight {e(r['weight'])})</td></tr>"
++            f"<tr><td class='k'>condition</td><td>{condition}</td></tr>"
++            f"<tr><td class='k'>question</td><td>{e(r['question'])}</td></tr>"
++            f"<tr><td class='k'>gold answer</td><td>{gold_cell}</td></tr>"
++            f"<tr><td class='k'>scorer read</td><td><code>{e(r['scorer_final_answer'])}</code></td></tr>"
++            f"<tr><td class='k'>parsed fields</td><td>{parsed}; rows the answer needed seen: {e(r['evidence_seen'])}</td></tr>"
++            f"{extra_rows}</table><div class='muted'>calls</div><pre>{e(r['calls_summary'])}</pre>"
++            f"<div class='muted'>final text</div><pre>{e(r['final_text'])}</pre>"
++            "<div class='verdict'><span class='box'>☐ agree</span><span class='box'>☐ disagree</span>"
++            "<span class='box'>☐ unsure</span> note: ____________________</div></section>")
++    parts.append("</body></html>")
++    return "\n".join(parts)
++
++
++KEY_COLUMNS = ["audit_id", "episode_id", "model", "stratum", "weight", *CONDITION]
++BLIND_NOTE = ("Blinding is partial: the wording of a reply, a COMPLETENESS line, or a reply's mention of a 'more' flag, "
++              "a cursor or a page can still point to the model or the condition.")
++
++
++def blinded(table: pd.DataFrame, more: dict[int, list[tuple[str, str]]]) -> pd.DataFrame:
++    """The worksheet without model, condition, stratum, weight, episode id, calls or retrieval fields; the
++    scorer's reading, and the served rows or ids it took, stay."""
++    rows = []
++    for _, r in table.iterrows():
++        added = dict(more.get(int(r["audit_id"]), []))
++        rows.append({"audit_id": r["audit_id"], "question": r["question"], "gold": r["gold"],
++                     "scorer_final_answer": r["scorer_final_answer"], "scorer_correct": r["scorer_correct"],
++                     "disclosure_flag": r["disclosure_flag"],
++                     "scorer_detail": " | ".join(f"{k}: {v}" for k, v in added.items()), "final_text": r["final_text"]})
++    return pd.DataFrame(rows)
++
++
++def to_html_blinded(view: pd.DataFrame, title: str, source: str, verdicts_name: str) -> str:
++    e = lambda v: html.escape("" if pd.isna(v) else str(v))  # noqa: E731
++    parts = [(f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' "
++              f"content='width=device-width, initial-scale=1'><title>{e(title)}</title><style>{STYLE}</style></head><body>"),
++             f"<h1>{e(title)}</h1><p class='muted'>{e(source)} {e(BLIND_NOTE)}</p>",
++             (f"<p>Record each verdict in <code>{e(verdicts_name)}</code> (audit_id, verdict, note): <b>agree</b> if the "
++              "scorer's correctness reading (<code>correct</code>) is right for the reply, <b>disagree</b> if it is wrong, "
++              "<b>unsure</b> otherwise; add a note for every disagree or unsure.</p>"),
++             "<nav>" + "".join(f"<a href='#a{int(i)}'>{int(i)}</a>" for i in view["audit_id"]) + "</nav>"]
++    for _, r in view.iterrows():
++        detail = "".join(f"<tr><td class='k'>{e(k)}</td><td><code>{e(v)}</code></td></tr>"
++                         for k, v in (item.split(": ", 1) for item in str(r["scorer_detail"]).split(" | ") if ": " in item))
++        gold_cell = e(r["gold"]) if str(r["gold"]).startswith("rule: ") else f"<code>{e(r['gold'])}</code>"
++        parts.append(
++            f"<section id='a{int(r['audit_id'])}'><h2>Audit {int(r['audit_id'])}</h2><table>"
++            f"<tr><td class='k'>question</td><td>{e(r['question'])}</td></tr>"
++            f"<tr><td class='k'>gold answer</td><td>{gold_cell}</td></tr>"
++            f"<tr><td class='k'>scorer read</td><td><code>{e(r['scorer_final_answer'])}</code></td></tr>"
++            f"<tr><td class='k'>parsed fields</td><td>correct={e(r['scorer_correct'])}; disclosure_flag={e(r['disclosure_flag'])}</td></tr>"
++            f"{detail}</table><div class='muted'>final text</div><pre>{e(r['final_text'])}</pre>"
++            "<div class='verdict'><span class='box'>☐ agree</span><span class='box'>☐ disagree</span>"
++            "<span class='box'>☐ unsure</span> note: ____________________</div></section>")
++    parts.append("</body></html>")
++    return "\n".join(parts)
++
++
++def main(argv: list[str] | None = None) -> None:
++    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
++    p.add_argument("sample_csv")
++    p.add_argument("raw", nargs="+", help="raw episode logs (files or directories)")
++    p.add_argument("--out", required=True, help="path without extension; writes .html, .csv and the verdicts file")
++    p.add_argument("--html-only", action="store_true", help="rewrite only the HTML; leave the CSV and the verdicts file as they are")
++    p.add_argument("--blinded", action="store_true",
++                   help="write only <out>_blinded.html, <out>_blinded.csv and the key file (model, condition, stratum, weight "
++                   "per audit id: \"worksheet\" in the name becomes \"key\"); the worksheet and verdicts files are not touched")
++    args = p.parse_args(argv)
++    sample_path = Path(args.sample_csv)
++    by_id = records_by_id(args.raw)
++    sample = pd.read_csv(sample_path)
++    table = build(sample, by_id)
++    more = {int(a): extras(by_id[eid]) for a, eid in zip(sample["audit_id"], sample["episode_id"], strict=True)}
++    out = Path(args.out)
++    out.parent.mkdir(parents=True, exist_ok=True)
++    verdicts = verdicts_path(out)
++    if args.blinded:
++        view = blinded(table, more)
++        base = out.with_name(out.name + "_blinded")
++        key = out.with_name((out.name.replace("worksheet", "key") if "worksheet" in out.name else out.name + "_key") + ".csv")
++        view.to_csv(base.with_suffix(".csv"), index=False)
++        base.with_suffix(".html").write_text(to_html_blinded(
++            view, "Correctness audit worksheet (blinded)",
++            f"{len(view)} replies. Model, condition, stratum, weight and episode id are in {key.name}, not here.", verdicts.name))
++        table[KEY_COLUMNS].to_csv(key, index=False)
++        print(f"wrote {base.with_suffix('.html')}, {base.with_suffix('.csv')} and {key}")
++        return
++    digest = hashlib.sha256(sample_path.read_bytes()).hexdigest()
++    title = f"Correctness audit worksheet: {', '.join(sorted(table['model'].unique()))}"
++    out.with_suffix(".html").write_text(to_html(table, title, f"{len(table)} replies from {sample_path.name} "
++                                                              f"(sha256 {digest[:16]}…), drawn with the sampler's manifest beside it",
++                                                verdicts.name, more))
++    if args.html_only:
++        print(f"wrote {out.with_suffix('.html')} only")
++        return
++    table.to_csv(out.with_suffix(".csv"), index=False)
++    if verdicts.exists():  # never overwrite verdicts already entered
++        print(f"kept the existing {verdicts}")
++    else:
++        pd.DataFrame({"audit_id": sorted(table["audit_id"]), "verdict": "", "note": ""}).to_csv(verdicts, index=False)
++    print(f"wrote {len(table)} replies -> {out.with_suffix('.html')}, {out.with_suffix('.csv')} and {verdicts}")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/tests/test_audit_tools.py b/tests/test_audit_tools.py
+new file mode 100644
+index 0000000..3417e4e
+--- /dev/null
++++ b/tests/test_audit_tools.py
+@@ -0,0 +1,264 @@
++"""The audit worksheet and the stratum-weighted parser error rate (scripts/audit_worksheet.py, audit_error_rate.py)."""
++
++import html
++import importlib.util
++import json
++from pathlib import Path
++
++import pandas as pd
++import pytest
++
++from fplp.agents.scripted import ScriptedClient
++from fplp.episode import run_episode
++from fplp.tasks.specs import build_episode
++
++
++def _load(name):
++    spec = importlib.util.spec_from_file_location(name, Path(__file__).parents[1] / "scripts" / f"{name}.py")
++    mod = importlib.util.module_from_spec(spec)
++    spec.loader.exec_module(mod)
++    return mod
++
++
++audit_worksheet, audit_error_rate = _load("audit_worksheet"), _load("audit_error_rate")
++
++
++def test_worksheet_shows_each_reply_and_writes_a_verdicts_file(make_condition, tmp_path):
++    raw = tmp_path / "m.jsonl"
++    with raw.open("w") as fh:
++        for i, form in enumerate(["has_more", "none"]):
++            rec = run_episode(ScriptedClient("f", "follow_all"), build_episode(make_condition(form, "filtered_count", i)),
++                              max_tool_calls=12)
++            rec.update(episode_id=f"e{i}", model="m", final_text="FINAL ANSWER: <3> & more")
++            fh.write(json.dumps(rec) + "\n")
++    sample = pd.DataFrame({"audit_id": [2, 1], "episode_id": ["e0", "e1"], "model": ["m", "m"],
++                           "stratum": ["other", "exists"], "weight": [10.0, 5.0], "scorer_final_answer": ["<3> & more"] * 2})
++    table = audit_worksheet.build(sample, [str(raw)])
++    assert list(table["audit_id"]) == [1, 2] and "verdict" not in table and "note" not in table
++    assert table["calls_summary"].str.contains("rows seen: ").all() and table["calls_summary"].str.contains("rows 1-").all()
++    page = audit_worksheet.to_html(table, "t", "s", "audit_verdicts_part9.csv")
++    assert "&lt;3&gt; &amp; more" in page and "<3> & more" not in page  # model text is escaped
++    assert page.count("<section id='a") == 2 and "audit_verdicts_part9.csv" in page
++    sample_csv = tmp_path / "sample.csv"
++    sample.to_csv(sample_csv, index=False)
++    out = tmp_path / "audit_worksheet_part9"
++    audit_worksheet.main([str(sample_csv), str(raw), "--out", str(out)])
++    verdicts = tmp_path / "audit_verdicts_part9.csv"
++    v = pd.read_csv(verdicts, dtype=str)
++    assert list(v.columns) == ["audit_id", "verdict", "note"] and list(v["audit_id"]) == ["1", "2"]
++    assert v["verdict"].isna().all()
++    verdicts.write_text("audit_id,verdict,note\n1,agree,\n2,,\n")  # verdicts already entered are never overwritten
++    audit_worksheet.main([str(sample_csv), str(raw), "--out", str(out)])
++    assert "1,agree," in verdicts.read_text()
++
++
++def _scripted(make_condition, task_type, final_text, form="has_more"):
++    rec = run_episode(ScriptedClient("f", "follow_all"), build_episode(make_condition(form, task_type, 0)), max_tool_calls=12)
++    rec.update(episode_id="e0", model="m", final_text=final_text)
++    return rec
++
++
++def test_export_ids_come_from_the_body_when_the_final_line_has_none(make_condition):
++    rec = _scripted(make_condition, "export_all", "")
++    gold = sorted(rec["gold"]["value"])
++    rec["final_text"] = "Open tickets: " + ", ".join([*gold[:-1], "TCK-0"]) + "\n\nFINAL ANSWER: listed above."
++    ids, source = audit_worksheet.scorer_ids(rec)
++    assert source.startswith("from the body") and set(ids) == set(gold[:-1]) | {"TCK-0"}
++    shown = dict(audit_worksheet.extras(rec))
++    against = shown["against the gold IDs"]
++    assert f"{len(gold) - 1} of {len(gold)} gold IDs present" in against and gold[-1] in against and "extra: TCK-0" in against
++    rec["final_text"] = "FINAL ANSWER: " + ", ".join(gold)  # ids on the final line: nothing extra to show
++    assert audit_worksheet.extras(rec) == []
++
++
++def test_name_one_shows_the_served_row_of_the_named_sku(make_condition):
++    rec = _scripted(make_condition, "name_one", "")
++    served = [r for x in rec["calls"] for r in json.loads(x["output"]).get("results", [])]
++    named = served[0]["sku"]
++    rec["final_text"] = f"FINAL ANSWER: {named}"
++    shown = dict(audit_worksheet.extras(rec))
++    assert shown["SKU(s) the scorer took (from the final line)"] == named
++    rule = audit_worksheet.gold_text(rec)
++    accepted = rec["gold"]["accepted"]
++    assert rule.startswith("rule: any in-stock SKU") and f"{len(accepted)} accepted: {', '.join(accepted)}" in rule
++    row = shown[f"served row for {named}"]
++    assert f'"in_stock": {json.dumps(served[0]["in_stock"])}' in row and "served at t" in row
++    rec["final_text"] = "FINAL ANSWER: SKU-1"
++    assert dict(audit_worksheet.extras(rec))["served row for SKU-1"] == "not in any served row"
++
++
++def test_html_only_leaves_the_csv_and_verdicts_untouched(make_condition, tmp_path):
++    raw = tmp_path / "m.jsonl"
++    raw.write_text(json.dumps(_scripted(make_condition, "name_one", "FINAL ANSWER: SKU-1")) + "\n")
++    sample = tmp_path / "sample.csv"
++    pd.DataFrame({"audit_id": [1], "episode_id": ["e0"], "model": ["m"], "stratum": ["other"], "weight": [1.0],
++                  "scorer_final_answer": ["SKU-1"]}).to_csv(sample, index=False)
++    out = tmp_path / "audit_worksheet_part9"
++    audit_worksheet.main([str(sample), str(raw), "--out", str(out)])
++    csv_before, verdicts_before = out.with_suffix(".csv").read_bytes(), (tmp_path / "audit_verdicts_part9.csv").read_bytes()
++    out.with_suffix(".html").unlink()
++    audit_worksheet.main([str(sample), str(raw), "--out", str(out), "--html-only"])
++    assert out.with_suffix(".html").exists() and "served row for SKU-1" in out.with_suffix(".html").read_text()
++    assert out.with_suffix(".csv").read_bytes() == csv_before
++    assert (tmp_path / "audit_verdicts_part9.csv").read_bytes() == verdicts_before
++
++
++def test_blinded_copies_hide_model_and_condition_and_keep_the_ids(make_condition, tmp_path):
++    raw = tmp_path / "m.jsonl"
++    raw.write_text(json.dumps(_scripted(make_condition, "name_one", "FINAL ANSWER: SKU-1")) + "\n")
++    sample = tmp_path / "sample.csv"
++    pd.DataFrame({"audit_id": [7], "episode_id": ["e0"], "model": ["secret-model"], "stratum": ["false_signal"],
++                  "weight": [12.5], "scorer_final_answer": ["SKU-1"]}).to_csv(sample, index=False)
++    out = tmp_path / "audit_worksheet_part9"
++    audit_worksheet.main([str(sample), str(raw), "--out", str(out)])
++    before = {p.name: p.read_bytes() for p in tmp_path.glob("audit_*part9*")}
++    audit_worksheet.main([str(sample), str(raw), "--out", str(out), "--blinded"])
++    assert {p.name: p.read_bytes() for p in tmp_path.glob("audit_*part9*") if p.name in before} == before
++    page = (tmp_path / "audit_worksheet_part9_blinded.html").read_text()
++    view = pd.read_csv(tmp_path / "audit_worksheet_part9_blinded.csv")
++    for hidden in ("secret-model", "false_signal", "12.5", "e0", "has_more", "signal_form", "rows seen"):
++        assert hidden not in page and hidden not in view.to_csv()
++    assert list(view["audit_id"]) == [7] and "served row for SKU-1" in page
++    key = pd.read_csv(tmp_path / "audit_key_part9.csv")
++    assert key.iloc[0][["audit_id", "model", "stratum", "signal_form"]].tolist() == [7, "secret-model", "false_signal", "has_more"]
++
++
++def test_every_worksheet_shows_the_name_one_gold_rule(make_condition, tmp_path):
++    rec = _scripted(make_condition, "name_one", "FINAL ANSWER: SKU-1")
++    raw = tmp_path / "m.jsonl"
++    raw.write_text(json.dumps(rec) + "\n")
++    sample = tmp_path / "sample.csv"
++    pd.DataFrame({"audit_id": [1], "episode_id": ["e0"], "model": ["m"], "stratum": ["other"], "weight": [1.0],
++                  "scorer_final_answer": ["SKU-1"]}).to_csv(sample, index=False)
++    out = tmp_path / "audit_worksheet_part9"
++    audit_worksheet.main([str(sample), str(raw), "--out", str(out)])
++    audit_worksheet.main([str(sample), str(raw), "--out", str(out), "--blinded"])
++    _load("audit_combined").main([str(sample), "--raw", str(raw), "--out", str(tmp_path / "audit_worksheet_combined")])
++    rule = audit_worksheet.gold_text(rec)
++    for name in ("audit_worksheet_part9", "audit_worksheet_part9_blinded", "audit_worksheet_combined_blinded"):
++        assert pd.read_csv(tmp_path / f"{name}.csv")["gold"].tolist() == [rule]
++        page = (tmp_path / f"{name}.html").read_text()
++        assert html.escape(rule) in page and "<code>null</code>" not in page
++
++
++def test_combined_blinded_worksheet_renumbers_and_is_scored_from_its_key(make_condition, tmp_path):
++    audit_combined = _load("audit_combined")
++    raw = tmp_path / "m.jsonl"
++    with raw.open("w") as fh:
++        for i in range(5):
++            rec = run_episode(ScriptedClient("f", "follow_all"), build_episode(make_condition("has_more", "filtered_count", i)),
++                              max_tool_calls=12)
++            rec.update(episode_id=f"e{i}", model="a" if i < 3 else "b", final_text="FINAL ANSWER: 1")
++            fh.write(json.dumps(rec) + "\n")
++    samples = []
++    for part, eids in ((1, ["e0", "e1", "e2"]), (2, ["e3", "e4"])):
++        s = pd.DataFrame({"audit_id": range(1, len(eids) + 1), "episode_id": eids, "model": ["a" if e < "e3" else "b" for e in eids],
++                          "stratum": "other", "weight": 2.0, "scorer_final_answer": "1"})
++        s.to_csv(tmp_path / f"sample{part}.csv", index=False)
++        samples.append(str(tmp_path / f"sample{part}.csv"))
++    out = tmp_path / "audit_worksheet_combined"
++    audit_combined.main([*samples, "--raw", str(raw), "--out", str(out)])
++    key = pd.read_csv(tmp_path / "audit_key_combined.csv")
++    assert list(key["audit_id"]) == [1, 2, 3, 4, 5]
++    assert sorted(zip(key["part"], key["part_audit_id"], strict=True)) ==[(1, 1), (1, 2), (1, 3), (2, 1), (2, 2)]
++    again, _ = audit_combined.combine([pd.read_csv(s) for s in samples], audit_worksheet.records_by_id([str(raw)]), 20261025)
++    assert list(pd.read_csv(tmp_path / "audit_worksheet_combined_blinded.csv")["final_text"]) == list(again["final_text"])
++    page = (tmp_path / "audit_worksheet_combined_blinded.html").read_text()
++    assert page.count("<section id='a") == 5 and "e3" not in page
++    verdicts = tmp_path / "audit_verdicts_combined.csv"
++    verdicts.write_text("audit_id,verdict,note\n1,agree,\n2,disagree,x\n3,,\n4,agree,\n5,agree,\n")
++    d = audit_error_rate.read([(str(tmp_path / "audit_key_combined.csv"), str(verdicts))])
++    assert set(d["model"]) == {"a", "b"} and (d["weight"] == 2.0).all()
++    audit_combined.main([*samples, "--raw", str(raw), "--out", str(out)])  # same inputs: key unchanged, verdicts kept
++    assert "2,disagree,x" in verdicts.read_text()
++    with pytest.raises(SystemExit, match="would change"):
++        audit_combined.main([*samples, "--raw", str(raw), "--out", str(out), "--seed", "1"])
++
++
++def test_worksheet_refuses_a_sample_without_raw_records(tmp_path):
++    (tmp_path / "m.jsonl").write_text("")
++    with pytest.raises(SystemExit):
++        audit_worksheet.build(pd.DataFrame({"audit_id": [1], "episode_id": ["x"], "model": ["m"], "stratum": ["other"],
++                                            "weight": [1.0], "scorer_final_answer": [""]}), [str(tmp_path / "m.jsonl")])
++
++
++def _filled(verdicts, strata, weights):
++    return pd.DataFrame({"audit_id": range(1, len(verdicts) + 1), "episode_id": [f"e{i}" for i in range(len(verdicts))],
++                         "model": "m", "stratum": strata, "weight": weights, "verdict": verdicts})
++
++
++def test_weighted_rate_uses_the_stratum_weights():
++    d = _filled(["disagree", "agree", "agree", "agree"], ["a", "a", "b", "b"], [10, 10, 30, 30])
++    per_model, per_stratum = audit_error_rate.rates(d, n_boot=200)
++    row = per_model.iloc[0]
++    assert row["weighted_error_rate"] == pytest.approx(10 / 80) and row["unweighted_error_rate"] == pytest.approx(0.25)
++    assert row["bootstrap_lo"] <= row["weighted_error_rate"] <= row["bootstrap_hi"] and row["population_share_covered"] == 1
++    assert row["kish_n_eff"] == pytest.approx(80**2 / (2 * 10**2 + 2 * 30**2))  # (sum w)^2 / sum w^2 = 3.2
++    assert row["wilson_kish_lo"] <= row["weighted_error_rate"] <= row["wilson_kish_hi"]
++    assert list(per_stratum["disagree"]) == [1, 0]
++
++
++def test_wilson_interval_keeps_an_upper_bound_when_no_reply_is_an_error():
++    from statsmodels.stats.proportion import proportion_confint
++
++    d = _filled(["agree"] * 6, ["a", "a", "a", "b", "b", "b"], [10, 10, 10, 30, 30, 30])
++    row = audit_error_rate.rates(d, n_boot=200)[0].iloc[0]
++    assert (row["weighted_error_rate"], row["bootstrap_lo"], row["bootstrap_hi"]) == (0, 0, 0)  # the bootstrap collapses
++    n_eff = 120**2 / (3 * 10**2 + 3 * 30**2)
++    assert row["wilson_kish_lo"] == pytest.approx(0, abs=1e-12)
++    assert row["wilson_kish_hi"] == pytest.approx(proportion_confint(0, n_eff, method="wilson")[1]) and row["wilson_kish_hi"] > 0
++
++
++def test_unsure_and_blank_verdicts_are_bounded_and_reported():
++    d = _filled(["disagree", "unsure", "agree", ""], ["a", "a", "b", "b"], [10, 10, 30, 30])
++    row = audit_error_rate.rates(d, n_boot=200)[0].iloc[0]
++    assert (row["unsure"], row["not_yet_audited"]) == (1, 1)
++    assert row["weighted_error_rate"] == pytest.approx(10 / 40)            # agree/disagree only
++    assert row["lower_bound_unsure_as_agree"] == pytest.approx(10 / 50)
++    assert row["upper_bound_unsure_as_disagree"] == pytest.approx(20 / 50)
++    assert row["population_share_covered"] == pytest.approx(40 / 80)
++
++
++def _part(tmp_path, verdicts, ids=None, name="p", episodes=None):
++    """A worksheet with blank verdict columns and a verdicts-only file (audit_id, verdict, note)."""
++    n = len(verdicts)
++    w = _filled([""] * n, ["a"] * n, [1.0] * n)
++    if episodes:
++        w["episode_id"] = episodes
++    w["note"] = ""
++    ws, vs = tmp_path / f"{name}_worksheet.csv", tmp_path / f"{name}_verdicts.csv"
++    w.to_csv(ws, index=False)
++    pd.DataFrame({"audit_id": ids if ids is not None else range(1, n + 1), "verdict": verdicts,
++                  "note": [""] * len(verdicts)}).to_csv(vs, index=False)
++    return str(ws), str(vs)
++
++
++def test_verdicts_are_merged_by_audit_id(tmp_path):
++    ws, vs = _part(tmp_path, ["agree", "Disagree", ""], ids=[3, 1, 2])
++    d = audit_error_rate.read([(ws, vs)])
++    assert dict(zip(d["audit_id"], d["verdict"], strict=True)) == {1: "disagree", 2: "", 3: "agree"}
++
++
++@pytest.mark.parametrize(("verdicts", "ids", "message"), [
++    (["agree", "agree"], [1, 2, 3][:2], None),                       # a part with a missing id: built below
++    (["agree", "agree", "agree", "agree"], [1, 2, 3, 4], "not in"),  # an id the worksheet lacks
++    (["agree", "agree", "agree"], [1, 2, 2], "duplicated audit id"),
++    (["agree", "maybe", "agree"], [1, 2, 3], "check audit id"),
++])
++def test_bad_verdict_files_stop_the_script(tmp_path, verdicts, ids, message):
++    if message is None:  # the worksheet has 3 replies, the verdicts file only 2
++        ws, _ = _part(tmp_path, ["", "", ""])
++        _, vs = _part(tmp_path, verdicts, ids=ids, name="short")
++        message = "missing"
++    else:
++        ws, _ = _part(tmp_path, ["", "", ""])
++        _, vs = _part(tmp_path, verdicts, ids=ids, name="bad")
++    with pytest.raises(SystemExit, match=message):
++        audit_error_rate.read([(ws, vs)])
++
++
++def test_an_episode_in_two_parts_stops_the_script(tmp_path):
++    one = _part(tmp_path, ["agree"], name="one", episodes=["e1"])
++    two = _part(tmp_path, ["agree"], name="two", episodes=["e1"])
++    with pytest.raises(SystemExit, match="two parts"):
++        audit_error_rate.read([one, two])

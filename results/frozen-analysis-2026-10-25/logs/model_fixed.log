@@ -1,0 +1,37 @@
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:              follow_up   No. Observations:                 3600
+Model:                            GLM   Df Residuals:                     3580
+Model Family:                Binomial   Df Model:                           19
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -655.88
+Date:                Sun, 25 Oct 2026   Deviance:                       1311.8
+Time:                        13:42:10   Pearson chi2:                 5.40e+03
+No. Iterations:                     8   Pseudo R-squ. (CS):             0.6352
+Covariance Type:              cluster                                         
+=========================================================================================================================
+                                                            coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------
+Intercept                                                 2.7120      0.382      7.108      0.000       1.964       3.460
+C(signal_form, Treatment('none'))[T.cursor_plus_note]     3.5356      0.300     11.769      0.000       2.947       4.124
+C(signal_form, Treatment('none'))[T.has_more]             5.8002      0.528     10.989      0.000       4.766       6.835
+C(signal_form, Treatment('none'))[T.next_cursor]          3.3585      0.287     11.704      0.000       2.796       3.921
+C(signal_form, Treatment('none'))[T.nl_note_json]         3.0347      0.283     10.705      0.000       2.479       3.590
+C(signal_form, Treatment('none'))[T.total_count]          2.9843      0.280     10.656      0.000       2.435       3.533
+C(task_type)[T.count_out_of_stock]                       -0.2516      0.180     -1.396      0.163      -0.605       0.102
+C(task_type)[T.exists]                                   -1.2207      0.350     -3.483      0.000      -1.908      -0.534
+C(task_type)[T.export_all]                               -4.2661      0.224    -19.016      0.000      -4.706      -3.826
+C(task_type)[T.filtered_count]                           -0.0233      0.201     -0.116      0.908      -0.418       0.371
+C(task_type)[T.lookup]                                   -6.0573      0.794     -7.633      0.000      -7.613      -4.502
+C(task_type)[T.name_one]                                 -9.2875      1.007     -9.226      0.000     -11.261      -7.314
+C(task_type)[T.oldest_date]                               2.1276      0.413      5.156      0.000       1.319       2.936
+C(model)[T.gpt-oss-120b]                                 -3.5126      0.315    -11.143      0.000      -4.130      -2.895
+C(model)[T.mistral-medium-3-5]                           -2.3546      0.414     -5.688      0.000      -3.166      -1.543
+x_page1_0                                                -0.5610      0.797     -0.704      0.481      -2.123       1.001
+x_page1_1                                                -2.3047      0.850     -2.710      0.007      -3.971      -0.638
+x_page1_2                                                -1.2195      0.736     -1.656      0.098      -2.663       0.224
+x_page1_3                                                -0.6495      0.735     -0.883      0.377      -2.091       0.792
+x_page1_4                                                -1.2488      0.736     -1.696      0.090      -2.692       0.194
+=========================================================================================================================
+
+coefficients -> results/tables/main_model_fixed.csv

@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/rbwZnctwuEMiJO7jzHC7f9YzFHM</id>
+  <title>arXiv Query: search_query=abs:truncation AND (abs:"tool output" OR abs:"tool outputs" OR abs:"tool response" OR abs:"tool responses")&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:04:31Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:truncation+AND+(abs:%22tool+output%22+OR+(abs:%22tool+outputs%22+OR+(abs:%22tool+response%22+OR+abs:%22tool+responses%22)))&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>6</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.14758v1</id>
+    <title>Fabrication After Tool Failure: Tool-Augmented Agents Assert Values Their Tools Did Not Return</title>
+    <updated>2026-09-13T19:46:42Z</updated>
+    <link href="https://arxiv.org/abs/2609.14758v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.14758v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-augmented language models are evaluated on whether they reach the right answer, not on whether they report honestly when a tool fails to supply one. We isolate this post-failure decision with a benchmark of 1,024 items spanning 16 internal-system domains and eight tool-failure types, in which a tool call is enforced and the returned payload is guaranteed to be unusable. Under a deployment-style system prompt, 14.10% of responses are dishonest: the model either asserts a value the payload cannot support or declines while citing a fabricated policy or capability limit. The rate is governed almost entirely by whether the failure is signalled. When the tool returns status:error, dishonesty is absent (0.0%); when it returns status:ok with a redacted, corrupted, stale, malformed, empty or truncated value, dishonesty reaches 45.3%. The behaviour is not an artefact of our prompts: it appears under a neutral prompt (10.17%) and under the shipped prompt of every production agent framework we evaluate, reaching 24.67% under CrewAI's, and none of the nine frameworks we audit specifies what the model should do when a tool fails. Comparing prompt-level defences, we find that the operative variable is not deference to tool output but the absence of a named failure state. Appending a single sentence that requires the model to emit retrieval_status: OK or FAILED before answering reduces dishonesty from 14.10% to 0.87%, with one item of 688 worsening against 92 improving, and transfers unchanged into three foreign agent scaffolds. The emitted flag is faithful in 99.7-99.9% of declarations, giving a runtime detector that needs only a regular expression.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-13T19:46:42Z</published>
+    <arxiv:comment>11 pages, 4 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Arham Sethi</name>
+    </author>
+    <author>
+      <name>Arsen Kenzhebayev</name>
+    </author>
+    <author>
+      <name>Saanvi Paturi</name>
+    </author>
+    <author>
+      <name>Vatsal Raina</name>
+    </author>
+    <author>
+      <name>Vyas Raina</name>
+    </author>
+    <author>
+      <name>Ivaxi Sheth</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.26121v1</id>
+    <title>DTOC: Dynamic Tool Output Compression for Adaptive Context Management in AI Agents</title>
+    <updated>2026-08-06T12:06:36Z</updated>
+    <link href="https://arxiv.org/abs/2609.26121v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.26121v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As agent capabilities have grown, practical limitations increasingly stem from constrained context windows rather than model capacity. Common strategies, such as truncation, heuristic aging, and lossy summarization, may discard useful information or introduce hallucination risk. To address these challenges, we propose Dynamic Tool Output Compression (DTOC), a framework for scalable context management in LLM-based agents that models context updates as explicit and reversible operations within the agent reasoning loop. DTOC retains full tool outputs in external memory while inserting compact placeholders into the active context, enabling selective reconstruction when needed. We formalize the DTOC mechanism, integrate it into a ReAct-style agent architecture, and provide a production-oriented implementation supporting on-demand restoration of compressed outputs. Experiments on DeepSWE reveal model-dependent effects: for responsive models (Sonnet 4.6, GPT-5.4), DTOC reduces input tokens (10.3 and 12.7%) and agent steps (2.4 and 32.3%), while increasing solve rates (2.5 and 1.5 times higher) and lowering cost per solved task (3 and 3.5 times lower cost per solved task). For the other models results are more mixed, with GPT-5.5 doubling solve rate and halving cost, but no impact on solve rate and negative impact on cost for the other models. Ablation results show reversibility is critical: disable-only compression variants degraded performance, while full DTOC recovered baseline accuracy at substantially lower context cost. These findings indicate that explicit, reversible context management can improve the efficiency of long-horizon agent reasoning without degrading task performance.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-06T12:06:36Z</published>
+    <arxiv:comment>Accepted for 29th International Conference on Discovery Science, October 5-9, 2026, Mainz, Germany</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Abhay Chaturvedi</name>
+    </author>
+    <author>
+      <name>Shreya Bhattacharya</name>
+    </author>
+    <author>
+      <name>Rashmika Gopalkrishnan</name>
+    </author>
+    <author>
+      <name>Peter van der Putten</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.20047v2</id>
+    <title>PACMS: Submodular Context Selection as a Pluggable Engine for LLM Agents</title>
+    <updated>2026-09-03T08:04:27Z</updated>
+    <link href="https://arxiv.org/abs/2606.20047v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.20047v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Conversational and tool-using LLM agents operate over a context window that fills from several directions simultaneously. As a session proceeds, the agent accumulates user and assistant turns, entries drawn from a persistent memory store, and often largest of all, the verbatim outputs of tool calls such as file reads, search results, and API responses. Once the cumulative context exceeds the model's token budget, the framework must decide what to keep.
+  The prevailing mechanism is recency truncation, sometimes paired with periodic summarization. This is topic-blind: a fact established early in a session is discarded simply because it is old, even when the current user query is about exactly that fact; conversely, verbose but irrelevant recent material is retained. Agents that must recall information across many turns, the defining case for memory, are precisely where recency truncation fails.
+  Existing alternatives sit outside the agent's assembly step. Retrieval augmented generation fetches external documents into the prompt but does not arbitrate the agent's \emph{already-present} pooled context. Context-compression methods reduce token count by rewriting or pruning text, but operate query-blind and lossily. Neither treats memory entries, conversation turns, and tool outputs as a single candidate pool to be selected from by relevance at the moment the prompt is assembled.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-18T10:22:57Z</published>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Manu Ghulyani</name>
+    </author>
+    <author>
+      <name>Arunabh Singh</name>
+    </author>
+    <author>
+      <name>Karan Bharadwaj</name>
+    </author>
+    <author>
+      <name>Ankit Nath</name>
+    </author>
+    <author>
+      <name>Suranjan Goswami</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.10866v2</id>
+    <title>OccuBench: Evaluating AI Agents on Real-World Professional Tasks via Language Environment Simulation</title>
+    <updated>2026-04-16T16:00:33Z</updated>
+    <link href="https://arxiv.org/abs/2604.10866v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.10866v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI agents are expected to perform professional work across hundreds of occupational domains (from emergency department triage to nuclear reactor safety monitoring to customs import processing), yet existing benchmarks can only evaluate agents in the few domains where public environments exist. We introduce OccuBench, a benchmark covering 100 real-world professional task scenarios across 10 industry categories and 65 specialized domains, enabled by Language Environment Simulators (LESs) that simulate domain-specific environments through LLM-driven tool response generation. Our multi-agent synthesis pipeline automatically produces evaluation instances with guaranteed solvability, calibrated difficulty, and document-grounded diversity. OccuBench evaluates agents along two complementary dimensions: task completion across professional domains and environmental robustness under controlled fault injection (explicit errors, implicit data degradation, and mixed faults). We evaluate 15 frontier models across 8 model families and find that: (1) no single model dominates all industries, as each has a distinct occupational capability profile; (2) implicit faults (truncated data, missing fields) are harder than both explicit errors (timeouts, 500s) and mixed faults, because they lack overt error signals and require the agent to independently detect data degradation; (3) larger models, newer generations, and higher reasoning effort consistently improve performance. GPT-5.2 improves by 27.5 points from minimal to maximum reasoning effort; and (4) strong agents are not necessarily strong environment simulators. Simulator quality is critical for LES-based evaluation reliability. OccuBench provides the first systematic cross-industry evaluation of AI agents on professional occupational tasks.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-13T00:27:32Z</published>
+    <arxiv:comment>23 pages, 8 figures, 2 tables. Project page: https://gregxmhu.github.io/OccuBench-website/</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Xiaomeng Hu</name>
+    </author>
+    <author>
+      <name>Yinger Zhang</name>
+    </author>
+    <author>
+      <name>Fei Huang</name>
+    </author>
+    <author>
+      <name>Jianhong Tu</name>
+    </author>
+    <author>
+      <name>Yang Su</name>
+    </author>
+    <author>
+      <name>Lianghao Deng</name>
+    </author>
+    <author>
+      <name>Yuxuan Liu</name>
+    </author>
+    <author>
+      <name>Yantao Liu</name>
+    </author>
+    <author>
+      <name>Dayiheng Liu</name>
+    </author>
+    <author>
+      <name>Tsung-Yi Ho</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.04257v1</id>
+    <title>Memex(RL): Scaling Long-Horizon LLM Agents via Indexed Experience Memory</title>
+    <updated>2026-03-04T16:45:06Z</updated>
+    <link href="https://arxiv.org/abs/2603.04257v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.04257v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents are fundamentally bottlenecked by finite context windows on long-horizon tasks. As trajectories grow, retaining tool outputs and intermediate reasoning in-context quickly becomes infeasible: the working context becomes prohibitively long, eventually exceeds the context budget, and makes distant evidence harder to use even when it is still present. Existing solutions typically shorten context through truncation or running summaries, but these methods are fundamentally lossy because they compress or discard past evidence itself. We introduce Memex, an indexed experience memory mechanism that instead compresses context without discarding evidence. Memex maintains a compact working context consisting of concise structured summaries and stable indices, while storing full-fidelity underlying interactions in an external experience database under those indices. The agent can then decide when to dereference an index and recover the exact past evidence needed for the current subgoal. We optimize both write and read behaviors with our reinforcement learning framework MemexRL, using reward shaping tailored to indexed memory usage under a context budget, so the agent learns what to summarize, what to archive, how to index it, and when to retrieve it. This yields a substantially less lossy form of long-horizon memory than summary-only approaches. We further provide a theoretical analysis showing the potential of the Memex loop to preserve decision quality with bounded dereferencing while keeping effective in-context computation bounded as history grows. Empirically, on challenging long-horizon tasks, Memex agent trained with MemexRL improves task success while using a significantly smaller working context.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-04T16:45:06Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhenting Wang</name>
+    </author>
+    <author>
+      <name>Huancheng Chen</name>
+    </author>
+    <author>
+      <name>Jiayun Wang</name>
+    </author>
+    <author>
+      <name>Wei Wei</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.22729v1</id>
+    <title>Solving Context Window Overflow in AI Agents</title>
+    <updated>2025-11-27T19:22:20Z</updated>
+    <link href="https://arxiv.org/abs/2511.22729v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.22729v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) have become increasingly capable of interacting with external tools, granting access to specialized knowledge beyond their training data - critical in dynamic, knowledge-intensive domains such as Chemistry and Materials Science. However, large tool outputs can overflow the LLMs' context window, preventing task completion. Existing solutions such as truncation or summarization fail to preserve complete outputs, making them unsuitable for workflows requiring the full data. This work introduces a method that enables LLMs to process and utilize tool responses of arbitrary length without loss of information. By shifting the model's interaction from raw data to memory pointers, the method preserves tool functionality, allows seamless integration into agentic workflows, and reduces token usage and execution time. The proposed method is validated on a real-world Materials Science application that cannot be executed with conventional workflows, and its effectiveness is demonstrated via a comparative analysis where both methods succeed. In this experiment, the proposed approach consumed approximately seven times fewer tokens than the traditional workflow.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-27T19:22:20Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Anton Bulle Labate</name>
+    </author>
+    <author>
+      <name>Valesca Moura de Sousa</name>
+    </author>
+    <author>
+      <name>Sandro Rama Fiorini</name>
+    </author>
+    <author>
+      <name>Leonardo Guerreiro Azevedo</name>
+    </author>
+    <author>
+      <name>Raphael Melo Thiago</name>
+    </author>
+    <author>
+      <name>Viviane Torres da Silva</name>
+    </author>
+  </entry>
+</feed>

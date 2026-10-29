@@ -1,0 +1,9 @@
+       model check                                                test  rate_a  rate_b   n   diff     lo     hi     p
+gpt-oss-120b   C1a no signal, more rows exist: plain - default wording   0.620   0.310 100  0.310  0.194  0.414 0.000
+gpt-oss-120b   C1b  no signal, real last page: plain - default wording   0.714   0.418  91  0.297  0.187  0.394 0.000
+gpt-oss-120b   C1c  has_more, more rows exist: plain - default wording   0.940   0.950 100 -0.010 -0.071  0.051 1.000
+gpt-oss-120b   C1d   has_more, real last page: plain - default wording   0.000   0.000  91  0.000 -0.021  0.021 1.000
+gpt-oss-120b   C1e JSON note, more rows exist: plain - default wording   0.770   0.800 100 -0.030 -0.083  0.025 0.453
+gpt-oss-120b   C1f  JSON note, real last page: plain - default wording   0.044   0.077  91 -0.033 -0.105  0.040 0.549
+gpt-oss-120b   C2a         real last page: total_matches - total_count   0.165   0.330  91 -0.165 -0.259 -0.063 0.003
+gpt-oss-120b   C2b        more rows exist: total_matches - total_count   0.800   0.800 100  0.000 -0.033  0.033 1.000

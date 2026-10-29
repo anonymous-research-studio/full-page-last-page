@@ -1,0 +1,225 @@
+NOTE: no confirmatory set (--config none). The H rows below are descriptive, not tests of the pre-registered hypotheses, which use the main study only.
+
+Exclusions (empty replies and refusals are excluded; truncation and the cap are reported):
+           model  episodes  empty_reply  refusal  truncated  hit_cap  kept  retests
+nemotron-3-super      4795            0        0          0        0  4795      479
+
+Retest reliability (a random 10% of conditions run twice; not used by any test):
+           model         outcome  pairs  agreement  kappa  rate_first  rate_retest
+nemotron-3-super       follow_up    479      0.923  0.845       0.478        0.493
+nemotron-3-super   evidence_seen    479      0.958  0.891       0.733        0.749
+nemotron-3-super         correct    479      0.967  0.865       0.852        0.860
+nemotron-3-super disclosure_flag    479      1.000    NaN       0.000        0.000
+
+           model      family hypothesis                             part                                                                                                          test     n   diff     lo     hi     p supported  estimable                        note  fetch_under_false
+nemotron-3-super  registered         H1                                a                                                                            has_more - none, fetch when needed  99.0  0.152  0.076  0.221 0.000      True       True                                            NaN
+nemotron-3-super  registered         H1                                a                                                                         next_cursor - none, fetch when needed 100.0  0.150  0.076  0.218 0.000      True       True                                            NaN
+nemotron-3-super  registered         H1                                a                                                                         total_count - none, fetch when needed 100.0  0.150  0.076  0.218 0.000      True       True                                            NaN
+nemotron-3-super  registered         H1                                a                                                                        nl_note_json - none, fetch when needed 100.0  0.150  0.076  0.218 0.000      True       True                                            NaN
+nemotron-3-super  registered         H1                                a                                                                    cursor_plus_note - none, fetch when needed 100.0  0.150  0.076  0.218 0.000      True       True                                            NaN
+nemotron-3-super  registered         H1                                b                                                                 nl_note_json - total_count, fetch when needed 100.0  0.000 -0.019  0.019 1.000     False       True                                            NaN
+nemotron-3-super  registered         H1                                b                                                             cursor_plus_note - next_cursor, fetch when needed 100.0  0.000 -0.019  0.019 1.000     False       True                                            NaN
+nemotron-3-super  registered         H1                          overall                                                                                                       a and b   NaN    NaN    NaN    NaN   NaN     False       True                                            NaN
+nemotron-3-super  registered         H2                                a                                                                  none - has_more, fetch past a full last page  91.0  0.846  0.748  0.908 0.000      True       True                                            NaN
+nemotron-3-super  registered         H2                                a                                                               none - next_cursor, fetch past a full last page  91.0  0.516  0.402  0.609 0.000      True       True                                            NaN
+nemotron-3-super  registered         H2                                a                                                               none - total_count, fetch past a full last page  91.0  0.681  0.569  0.765 0.000      True       True                                            NaN
+nemotron-3-super  registered         H2                                a                                                              none - nl_note_json, fetch past a full last page  91.0  0.791  0.687  0.862 0.000      True       True                                            NaN
+nemotron-3-super  registered         H2                                a                                                          none - cursor_plus_note, fetch past a full last page  91.0  0.846  0.748  0.908 0.000      True       True                                            NaN
+nemotron-3-super  registered         H2                                b                                                        nl_note_json - total_count, fetch when page 1 suffices 100.0  0.120  0.042  0.194 0.004      True       True                                            NaN
+nemotron-3-super  registered         H2                                b                                                    cursor_plus_note - next_cursor, fetch when page 1 suffices 100.0  0.070 -0.016  0.154 0.167     False       True                                            NaN
+nemotron-3-super  registered         H2                          overall                                                                                                       a and b   NaN    NaN    NaN    NaN   NaN     False       True                                            NaN
+nemotron-3-super  registered         H3                                a                                                     fetch rate on last_full with a truthful signal, above 50%  91.0  0.110  0.081  0.145   NaN     False       True                                            NaN
+nemotron-3-super  registered         H3                                b                                                    fetch rate on more_short with a truthful signal, below 50% 100.0  0.998  0.994  1.000   NaN     False       True                                            NaN
+nemotron-3-super  registered         H3                          overall                                                                                                       a and b   NaN    NaN    NaN    NaN   NaN     False       True                                            NaN
+nemotron-3-super  registered         H4              by form (false_end)                                                                             none - false_end, more rows exist 100.0  0.850  0.759  0.908 0.000      None       True                                            NaN
+nemotron-3-super  registered         H4              by form (false_end)                                                                truthful has_more - false_end, more rows exist  99.0  1.000  0.947  1.000 0.000      None       True                                            NaN
+nemotron-3-super  registered         H4       by form (false_end_cursor)                                                                      none - false_end_cursor, more rows exist 100.0  0.590  0.481  0.676 0.000      None       True                                            NaN
+nemotron-3-super  registered         H4       by form (false_end_cursor)                                                      truthful next_cursor - false_end_cursor, more rows exist 100.0  0.740  0.637  0.814 0.000      None       True                                            NaN
+nemotron-3-super  registered         H4            by form (false_total)                                                                           none - false_total, more rows exist 100.0  0.660  0.552  0.742 0.000      None       True                                            NaN
+nemotron-3-super  registered         H4            by form (false_total)                                                           truthful total_count - false_total, more rows exist 100.0  0.810  0.713  0.875 0.000      None       True                                            NaN
+nemotron-3-super  registered         H4             by form (false_note)                                                                            none - false_note, more rows exist 100.0  0.800  0.702  0.866 0.000      None       True                                            NaN
+nemotron-3-super  registered         H4             by form (false_note)                                                           truthful nl_note_json - false_note, more rows exist 100.0  0.950  0.879  0.984 0.000      None       True                                            NaN
+nemotron-3-super  registered         H4                                a                                                                     none - false end signals, more rows exist 100.0  0.725  0.652  0.795 0.000      True       True                                            NaN
+nemotron-3-super  registered         H4                                b                                                         truthful signals - false end signals, more rows exist 100.0  0.875  0.835  0.915 0.000      True       True                                            NaN
+nemotron-3-super  registered         H4                          overall                                                                                                       a and b   NaN    NaN    NaN    NaN   NaN      True       True                                          0.125
+nemotron-3-super  registered         H4               manipulation check                                                     false end signals - true last pages (same page 1), 90% CI  91.0  0.000 -0.033  0.033 1.000      None       True                                            NaN
+nemotron-3-super  registered         H4                      exploratory                                                     false_more - true has_more on a last page (over-fetching)   0.0    NaN    NaN    NaN   NaN      None       True                                            NaN
+nemotron-3-super  registered         H5                          context                                                  incompleteness: with the field - without, false-signal cells 100.0 -0.015 -0.052  0.020 0.520      None       True                                            NaN
+nemotron-3-super  registered         H5                                a               disclosure among incomplete answers, upper 95% bound < 20%; rule-based flag (not yet validated) 100.0  0.005  0.001  0.047   NaN      True       True                                            NaN
+nemotron-3-super  registered         H5                                b disclosure with the field - without, both incomplete, false-signal cells; rule-based flag (not yet validated)  99.0 -0.010 -0.025  0.000 0.501     False       True                                            NaN
+nemotron-3-super  registered         H5                          overall                                                                                                       a and b   NaN    NaN    NaN    NaN   NaN     False       True                                            NaN
+nemotron-3-super     amended         A1                                a                                              has_more: fetch when more rows exist - fetch on a real last page  90.0  1.000  0.942  1.000 0.000      True       True                                            NaN
+nemotron-3-super     amended         A1                                a                                           next_cursor: fetch when more rows exist - fetch on a real last page  91.0  0.670  0.557  0.755 0.000      True       True                                            NaN
+nemotron-3-super     amended         A1                                a                                           total_count: fetch when more rows exist - fetch on a real last page  90.0  0.844  0.746  0.906 0.000      True       True                                            NaN
+nemotron-3-super     amended         A1                                a                                          nl_note_json: fetch when more rows exist - fetch on a real last page  91.0  0.945  0.867  0.982 0.000      True       True                                            NaN
+nemotron-3-super     amended         A1                                a                                      cursor_plus_note: fetch when more rows exist - fetch on a real last page  90.0  1.000  0.942  1.000 0.000      True       True                                            NaN
+nemotron-3-super     amended         A1                        reference                  none: the same difference (zero in expectation: nothing on the page tells the extents apart)  91.0  0.000 -0.047  0.047 1.000      None       True                                            NaN
+nemotron-3-super     amended         A1                          overall                              every main explicit form: fetch when more rows exist - fetch on a real last page   NaN    NaN    NaN    NaN   NaN      True       True                                            NaN
+nemotron-3-super     amended         H1                                a                                                                            has_more - none, fetch when needed  99.0  0.152  0.076  0.221 0.000      True       True                                            NaN
+nemotron-3-super     amended         H1                                a                                                                         next_cursor - none, fetch when needed 100.0  0.150  0.076  0.218 0.000      True       True                                            NaN
+nemotron-3-super     amended         H1                                a                                                                         total_count - none, fetch when needed 100.0  0.150  0.076  0.218 0.000      True       True                                            NaN
+nemotron-3-super     amended         H1                                a                                                                        nl_note_json - none, fetch when needed 100.0  0.150  0.076  0.218 0.000      True       True                                            NaN
+nemotron-3-super     amended         H1                                a                                                                    cursor_plus_note - none, fetch when needed  99.0  0.152  0.076  0.221 0.000      True       True                                            NaN
+nemotron-3-super     amended         H1          b (information-matched)                                                        nl_note_json - total_count, fetch when needed (90% CI) 100.0  0.000 -0.016  0.016 1.000      None      False equivalent within 10 points                NaN
+nemotron-3-super     amended         H1                      descriptive                              cursor_plus_note - next_cursor: adding a range-and-total note, fetch when needed  99.0  0.000 -0.019  0.019 1.000      None       True                                            NaN
+nemotron-3-super     amended         H1                          overall                                                                      a and b; no-signal rate when needed 0.85   NaN    NaN    NaN    NaN   NaN      None      False                                            NaN
+nemotron-3-super     amended         H2                                a                                                                  none - has_more, fetch past a full last page  91.0  0.846  0.748  0.908 0.000      True       True                                            NaN
+nemotron-3-super     amended         H2                                a                                                               none - next_cursor, fetch past a full last page  91.0  0.516  0.402  0.609 0.000      True       True                                            NaN
+nemotron-3-super     amended         H2                                a                                                               none - total_count, fetch past a full last page  90.0  0.689  0.576  0.772 0.000      True       True                                            NaN
+nemotron-3-super     amended         H2                                a                                                              none - nl_note_json, fetch past a full last page  91.0  0.791  0.687  0.862 0.000      True       True                                            NaN
+nemotron-3-super     amended         H2                                a                                                          none - cursor_plus_note, fetch past a full last page  91.0  0.846  0.748  0.908 0.000      True       True                                            NaN
+nemotron-3-super     amended         H2                          overall                                                a only (b is now H2b); no-signal rate on a real last page 0.85   NaN    NaN    NaN    NaN   NaN      True       True                                            NaN
+nemotron-3-super     amended        H2b                                a                                                        nl_note_json - total_count, fetch when page 1 suffices 100.0  0.120  0.042  0.194 0.004      True       True                                            NaN
+nemotron-3-super     amended        H2b                          overall                                                                                 information-matched pair only   NaN    NaN    NaN    NaN   NaN      True       True                                            NaN
+nemotron-3-super     amended         H3           context: row-count use                                                       no signal: fetch after a full page - after a short page 100.0  0.160  0.074  0.239 0.000      None       True                                            NaN
+nemotron-3-super     amended         H3 control: full vs short last page                                               truthful signal: fetch past a full last page - past a short one  91.0  0.056  0.024  0.087 0.001      True       True                                            NaN
+nemotron-3-super     amended         H3                                a                                            fetch past a full last page above 50%, and above a short last page  91.0  0.109  0.078  0.142   NaN     False       True                                            NaN
+nemotron-3-super     amended         H3                                b                                                  fetch after a short first page with more behind it below 50% 100.0  0.998  0.994  1.000   NaN     False       True                                            NaN
+nemotron-3-super     amended         H3                          overall                                                                                         row count over signal   NaN    NaN    NaN    NaN   NaN     False       True                                            NaN
+nemotron-3-super     amended        H3r                          overall                                signal over row count: full last page below 50% and short first page above 50%   NaN    NaN    NaN    NaN   NaN      True       True                                            NaN
+nemotron-3-super     amended         H4                                a                                            incomplete answers: false end signals - no signal, more rows exist 100.0  0.686  0.613  0.758 0.000      True       True                                            NaN
+nemotron-3-super     amended         H4                          context                                                          justified correctness: no signal - false end signals 100.0  0.676  0.598  0.752 0.000      None       True                                            NaN
+nemotron-3-super     amended         H4    by task (count_high_priority)                                                                          fetch: no signal - false end signals  16.0  0.583  0.495  0.672 0.000      None       True                                            NaN
+nemotron-3-super     amended         H4     by task (count_out_of_stock)                                                                          fetch: no signal - false end signals  16.0  0.891  0.812  0.953 0.000      None       True                                            NaN
+nemotron-3-super     amended         H4                 by task (exists)                                                                          fetch: no signal - false end signals  17.0  0.941  0.824  1.000 0.000      None       True                                            NaN
+nemotron-3-super     amended         H4             by task (export_all)                                                                          fetch: no signal - false end signals  17.0  0.176  0.000  0.412 0.251      None       True                                            NaN
+nemotron-3-super     amended         H4         by task (filtered_count)                                                                          fetch: no signal - false end signals  17.0  0.838  0.735  0.927 0.000      None       True                                            NaN
+nemotron-3-super     amended         H4            by task (oldest_date)                                                                          fetch: no signal - false end signals  17.0  0.926  0.868  0.971 0.000      None       True                                            NaN
+nemotron-3-super     amended         H4                          overall                                          deferring to a false end signal costs answers (same behavior as H2a)   NaN    NaN    NaN    NaN   NaN      True       True                                            NaN
+nemotron-3-super     amended         H6 by pair (visible_conflict_total)                                                           visible_conflict_total - false_end, more rows exist  98.0  1.000  0.946  1.000 0.000      None       True                                            NaN
+nemotron-3-super     amended         H6  by pair (visible_conflict_note)                                                     visible_conflict_note - false_end_cursor, more rows exist  98.0  0.745  0.641  0.819 0.000      None       True                                            NaN
+nemotron-3-super     amended         H6                                a                                                         visible conflicts - the same false ends alone, pooled 100.0  0.875  0.830  0.915 0.000      True       True                                            NaN
+nemotron-3-super     amended         H6                          context                                 truthful signals - visible conflicts, more rows exist (how far scrutiny goes) 100.0  0.000  0.000  0.000 1.000      None       True                                            NaN
+nemotron-3-super     amended         H6                          overall                                                          agents act on a contradicting field on the same page   NaN    NaN    NaN    NaN   NaN      True       True                                            NaN
+nemotron-3-super     amended        A1u                                a                                      has_more, undocumented: fetch when more rows exist - on a real last page  91.0  0.901  0.813  0.951 0.000      True       True                                            NaN
+nemotron-3-super     amended        A1u                                a                                  nl_note_json, undocumented: fetch when more rows exist - on a real last page  90.0  0.944  0.866  0.982 0.000      True       True                                            NaN
+nemotron-3-super     amended        A1u                          overall                                                                       signal value without the pagination cue   NaN    NaN    NaN    NaN   NaN      True       True                                            NaN
+nemotron-3-super     amended        H1u                                a                                                              has_more - none, undocumented, fetch when needed 100.0  0.110  0.039  0.177 0.003      True       True                                            NaN
+nemotron-3-super     amended        H1u                                a                                                          nl_note_json - none, undocumented, fetch when needed  99.0  0.192  0.109  0.267 0.000      True       True                                            NaN
+nemotron-3-super     amended        H1u                          overall                                                           H1a without the pagination cue; no-signal rate 0.81   NaN    NaN    NaN    NaN   NaN      True       True                                            NaN
+nemotron-3-super     amended        H2u                                a                                                    none - has_more, undocumented, fetch past a full last page  91.0  0.769  0.663  0.843 0.000      True       True                                            NaN
+nemotron-3-super     amended        H2u                                a                                                none - nl_note_json, undocumented, fetch past a full last page  91.0  0.725  0.615  0.804 0.000      True       True                                            NaN
+nemotron-3-super     amended        H2u                          overall                                                           H2a without the pagination cue; no-signal rate 0.78   NaN    NaN    NaN    NaN   NaN      True       True                                            NaN
+nemotron-3-super     amended        H5b                          context                                                     incompleteness: with the field - without, warranted cells 100.0 -0.015 -0.055  0.025 0.612      None       True                                            NaN
+nemotron-3-super     amended        H5a                                a                        disclosure where warranted, upper 95% bound < 20%; rule-based flag (not yet validated)  29.0  0.000  0.000  0.117   NaN      True       True                                            NaN
+nemotron-3-super     amended        H5a          stratum (api_said_done)                                                                                 disclosure rate (descriptive) 100.0  0.006  0.001  0.048   NaN      None       True                                            NaN
+nemotron-3-super     amended        H5a       stratum (visible_conflict)                                                                                 disclosure rate (descriptive)   1.0  0.000  0.000  0.793   NaN      None       True                                            NaN
+nemotron-3-super     amended        H5a             stratum (short_page)                                                                                 disclosure rate (descriptive)  33.0  0.000  0.000  0.104   NaN      None       True                                            NaN
+nemotron-3-super     amended        H5a                 stratum (no_cue)                                                                                 disclosure rate (descriptive)  22.0  0.000  0.000  0.149   NaN      None       True                                            NaN
+nemotron-3-super     amended        H5a                          overall                                                                                               where warranted   NaN    NaN    NaN    NaN   NaN      True       True                                            NaN
+nemotron-3-super     amended        H5b                                a  silent incomplete answers: without the field - with it, warranted cells; rule-based flag (not yet validated) 100.0  0.030 -0.005  0.070 0.209     False       True                                            NaN
+nemotron-3-super     amended        H5b                                b                   with the field, no signal: disclosure on incomplete - on complete answers (informativeness) 100.0  0.125  0.000  0.308   NaN     False       True                                            NaN
+nemotron-3-super     amended        H5b                      descriptive                             with the field, truthful has_more: disclosure on incomplete - on complete answers 100.0  1.000  1.000  1.000   NaN      None       True                                            NaN
+nemotron-3-super     amended        H5b           context (false alarms)                                                           with the field: partial/unknown on complete answers  99.0  0.000  0.000  0.037   NaN      None       True                                            NaN
+nemotron-3-super     amended        H5b                          overall                                                                                                       a and b   NaN    NaN    NaN    NaN   NaN     False       True                                            NaN
+nemotron-3-super descriptive       arms                    documentation                                     pagination not documented (has_more) - base, fetch (last_full, needs_all)  91.0  0.011 -0.019  0.040 1.000      None       True                                            NaN
+nemotron-3-super descriptive       arms                    documentation                                 pagination not documented (nl_note_json) - base, fetch (last_full, needs_all)  91.0  0.000 -0.063  0.063 1.000      None       True                                            NaN
+nemotron-3-super descriptive       arms                    documentation                                         pagination not documented (none) - base, fetch (last_full, needs_all)  91.0 -0.066 -0.126 -0.003 0.070      None       True                                            NaN
+nemotron-3-super descriptive       arms                    documentation                                     pagination not documented (has_more) - base, fetch (more_full, needs_all)  99.0 -0.081 -0.135 -0.023 0.008      None       True                                            NaN
+nemotron-3-super descriptive       arms                    documentation                                 pagination not documented (nl_note_json) - base, fetch (more_full, needs_all)  99.0  0.000 -0.019  0.019 1.000      None       True                                            NaN
+nemotron-3-super descriptive       arms                    documentation                                         pagination not documented (none) - base, fetch (more_full, needs_all) 100.0 -0.040 -0.096  0.018 0.289      None       True                                            NaN
+nemotron-3-super descriptive       arms                    answer_format                                            completeness field (has_more) - base, fetch (more_full, needs_all)  97.0 -0.010 -0.038  0.018 1.000      None       True                                            NaN
+nemotron-3-super descriptive       arms                    answer_format                                                completeness field (none) - base, fetch (more_full, needs_all) 100.0  0.010 -0.045  0.064 1.000      None       True                                            NaN
+
+Registered verdicts (supported in at least 1 of 1 confirmatory models: nemotron-3-super):
+model      nemotron-3-super  models_supporting  supported_overall
+hypothesis                                                       
+H1                    False                  0              False
+H2                    False                  0              False
+H3                    False                  0              False
+H4                     True                  1               True
+H5                    False                  0              False
+
+Amended verdicts (supported in a majority of the confirmatory models where the test is estimable, with at least two):
+model      nemotron-3-super  models_estimable  models_supporting supported_overall
+hypothesis                                                                        
+A1                     True                 1                  1     not estimable
+A1u                    True                 1                  1     not estimable
+H1                     None                 0                  0     not estimable
+H1u                    True                 1                  1     not estimable
+H2                     True                 1                  1     not estimable
+H2b                    True                 1                  1     not estimable
+H2u                    True                 1                  1     not estimable
+H3                    False                 1                  0     not estimable
+H3r                    True                 1                  1     not estimable
+H4                     True                 1                  1     not estimable
+H5a                    True                 1                  1     not estimable
+H5b                   False                 1                  0     not estimable
+H6                     True                 1                  1     not estimable
+
+Sensitivity, registered verdicts, empty replies kept as stops:
+model       models_supporting  supported_overall
+hypothesis                                      
+H1                          0              False
+H2                          0              False
+H3                          0              False
+H4                          1               True
+H5                          0              False
+
+Sensitivity, amended verdicts, empty replies kept as stops:
+model       models_estimable  models_supporting supported_overall
+hypothesis                                                       
+A1                         1                  1     not estimable
+A1u                        1                  1     not estimable
+H1                         0                  0     not estimable
+H1u                        1                  1     not estimable
+H2                         1                  1     not estimable
+H2b                        1                  1     not estimable
+H2u                        1                  1     not estimable
+H3                         1                  0     not estimable
+H3r                        1                  1     not estimable
+H4                         1                  1     not estimable
+H5a                        1                  1     not estimable
+H5b                        1                  0     not estimable
+H6                         1                  1     not estimable
+
+Sensitivity, amended verdicts, without the oldest-date task:
+model       models_estimable  models_supporting supported_overall
+hypothesis                                                       
+A1                         1                  1     not estimable
+A1u                        1                  1     not estimable
+H1                         0                  0     not estimable
+H1u                        1                  1     not estimable
+H2                         1                  1     not estimable
+H2b                        1                  1     not estimable
+H2u                        1                  1     not estimable
+H3                         1                  0     not estimable
+H3r                        1                  1     not estimable
+H4                         1                  1     not estimable
+H5a                        1                  1     not estimable
+H5b                        1                  0     not estimable
+H6                         1                  1     not estimable
+
+Sensitivity, amended verdicts, without the export task:
+model       models_estimable  models_supporting supported_overall
+hypothesis                                                       
+A1                         1                  1     not estimable
+A1u                        1                  1     not estimable
+H1                         0                  0     not estimable
+H1u                        0                  0     not estimable
+H2                         1                  1     not estimable
+H2b                        1                  1     not estimable
+H2u                        1                  1     not estimable
+H3                         1                  0     not estimable
+H3r                        1                  1     not estimable
+H4                         1                  1     not estimable
+H5a                        0                  0     not estimable
+H5b                        1                  0     not estimable
+H6                         1                  1     not estimable
+
+Sensitivity, amended verdicts, responsive follow-ups only:
+model       models_estimable  models_supporting supported_overall
+hypothesis                                                       
+A1                         1                  1     not estimable
+A1u                        1                  1     not estimable
+H1                         0                  0     not estimable
+H1u                        1                  1     not estimable
+H2                         1                  1     not estimable
+H2b                        1                  1     not estimable
+H2u                        1                  1     not estimable
+H3                         1                  0     not estimable
+H3r                        1                  1     not estimable
+H4                         1                  1     not estimable
+H5a                        1                  1     not estimable
+H5b                        1                  0     not estimable
+H6                         1                  1     not estimable

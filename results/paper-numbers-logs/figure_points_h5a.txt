@@ -1,0 +1,6 @@
+claude-sonnet-5-5 Figure 1 points (x = past a real full last page, y = when more rows exist): cursor_plus_note (23, 100); has_more (25, 100); next_cursor (93, 100); nl_note_json (46, 100); none (100, 100); total_count (63, 100)
+   H5a warranted: 0 of 1 incomplete answers flagged (episode-weighted 0.0%), 1 items; exact bound if none: 97.5%
+gpt-oss-120b Figure 1 points (x = past a real full last page, y = when more rows exist): cursor_plus_note (0, 78); has_more (0, 91); next_cursor (1, 79); nl_note_json (8, 77); none (38, 34); total_count (33, 76)
+   H5a warranted: 0 of 322 incomplete answers flagged (episode-weighted 0.0%), 78 items; exact bound if none: 4.6%
+mistral-medium-3-5 Figure 1 points (x = past a real full last page, y = when more rows exist): cursor_plus_note (2, 87); has_more (7, 100); next_cursor (7, 83); nl_note_json (10, 79); none (21, 24); total_count (22, 79)
+   H5a warranted: 1 of 278 incomplete answers flagged (episode-weighted 0.4%), 81 items; exact bound if none: 4.5%

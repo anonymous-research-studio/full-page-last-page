@@ -1,0 +1,15 @@
+model,stratum,weight,replies,disagree,unsure,blank
+claude-sonnet-5-5,exists,102.5,6,0,0,0
+claude-sonnet-5-5,false_signal,91.8,10,0,0,0
+claude-sonnet-5-5,other,191.3684,19,0,0,0
+claude-sonnet-5-5,partial_export,27.5,4,0,0,0
+claude-sonnet-5-5,several_numbers,1.0,1,0,0,0
+gpt-oss-120b,exists,102.5,6,0,0,0
+gpt-oss-120b,false_signal,83.0,10,0,0,0
+gpt-oss-120b,other,168.7,20,0,0,0
+gpt-oss-120b,partial_export,115.25,4,0,0,0
+mistral-medium-3-5,exists,102.5,6,0,0,0
+mistral-medium-3-5,false_signal,83.6,10,0,0,0
+mistral-medium-3-5,other,190.0556,18,0,0,0
+mistral-medium-3-5,partial_export,101.5,4,0,0,0
+mistral-medium-3-5,several_numbers,1.0,2,0,0,0

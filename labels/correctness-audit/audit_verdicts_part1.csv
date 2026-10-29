@@ -1,0 +1,81 @@
+audit_id,verdict,note
+1,agree,
+2,agree,
+3,agree,
+4,agree,"Since there is no ""signal"", model didn't fetch more pages. Answer based on first page."
+5,agree,
+6,agree,"Model didn't read rest of the pages. Rated Unsure in the worksheet; the rater confirmed on 2026-10-25 at 12:37 that it was a model error, not a scorer error, so it is recorded as agree."
+7,agree,
+8,agree,
+9,agree,
+10,agree,
+11,agree,
+12,agree,
+13,agree,
+14,agree,
+15,agree,
+16,agree,
+17,agree,
+18,agree,
+19,agree,
+20,agree,Its unclear on why gold is null? Intentional?
+21,agree,
+22,agree,
+23,agree,"Script seems fine, but model didn't do further call, probably false_end."
+24,agree,
+25,agree,"Script seems fine, but model didn't do further call, probably false_end."
+26,agree,
+27,agree,
+28,agree,
+29,agree,
+30,agree,
+31,agree,
+32,agree,all ids match
+33,agree,all ids match
+34,agree,
+35,agree,
+36,agree,
+37,agree,
+38,agree,Ids didn’t match that’s expected as not paginated
+39,agree,Ids didn’t match that’s expected as not paginated
+40,agree,
+41,agree,
+42,agree,
+43,agree,
+44,agree,
+45,agree,
+46,agree,
+47,agree,all ids match
+48,agree,Ids didn’t match that’s expected as not paginated
+49,agree,all ids match
+50,agree,
+51,agree,all ids match
+52,agree,
+53,agree,"Script seems fine, but model didn't do further call, probably false_end."
+54,agree,
+55,agree,Ids didn’t match that’s expected as not paginated
+56,agree,
+57,agree,
+58,agree,all ids match
+59,agree,Ids didn’t match that’s expected as not paginated
+60,agree,
+61,agree,
+62,agree,all ids match
+63,agree,
+64,agree,all ids match
+65,agree,
+66,agree,
+67,agree,
+68,agree,
+69,agree,
+70,agree,
+71,agree,
+72,agree,
+73,agree,
+74,agree,
+75,agree,
+76,agree,
+77,agree,gold is null? But nevertheless script scorer is valid from final text
+78,agree,
+79,agree,
+80,agree,Ids didn’t match that’s expected as not paginated

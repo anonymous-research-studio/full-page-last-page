@@ -1,0 +1,19 @@
+# Wider real-model check before the pilot: every task type, every extent, and each arm once,
+# on four forms (8 items per cell; 208 episodes per model). Looks for protocol, parsing and
+# scoring problems across the whole design, not for effects. Run on 19 Oct 2026, when it also held
+# the since-retired sum task (40 more episodes on two models); logs in data/protocol-checks/.
+name: check-wide
+models: [gpt-oss-120b, mistral-medium-3-5, claude-sonnet-5-5]
+signal_forms: [none, has_more, nl_note_json, cursor_plus_note]
+extents: [more_full, last_full, last_short, more_short]
+task_need: [needs_all, page1_sufficient]
+items_per_cell: 8
+page_limit: 20
+max_tool_calls: 12
+default_placement: bottom
+seed: 0
+arms:
+  conflict: {levels: [false_end], task_need: [needs_all]}
+  limit: {base_form: none, levels: [stated, unstated]}
+  phrasing: {base_form: none, levels: [neutral, explicit], task_need: [needs_all]}
+  answer_format: {base_form: has_more, levels: [final_line, completeness]}

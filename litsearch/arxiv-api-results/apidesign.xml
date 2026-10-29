@@ -1,0 +1,1371 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/2O7E8kc6d1XnPEKqYCMKZdC3wM8</id>
+  <title>arXiv Query: search_query=(abs:"agent-ready" OR abs:"agent-friendly" OR abs:"agent-native API" OR abs:"API design") AND (abs:LLM OR abs:agent OR abs:agents)&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:05:49Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(abs:%22agent-ready%22+OR+(abs:%22agent-friendly%22+OR+(abs:%22agent-native+API%22+OR+abs:%22API+design%22)))+AND+(abs:LLM+OR+(abs:agent+OR+abs:agents))&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>37</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.34951v3</id>
+    <title>AX is the New AEO</title>
+    <updated>2026-10-06T16:43:16Z</updated>
+    <link href="https://arxiv.org/abs/2609.34951v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.34951v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In 2023, AI models answered from training data and hallucinated when it ran out, and businesses were told to seed that knowledge. Models' training knowledge has since given way to live web search, and the advice followed it there: answer-engine optimization, or AEO, now tells businesses to scatter breadcrumbs across forum threads, listicles, and off-site citations, so AI engines are likelier to surface and recommend them. But being surfaced is no longer enough: an agent opens the results and reads them before deciding, and one buyer question sends it through several rounds of search and fetch. What decides the outcome at this drill-down step is whether the agent can fetch and read the business's own site: agent experience (AX). We argue that AX is the new AEO. We run 37,927 agent journeys, each a buyer question about a business, across four independent harnesses over 1,056 real businesses, matched on fame, prior model knowledge, and two AEO proxies, then split based on their AX level. Only 7-10% of the finished answer comes from the model's training knowledge, whether or not the site is readable. Agent-ready businesses have answers built from their own pages 78% of the time against 56% and are clearly recommended 1.9x more often, while a grounded answer about a not-agent-ready business costs the agent 64% more on average. Holding business, harness, and question fixed, answers built from the site are 41% more accurate on average. The dominant failure is not fabrication but omission: web-built answers are 3.7x more likely to contain none of the facts the buyer asked for. Baselines differ sharply across the four harnesses, with clear-recommendation rates varying sevenfold from stack to stack, yet the recommendation gap holds in every one. In the agentic web era, being readable beats being talked about, and improving a site's AX is the strongest lever a business has.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-28T11:41:13Z</published>
+    <arxiv:comment>17 pages, 11 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Ido Finder</name>
+    </author>
+    <author>
+      <name>Assaf Elovic</name>
+    </author>
+    <author>
+      <name>Gad Shalev</name>
+    </author>
+    <author>
+      <name>Liad Yosef</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.29773v2</id>
+    <title>Breaking the Environment Wall: A Unified Framework for Preparing and Evolving Agent-Native Environments</title>
+    <updated>2026-09-27T07:45:46Z</updated>
+    <link href="https://arxiv.org/abs/2609.29773v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.29773v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Many real-world tasks (e.g., office workflows, scientific experimentation) require LLM agents to interact repeatedly with their environments for context-dependent operations. However, such environments are often not agent-ready. First, information is often scattered and fragmented across the environment. Second, relevant evidence in the environment is often mixed with misleading information and conflicting versions. Third, environments evolve over time, introducing new noise and more challenging tasks. These challenges can substantially degrade performance for state-of-the-art AI agents (e.g., from 83.9% to 57.6%). To address these challenges, we propose Env-Rethink (a system with 27B post-trained model) that supports three main capabilities: (1) It adaptively builds Collection Maps (for organizing related files) and Event Logs (for contextualizing cross-data relationships) to supplement necessary context; (2) It further leverages the post-trained model (through offline trajectory learning) to identify underlying noise issues in the environment; (3) It ultimately evolves environments through virtual event histories that alter environmental states and evidence relationships, producing more tricky ones for further agent improvement. Experiments show that Env-Rethink can effectively improve downstream task performance (with a 15.1 percentage-point increase in mean rubric pass rate across nine models on 30 tasks).</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-24T13:17:57Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yukai Wu</name>
+    </author>
+    <author>
+      <name>Yuanjing Yang</name>
+    </author>
+    <author>
+      <name>Le Zhou</name>
+    </author>
+    <author>
+      <name>Shaokun Han</name>
+    </author>
+    <author>
+      <name>Haoyu Wang</name>
+    </author>
+    <author>
+      <name>Zirui Tang</name>
+    </author>
+    <author>
+      <name>Xuzhou Zhu</name>
+    </author>
+    <author>
+      <name>Weihuang Zheng</name>
+    </author>
+    <author>
+      <name>Maxm Pan</name>
+    </author>
+    <author>
+      <name>Xuanhe Zhou</name>
+    </author>
+    <author>
+      <name>Fan Wu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.23578v2</id>
+    <title>AR-WAM: A Visual-Conditioned Agent-Ready World Action Model for Robotic Manipulation</title>
+    <updated>2026-10-02T08:43:39Z</updated>
+    <link href="https://arxiv.org/abs/2609.23578v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.23578v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As AI agents become increasingly capable, agent-driven robotic control is emerging as a compelling paradigm. However, prevailing vision-language-action (VLA) models and world action models (WAMs) still rely on natural-language instructions to specify manipulation tasks, an ill-suited interface for agent-driven control: referentially ambiguous, spatially imprecise, redundant with the agent's inherent language understanding, and entangling intent with execution. We present AR-WAM, a visual-conditioned, agent-ready world action model that replaces language with two complementary conditions: a visual grounding prompt (a bounding box of the target) denoting the interaction object and location, and a learnable operation token dictating the atomic skill to execute. Our compact 0.5B-parameter model, with a frozen pretrained visual encoder and no language encoder, predicts scene evolution within compact latent states while decoding actions, exposing the policy's intent through explicit, supervisable reasoning signals. A model-agnostic compatibility layer provides three primitives (detect, execute, and query) so that local VLMs or online agent APIs can drive the policy directly, with long-horizon memory and closed-loop error recovery delegated to the agent side. On RoboTwin 2.0, RMBench, and a real Astribot S1 dual-arm platform, AR-WAM attains the highest average success on standard manipulation (85.7% over the clean and randomized settings) and outperforms all baselines on memory-dependent and real-robot long-horizon tasks, improving success rates by 5.9% and 36.7%, respectively, while maintaining the lowest inference latency (14.1 ms). Project page is at https://ar-wam.github.io/.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-20T11:55:26Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Yicheng Jiang</name>
+    </author>
+    <author>
+      <name>Zesen Gan</name>
+    </author>
+    <author>
+      <name>Xiaobo Wang</name>
+    </author>
+    <author>
+      <name>Tianlun He</name>
+    </author>
+    <author>
+      <name>Chenxu Zhao</name>
+    </author>
+    <author>
+      <name>Minghui Wu</name>
+    </author>
+    <author>
+      <name>Xinyue Wang</name>
+    </author>
+    <author>
+      <name>Jiaxu Wang</name>
+    </author>
+    <author>
+      <name>Junhao He</name>
+    </author>
+    <author>
+      <name>Jianan Wang</name>
+    </author>
+    <author>
+      <name>Qiming Shao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.22325v1</id>
+    <title>ReliCAD: From Uncertain LLM Generation to Reliable Parametric CAD Modeling</title>
+    <updated>2026-09-16T07:11:30Z</updated>
+    <link href="https://arxiv.org/abs/2609.22325v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.22325v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models have shown considerable potential for natural-language-driven parametric CAD modeling. However, a fundamental contradiction exists between their probabilistic generation and the deterministic requirements of CAD modeling, resulting in limitations in reliability, design-intent preservation, and geometric validity. Existing methods typically rely on large-scale annotated datasets, lack explicit modeling of design intent, and underutilize the deterministic capabilities of CAD kernels. To address these limitations, we propose ReliCAD, a unified framework that transforms uncertain LLM generation into reliable parametric CAD modeling. Through explicit design-intent modeling, ReliCAD converts user requirements into structured design specifications and explicitly models geometric relations, topological dependencies, and feature construction order. It then generates constraint-aware parametric instructions and invokes the CAD kernel through an Agent-ready API to perform geometric construction and constraint solving. ReliCAD further records runtime evidence and employs a verification-feedback mechanism to assess consistency between the generated model and the design specifications, enabling error localization and iterative repair. Experiments on the public HistCAD generation dataset and our multi-granularity CAD editing dataset demonstrate that ReliCAD significantly outperforms baseline methods, achieving 99.8\% validity rate and 0.8753 IoU. ReliCAD provides a verifiable, repairable, and generalizable approach to natural-language-interactive CAD modeling.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-16T07:11:30Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Peng Zheng</name>
+    </author>
+    <author>
+      <name>Xintong Dong</name>
+    </author>
+    <author>
+      <name>Chuanyang Li</name>
+    </author>
+    <author>
+      <name>Jiaxin Jing</name>
+    </author>
+    <author>
+      <name>Chuqi Han</name>
+    </author>
+    <author>
+      <name>Hailong Shen</name>
+    </author>
+    <author>
+      <name>Yanzhi Song</name>
+    </author>
+    <author>
+      <name>Zhouwang Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.16802v2</id>
+    <title>ZStar: A unified toolkit for polarization, Born effective charges, dielectric and piezoelectric responses, and infrared and Raman spectra</title>
+    <updated>2026-10-16T02:36:32Z</updated>
+    <link href="https://arxiv.org/abs/2609.16802v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.16802v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Born effective charge (BEC) tensors link atomic displacements to polarization, thereby connecting lattice vibrations with dielectric response and infrared activity. We present ZStar, an open-source Python toolkit that automates calculations of polarization, BEC, phonons, static and frequency-dependent dielectric response, and infrared and Raman spectra. ZStar supports bulk crystals, two-dimensional materials, one-dimensional structures, and molecules through an integrated workflow for input preparation, execution, and response analysis. Berry-phase polarization and real-space dipoles describe responses along periodic and open directions, respectively. Its unified, symmetry-adapted finite-displacement framework jointly determines BEC and zone-center force constants from the same calculations, improving computational efficiency while preserving numerical accuracy. Strain-response calculations further provide proper piezoelectric coefficients and their internal-relaxation contributions for bulk crystals. In the ABACUS+PYATB route, electronic Hamiltonian data are reused to obtain Raman response without additional self-consistent calculations. Native response implementations from VASP and CP2K are also integrated. Matched infrared/Raman benchmarks against the implemented separate workflows achieve speedups of up to 8.4. An accompanying agent skill provides an agent-friendly interface for workflow integration. ZStar therefore offers an efficient and automated route for exploring polarization, BEC, dielectric and piezoelectric responses, and vibrational spectra across different material dimensionalities.</summary>
+    <category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.comp-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-15T08:07:13Z</published>
+    <arxiv:primary_category term="cond-mat.mtrl-sci"/>
+    <author>
+      <name>Xudong Zhu</name>
+    </author>
+    <author>
+      <name>Junhong Li</name>
+    </author>
+    <author>
+      <name>Gan Jin</name>
+    </author>
+    <author>
+      <name>Zheng Guan</name>
+    </author>
+    <author>
+      <name>Meng Zhang</name>
+    </author>
+    <author>
+      <name>Lixin He</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.10451v1</id>
+    <title>JarvisGUI: Towards Cross-Device GUI Agents with Dynamic Task Composition</title>
+    <updated>2026-09-09T16:59:59Z</updated>
+    <link href="https://arxiv.org/abs/2609.10451v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.10451v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Real-world GUI usage frequently involves workflows that span multiple devices and platforms, requiring the transfer of intermediate results, maintenance of shared state, and coordination across heterogeneous environments. However, existing GUI benchmarks overwhelmingly evaluate agents on single-device, statically defined tasks, thus leaving such cross-device capabilities largely unexamined, resulting in an overly optimistic assessment of agents' readiness for real-world usage. We introduce JarvisGUI, a dynamic benchmark that evaluates GUI agents on cross-device workflows requiring coordinated interaction across heterogeneous platforms, including Android, Windows, and Ubuntu. Specifically, JarvisGUI formulates GUI tasks as input-output transformations under a lightweight type system, which allows us to automatically compose multi-step, cross-device workflows and dynamically evaluate agent performance within a unified framework. By evaluating agents in virtual environments spanning multiple operating systems, JarvisGUI reveals that state-of-the-art open-source GUI agents struggle with the state-transfer awareness, cross-platform contextual reasoning, and long-horizon dependency management required for real-world workflows, exposing a critical capability gap invisible to existing benchmarks.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-09T16:59:59Z</published>
+    <arxiv:comment>Accepted to EMNLP 2026 (Main Conference)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zixiang Chen</name>
+    </author>
+    <author>
+      <name>Yuheng Lu</name>
+    </author>
+    <author>
+      <name>Zihao Cheng</name>
+    </author>
+    <author>
+      <name>Zeming Liu</name>
+    </author>
+    <author>
+      <name>Jizeng Bai</name>
+    </author>
+    <author>
+      <name>Ziye Huang</name>
+    </author>
+    <author>
+      <name>Zhiyin Lin</name>
+    </author>
+    <author>
+      <name>Zihan Li</name>
+    </author>
+    <author>
+      <name>Yuhang Guo</name>
+    </author>
+    <author>
+      <name>Yunhong Wang</name>
+    </author>
+    <author>
+      <name>Haifeng Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.27334v2</id>
+    <title>BTS-AgentBench: A Deterministic, Replayable Pipeline from Read-Only Telemetry Logs to Agent Benchmarks</title>
+    <updated>2026-10-14T10:35:50Z</updated>
+    <link href="https://arxiv.org/abs/2608.27334v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.27334v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Operational facilities accumulate extensive local telemetry, but agent-ready interactive evaluations with source-verifiable answers are costly to construct from such archives. Site-specific measurement histories also motivate a local conversion workflow that can operate where raw operational data must remain under organizational control. We introduce BTS-AgentBench, a deterministic compiler that transforms read-only telemetry and equipment metadata into tool-backed, multi-turn agent tasks, phase-level targets, evidence and executable evaluation contracts. The BTS release includes 532 episodes across nine families; a second-corpus port produces 204 XAI4HEAT episodes. Frozen-input replay reproduces released artifacts byte-for-byte, and independent raw-source checks cover all 89 BTS and 41 XAI4HEAT test episodes. Replayable provenance links 1,170 trial identities to recorded execution and scorer conditions, while 1,125 completed traces retain model responses and tool results. An obligation-level comparison of 216 scored failures found that linked records exposed additional recorded failed obligations in 202 cases (93.5\%), including tool arguments, stream identity, state carryover and missing interaction steps. The pipeline thereby supports source-grounded task generation, exact reconstruction and auditable diagnosis of agent executions. Code, released benchmarks, and reproduction instructions are available at https://anonymous.4open.science/r/telemetry-benchmark-reproduction-3D68</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-27T16:35:52Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Jeong-Yoon Kim</name>
+    </author>
+    <author>
+      <name>Tae-Yoon Lee</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.20195v1</id>
+    <title>From Agent Behaviour to Agent-Friendly Documentation: An Empirical Study of How Coding Agents Discover, Read, and Write Technical Documentation</title>
+    <updated>2026-08-20T15:51:54Z</updated>
+    <link href="https://arxiv.org/abs/2608.20195v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.20195v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Technical documentation is written for human developers, but an increasing share of software changes is now authored by autonomous coding agents. Which documents they consult, when, and what follows remain unknown. We conduct a behaviour-grounded study of agent-documentation interaction across two public datasets: 557 agentic coding sessions from SWE-chat, yielding 94,813 development events including 3,033 documentation interactions; and 33,097 agentic pull requests from AIDev, with 690,260 classified file-level change records. Four findings challenge current documentation practice. First, agents' documentation work is dominated by agent-facing artefacts: instruction files and working notes account for 60.5% of all documentation interactions, versus 10.6% for classical technical documentation and 1.3% for API references. Second, the link between consultation and code editing is unresolved: the adjacent transition probability is 0.002 and the unadjusted three-event lift 1.05, whereas a stage-adjusted model places it above unity (OR 1.33 [1.09, 1.62]); documentation creation is elevated unadjusted (lift 1.67) but its adjusted interval includes unity. Third, no explicit documentation-based validation sequence was observed, and consultation is associated with less immediate testing (lift 0.23, cluster CI 0.08-0.45; adjusted OR 0.39 [0.25, 0.60]). Fourth, consultation is self-initiated (70.2%) far more often than failure-driven (7.5%), and documentation trails code: among multi-commit pull requests changing both, code is touched first 4.7x more often. From these traces we derive a descriptive model of agent-documentation interaction as a two-lobed cycle rather than a linear journey, and show that two widely assumed properties of "agent-friendly" documentation - actionability and verifiability - lack consistent behavioural support. We release our pipeline, coding scheme, and event-level data.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-20T15:51:54Z</published>
+    <arxiv:comment>14 pages, 1 figure, 10 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Zhijun Gao</name>
+    </author>
+    <author>
+      <name>Jing Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.19625v2</id>
+    <title>Scientific Data Skills: Enabling Agent-Ready Scientific Data Services at Scale</title>
+    <updated>2026-09-07T03:17:11Z</updated>
+    <link href="https://arxiv.org/abs/2608.19625v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.19625v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Scientific data are increasingly used by AI agents, yet existing dataset representations provide limited support for reliable dataset discovery and interpretation, constraining their effective use in scientific workflows. This limitation arises because agents must search across heterogeneous repositories and reconstruct dataset-specific semantics and operating procedures from documentation designed primarily for human use. To address this limitation, we introduce the Scientific Data Skill (SciDSK), an agent-ready representation that packages dataset-specific knowledge and operational guidance as a reusable agent skill. A SciDSK integrates dataset descriptions, scientific context, file organization, task-specific usage procedures, quality checks, and provenance information while retaining the underlying data in its original repository. We define a structured SciDSK specification and develop a systematic construction pipeline that grounds each SciDSK in authoritative dataset records and associated supporting materials. We further establish the Scientific Data Skill Bank, a unified platform that publishes SciDSK resources across six scientific disciplines and supports package access, persistent identification, and traceability to source datasets. We evaluate SciDSK through a retrieval benchmark for dataset discovery and controlled cases for dataset interpretation. On the query retrieval benchmark, Agent-SciDSK achieves 80.77% Hit@1, exceeding Agent-Raw by 9.62 percentage points. Across controlled interpretation cases, the SciDSK condition satisfies 23 of 24 assessment criteria, compared with 22 under the web-page condition. These results indicate that SciDSK improves how agents locate and understand scientific datasets, providing a stronger foundation for actionable scientific data use.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-20T04:25:59Z</published>
+    <arxiv:comment>15 pages, 5 figures, 5 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xiaohan Huang</name>
+    </author>
+    <author>
+      <name>Qingqing Long</name>
+    </author>
+    <author>
+      <name>Xiaolei Du</name>
+    </author>
+    <author>
+      <name>Siyu Pu</name>
+    </author>
+    <author>
+      <name>Jiawen Xu</name>
+    </author>
+    <author>
+      <name>Haotian Chen</name>
+    </author>
+    <author>
+      <name>Chenyang Zhao</name>
+    </author>
+    <author>
+      <name>Jinbiao Liu</name>
+    </author>
+    <author>
+      <name>Xuezhi Wang</name>
+    </author>
+    <author>
+      <name>Hengshu Zhu</name>
+    </author>
+    <author>
+      <name>Yuanchun Zhou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.16465v1</id>
+    <title>JailbreakSkill: Scaling Automated Red-Teaming with Reusable and Ever-Evolving Skills</title>
+    <updated>2026-08-17T12:03:35Z</updated>
+    <link href="https://arxiv.org/abs/2608.16465v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.16465v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Automated red-teaming has produced a growing collection of attack strategies, yet they typically remain scattered across prompts and workflows, making them difficult to systematically integrate, reuse, and improve at scale. We introduce \textsc{JailbreakSkill}, a skill-centric framework for scaling automated red-teaming through reusable and continuously evolving attack capabilities. \textsc{JailbreakSkill} packages existing attack strategies into modular, agent-ready skills that can be directly reused and adaptively selected across tasks and target models. Beyond reuse, it closes the loop between attacking and learning: attack experience is used to diagnose, refine, combine, and discover new skills, which are added back to an ever-growing skill library. This evolution lifts macro-average ASR by 17.5 percentage points on AdvBench and 13.4 points on HarmBench, including a 48.6-point gain against GPT-5.4 on AdvBench, while yielding novel attack strategies such as reframing a direct request as an unfinished document-completion task. Several evolved skills also generalize to unseen prompts and target models without further adaptation. Our code is available at https://github.com/BattleWen/JailbreakSkill.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-17T12:03:35Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xiaoyu Wen</name>
+    </author>
+    <author>
+      <name>Jiajia Li</name>
+    </author>
+    <author>
+      <name>Zhida He</name>
+    </author>
+    <author>
+      <name>Peng Yu</name>
+    </author>
+    <author>
+      <name>Chenxu Wang</name>
+    </author>
+    <author>
+      <name>Han Qi</name>
+    </author>
+    <author>
+      <name>Ziyuan Zhou</name>
+    </author>
+    <author>
+      <name>Cheng Jin</name>
+    </author>
+    <author>
+      <name>Ying Wen</name>
+    </author>
+    <author>
+      <name>Xingcheng Xu</name>
+    </author>
+    <author>
+      <name>Shuyue Hu</name>
+    </author>
+    <author>
+      <name>Tianhang Zheng</name>
+    </author>
+    <author>
+      <name>Chaochao Lu</name>
+    </author>
+    <author>
+      <name>Qiaosheng Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.00891v1</id>
+    <title>CADIR: A Cross-Backend Editable Intermediate Representation for Agentic CAD Generation</title>
+    <updated>2026-08-01T23:07:08Z</updated>
+    <link href="https://arxiv.org/abs/2608.00891v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.00891v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models have made it possible to generate executable computer-aided design (CAD) programs from natural-language descriptions or images. However, existing methods represent modeling processes as backend-specific sequential scripts with implicit dependencies or as static geometry, making it difficult to simultaneously preserve construction history, stable topological references, and feature-level editability across different CAD systems. We present CADIR, an agent-friendly executable intermediate representation for CAD generation and cross-backend editing. Built on the OCCT geometry kernel via OCP, CADIR provides explicit, compositional modeling operations and fine-grained execution diagnostics. During program execution, CADIR records modeling operations, parameter dependencies, constraints, and topology selections in a construction graph. To enable reliable cross-backend reconstruction, we introduce Geometric Signature Matching, which identifies corresponding edges and faces despite parameter changes and backend differences, allowing adapters to reconstruct native editable feature histories in FreeCAD, SolidWorks, and Fusion 360. Building on this representation, we further propose a construction-graph retrieval method for text and image queries that supports both full-graph and subgraph retrieval, enabling agents to leverage complete models and modeling substructures. Extensive experiments demonstrate that CADIR achieves higher geometric fidelity and execution reliability than existing CAD representations, that construction-graph retrieval further improves model generation quality, and that cross-backend editing enables reliable model reconstruction and post-reconstruction editing across multiple CAD environments.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-01T23:07:08Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yu Liu</name>
+    </author>
+    <author>
+      <name>Jingzhe Ni</name>
+    </author>
+    <author>
+      <name>Yiming Chen</name>
+    </author>
+    <author>
+      <name>Junqi Huang</name>
+    </author>
+    <author>
+      <name>Ruofeng Tong</name>
+    </author>
+    <author>
+      <name>Min Tang</name>
+    </author>
+    <author>
+      <name>Peng Du</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.35789v1</id>
+    <title>Agent-Callable Feature Coverage: Measuring Software Readiness for AI Agents</title>
+    <updated>2026-07-18T22:23:02Z</updated>
+    <link href="https://arxiv.org/abs/2609.35789v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.35789v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI agents already operate graphical software through screenshot-based computer use, so the pressing question is not whether agents can operate software, but how well software supports them through structured, controllable channels. We formalize this need as the GUI-API parity principle: every capability available to human users through a graphical interface should also be accessible to agents through a structured, callable interface with appropriate safety metadata. To operationalize this principle, we introduce two contributions. First, Agent-Callable Feature Coverage (ACFC), a product-level readiness metric quantifying how much of a system's human-facing functionality agents can access and use. Second, Agent Readiness Conformance (ARC), a framework that scores each capability on three axes: Accessibility (can an agent call it), Discoverability (can an agent find and understand it), and Controllability (can an agent use it safely), each on a 0-3 scale, yielding a composite 0-9 readiness score. Drawing on the Richardson Maturity Model, ARC provides finer-grained assessment than binary coverage. In an empirical study of 30 software systems across five categories, ARC-based ACFC scores are substantially lower than Accessibility-only metrics would suggest: most systems achieve moderate API coverage but lag on agent-oriented documentation and safety governance. In a controlled testbed of ten deployed systems, API-only agents completed 56 of 58 tasks whose target capabilities were exposed through structured interfaces; a documentation ablation reduced this to 50 of 58, showing that Discoverability affects execution even among accessible capabilities, while inaccessible capabilities, included as negative controls, were not solved. These findings hold across three agent models, including Google's open-weights Gemma4 run locally.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-18T22:23:02Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Zedong Peng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.12911v1</id>
+    <title>Open-KNEAD: Knowledge-grounded Nutrition Estimation via Agentic Decomposition</title>
+    <updated>2026-07-14T15:48:25Z</updated>
+    <link href="https://arxiv.org/abs/2607.12911v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.12911v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multimodal Large Language Models (MLLMs) are increasingly used for dietary assessment from meal images, where retrieval-augmented grounding was shown to sharpen nutrition estimates. However, we find this premise no longer holds for current MLLMs. A modern MLLM's direct estimate now matches or surpasses the full retrieval pipeline. This raises a question: if retrieval no longer improves the overall estimate, can it still deliver the two things clinicians value, accurate portions and a traceable, item-by-item record? We pursue this while preserving what matters for clinical adoption: minimal user burden (a single, unannotated meal image), explainability (an auditable record), and privacy (locally hosted inference). We introduce Open-KNEAD, a knowledge-grounded agentic framework for meal nutrition estimation that is training-free and locally deployable. Each decomposed food item is grounded to a Food and Nutrient Database for Dietary Studies (FNDDS) code via selective, nutrient-aware retrieval, composing an auditable per-item record. Across two open MLLM families and three cuisines, Open-KNEAD improves portion estimates over both prior grounding methods and direct estimation in most backbone-dataset settings. An agent-internal recipe-prior step further recovers the invisible cooking-added energy that biases estimates on non-US cuisine. The advantage is largest on the dietitian-verified ACETADA dataset, where the local open agent surpasses the direct portion estimates of two frontier closed models by roughly $30\%$ and $53\%$, all while keeping every meal image on local hardware. We release the Open-KNEAD framework and its agent-ready FNDDS knowledge base.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-14T15:48:25Z</published>
+    <arxiv:comment>10 pages main paper, 5 pages supplementary</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Bruce Coburn</name>
+    </author>
+    <author>
+      <name>Jingbo Yue</name>
+    </author>
+    <author>
+      <name>Jinge Ma</name>
+    </author>
+    <author>
+      <name>Siddeshwar Raghavan</name>
+    </author>
+    <author>
+      <name>Gautham Vinod</name>
+    </author>
+    <author>
+      <name>Fengqing Zhu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.12056v1</id>
+    <title>Designing Agent-Ready Websites for AI Web Agents: A Framework for Machine Readability, Actionability, and Decision Reliability</title>
+    <updated>2026-07-13T18:16:58Z</updated>
+    <link href="https://arxiv.org/abs/2607.12056v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.12056v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Online shopping is increasingly shifting toward a model in which AI agents independently search for products, compare options, evaluate constraints, and carry out parts of the purchasing process for users. Website design must now support both human and agent-mediated interaction. This paper introduces the agent-ready website, a design framework for enhancing the readability, interpretability, verifiability, and actionability of e-commerce platforms for AI agents. Existing web design, SEO, and generative engine optimization (GEO) metrics do not fully assess a website's capacity for agent-mediated interaction. The proposed framework is structured around three dimensions agent interpretability, agent executability, and agent decision reliability supported by features such as machine readability, semantic clarity, agent actionability, and contextual decision-reliability signals. The framework is evaluated through a controlled experiment comparing a human-oriented baseline and an agent-ready version of an identical website prototype, with identical catalogs, pricing, stock, and shopping workflows. The evaluation involved five tasks, three browser-agent models (GPT-4.1, Gemini-2.5 Flash, and Grok-4 Fast), and 300 runs, measuring PASS,PARTIAL,FAIL outcomes, strict and functional success rates, error patterns, step counts, and token consumption. The agent-ready website achieved 134 PASS runs out of 150 versus 74 out of 150 for the baseline (strict success rates of 89.3% vs. 49.3%), with the largest gains in product detail extraction, comparison, and multi-constraint selection. It also reduced PARTIAL outcomes from 43 to 3 and lowered the average step count from 9.31 to 6.49. These results provide preliminary evidence that enhanced structural clarity, action cues, evidence signals, and temporal validity indicators can substantially improve the reliability and efficiency of AI browser agents.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-13T18:16:58Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Said Elnaffar</name>
+    </author>
+    <author>
+      <name>Farzad Rashidi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.09553v1</id>
+    <title>Writing Bug Reports for Software Repair Agents: What Information Matters Most?</title>
+    <updated>2026-07-10T16:00:57Z</updated>
+    <link href="https://arxiv.org/abs/2607.09553v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.09553v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Software development is increasingly moving toward agentic-first workflows. This includes AI agents responsible for generating initial fixes for submitted issue reports. In this setting, issue reports are no longer merely documentation for human maintainers; they become the primary task specification for the agent. However, little is known about how such reports should be written to maximize the agent's chances of producing a correct fix. We study what makes a bug report agent-ready. Starting from the SWE-bench Verified benchmark (i.e., a collection of 500 real repository issues with human-written gold patches and test suites for evaluating generated fixes) we manually classify each issue by change type (e.g., bug fix vs refactoring) and annotate each sentence with its information type, such as observed behavior, expected behavior, reproduction steps, localization cues, and suggested fixes. We focus on the 441 issues representing bug reports, and we run on them mini-swe-agent using three LLM backbones (i.e., GPT-5-mini, MiniMax M2.5, and Gemini 3 Flash). We then fit a binomial regression model to estimate the incremental association between each information type and agent success, controlling for confounding factors. Our results suggest that agentic-first reports benefit most from information that narrows the agent's search and repair space. Localization cues, such as references to affected code areas, are positively associated with successful repairs, while suggested fixes, expressed either in code or natural language, show some of the strongest positive associations with pass probability. An ablation study removing selected information types confirms that agents benefit less from information traditionally useful to humans, such as reproduction steps, and more from sentences that expose a repair direction, either through bug localization or a suggested fix.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-10T16:00:57Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Vincenzo Luigi Bruno</name>
+    </author>
+    <author>
+      <name>Alessandro Giagnorio</name>
+    </author>
+    <author>
+      <name>Daniele Bifolco</name>
+    </author>
+    <author>
+      <name>Leon Wienges</name>
+    </author>
+    <author>
+      <name>Massimiliano Di Penta</name>
+    </author>
+    <author>
+      <name>Gabriele Bavota</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.23449v1</id>
+    <title>AOHP: An Open-Source OS-Level Agent Harness for Personalized, Efficient and Secure Interaction</title>
+    <updated>2026-06-22T15:02:42Z</updated>
+    <link href="https://arxiv.org/abs/2606.23449v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.23449v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI agents are driving a new software paradigm, with the ability to autonomously call tools, extract information, manage memory, and complete tasks that span applications and data sources. Most existing end-user operating systems, however, are designed for application-centric workflows and offer little native support for AI agents. This mismatch limits the wider adoption of agents and leads to execution overhead and safety risks when running agents on conventional systems. While the concept of agent-native operating systems is emerging, the research community lacks an open testbed to explore the architectural primitives desired for agent-mediated interaction. We present AOHP (Android Open Harness Project), an OS-level agent harness built on the Android Open Source Project (AOSP). The core design principle of AOHP is to treat agents as first-class OS actors, enabling adaptive user interfaces and agent-friendly runtime environments. AOHP preserves the mature Android software and hardware ecosystem while introducing three agent-oriented system mechanisms: personalized service composition, efficient agent interfaces, and secure information flow. Based on preliminary experiments on challenging tasks covering key capabilities of OS agents, AOHP shows clear advantages in task completion (+21.12% completion rate), execution cost (-51.55% token cost), and security-policy compliance.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.OS" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-22T15:02:42Z</published>
+    <arxiv:comment>17 pages, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Shanhui Zhao</name>
+    </author>
+    <author>
+      <name>Jiacheng Liu</name>
+    </author>
+    <author>
+      <name>Guohong Liu</name>
+    </author>
+    <author>
+      <name>Jichao Yan</name>
+    </author>
+    <author>
+      <name>Jialei Ye</name>
+    </author>
+    <author>
+      <name>Yuhao Yang</name>
+    </author>
+    <author>
+      <name>Hao Wen</name>
+    </author>
+    <author>
+      <name>Shizuo Tian</name>
+    </author>
+    <author>
+      <name>Yizhen Yuan</name>
+    </author>
+    <author>
+      <name>Yuxuan Chen</name>
+    </author>
+    <author>
+      <name>Yunxin Liu</name>
+    </author>
+    <author>
+      <name>Ju Ren</name>
+    </author>
+    <author>
+      <name>Ya-Qin Zhang</name>
+    </author>
+    <author>
+      <name>Chao Huang</name>
+    </author>
+    <author>
+      <name>Yao Guo</name>
+    </author>
+    <author>
+      <name>Yuanchun Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.04323v2</id>
+    <title>LUCAS-MEGA: A Large-Scale Multimodal Dataset for Representation Learning in Soil-Environment Systems</title>
+    <updated>2026-05-08T14:33:51Z</updated>
+    <link href="https://arxiv.org/abs/2605.04323v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.04323v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Understanding soil is fundamental to agriculture, carbon cycling, and environmental sustainability, yet progress is limited by fragmented and heterogeneous datasets that constrain modeling to small-scale predictive settings rather than high-dimensional representation learning. We introduce LUCAS-MEGA, a large-scale multimodal dataset constructed through systematic data fusion of European soil-environment observations, with the LUCAS survey as its backbone. The fused dataset comprises over 70,000 samples and more than 1,000 features spanning physical, chemical, environmental, biological, and visual attributes, aggregated from 68 source datasets. To enable integration at scale, we develop SoilFuser, a multi-agent, human-in-the-loop data fusion pipeline that standardizes heterogeneous data formats and measurement protocols, resolves inconsistencies and invalid entries (e.g., unit inconsistencies, codebook mismatches, and erroneous values), incorporates natural language annotations, and harmonizes multimodal attributes and metadata into a unified, machine learning-ready feature space. The resulting dataset captures key characteristics of real-world soil observations, including multimodality, uneven feature coverage, and heterogeneous uncertainty. To demonstrate the usability of LUCAS-MEGA for data-driven modeling, we pretrain a multimodal tabular transformer (SoilFormer) using a self-supervised objective based on feature masking, achieving stable training, strong predictive performance, and representations that support uncertainty-aware prediction. We further show that the learned representations recover relationships consistent with established soil processes. LUCAS-MEGA is released with open access and is accompanied by composable, agent-friendly APIs that support structured querying and data-driven workflows.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-05T21:57:44Z</published>
+    <arxiv:comment>27 pages, 7 figures, 1 table</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Kuangdai Leng</name>
+    </author>
+    <author>
+      <name>Simon Jeffery</name>
+    </author>
+    <author>
+      <name>Panos Panagos</name>
+    </author>
+    <author>
+      <name>Tarje Nissen-Meyer</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.16297v1</id>
+    <title>Task-Level AI Readiness Assessment for Business Process Management:The T-IPO Model and LARA Matrix in Financial-Services IT Operations</title>
+    <updated>2026-04-16T10:10:19Z</updated>
+    <link href="https://arxiv.org/abs/2605.16297v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.16297v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Which tasks inside an enterprise workflow can a large-language-model agent reliably handle, and under what conditions? Most business process modeling frameworks still answer this at the activity level, even though a single activity can bundle work of radically different difficulty. This paper takes the analysis a step smaller. We describe two design artifacts developed in a financial-services IT setting: T-IPO, which represents each task as an eight-element tuple, and LARA (LLM Agent Readiness Assessment), a five-dimension rubric that scores a task's readiness for agent substitution. Compliance Sensitivity carries $1.5\times$ weight, a value we fixed through a three-round Delphi study and cross-checked with AHP. The rubric produces four levels, L1 to L4, and applies a floor rule so that a task with maximum compliance load cannot be classified below L3 no matter what the other scores say. Both artifacts sit inside a larger methodology (PARTIS) that we map onto BWW ontology in Section 3. We evaluate the instruments across 127 tasks. Inter-rater agreement reaches Fleiss' $κ= 0.80$; a replication at three further institutions returns $κ= 0.73$. A controlled comparison against activity-level assessment suggests, though does not prove, an improvement in predictive utility at the task level. Pilot deployment of 120 task instances confirms that auto-completion decays monotonically from $95\%$ at L1 through about $70\%$ at L2 to about $40\%$ at L3. Exploratory factor analysis points to a two-factor structure: task readiness seems to be determined jointly by cognitive-execution complexity and governance-compliance intensity. We close with a recalibration procedure (LARA-TCA) so the rubric can keep pace with evolving LLM capabilities.</summary>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-16T10:10:19Z</published>
+    <arxiv:comment>19 pages, 7 figures, 8 tables, 50 references. A shortened workshop version has been submitted to the BPM 2026 Workshop. This preprint is the complete version</arxiv:comment>
+    <arxiv:primary_category term="cs.CY"/>
+    <author>
+      <name>Mingjun Li</name>
+    </author>
+    <author>
+      <name>Xiaojun Ye</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.29322v1</id>
+    <title>VACP: Visual Analytics Context Protocol</title>
+    <updated>2026-03-31T06:45:31Z</updated>
+    <link href="https://arxiv.org/abs/2603.29322v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.29322v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rise of AI agents introduces a fundamental shift in Visual Analytics (VA), in which agents act as a new user group. Current agentic approaches - based on computer vision and raw DOM access - fail to perform VA tasks accurately and efficiently. This paper introduces the Visual Analytics Context Protocol (VACP), a framework designed to make VA applications "agent-ready" that extends generic protocols by explicitly exposing application state, available interactions, and mechanisms for direct execution. To support our context protocol, we contribute a formal specification of AI agent requirements and knowledge representations in VA interfaces. We instantiate VACP as a library compatible with major visualization grammars and web frameworks, enabling augmentation of existing systems and the development of new ones. Our evaluation across representative VA tasks demonstrates that VACP-enabled agents achieve higher success rates in interface interpretation and execution compared to current agentic approaches, while reducing token consumption and latency. VACP closes the gap between human-centric VA interfaces and machine perceivability, ensuring agents can reliably act as collaborative users in VA systems.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-31T06:45:31Z</published>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Tobias Stähle</name>
+    </author>
+    <author>
+      <name>Péter Ferenc Gyarmati</name>
+    </author>
+    <author>
+      <name>Thilo Spinner</name>
+    </author>
+    <author>
+      <name>Rita Sevastjanova</name>
+    </author>
+    <author>
+      <name>Dominik Moritz</name>
+    </author>
+    <author>
+      <name>Mennatallah El-Assady</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.20075v2</id>
+    <title>Agentic Harness for Real-World Compilers</title>
+    <updated>2026-07-31T09:13:59Z</updated>
+    <link href="https://arxiv.org/abs/2603.20075v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.20075v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Compilers are critical to modern computing, yet fixing compiler bugs is difficult. While recent large language model (LLM) advancements enable automated bug repair, compiler bugs pose unique challenges due to their complexity, deep cross-domain expertise requirements, and sparse, non-descriptive bug reports, necessitating compiler-specific harnesses. To bridge the gap, we introduce llvm-harness, the first harness designed to assist LLM agents in understanding and fixing compiler bugs. Our current focus is on the middle end of LLVM, one of the most widely used compiler infrastructures. Central to llvm-harness are agent-friendly LLVM tools, a benchmark llvm-bench of 334 reproducible LLVM middle-end bugs, and a tailored mini agent llvm-autofix-mini for fixing LLVM middle-end bugs automatically. We evaluate five frontier models and find that they exhibit a performance decline when tackling compiler bugs with the state-of-the-art agent. With llvm-harness' enhancement, their performance improves by 62%. Our specialized mini agent llvm-autofix-mini further outperforms the llvm-harness-enhanced state-of-the-art by 22%. This emphasizes the necessity for specialized harnesses like ours to assist LLMs in compiler engineering tasks. Despite promising results, our expert review also reveals several open challenges that remain when applying LLMs for compiler engineering tasks. GitHub: https://github.com/dtcxzyw/llvm-harness</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-20T15:56:43Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Yingwei Zheng</name>
+    </author>
+    <author>
+      <name>Cong Li</name>
+    </author>
+    <author>
+      <name>Shaohua Li</name>
+    </author>
+    <author>
+      <name>Yuqun Zhang</name>
+    </author>
+    <author>
+      <name>Zhendong Su</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.11082v1</id>
+    <title>Quality-Driven Agentic Reasoning for LLM-Assisted Software Design: Questions-of-Thoughts (QoT) as a Time-Series Self-QA Chain</title>
+    <updated>2026-03-10T23:49:09Z</updated>
+    <link href="https://arxiv.org/abs/2603.11082v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.11082v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances in large language models (LLMs) have accelerated AI-assisted software development, yet practical deployment remains constrained by incomplete implementations, weak modularization, and inconsistent security practices. We introduce Questions-of-Thoughts (QoT), a quality-driven inference-time scaffold that turns a user goal into (i) an ordered sequence of engineering steps and (ii) stepwise self-questioning to verify constraints and reduce omission errors, while maintaining a lightweight reasoning record that stabilizes subsequent design decisions.
+  We evaluate QoT across three representative backend engineering domains: API Design, Data Communication, and File Systems. Each task requires multi-module decomposition and exposes standard failure modes in LLM-generated systems. To enable data-driven comparison, we score generated artifacts using an ISO/IEC-inspired quality rubric that measures Scalability, Completeness, Modularity, and Security. We report domain-wise gains as the change in total quality score, defined as the QoT score minus the NoQoT score. Results show capacity-dependent improvements: QoT yields consistent quality improvements for larger models and more complex domains, while smaller models may exhibit trade-offs under tight context and planning budgets.
+  We release an open artifact with prompts, scoring guidelines, raw generations, and scripts that reproduce the reported tables and figures to support applied AI and data analytics research.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-10T23:49:09Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Yen-Ku Liu</name>
+    </author>
+    <author>
+      <name>Yun-Cheng Tsai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.17442v1</id>
+    <title>WarpRec: Unifying Academic Rigor and Industrial Scale for Responsible, Reproducible, and Efficient Recommendation</title>
+    <updated>2026-02-19T15:09:04Z</updated>
+    <link href="https://arxiv.org/abs/2602.17442v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.17442v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Innovation in Recommender Systems is currently impeded by a fractured ecosystem, where researchers must choose between the ease of in-memory experimentation and the costly, complex rewriting required for distributed industrial engines. To bridge this gap, we present WarpRec, a high-performance framework that eliminates this trade-off through a novel, backend-agnostic architecture. It includes 50+ state-of-the-art algorithms, 40 metrics, and 19 filtering and splitting strategies that seamlessly transition from local execution to distributed training and optimization. The framework enforces ecological responsibility by integrating CodeCarbon for real-time energy tracking, showing that scalability need not come at the cost of scientific integrity or sustainability. Furthermore, WarpRec anticipates the shift toward Agentic AI, leading Recommender Systems to evolve from static ranking engines into interactive tools within the Generative AI ecosystem. In summary, WarpRec not only bridges the gap between academia and industry but also can serve as the architectural backbone for the next generation of sustainable, agent-ready Recommender Systems. Code is available at https://github.com/sisinflab/warprec/</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-19T15:09:04Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Marco Avolio</name>
+    </author>
+    <author>
+      <name>Potito Aghilar</name>
+    </author>
+    <author>
+      <name>Sabino Roccotelli</name>
+    </author>
+    <author>
+      <name>Vito Walter Anelli</name>
+    </author>
+    <author>
+      <name>Chiara Mallamaci</name>
+    </author>
+    <author>
+      <name>Vincenzo Paparella</name>
+    </author>
+    <author>
+      <name>Marco Valentini</name>
+    </author>
+    <author>
+      <name>Alejandro Bellogín</name>
+    </author>
+    <author>
+      <name>Michelantonio Trizio</name>
+    </author>
+    <author>
+      <name>Joseph Trotta</name>
+    </author>
+    <author>
+      <name>Antonio Ferrara</name>
+    </author>
+    <author>
+      <name>Tommaso Di Noia</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.06789v2</id>
+    <title>MemGovern: Enhancing Code Agents through Learning from Governed Human Experiences</title>
+    <updated>2026-01-13T14:48:24Z</updated>
+    <link href="https://arxiv.org/abs/2601.06789v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.06789v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While autonomous software engineering (SWE) agents are reshaping programming paradigms, they currently suffer from a "closed-world" limitation: they attempt to fix bugs from scratch or solely using local context, ignoring the immense historical human experience available on platforms like GitHub. Accessing this open-world experience is hindered by the unstructured and fragmented nature of real-world issue-tracking data. In this paper, we introduce MemGovern, a framework designed to govern and transform raw GitHub data into actionable experiential memory for agents. MemGovern employs experience governance to convert human experience into agent-friendly experience cards and introduces an agentic experience search strategy that enables logic-driven retrieval of human expertise. By producing 135K governed experience cards, MemGovern achieves a significant performance boost, improving resolution rates on the SWE-bench Verified by 4.65%. As a plug-in approach, MemGovern provides a solution for agent-friendly memory infrastructure.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-11T06:41:26Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Qihao Wang</name>
+    </author>
+    <author>
+      <name>Ziming Cheng</name>
+    </author>
+    <author>
+      <name>Shuo Zhang</name>
+    </author>
+    <author>
+      <name>Fan Liu</name>
+    </author>
+    <author>
+      <name>Rui Xu</name>
+    </author>
+    <author>
+      <name>Heng Lian</name>
+    </author>
+    <author>
+      <name>Kunyi Wang</name>
+    </author>
+    <author>
+      <name>Xiaoming Yu</name>
+    </author>
+    <author>
+      <name>Jianghao Yin</name>
+    </author>
+    <author>
+      <name>Sen Hu</name>
+    </author>
+    <author>
+      <name>Yue Hu</name>
+    </author>
+    <author>
+      <name>Shaolei Zhang</name>
+    </author>
+    <author>
+      <name>Yanbing Liu</name>
+    </author>
+    <author>
+      <name>Ronghao Chen</name>
+    </author>
+    <author>
+      <name>Huacan Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.21766v1</id>
+    <title>UniLabOS: An AI-Native Operating System for Autonomous Laboratories</title>
+    <updated>2025-12-25T19:24:05Z</updated>
+    <link href="https://arxiv.org/abs/2512.21766v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.21766v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Autonomous laboratories promise to accelerate discovery by coupling learning algorithms with robotic experimentation, yet adoption remains limited by fragmented software that separates high-level planning from low-level execution. Here we present UniLabOS, an AI-native operating system for autonomous laboratories that bridges digital decision-making and embodied experimentation through typed, stateful abstractions and transactional safeguards. UniLabOS unifies laboratory elements via an Action/Resource/Action&amp;Resource (A/R/A&amp;R) model, represents laboratory structure with a dual-topology of logical ownership and physical connectivity, and reconciles digital state with material motion using a transactional CRUTD protocol. Built on a distributed edge-cloud architecture with decentralized discovery, UniLabOS enables protocol mobility across reconfigurable topologies while supporting human-in-the-loop governance. We demonstrate the system in four real-world settings -- a liquid-handling workstation, a modular organic synthesis platform, a distributed electrolyte foundry, and a decentralized computation-intensive closed-loop system -- showing robust orchestration across heterogeneous instruments and multi-node coordination. UniLabOS establishes a scalable foundation for agent-ready, reproducible, and provenance-aware autonomous experimentation.</summary>
+    <category term="cs.CE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-25T19:24:05Z</published>
+    <arxiv:comment>18 pages, 9 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CE"/>
+    <author>
+      <name>Jing Gao</name>
+    </author>
+    <author>
+      <name>Junhan Chang</name>
+    </author>
+    <author>
+      <name>Haohui Que</name>
+    </author>
+    <author>
+      <name>Yanfei Xiong</name>
+    </author>
+    <author>
+      <name>Shixiang Zhang</name>
+    </author>
+    <author>
+      <name>Xianwei Qi</name>
+    </author>
+    <author>
+      <name>Zhen Liu</name>
+    </author>
+    <author>
+      <name>Jun-Jie Wang</name>
+    </author>
+    <author>
+      <name>Qianjun Ding</name>
+    </author>
+    <author>
+      <name>Xinyu Li</name>
+    </author>
+    <author>
+      <name>Ziwei Pan</name>
+    </author>
+    <author>
+      <name>Qiming Xie</name>
+    </author>
+    <author>
+      <name>Zhuang Yan</name>
+    </author>
+    <author>
+      <name>Junchi Yan</name>
+    </author>
+    <author>
+      <name>Linfeng Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.20469v1</id>
+    <title>Bohrium + SciMaster: Building the Infrastructure and Ecosystem for Agentic Science at Scale</title>
+    <updated>2025-12-23T16:04:41Z</updated>
+    <link href="https://arxiv.org/abs/2512.20469v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.20469v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI agents are emerging as a practical way to run multi-step scientific workflows that interleave reasoning with tool use and verification, pointing to a shift from isolated AI-assisted steps toward \emph{agentic science at scale}. This shift is increasingly feasible, as scientific tools and models can be invoked through stable interfaces and verified with recorded execution traces, and increasingly necessary, as AI accelerates scientific output and stresses the peer-review and publication pipeline, raising the bar for traceability and credible evaluation.
+  However, scaling agentic science remains difficult: workflows are hard to observe and reproduce; many tools and laboratory systems are not agent-ready; execution is hard to trace and govern; and prototype AI Scientist systems are often bespoke, limiting reuse and systematic improvement from real workflow signals.
+  We argue that scaling agentic science requires an infrastructure-and-ecosystem approach, instantiated in Bohrium+SciMaster. Bohrium acts as a managed, traceable hub for AI4S assets -- akin to a HuggingFace of AI for Science -- that turns diverse scientific data, software, compute, and laboratory systems into agent-ready capabilities. SciMaster orchestrates these capabilities into long-horizon scientific workflows, on which scientific agents can be composed and executed. Between infrastructure and orchestration, a \emph{scientific intelligence substrate} organizes reusable models, knowledge, and components into executable building blocks for workflow reasoning and action, enabling composition, auditability, and improvement through use.
+  We demonstrate this stack with eleven representative master agents in real workflows, achieving orders-of-magnitude reductions in end-to-end scientific cycle time and generating execution-grounded signals from real workloads at multi-million scale.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-23T16:04:41Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Linfeng Zhang</name>
+    </author>
+    <author>
+      <name>Siheng Chen</name>
+    </author>
+    <author>
+      <name>Yuzhu Cai</name>
+    </author>
+    <author>
+      <name>Jingyi Chai</name>
+    </author>
+    <author>
+      <name>Junhan Chang</name>
+    </author>
+    <author>
+      <name>Kun Chen</name>
+    </author>
+    <author>
+      <name>Zhi X. Chen</name>
+    </author>
+    <author>
+      <name>Zhaohan Ding</name>
+    </author>
+    <author>
+      <name>Yuwen Du</name>
+    </author>
+    <author>
+      <name>Yuanpeng Gao</name>
+    </author>
+    <author>
+      <name>Yuan Gao</name>
+    </author>
+    <author>
+      <name>Jing Gao</name>
+    </author>
+    <author>
+      <name>Zhifeng Gao</name>
+    </author>
+    <author>
+      <name>Qiangqiang Gu</name>
+    </author>
+    <author>
+      <name>Yanhui Hong</name>
+    </author>
+    <author>
+      <name>Yuan Huang</name>
+    </author>
+    <author>
+      <name>Xi Fang</name>
+    </author>
+    <author>
+      <name>Xiaohong Ji</name>
+    </author>
+    <author>
+      <name>Guolin Ke</name>
+    </author>
+    <author>
+      <name>Zixing Lei</name>
+    </author>
+    <author>
+      <name>Xinyu Li</name>
+    </author>
+    <author>
+      <name>Yongge Li</name>
+    </author>
+    <author>
+      <name>Ruoxue Liao</name>
+    </author>
+    <author>
+      <name>Hang Lin</name>
+    </author>
+    <author>
+      <name>Xiaolu Lin</name>
+    </author>
+    <author>
+      <name>Yuxiang Liu</name>
+    </author>
+    <author>
+      <name>Xinzijian Liu</name>
+    </author>
+    <author>
+      <name>Zexi Liu</name>
+    </author>
+    <author>
+      <name>Jintan Lu</name>
+    </author>
+    <author>
+      <name>Tingjia Miao</name>
+    </author>
+    <author>
+      <name>Haohui Que</name>
+    </author>
+    <author>
+      <name>Weijie Sun</name>
+    </author>
+    <author>
+      <name>Yanfeng Wang</name>
+    </author>
+    <author>
+      <name>Bingyang Wu</name>
+    </author>
+    <author>
+      <name>Tianju Xue</name>
+    </author>
+    <author>
+      <name>Rui Ye</name>
+    </author>
+    <author>
+      <name>Jinzhe Zeng</name>
+    </author>
+    <author>
+      <name>Duo Zhang</name>
+    </author>
+    <author>
+      <name>Jiahui Zhang</name>
+    </author>
+    <author>
+      <name>Linfeng Zhang</name>
+    </author>
+    <author>
+      <name>Tianhan Zhang</name>
+    </author>
+    <author>
+      <name>Wenchang Zhang</name>
+    </author>
+    <author>
+      <name>Yuzhi Zhang</name>
+    </author>
+    <author>
+      <name>Zezhong Zhang</name>
+    </author>
+    <author>
+      <name>Hang Zheng</name>
+    </author>
+    <author>
+      <name>Hui Zhou</name>
+    </author>
+    <author>
+      <name>Tong Zhu</name>
+    </author>
+    <author>
+      <name>Xinyu Zhu</name>
+    </author>
+    <author>
+      <name>Qingguo Zhou</name>
+    </author>
+    <author>
+      <name>Weinan E</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.19537v1</id>
+    <title>Event Extraction in Large Language Model</title>
+    <updated>2025-12-22T16:22:14Z</updated>
+    <link href="https://arxiv.org/abs/2512.19537v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.19537v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) and multimodal LLMs are changing event extraction (EE): prompting and generation can often produce structured outputs in zero shot or few shot settings. Yet LLM based pipelines face deployment gaps, including hallucinations under weak constraints, fragile temporal and causal linking over long contexts and across documents, and limited long horizon knowledge management within a bounded context window. We argue that EE should be viewed as a system component that provides a cognitive scaffold for LLM centered solutions. Event schemas and slot constraints create interfaces for grounding and verification; event centric structures act as controlled intermediate representations for stepwise reasoning; event links support relation aware retrieval with graph based RAG; and event stores offer updatable episodic and agent memory beyond the context window. This survey covers EE in text and multimodal settings, organizing tasks and taxonomy, tracing method evolution from rule based and neural models to instruction driven and generative frameworks, and summarizing formulations, decoding strategies, architectures, representations, datasets, and evaluation. We also review cross lingual, low resource, and domain specific settings, and highlight open challenges and future directions for reliable event centric systems. Finally, we outline open challenges and future directions that are central to the LLM era, aiming to evolve EE from static extraction into a structurally reliable, agent ready perception and memory layer for open world systems.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-22T16:22:14Z</published>
+    <arxiv:comment>38 pages, 9 Figures, 5 Tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Bobo Li</name>
+    </author>
+    <author>
+      <name>Xudong Han</name>
+    </author>
+    <author>
+      <name>Jiang Liu</name>
+    </author>
+    <author>
+      <name>Yuzhe Ding</name>
+    </author>
+    <author>
+      <name>Liqiang Jing</name>
+    </author>
+    <author>
+      <name>Zhaoqi Zhang</name>
+    </author>
+    <author>
+      <name>Jinheng Li</name>
+    </author>
+    <author>
+      <name>Xinya Du</name>
+    </author>
+    <author>
+      <name>Fei Li</name>
+    </author>
+    <author>
+      <name>Meishan Zhang</name>
+    </author>
+    <author>
+      <name>Min Zhang</name>
+    </author>
+    <author>
+      <name>Aixin Sun</name>
+    </author>
+    <author>
+      <name>Philip S. Yu</name>
+    </author>
+    <author>
+      <name>Hao Fei</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.23124v5</id>
+    <title>Non-Collaborative User Simulators for Tool Agents</title>
+    <updated>2026-03-04T10:13:48Z</updated>
+    <link href="https://arxiv.org/abs/2509.23124v5" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.23124v5" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool agents interact with users through multi-turn dialogues to accomplish various tasks. Recent studies have adopted user simulation methods to develop these agents in multi-turn settings. However, existing user simulators tend to be agent-friendly, exhibiting only cooperative behaviors, failing to train and test agents against non-collaborative users in the real world. We propose a novel user simulator architecture that simulates four categories of non-collaborative behaviors: requesting unavailable services, digressing into tangential conversations, expressing impatience, and providing incomplete utterances. Our user simulator can simulate challenging and natural non-collaborative behaviors while reliably delivering all intents and information necessary to accomplish the task. Our experiments on MultiWOZ and τ-bench reveal significant performance degradation in state-of-the-art tool agents when encountering non-collaborative users, as well as agent weaknesses under each non-collaborative condition such as escalated hallucinations and dialogue breakdowns. Our findings point to the need for methods that can improve agent robustness to the wide range of user behaviors encountered in deployment. We release the extensible simulation framework to help the community develop and stress-test tool agents under realistic conditions within their own service domains. Our code is available at https://github.com/holi-lab/NCUser.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-27T05:06:17Z</published>
+    <arxiv:comment>Accepted to ICLR 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Jeonghoon Shim</name>
+    </author>
+    <author>
+      <name>Woojung Song</name>
+    </author>
+    <author>
+      <name>Cheyon Jin</name>
+    </author>
+    <author>
+      <name>Seungwon KooK</name>
+    </author>
+    <author>
+      <name>Yohan Jo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.04108v4</id>
+    <title>XARP Tools: An Extended Reality Platform for Humans and AI Agents</title>
+    <updated>2026-05-21T03:25:16Z</updated>
+    <link href="https://arxiv.org/abs/2508.04108v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.04108v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Building XR-AI research prototypes requires navigating two largely separate ecosystems. Mainstream XR development relies on C#/C++ and game engines, while AI development is centered on Python. This toolchain fragmentation slows down contributions to human-AI spatial interaction research. To broaden access to XR development in the Python ecosystem, we present XARP (XR Agent-ready Remote Procedures), a toolkit for rapid XR-AI prototyping in Python. XARP application logic runs on a Python server and controls a Unity client through WebSocket messages. This architecture enables compatibility with multiple client platforms and live reloading of application code without client redeployment. XARP is available to humans as a library and to AI agents as callable tools and through Model Context Protocol. We designed XARP through formative case studies and refined it through an early acceptance evaluation with 24 XR and AI developers and a six-week longitudinal study with two developers building an independent research project. Potential users expected the toolkit to improve their performance and facilitate development. Sustained use confirmed faster iteration and easier setup compared to conventional XR workflows, with asset-intensive and performance-critical projects emerging as the clearest limitations. Technical benchmarks show that hand and head tracking data streaming was close to the device refresh rate of 72 FPS, and that AI agents using XARP consumed 19% fewer tokens than those writing equivalent C# Unity code. Beyond broadening access to XR development, XARP reduces engineering friction in spatial computing research and opens new pathways for AI agents to participate in XR application development. XARP is open source and available at https://github.com/hal-ucsb/xarp.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-06T06:09:34Z</published>
+    <arxiv:comment>Accepted at Proceedings of the ACM on Human-Computer Interaction EICS</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Arthur Caetano</name>
+    </author>
+    <author>
+      <name>Radha Kumaran</name>
+    </author>
+    <author>
+      <name>Kelvin Jou</name>
+    </author>
+    <author>
+      <name>Tobias Höllerer</name>
+    </author>
+    <author>
+      <name>Misha Sra</name>
+    </author>
+    <arxiv:doi>10.1145/3816762</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3816762" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.15003v1</id>
+    <title>The Rise of AI Teammates in Software Engineering (SE) 3.0: How Autonomous Coding Agents Are Reshaping Software Engineering</title>
+    <updated>2025-07-20T15:15:58Z</updated>
+    <link href="https://arxiv.org/abs/2507.15003v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.15003v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The future of software engineering--SE 3.0--is unfolding with the rise of AI teammates: autonomous, goal-driven systems collaborating with human developers. Among these, autonomous coding agents are especially transformative, now actively initiating, reviewing, and evolving code at scale. This paper introduces AIDev, the first large-scale dataset capturing how such agents operate in the wild. Spanning over 456,000 pull requests by five leading agents--OpenAI Codex, Devin, GitHub Copilot, Cursor, and Claude Code--across 61,000 repositories and 47,000 developers, AIDev provides an unprecedented empirical foundation for studying autonomous teammates in software development.
+  Unlike prior work that has largely theorized the rise of AI-native software engineering, AIDev offers structured, open data to support research in benchmarking, agent readiness, optimization, collaboration modeling, and AI governance. The dataset includes rich metadata on PRs, authorship, review timelines, code changes, and integration outcomes--enabling exploration beyond synthetic benchmarks like SWE-bench. For instance, although agents often outperform humans in speed, their PRs are accepted less frequently, revealing a trust and utility gap. Furthermore, while agents accelerate code submission--one developer submitted as many PRs in three days as they had in three years--these are structurally simpler (via code complexity metrics).
+  We envision AIDev as a living resource: extensible, analyzable, and ready for the SE and AI communities. Grounding SE 3.0 in real-world evidence, AIDev enables a new generation of research into AI-native workflows and supports building the next wave of symbiotic human-AI collaboration. The dataset is publicly available at https://github.com/SAILResearch/AI_Teammates_in_SE3.
+  &gt; AI Agent, Agentic AI, Coding Agent, Agentic Coding, Software Engineering Agent</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-07-20T15:15:58Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Hao Li</name>
+    </author>
+    <author>
+      <name>Haoxiang Zhang</name>
+    </author>
+    <author>
+      <name>Ahmed E. Hassan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.20640v1</id>
+    <title>IndustryEQA: Pushing the Frontiers of Embodied Question Answering in Industrial Scenarios</title>
+    <updated>2025-05-27T02:36:17Z</updated>
+    <link href="https://arxiv.org/abs/2505.20640v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.20640v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing Embodied Question Answering (EQA) benchmarks primarily focus on household environments, often overlooking safety-critical aspects and reasoning processes pertinent to industrial settings. This drawback limits the evaluation of agent readiness for real-world industrial applications. To bridge this, we introduce IndustryEQA, the first benchmark dedicated to evaluating embodied agent capabilities within safety-critical warehouse scenarios. Built upon the NVIDIA Isaac Sim platform, IndustryEQA provides high-fidelity episodic memory videos featuring diverse industrial assets, dynamic human agents, and carefully designed hazardous situations inspired by real-world safety guidelines. The benchmark includes rich annotations covering six categories: equipment safety, human safety, object recognition, attribute recognition, temporal understanding, and spatial understanding. Besides, it also provides extra reasoning evaluation based on these categories. Specifically, it comprises 971 question-answer pairs generated from small warehouse and 373 pairs from large ones, incorporating scenarios with and without human. We further propose a comprehensive evaluation framework, including various baseline models, to assess their general perception and reasoning abilities in industrial environments. IndustryEQA aims to steer EQA research towards developing more robust, safety-aware, and practically applicable embodied agents for complex industrial environments. Benchmark and codes are available.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-27T02:36:17Z</published>
+    <arxiv:comment>v1.0</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Yifan Li</name>
+    </author>
+    <author>
+      <name>Yuhang Chen</name>
+    </author>
+    <author>
+      <name>Anh Dao</name>
+    </author>
+    <author>
+      <name>Lichi Li</name>
+    </author>
+    <author>
+      <name>Zhongyi Cai</name>
+    </author>
+    <author>
+      <name>Zhen Tan</name>
+    </author>
+    <author>
+      <name>Tianlong Chen</name>
+    </author>
+    <author>
+      <name>Yu Kong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2504.10071v1</id>
+    <title>Pay Attention to What and Where? Interpretable Feature Extractor in Vision-based Deep Reinforcement Learning</title>
+    <updated>2025-04-14T10:18:34Z</updated>
+    <link href="https://arxiv.org/abs/2504.10071v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.10071v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Current approaches in Explainable Deep Reinforcement Learning have limitations in which the attention mask has a displacement with the objects in visual input. This work addresses a spatial problem within traditional Convolutional Neural Networks (CNNs). We propose the Interpretable Feature Extractor (IFE) architecture, aimed at generating an accurate attention mask to illustrate both "what" and "where" the agent concentrates on in the spatial domain. Our design incorporates a Human-Understandable Encoding module to generate a fully interpretable attention mask, followed by an Agent-Friendly Encoding module to enhance the agent's learning efficiency. These two components together form the Interpretable Feature Extractor for vision-based deep reinforcement learning to enable the model's interpretability. The resulting attention mask is consistent, highly understandable by humans, accurate in spatial dimension, and effectively highlights important objects or locations in visual input. The Interpretable Feature Extractor is integrated into the Fast and Data-efficient Rainbow framework, and evaluated on 57 ATARI games to show the effectiveness of the proposed approach on Spatial Preservation, Interpretability, and Data-efficiency. Finally, we showcase the versatility of our approach by incorporating the IFE into the Asynchronous Advantage Actor-Critic Model.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-14T10:18:34Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tien Pham</name>
+    </author>
+    <author>
+      <name>Angelo Cangelosi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.17443v1</id>
+    <title>AI Agentic workflows and Enterprise APIs: Adapting API architectures for the age of AI agents</title>
+    <updated>2025-01-22T05:55:16Z</updated>
+    <link href="https://arxiv.org/abs/2502.17443v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.17443v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rapid advancement of Generative AI has catalyzed the emergence of autonomous AI agents, presenting unprecedented challenges for enterprise computing infrastructures. Current enterprise API architectures are predominantly designed for human-driven, predefined interaction patterns, rendering them ill-equipped to support intelligent agents' dynamic, goal-oriented behaviors. This research systematically examines the architectural adaptations for enterprise APIs to support AI agentic workflows effectively. Through a comprehensive analysis of existing API design paradigms, agent interaction models, and emerging technological constraints, the paper develops a strategic framework for API transformation. The study employs a mixed-method approach, combining theoretical modeling, comparative analysis, and exploratory design principles to address critical challenges in standardization, performance, and intelligent interaction. The proposed research contributes a conceptual model for next-generation enterprise APIs that can seamlessly integrate with autonomous AI agent ecosystems, offering significant implications for future enterprise computing architectures.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-01-22T05:55:16Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Vaibhav Tupe</name>
+    </author>
+    <author>
+      <name>Shrinath Thube</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2412.18293v3</id>
+    <title>MineStudio: A Streamlined Package for Minecraft AI Agent Development</title>
+    <updated>2025-05-29T05:36:12Z</updated>
+    <link href="https://arxiv.org/abs/2412.18293v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.18293v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Minecraft's complexity and diversity as an open world make it a perfect environment to test if agents can learn, adapt, and tackle a variety of unscripted tasks. However, the development and validation of novel agents in this setting continue to face significant engineering challenges. This paper presents MineStudio, an open-source software package designed to streamline the development of autonomous agents in Minecraft. MineStudio represents the first comprehensive integration of seven critical engineering components: simulator, data, model, offline pre-training, online fine-tuning, inference, and benchmark, thereby allowing users to concentrate their efforts on algorithm innovation. We provide a user-friendly API design accompanied by comprehensive documentation and tutorials. Our project is released at https://github.com/CraftJarvis/MineStudio.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-12-24T09:01:43Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Shaofei Cai</name>
+    </author>
+    <author>
+      <name>Zhancun Mu</name>
+    </author>
+    <author>
+      <name>Kaichen He</name>
+    </author>
+    <author>
+      <name>Bowei Zhang</name>
+    </author>
+    <author>
+      <name>Xinyue Zheng</name>
+    </author>
+    <author>
+      <name>Anji Liu</name>
+    </author>
+    <author>
+      <name>Yitao Liang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2411.05683v1</id>
+    <title>Data-Driven Distributed Common Operational Picture from Heterogeneous Platforms using Multi-Agent Reinforcement Learning</title>
+    <updated>2024-11-08T16:31:22Z</updated>
+    <link href="https://arxiv.org/abs/2411.05683v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2411.05683v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The integration of unmanned platforms equipped with advanced sensors promises to enhance situational awareness and mitigate the "fog of war" in military operations. However, managing the vast influx of data from these platforms poses a significant challenge for Command and Control (C2) systems. This study presents a novel multi-agent learning framework to address this challenge. Our method enables autonomous and secure communication between agents and humans, which in turn enables real-time formation of an interpretable Common Operational Picture (COP). Each agent encodes its perceptions and actions into compact vectors, which are then transmitted, received and decoded to form a COP encompassing the current state of all agents (friendly and enemy) on the battlefield. Using Deep Reinforcement Learning (DRL), we jointly train COP models and agent's action selection policies. We demonstrate resilience to degraded conditions such as denied GPS and disrupted communications. Experimental validation is performed in the Starcraft-2 simulation environment to evaluate the precision of the COPs and robustness of policies. We report less than 5% error in COPs and policies resilient to various adversarial conditions. In summary, our contributions include a method for autonomous COP formation, increased resilience through distributed prediction, and joint training of COP models and multi-agent RL policies. This research advances adaptive and resilient C2, facilitating effective control of heterogeneous unmanned platforms.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-11-08T16:31:22Z</published>
+    <arxiv:comment>29th International Command and Control Research &amp; Technology Symposium</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Indranil Sur</name>
+    </author>
+    <author>
+      <name>Aswin Raghavan</name>
+    </author>
+    <author>
+      <name>Abrar Rahman</name>
+    </author>
+    <author>
+      <name>James Z Hare</name>
+    </author>
+    <author>
+      <name>Daniel Cassenti</name>
+    </author>
+    <author>
+      <name>Carl Busart</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2403.16971v5</id>
+    <title>AIOS: LLM Agent Operating System</title>
+    <updated>2025-08-12T14:37:01Z</updated>
+    <link href="https://arxiv.org/abs/2403.16971v5" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2403.16971v5" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM-based intelligent agents face significant deployment challenges, particularly related to resource management. Allowing unrestricted access to LLM or tool resources can lead to inefficient or even potentially harmful resource allocation and utilization for agents. Furthermore, the absence of proper scheduling and resource management mechanisms in current agent designs hinders concurrent processing and limits overall system efficiency. To address these challenges, this paper proposes the architecture of AIOS (LLM-based AI Agent Operating System) under the context of managing LLM-based agents. It introduces a novel architecture for serving LLM-based agents by isolating resources and LLM-specific services from agent applications into an AIOS kernel. This AIOS kernel provides fundamental services (e.g., scheduling, context management, memory management, storage management, access control) for runtime agents. To enhance usability, AIOS also includes an AIOS SDK, a comprehensive suite of APIs designed for utilizing functionalities provided by the AIOS kernel. Experimental results demonstrate that using AIOS can achieve up to 2.1x faster execution for serving agents built by various agent frameworks. The source code is available at https://github.com/agiresearch/AIOS.</summary>
+    <category term="cs.OS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-03-25T17:32:23Z</published>
+    <arxiv:comment>Published as a full paper at COLM 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.OS"/>
+    <author>
+      <name>Kai Mei</name>
+    </author>
+    <author>
+      <name>Xi Zhu</name>
+    </author>
+    <author>
+      <name>Wujiang Xu</name>
+    </author>
+    <author>
+      <name>Wenyue Hua</name>
+    </author>
+    <author>
+      <name>Mingyu Jin</name>
+    </author>
+    <author>
+      <name>Zelong Li</name>
+    </author>
+    <author>
+      <name>Shuyuan Xu</name>
+    </author>
+    <author>
+      <name>Ruosong Ye</name>
+    </author>
+    <author>
+      <name>Yingqiang Ge</name>
+    </author>
+    <author>
+      <name>Yongfeng Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2205.11029v2</id>
+    <title>META-GUI: Towards Multi-modal Conversational Agents on Mobile GUI</title>
+    <updated>2022-11-24T06:34:43Z</updated>
+    <link href="https://arxiv.org/abs/2205.11029v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2205.11029v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Task-oriented dialogue (TOD) systems have been widely used by mobile phone intelligent assistants to accomplish tasks such as calendar scheduling or hotel reservation. Current TOD systems usually focus on multi-turn text/speech interaction, then they would call back-end APIs designed for TODs to perform the task. However, this API-based architecture greatly limits the information-searching capability of intelligent assistants and may even lead to task failure if TOD-specific APIs are not available or the task is too complicated to be executed by the provided APIs. In this paper, we propose a new TOD architecture: GUI-based task-oriented dialogue system (GUI-TOD). A GUI-TOD system can directly perform GUI operations on real APPs and execute tasks without invoking TOD-specific backend APIs. Furthermore, we release META-GUI, a dataset for training a Multi-modal convErsaTional Agent on mobile GUI. We also propose a multi-model action prediction and response model, which show promising results on META-GUI. The dataset, codes and leaderboard are publicly available.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-05-23T04:05:37Z</published>
+    <arxiv:comment>14 pages, 10 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Liangtai Sun</name>
+    </author>
+    <author>
+      <name>Xingyu Chen</name>
+    </author>
+    <author>
+      <name>Lu Chen</name>
+    </author>
+    <author>
+      <name>Tianle Dai</name>
+    </author>
+    <author>
+      <name>Zichen Zhu</name>
+    </author>
+    <author>
+      <name>Kai Yu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1907.02985v2</id>
+    <title>Embodied Vision-and-Language Navigation with Dynamic Convolutional Filters</title>
+    <updated>2019-09-25T17:12:21Z</updated>
+    <link href="https://arxiv.org/abs/1907.02985v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1907.02985v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In Vision-and-Language Navigation (VLN), an embodied agent needs to reach a target destination with the only guidance of a natural language instruction. To explore the environment and progress towards the target location, the agent must perform a series of low-level actions, such as rotate, before stepping ahead. In this paper, we propose to exploit dynamic convolutional filters to encode the visual information and the lingual description in an efficient way. Differently from some previous works that abstract from the agent perspective and use high-level navigation spaces, we design a policy which decodes the information provided by dynamic convolution into a series of low-level, agent friendly actions. Results show that our model exploiting dynamic filters performs better than other architectures with traditional convolution, being the new state of the art for embodied VLN in the low-level action space. Additionally, we attempt to categorize recent work on VLN depending on their architectural choices and distinguish two main groups: we call them low-level actions and high-level actions models. To the best of our knowledge, we are the first to propose this analysis and categorization for VLN.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-07-05T18:02:30Z</published>
+    <arxiv:comment>BMVC 2019 (Oral). Code is available at https://github.com/aimagelab/DynamicConv-agent</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Federico Landi</name>
+    </author>
+    <author>
+      <name>Lorenzo Baraldi</name>
+    </author>
+    <author>
+      <name>Massimiliano Corsini</name>
+    </author>
+    <author>
+      <name>Rita Cucchiara</name>
+    </author>
+  </entry>
+</feed>

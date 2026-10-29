@@ -1,0 +1,6 @@
+claude-sonnet-5-5: 5280 of 5280 planned episodes scored, 0 missing
+gpt-oss-120b: 5280 of 5280 planned episodes scored, 0 missing
+mistral-medium-3-5: 5280 of 5280 planned episodes scored, 0 missing
+WARNING episodes come from 2 code versions: {'545b72bf89e946117185e626243c527dc6fb11b7': 10560, '467437b04c4f326507835ad43ae38407360ef23f': 5280}
+274 replies for the first author -> data/processed/disclosure_to_label.csv
+100 of them, reshuffled, for the second author -> data/processed/disclosure_to_label_second.csv

@@ -1,0 +1,13 @@
+# Real-model sanity check before the pilot: one item per cell across the main forms, both full-page
+# extents and both task needs (15 episodes per model). Look for tool-call format problems, refusals,
+# parse failures and token counts, not effects. Run on 19 Oct 2026; logs in data/protocol-checks/.
+name: check
+models: [gpt-oss-120b, mistral-medium-3-5, claude-sonnet-5-5]
+signal_forms: [none, has_more, next_cursor, nl_note_json, cursor_plus_note]
+extents: [more_full, last_full]
+task_need: [needs_all, page1_sufficient]
+items_per_cell: 1
+page_limit: 20
+max_tool_calls: 12
+default_placement: bottom
+seed: 0

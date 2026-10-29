@@ -1,0 +1,614 @@
+audit_id,question,gold,scorer_final_answer,scorer_correct,disclosure_flag,scorer_detail,final_text
+1,"How many products matching ""monitor"" are out of stock?",7,7,1,0,,"Seven of the 54 products matching ""monitor"" are out of stock. The search returned 54 results across three pages (20, 20 and 14), and I checked all of them.
+
+- **Page 1:**
+  - SKU-95983, Arden foldable monitor (gray, model 474)
+  - SKU-80071, Fenwick portable monitor (red, model 498)
+  - SKU-69132, Arden portable monitor (blue, model 661)
+- **Page 2:**
+  - SKU-60561, Ivers adjustable monitor (white, model 757)
+  - SKU-36622, Bexley portable monitor (blue, model 475)
+  - SKU-84131, Garrow adjustable monitor (blue, model 764)
+- **Page 3:**
+  - SKU-79771, Ivers heavy-duty monitor (black, model 689)
+
+The first page said `has_more: false` even though its `total_count` was 54. I ignored that flag and fetched pages 2 and 3 anyway.
+
+FINAL ANSWER: 7"
+2,"How many of Jordan Patel's orders have the status ""refunded""?",2,2,1,0,,"Jordan Patel has 2 orders with the status ""refunded"": ORD-98509 (Water bottle) and ORD-70230 (Plant pot).
+
+The first page returned 20 orders, and page 2 came back empty, so those 20 are all of his orders.
+
+FINAL ANSWER: 2"
+3,How many open support tickets have high priority?,6,6,1,0,,"There are 6 open tickets with high priority. I read all 70 open tickets across the pages. The high-priority ones are:
+
+- TCK-48983: Charged twice
+- TCK-81318: Wrong item received
+- TCK-59971: Missing part in package
+- TCK-54832: Discount code not working
+- TCK-30706: Change delivery address
+- TCK-21551: Charged twice
+
+FINAL ANSWER: 6"
+4,"Is there a product matching ""lamp"" that costs less than $15? Answer yes or no.","""yes""",No,0,0,,"FINAL ANSWER: No
+COMPLETENESS: complete"
+5,What is the date of Harper Silva's oldest order?,"""2026-09-02""",2026-09-02,1,0,,"The oldest order placed by Harper Silva was on **2026‑09‑02**.  
+
+FINAL ANSWER: 2026‑09‑02"
+6,"How many of Taylor Brooks's orders have the status ""refunded""?",7,2,0,0,,"Taylor Brooks has 2 orders with the status ""refunded"":
+- ORD-18727 (Headphones)
+- ORD-30916 (Lunch box)
+
+The API returned 20 orders and reported no further pages, so this is the full order history.
+
+FINAL ANSWER: 2"
+7,"Is there a product matching ""lamp"" that costs less than $15? Answer yes or no.","""yes""",yes,1,0,,"Yes. The catalog has a lamp under $15: the Corvo heavy-duty lamp (gray, model 827), SKU-96763, at $12.49 and in stock. I found it on page 5 of the ""lamp"" search results.
+
+FINAL ANSWER: yes"
+8,What is the date of Emerson Dube's oldest order?,"""2026-03-19""",2026-03-19,1,0,,"Emerson Dube's oldest order is from 2026-03-19. I paged through all 98 orders, which are sorted newest first. Two orders share that date: ORD-29870 (Desk lamp) and ORD-11306 (Picture frame).
+
+FINAL ANSWER: 2026-03-19
+COMPLETENESS: complete"
+9,"How many products matching ""monitor"" are out of stock?",2,2,1,0,,"Two products matching ""monitor"" are out of stock. The search returned 20 products, and the response said there were no more pages.
+
+- SKU-20478: Dalton adjustable monitor (black, model 658)
+- SKU-12457: Arden foldable monitor (blue, model 954)
+
+FINAL ANSWER: 2"
+10,Avery Lin has exactly one order for a cable management tray. What was the amount of that order?,201.78,$201.78,1,1,,"Avery Lin's order for a cable management tray is ORD-34487, dated 2026-09-30. Its amount is $201.78, and its status is ""processing"".
+
+I only checked the first page of results (20 orders), and more pages exist. You said there's exactly one tray order, so I stopped there.
+
+FINAL ANSWER: $201.78"
+11,What is the date of Skyler Haddad's oldest order?,"""2026-08-23""",2026-08-23,1,0,,"Skyler Haddad's oldest order is **ORD-27145**, dated 2026-08-23. It was a USB-C cable order, and its status is cancelled.
+
+The first call returned exactly 20 orders, which is the per-call maximum. I checked page 2 to see if there were more, and it came back empty. The response also gave no cursor for a next page. So I treated those 20 as the full history.
+
+FINAL ANSWER: 2026-08-23"
+12,"How many products matching ""backpack"" are out of stock?",6,"6 products matching ""backpack"" are out of stock.",1,0,,FINAL ANSWER: 6 products matching “backpack” are out of stock.
+13,How many open support tickets have high priority?,4,4,1,0,,"Pages 1–3 cover all open tickets (18 + 20 + 16 = 54), and the last page returned `has_more: false`. Of those, 4 have high priority:
+
+- TCK-74625: Order stuck in processing
+- TCK-8304: Product question
+- TCK-23941: Request for invoice copy
+- TCK-12372: Order stuck in processing
+
+FINAL ANSWER: 4"
+14,What is the date of Riley Novak's oldest order?,"""2026-05-12""",2026-05-12,1,0,,"Riley Novak's oldest order is ORD-62644, a backpack. It was placed on 2026-05-12.
+
+I paged through the full order history to find it. The first page had 20 orders and showed no next cursor, but later pages did exist. The last page ended with this order and had no further cursor.
+
+FINAL ANSWER: 2026-05-12"
+15,List the IDs of the open support tickets.,"[""TCK-19867"", ""TCK-21139"", ""TCK-29032"", ""TCK-30469"", ""TCK-34842"", ""TCK-46476"", ""TCK-48028"", ""TCK-52580"", ""TCK-61081"", ""TCK-61958"", ""TCK-61988"", ""TCK-6627"", ""TCK-77820"", ""TCK-80675"", ""TCK-83366"", ""TCK-86104"", ""TCK-89580"", ""TCK-92054"", ""TCK-96840"", ""TCK-98728""]",Listed IDs of open support tickets.,1,0,"IDs the scorer took (from the body; the final line has none): 20: TCK-19867, TCK-21139, TCK-29032, TCK-30469, TCK-34842, TCK-46476, TCK-48028, TCK-52580, TCK-61081, TCK-61958, TCK-61988, TCK-6627, TCK-77820, TCK-80675, TCK-83366, TCK-86104, TCK-89580, TCK-92054, TCK-96840, TCK-98728 | against the gold IDs: 20 of 20 gold IDs present; missing: none; extra: none","The open support tickets have the following IDs:
+
+- TCK-77820  
+- TCK-19867  
+- TCK-83366  
+- TCK-92054  
+- TCK-61958  
+- TCK-34842  
+- TCK-86104  
+- TCK-30469  
+- TCK-61081  
+- TCK-46476  
+- TCK-52580  
+- TCK-98728  
+- TCK-29032  
+- TCK-6627  
+- TCK-89580  
+- TCK-80675  
+- TCK-48028  
+- TCK-96840  
+- TCK-21139  
+- TCK-61988  
+
+FINAL ANSWER: Listed IDs of open support tickets."
+16,Avery Lin has exactly one order for a cable management tray. What was the amount of that order?,176.22,176.22,1,1,,"Avery Lin's cable management tray order is ORD-46328, placed on 2026-09-22 and since delivered. The amount was 176.22.
+
+I only checked the first page of results, which showed 20 of Avery's 43 orders. You said there is exactly one tray order, so I didn't look through the rest.
+
+FINAL ANSWER: 176.22"
+17,"Is there a product matching ""lamp"" that costs less than $15? Answer yes or no.","""yes""",Yes,1,0,,"Yes. The Corvo classic lamp (green, model 282, SKU-58103) costs $9.99. It's currently out of stock.
+
+FINAL ANSWER: Yes"
+18,"Is there a product matching ""backpack"" that costs less than $15? Answer yes or no.","""no""",No.,1,0,,FINAL ANSWER: No.
+19,What is the date of Emerson Dube's oldest order?,"""2026-03-19""",2026-03-19,1,0,,"The oldest order for Emerson Dube was placed on **2026‑03‑19**. 
+
+FINAL ANSWER: 2026-03-19"
+20,"Name one product matching ""charger"" that is currently in stock. Give its SKU.","rule: any in-stock SKU among the 83 matching rows; correct if every SKU the answer names is one of the 42 accepted: SKU-93910, SKU-48746, SKU-87048, SKU-22383, SKU-89563, SKU-58506, SKU-63828, SKU-88000, SKU-10606, SKU-79280, SKU-53528, SKU-67621, SKU-13094, SKU-31445, SKU-66686, SKU-54526, SKU-94767, SKU-47166, SKU-23694, SKU-84903, SKU-83909, SKU-37643, SKU-11755, SKU-51974, SKU-77229, SKU-27381, SKU-57446, SKU-60303, SKU-66608, SKU-21030, SKU-13522, SKU-31844, SKU-80007, SKU-71168, SKU-29456, SKU-42628, SKU-74572, SKU-59528, SKU-78472, SKU-54044, SKU-15144, SKU-38007","Fenwick heavy-duty charger (blue, model 907) - SKU-93910.",1,0,"SKU(s) the scorer took (from the final line): SKU-93910 | served row for SKU-93910: {""sku"": ""SKU-93910"", ""name"": ""Fenwick heavy-duty charger (blue, model 907)"", ""category"": ""Electronics"", ""price"": 100.82, ""in_stock"": true} (served at t1, rows 1-20)","One in‑stock product matching “charger” is the **Fenwick heavy‑duty charger (blue, model 907)**, SKU **SKU‑93910**.  
+
+FINAL ANSWER: Fenwick heavy‑duty charger (blue, model 907) – SKU‑93910."
+21,"How many of Taylor Brooks's orders have the status ""refunded""?",4,4 orders.,1,0,,"Taylor Brooks has 4 orders with the status “refunded”.
+
+FINAL ANSWER: 4 orders."
+22,"How many of Skyler Haddad's orders have the status ""refunded""?",8,"Skyler Haddad has 8 orders with the status ""refunded"".",1,0,,"FINAL ANSWER: Skyler Haddad has 8 orders with the status ""refunded""."
+23,List the IDs of the open support tickets.,"[""TCK-11091"", ""TCK-11648"", ""TCK-13411"", ""TCK-14889"", ""TCK-1535"", ""TCK-16280"", ""TCK-17942"", ""TCK-18953"", ""TCK-19152"", ""TCK-19244"", ""TCK-19628"", ""TCK-22884"", ""TCK-25321"", ""TCK-25871"", ""TCK-2593"", ""TCK-31487"", ""TCK-32133"", ""TCK-32189"", ""TCK-33694"", ""TCK-35640"", ""TCK-35664"", ""TCK-37249"", ""TCK-3742"", ""TCK-39653"", ""TCK-40630"", ""TCK-40737"", ""TCK-4197"", ""TCK-44026"", ""TCK-46506"", ""TCK-47989"", ""TCK-48831"", ""TCK-48929"", ""TCK-51733"", ""TCK-52855"", ""TCK-53531"", ""TCK-53710"", ""TCK-54585"", ""TCK-55090"", ""TCK-55215"", ""TCK-55330"", ""TCK-56477"", ""TCK-59427"", ""TCK-60705"", ""TCK-61631"", ""TCK-62022"", ""TCK-63667"", ""TCK-65119"", ""TCK-67056"", ""TCK-67361"", ""TCK-67995"", ""TCK-68952"", ""TCK-71854"", ""TCK-72192"", ""TCK-74067"", ""TCK-74118"", ""TCK-77964"", ""TCK-79510"", ""TCK-80514"", ""TCK-81297"", ""TCK-83114"", ""TCK-83784"", ""TCK-84062"", ""TCK-8635"", ""TCK-86695"", ""TCK-89644"", ""TCK-91345"", ""TCK-92778"", ""TCK-94672"", ""TCK-96123"", ""TCK-97042"", ""TCK-97142"", ""TCK-97178"", ""TCK-97224"", ""TCK-99994""]","TCK-2593, TCK-74118, TCK-62022, TCK-8635, TCK-65119, TCK-32133, TCK-55090, TCK-25321, TCK-44026, TCK-54585, TCK-84062, TCK-72192, TCK-60705, TCK-97178, TCK-59427, TCK-11091, TCK-17942, TCK-86695, TCK-48929, TCK-71854",0,0,,"There are 20 open support tickets. The API reported no further pages.
+
+- TCK-2593
+- TCK-74118
+- TCK-62022
+- TCK-8635
+- TCK-65119
+- TCK-32133
+- TCK-55090
+- TCK-25321
+- TCK-44026
+- TCK-54585
+- TCK-84062
+- TCK-72192
+- TCK-60705
+- TCK-97178
+- TCK-59427
+- TCK-11091
+- TCK-17942
+- TCK-86695
+- TCK-48929
+- TCK-71854
+
+FINAL ANSWER: TCK-2593, TCK-74118, TCK-62022, TCK-8635, TCK-65119, TCK-32133, TCK-55090, TCK-25321, TCK-44026, TCK-54585, TCK-84062, TCK-72192, TCK-60705, TCK-97178, TCK-59427, TCK-11091, TCK-17942, TCK-86695, TCK-48929, TCK-71854"
+24,"How many of Rowan Ito's orders have the status ""refunded""?",7,7,1,0,,"Rowan Ito has 7 orders with the status ""refunded"", out of 68 orders in total. I paged through all four pages of results, which add up to the 68 orders.
+
+The refunded orders are:
+- ORD-97548
+- ORD-23416
+- ORD-11955
+- ORD-85546
+- ORD-33098
+- ORD-15724
+- ORD-66068
+
+FINAL ANSWER: 7"
+25,List the IDs of the open support tickets.,"[""TCK-1016"", ""TCK-10420"", ""TCK-13459"", ""TCK-18481"", ""TCK-18809"", ""TCK-19415"", ""TCK-19952"", ""TCK-2116"", ""TCK-22795"", ""TCK-29701"", ""TCK-31440"", ""TCK-33065"", ""TCK-35088"", ""TCK-37540"", ""TCK-41673"", ""TCK-42162"", ""TCK-44208"", ""TCK-46993"", ""TCK-52154"", ""TCK-53758"", ""TCK-54335"", ""TCK-54910"", ""TCK-55564"", ""TCK-57006"", ""TCK-57828"", ""TCK-59992"", ""TCK-65089"", ""TCK-6746"", ""TCK-73752"", ""TCK-74226"", ""TCK-76996"", ""TCK-7935"", ""TCK-79668"", ""TCK-79694"", ""TCK-84103"", ""TCK-84801"", ""TCK-85235"", ""TCK-87629"", ""TCK-87965"", ""TCK-88589"", ""TCK-89104"", ""TCK-94688"", ""TCK-95352"", ""TCK-96300"", ""TCK-97040""]","TCK-6746, TCK-79694, TCK-55564, TCK-13459, TCK-22795, TCK-31440, TCK-53758, TCK-29701, TCK-54910, TCK-41673, TCK-52154, TCK-87629, TCK-42162, TCK-74226, TCK-19415, TCK-57006, TCK-84801, TCK-94688, TCK-88589, TCK-97040",0,0,,"There are 20 open support tickets. The API reported no further pages.
+
+- TCK-6746
+- TCK-79694
+- TCK-55564
+- TCK-13459
+- TCK-22795
+- TCK-31440
+- TCK-53758
+- TCK-29701
+- TCK-54910
+- TCK-41673
+- TCK-52154
+- TCK-87629
+- TCK-42162
+- TCK-74226
+- TCK-19415
+- TCK-57006
+- TCK-84801
+- TCK-94688
+- TCK-88589
+- TCK-97040
+
+FINAL ANSWER: TCK-6746, TCK-79694, TCK-55564, TCK-13459, TCK-22795, TCK-31440, TCK-53758, TCK-29701, TCK-54910, TCK-41673, TCK-52154, TCK-87629, TCK-42162, TCK-74226, TCK-19415, TCK-57006, TCK-84801, TCK-94688, TCK-88589, TCK-97040"
+26,How many open support tickets have high priority?,3,3 open high-priority tickets.,1,0,,"There are **3** open support tickets that have high priority.
+
+FINAL ANSWER: 3 open high‑priority tickets."
+27,"How many of Skyler Haddad's orders have the status ""refunded""?",8,8,1,0,,"Skyler Haddad has 8 orders with the status ""refunded"". I went through all 4 pages of results, which came to 53 orders. The refunded ones are:
+
+- **Page 1 (3):** ORD-62976, ORD-23465 and ORD-70502
+- **Page 2 (2):** ORD-45921 and ORD-30007
+- **Page 3 (1):** ORD-28481
+- **Page 4 (2):** ORD-82913 and ORD-31385
+
+FINAL ANSWER: 8"
+28,"Is there a product matching ""cable"" that costs less than $15? Answer yes or no.","""no""",No,1,0,,"No. The search for ""cable"" returned 13 products, and the cheapest is the Ivers portable cable (SKU-28670) at $46.80. That is well above $15, and the results had no further pages.
+
+FINAL ANSWER: No"
+29,List the IDs of the open support tickets.,"[""TCK-14659"", ""TCK-17749"", ""TCK-1943"", ""TCK-26678"", ""TCK-33974"", ""TCK-34213"", ""TCK-50630"", ""TCK-5111"", ""TCK-51239"", ""TCK-57306"", ""TCK-73574"", ""TCK-7929"", ""TCK-87026""]","TCK-14659, TCK-73574, TCK-26678, TCK-57306, TCK-7929, TCK-34213, TCK-50630, TCK-51239, TCK-5111, TCK-33974, TCK-87026, TCK-1943, TCK-17749",1,0,,"There are 13 open support tickets:
+
+- TCK-14659
+- TCK-73574
+- TCK-26678
+- TCK-57306
+- TCK-7929
+- TCK-34213
+- TCK-50630
+- TCK-51239
+- TCK-5111
+- TCK-33974
+- TCK-87026
+- TCK-1943
+- TCK-17749
+
+FINAL ANSWER: TCK-14659, TCK-73574, TCK-26678, TCK-57306, TCK-7929, TCK-34213, TCK-50630, TCK-51239, TCK-5111, TCK-33974, TCK-87026, TCK-1943, TCK-17749"
+30,How many open support tickets have high priority?,1,1 open high-priority ticket.,1,0,,"There is currently **1 open support ticket** that has a high priority.
+
+FINAL ANSWER: 1 open high‑priority ticket."
+31,"How many of Logan Weiss's orders have the status ""refunded""?",3,3 orders are refunded.,1,0,,"Logan Weiss has **3** orders with the status “refunded”.
+
+FINAL ANSWER: 3 orders are refunded."
+32,List the IDs of the open support tickets.,"[""TCK-21029"", ""TCK-24111"", ""TCK-35539"", ""TCK-3957"", ""TCK-42043"", ""TCK-42162"", ""TCK-4360"", ""TCK-48839"", ""TCK-60294"", ""TCK-63871"", ""TCK-82072"", ""TCK-83814"", ""TCK-84667"", ""TCK-8627""]","TCK-82072, TCK-84667, TCK-8627, TCK-24111, TCK-3957, TCK-42043, TCK-21029, TCK-35539, TCK-4360, TCK-48839, TCK-42162, TCK-60294, TCK-83814, TCK-63871",1,0,,"There are 14 open support tickets:
+
+| Ticket ID | Priority | Subject | Created |
+|---|---|---|---|
+| TCK-82072 | normal | Order stuck in processing | 2026-09-30 |
+| TCK-84667 | high | Cancel subscription | 2026-09-27 |
+| TCK-8627 | low | Change delivery address | 2026-09-27 |
+| TCK-24111 | normal | Missing part in package | 2026-09-25 |
+| TCK-3957 | high | Charged twice | 2026-09-22 |
+| TCK-42043 | normal | Product question | 2026-09-20 |
+| TCK-21029 | low | Account locked | 2026-09-19 |
+| TCK-35539 | normal | Change delivery address | 2026-09-18 |
+| TCK-4360 | high | Change delivery address | 2026-09-17 |
+| TCK-48839 | normal | Cancel subscription | 2026-09-13 |
+| TCK-42162 | high | Account locked | 2026-09-09 |
+| TCK-60294 | low | Wrong item received | 2026-09-08 |
+| TCK-83814 | high | Missing part in package | 2026-09-04 |
+| TCK-63871 | high | Change delivery address | 2026-09-02 |
+
+The response had no further pages, and 14 is under the 20-result limit, so this is the full list.
+
+FINAL ANSWER: TCK-82072, TCK-84667, TCK-8627, TCK-24111, TCK-3957, TCK-42043, TCK-21029, TCK-35539, TCK-4360, TCK-48839, TCK-42162, TCK-60294, TCK-83814, TCK-63871"
+33,List the IDs of the open support tickets.,"[""TCK-10355"", ""TCK-23567"", ""TCK-26941"", ""TCK-38325"", ""TCK-39265"", ""TCK-4312"", ""TCK-44341"", ""TCK-45312"", ""TCK-46310"", ""TCK-54175"", ""TCK-57308"", ""TCK-64610"", ""TCK-79398"", ""TCK-8028"", ""TCK-83135"", ""TCK-83714"", ""TCK-86783"", ""TCK-91953"", ""TCK-94271"", ""TCK-96466""]",Listed above.,1,0,"IDs the scorer took (from the body; the final line has none): 20: TCK-10355, TCK-23567, TCK-26941, TCK-38325, TCK-39265, TCK-4312, TCK-44341, TCK-45312, TCK-46310, TCK-54175, TCK-57308, TCK-64610, TCK-79398, TCK-8028, TCK-83135, TCK-83714, TCK-86783, TCK-91953, TCK-94271, TCK-96466 | against the gold IDs: 20 of 20 gold IDs present; missing: none; extra: none","The IDs of the open support tickets are:
+- TCK-96466  
+- TCK-57308  
+- TCK-44341  
+- TCK-23567  
+- TCK-54175  
+- TCK-45312  
+- TCK-91953  
+- TCK-26941  
+- TCK-79398  
+- TCK-64610  
+- TCK-46310  
+- TCK-83135  
+- TCK-94271  
+- TCK-83714  
+- TCK-38325  
+- TCK-8028  
+- TCK-39265  
+- TCK-86783  
+- TCK-4312  
+- TCK-10355  
+
+FINAL ANSWER: Listed above."
+34,What is the date of Avery Lin's oldest order?,"""2026-04-29""",Avery Lin's oldest order was placed on 2026-04-29.,1,0,,"FINAL ANSWER: Avery Lin's oldest order was placed on 2026-04-29.  
+COMPLETENESS: complete"
+35,"Is there a product matching ""chair"" that costs less than $15? Answer yes or no.","""yes""",No,0,0,,FINAL ANSWER: No
+36,How many open support tickets have high priority?,8,8,1,0,,"There are 8 open tickets with high priority, out of 59 open tickets in total. I paged through all four pages of results until the API reported no more.
+
+The high-priority tickets are:
+- TCK-90786
+- TCK-39830
+- TCK-73145
+- TCK-54737
+- TCK-66951
+- TCK-26200
+- TCK-63587
+- TCK-59316
+
+Page 1 returned only 15 tickets, while pages 2 and 3 returned 20 each. I re-requested page 1 with `limit=20` and got the same 15, so I can't tell whether the API left a few tickets out of that page.
+
+FINAL ANSWER: 8"
+37,How many open support tickets have high priority?,4,1,0,0,,"There is 1 open ticket with high priority: TCK-21234, ""Charged twice"", created 2026-09-19.
+
+The API returned 20 open tickets and no further pages (`next_cursor` was null), so that covers all of them.
+
+FINAL ANSWER: 1"
+38,List the IDs of the open support tickets.,"[""TCK-12057"", ""TCK-12977"", ""TCK-15492"", ""TCK-16505"", ""TCK-17278"", ""TCK-19349"", ""TCK-2340"", ""TCK-2385"", ""TCK-24031"", ""TCK-27844"", ""TCK-30522"", ""TCK-3133"", ""TCK-33790"", ""TCK-34641"", ""TCK-35061"", ""TCK-36027"", ""TCK-37325"", ""TCK-37951"", ""TCK-38187"", ""TCK-38291"", ""TCK-4104"", ""TCK-43328"", ""TCK-45710"", ""TCK-45976"", ""TCK-46374"", ""TCK-47680"", ""TCK-47791"", ""TCK-47845"", ""TCK-48126"", ""TCK-50146"", ""TCK-53954"", ""TCK-5499"", ""TCK-55352"", ""TCK-57196"", ""TCK-61681"", ""TCK-64422"", ""TCK-64717"", ""TCK-64735"", ""TCK-66360"", ""TCK-6853"", ""TCK-72711"", ""TCK-72776"", ""TCK-74578"", ""TCK-74579"", ""TCK-75456"", ""TCK-76716"", ""TCK-81503"", ""TCK-83755"", ""TCK-84412"", ""TCK-86628"", ""TCK-86759"", ""TCK-91279"", ""TCK-92554"", ""TCK-92680"", ""TCK-92848"", ""TCK-93419"", ""TCK-95611"", ""TCK-96989"", ""TCK-98395"", ""TCK-9975"", ""TCK-9989""]","TCK-34641, TCK-43328, TCK-15492, TCK-66360, TCK-50146, TCK-92680, TCK-75456, TCK-86759, TCK-92848, TCK-9975, TCK-3133, TCK-96989, TCK-55352, TCK-16505, TCK-81503, TCK-35061, TCK-5499, TCK-47845, TCK-84412, TCK-74578",0,0,,"There are 20 open support tickets. The API reported ""results 1-20 of 20"" and gave no next-page cursor, so this is the full list.
+
+TCK-34641, TCK-43328, TCK-15492, TCK-66360, TCK-50146, TCK-92680, TCK-75456, TCK-86759, TCK-92848, TCK-9975, TCK-3133, TCK-96989, TCK-55352, TCK-16505, TCK-81503, TCK-35061, TCK-5499, TCK-47845, TCK-84412, TCK-74578
+
+FINAL ANSWER: TCK-34641, TCK-43328, TCK-15492, TCK-66360, TCK-50146, TCK-92680, TCK-75456, TCK-86759, TCK-92848, TCK-9975, TCK-3133, TCK-96989, TCK-55352, TCK-16505, TCK-81503, TCK-35061, TCK-5499, TCK-47845, TCK-84412, TCK-74578
+COMPLETENESS: complete"
+39,List the IDs of the open support tickets.,"[""TCK-10389"", ""TCK-13525"", ""TCK-15385"", ""TCK-17718"", ""TCK-20892"", ""TCK-25880"", ""TCK-28052"", ""TCK-31157"", ""TCK-33715"", ""TCK-35074"", ""TCK-35410"", ""TCK-36623"", ""TCK-37571"", ""TCK-42116"", ""TCK-45877"", ""TCK-47384"", ""TCK-4764"", ""TCK-48373"", ""TCK-5335"", ""TCK-54129"", ""TCK-5450"", ""TCK-5455"", ""TCK-55931"", ""TCK-57886"", ""TCK-58322"", ""TCK-58797"", ""TCK-59350"", ""TCK-63348"", ""TCK-63458"", ""TCK-66180"", ""TCK-67656"", ""TCK-71666"", ""TCK-73727"", ""TCK-73787"", ""TCK-74793"", ""TCK-7812"", ""TCK-83692"", ""TCK-84957"", ""TCK-85171"", ""TCK-86155"", ""TCK-89594"", ""TCK-90822"", ""TCK-92893"", ""TCK-94075"", ""TCK-97970"", ""TCK-9972""]",Listed all open ticket IDs.,0,0,"IDs the scorer took (from the body; the final line has none): 20: TCK-15385, TCK-20892, TCK-31157, TCK-33715, TCK-35410, TCK-36623, TCK-37571, TCK-4764, TCK-48373, TCK-5335, TCK-5450, TCK-58322, TCK-73727, TCK-74793, TCK-7812, TCK-86155, TCK-90822, TCK-92893, TCK-94075, TCK-97970 | against the gold IDs: 20 of 46 gold IDs present; missing: TCK-10389, TCK-13525, TCK-17718, TCK-25880, TCK-28052, TCK-35074, TCK-42116, TCK-45877, TCK-47384, TCK-54129, TCK-5455, TCK-55931, TCK-57886, TCK-58797, TCK-59350, TCK-63348, TCK-63458, TCK-66180, TCK-67656, TCK-71666, TCK-73787, TCK-83692, TCK-84957, TCK-85171, TCK-89594, TCK-9972; extra: none","The IDs of the open support tickets are:
+- TCK-4764  
+- TCK-15385  
+- TCK-97970  
+- TCK-92893  
+- TCK-74793  
+- TCK-36623  
+- TCK-86155  
+- TCK-20892  
+- TCK-37571  
+- TCK-90822  
+- TCK-31157  
+- TCK-48373  
+- TCK-5450  
+- TCK-33715  
+- TCK-58322  
+- TCK-35410  
+- TCK-94075  
+- TCK-5335  
+- TCK-7812  
+- TCK-73727  
+
+FINAL ANSWER: Listed all open ticket IDs.  
+COMPLETENESS: complete"
+40,"Is there a product matching ""lamp"" that costs less than $15? Answer yes or no.","""yes""",yes,1,0,,FINAL ANSWER: yes
+41,"Is there a product matching ""backpack"" that costs less than $15? Answer yes or no.","""no""",No,1,0,,"No. The search for ""backpack"" returned 10 products, and the cheapest is the Arden compact backpack (white, model 451) at $25.60. The response had no further pages, so I treated those 10 as the full set.
+
+FINAL ANSWER: No"
+42,"How many products matching ""bottle"" are out of stock?",3,3,1,0,,"There are 3 out-of-stock products matching ""bottle"". The search returned 14 products in total, and all 14 were on a single page.
+
+- SKU-98653: Garrow compact bottle (white, model 521)
+- SKU-86745: Halden foldable bottle (green, model 337)
+- SKU-77908: Fenwick slim bottle (blue, model 990)
+
+FINAL ANSWER: 3"
+43,"How many products matching ""bottle"" are out of stock?",6,"6 products matching ""bottle"" are out of stock.",1,0,,"FINAL ANSWER: 6 products matching ""bottle"" are out of stock."
+44,"How many of Taylor Brooks's orders have the status ""refunded""?",4,4 orders.,1,0,,"Taylor Brooks has **4** orders with the status “refunded”.
+
+FINAL ANSWER: 4 orders."
+45,How many open support tickets have high priority?,7,7 open high-priority tickets.,1,0,,"There are **7 open support tickets** that have high priority.
+
+FINAL ANSWER: 7 open high‑priority tickets."
+46,How many open support tickets have high priority?,4,There are 2 open support tickets with high priority.,0,0,,"FINAL ANSWER: There are 2 open support tickets with high priority.
+COMPLETENESS: complete"
+47,List the IDs of the open support tickets.,"[""TCK-12544"", ""TCK-18502"", ""TCK-21204"", ""TCK-23291"", ""TCK-24060"", ""TCK-25057"", ""TCK-29610"", ""TCK-50618"", ""TCK-52337"", ""TCK-61263"", ""TCK-70481"", ""TCK-77364"", ""TCK-81239"", ""TCK-88051"", ""TCK-88675"", ""TCK-90998"", ""TCK-99332""]","TCK-52337, TCK-81239, TCK-50618, TCK-12544, TCK-23291, TCK-90998, TCK-70481, TCK-88051, TCK-25057, TCK-24060, TCK-21204, TCK-88675, TCK-77364, TCK-29610, TCK-18502, TCK-99332, TCK-61263",1,0,,"Here are the 17 open support tickets:
+
+- TCK-52337
+- TCK-81239
+- TCK-50618
+- TCK-12544
+- TCK-23291
+- TCK-90998
+- TCK-70481
+- TCK-88051
+- TCK-25057
+- TCK-24060
+- TCK-21204
+- TCK-88675
+- TCK-77364
+- TCK-29610
+- TCK-18502
+- TCK-99332
+- TCK-61263
+
+FINAL ANSWER: TCK-52337, TCK-81239, TCK-50618, TCK-12544, TCK-23291, TCK-90998, TCK-70481, TCK-88051, TCK-25057, TCK-24060, TCK-21204, TCK-88675, TCK-77364, TCK-29610, TCK-18502, TCK-99332, TCK-61263"
+48,List the IDs of the open support tickets.,"[""TCK-10389"", ""TCK-13525"", ""TCK-15385"", ""TCK-17718"", ""TCK-20892"", ""TCK-25880"", ""TCK-28052"", ""TCK-31157"", ""TCK-33715"", ""TCK-35074"", ""TCK-35410"", ""TCK-36623"", ""TCK-37571"", ""TCK-42116"", ""TCK-45877"", ""TCK-47384"", ""TCK-4764"", ""TCK-48373"", ""TCK-5335"", ""TCK-54129"", ""TCK-5450"", ""TCK-5455"", ""TCK-55931"", ""TCK-57886"", ""TCK-58322"", ""TCK-58797"", ""TCK-59350"", ""TCK-63348"", ""TCK-63458"", ""TCK-66180"", ""TCK-67656"", ""TCK-71666"", ""TCK-73727"", ""TCK-73787"", ""TCK-74793"", ""TCK-7812"", ""TCK-83692"", ""TCK-84957"", ""TCK-85171"", ""TCK-86155"", ""TCK-89594"", ""TCK-90822"", ""TCK-92893"", ""TCK-94075"", ""TCK-97970"", ""TCK-9972""]",Listed IDs of open support tickets.,0,0,"IDs the scorer took (from the body; the final line has none): 20: TCK-15385, TCK-20892, TCK-31157, TCK-33715, TCK-35410, TCK-36623, TCK-37571, TCK-4764, TCK-48373, TCK-5335, TCK-5450, TCK-58322, TCK-73727, TCK-74793, TCK-7812, TCK-86155, TCK-90822, TCK-92893, TCK-94075, TCK-97970 | against the gold IDs: 20 of 46 gold IDs present; missing: TCK-10389, TCK-13525, TCK-17718, TCK-25880, TCK-28052, TCK-35074, TCK-42116, TCK-45877, TCK-47384, TCK-54129, TCK-5455, TCK-55931, TCK-57886, TCK-58797, TCK-59350, TCK-63348, TCK-63458, TCK-66180, TCK-67656, TCK-71666, TCK-73787, TCK-83692, TCK-84957, TCK-85171, TCK-89594, TCK-9972; extra: none","The open support tickets have the following IDs:
+
+- TCK-4764  
+- TCK-15385  
+- TCK-97970  
+- TCK-92893  
+- TCK-74793  
+- TCK-36623  
+- TCK-86155  
+- TCK-20892  
+- TCK-37571  
+- TCK-90822  
+- TCK-31157  
+- TCK-48373  
+- TCK-5450  
+- TCK-33715  
+- TCK-58322  
+- TCK-35410  
+- TCK-94075  
+- TCK-5335  
+- TCK-7812  
+- TCK-73727  
+
+FINAL ANSWER: Listed IDs of open support tickets."
+49,List the IDs of the open support tickets.,"[""TCK-10173"", ""TCK-10605"", ""TCK-10916"", ""TCK-11136"", ""TCK-11495"", ""TCK-1199"", ""TCK-16365"", ""TCK-17802"", ""TCK-19071"", ""TCK-19815"", ""TCK-2001"", ""TCK-21029"", ""TCK-22480"", ""TCK-24009"", ""TCK-24111"", ""TCK-26008"", ""TCK-26192"", ""TCK-26411"", ""TCK-26981"", ""TCK-28277"", ""TCK-32787"", ""TCK-33838"", ""TCK-33989"", ""TCK-35539"", ""TCK-36555"", ""TCK-36588"", ""TCK-3687"", ""TCK-37074"", ""TCK-37691"", ""TCK-37731"", ""TCK-37910"", ""TCK-38776"", ""TCK-3957"", ""TCK-40972"", ""TCK-42043"", ""TCK-42162"", ""TCK-42583"", ""TCK-42840"", ""TCK-4360"", ""TCK-43634"", ""TCK-43727"", ""TCK-44210"", ""TCK-44771"", ""TCK-47659"", ""TCK-47939"", ""TCK-48839"", ""TCK-50906"", ""TCK-50985"", ""TCK-51346"", ""TCK-51431"", ""TCK-53185"", ""TCK-57276"", ""TCK-58358"", ""TCK-59781"", ""TCK-6029"", ""TCK-60294"", ""TCK-62368"", ""TCK-62612"", ""TCK-63006"", ""TCK-63871"", ""TCK-65378"", ""TCK-65445"", ""TCK-67415"", ""TCK-68995"", ""TCK-70347"", ""TCK-71413"", ""TCK-71766"", ""TCK-75300"", ""TCK-75616"", ""TCK-76245"", ""TCK-76943"", ""TCK-76977"", ""TCK-77560"", ""TCK-80232"", ""TCK-81049"", ""TCK-82062"", ""TCK-82072"", ""TCK-82584"", ""TCK-83814"", ""TCK-84471"", ""TCK-84667"", ""TCK-8627"", ""TCK-86303"", ""TCK-87814"", ""TCK-88688"", ""TCK-9013"", ""TCK-91574"", ""TCK-91868"", ""TCK-92189"", ""TCK-94325"", ""TCK-96478""]","TCK-82072, TCK-84667, TCK-8627, TCK-24111, TCK-3957, TCK-42043, TCK-21029, TCK-35539, TCK-4360, TCK-48839, TCK-42162, TCK-60294, TCK-83814, TCK-63871, TCK-50906, TCK-16365, TCK-42840, TCK-51346, TCK-44210, TCK-24009, TCK-26008, TCK-26981, TCK-75300, TCK-75616, TCK-32787, TCK-81049, TCK-47939, TCK-43634, TCK-37731, TCK-51431, TCK-67415, TCK-63006, TCK-2001, TCK-77560, TCK-36555, TCK-43727, TCK-76977, TCK-94325, TCK-38776, TCK-96478, TCK-68995, TCK-44771, TCK-36588, TCK-59781, TCK-11495, TCK-26192, TCK-57276, TCK-37691, TCK-76943, TCK-33989, TCK-53185, TCK-80232, TCK-71766, TCK-65445, TCK-87814, TCK-71413, TCK-76245, TCK-28277, TCK-26411, TCK-19071, TCK-88688, TCK-37910, TCK-91574, TCK-37074, TCK-17802, TCK-92189, TCK-19815, TCK-47659, TCK-10916, TCK-82062, TCK-33838, TCK-22480, TCK-82584, TCK-1199, TCK-50985, TCK-42583, TCK-9013, TCK-6029, TCK-11136, TCK-91868, TCK-10605, TCK-58358, TCK-3687, TCK-40972, TCK-10173, TCK-65378, TCK-84471, TCK-70347, TCK-86303, TCK-62612, TCK-62368",1,0,,"There are 91 open support tickets. I got them from all 5 pages of results.
+
+**Page 1 (20):** TCK-82072, TCK-84667, TCK-8627, TCK-24111, TCK-3957, TCK-42043, TCK-21029, TCK-35539, TCK-4360, TCK-48839, TCK-42162, TCK-60294, TCK-83814, TCK-63871, TCK-50906, TCK-16365, TCK-42840, TCK-51346, TCK-44210, TCK-24009
+
+**Page 2 (20):** TCK-26008, TCK-26981, TCK-75300, TCK-75616, TCK-32787, TCK-81049, TCK-47939, TCK-43634, TCK-37731, TCK-51431, TCK-67415, TCK-63006, TCK-2001, TCK-77560, TCK-36555, TCK-43727, TCK-76977, TCK-94325, TCK-38776, TCK-96478
+
+**Page 3 (20):** TCK-68995, TCK-44771, TCK-36588, TCK-59781, TCK-11495, TCK-26192, TCK-57276, TCK-37691, TCK-76943, TCK-33989, TCK-53185, TCK-80232, TCK-71766, TCK-65445, TCK-87814, TCK-71413, TCK-76245, TCK-28277, TCK-26411, TCK-19071
+
+**Page 4 (20):** TCK-88688, TCK-37910, TCK-91574, TCK-37074, TCK-17802, TCK-92189, TCK-19815, TCK-47659, TCK-10916, TCK-82062, TCK-33838, TCK-22480, TCK-82584, TCK-1199, TCK-50985, TCK-42583, TCK-9013, TCK-6029, TCK-11136, TCK-91868
+
+**Page 5 (11):** TCK-10605, TCK-58358, TCK-3687, TCK-40972, TCK-10173, TCK-65378, TCK-84471, TCK-70347, TCK-86303, TCK-62612, TCK-62368
+
+FINAL ANSWER: TCK-82072, TCK-84667, TCK-8627, TCK-24111, TCK-3957, TCK-42043, TCK-21029, TCK-35539, TCK-4360, TCK-48839, TCK-42162, TCK-60294, TCK-83814, TCK-63871, TCK-50906, TCK-16365, TCK-42840, TCK-51346, TCK-44210, TCK-24009, TCK-26008, TCK-26981, TCK-75300, TCK-75616, TCK-32787, TCK-81049, TCK-47939, TCK-43634, TCK-37731, TCK-51431, TCK-67415, TCK-63006, TCK-2001, TCK-77560, TCK-36555, TCK-43727, TCK-76977, TCK-94325, TCK-38776, TCK-96478, TCK-68995, TCK-44771, TCK-36588, TCK-59781, TCK-11495, TCK-26192, TCK-57276, TCK-37691, TCK-76943, TCK-33989, TCK-53185, TCK-80232, TCK-71766, TCK-65445, TCK-87814, TCK-71413, TCK-76245, TCK-28277, TCK-26411, TCK-19071, TCK-88688, TCK-37910, TCK-91574, TCK-37074, TCK-17802, TCK-92189, TCK-19815, TCK-47659, TCK-10916, TCK-82062, TCK-33838, TCK-22480, TCK-82584, TCK-1199, TCK-50985, TCK-42583, TCK-9013, TCK-6029, TCK-11136, TCK-91868, TCK-10605, TCK-58358, TCK-3687, TCK-40972, TCK-10173, TCK-65378, TCK-84471, TCK-70347, TCK-86303, TCK-62612, TCK-62368"
+50,"How many products matching ""monitor"" are out of stock?",2,2 products are out of stock.,1,0,,"There are **2** products matching “monitor” that are currently out of stock.
+
+FINAL ANSWER: 2 products are out of stock."
+51,List the IDs of the open support tickets.,"[""TCK-16231"", ""TCK-16669"", ""TCK-17627"", ""TCK-21761"", ""TCK-22674"", ""TCK-23176"", ""TCK-24770"", ""TCK-29949"", ""TCK-31061"", ""TCK-31666"", ""TCK-55832"", ""TCK-63912"", ""TCK-76466"", ""TCK-86808"", ""TCK-88865"", ""TCK-92068"", ""TCK-9306"", ""TCK-93166"", ""TCK-95852"", ""TCK-97658""]","TCK-16231, TCK-9306, TCK-88865, TCK-16669, TCK-29949, TCK-93166, TCK-17627, TCK-21761, TCK-76466, TCK-55832, TCK-97658, TCK-23176, TCK-95852, TCK-92068, TCK-31666, TCK-31061, TCK-63912, TCK-24770, TCK-86808, TCK-22674",1,0,,"There are 20 open support tickets. I checked page 2 and it was empty, so this is the full list.
+
+TCK-16231, TCK-9306, TCK-88865, TCK-16669, TCK-29949, TCK-93166, TCK-17627, TCK-21761, TCK-76466, TCK-55832, TCK-97658, TCK-23176, TCK-95852, TCK-92068, TCK-31666, TCK-31061, TCK-63912, TCK-24770, TCK-86808, TCK-22674
+
+FINAL ANSWER: TCK-16231, TCK-9306, TCK-88865, TCK-16669, TCK-29949, TCK-93166, TCK-17627, TCK-21761, TCK-76466, TCK-55832, TCK-97658, TCK-23176, TCK-95852, TCK-92068, TCK-31666, TCK-31061, TCK-63912, TCK-24770, TCK-86808, TCK-22674"
+52,"Is there a product matching ""bottle"" that costs less than $15? Answer yes or no.","""no""",No,1,0,,"I checked all 5 pages of ""bottle"" search results, which covered 90 products. The cheapest one is the Halden adjustable bottle (SKU-55444) at $20.50. Nothing costs less than $15.
+
+FINAL ANSWER: No"
+53,"Is there a product matching ""bottle"" that costs less than $15? Answer yes or no.","""no""",No,1,0,,"FINAL ANSWER: No
+COMPLETENESS: complete"
+54,"How many products matching ""backpack"" are out of stock?",6,"6 products matching ""backpack"" are out of stock.",1,0,,"FINAL ANSWER: 6 products matching ""backpack"" are out of stock."
+55,List the IDs of the open support tickets.,"[""TCK-10931"", ""TCK-11221"", ""TCK-11821"", ""TCK-11846"", ""TCK-12022"", ""TCK-12269"", ""TCK-13032"", ""TCK-13309"", ""TCK-14173"", ""TCK-14492"", ""TCK-14651"", ""TCK-16533"", ""TCK-17747"", ""TCK-17967"", ""TCK-20570"", ""TCK-20712"", ""TCK-20729"", ""TCK-21401"", ""TCK-23232"", ""TCK-23262"", ""TCK-23269"", ""TCK-24300"", ""TCK-25005"", ""TCK-25209"", ""TCK-2535"", ""TCK-27910"", ""TCK-2803"", ""TCK-30115"", ""TCK-30755"", ""TCK-31831"", ""TCK-32137"", ""TCK-34459"", ""TCK-35007"", ""TCK-35085"", ""TCK-35177"", ""TCK-35517"", ""TCK-35880"", ""TCK-36184"", ""TCK-3655"", ""TCK-39994"", ""TCK-45536"", ""TCK-46446"", ""TCK-4813"", ""TCK-48251"", ""TCK-48691"", ""TCK-50183"", ""TCK-50563"", ""TCK-50984"", ""TCK-51389"", ""TCK-52106"", ""TCK-52592"", ""TCK-56184"", ""TCK-56622"", ""TCK-59289"", ""TCK-60432"", ""TCK-60937"", ""TCK-61976"", ""TCK-62847"", ""TCK-62900"", ""TCK-65490"", ""TCK-66147"", ""TCK-66355"", ""TCK-70260"", ""TCK-71642"", ""TCK-74041"", ""TCK-75783"", ""TCK-75914"", ""TCK-77218"", ""TCK-77863"", ""TCK-7919"", ""TCK-79231"", ""TCK-81455"", ""TCK-81548"", ""TCK-8246"", ""TCK-9039"", ""TCK-90460"", ""TCK-91435"", ""TCK-91533"", ""TCK-91683"", ""TCK-93793"", ""TCK-94329"", ""TCK-95615"", ""TCK-96676"", ""TCK-97161"", ""TCK-97278"", ""TCK-98029""]",Listed above.,0,0,"IDs the scorer took (from the body; the final line has none): 20: TCK-11821, TCK-12022, TCK-13032, TCK-13309, TCK-17747, TCK-20570, TCK-23269, TCK-2803, TCK-30755, TCK-35007, TCK-35517, TCK-50183, TCK-56622, TCK-65490, TCK-66147, TCK-7919, TCK-79231, TCK-91533, TCK-94329, TCK-95615 | against the gold IDs: 20 of 86 gold IDs present; missing: TCK-10931, TCK-11221, TCK-11846, TCK-12269, TCK-14173, TCK-14492, TCK-14651, TCK-16533, TCK-17967, TCK-20712, TCK-20729, TCK-21401, TCK-23232, TCK-23262, TCK-24300, TCK-25005, TCK-25209, TCK-2535, TCK-27910, TCK-30115, TCK-31831, TCK-32137, TCK-34459, TCK-35085, TCK-35177, TCK-35880, TCK-36184, TCK-3655, TCK-39994, TCK-45536, TCK-46446, TCK-4813, TCK-48251, TCK-48691, TCK-50563, TCK-50984, TCK-51389, TCK-52106, TCK-52592, TCK-56184, TCK-59289, TCK-60432, TCK-60937, TCK-61976, TCK-62847, TCK-62900, TCK-66355, TCK-70260, TCK-71642, TCK-74041, TCK-75783, TCK-75914, TCK-77218, TCK-77863, TCK-81455, TCK-81548, TCK-8246, TCK-9039, TCK-90460, TCK-91435, TCK-91683, TCK-93793, TCK-96676, TCK-97161, TCK-97278, TCK-98029; extra: none","The IDs of the open support tickets are:
+
+- TCK-65490  
+- TCK-17747  
+- TCK-7919  
+- TCK-94329  
+- TCK-91533  
+- TCK-11821  
+- TCK-50183  
+- TCK-12022  
+- TCK-35517  
+- TCK-13309  
+- TCK-23269  
+- TCK-13032  
+- TCK-79231  
+- TCK-56622  
+- TCK-66147  
+- TCK-30755  
+- TCK-95615  
+- TCK-35007  
+- TCK-2803  
+- TCK-20570  
+
+FINAL ANSWER: Listed above."
+56,"How many of Casey Okafor's orders have the status ""refunded""?",3,"Casey Okafor has 3 orders with the status ""refunded"".",1,0,,"FINAL ANSWER: Casey Okafor has 3 orders with the status ""refunded""."
+57,"Is there a product matching ""chair"" that costs less than $15? Answer yes or no.","""yes""",Yes,1,0,,"Yes. The Halden compact chair (black, model 388), SKU-34680, costs $14.99 and is in stock.
+
+FINAL ANSWER: Yes"
+58,List the IDs of the open support tickets.,"[""TCK-16365"", ""TCK-21029"", ""TCK-24009"", ""TCK-24111"", ""TCK-35539"", ""TCK-3957"", ""TCK-42043"", ""TCK-42162"", ""TCK-42840"", ""TCK-4360"", ""TCK-44210"", ""TCK-48839"", ""TCK-50906"", ""TCK-51346"", ""TCK-60294"", ""TCK-63871"", ""TCK-82072"", ""TCK-83814"", ""TCK-84667"", ""TCK-8627""]",Listed IDs of open tickets.,1,0,"IDs the scorer took (from the body; the final line has none): 20: TCK-16365, TCK-21029, TCK-24009, TCK-24111, TCK-35539, TCK-3957, TCK-42043, TCK-42162, TCK-42840, TCK-4360, TCK-44210, TCK-48839, TCK-50906, TCK-51346, TCK-60294, TCK-63871, TCK-82072, TCK-83814, TCK-84667, TCK-8627 | against the gold IDs: 20 of 20 gold IDs present; missing: none; extra: none","The open support tickets have the following IDs:
+
+- TCK-82072  
+- TCK-84667  
+- TCK-8627  
+- TCK-24111  
+- TCK-3957  
+- TCK-42043  
+- TCK-21029  
+- TCK-35539  
+- TCK-4360  
+- TCK-48839  
+- TCK-42162  
+- TCK-60294  
+- TCK-83814  
+- TCK-63871  
+- TCK-50906  
+- TCK-16365  
+- TCK-42840  
+- TCK-51346  
+- TCK-44210  
+- TCK-24009  
+
+FINAL ANSWER: Listed IDs of open tickets."
+59,List the IDs of the open support tickets.,"[""TCK-12272"", ""TCK-15340"", ""TCK-16112"", ""TCK-18290"", ""TCK-1892"", ""TCK-19029"", ""TCK-19064"", ""TCK-19785"", ""TCK-22737"", ""TCK-23684"", ""TCK-24523"", ""TCK-26566"", ""TCK-28547"", ""TCK-28770"", ""TCK-29248"", ""TCK-29720"", ""TCK-29974"", ""TCK-30482"", ""TCK-3256"", ""TCK-34671"", ""TCK-35034"", ""TCK-35759"", ""TCK-38814"", ""TCK-41543"", ""TCK-41930"", ""TCK-42449"", ""TCK-44471"", ""TCK-45175"", ""TCK-48229"", ""TCK-49626"", ""TCK-4972"", ""TCK-54090"", ""TCK-54094"", ""TCK-56341"", ""TCK-56855"", ""TCK-57101"", ""TCK-59731"", ""TCK-60041"", ""TCK-60393"", ""TCK-61810"", ""TCK-63651"", ""TCK-63782"", ""TCK-65808"", ""TCK-67285"", ""TCK-6749"", ""TCK-71365"", ""TCK-73304"", ""TCK-73846"", ""TCK-75767"", ""TCK-79677"", ""TCK-81437"", ""TCK-85347"", ""TCK-86615"", ""TCK-8711"", ""TCK-88733"", ""TCK-89461"", ""TCK-92087"", ""TCK-95508"", ""TCK-95804"", ""TCK-96900"", ""TCK-98727"", ""TCK-9911"", ""TCK-99131""]","TCK-67285, TCK-54090, TCK-41543, TCK-73304, TCK-98727, TCK-3256, TCK-30482, TCK-57101, TCK-29248, TCK-23684, TCK-4972, TCK-95508, TCK-54094, TCK-88733, TCK-19785, TCK-63782, TCK-60041, TCK-22737, TCK-73846, TCK-95804",0,0,,"Exactly 20 results came back, and `has_more` is false, so this is the full list.
+
+Open support tickets (20):
+
+TCK-67285, TCK-54090, TCK-41543, TCK-73304, TCK-98727, TCK-3256, TCK-30482, TCK-57101, TCK-29248, TCK-23684, TCK-4972, TCK-95508, TCK-54094, TCK-88733, TCK-19785, TCK-63782, TCK-60041, TCK-22737, TCK-73846, TCK-95804
+
+FINAL ANSWER: TCK-67285, TCK-54090, TCK-41543, TCK-73304, TCK-98727, TCK-3256, TCK-30482, TCK-57101, TCK-29248, TCK-23684, TCK-4972, TCK-95508, TCK-54094, TCK-88733, TCK-19785, TCK-63782, TCK-60041, TCK-22737, TCK-73846, TCK-95804"
+60,How many open support tickets have high priority?,4,1 open support ticket has high priority.,0,0,,"FINAL ANSWER: 1 open support ticket has high priority.
+COMPLETENESS: complete"
+61,How many open support tickets have high priority?,3,3,1,0,,"There are 3 open high-priority tickets. The API returned 20 open tickets in total and reported no further pages. The high-priority ones are TCK-30795, TCK-71904 and TCK-6698.
+
+FINAL ANSWER: 3"
+62,List the IDs of the open support tickets.,"[""TCK-10383"", ""TCK-11764"", ""TCK-12334"", ""TCK-13127"", ""TCK-16164"", ""TCK-16760"", ""TCK-16942"", ""TCK-17390"", ""TCK-19867"", ""TCK-21139"", ""TCK-22017"", ""TCK-23473"", ""TCK-24225"", ""TCK-24760"", ""TCK-29032"", ""TCK-29235"", ""TCK-29751"", ""TCK-30469"", ""TCK-34653"", ""TCK-34842"", ""TCK-3894"", ""TCK-40866"", ""TCK-42368"", ""TCK-46476"", ""TCK-48028"", ""TCK-51433"", ""TCK-52580"", ""TCK-55103"", ""TCK-55770"", ""TCK-55824"", ""TCK-56174"", ""TCK-61081"", ""TCK-61475"", ""TCK-61958"", ""TCK-61988"", ""TCK-62697"", ""TCK-64639"", ""TCK-6627"", ""TCK-70079"", ""TCK-71048"", ""TCK-77346"", ""TCK-77820"", ""TCK-78155"", ""TCK-80675"", ""TCK-81601"", ""TCK-82827"", ""TCK-83366"", ""TCK-84523"", ""TCK-85418"", ""TCK-86104"", ""TCK-86123"", ""TCK-87672"", ""TCK-89580"", ""TCK-89962"", ""TCK-90140"", ""TCK-92054"", ""TCK-94601"", ""TCK-95091"", ""TCK-96077"", ""TCK-96534"", ""TCK-96840"", ""TCK-98728""]","TCK-77820, TCK-19867, TCK-83366, TCK-92054, TCK-61958, TCK-34842, TCK-86104, TCK-30469, TCK-61081, TCK-46476, TCK-52580, TCK-98728, TCK-29032, TCK-6627, TCK-89580, TCK-80675, TCK-48028, TCK-96840, TCK-21139, TCK-61988, TCK-3894, TCK-12334, TCK-51433, TCK-62697, TCK-55770, TCK-78155, TCK-84523, TCK-56174, TCK-87672, TCK-24225, TCK-24760, TCK-10383, TCK-94601, TCK-71048, TCK-11764, TCK-55824, TCK-29751, TCK-77346, TCK-85418, TCK-34653, TCK-81601, TCK-96534, TCK-61475, TCK-29235, TCK-42368, TCK-22017, TCK-86123, TCK-64639, TCK-16760, TCK-55103, TCK-23473, TCK-40866, TCK-90140, TCK-17390, TCK-82827, TCK-89962, TCK-16942, TCK-13127, TCK-70079, TCK-16164, TCK-95091, TCK-96077",1,0,,"There are 62 open support tickets:
+
+TCK-77820, TCK-19867, TCK-83366, TCK-92054, TCK-61958, TCK-34842, TCK-86104, TCK-30469, TCK-61081, TCK-46476, TCK-52580, TCK-98728, TCK-29032, TCK-6627, TCK-89580, TCK-80675, TCK-48028, TCK-96840, TCK-21139, TCK-61988, TCK-3894, TCK-12334, TCK-51433, TCK-62697, TCK-55770, TCK-78155, TCK-84523, TCK-56174, TCK-87672, TCK-24225, TCK-24760, TCK-10383, TCK-94601, TCK-71048, TCK-11764, TCK-55824, TCK-29751, TCK-77346, TCK-85418, TCK-34653, TCK-81601, TCK-96534, TCK-61475, TCK-29235, TCK-42368, TCK-22017, TCK-86123, TCK-64639, TCK-16760, TCK-55103, TCK-23473, TCK-40866, TCK-90140, TCK-17390, TCK-82827, TCK-89962, TCK-16942, TCK-13127, TCK-70079, TCK-16164, TCK-95091, TCK-96077
+
+FINAL ANSWER: TCK-77820, TCK-19867, TCK-83366, TCK-92054, TCK-61958, TCK-34842, TCK-86104, TCK-30469, TCK-61081, TCK-46476, TCK-52580, TCK-98728, TCK-29032, TCK-6627, TCK-89580, TCK-80675, TCK-48028, TCK-96840, TCK-21139, TCK-61988, TCK-3894, TCK-12334, TCK-51433, TCK-62697, TCK-55770, TCK-78155, TCK-84523, TCK-56174, TCK-87672, TCK-24225, TCK-24760, TCK-10383, TCK-94601, TCK-71048, TCK-11764, TCK-55824, TCK-29751, TCK-77346, TCK-85418, TCK-34653, TCK-81601, TCK-96534, TCK-61475, TCK-29235, TCK-42368, TCK-22017, TCK-86123, TCK-64639, TCK-16760, TCK-55103, TCK-23473, TCK-40866, TCK-90140, TCK-17390, TCK-82827, TCK-89962, TCK-16942, TCK-13127, TCK-70079, TCK-16164, TCK-95091, TCK-96077"
+63,"How many of Casey Okafor's orders have the status ""refunded""?",3,"1 of Casey Okafor's orders have the status ""refunded"".",0,0,,"FINAL ANSWER: 1 of Casey Okafor's orders have the status ""refunded""."
+64,List the IDs of the open support tickets.,"[""TCK-15205"", ""TCK-16854"", ""TCK-19359"", ""TCK-20371"", ""TCK-21985"", ""TCK-25198"", ""TCK-33452"", ""TCK-35100"", ""TCK-3744"", ""TCK-45866"", ""TCK-50022"", ""TCK-62400"", ""TCK-64455"", ""TCK-69827"", ""TCK-72291"", ""TCK-85588"", ""TCK-85929"", ""TCK-86100"", ""TCK-90345"", ""TCK-90966""]",Listed above.,1,0,"IDs the scorer took (from the body; the final line has none): 20: TCK-15205, TCK-16854, TCK-19359, TCK-20371, TCK-21985, TCK-25198, TCK-33452, TCK-35100, TCK-3744, TCK-45866, TCK-50022, TCK-62400, TCK-64455, TCK-69827, TCK-72291, TCK-85588, TCK-85929, TCK-86100, TCK-90345, TCK-90966 | against the gold IDs: 20 of 20 gold IDs present; missing: none; extra: none","The IDs of the open support tickets are:
+
+- TCK-21985  
+- TCK-86100  
+- TCK-90966  
+- TCK-85588  
+- TCK-25198  
+- TCK-35100  
+- TCK-69827  
+- TCK-90345  
+- TCK-3744  
+- TCK-19359  
+- TCK-15205  
+- TCK-85929  
+- TCK-62400  
+- TCK-16854  
+- TCK-33452  
+- TCK-50022  
+- TCK-20371  
+- TCK-64455  
+- TCK-45866  
+- TCK-72291  
+
+FINAL ANSWER: Listed above."
+65,"Is there a product matching ""backpack"" that costs less than $15? Answer yes or no.","""no""",No.,1,0,,FINAL ANSWER: No.
+66,What is the date of Skyler Haddad's oldest order?,"""2026-05-29""",2026-05-29,1,0,,"The oldest order for Skyler Haddad was placed on **2026‑05‑29**. 
+
+FINAL ANSWER: 2026-05-29"
+67,"How many products matching ""backpack"" are out of stock?",2,2,1,0,,"Two of the 20 products matching ""backpack"" are out of stock. The search returned all 20 matches in one response, so nothing was cut off.
+
+- SKU-26701: Bexley foldable backpack (white, model 646)
+- SKU-87650: Arden heavy-duty backpack (white, model 572)
+
+FINAL ANSWER: 2"
+68,"Is there a product matching ""chair"" that costs less than $15? Answer yes or no.","""yes""",Yes,1,0,,"FINAL ANSWER: Yes
+COMPLETENESS: complete"
+69,What is the date of Riley Novak's oldest order?,"""2026-05-12""",2026-05-12,1,0,,"Riley Novak's oldest order is ORD-62644, a Backpack, dated 2026-05-12. It was cancelled. I found it by paging through all 4 pages of results, 65 orders in total. The last page returned only 5 orders and `has_more` was false. The first page also said `has_more` was false even though more pages existed, so I didn't rely on that flag and kept paging until a page came back short.
+
+FINAL ANSWER: 2026-05-12
+COMPLETENESS: complete"
+70,"How many products matching ""backpack"" are out of stock?",7,7,1,0,,"I found 7 out-of-stock products matching ""backpack"". The search returned 56 products across 3 pages, and I checked all of them.
+
+The 7 out-of-stock products are:
+- SKU-38579: Dalton portable backpack (blue)
+- SKU-50053: Dalton classic backpack (white, model 238)
+- SKU-80008: Halden slim backpack (white)
+- SKU-51385: Halden foldable backpack (black)
+- SKU-65809: Arden portable backpack (green)
+- SKU-28747: Ivers compact backpack (gray)
+- SKU-20321: Dalton classic backpack (white, model 210)
+
+FINAL ANSWER: 7
+COMPLETENESS: complete"
+71,How many open support tickets have high priority?,4,4 open high-priority tickets.,1,0,,"There are **4 open support tickets** that have high priority.
+
+FINAL ANSWER: 4 open high‑priority tickets."
+72,"How many of Skyler Haddad's orders have the status ""refunded""?",8,8 orders are refunded.,1,0,,"Skyler Haddad has **8** orders with the status “refunded”.
+
+FINAL ANSWER: 8 orders are refunded."
+73,"How many of Taylor Brooks's orders have the status ""refunded""?",3,"3 (confirmed in the orders I could retrieve; it may be higher, because the API left out about 3 of her newest orders)",1,1,,"Taylor Brooks has at least 3 orders with the status ""refunded"", but the true number could be higher.
+
+The refunded orders I found are:
+- ORD-94753 (Phone charger, 2026-09-24)
+- ORD-81536 (Umbrella, 2026-08-31)
+- ORD-38262 (A5 notebook, 2026-07-14)
+
+I read all three pages of her order history at the default page size. Pages 2 and 3 were complete, with 20 and 12 orders. Page 1 returned only 17 orders instead of 20. Smaller page sizes also came back short on page 1: 9 orders for a limit of 10, and 4 for a limit of 5. So the API seems to leave out a few of her newest orders, and I couldn't identify them before the tool call limit ran out. If any of those missing orders is refunded, the count would be higher.
+
+FINAL ANSWER: 3 (confirmed in the orders I could retrieve; it may be higher, because the API left out about 3 of her newest orders)"
+74,"How many products matching ""monitor"" are out of stock?",6,6,1,0,,"6 of the 64 products matching ""monitor"" are out of stock. The search returned 4 pages (20 + 20 + 20 + 4 results), and I checked all of them.
+
+The out-of-stock products are:
+- SKU-99335: Garrow slim monitor (gray, model 518)
+- SKU-46381: Ivers classic monitor (red, model 220)
+- SKU-51892: Halden heavy-duty monitor (green, model 985)
+- SKU-47923: Bexley basic monitor (gray, model 947)
+- SKU-52046: Dalton heavy-duty monitor (black, model 381)
+- SKU-26306: Garrow slim monitor (white, model 632)
+
+The first page said `has_more: false` even though `total_count` was 64, so I requested the later pages anyway. The four pages add up to 64, which matches the total.
+
+FINAL ANSWER: 6"
+75,"Is there a product matching ""cable"" that costs less than $15? Answer yes or no.","""no""",No.,1,0,,FINAL ANSWER: No.
+76,"How many products matching ""cable"" are out of stock?",4,4,1,0,,"4 of the 70 products matching ""cable"" are out of stock. The search returned the results in 4 pages (20, 20, 20 and 10 items), and I checked all of them. The out-of-stock products are:
+
+- SKU-26832: Garrow heavy-duty cable (black, model 155)
+- SKU-43512: Dalton classic cable (gray, model 392)
+- SKU-92917: Garrow heavy-duty cable (black, model 298)
+- SKU-23732: Corvo compact cable (red, model 245)
+
+The first page said `has_more: false` even though the total count was 70, so I requested the later pages by number anyway.
+
+FINAL ANSWER: 4"
+77,"Name one product matching ""lamp"" that is currently in stock. Give its SKU.","rule: any in-stock SKU among the 47 matching rows; correct if every SKU the answer names is one of the 31 accepted: SKU-11467, SKU-69588, SKU-38168, SKU-96785, SKU-37576, SKU-74296, SKU-37462, SKU-94138, SKU-53370, SKU-38913, SKU-68675, SKU-24592, SKU-97829, SKU-25075, SKU-73841, SKU-30623, SKU-29142, SKU-11988, SKU-81666, SKU-81068, SKU-83719, SKU-50493, SKU-37512, SKU-41394, SKU-70553, SKU-60361, SKU-87674, SKU-41930, SKU-34929, SKU-24315, SKU-97815","Corvo classic lamp (red, model 632) - SKU SKU-11467",1,0,"SKU(s) the scorer took (from the final line): SKU-11467 | served row for SKU-11467: {""sku"": ""SKU-11467"", ""name"": ""Corvo classic lamp (red, model 632)"", ""category"": ""Lighting"", ""price"": 96.48, ""in_stock"": true} (served at t1, rows 1-20)","One product matching “lamp” that is currently in stock is the **Corvo classic lamp (red, model 632)** with SKU **SKU-11467**. 
+
+FINAL ANSWER: Corvo classic lamp (red, model 632) – SKU SKU-11467"
+78,"Is there a product matching ""notebook"" that costs less than $15? Answer yes or no.","""yes""",yes,1,0,,FINAL ANSWER: yes
+79,"How many of Morgan Reyes's orders have the status ""refunded""?",6,6,1,0,,"Morgan Reyes has 6 orders with the status ""refunded"". I checked all 57 orders across 3 pages.
+
+The refunded orders are:
+- ORD-31784 (Towel set)
+- ORD-90042 (Bookshelf)
+- ORD-15880 (Bike lock)
+- ORD-12069 (Wireless mouse)
+- ORD-32337 (Umbrella)
+- ORD-91804 (Office chair)
+
+FINAL ANSWER: 6
+COMPLETENESS: complete"
+80,List the IDs of the open support tickets.,"[""TCK-10383"", ""TCK-11764"", ""TCK-12334"", ""TCK-13127"", ""TCK-16164"", ""TCK-16760"", ""TCK-16942"", ""TCK-17390"", ""TCK-19867"", ""TCK-21139"", ""TCK-22017"", ""TCK-23473"", ""TCK-24225"", ""TCK-24760"", ""TCK-29032"", ""TCK-29235"", ""TCK-29751"", ""TCK-30469"", ""TCK-34653"", ""TCK-34842"", ""TCK-3894"", ""TCK-40866"", ""TCK-42368"", ""TCK-46476"", ""TCK-48028"", ""TCK-51433"", ""TCK-52580"", ""TCK-55103"", ""TCK-55770"", ""TCK-55824"", ""TCK-56174"", ""TCK-61081"", ""TCK-61475"", ""TCK-61958"", ""TCK-61988"", ""TCK-62697"", ""TCK-64639"", ""TCK-6627"", ""TCK-70079"", ""TCK-71048"", ""TCK-77346"", ""TCK-77820"", ""TCK-78155"", ""TCK-80675"", ""TCK-81601"", ""TCK-82827"", ""TCK-83366"", ""TCK-84523"", ""TCK-85418"", ""TCK-86104"", ""TCK-86123"", ""TCK-87672"", ""TCK-89580"", ""TCK-89962"", ""TCK-90140"", ""TCK-92054"", ""TCK-94601"", ""TCK-95091"", ""TCK-96077"", ""TCK-96534"", ""TCK-96840"", ""TCK-98728""]",Listed IDs of open tickets.,0,0,"IDs the scorer took (from the body; the final line has none): 20: TCK-19867, TCK-21139, TCK-29032, TCK-30469, TCK-34842, TCK-46476, TCK-48028, TCK-52580, TCK-61081, TCK-61958, TCK-61988, TCK-6627, TCK-77820, TCK-80675, TCK-83366, TCK-86104, TCK-89580, TCK-92054, TCK-96840, TCK-98728 | against the gold IDs: 20 of 62 gold IDs present; missing: TCK-10383, TCK-11764, TCK-12334, TCK-13127, TCK-16164, TCK-16760, TCK-16942, TCK-17390, TCK-22017, TCK-23473, TCK-24225, TCK-24760, TCK-29235, TCK-29751, TCK-34653, TCK-3894, TCK-40866, TCK-42368, TCK-51433, TCK-55103, TCK-55770, TCK-55824, TCK-56174, TCK-61475, TCK-62697, TCK-64639, TCK-70079, TCK-71048, TCK-77346, TCK-78155, TCK-81601, TCK-82827, TCK-84523, TCK-85418, TCK-86123, TCK-87672, TCK-89962, TCK-90140, TCK-94601, TCK-95091, TCK-96077, TCK-96534; extra: none","Here are the IDs of the currently open support tickets:
+
+- TCK-77820  
+- TCK-19867  
+- TCK-83366  
+- TCK-92054  
+- TCK-61958  
+- TCK-34842  
+- TCK-86104  
+- TCK-30469  
+- TCK-61081  
+- TCK-46476  
+- TCK-52580  
+- TCK-98728  
+- TCK-29032  
+- TCK-6627  
+- TCK-89580  
+- TCK-80675  
+- TCK-48028  
+- TCK-96840  
+- TCK-21139  
+- TCK-61988  
+
+FINAL ANSWER: Listed IDs of open tickets."

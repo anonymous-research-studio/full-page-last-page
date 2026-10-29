@@ -1,0 +1,143 @@
+"""Draw the stratified sample for the lead author's audit of correctness scoring (PENDING.md, section 3).
+
+Rescoring and reproduction checked the pipeline, not whether the answer parsers classify replies
+correctly. This draws main-study replies per model (40 by default, so 120 across the three confirmatory
+models), with places reserved for the reply shapes most likely to fool a parser and the cells where
+correctness matters most. Each episode joins the first stratum it fits:
+  malformed        no "FINAL ANSWER:" line
+  several_numbers  a count or amount answer whose final line holds two or more numbers (record ids,
+                   dates, page numbers and "of N" totals aside, as the parser drops them)
+  bound            a bound or approximation in the final line ("at least 5", "about 12", "6+")
+  partial_export   an export answer whose ids are some but not all of the gold ids, or extra ones
+  yes_no_reversal  an exists answer whose final line holds both "yes" and "no"
+  false_signal     a false-signal cell (false end signals and visible conflicts; the harm claims)
+  exists           an exists task (yes/no; luck and reversals)
+  other            everything else
+Quotas per model: up to 4 from each of the first five strata, 10 false-signal, 6 exists, the rest
+other; a stratum with too few episodes gives its places to other. Empty replies (protocol failures,
+excluded from every analysis) are left out. The CSV lists each reply in a random order with the
+scorer's reading beside it and blank audit columns; the manifest records the seed, the population and
+sample per stratum, and each stratum's weight (population / sampled) for estimates.
+
+  uv run python scripts/audit_sample.py data/raw/main --config configs/runs/main.yaml \
+      --cutoff 2026-10-25T17:00:00-04:00 --out data/processed/audit_sample.csv
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import random
+import re
+from datetime import UTC, datetime
+from pathlib import Path
+
+import pandas as pd
+
+from fplp.metrics import (
+    _NOT_ANSWER,
+    _episode_files,
+    _plan,
+    _read_records,
+    final_answer,
+    normalize,
+    score_episode,
+    select_records,
+)
+
+STRATA = ["malformed", "several_numbers", "bound", "partial_export", "yes_no_reversal", "false_signal", "exists", "other"]
+QUOTAS = {"malformed": 4, "several_numbers": 4, "bound": 4, "partial_export": 4, "yes_no_reversal": 4,
+          "false_signal": 10, "exists": 6}
+_BOUND = re.compile(r"\b(?:at least|at most|more than|fewer than|less than|up to|or more|or fewer|approximately|"
+                    r"about|around|roughly|over|under)\b|~\s*\d|\d\s*\+", re.IGNORECASE)
+_IDS = re.compile(r"\b(?:TCK|SKU|ORD)-\d+\b")
+
+
+def stratum(rec: dict) -> str:
+    text, gold, c = rec["final_text"], rec["gold"], rec["condition"]
+    answer = final_answer(text)
+    kind = gold["answer_type"]
+    if not re.search(r"FINAL ANSWER:", normalize(text), re.IGNORECASE):
+        return "malformed"
+    if kind in ("count", "amount") and len(re.findall(r"\d[\d,]*(?:\.\d+)?", _NOT_ANSWER.sub(" ", answer.replace("$", "")))) >= 2:
+        return "several_numbers"
+    if kind in ("count", "amount") and _BOUND.search(answer):
+        return "bound"
+    if kind == "id_set":
+        ids = set(_IDS.findall(answer.upper())) or set(_IDS.findall(normalize(text).upper()))
+        if ids and ids != set(gold["value"]):
+            return "partial_export"
+    if kind == "yes_no" and {w.lower() for w in re.findall(r"\b(yes|no)\b", answer, re.IGNORECASE)} == {"yes", "no"}:
+        return "yes_no_reversal"
+    if c.get("arm") == "conflict":
+        return "false_signal"
+    if c.get("task_type") == "exists":
+        return "exists"
+    return "other"
+
+
+def draw(records: list[dict], models: list[str], per_model: int, seed: int) -> tuple[pd.DataFrame, dict]:
+    rows, manifest = [], {}
+    for model in models:
+        pool: dict[str, list[dict]] = {s: [] for s in STRATA}
+        for rec in records:
+            if rec["model"] == model and rec["final_text"].strip():
+                pool[stratum(rec)].append(rec)
+        picked, spare = {}, per_model
+        for s in STRATA[:-1]:
+            k = min(QUOTAS[s], len(pool[s]))
+            picked[s] = random.Random(f"{seed}:{model}:{s}").sample(pool[s], k)
+            spare -= k
+        k = min(max(spare, 0), len(pool["other"]))
+        picked["other"] = random.Random(f"{seed}:{model}:other").sample(pool["other"], k)
+        manifest[model] = {s: {"population": len(pool[s]), "sampled": len(picked[s]),
+                               "weight": round(len(pool[s]) / len(picked[s]), 4) if picked[s] else None} for s in STRATA}
+        for s, recs in picked.items():
+            for rec in recs:
+                scored, gold, c = score_episode(rec), rec["gold"], rec["condition"]
+                rows.append({
+                    "episode_id": rec["episode_id"], "model": model, "stratum": s, "weight": manifest[model][s]["weight"],
+                    "arm": c.get("arm"), "signal_form": c.get("signal_form"), "conflict": c.get("conflict"),
+                    "extent": c.get("extent"), "task_type": c.get("task_type"), "answer_format": c.get("answer_format"),
+                    "question": rec["question"], "gold": json.dumps(gold.get("value", gold.get("accepted"))),
+                    "scorer_final_answer": final_answer(rec["final_text"]), "scorer_correct": scored["correct"],
+                    "final_text": rec["final_text"], "audit_correct": "", "audit_note": "",
+                })
+    table = pd.DataFrame(rows).sample(frac=1, random_state=seed).reset_index(drop=True)
+    table.insert(0, "audit_id", range(1, len(table) + 1))
+    return table, manifest
+
+
+def main(argv: list[str] | None = None) -> None:
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("inputs", nargs="+")
+    p.add_argument("--config", required=True, help="the run config whose planned episodes to sample (main.yaml)")
+    p.add_argument("--models-file", default="configs/models.yaml")
+    p.add_argument("--cutoff", type=datetime.fromisoformat, help="as fplp score --cutoff")
+    p.add_argument("--models", help="comma-separated; default: the config's models")
+    p.add_argument("--per-model", type=int, default=40)
+    p.add_argument("--seed", type=int, default=20261025)
+    p.add_argument("--out", required=True, help="CSV for the audit; the manifest goes beside it")
+    args = p.parse_args(argv)
+    files = _episode_files(args.inputs)
+    records, _ = _read_records(files)
+    plan = _plan(args.config, args.models_file)
+    records, report = select_records(records, plan, cutoff=args.cutoff)
+    for line in report:
+        print(line)
+    models = args.models.split(",") if args.models else sorted(plan)
+    table, strata = draw(records, models, args.per_model, args.seed)
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    table.to_csv(out, index=False)
+    manifest = {"created": datetime.now(UTC).isoformat(), "seed": args.seed, "per_model": args.per_model,
+                "quotas": QUOTAS, "cutoff": args.cutoff.isoformat() if args.cutoff else None, "config": args.config,
+                "inputs": {str(f): hashlib.sha256(f.read_bytes()).hexdigest() for f in files}, "strata": strata}
+    out.with_suffix(".manifest.json").write_text(json.dumps(manifest, indent=2))
+    print(f"wrote {len(table)} replies -> {out} (manifest: {out.with_suffix('.manifest.json')})")
+    print(pd.DataFrame({m: {s: f"{v['sampled']}/{v['population']}" for s, v in st.items()} for m, st in strata.items()}).to_string())
+
+
+if __name__ == "__main__":
+    main()

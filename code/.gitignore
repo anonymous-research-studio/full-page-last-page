@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets
+.env
+*.key
+
+# Episode logs and derived data (regenerate from configs + seeds)
+data/raw/*
+data/processed/*
+!data/**/.gitkeep
+
+# Build output
+build/
+dist/
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Smoke-run outputs (scripted models) are not results
+results/**/smoke_*
+
+# Local spending record
+data/spend-ledger.jsonl
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Interim analysis while a run is incomplete (regenerated from the full data)
+results/interim/

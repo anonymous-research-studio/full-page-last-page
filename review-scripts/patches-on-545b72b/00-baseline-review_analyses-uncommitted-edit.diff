@@ -1,0 +1,65 @@
+diff --git a/scripts/review_analyses.py b/scripts/review_analyses.py
+index 8e87f0c..e7650b4 100644
+--- a/scripts/review_analyses.py
++++ b/scripts/review_analyses.py
+@@ -15,7 +15,10 @@ registered commit; commit it after the runs.
+        gold answer of the correct but unjustified ones.
+   4.6  Episodes that paged but stopped before the rows their answer needed, by form.
+   4.7  The H4 manipulation check as registered (false end signals minus real last pages, 90% CI), read from
+-       the `fplp hypotheses` CSV so the paper cites one number.
++       the `fplp hypotheses` CSV so the paper cites one number, and read against the 10-point margin
++       registered for H1b (applied here post hoc; page 1 matches a real last page in format, not rows).
++  4.8  H5a's items: of the items in the cells where an incomplete answer counts as warranted, how many had
++       no incomplete answer there. They do not enter H5a's bound, which counts each remaining item once.
+ 
+ The cells and exclusions are those of the amended tests (`fplp.analysis.hypotheses._cells`).
+ 
+@@ -34,7 +37,7 @@ import numpy as np
+ import pandas as pd
+ 
+ from fplp.analysis.common import analysis_sample, paired
+-from fplp.analysis.hypotheses import FALSE_END, _cells
++from fplp.analysis.hypotheses import EQUIVALENCE, FALSE_END, _cells
+ 
+ ROWS: list[dict] = []
+ 
+@@ -109,7 +112,30 @@ def manipulation_check(hypotheses_csv: str | None) -> None:
+     h = pd.read_csv(hypotheses_csv)
+     rows = h[(h["family"] == "registered") & (h["hypothesis"] == "H4") & (h["part"] == "manipulation check")]
+     for _, r in rows.iterrows():
+-        add("4.7", r["model"], r["test"], r["n"], r["diff"], r["lo"], r["hi"], r["p"], "as registered (90% CI)")
++        if pd.isna(r["lo"]) or pd.isna(r["hi"]):
++            margin = "no paired items"
++        elif r["lo"] > -EQUIVALENCE and r["hi"] < EQUIVALENCE:
++            margin = f"within +/-{EQUIVALENCE * 100:.0f} points"
++        else:
++            margin = f"not within +/-{EQUIVALENCE * 100:.0f} points"
++        # The frozen label says "same page 1"; page 1 matches a real last page in format, not rows.
++        label = "false end signals - real last pages (page 1 in the same format), 90% CI"
++        add("4.7", r["model"], label, r["n"], r["diff"], r["lo"], r["hi"], r["p"],
++            f"as registered (90% CI); {margin} (H1b's margin, post hoc)")
++
++
++def h5a_items(model: str, d: pd.DataFrame) -> None:
++    # The cells where metrics.py labels an incomplete answer "warranted": no conflict, more rows behind
++    # page 1, and a truthful signal or a full page under a stated limit and documented pagination.
++    cue = (d["signal_form"] != "none") | ((d["extent"] == "more_full") & d["limit_stated"].astype(bool)
++                                         & d["documented"].astype(bool))
++    cells = d[(d["task_need"] == "needs_all") & (d["answer_format"] == "final_line") & d["conflict"].isna()
++              & d["extent"].isin(["more_full", "more_short"]) & cue]
++    any_incomplete = (cells["evidence_seen"] == 0).groupby(cells["key"]).any()
++    none = int((~any_incomplete).sum())
++    add("4.8", model, "H5a: items in the warranted cells with no incomplete answer", len(any_incomplete),
++        none / len(any_incomplete) if len(any_incomplete) else np.nan,
++        note=f"{none} of {len(any_incomplete)} items; the bound uses the other {len(any_incomplete) - none}")
+ 
+ 
+ def gold_answers(raw: str | None) -> dict[str, str]:
+@@ -147,6 +173,7 @@ def main(argv: list[str] | None = None) -> None:
+         stated_completeness(model, g)
+         exists_correctness(model, g, gold)
+         stopped_short(model, c)
++        h5a_items(model, g)
+     manipulation_check(args.hypotheses)
+     table = pd.DataFrame(ROWS)
+     with pd.option_context("display.width", 220, "display.max_rows", 500, "display.max_colwidth", 70):

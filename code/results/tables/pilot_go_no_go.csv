@@ -1,0 +1,10 @@
+model,rq,contrast,n,diff,lo,hi,p,method,holm_significant,passes
+claude-sonnet-5-5,RQ2,none - has_more,43,0.8372093023255814,0.6752781616839528,0.9247218383160473,2.9103830456733704e-11,McNemar exact; Agresti-Min CI,True,True
+claude-sonnet-5-5,RQ2,none - next_cursor,43,0.06976744186046512,-0.018237181691307752,0.15157051502464108,0.25,McNemar exact; Agresti-Min CI,False,False
+claude-sonnet-5-5,RQ2,none - nl_note_json,43,0.7906976744186046,0.6226520819816111,0.8884590291295001,1.1641532182693481e-10,McNemar exact; Agresti-Min CI,True,True
+gpt-oss-120b,RQ1,has_more - none,50,0.62,0.45756740637800997,0.7347402859296823,9.313225746154785e-10,McNemar exact; Agresti-Min CI,True,True
+gpt-oss-120b,RQ1,next_cursor - none,50,0.44,0.2737671776663203,0.5723866684875258,2.9802322387695312e-06,McNemar exact; Agresti-Min CI,True,True
+gpt-oss-120b,RQ1,nl_note_json - none,50,0.48,0.3208973278060319,0.602179595270891,1.1920928955078125e-07,McNemar exact; Agresti-Min CI,True,True
+gpt-oss-120b,RQ2,none - has_more,43,0.16279069767441862,0.04105449353325577,0.2700566175778554,0.015625,McNemar exact; Agresti-Min CI,True,True
+gpt-oss-120b,RQ2,none - next_cursor,43,0.16279069767441862,0.04105449353325577,0.2700566175778554,0.015625,McNemar exact; Agresti-Min CI,True,True
+gpt-oss-120b,RQ2,none - nl_note_json,43,0.13953488372093023,0.008611495017286072,0.2580551716493806,0.0703125,McNemar exact; Agresti-Min CI,False,False

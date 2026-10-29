@@ -1,0 +1,39 @@
+# Exploratory models on the main study's design: the same conditions, items and seed as main.yaml,
+# so results are directly comparable, but reported separately and counted toward no hypothesis
+# verdict (prereg changelog, 20 Oct 2026). Analyze with `fplp hypotheses ... --config none`.
+name: exploratory
+models: [nemotron-3-super]   # exploratory: reported separately, counts toward no verdict
+signal_forms: [none, has_more, next_cursor, total_count, nl_note_json, cursor_plus_note]
+# more_full, last_full: H1, H2, H4 and the signal-value test; more_short: H3; last_short (a short last
+# page, where row count and signal agree): the control that separates checking a full page from
+# following the row count (amendment 1, issue 8)
+extents: [more_full, last_full, last_short, more_short]
+task_need: [needs_all, page1_sufficient]      # page-1-sufficient tasks run on more_full only (H2b)
+items_per_cell: 100   # pre-registered; fixed, not revised after the pilot
+page_limit: 20
+max_tool_calls: 12
+default_placement: bottom
+replicates: 1         # one run per item for every model, including the one sampled at default temperature
+seed: 1               # fresh seed: no episode repeats a protocol check (seed 0)
+retest_fraction: 0.1  # a seeded random 10% of conditions run twice, to measure reproducibility (no test uses them)
+arms:
+  # False end signals on page 1, as from a buggy API: four ways of saying "done" while more rows
+  # exist (H4). Crossed with the answer format, so the completeness field is tested where incomplete
+  # answers occur (H5b).
+  conflict:
+    levels: [false_end, false_end_cursor, false_total, false_note]
+    task_need: [needs_all]
+    answer_formats: [final_line, completeness]
+  # A false end beside a field on the same page that contradicts it (H6, amendment 1): can agents
+  # see an error when the page shows one? Final-line format only.
+  visible_conflict:
+    levels: [visible_conflict_total, visible_conflict_note]
+    task_need: [needs_all]
+  # The completeness field where disclosure is warranted (amended H5b): a full page with no signal,
+  # and a full page whose truthful signal says more rows exist (amendment 1, issue 3).
+  answer_format: {base_forms: [none, has_more], levels: [final_line, completeness], task_need: [needs_all]}
+  # Pages without the "results are paginated" cue, on every confirmatory model: no signal (the
+  # baseline with and without the cue) and two forms, so the signal-value test, H1a and H2a can be
+  # read for an undocumented interface (amendment 1).
+  documentation: {base_forms: [none, has_more, nl_note_json], levels: [documented, undocumented],
+                  task_need: [needs_all], extents: [more_full, last_full]}

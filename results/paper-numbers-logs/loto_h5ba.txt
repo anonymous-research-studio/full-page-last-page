@@ -1,0 +1,7 @@
+without (none: primary): claude-sonnet-5-5: +0.0 [+0.0, +0.0] p=1.000 sup=None est=False; gpt-oss-120b: +8.5 [+2.0, +15.5] p=0.022 sup=True est=True; mistral-medium-3-5: -0.5 [-2.5, +1.0] p=1.000 sup=False est=True
+without count_high_priority: claude-sonnet-5-5: +0.0 [+0.0, +0.0] p=1.000 sup=None est=False; gpt-oss-120b: +12.5 [+6.0, +19.6] p=0.001 sup=True est=True; mistral-medium-3-5: -0.6 [-3.0, +1.2] p=1.000 sup=False est=True
+without count_out_of_stock: claude-sonnet-5-5: +0.0 [+0.0, +0.0] p=1.000 sup=None est=False; gpt-oss-120b: +4.8 [-2.4, +11.9] p=0.250 sup=False est=True; mistral-medium-3-5: -0.6 [-3.0, +1.2] p=1.000 sup=False est=True
+without exists: claude-sonnet-5-5: +0.0 [+0.0, +0.0] p=1.000 sup=None est=False; gpt-oss-120b: +10.8 [+3.6, +18.1] p=0.009 sup=True est=True; mistral-medium-3-5: +0.0 [+0.0, +0.0] p=1.000 sup=False est=True
+without export_all: claude-sonnet-5-5: +0.0 [+0.0, +0.0] p=1.000 sup=None est=False; gpt-oss-120b: +6.6 [-1.2, +13.9] p=0.126 sup=False est=True; mistral-medium-3-5: -0.6 [-3.0, +1.2] p=1.000 sup=False est=True
+without filtered_count: claude-sonnet-5-5: +0.0 [+0.0, +0.0] p=1.000 sup=None est=False; gpt-oss-120b: +6.0 [-1.2, +12.7] p=0.141 sup=False est=True; mistral-medium-3-5: -0.6 [-3.0, +1.2] p=1.000 sup=False est=True
+without oldest_date: claude-sonnet-5-5: +0.0 [+0.0, +0.0] p=1.000 sup=None est=False; gpt-oss-120b: +10.2 [+3.0, +17.5] p=0.012 sup=True est=True; mistral-medium-3-5: -0.6 [-3.0, +1.2] p=1.000 sup=False est=True

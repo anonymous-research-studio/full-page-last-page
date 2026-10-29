@@ -1,0 +1,107 @@
+{
+  "created": "2026-10-25T02:55:25.776195+00:00",
+  "seed": 20261025,
+  "per_model": 40,
+  "quotas": {
+    "malformed": 4,
+    "several_numbers": 4,
+    "bound": 4,
+    "partial_export": 4,
+    "yes_no_reversal": 4,
+    "false_signal": 10,
+    "exists": 6
+  },
+  "cutoff": "2026-10-25T17:00:00-04:00",
+  "config": "configs/runs/main.yaml",
+  "inputs": {
+    "data/raw/main/claude-sonnet-5-5.jsonl": "688083a1485b9d1d3320840d8afc971ff54d454b558c6f41b2a9a93eac93b52a",
+    "data/raw/main/gpt-oss-120b.jsonl": "a959fa1637798261631468d825ad62b6f5c7240ecb1b32eb0e58a387ccdd659d",
+    "data/raw/main/mistral-medium-3-5.jsonl": "6099625b61ec07d352ee0535c1ea1d12693463443462fe343c80fb52ba764e34"
+  },
+  "strata": {
+    "gpt-oss-120b": {
+      "malformed": {
+        "population": 0,
+        "sampled": 0,
+        "weight": null
+      },
+      "several_numbers": {
+        "population": 0,
+        "sampled": 0,
+        "weight": null
+      },
+      "bound": {
+        "population": 0,
+        "sampled": 0,
+        "weight": null
+      },
+      "partial_export": {
+        "population": 461,
+        "sampled": 4,
+        "weight": 115.25
+      },
+      "yes_no_reversal": {
+        "population": 0,
+        "sampled": 0,
+        "weight": null
+      },
+      "false_signal": {
+        "population": 830,
+        "sampled": 10,
+        "weight": 83.0
+      },
+      "exists": {
+        "population": 615,
+        "sampled": 6,
+        "weight": 102.5
+      },
+      "other": {
+        "population": 3374,
+        "sampled": 20,
+        "weight": 168.7
+      }
+    },
+    "claude-sonnet-5-5": {
+      "malformed": {
+        "population": 0,
+        "sampled": 0,
+        "weight": null
+      },
+      "several_numbers": {
+        "population": 1,
+        "sampled": 1,
+        "weight": 1.0
+      },
+      "bound": {
+        "population": 0,
+        "sampled": 0,
+        "weight": null
+      },
+      "partial_export": {
+        "population": 110,
+        "sampled": 4,
+        "weight": 27.5
+      },
+      "yes_no_reversal": {
+        "population": 0,
+        "sampled": 0,
+        "weight": null
+      },
+      "false_signal": {
+        "population": 918,
+        "sampled": 10,
+        "weight": 91.8
+      },
+      "exists": {
+        "population": 615,
+        "sampled": 6,
+        "weight": 102.5
+      },
+      "other": {
+        "population": 3636,
+        "sampled": 19,
+        "weight": 191.3684
+      }
+    }
+  }
+}

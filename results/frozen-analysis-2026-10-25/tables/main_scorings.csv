@@ -1,0 +1,4 @@
+model,episodes,follow_up_changed,responsive_follow_up_changed,followup_calls_changed,speculative_fetch_changed,missed_fetch_changed,extra_fetch_changed,stratum_changed,stratum_moves,incomplete_outside_more_extents,post_hoc_no_page_served,post_hoc_end_shown,no_target_page,asked_above_limit
+claude-sonnet-5-5,5280,0,0,0,0,0,0,0,,0,0,0,0,0
+gpt-oss-120b,5280,0,0,0,0,0,0,0,,0,0,0,0,0
+mistral-medium-3-5,5280,0,0,0,0,0,0,4,short_page->warranted: 4,0,0,1,0,0

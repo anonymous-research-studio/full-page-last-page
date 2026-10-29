@@ -1,0 +1,13 @@
+                                         cell  claude-sonnet-5-5  follows the hint  counts rows  hint, else count   n
+        no hint, more rows behind a full page              100.0               0.0        100.0             100.0 100
+          no hint, full page that is the last              100.0               0.0        100.0             100.0  91
+      no hint, short page with more behind it               16.0               0.0          0.0               0.0 100
+                    has_more, more rows exist              100.0             100.0        100.0             100.0 100
+              has_more: false, real last page               25.0               0.0        100.0               0.0  91
+                  null cursor, real last page               93.0               0.0        100.0               0.0  91
+     total_count = rows shown, real last page               63.0               0.0        100.0               0.0  91
+                    JSON note, real last page               46.0               0.0        100.0               0.0  91
+any main hint, short page with more behind it              100.0             100.0          0.0             100.0 500
+       wrong has_more: false, more rows exist               24.0               0.0        100.0               0.0 100
+    wrong total = rows shown, more rows exist               64.0               0.0        100.0               0.0 100
+         has_more: false beside a total of 87              100.0             100.0        100.0             100.0 100

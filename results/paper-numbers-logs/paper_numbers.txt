@@ -1,0 +1,104 @@
+
+### A. Episodes and exclusions (main study)
+gpt-oss-120b episodes 5280 | design 4800 | retests 480 | empty 0 | refusals 0 | truncated 0 | hit cap 0 | cap hits outside retests 0
+mistral-medium-3-5 episodes 5280 | design 4800 | retests 480 | empty 0 | refusals 0 | truncated 0 | hit cap 2 | cap hits outside retests 2
+claude-sonnet-5-5 episodes 5280 | design 4800 | retests 480 | empty 0 | refusals 0 | truncated 0 | hit cap 7 | cap hits outside retests 6
+
+### B. No-signal fetch when more rows exist, by task (need cell)
+gpt-oss-120b all 34.0% | export_all 0.0%, count_out_of_stock 12.5%, exists 23.5%, filtered_count 35.3%, oldest_date 64.7%, count_high_priority 68.8%
+mistral-medium-3-5 all 24.0% | count_high_priority 0.0%, count_out_of_stock 0.0%, export_all 0.0%, filtered_count 0.0%, exists 41.2%, oldest_date 100.0%
+claude-sonnet-5-5 all 100.0% | count_high_priority 100.0%, count_out_of_stock 100.0%, exists 100.0%, export_all 100.0%, filtered_count 100.0%, oldest_date 100.0%
+
+### C. Page-1-sufficient tasks (H2b cell): fetch rate by form
+gpt-oss-120b cursor_plus_note 0.0%, has_more 0.0%, next_cursor 0.0%, nl_note_json 0.0%, none 0.0%, total_count 0.0% | n per form 100
+mistral-medium-3-5 cursor_plus_note 6.1%, has_more 25.3%, next_cursor 5.2%, nl_note_json 7.1%, none 0.0%, total_count 1.0% | n per form 98
+claude-sonnet-5-5 cursor_plus_note 18.0%, has_more 10.0%, next_cursor 7.0%, nl_note_json 9.0%, none 2.0%, total_count 9.0% | n per form 100
+
+### D. Post hoc: self-contradicting page minus the contradicting field alone (truthful form, same rows)
+gpt-oss-120b visible_conflict_total 70.0% vs total_count 76.0%: -6.0 [-11.5, -0.2] p=0.070 n=100 (McNemar exact; Agresti-Min CI)
+gpt-oss-120b visible_conflict_note 76.0% vs nl_note_json 77.0%: -1.0 [-6.4, +4.5] p=1.000 n=100 (McNemar exact; Agresti-Min CI)
+mistral-medium-3-5 visible_conflict_total 52.0% vs total_count 79.0%: -27.0 [-35.7, -17.3] p=0.000 n=100 (McNemar exact; Agresti-Min CI)
+mistral-medium-3-5 visible_conflict_note 87.0% vs nl_note_json 79.0%: +8.0 [+2.3, +13.4] p=0.008 n=100 (McNemar exact; Agresti-Min CI)
+claude-sonnet-5-5 visible_conflict_total 100.0% vs total_count 100.0%: +0.0 [-1.9, +1.9] p=1.000 n=100 (McNemar exact; Agresti-Min CI)
+claude-sonnet-5-5 visible_conflict_note 100.0% vs nl_note_json 100.0%: +0.0 [-1.9, +1.9] p=1.000 n=100 (McNemar exact; Agresti-Min CI)
+
+### E. Plain correctness (PROVISIONAL until audit part 2): no signal vs false end signals, more rows exist
+gpt-oss-120b correct: none 40.0% | false ends 15.0% | retrieval-supported: none 32.0% | false ends 7.0%
+mistral-medium-3-5 correct: none 26.0% | false ends 16.2% | retrieval-supported: none 20.0% | false ends 9.0%
+claude-sonnet-5-5 correct: none 100.0% | false ends 59.2% | retrieval-supported: none 100.0% | false ends 52.5%
+
+### F. Retrieval-supported correctness by form, more rows exist (PROVISIONAL), and rows needed when paging
+gpt-oss-120b correct / retrieval-supported by form: cursor_plus_note 80.0%/77.0%, has_more 92.0%/90.0%, next_cursor 81.0%/77.0%, nl_note_json 80.0%/76.0%, none 40.0%/32.0%, total_count 79.0%/73.0%
+   has_more, both extents with more rows: paged in 185; every needed row in 185 of 185; completion==1 in 95.7%
+   has_more: paged in 91; ended with every row its answer needed in 91 of 91; completion==1 in 96.7%
+   total_count, both extents with more rows: paged in 157; every needed row in 138 of 157; completion==1 in 76.4%
+   total_count: paged in 76; ended with every row its answer needed in 73 of 76; completion==1 in 80.3%
+   exists task (core, needs-all, all forms and extents, n=300): correct 89.0%, retrieval-supported 75.3%
+   exists, more rows exist (both extents) (n=204): correct 83.8%, retrieval-supported 63.7%
+   exists, full page, more rows (n=102): correct 79.4%, retrieval-supported 53.9%
+   exists, all needs-all exists in analysis sample (n=408): correct 91.9%, retrieval-supported 81.9%
+mistral-medium-3-5 correct / retrieval-supported by form: cursor_plus_note 55.0%/55.0%, has_more 82.0%/81.0%, next_cursor 56.0%/56.0%, nl_note_json 58.0%/57.0%, none 26.0%/20.0%, total_count 73.0%/71.0%
+   has_more, both extents with more rows: paged in 200; every needed row in 199 of 200; completion==1 in 95.5%
+   has_more: paged in 100; ended with every row its answer needed in 99 of 100; completion==1 in 94.0%
+   total_count, both extents with more rows: paged in 160; every needed row in 144 of 160; completion==1 in 75.6%
+   total_count: paged in 79; ended with every row its answer needed in 78 of 79; completion==1 in 82.3%
+   exists task (core, needs-all, all forms and extents, n=300): correct 87.0%, retrieval-supported 80.7%
+   exists, more rows exist (both extents) (n=204): correct 81.4%, retrieval-supported 72.1%
+   exists, full page, more rows (n=102): correct 74.5%, retrieval-supported 64.7%
+   exists, all needs-all exists in analysis sample (n=408): correct 90.4%, retrieval-supported 85.8%
+claude-sonnet-5-5 correct / retrieval-supported by form: cursor_plus_note 100.0%/100.0%, has_more 100.0%/100.0%, next_cursor 99.0%/99.0%, nl_note_json 99.0%/99.0%, none 100.0%/100.0%, total_count 100.0%/100.0%
+   has_more, both extents with more rows: paged in 200; every needed row in 200 of 200; completion==1 in 94.5%
+   has_more: paged in 100; ended with every row its answer needed in 100 of 100; completion==1 in 94.0%
+   total_count, both extents with more rows: paged in 200; every needed row in 199 of 200; completion==1 in 88.5%
+   total_count: paged in 100; ended with every row its answer needed in 100 of 100; completion==1 in 85.0%
+   exists task (core, needs-all, all forms and extents, n=300): correct 98.0%, retrieval-supported 95.7%
+   exists, more rows exist (both extents) (n=204): correct 97.1%, retrieval-supported 93.6%
+   exists, full page, more rows (n=102): correct 100.0%, retrieval-supported 100.0%
+   exists, all needs-all exists in analysis sample (n=408): correct 98.5%, retrieval-supported 96.8%
+
+### G. Retest disagreements on fetching, by condition
+gpt-oss-120b pairs 480, fetch disagreements 43: total_count/more_full: 8, none/more_full: 7, has_more/more_full: 6, none/last_full: 6, total_count/last_full: 5, none/last_short: 3, next_cursor/more_short: 2, none/more_short: 2, cursor_plus_note/more_full: 1, has_more/more_short: 1, nl_note_json/last_full: 1, nl_note_json/more_full: 1 | by conflict: {'-': 33, 'false_total': 8, 'visible_conflict_total': 2} | by task: {'oldest_date': 13, 'exists': 12, 'count_high_priority': 7, 'filtered_count': 7, 'count_out_of_stock': 2, 'export_all': 2}
+mistral-medium-3-5 pairs 480, fetch disagreements 15: total_count/more_full: 5, nl_note_json/more_full: 3, cursor_plus_note/more_full: 2, has_more/more_full: 2, has_more/last_short: 1, next_cursor/more_short: 1, nl_note_json/more_short: 1 | by conflict: {'-': 9, 'false_total': 3, 'visible_conflict_total': 2, 'false_note': 1} | by task: {'count_high_priority': 3, 'export_all': 3, 'exists': 3, 'count_out_of_stock': 3, 'oldest_date': 2, 'lookup': 1}
+claude-sonnet-5-5 pairs 480, fetch disagreements 21: has_more/last_full: 4, total_count/more_full: 3, cursor_plus_note/last_full: 2, next_cursor/last_full: 2, nl_note_json/last_full: 2, nl_note_json/more_full: 2, total_count/last_full: 2, cursor_plus_note/more_full: 1, has_more/more_full: 1, next_cursor/last_short: 1, next_cursor/more_full: 1 | by conflict: {'-': 14, 'false_total': 3, 'false_note': 2, 'false_end': 1, 'false_end_cursor': 1} | by task: {'filtered_count': 5, 'count_out_of_stock': 5, 'exists': 4, 'export_all': 3, 'count_high_priority': 2, 'oldest_date': 1, 'lookup': 1}
+
+### H. Cost in tool calls (n_calls), core final-line needs-all
+gpt-oss-120b more rows exist: no signal 2.11, any main form 3.19 (+1.08), has_more 3.63 | full last page, saved vs no signal: cursor_plus_note +0.38, has_more +0.38, next_cursor +0.37, nl_note_json +0.31, total_count +0.05 | cap hits (all arms): 0
+mistral-medium-3-5 more rows exist: no signal 1.76, any main form 3.46 (+1.70), has_more 3.91 | full last page, saved vs no signal: cursor_plus_note +0.19, has_more +0.14, next_cursor +0.14, nl_note_json +0.11, total_count -0.01 | cap hits (all arms): 2
+claude-sonnet-5-5 more rows exist: no signal 3.90, any main form 3.71 (+-0.19), has_more 3.81 | full last page, saved vs no signal: cursor_plus_note +0.78, has_more +0.76, next_cursor +0.08, nl_note_json +0.55, total_count +0.38 | cap hits (all arms): 7
+
+### I. Stated completeness when the answer was incomplete (completeness format, needs-all, retests left out; descriptive)
+gpt-oss-120b | all completeness-format: incomplete 429 -> complete 429 (100.0%) || complete 171 -> complete 171
+gpt-oss-120b | trigger cells (no conflict): incomplete 60 -> complete 60 (100.0%) || complete 140 -> complete 140
+gpt-oss-120b | false-end cells: incomplete 369 -> complete 369 (100.0%) || complete 31 -> complete 31
+mistral-medium-3-5 | all completeness-format: incomplete 446 -> complete 446 (100.0%) || complete 154 -> complete 153, partial 1
+mistral-medium-3-5 | trigger cells (no conflict): incomplete 81 -> complete 81 (100.0%) || complete 119 -> complete 119
+mistral-medium-3-5 | false-end cells: incomplete 365 -> complete 365 (100.0%) || complete 35 -> complete 34, partial 1
+claude-sonnet-5-5 | all completeness-format: incomplete 160 -> complete 160 (100.0%) || complete 440 -> complete 440
+claude-sonnet-5-5 | trigger cells (no conflict): incomplete 0 ->  || complete 200 -> complete 200
+claude-sonnet-5-5 | false-end cells: incomplete 160 -> complete 160 (100.0%) || complete 240 -> complete 240
+
+### J. Multiplicity: significant within part vs after Holm across all main contrasts
+gpt-oss-120b contrasts 27, significant within part 24, kept after Holm across all 23; lost: H5b a silent incomplete answers: without the field - wit
+mistral-medium-3-5 contrasts 27, significant within part 23, kept after Holm across all 22; lost: H2b a nl_note_json - total_count, fetch when page 1 suff
+claude-sonnet-5-5 contrasts 27, significant within part 17, kept after Holm across all 15; lost: A1 a next_cursor: fetch when more rows exist - fetch on; H2 a none - next_cursor, fetch past a full last page
+
+### K. Amended H4: incomplete answers by task (post hoc file)
+             model                task  items  incomplete_no_signal  incomplete_false_end     diff        lo       hi
+ claude-sonnet-5-5 count_high_priority     16              0.000000              0.468750 0.468750  0.375000 0.578125
+ claude-sonnet-5-5  count_out_of_stock     16              0.000000              0.531250 0.531250  0.468750 0.593750
+ claude-sonnet-5-5              exists     17              0.000000              0.838235 0.838235  0.779412 0.897059
+ claude-sonnet-5-5          export_all     17              0.000000              0.676471 0.676471  0.617647 0.720588
+ claude-sonnet-5-5      filtered_count     17              0.000000              0.250000 0.250000  0.147059 0.352941
+ claude-sonnet-5-5         oldest_date     17              0.000000              0.000000 0.000000  0.000000 0.000000
+      gpt-oss-120b count_high_priority     16              0.312500              0.875000 0.562500  0.312500 0.796875
+      gpt-oss-120b  count_out_of_stock     16              0.875000              0.937500 0.062500 -0.093750 0.265625
+      gpt-oss-120b              exists     17              0.882353              0.985294 0.102941 -0.029412 0.294118
+      gpt-oss-120b          export_all     17              1.000000              1.000000 0.000000  0.000000 0.000000
+      gpt-oss-120b      filtered_count     17              0.647059              0.897059 0.250000  0.014706 0.485662
+      gpt-oss-120b         oldest_date     17              0.352941              0.882353 0.529412  0.323529 0.735294
+mistral-medium-3-5 count_high_priority     16              1.000000              1.000000 0.000000  0.000000 0.000000
+mistral-medium-3-5  count_out_of_stock     16              1.000000              1.000000 0.000000  0.000000 0.000000
+mistral-medium-3-5              exists     17              0.764706              0.911765 0.147059  0.014706 0.308824
+mistral-medium-3-5          export_all     17              1.000000              1.000000 0.000000  0.000000 0.000000
+mistral-medium-3-5      filtered_count     17              1.000000              1.000000 0.000000  0.000000 0.000000
+mistral-medium-3-5         oldest_date     17              0.000000              0.544118 0.544118  0.426471 0.661765

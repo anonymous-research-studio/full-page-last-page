@@ -1,0 +1,41 @@
+audit_id,verdict,note,validation_notes,rater_notes
+1,agree,,,
+2,agree,,,"Ids don't match b/w final text and gold, probably flag reasons."
+3,agree,,,"Although gold != score, but final text and scorer matches"
+4,agree,,,
+5,agree,,,"Although gold != score, but final text and scorer matches"
+6,agree,,,
+7,agree,,,
+8,agree,,,
+9,agree,,,Ids match
+10,agree,,,"Although gold != score, but final text and scorer matches"
+11,agree,,,
+12,agree,,,
+13,agree,,,
+14,agree,,,
+15,agree,,,
+16,agree,,,
+17,agree,"Rated unsure in the workbook; the rater confirmed on 2026-10-25 at about 15:40 EDT that the scorer's label is correct (first number 1 against gold 4; the hedge is a disclosure question, not a correctness one), so it is recorded as agree.","Model gave incompleteness details, scorer passed it on. Marked unsure as scrorer probbly cannot have definitely answer (hedging?)",
+18,agree,,"Interesting: Model gave final answer, that means it had all rows? But model is completely wrong.",
+19,agree,,,
+20,agree,,,
+21,agree,,,"Although gold != score, but final text and scorer matches"
+22,agree,,"Interesting: Model gave final answer, that means it had all rows? But model is completely wrong.",
+23,agree,,,
+24,agree,,,
+25,agree,,"Interesting: Model gave final answer, that means it had all rows? But model is completely wrong.","Although gold != score, but final text and scorer matches"
+26,agree,,,Ids not match gold & final_text
+27,agree,,,Ids match
+28,agree,,,
+29,agree,,,
+30,agree,,,ids don’t match gold and final_text. Why model has less than 20 records? Something to do with conflict ?
+31,agree,,,
+32,agree,,,
+33,agree,,,
+34,agree,,,
+35,agree,,,"Although gold != score, but final text and scorer matches"
+36,agree,,,"Although gold != score, but final text and scorer matches"
+37,agree,,,
+38,agree,,,
+39,agree,,,
+40,agree,,,"Model gave only only 20, probably data or conditions"

@@ -1,0 +1,14 @@
+quantity,scope,model,value,lo,hi,n,interval
+precision,every flagged reply,all,0.6206896551724138,0.44002544205988525,0.7731197789919018,29,Wilson 95%
+precision,flagged incomplete answers,all,0.2222222222222222,0.06322510711784671,0.5474110308930111,9,Wilson 95%
+"recall, incomplete answers","true positives 2, missed (weighted) 5.0",all,0.2857142857142857,0.2857142857142857,0.2857142857142857,636,"bootstrap 95% within C, U; 0.0% of replicates undefined"
+disclosures among incomplete answers (weighted),of 3040,all,7.0,,,636,
+"recall, incomplete answers","true positives 0, missed (weighted) 0.0",claude-sonnet-5-5,,,,246,"bootstrap 95% within C, U; 100.0% of replicates undefined"
+disclosures among incomplete answers (weighted),of 417,claude-sonnet-5-5,0.0,,,246,
+"recall, incomplete answers","true positives 0, missed (weighted) 0.0",gpt-oss-120b,,,,164,"bootstrap 95% within C, U; 100.0% of replicates undefined"
+disclosures among incomplete answers (weighted),of 1265,gpt-oss-120b,0.0,,,164,
+"recall, incomplete answers","true positives 2, missed (weighted) 5.0",mistral-medium-3-5,0.2857142857142857,0.2857142857142857,0.2857142857142857,226,"bootstrap 95% within C, U; 0.0% of replicates undefined"
+disclosures among incomplete answers (weighted),of 1358,mistral-medium-3-5,7.0,,,226,
+kappa between labelers,registered overlap,all,,,,100,
+kappa between labelers,supplement overlap,all,1.0,,,50,
+kappa between labelers,all overlap,all,1.0,,,150,

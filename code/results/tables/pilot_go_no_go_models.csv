@@ -1,0 +1,3 @@
+model,empty_reply_rate,no_signal_rate_when_needed,passing_contrasts
+claude-sonnet-5-5,0.0,1.0,RQ2:has_more; RQ2:nl_note_json
+gpt-oss-120b,0.0,0.24,RQ1:has_more; RQ1:next_cursor; RQ1:nl_note_json; RQ2:has_more; RQ2:next_cursor

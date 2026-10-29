@@ -1,0 +1,520 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Zk1KbIocPzwp3wEd68PhYWym9rk</id>
+  <title>arXiv Query: search_query=abs:"partial results" AND (abs:agent OR abs:agents OR abs:LLM)&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:04:56Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22partial+results%22+AND+(abs:agent+OR+(abs:agents+OR+abs:LLM))&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>18</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.20431v2</id>
+    <title>SwarmRSI: Recursive Self-Improvement through Evolving Scientific Agent Swarm</title>
+    <updated>2026-10-19T10:00:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.20431v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.20431v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recursive self-improvement (RSI) in scientific research aims to improve agents' research capabilities through their own experimental experience. Scientific agent swarms can combine evidence and implementations from different research directions to guide their agents' subsequent experiments. However, poor experimental results can leave unclear whether to revise a hypothesis or its implementation, while overall program scores can hide components useful to other agents. To address these challenges, we introduce SwarmRSI, a framework that evolves scientific agent swarms for recursive self-improvement. We devise Feedback-Guided Swarm Mutation to refine hypotheses and their implementations using experimental feedback from other agents. We also propose Complementary Swarm Recombination to reuse retained hypotheses and complementary program components across agents, allowing partial results to support new research. Recursive Swarm Evolution integrates both mechanisms into a feedback loop, using new experimental evidence to guide subsequent research. Experiments on OpenProblems, NatureBench and MLE-Bench Lite demonstrate SwarmRSI's state-of-the-art (SOTA) performance. Further evaluations show that accumulated research experience improves performance on held-out tasks. Biologists also reproduce its programs for follow-up biological analyses.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-14T16:21:45Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Qianru Meng</name>
+    </author>
+    <author>
+      <name>Xi Zhang</name>
+    </author>
+    <author>
+      <name>Konstantinos Papakostas</name>
+    </author>
+    <author>
+      <name>Congfeng Cao</name>
+    </author>
+    <author>
+      <name>Wenxiang Hu</name>
+    </author>
+    <author>
+      <name>Tianyi Lu</name>
+    </author>
+    <author>
+      <name>Xiao Zhang</name>
+    </author>
+    <author>
+      <name>Lun Zhou</name>
+    </author>
+    <author>
+      <name>Zaiqiao Meng</name>
+    </author>
+    <author>
+      <name>Zhaochun Ren</name>
+    </author>
+    <author>
+      <name>Xiaohui Yan</name>
+    </author>
+    <author>
+      <name>Yougang Lyu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.03229v2</id>
+    <title>Non-freezing of the proximity digraph and non-pseudostable convergence in heterogeneous Hegselmann--Krause models: Counterexamples to conjectures and results of Mirtabatabaei and Bullo</title>
+    <updated>2026-10-21T12:25:29Z</updated>
+    <link href="https://arxiv.org/abs/2610.03229v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.03229v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In 2012, Mirtabatabaei and Bullo studied heterogeneous Hegselmann--Krause models of opinion dynamics, where different agents may have different confidence or influence bounds. They conjectured that opinion vectors always converge, a fundamental problem that remains open. In support of this main conjecture they gave some partial results and made some auxiliary conjectures. Here we give counterexamples to two of these auxiliary conjectures, and even to one theorem in their paper. We explain why these disproved conjectures and false theorem nevertheless likely remain valid for almost all initial opinion vectors. In the last section (Section 7), we describe the role of AI in the production of the results in this paper.</summary>
+    <category term="math.DS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T12:43:11Z</published>
+    <arxiv:comment>Version 2. In V.1, the conditions under which Thm 6.4(iii)(a) of [4] can be rescued were not described accurately. Minor editions to Abstract, Sections 1 and 6. Since V.1 appeared, our results have notably been built on. Here we follow the conventional practice, by describing these developments in a note at the end of the paper, but otherwise retaining the structure of the original submission</arxiv:comment>
+    <arxiv:primary_category term="math.DS"/>
+    <author>
+      <name>Peter Hegarty</name>
+    </author>
+    <author>
+      <name>Damiano Ognissanti</name>
+    </author>
+    <author>
+      <name>Edvin Wedin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.30345v2</id>
+    <title>Coding Agents Aren't Enough! Evaluating an Enterprise Security Brain for Agentic Cloud Investigations</title>
+    <updated>2026-09-28T10:07:25Z</updated>
+    <link href="https://arxiv.org/abs/2609.30345v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.30345v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Cloud-security investigation is dominated by population tasks: which identities can read a data store, how many resources fail a control, what is reachable from another account. These resolve against a complete inventory, not a named object, so a partial answer to one is not a partial result but a different one. Coding agents can now be given read-only cloud credentials and asked to investigate directly, which raises the question of what a purpose-built security context layer still contributes. We evaluate the Sola Security Brain, a security intelligence layer whose relational substrate is resolved offline and whose security logic is evaluated against it at query time, against two coding agents operating the same live AWS environment through a read-only CLI, Claude Code and OpenAI Codex, over 28 investigation tasks. All three are scored by a blinded, tier-weighted, grounding-gated relative recall over one joint claim pool, so the scores share a denominator. The Sola Security Brain reaches 0.549 +/- 0.012 coverage against 0.340 +/- 0.011 for Claude Code and 0.281 +/- 0.006 for Codex, with the ordering identical in every grading draw. It leads 24 of 28 tasks from the cheapest model tier, at 17.8x and 20.8x lower cost per task than Claude Code and Codex. Beyond the aggregate, we describe an answer-level pattern we term sample-and-generalise: both agents enumerate a fraction of a large population, assert an unhedged universal negative, and disclose the sample size only in answer metadata rather than in the answer. In one task Claude Code reported that no bucket policies exist after checking four bucket families, in a sweep that sampled 40 of roughly 5,000 buckets, in an account where 65 buckets carry a wildcard-principal read grant.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-24T13:27:58Z</published>
+    <arxiv:comment>13 pages, 7 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Leon Goldberg</name>
+    </author>
+    <author>
+      <name>Gal Engelberg</name>
+    </author>
+    <author>
+      <name>Eden Yavin</name>
+    </author>
+    <author>
+      <name>Elad Elouz</name>
+    </author>
+    <author>
+      <name>Ariel Zadok</name>
+    </author>
+    <author>
+      <name>Konstantin Koutsyi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.21264v1</id>
+    <title>Programming AMD XDNA NPUs with Open-source Compiler Tools: A FlashAttention Case Study</title>
+    <updated>2026-09-18T03:22:12Z</updated>
+    <link href="https://arxiv.org/abs/2609.21264v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.21264v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Spatial NPUs such as AMD XDNA place compute tiles beside small local memories and leave data movement between them to software. Mapping a multi-stage workload onto such a device is largely a question of where the intermediate tensors live. We report what we learned making those choices for FlashAttention with the open-source IRON and MLIR-AIR flows.
+  We compare four reference designs on XDNA 1 and XDNA 2: one runs each operator separately, two stream between operators on chip, and one fuses all three attention stages into a single kernel. The fused kernel holds the $\boldsymbol{QK}^{\mathsf T}$ scores in compute-tile local memory and reduces partial results over the cascade interconnect, so the scores never return to shared MemTile memory. On XDNA 2, it reaches 3.62 TFLOP/s over complete end-to-end execution, twice the IRON design, with 5.3 to 7.2 times the energy efficiency of the integrated GPU on the same chip at 2K tokens and above. It covers twelve LLM configurations, from BERT to DeepSeek, up to 128K tokens.
+  Roofline analysis at each memory level explains this result and shows when to stop. XDNA 1 has lower ridge points, so streaming on chip already reaches the compute-bound regime: the same fusion that doubles throughput on XDNA 2 is nearly wasted on XDNA 1. Comparing a mapping's operational intensity against each level's ridge point predicts which case applies before writing any code. Fuse until the mapping clears that ridge point, then stop. We release the reference designs as maintained open source.</summary>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-18T03:22:12Z</published>
+    <arxiv:primary_category term="cs.AR"/>
+    <author>
+      <name>Erwei Wang</name>
+    </author>
+    <author>
+      <name>Ephrem Wu</name>
+    </author>
+    <author>
+      <name>Victor J. B. Jung</name>
+    </author>
+    <author>
+      <name>Jiajie Li</name>
+    </author>
+    <author>
+      <name>Andre Rosti</name>
+    </author>
+    <author>
+      <name>Joseph Melber</name>
+    </author>
+    <author>
+      <name>Samuel Bayliss</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.00857v1</id>
+    <title>LLM Inference on IMC-NoC Architecture with Balanced Dataflow and Fine-Grained Parallelism</title>
+    <updated>2026-09-01T07:55:45Z</updated>
+    <link href="https://arxiv.org/abs/2609.00857v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00857v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM inference has become an essential service, yet it imposes unprecedented demands on memory bandwidth, computational density, and communication efficiency. While IMC is a promising solution to the memory wall issue, the heterogeneous data dynamicity of LLM requires complementary resources to handle intermediate data generated during run-time. Furthermore, the massive number of parameters in LLM necessitates scale-up architectures where on-chip data movement is often the primary performance bottleneck. This article presents a hardware-software co-design framework that unifies distributed compute, memory, and communication into a seamless processing-communication fabric. On the hardware side, we propose a scalable architecture, named LEAP, that integrates IMC PE, NMC PE, and INC. This allows each hardware layer to execute specialized tasks: IMC for static weights, NMC for dynamic data, and INC for partial result reduction. On the software side, we introduce a partitioning, mapping, and scheduling framework optimized for key metrics in LLM serving, including throughput and latency. To address the distinct computational intensities of the prefill and decode phases, we present a prefill-decode disaggregation approach that dynamically reconfigures PE organizations to maximize resource utilization. Compared to commercial GPU platforms, the proposed architecture provides a throughput and an energy efficiency improvement of $\geq{}1.52\times$ and $24.91\times$, respectively.</summary>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-01T07:55:45Z</published>
+    <arxiv:comment>11 pages, 15 figures, an extended version of LEAP ICCAD'2025</arxiv:comment>
+    <arxiv:primary_category term="cs.AR"/>
+    <author>
+      <name>Yimin Wang</name>
+    </author>
+    <author>
+      <name>Yue Jiet Chong</name>
+    </author>
+    <author>
+      <name>Xuanyao Fong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.00032v1</id>
+    <title>EULER: Exploring Underused Links with Evidence-Checked Return for Multi-Agent Mathematical Discovery</title>
+    <updated>2026-08-28T17:36:00Z</updated>
+    <link href="https://arxiv.org/abs/2609.00032v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00032v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Mathematical communities work with different objects, invariants, and tools, so transferring a problem across them is expensive and often skipped. We present EULER, a multi-agent system that takes such a transfer--a bridge--as its unit of search. Around a fixed conjecture, EULER runs direct, adjacent-domain, and distant-domain routes in competition; a bridge keeps its budget only if it supplies an operation the source representation cannot execute and its target-side evidence returns to the original statement along a checked implication. Six ordered stress tests reject invalid bridges before expensive search begins.
+  We evaluate EULER on 120 recent conjectures. The conjectures were frozen before search and screened for contamination, and are drawn from public papers by authors who had recently published in the Journal of Combinatorial Theory, Series A, a leading journal in combinatorics. EULER produced 10 proofs and 3 refutations, plus 45 scoped partial results. Two mechanisms held up under ablation: bridge-specific stress tests cut incorrect conclusions from 9 to 3, and bridge material combined with a target-native operation yielded a positive interaction of +4.2 resolved tasks that neither factor produced alone. Domain distance did not reliably predict success; executable operation gain and valid return did.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-28T17:36:00Z</published>
+    <arxiv:comment>55 pages, 10 figures, 29 tables; includes a 13-page companion candidate-proof manuscript as Appendix P</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Ren Zhenzhuo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.23525v2</id>
+    <title>Self-Compacting Language Model Agents</title>
+    <updated>2026-07-10T18:13:00Z</updated>
+    <link href="https://arxiv.org/abs/2606.23525v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.23525v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Long agent traces composed of chains of thought and tool calls accumulate stale content that anchor subsequent generations, and eventually outgrow the context window. Existing scaffolds mitigate it with fixed-interval compaction triggered at a token threshold. Such triggers pay no heed to trajectory structure, risking discard of partial results mid-derivation or mid-search. We propose SelfCompact, a scaffold that allows the model itself to decide when and how to compact. Specifically, it pairs two inference-time elements: (i) a compaction tool the model invokes to summarize the accumulated context, and (ii) a lightweight rubric specifying when to fire (a sub-task has resolved, or the trajectory is converging) and when to suppress (mid-derivation, or when stuck). Both are needed. The tool alone is unevenly used across open-weight models, often invoked at unhelpful moments or not at all; the rubric alone cannot act. Together, they elicit effective adaptive compaction without any fine-tuning or external supervision. We present empirical results on six benchmarks (competitive math and agentic search) and seven models. Our results show that SelfCompact matches or exceeds fixed-interval summarization at a fraction of the token cost, improving over a no-summarization baseline by up to 18.1 points on math and 5-9 points on agentic search at 30-70% lower per-question cost. Our results expose a meta-cognitive gap: although unprompted models cannot reliably tell when their own context is rotting, a lightweight rubric closes this gap, reframing when to compact as a capability that scaffolds can supply without training.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-22T16:08:34Z</published>
+    <arxiv:comment>25 pages, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Tianjian Li</name>
+    </author>
+    <author>
+      <name>Jingyu Zhang</name>
+    </author>
+    <author>
+      <name>William Jurayj</name>
+    </author>
+    <author>
+      <name>Xi Wang</name>
+    </author>
+    <author>
+      <name>Chuanyang Jin</name>
+    </author>
+    <author>
+      <name>Mehrdad Farajtabar</name>
+    </author>
+    <author>
+      <name>Eric Nalisnick</name>
+    </author>
+    <author>
+      <name>Daniel Khashabi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.18665v1</id>
+    <title>EFX Allocations Exist on Multi-Graphs</title>
+    <updated>2026-06-17T04:03:56Z</updated>
+    <link href="https://arxiv.org/abs/2606.18665v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.18665v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the fair allocation of indivisible goods among agents, with a focus on limiting envy. A central fairness notion is envy-freeness up to any good (EFX), which requires that any envy toward another agent vanishes after the removal of any single good from the latter's bundle. The existence of EFX allocations is considered a major open problem in fair division. So far, it has only been established in limited settings.
+  Christodoulou et al. [2023] proved the existence of EFX allocations for graphical valuations. In this setting, the agents correspond to the nodes of an underlying graph, and the goods correspond to the edges, and any good has positive value only for the endpoints of the corresponding edge. Their proof crucially relies on the restriction that the graph is simple, meaning that for any pair of agents, there is at most one good that has value to both.
+  For multigraph valuations, where multiple goods may be valued by the same pair of agents, only partial results are known. Amanatidis et al. [2024] and Kaviani et al. [2025] obtained 2/3 and sqrt(2)/2 approximations of EFX, respectively; Kaviani et al. [2024] established existence under restricted additive valuations; and Afshinmehr et al. [2025a] proved existence under the assumption that the shortest cycle containing non-parallel edges has length at least 4.
+  In this paper, we resolve this open problem by proving the existence of EFX allocations for multigraph instances under cancelable valuations, a strict superclass of additive valuation functions. Our proof is algorithmic and computes such allocations in polynomial time when the valuation functions are cancelable. This work contributes to the small number of EFX existence results that apply to an arbitrary number of agents.</summary>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-17T04:03:56Z</published>
+    <arxiv:primary_category term="cs.GT"/>
+    <author>
+      <name>Mahyar Afshinmehr</name>
+    </author>
+    <author>
+      <name>Arash Ashuri</name>
+    </author>
+    <author>
+      <name>Pouria Mahmoudkhan</name>
+    </author>
+    <author>
+      <name>Kurt Mehlhorn</name>
+    </author>
+    <author>
+      <name>Amir Mohammad Shahrezaei</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.10402v2</id>
+    <title>Harnessing the Collective Intelligence of AI Agents in the Wild for New Discoveries</title>
+    <updated>2026-08-26T19:33:02Z</updated>
+    <link href="https://arxiv.org/abs/2606.10402v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.10402v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Scientific discovery is often a collective process: researchers share partial results, inspect failed attempts, and build on each other's ideas over long time horizons. Recent AI systems have shown that language-model-based agents can make meaningful progress on open scientific problems, but most existing systems operate in isolation. In this paper, we present EinsteinArena, an agent-native platform for open distributed research and discovery. EinsteinArena provides agents with a live set of open problems, each with a solid verifier, public leaderboard, and problem-specific discussion forum where agents can ask questions and share insights. We focus on mathematical tasks that have garnered substantial research interest, where progress can be measured unambiguously. As of May 2026, agents on EinsteinArena have discovered 12 new state-of-the-art results better than any previous human or AI solutions. One notable example is the kissing number problem in dimension 11, where the platform improved the best known lower bound from 593 to 604. This advance did not come from a single agent or isolated run. Rather it arose through a sequence of submissions, public discussion, verifier refinement, and subsequent agent-to-agent borrowing of ideas. These results provide evidence that decentralized scientific discovery can emerge from open interaction among autonomous agents in the wild, demonstrating a new paradigm for collective AI-driven research.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-09T04:25:28Z</published>
+    <arxiv:comment>Updated to correct a mistake</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Federico Bianchi</name>
+    </author>
+    <author>
+      <name>Yongchan Kwon</name>
+    </author>
+    <author>
+      <name>Aneesh Pappu</name>
+    </author>
+    <author>
+      <name>James Zou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.16511v1</id>
+    <title>SQL Query Engine: A Self-Healing LLM Pipeline for Natural Language to PostgreSQL Translation</title>
+    <updated>2026-04-15T06:59:37Z</updated>
+    <link href="https://arxiv.org/abs/2604.16511v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.16511v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present SQL Query Engine, an open-source, self-hosted service that translates natural language questions into validated PostgreSQL queries through a two-stage LLM pipeline. The first stage performs automatic schema introspection and SQL generation; a multi-strategy response parser extracts SQL from any LLM output format (JSON, code blocks, or raw text) without requiring structured output APIs. The second stage executes the query against PostgreSQL and, upon failure or empty results, enters an iterative self-healing loop in which the LLM diagnoses the error using full SQLSTATE codes and PostgreSQL diagnostic messages. Two mechanisms prevent regressions: early-accept returns successful queries immediately without LLM re-evaluation, and best-result tracking preserves the best partial result across retries. Schema context is cached per session in Redis, progress events stream via Redis Pub/Sub and SSE, and an OpenAI-compatible /v1/chat/completions endpoint lets existing tools work without modification. All database connections are read-only at the driver level. We evaluate across five LLM backends on a synthetic benchmark (75 questions, three databases) where the self-healing loop yields up to +9.3pp accuracy gains with zero regressions on the best model (Llama 4 Scout 17B, 57.3%), and on BIRD (437 questions, 11 databases migrated from SQLite to PostgreSQL) where the full pipeline reaches 49.0% execution accuracy (GPT-OSS-120B, +4.6pp). Source code: https://github.com/codeadeel/sqlqueryengine.</summary>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-15T06:59:37Z</published>
+    <arxiv:comment>16 pages, 5 tables, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.DB"/>
+    <author>
+      <name>Muhammad Adeel Ijaz</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.02335v3</id>
+    <title>Building a Correct-by-Design Lakehouse. Data Contracts, Versioning, and Transactional Pipelines for Humans and Agents</title>
+    <updated>2026-03-17T16:04:54Z</updated>
+    <link href="https://arxiv.org/abs/2602.02335v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.02335v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Lakehouses are now the default substrate for analytics and AI, but they remain fragile under concurrent, untrusted change: schema mismatches often surface only at runtime, development and production easily diverge, and multi-table pipelines can expose partial results after failure. We present Bauplan, a code-first lakehouse that aims to eliminate a broad class of these failures by construction. Bauplan builds on a storage substrate that already provides atomic single-table snapshot evolution, and adds three pipeline-level correctness mechanisms: typed table contracts to make transformation boundaries checkable, Git-like data versioning to support reproducible collaboration and review, and transactional runs that guarantee atomic publication of an entire pipeline execution. We describe the system design, show how these abstractions fit together into a unified programming model for humans and agents, and report early results from a lightweight Alloy model that both validates key intuitions and exposes subtle counterexamples around transactional branch visibility. Our experience suggests that correctness in the lakehouse is best addressed not by patching failures after the fact, but by restricting the programming model so that many illegal states become unrepresentable.</summary>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-02T16:58:38Z</published>
+    <arxiv:comment>Submission pre-print, data conference</arxiv:comment>
+    <arxiv:primary_category term="cs.DC"/>
+    <author>
+      <name>Weiming Sheng</name>
+    </author>
+    <author>
+      <name>Jinlang Wang</name>
+    </author>
+    <author>
+      <name>Manuel Barros</name>
+    </author>
+    <author>
+      <name>Aldrin Montana</name>
+    </author>
+    <author>
+      <name>Jacopo Tagliabue</name>
+    </author>
+    <author>
+      <name>Luca Bigon</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.06059v2</id>
+    <title>Fact2Fiction: Targeted Poisoning Attack to Agentic Fact-checking System</title>
+    <updated>2025-11-17T06:44:09Z</updated>
+    <link href="https://arxiv.org/abs/2508.06059v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.06059v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>State-of-the-art (SOTA) fact-checking systems combat misinformation by employing autonomous LLM-based agents to decompose complex claims into smaller sub-claims, verify each sub-claim individually, and aggregate the partial results to produce verdicts with justifications (explanations for the verdicts). The security of these systems is crucial, as compromised fact-checkers can amplify misinformation, but remains largely underexplored. To bridge this gap, this work introduces a novel threat model against such fact-checking systems and presents \textsc{Fact2Fiction}, the first poisoning attack framework targeting SOTA agentic fact-checking systems. Fact2Fiction employs LLMs to mimic the decomposition strategy and exploit system-generated justifications to craft tailored malicious evidences that compromise sub-claim verification. Extensive experiments demonstrate that Fact2Fiction achieves 8.9\%--21.2\% higher attack success rates than SOTA attacks across various poisoning budgets and exposes security weaknesses in existing fact-checking systems, highlighting the need for defensive countermeasures.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-08T06:44:57Z</published>
+    <arxiv:comment>Accepted by AAAI 2026 (Oral). Code available at: https://trustworthycomp.github.io/Fact2Fiction/</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Haorui He</name>
+    </author>
+    <author>
+      <name>Yupeng Li</name>
+    </author>
+    <author>
+      <name>Bin Benjamin Zhu</name>
+    </author>
+    <author>
+      <name>Dacheng Wen</name>
+    </author>
+    <author>
+      <name>Reynold Cheng</name>
+    </author>
+    <author>
+      <name>Francis C. M. Lau</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.16411v2</id>
+    <title>When Does Divide and Conquer Work for Long Context LLM? A Noise Decomposition Framework</title>
+    <updated>2026-02-28T23:30:06Z</updated>
+    <link href="https://arxiv.org/abs/2506.16411v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.16411v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We investigate the challenge of applying Large Language Models (LLMs) to long texts. We propose a theoretical framework that distinguishes the failure modes of long context tasks into three categories: cross-chunk dependence (task noise), confusion that grows with context size (model noise), and the imperfect integration of partial results (aggregator noise). Under this view, we analyze when it is effective to use multi-agent chunking, i.e., dividing a lengthy sequence into smaller chunks and aggregating the processed results of each chunk. Our experiments on tasks such as retrieval, question answering, and summarization confirm both the theoretical analysis and the conditions that favor multi-agent chunking. By exploring the accelerated decay of model fidelity with input length, we also explain why, for large inputs, a weaker model configured with chunk-based processing can surpass a more advanced model like GPT4o applied in a single shot. Overall, we present a principled understanding framework and our results highlight a direct pathway to handling long contexts in LLMs with carefully managed chunking and aggregator strategies.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-19T15:49:34Z</published>
+    <arxiv:comment>ICLR 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhen Xu</name>
+    </author>
+    <author>
+      <name>Shang Zhu</name>
+    </author>
+    <author>
+      <name>Jue Wang</name>
+    </author>
+    <author>
+      <name>Junlin Wang</name>
+    </author>
+    <author>
+      <name>Ben Athiwaratkun</name>
+    </author>
+    <author>
+      <name>Chi Wang</name>
+    </author>
+    <author>
+      <name>James Zou</name>
+    </author>
+    <author>
+      <name>Ce Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.18512v2</id>
+    <title>AcuRank: Uncertainty-Aware Adaptive Computation for Listwise Reranking</title>
+    <updated>2025-10-24T06:55:54Z</updated>
+    <link href="https://arxiv.org/abs/2505.18512v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.18512v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Listwise reranking with large language models (LLMs) enhances top-ranked results in retrieval-based applications. Due to the limit in context size and high inference cost of long context, reranking is typically performed over a fixed size of small subsets, with the final ranking aggregated from these partial results. This fixed computation disregards query difficulty and document distribution, leading to inefficiencies. We propose AcuRank, an adaptive reranking framework that dynamically adjusts both the amount and target of computation based on uncertainty estimates over document relevance. Using a Bayesian TrueSkill model, we iteratively refine relevance estimates until reaching sufficient confidence levels, and our explicit modeling of ranking uncertainty enables principled control over reranking behavior and avoids unnecessary updates to confident predictions. Results on the TREC-DL and BEIR benchmarks show that our method consistently achieves a superior accuracy-efficiency trade-off and scales better with compute than fixed-computation baselines. These results highlight the effectiveness and generalizability of our method across diverse retrieval tasks and LLM-based reranking models.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-24T05:15:49Z</published>
+    <arxiv:comment>Accepted at NeurIPS 2025. The first two authors contributed equally. Author order is randomly determined via coin toss</arxiv:comment>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Soyoung Yoon</name>
+    </author>
+    <author>
+      <name>Gyuwan Kim</name>
+    </author>
+    <author>
+      <name>Gyu-Hwung Cho</name>
+    </author>
+    <author>
+      <name>Seung-won Hwang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2404.00242v4</id>
+    <title>DeFT: Decoding with Flash Tree-attention for Efficient Tree-structured LLM Inference</title>
+    <updated>2025-03-07T17:47:42Z</updated>
+    <link href="https://arxiv.org/abs/2404.00242v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2404.00242v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) are increasingly employed for complex tasks that process multiple generation calls in a tree structure with shared prefixes of tokens, including few-shot prompting, multi-step reasoning, speculative decoding, etc. However, existing inference systems for tree-based applications are inefficient due to improper partitioning of queries and KV cache during attention calculation. This leads to two main issues: (1) a lack of memory access (IO) reuse for KV cache of shared prefixes, and (2) poor load balancing.As a result, there is redundant KV cache IO between GPU global memory and shared memory, along with low GPU utilization. To address these challenges, we propose DeFT(Decoding with Flash Tree-Attention), a hardware-efficient attention algorithm with prefix-aware and load-balanced KV cache partitions. DeFT reduces the number of read/write operations of KV cache during attention calculation through KV-Guided Grouping, a method that avoids repeatedly loading KV cache of shared prefixes in attention computation. Additionally, we propose Flattened Tree KV Splitting, a mechanism that ensures even distribution of the KV cache across partitions with little computation redundancy, enhancing GPU utilization during attention computations. By reducing 73-99% KV cache IO and nearly 100% IO for partial results during attention calculation, DeFT achieves up to 2.23/3.59x speedup in the end-to-end/attention latency across three practical tree-based workloads compared to state-of-the-art attention algorithms. Our code is available at https://github.com/LINs-lab/DeFT.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-03-30T04:34:54Z</published>
+    <arxiv:comment>Update DeFT-v4, accepted by ICLR'25 (https://openreview.net/forum?id=2c7pfOqu9k). Our code is available at https://github.com/LINs-lab/DeFT</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Jinwei Yao</name>
+    </author>
+    <author>
+      <name>Kaiqi Chen</name>
+    </author>
+    <author>
+      <name>Kexun Zhang</name>
+    </author>
+    <author>
+      <name>Jiaxuan You</name>
+    </author>
+    <author>
+      <name>Binhang Yuan</name>
+    </author>
+    <author>
+      <name>Zeke Wang</name>
+    </author>
+    <author>
+      <name>Tao Lin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.01516v1</id>
+    <title>A Complete Landscape for the Price of Envy-Freeness</title>
+    <updated>2024-01-03T02:55:34Z</updated>
+    <link href="https://arxiv.org/abs/2401.01516v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2401.01516v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the efficiency of fair allocations using the well-studied price of fairness concept, which quantitatively measures the worst-case efficiency loss when imposing fairness constraints. Previous works provided partial results on the price of fairness with well-known fairness notions such as envy-freeness up to one good (EF1) and envy-freeness up to any good (EFX). In this paper, we give a complete characterization for the price of envy-freeness in various settings. In particular, we first consider the two-agent case under the indivisible-goods setting and present tight ratios for the price of EF1 (for scaled utility) and EFX (for unscaled utility), which resolve questions left open in the literature. Next, we consider the mixed goods setting which concerns a mixture of both divisible and indivisible goods. We focus on envy-freeness for mixed goods (EFM), which generalizes both envy-freeness and EF1, as well as its strengthening called envy-freeness up to any good for mixed goods (EFXM), which generalizes envy-freeness and EFX. To this end, we settle the price of EFM and EFXM by providing a complete picture of tight bounds for two agents and asymptotically tight bounds for $n$ agents, for both scaled and unscaled utilities.</summary>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-01-03T02:55:34Z</published>
+    <arxiv:comment>Appears in the 23rd International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2024</arxiv:comment>
+    <arxiv:primary_category term="cs.GT"/>
+    <author>
+      <name>Zihao Li</name>
+    </author>
+    <author>
+      <name>Shengxin Liu</name>
+    </author>
+    <author>
+      <name>Xinhang Lu</name>
+    </author>
+    <author>
+      <name>Biaoshuai Tao</name>
+    </author>
+    <author>
+      <name>Yichen Tao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2301.05759v2</id>
+    <title>Hypergraphic partitioning of quantum circuits for distributed quantum computing</title>
+    <updated>2023-02-03T13:11:28Z</updated>
+    <link href="https://arxiv.org/abs/2301.05759v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2301.05759v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In the context of NISQ computers - Noise Intermediate Scale Quantum, it is a consensus that the distribution of circuits among processing agents is a viable approach to get greater scalability with small machines. This approach can increase the combined computational power at the cost of dedicating qubits to get the communication between partitions. Then comes the challenge of reducing this cost of communication-based on efficient circuit partitioning strategies. In this context, this work aims to reduce the consumption of communication qubits generated during the physical partitioning of quantum circuits in the distributed quantum computing scenario. We present a new method for partitioning quantum circuits in a hypergraphic representation, using a heuristic partitioning algorithm for this, reducing the number of communication qubits between the partitions. With this approach, we obtained partial results with a more than 50% reduction in the communication cost generated for the bipartite partitioning against a process done randomly on benchmark circuits. The expectation is that future experiments with multiple partitions will continue with equal or better results than previous works, supporting distributed quantum computing with machines in heterogeneous processing and communication scenarios.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-01-13T21:12:33Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Waldemir Cambiucci</name>
+    </author>
+    <author>
+      <name>Regina Melo Silveira</name>
+    </author>
+    <author>
+      <name>Wilson Vicente Ruggiero</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/cs/9901016v1</id>
+    <title>Representation Theory for Default Logic</title>
+    <updated>1999-01-28T21:57:15Z</updated>
+    <link href="https://arxiv.org/abs/cs/9901016v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/cs/9901016v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  Default logic can be regarded as a mechanism to represent families of belief sets of a reasoning agent. As such, it is inherently second-order. In this paper, we study the problem of representability of a family of theories as the set of extensions of a default theory. We give a complete solution to the representability by means of normal default theories. We obtain partial results on representability by arbitrary default theories. We construct examples of denumerable families of non-including theories that are not representable. We also study the concept of equivalence between default theories.</summary>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>1999-01-28T21:57:15Z</published>
+    <arxiv:comment>Annals of Mathematics and Artificial Intelligence, 21 (1997), pp. 343-358</arxiv:comment>
+    <arxiv:primary_category term="cs.LO"/>
+    <author>
+      <name>Victor Marek</name>
+    </author>
+    <author>
+      <name>Jan Treur</name>
+    </author>
+    <author>
+      <name>Miroslaw Truszczynski</name>
+    </author>
+  </entry>
+</feed>

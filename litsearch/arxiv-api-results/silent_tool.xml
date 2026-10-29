@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/p5aYG80Y1XX0WVOdd95kk/t5FRQ</id>
+  <title>arXiv Query: search_query=abs:silent AND (abs:"tool output" OR abs:"tool outputs" OR abs:"tool response" OR abs:"tool responses" OR abs:"tool results" OR abs:"tool failure" OR abs:"tool failures")&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:05:06Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:silent+AND+(abs:%22tool+output%22+OR+(abs:%22tool+outputs%22+OR+(abs:%22tool+response%22+OR+(abs:%22tool+responses%22+OR+(abs:%22tool+results%22+OR+(abs:%22tool+failure%22+OR+abs:%22tool+failures%22))))))&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>12</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.30491v1</id>
+    <title>What the Trace Shows and What the Label Says: Auditing Behavioral Detectors in Agent Evaluation</title>
+    <updated>2026-10-21T22:18:16Z</updated>
+    <link href="https://arxiv.org/abs/2610.30491v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.30491v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents are often evaluated by reducing execution traces to labels such as final-answer correctness, tool verification, and fault propagation. These labels are measurements produced by parsers, behavioral detectors, and harness rules, and they may not fully capture what the trace shows. We study this in a tool-use setting built on GSM8K, where agents call a calculator whose outputs are occasionally corrupted, giving clear ground truth for what the tool returned, what the model later used, and what the detectors reported. We audit three trace-level detectors across six production models and 30 problems per model. Final correctness, visible re-verification, and fault propagation can disagree in systematic ways. A key failure mode is silent tool-output override: the calculator returns a corrupted value, but the model later uses a different, often correct, value without calling the tool again, so the bad value stops propagating while a verification detector records no re-check. Human review of 90 traces agrees perfectly with the automated labels for final correctness (67/67), fault impact (19/19), and fault relevance (18/18), but only 67/81 for verification; all 14 disagreements fall into four recurring patterns. Execution limits also change the reported result: in an ablation across two models, one ranges from 21/30 to 27/30 correct as step and token budgets change, while the other stays between 27/30 and 29/30. These findings motivate measurement transparency: an automated label should come with the trace evidence behind it, whether the question the detector asks applied to that trace, whether the run was cut off by an execution limit, and any human corrections. Our trace viewer makes this information inspectable alongside the reported results.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T22:18:16Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Idunnuoluwa A. Adeniji</name>
+    </author>
+    <author>
+      <name> Shilpika</name>
+    </author>
+    <author>
+      <name>Michael E. Papka</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.10062v1</id>
+    <title>Loud Failures, Quiet Failures: Fault Detection and Recovery in Tool-Using Language Model Agents</title>
+    <updated>2026-10-07T13:29:59Z</updated>
+    <link href="https://arxiv.org/abs/2610.10062v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.10062v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using agents are usually scored on whether they finish a task while the tools work. Deployments are less forgiving: services time out, endpoints disappear, parameter names change, and results come back well formed but wrong. Prior work has shown that language models over-trust tool outputs that fail silently; we ask how that over-trust plays out across the stages of failure handling in multi-turn agents. Wrapping the executable environments of an established function-calling benchmark in a fault-injection layer, we inject one of four typed faults at a controlled point in the trajectory and record whether the agent notices, changes plan, recovers the task, or repeats itself. Six models from three families, half of them reasoning variants, ran 1,920 trials over 24 multi-step tasks. Agents treat a failure as a problem in 91.3% of trials when the tool returns an explicit error, but in 58.8% of trials when it returns a plausible wrong value, against a 26.8% rate of reporting problems when nothing was wrong. Reasoning models are not better placed: paired against instruct siblings, they notice less (-9.3 points, p &lt; .001) and change plan more (+10.4 points, p &lt; .001), and recovery is unchanged (p = .512). Because agents are stochastic, two fault-free runs of the same task end in the same state only 63.3% of the time; against that baseline, only a missing tool clearly lowers recovery (39.9%), while timeouts, schema drift, and corruption stay within run-to-run variation. After a fault, agents return to the same tool three or more times in a row in up to 22.2% of trials, though strictly identical repeats are rare. A prompt line asking the agent to check each result did not move detection. Agents respond to the error channel rather than to the content of what a tool returns, so failures that stay inside the expected format pass through.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-07T13:29:59Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Obada Kraishan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.03894v1</id>
+    <title>Proxy Confidence: Auditing Black-Box LLM Agents with a Surrogate's Log-Probabilities</title>
+    <updated>2026-10-02T18:09:00Z</updated>
+    <link href="https://arxiv.org/abs/2610.03894v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.03894v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A deployed LLM agent emits tool calls, queries, and code that can be silently wrong -- by the time the error surfaces, the action has run. Frontier chat APIs hide the model's token probabilities; the agent's stated confidence barely beats chance on the mistakes that matter; and resampling does not help, since frontier models are highly repetitive, reproducing the same call across samples.
+  We recover the missing signal from a low-cost open-weight surrogate run in parallel. It reads the same context, schema, and proposed action as the agent, then scores the call from its own log-probabilities through a family of complementary readouts: teacher forcing and request-PMI weigh the likelihood of each argument value, a discriminative verdict judges the call as a whole, and tool-choice competition tests the function against its siblings. One principle says which to trust: a generative likelihood localizes wrong argument values, while the verdict catches holistically wrong calls. When the error type is unknown, an ensemble is the low-regret default. The readout is training-free, needs no access to the agent's internals, and costs one prefill pass alongside the tool call.
+  On difficult coding tasks it reaches AUROC 0.825 where the actor's stated confidence is near chance (0.598), and the generative readouts beat it by +0.07 to +0.28 across three further actors. Against self-consistency it gains +0.14 to +0.19 on near-deterministic actors, at 1/K the cost. The signal drives two deployment modes: a real-time gate escalating the least-trustworthy calls for review (+0.05 to +0.30 accepted-action accuracy at 50% coverage), and confidence feedback, returning the tool result with the score so the agent adapts its next step -- lifting task success on live-execution benchmarks (+0.119 and +0.137, p &lt;= 1e-4) and beating a random-value control where step errors are silent (+0.078, p = 0.003).</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T18:09:00Z</published>
+    <arxiv:comment>20 pages, 6 figures, 12 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yikai Zhao</name>
+    </author>
+    <author>
+      <name>Saurabh Pandey</name>
+    </author>
+    <author>
+      <name>Pradeep Kumar Misra</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.02503v1</id>
+    <title>Compound AI System Reliability: A Failure Taxonomy and Resilience Pattern Catalog from 150 Production Incidents</title>
+    <updated>2026-10-01T21:25:25Z</updated>
+    <link href="https://arxiv.org/abs/2610.02503v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.02503v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deploying compound AI systems reliably and safely requires understanding failure modes that emerge at component boundaries, not within individual models. Cascading errors propagate across component boundaries, silent quality degradation evades standard monitoring, and coordination failures yield incorrect collective behavior from individually correct parts. We analyze 150 production incident reports from open-source compound AI projects and anonymized enterprise deployments to construct a taxonomy of 23 failure modes organized into five categories: retrieval failures, generation failures, tool failures, orchestration failures, and integration failures. For each category, we propose resilience patterns with measured effectiveness from controlled fault injection experiments. Circuit breakers reduce cascade propagation by 89%, output quality gates catch 73% of silent degradation before user impact, and component isolation reduces blast radius by 64%. Systems implementing three or more resilience patterns from our catalog reduce mean-time-to-recovery (MTTR) by 71% compared to unstructured monitoring baselines. We release the incident taxonomy and pattern catalog as a practitioner resource.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-01T21:25:25Z</published>
+    <arxiv:comment>Accepted at the AIWILD Workshop, ICML 2026. Camera-ready version</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Rudrendu Kumar Paul</name>
+    </author>
+    <author>
+      <name>Sourav Nandy</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.12582v1</id>
+    <title>NovaFabric: Tamper-Evident, Replayable Evidence for Autonomous AI Agent Runs</title>
+    <updated>2026-09-11T08:35:43Z</updated>
+    <link href="https://arxiv.org/abs/2609.12582v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.12582v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>When an autonomous AI agent does something consequential, what can be proven about what it did? Agent-observability platforms capture traces, but a trace is mutable: alterable undetected, with no recipe for re-executing it, silent on whether captured secrets were removed. Regulation (EU AI Act, ISO 42001, NIST AI RMF) presumes records an independent party can check.
+  We present NovaFabric, producing audit-grade execution evidence: provider-neutral, tamper-evident, replayable, shareable. It records an agent run, without modifying agent logic, into a portable Run Capsule (fifteen-entity schema), sealed with a holistic DSSE signature, RFC 3161 timestamp, Merkle log and redaction attestation. Sealed runs are re-executable under a four-mode replay protocol and exportable as an Evidence Bundle for third-party verification with stock tooling (specified, not evaluated). The contribution is integration, not new cryptography: OpenTelemetry, DSSE/in-toto and W3C PROV.
+  We evaluate eight research questions at measured scope. Mocked replay serves every model response from the capsule (no live model call, 10/10) but is offline w.r.t. models, not the network; only 2/10 tool-using workloads completed; the gap is missing tool-response substitution. Tampering is rejected across three tested classes. Declared-stream completeness is 0.652 (95% CI +/-0.064, ten scenarios). A repaired rule pack redacts 14/14 credential types, preserving 9/9 decoys; diff localises 140/140 mutations. Blast-radius queries: 45.5ms p99 over 10M edges (3.3x faster than a columnar baseline), 167.9ms over 100M (1 client, n=30). A 314-machine, ten-region run finds capsule REST ingest lossless but capped at 61.6 req/s (p99 26.8s) by per-worker serialisation. Six defects found in NovaFabric and its evaluation corpus: four fixed, one withdrawn, one open.
+  Verification is conditional on a stated trusted computing base.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-11T08:35:43Z</published>
+    <arxiv:comment>44 pages, 7 figures, 8 tables, 2 listings. Preprint</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Mohsen Seyedkazemi Ardebili</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.02464v1</id>
+    <title>Real-Time Detection and Repair of LLM Agent Failures</title>
+    <updated>2026-08-03T16:34:46Z</updated>
+    <link href="https://arxiv.org/abs/2608.02464v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.02464v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents fail mid-episode -- they loop, cascade tool errors, drift off goal, fabricate results, or silently absorb corrupted content -- and the standard remedy, judging every step with a second LLM, costs more than the agent itself. We ask how much detection is achievable from observable step telemetry alone, using monitors costing microseconds per step and trained only on healthy runs.
+  On 2,823 committed agent episodes across three frameworks, three local models (qwen2.5 7b/3b, llama3.1 8b) and a commercial API (gemini-2.5-flash), a one-class echo-state-network ensemble with CUSUM alarms detects 0.71 of failures at a 5% false-alarm budget (AUROC 0.872). Its advantage over a memoryless baseline is a monotone function of post-onset horizon (+0.09 at &lt;=3 steps, +0.40 at &gt;=9), predicting its own failure region out of sample on AFTraj-2K. Ranking transfers with no retraining to two corpora from other groups (AFTraj-2K 0.745, ATBench 0.779).
+  Monitors carry two burdens: a per-deployment healthy null (they do not transfer -- AUROC 0.527 cold against 0.885 recalibrated) and a residual false-alarm rate. We add a layer carrying neither: deterministic verification, which recomputes a run's stated total from the tool results it actually received and confirms every required call was made. Head-to-head it catches 60% of failures (96% with the coverage check) at 0 of 63 false positives against the monitor's 54% at 17%, transfers unchanged to llama3.1:8b (110 of 110 at 0 of 10), and trips on 0 of 1825 healthy episodes.
+  Detection is then closed into repair: each flagged run is rolled back and re-run live, recovering 45% of failures against a 16% resampling control (p=0.0005) and lifting task success from 52% to 73% for about one extra model call per run. The system runs at ~200 microseconds per step, three orders of magnitude below a judge call. Code, traces and results are released.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-03T16:34:46Z</published>
+    <arxiv:comment>16 pages, 5 figures. Code, data and demo: github.com/sunnydubey1111/agent-trajectory-sentinel Walkthrough: youtu.be/a05n_000klE</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Sunny Dubey</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.23929v2</id>
+    <title>MemTX: Transactional Belief Commit for Stateful Agent Memory</title>
+    <updated>2026-07-28T12:51:37Z</updated>
+    <link href="https://arxiv.org/abs/2607.23929v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.23929v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents increasingly coordinate through persistent shared memory: one agent's write becomes another agent's premise, and eventually a tool call with real side effects. Current agent memory systems treat every accepted write as immediately actionable truth, so a polluted tool result, a stale update, or a teammate's half-finished note can silently drive an irreversible action. We argue that a memory write is not a belief commit. We present MemTX, a transactional belief-commit protocol. Each record carries evidence, permissions, provenance, and validity. Writes are staged inside snapshot-isolated transactions and admitted by a validate-and-commit pipeline, irreversible tool calls are gated on in-flight belief state, and retracting a belief triggers typed cascading repair of its derived records and tool side effects. Two invariants, action-safety gating and cascade-repair completeness, are machine-checked by property-based testing and bounded exhaustive enumeration of 5.5 million protocol states, with zero violations. Across five backbones from three model families, MemTX leads all eight baselines with paired-McNemar significance on four backbones and statistically ties the best baseline on the fifth and strongest, while remaining the only method with zero downstream harm on every backbone. Backbone capability does not substitute for commit discipline.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-27T01:57:39Z</published>
+    <arxiv:comment>Preprint</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xiaoyang Li</name>
+    </author>
+    <author>
+      <name>Yiqi Wang</name>
+    </author>
+    <author>
+      <name>Haohui Lu</name>
+    </author>
+    <author>
+      <name>Zhi Chen</name>
+    </author>
+    <author>
+      <name>Mo Li</name>
+    </author>
+    <author>
+      <name>Pingan Song</name>
+    </author>
+    <author>
+      <name>Mingkai Zheng</name>
+    </author>
+    <author>
+      <name>Taotao Cai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.11098v3</id>
+    <title>AgentCheck: A Reproduce-Intervene-Mitigate Workbench for LLM Agents over MCP</title>
+    <updated>2026-07-15T06:22:24Z</updated>
+    <link href="https://arxiv.org/abs/2607.11098v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.11098v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using LLM agents are mostly evaluated assuming all tools work. When a tool times out, returns a week-stale value, or has its description poisoned in deployment, the developer needs a controlled way to reproduce the failure, test a fix, and confirm the fix worked before deployment. We present AgentCheck, an open-source web workbench that turns an MCP server into an intervention surface. AgentCheck runs an agent against its real tools and records every tool response, then re-runs the agent with the response perturbed by a fault (12 types) injector. Matching tool calls are replayed from cache, and later tool calls go live after the agent diverges. This yields a reproduce-intervene-confirm loop: the developer toggles a mitigation, re-runs against the identical fault, and sees if the failure goes away. Scoring has two parts: deterministic pass/fail rules, plus an LLM judge for interpretive labels, validated against human annotations. Across five agents, the best passes 105/120 scenarios and the weakest only 77. The failures are usually silent, confident use of incorrect tool outputs rather than crashes. On the weakest agent, a retry mitigation raises success on timeout error faults from as few as 30% of cases to 100%, whereas stale-data faults remain near 3-4 of 10 regardless of the mitigation. AgentCheck makes these failure modes reproducible, comparable, and verifiable before deployment.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-13T05:14:12Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Aritra Mazumder</name>
+    </author>
+    <author>
+      <name>Nusrat jahan Lia</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.28476v1</id>
+    <title>Do you dare to try Test-Driven Forensics? Increasing Trust in Desktop Forensics with ADARE</title>
+    <updated>2026-05-27T13:38:06Z</updated>
+    <link href="https://arxiv.org/abs/2605.28476v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.28476v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Digital forensic relies on validated tools and established procedures, yet the underlying operating systems, applications, and analysis tools evolve rapidly. This evolution can cause artifact behavior and tool outputs to drift, silently degrading repeatability and confidence in long-lived forensic interpretations. We present test-driven forensics, a practical approach that treats forensic expectations as executable specifications: expected artifacts and expected tool outputs are encoded as tests that can be rerun across versions to detect regressions. Crucially, our approach also enables State Transition Testing, validating the system's expected state after each user action rather than only performing post-mortem checks on a final disk image; this supports causal attribution and makes transient behavior testable. We implement the methodology in ADARE, an open-source framework that runs controlled experiments in virtual machines and simulates realistic user activity via computer-vision-guided GUI automation. ADARE includes a companion web platform for sharing experiments, environments, and results to facilitate independent reruns and peer verification. We evaluate ADARE in five case studies spanning artifact research and tool validation. In particular, a 25-version regression study of Autopsy reveals substantial, largely undocumented changes in exported report outputs, demonstrating how executable tests make drift measurable and reproducible at scale.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-27T13:38:06Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Michael Külper</name>
+    </author>
+    <author>
+      <name>Martin Lambertz</name>
+    </author>
+    <author>
+      <name>Mariia Rybalka</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.15473v2</id>
+    <title>Agent Lifecycle Toolkit (ALTK): Reusable Middleware Components for Robust AI Agents</title>
+    <updated>2026-04-27T19:02:56Z</updated>
+    <link href="https://arxiv.org/abs/2603.15473v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.15473v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As AI agents move from demos into enterprise deployments, their failure modes become consequential: a misinterpreted tool argument can corrupt production data, a silent reasoning error can go undetected until damage is done, and outputs that violate organizational policy can create legal or compliance risk. Yet, most agent frameworks leave builders to handle these failure modes ad hoc, resulting in brittle, one-off safeguards that are hard to reuse or maintain. We present the Agent Lifecycle Toolkit (ALTK), an open-source collection of modular middleware components that systematically address these gaps across the full agent lifecycle.
+  Across the agent lifecycle, we identify opportunities to intervene and improve, namely, post-user-request, pre-LLM prompt conditioning, post-LLM output processing, pre-tool validation, post-tool result checking, and pre-response assembly. ALTK provides modular middleware that detects, repairs, and mitigates common failure modes. It offers consistent interfaces that fit naturally into existing pipelines. It is compatible with low-code and no-code tools such as the ContextForge MCP Gateway and Langflow. Finally, it significantly reduces the effort of building reliable, production-grade agents.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-16T16:06:54Z</published>
+    <arxiv:comment>to appear in CAIS 2026 demonstration track</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zidane Wright</name>
+    </author>
+    <author>
+      <name>Jason Tsay</name>
+    </author>
+    <author>
+      <name>Anupama Murthi</name>
+    </author>
+    <author>
+      <name>Osher Elhadad</name>
+    </author>
+    <author>
+      <name>Diego Del Rio</name>
+    </author>
+    <author>
+      <name>Saurabh Goyal</name>
+    </author>
+    <author>
+      <name>Kiran Kate</name>
+    </author>
+    <author>
+      <name>Jim Laredo</name>
+    </author>
+    <author>
+      <name>Koren Lazar</name>
+    </author>
+    <author>
+      <name>Vinod Muthusamy</name>
+    </author>
+    <author>
+      <name>Yara Rizk</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.01548v1</id>
+    <title>Graph-Based Self-Healing Tool Routing for Cost-Efficient LLM Agents</title>
+    <updated>2026-03-02T07:21:15Z</updated>
+    <link href="https://arxiv.org/abs/2603.01548v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.01548v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using LLM agents face a reliability-cost tradeoff: routing every decision through the LLM improves correctness but incurs high latency and inference cost, while pre-coded workflow graphs reduce cost but become brittle under unanticipated compound tool failures. We present Self-Healing Router, a fault-tolerant orchestration architecture that treats most agent control-flow decisions as routing rather than reasoning. The system combines (i) parallel health monitors that assign priority scores to runtime conditions such as tool outages and risk signals, and (ii) a cost-weighted tool graph where Dijkstra's algorithm performs deterministic shortest-path routing. When a tool fails mid-execution, its edges are reweighted to infinity and the path is recomputed -- yielding automatic recovery without invoking the LLM. The LLM is reserved exclusively for cases where no feasible path exists, enabling goal demotion or escalation. Prior graph-based tool-use systems (ControlLLM, ToolNet, NaviAgent) focus on tool selection and planning; our contribution is runtime fault tolerance with deterministic recovery and binary observability -- every failure is either a logged reroute or an explicit escalation, never a silent skip. Across 19 scenarios spanning three graph topologies (linear pipeline, dependency DAG, parallel fan-out), Self-Healing Router matches ReAct's correctness while reducing control-plane LLM calls by 93% (9 vs 123 aggregate) and eliminating the silent-failure cases observed in a well-engineered static workflow baseline under compound failures.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-02T07:21:15Z</published>
+    <arxiv:comment>Working paper. 27 references, 13 figures, 8 tables, pseudocode appendix</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Neeraj Bholani</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.22724v1</id>
+    <title>AgentSentry: Mitigating Indirect Prompt Injection in LLM Agents via Temporal Causal Diagnostics and Context Purification</title>
+    <updated>2026-02-26T07:59:10Z</updated>
+    <link href="https://arxiv.org/abs/2602.22724v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.22724v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents increasingly rely on external tools and retrieval systems to autonomously complete complex tasks. However, this design exposes agents to indirect prompt injection (IPI), where attacker-controlled context embedded in tool outputs or retrieved content silently steers agent actions away from user intent. Unlike prompt-based attacks, IPI unfolds over multi-turn trajectories, making malicious control difficult to disentangle from legitimate task execution. Existing inference-time defenses primarily rely on heuristic detection and conservative blocking of high-risk actions, which can prematurely terminate workflows or broadly suppress tool usage under ambiguous multi-turn scenarios. We propose AgentSentry, a novel inference-time detection and mitigation framework for tool-augmented LLM agents. To the best of our knowledge, AgentSentry is the first inference-time defense to model multi-turn IPI as a temporal causal takeover. It localizes takeover points via controlled counterfactual re-executions at tool-return boundaries and enables safe continuation through causally guided context purification that removes attack-induced deviations while preserving task-relevant evidence. We evaluate AgentSentry on the \textsc{AgentDojo} benchmark across four task suites, three IPI attack families, and multiple black-box LLMs. AgentSentry eliminates successful attacks and maintains strong utility under attack, achieving an average Utility Under Attack (UA) of 74.55 %, improving UA by 20.8 to 33.6 percentage points over the strongest baselines without degrading benign performance.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-26T07:59:10Z</published>
+    <arxiv:comment>23 pages, 8 figures. Under review</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Tian Zhang</name>
+    </author>
+    <author>
+      <name>Yiwei Xu</name>
+    </author>
+    <author>
+      <name>Juan Wang</name>
+    </author>
+    <author>
+      <name>Keyan Guo</name>
+    </author>
+    <author>
+      <name>Xiaoyang Xu</name>
+    </author>
+    <author>
+      <name>Bowen Xiao</name>
+    </author>
+    <author>
+      <name>Quanlong Guan</name>
+    </author>
+    <author>
+      <name>Jinlin Fan</name>
+    </author>
+    <author>
+      <name>Jiawei Liu</name>
+    </author>
+    <author>
+      <name>Zhiquan Liu</name>
+    </author>
+    <author>
+      <name>Hongxin Hu</name>
+    </author>
+  </entry>
+</feed>

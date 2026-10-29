@@ -1,0 +1,4 @@
+model,replies,agree,disagree,unsure,not_yet_audited,weighted_error_rate,bootstrap_lo,bootstrap_hi,wilson_kish_lo,wilson_kish_hi,kish_n_eff,lower_bound_unsure_as_agree,upper_bound_unsure_as_disagree,unweighted_error_rate,population_share_covered
+claude-sonnet-5-5,40,40,0,0,0,0.0,0.0,0.0,0.0,0.10441938406908852,32.947293142757864,0.0,0.0,0.0,1.0
+gpt-oss-120b,40,40,0,0,0,0.0,0.0,0.0,6.938893903907228e-18,0.09414617318059734,36.96167412582713,0.0,0.0,0.0,1.0
+mistral-medium-3-5,40,40,0,0,0,0.0,0.0,0.0,0.0,0.1019998725573678,33.81994922208138,0.0,0.0,0.0,1.0

@@ -1,0 +1,527 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/YRJbEyxB1ZjbyFAGvpkvXwpniDU</id>
+  <title>arXiv Query: search_query=&amp;id_list=2609.14758,2609.26836,2608.22676,2608.04591,2606.13715,2605.05379,2604.10866,2607.20536,2607.27083,2607.01641,2603.08877,2608.08467,2609.21341,2602.14878,2610.30435,2606.20724,2609.30604,2506.11440&amp;start=0&amp;max_results=50</title>
+  <updated>2026-10-24T21:06:33Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=50&amp;id_list=2609.14758,2609.26836,2608.22676,2608.04591,2606.13715,2605.05379,2604.10866,2607.20536,2607.27083,2607.01641,2603.08877,2608.08467,2609.21341,2602.14878,2610.30435,2606.20724,2609.30604,2506.11440" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+  <opensearch:totalResults>18</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2604.10866v2</id>
+    <title>OccuBench: Evaluating AI Agents on Real-World Professional Tasks via Language Environment Simulation</title>
+    <updated>2026-04-16T16:00:33Z</updated>
+    <link href="https://arxiv.org/abs/2604.10866v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.10866v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI agents are expected to perform professional work across hundreds of occupational domains (from emergency department triage to nuclear reactor safety monitoring to customs import processing), yet existing benchmarks can only evaluate agents in the few domains where public environments exist. We introduce OccuBench, a benchmark covering 100 real-world professional task scenarios across 10 industry categories and 65 specialized domains, enabled by Language Environment Simulators (LESs) that simulate domain-specific environments through LLM-driven tool response generation. Our multi-agent synthesis pipeline automatically produces evaluation instances with guaranteed solvability, calibrated difficulty, and document-grounded diversity. OccuBench evaluates agents along two complementary dimensions: task completion across professional domains and environmental robustness under controlled fault injection (explicit errors, implicit data degradation, and mixed faults). We evaluate 15 frontier models across 8 model families and find that: (1) no single model dominates all industries, as each has a distinct occupational capability profile; (2) implicit faults (truncated data, missing fields) are harder than both explicit errors (timeouts, 500s) and mixed faults, because they lack overt error signals and require the agent to independently detect data degradation; (3) larger models, newer generations, and higher reasoning effort consistently improve performance. GPT-5.2 improves by 27.5 points from minimal to maximum reasoning effort; and (4) strong agents are not necessarily strong environment simulators. Simulator quality is critical for LES-based evaluation reliability. OccuBench provides the first systematic cross-industry evaluation of AI agents on professional occupational tasks.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-13T00:27:32Z</published>
+    <arxiv:comment>23 pages, 8 figures, 2 tables. Project page: https://gregxmhu.github.io/OccuBench-website/</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Xiaomeng Hu</name>
+    </author>
+    <author>
+      <name>Yinger Zhang</name>
+    </author>
+    <author>
+      <name>Fei Huang</name>
+    </author>
+    <author>
+      <name>Jianhong Tu</name>
+    </author>
+    <author>
+      <name>Yang Su</name>
+    </author>
+    <author>
+      <name>Lianghao Deng</name>
+    </author>
+    <author>
+      <name>Yuxuan Liu</name>
+    </author>
+    <author>
+      <name>Yantao Liu</name>
+    </author>
+    <author>
+      <name>Dayiheng Liu</name>
+    </author>
+    <author>
+      <name>Tsung-Yi Ho</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.05379v1</id>
+    <title>Partial Evidence Bench: Benchmarking Authorization-Limited Evidence in Agentic Systems</title>
+    <updated>2026-05-06T19:01:29Z</updated>
+    <link href="https://arxiv.org/abs/2605.05379v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.05379v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Enterprise agents increasingly operate inside scoped retrieval systems, delegated workflows, and policy-constrained evidence environments. In these settings, access control can be enforced correctly while the system still produces an answer that appears complete even though material evidence lies outside the caller's authorization boundary. This paper introduces Partial Evidence Bench, a deterministic benchmark for measuring that failure mode. The benchmark ships three scenario families -- due diligence, compliance audit, and security incident response -- with 72 tasks total, ACL-partitioned corpora, oracle complete answers, oracle authorized-view answers, oracle completeness judgments, and structured gap-report oracles. It evaluates systems along four surfaces: answer correctness, completeness awareness, gap-report quality, and unsafe completeness behavior. Checked-in baselines show that silent filtering is catastrophically unsafe across all shipped families, while explicit fail-and-report behavior eliminates unsafe completeness without collapsing the task into trivial abstention. Preliminary real-model runs show model-dependent and scenario-sensitive differences in whether systems overclaim completeness, conservatively underclaim, or report incompleteness in an enterprise-usable form. The benchmark's broader contribution is to make a governance-critical agent failure measurable without human judges or contamination-prone static corpora.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.ET" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-06T19:01:29Z</published>
+    <arxiv:comment>Benchmark paper with deterministic synthetic corpora, 14 pages, 6 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Krti Tallam</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.22676v2</id>
+    <title>Robustness Analysis of Agentic AI to Inconsistent and Incomplete Tool Responses</title>
+    <updated>2026-08-30T13:25:02Z</updated>
+    <link href="https://arxiv.org/abs/2608.22676v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.22676v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using agents increasingly rely on external tools to complete multi-step tasks, but tool returns can fail in different ways and require different recovery actions. Existing robustness studies often use uncertainty-based measures to detect when an agent becomes unreliable. These measures can reveal that something has gone wrong, but they do not directly identify the type of tool failure or the appropriate response. We address this limitation by analyzing tool failures at the moment a return enters the agent context. Our approach combines two complementary signals. The first compares the likelihood of the returned content under the tool schema and under the full trajectory prefix. The second measures the agent's probability distribution over its legal next actions. We evaluate the approach by injecting incomplete and inconsistent returns into a retail customer-service benchmark. The results show that likelihood-based signals clearly capture incomplete returns and some direct inconsistencies, while action-based signals reveal how strongly a failure changes the next decision. Some failures that are weak under likelihood signals can still redirect the agent toward state-changing actions. These findings show that tool failures can be recognized at the return boundary, but reliable diagnosis requires combining multiple signals.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-24T00:26:57Z</published>
+    <arxiv:comment>6 pages, 2 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jiachen Xu</name>
+    </author>
+    <author>
+      <name>Torben Bach Pedersen</name>
+    </author>
+    <author>
+      <name>Zhongming Yao</name>
+    </author>
+    <author>
+      <name>Xiaoyu Zhang</name>
+    </author>
+    <author>
+      <name>Yushuai Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.21341v1</id>
+    <title>What Stops a Small Language Model From Driving a Database Agent</title>
+    <updated>2026-09-18T05:51:31Z</updated>
+    <link href="https://arxiv.org/abs/2609.21341v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.21341v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Small open-weight language models are assumed to fail at agentic database work because they lack the reasoning capacity for it. We test that against a production system. Over eleven days we drove the agent mode of an open-source SQL client with 39 open-weight models served locally and one hosted control, across six task surfaces: 8,199 runs, 110,711 ledger events, 14,008 refused tool calls. Of the 2,100 model-attributed agent-mode losses, 1,590, or 75.7%, came from runs that had invoked at least one tool. That majority is what survives resampling models rather than runs: it holds in 99.7% of clustered resamples and in 15 of the 22 models with at least twenty losses. Within it, transport, a run that used the tools and never got a deliverable through, is the largest class at 36.2% and capability, a run that invoked no tool at all, the smallest at 17.3%; we report that ordering as a property of this corpus rather than a general finding, since clustered by model it holds in only 74.5% of resamples. Transport failures decompose into a few mechanical argument shapes. Production ledgers record refusal codes and never the model's arguments, so these were invisible for ten days; capturing them exposed five server defects, one of which demanded a field on one tool, forbade it on the sibling that composed it, then failed the run for its absence. Five server changes, touching no model, prompt or sampling setting, moved six models by 6 to 21 cells out of 30. We also report a confound we believe affects published local-model benchmarks, ours included: with no context cap, one 7.1 GB model was admitted at its full 262,144-token window and held 51 GB on a 64 GB machine, producing runs indistinguishable in any ordinary log from a model timing out. The corpus, the scorer and a verifier that regenerates every figure are released.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-18T05:51:31Z</published>
+    <arxiv:comment>16 pages, 8 tables. Dataset, scorer and a verifier that regenerates every figure: https://doi.org/10.57967/hf/10485</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Cevheri Bozoglan</name>
+    </author>
+    <author>
+      <name>Yusuf Gundogdu</name>
+    </author>
+    <author>
+      <name>Abdullah Kaya</name>
+    </author>
+    <author>
+      <name>Koray Sirin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.26836v2</id>
+    <title>Silent Failures in Agent-Tool Interaction: An Audit of ToolUniverse</title>
+    <updated>2026-10-12T15:34:50Z</updated>
+    <link href="https://arxiv.org/abs/2609.26836v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.26836v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic AI systems are increasingly adopting automated pipelines that integrate multiple tools. While prior research have studied task success and task completion of such agentic systems, research on agent to tool interaction chain via a wrapper and API, specifically in biological agentic workflows, remains limited. This study investigates specific failures in agent to tool interaction where a tool invocation appears successful but some or all of the information or functionality from the tool via its API / wrapper is incomplete or missing and there are no communications to the user or the agent regarding the missing information. We call these 'silent failures' because the user or the agents are not aware that such a failure has occurred. For the purpose of this study, we developed an audit mechanism to identify such silent failures in agent to tool interaction chains, by examining 15 scientific tools (and their associated API documentation and tool documentations) integrated within the ToolUniverse environment (ToolUniverse serves as our experimental environment rather than the object of the study itself). We structure our study around 7 failure locus, characterising where the failure occurs in the chain. We observed 91 failures (manually validated post LLM based candidate discovery and automated testing), most frequent of them being missing data or fields and inconsistencies in search, filtering or ranking criteria. Most of the 91 failures occurred in API layer (52) or wrapper layer (25), with a potential of silent failure amplification downstream. The results show that silent failures originate upstream of the event and propagate downstream into apparently valid scientific outputs. We propose a concept of contextual reliability to handle such failures and suggest mechanisms for testing, disclosing, monitoring, and measuring such failures across the agent-tool interaction pipeline.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-21T16:34:08Z</published>
+    <arxiv:comment>Accepted at the GenAI4Health and AgenticLS workshops at NeurIPS 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Devansh Singh</name>
+    </author>
+    <author>
+      <name>Shreya Gopalan</name>
+    </author>
+    <author>
+      <name>Sundaraparipurnan Narayanan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.11440v1</id>
+    <title>AbsenceBench: Language Models Can't Tell What's Missing</title>
+    <updated>2025-06-13T03:38:29Z</updated>
+    <link href="https://arxiv.org/abs/2506.11440v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.11440v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) are increasingly capable of processing long inputs and locating specific information within them, as evidenced by their performance on the Needle in a Haystack (NIAH) test. However, while models excel at recalling surprising information, they still struggle to identify clearly omitted information. We introduce AbsenceBench to assesses LLMs' capacity to detect missing information across three domains: numerical sequences, poetry, and GitHub pull requests. AbsenceBench asks models to identify which pieces of a document were deliberately removed, given access to both the original and edited contexts. Despite the apparent straightforwardness of these tasks, our experiments reveal that even state-of-the-art models like Claude-3.7-Sonnet achieve only 69.6% F1-score with a modest average context length of 5K tokens. Our analysis suggests this poor performance stems from a fundamental limitation: Transformer attention mechanisms cannot easily attend to "gaps" in documents since these absences don't correspond to any specific keys that can be attended to. Overall, our results and analysis provide a case study of the close proximity of tasks where models are already superhuman (NIAH) and tasks where models breakdown unexpectedly (AbsenceBench).</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-13T03:38:29Z</published>
+    <arxiv:comment>23 pages, 8 figures. Code and data are publicly available at https://github.com/harvey-fin/absence-bench</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Harvey Yiyun Fu</name>
+    </author>
+    <author>
+      <name>Aryan Shrivastava</name>
+    </author>
+    <author>
+      <name>Jared Moore</name>
+    </author>
+    <author>
+      <name>Peter West</name>
+    </author>
+    <author>
+      <name>Chenhao Tan</name>
+    </author>
+    <author>
+      <name>Ari Holtzman</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.01641v1</id>
+    <title>When Agents Do Not Stop: Uncovering Infinite Agentic Loops in LLM Agents</title>
+    <updated>2026-07-02T03:14:27Z</updated>
+    <link href="https://arxiv.org/abs/2607.01641v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.01641v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents increasingly rely on iterative execution to solve tasks through planning, tool use, state updates, and agent collaboration. While this design enables flexible automation, it also creates a new class of failures: an agent may repeatedly execute model calls, tools, workflow transitions, or agent handoffs when the feedback path is not effectively bounded. We call this problem Infinite Agentic Loops (IALs). IALs are not ordinary programming loops; they arise from the interaction between agent logic, framework semantics, runtime observations, and termination mechanisms. Such failures can amplify a single request into long running model and tool execution, causing cost exhaustion, model denial of service, context growth, and repeated external side effects. We propose IAL-Scan, a static analysis tool for detecting IAL failures in real-world LLM agent projects. IAL-Scan abstracts heterogeneous agent code into a framework independent Agent IR, builds an Agentic Loop Dependence Graph (ALDG) to recover explicit and framework induced feedback paths, and checks whether these paths can repeatedly reach costly or state growing operations without an effective bound. We evaluate IAL-Scan on 6,549 LLM agent repositories. It reports 74 potential findings, among which manual review confirms 68 IAL failures across 47 projects, achieving 91.9% precision.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-02T03:14:27Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Xinyi Hou</name>
+    </author>
+    <author>
+      <name>Shenao Wang</name>
+    </author>
+    <author>
+      <name>Yanjie Zhao</name>
+    </author>
+    <author>
+      <name>Haoyu Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.08877v1</id>
+    <title>Quantifying the Accuracy and Cost Impact of Design Decisions in Budget-Constrained Agentic LLM Search</title>
+    <updated>2026-03-09T19:42:21Z</updated>
+    <link href="https://arxiv.org/abs/2603.08877v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.08877v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic Retrieval-Augmented Generation (RAG) systems combine iterative search, planning prompts, and retrieval backends, but deployed settings impose explicit budgets on tool calls and completion tokens. We present a controlled measurement study of how search depth, retrieval strategy, and completion budget affect accuracy and cost under fixed constraints. Using Budget-Constrained Agentic Search (BCAS), a model-agnostic evaluation harness that surfaces remaining budget and gates tool use, we run comparisons across six LLMs and three question-answering benchmarks. Across models and datasets, accuracy improves with additional searches up to a small cap, hybrid lexical and dense retrieval with lightweight re-ranking produces the largest average gains in our ablation grid, and larger completion budgets are most helpful on HotpotQA-style synthesis. These results provide practical guidance for configuring budgeted agentic retrieval pipelines and are accompanied by reproducible prompts and evaluation settings.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-09T19:42:21Z</published>
+    <arxiv:comment>Accepted in 2026 Language Resources and Evaluation Conference (LREC)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Kyle McCleary</name>
+    </author>
+    <author>
+      <name>James Ghawaly</name>
+    </author>
+    <arxiv:doi>10.63317/3wfsiry9yjog</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.63317/3wfsiry9yjog" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.08467v1</id>
+    <title>LLM within MCP Matters: Measuring Inefficient Resource Utilization Driven by LLMs</title>
+    <updated>2026-08-09T04:17:12Z</updated>
+    <link href="https://arxiv.org/abs/2608.08467v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.08467v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) standardizes how servers expose data and tools to Large Language Models (LLMs). A common server design embeds frequently used reference data, such as identifier lookup tables, directly in the server instructions: the system-prompt text a server hands to the host application. When a query concerns an entry of the embedded table, the model can act on it immediately instead of re-discovering the same information through a search tool. We test whether client LLMs actually consume such instruction-embedded data, reporting a 54,000-trial study across 24 LLMs (9 Claude, 6 Gemini, 9 GPT) on a production legal-information MCP server. A diagnostic condition that removes the competing search tool shows that failures are dominated by behavioral preference rather than missing capability. With search unavailable, 23 of 24 models read the embedded data reliably (hit ratio at least 98%); with a search tool merely present, 9 models drop below 15%. A 2^3 factorial analysis of three instruction-level interventions reveals strong interaction effects: combining all three restores at least 86% for 20 of 24 models, but individual interventions can backfire for specific model families. Per-server prompt engineering is therefore a workaround rather than a fix; we argue that MCP host applications should provide an explicit mechanism that places server instructions ahead of tool selection in the client LLM's deliberation.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-09T04:17:12Z</published>
+    <arxiv:comment>4 pages, 1 table. Accepted at the AgentSearch Workshop at SIGIR 2026, Melbourne, Australia (non-archival). Code and data: https://github.com/rabqatab/llm-in-mcp-matters</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Minhan Cho</name>
+    </author>
+    <author>
+      <name>Soyoung Park</name>
+    </author>
+    <author>
+      <name>Kihyeon Jeong</name>
+    </author>
+    <author>
+      <name>Byeongkyu Jeon</name>
+    </author>
+    <author>
+      <name>Daejin Choi</name>
+    </author>
+    <author>
+      <name>Jinyoung Han</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.04591v1</id>
+    <title>When Absence Is Evidence: Evaluating Completeness-Sensitive Negative Reasoning in Large Language Models</title>
+    <updated>2026-08-05T08:53:16Z</updated>
+    <link href="https://arxiv.org/abs/2608.04591v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.04591v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) are often asked whether something is absent from a record, list, or retrieved context. Yet non-observation licenses a negative answer only when evidence completely covers the query scope; otherwise, the answer should remain unknown. We call this completeness-sensitive negative reasoning. We introduce CROWN-QA, comprising CROWN-Synth, a controlled paired core that fixes the question and observed facts while varying only query-relative coverage, and CROWN-Real, a real-document contrast-set evaluation with controlled coverage variants. Across three LLM families, models show unstable closure judgments and substantial over-closure, failing to reliably distinguish a justified negative answer (Certified-Negative) from insufficient evidence (Unknown). The dominant CROWN-Synth failure is asymmetric: models often recognize implicitly complete evidence yet treat implicitly partial evidence as query-covering. Prompting redistributes errors between over- and under-closure rather than consistently resolving them. Structured certificate elicitation traces many errors to evidence-coverage mischaracterization. CROWN-Real shows that the core partial-coverage asymmetry persists on real-document content, while its strength and the balance between over- and under-closure vary by model, prompt, and source.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-05T08:53:16Z</published>
+    <arxiv:comment>19 pages, 2 figures, 20 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Byoungjae Min</name>
+    </author>
+    <author>
+      <name>Kennedy Edemacu</name>
+    </author>
+    <author>
+      <name>Sae-Hong Cho</name>
+    </author>
+    <author>
+      <name>Yoonhyuk Choi</name>
+    </author>
+    <author>
+      <name>Beakcheol Jang</name>
+    </author>
+    <author>
+      <name>Jong Wook Kim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.14758v1</id>
+    <title>Fabrication After Tool Failure: Tool-Augmented Agents Assert Values Their Tools Did Not Return</title>
+    <updated>2026-09-13T19:46:42Z</updated>
+    <link href="https://arxiv.org/abs/2609.14758v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.14758v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-augmented language models are evaluated on whether they reach the right answer, not on whether they report honestly when a tool fails to supply one. We isolate this post-failure decision with a benchmark of 1,024 items spanning 16 internal-system domains and eight tool-failure types, in which a tool call is enforced and the returned payload is guaranteed to be unusable. Under a deployment-style system prompt, 14.10% of responses are dishonest: the model either asserts a value the payload cannot support or declines while citing a fabricated policy or capability limit. The rate is governed almost entirely by whether the failure is signalled. When the tool returns status:error, dishonesty is absent (0.0%); when it returns status:ok with a redacted, corrupted, stale, malformed, empty or truncated value, dishonesty reaches 45.3%. The behaviour is not an artefact of our prompts: it appears under a neutral prompt (10.17%) and under the shipped prompt of every production agent framework we evaluate, reaching 24.67% under CrewAI's, and none of the nine frameworks we audit specifies what the model should do when a tool fails. Comparing prompt-level defences, we find that the operative variable is not deference to tool output but the absence of a named failure state. Appending a single sentence that requires the model to emit retrieval_status: OK or FAILED before answering reduces dishonesty from 14.10% to 0.87%, with one item of 688 worsening against 92 improving, and transfers unchanged into three foreign agent scaffolds. The emitted flag is faithful in 99.7-99.9% of declarations, giving a runtime detector that needs only a regular expression.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-13T19:46:42Z</published>
+    <arxiv:comment>11 pages, 4 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Arham Sethi</name>
+    </author>
+    <author>
+      <name>Arsen Kenzhebayev</name>
+    </author>
+    <author>
+      <name>Saanvi Paturi</name>
+    </author>
+    <author>
+      <name>Vatsal Raina</name>
+    </author>
+    <author>
+      <name>Vyas Raina</name>
+    </author>
+    <author>
+      <name>Ivaxi Sheth</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.14878v3</id>
+    <title>Model Context Protocol (MCP) Tool Descriptions Are Smelly! Towards Improving AI Agent Efficiency with Augmented MCP Tool Descriptions</title>
+    <updated>2026-05-31T05:10:10Z</updated>
+    <link href="https://arxiv.org/abs/2602.14878v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.14878v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) introduces a standard specification that defines how Foundation Model (FM)-based agents should interact with external systems by invoking tools. However, to understand a tool's purpose and features, FMs rely on natural-language tool descriptions, making these descriptions a critical component in guiding FMs to select the optimal tool for a given (sub)task and to pass the right arguments to the tool. While defects or smells in these descriptions can misguide FM-based agents, their prevalence and consequences in the MCP ecosystem remain unclear.
+  Hence, we examine 856 tools spread across 103 MCP servers empirically, assess their description quality, and their impact on agent performance. We identify six components of tool descriptions from the literature, develop a scoring rubric utilizing these components, and then formalize tool description smells based on this rubric. By operationalizing this rubric through an FM-based scanner, we find that 97.1% of the analyzed tool descriptions contain at least one smell, with 56% failing to state their purpose clearly. While augmenting these descriptions for all components improves task success rates by a median of 5.85 percentage points and improves partial goal completion by 15.12%, it also increases the number of execution steps by 67.46% and regresses performance in 16.67% of cases. These results indicate that achieving performance gains is not straightforward; while execution cost can act as a trade-off, execution context can also impact. Furthermore, component ablations show that compact variants of different component combinations often preserve behavioral reliability while reducing unnecessary token overhead, enabling more efficient use of the FM context window and lower execution costs.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.ET" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-16T16:10:11Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Mohammed Mehedi Hasan</name>
+    </author>
+    <author>
+      <name>Hao Li</name>
+    </author>
+    <author>
+      <name>Gopi Krishnan Rajbahadur</name>
+    </author>
+    <author>
+      <name>Bram Adams</name>
+    </author>
+    <author>
+      <name>Ahmed E. Hassan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.20536v1</id>
+    <title>AppWorld-UL: Benchmarking Diverse Agent-User Interactions for Tool-Use</title>
+    <updated>2026-07-10T16:55:04Z</updated>
+    <link href="https://arxiv.org/abs/2607.20536v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.20536v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-use agents that address day-to-day digital tasks such as ordering groceries must not only operate applications, but also interact with the user, e.g., to ask clarification questions, prompt for confirmation, and inform the user when the instruction is infeasible. However, current benchmarks for evaluating agent-user interactions do not capture the diversity of such interactions. Further, they operate in small environments with few, often non-state-changing, APIs. To address this gap, we introduce AppWorld-UL, a ``user-in-the-loop'' benchmark of 516 challenging tasks requiring diverse agent-user interactions. Building upon the AppWorld framework with 9 popular simulated apps like Amazon and Spotify, we systematically modify original tasks to introduce ambiguities and constraints that necessitate various types of agent-user interaction. User behavior is simulated by an LLM prompted to respond with carefully designed knowledge boundaries, offering more reliable simulation than the unconstrained or overly rigid alternatives used in prior work. Our evaluation reveals that a state-of-the-art LLM, Claude Opus 4.7, achieves only 48.6% success on AppWorld-UL, and only 35.7% on the harder, compositional subset. On the stricter, scenario-level metric, compositional task performance drops to only 21.3%. Our analysis reveals that correct user-interaction is crucial for success. This demonstrates the benchmark's difficulty and its potential to advance research on user-in-the-loop tool-use agents.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-10T16:55:04Z</published>
+    <arxiv:comment>ICML 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Junzhi Chen</name>
+    </author>
+    <author>
+      <name>Harsh Trivedi</name>
+    </author>
+    <author>
+      <name>Jane Pan</name>
+    </author>
+    <author>
+      <name>Michael JQ Zhang</name>
+    </author>
+    <author>
+      <name>Tejas Srinivasan</name>
+    </author>
+    <author>
+      <name>Niranjan Balasubramanian</name>
+    </author>
+    <author>
+      <name>Ashish Sabharwal</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.13715v2</id>
+    <title>WorkBench Revisited: Workplace Agents Two Years On</title>
+    <updated>2026-07-01T14:36:06Z</updated>
+    <link href="https://arxiv.org/abs/2606.13715v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.13715v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The best agent on WorkBench in March 2024, GPT-4, completed just 43% of tasks. We revisit the benchmark in June 2026 and find that the best agent to date, Claude Fable 5, now completes 98%. Beyond this considerable progress in frontier agent performance, three things stand out. First, unintended harmful actions, such as emailing the wrong person, fell from 26% of tasks for GPT-4 to 1.9% for Claude Fable 5; capability and safety go together on WorkBench rather than trade off, so the models that finish the most tasks also do the least unintended damage. Second, the rise of open-weight models has drastically lowered costs for a performance level that was only accessible to proprietary models, while frontier costs have stayed stable. Third, while several classes of error have been eliminated, frontier models still make some basic mistakes that occasionally result in irreversible harm. We release an updated version of the benchmark with data and code quality improvements, new model scores, and analysis of agent progress on WorkBench since 2024.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-10T21:21:35Z</published>
+    <arxiv:comment>8 pages, 3 figures. Follow-up to arXiv:2405.00823</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Olly Styles</name>
+    </author>
+    <author>
+      <name>Sam Miller</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.27083v1</id>
+    <title>Scores Are Not Decisions: Cost-Aware Stopping for Tool Acquisition in LLM Agents</title>
+    <updated>2026-07-29T16:07:37Z</updated>
+    <link href="https://arxiv.org/abs/2607.27083v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.27083v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As LLM agents increasingly depend on diverse external services such as search engines, databases, and connectors, agent harnesses face a fundamental tool-selection challenge: acquiring too few tools leaves the task under-informed, while too many adds cost, context load, and privacy exposure. Routers and retrievers can rank candidate tools by relevance, but a ranking alone does not determine how many are worth selecting. Existing approaches leave acquisition under heterogeneous costs unaddressed. We formulate this decision as cost-aware marginal decision-focused stopping (CAM-DF) over ranked tool prefixes, with CAM-DF-lite as a compact interpretable variant. We train directly on the offline gap between stopping now and the best continuation: its sign labels the decision, its magnitude weights each error by the payoff at stake. We prove this objective is Bayes-aligned with the stopping target and that score-only rules are suboptimal under heterogeneous costs. We evaluate on 1,343 tasks across five tool-use domains. On $τ$-bench Retail, CAM-DF attains the highest payoff among deployable methods, with gains over a predict-then-threshold baseline across all five ranking sources and two cost regimes. Our approach is state-of-the-art under heterogeneous costs and high cost pressure, with larger gains under weaker rankings. In live execution, CAM-DF exposes the agent to 37\% fewer tools than full access while maintaining comparable task success. The CAM-DF family is a lightweight pre-execution plugin that turns existing tool rankings into lower-cost acquisition decisions without fine-tuning the underlying LLM.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-29T16:07:37Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yicheng Feng</name>
+    </author>
+    <author>
+      <name>Yan Zhang</name>
+    </author>
+    <author>
+      <name>Yan Cheng</name>
+    </author>
+    <author>
+      <name>Wei Qi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.20724v2</id>
+    <title>When Web Agents Finish but Still Fail: Reproducible Triggers and Trace Diagnostics for Parallel Web Exploration</title>
+    <updated>2026-06-29T04:16:15Z</updated>
+    <link href="https://arxiv.org/abs/2606.20724v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.20724v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Long-horizon web agents often fail in ways hidden by final-answer evaluation: they may visit useful pages, produce a well-formed answer, and terminate confidently while still missing fields, over-including unsupported items, or relying on stale evidence. We study these failures with Parallel WebBench, a parallel web-exploration benchmark containing 1,679 verified records: 350 manually curated parallel tasks and 1,329 reconstructed records with verified URL-based trajectories. We train WebExplorer-style agents with GRPO under human-only, balanced human-synthetic, and synthetic-heavy data mixtures. At 16k context and 16 interaction rounds, the best GRPO model improves completion over WebExplorer-8B from 50.7% to 96.0% and GPT-4.1-mini-judged element-wise F1 from 0.2489 to 0.4529, but binary accuracy remains far below completion. Trace-level analysis identifies three persistent failure modes: context-bound search loops, premature termination on partial answers, and synthesis collapse after relevant evidence has already been retrieved. These results show that synthetic-data GRPO reduces abstention and improves partial correctness, but leaves a completion-correctness gap that requires evidence-grounded coverage and synthesis diagnostics.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-16T23:00:25Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Aagam Sogani</name>
+    </author>
+    <author>
+      <name>Botao Rui</name>
+    </author>
+    <author>
+      <name>Swetha Vaidyanathan</name>
+    </author>
+    <author>
+      <name>Rishi Agarwal</name>
+    </author>
+    <author>
+      <name>Minghao Yan</name>
+    </author>
+    <author>
+      <name>Shivaram Venkataraman</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.30604v1</id>
+    <title>The Hard Part Comes After Search: Benchmarking Web Agents on Synthesizing, Organizing, and Displaying Knowledge</title>
+    <updated>2026-09-24T22:36:10Z</updated>
+    <link href="https://arxiv.org/abs/2609.30604v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.30604v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing computer-use agent benchmarks do not fully evaluate agents acting as assistants. A useful assistant retrieves information across complex, multi-step workflows, synthesizes it into artifacts (documents, presentations, spreadsheets), and navigates program interfaces to produce a coherent final product. Such workflows demand reasoning and synthesis, decomposition of complex tasks, as well as visual and spatial understanding. To study agents on workflows like these, we introduce KNOWS, a benchmark of open-ended, complex, browser-based tasks that jointly evaluate these capabilities, with each task culminating in a produced artifact. To write tasks, we develop a task design rubric and a protocol for ensuring that tasks meet the requirements. Each task is paired with an evaluator, a program that combines deterministic checks with LLM judgments to balance the richness, reliability, and automation tradeoff inherent to agent evaluation. We evaluate and analyze frontier computer-use agents and browser-based harnesses. They achieve moderate scores on partial-success metrics, but the best performer fully succeeds in fewer than 3% of our complex, long-horizon tasks. Failures on visual steps render the resulting artifacts unusable, even when agents complete more than 50% of other evaluation steps. Our results expose limitations of current agents acting as end-to-end assistants, and call for progress on tool use, visual understanding, and long-horizon reasoning.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-24T22:36:10Z</published>
+    <arxiv:comment>9 pages main text. Accepted to Findings of EMNLP 2026. Project page: https://alexgill321.github.io/KNOWS-benchmark/</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Alexander Gill</name>
+    </author>
+    <author>
+      <name>Md Farhan Ishmam</name>
+    </author>
+    <author>
+      <name>Xuyen Nguyen</name>
+    </author>
+    <author>
+      <name>Neha Bhat</name>
+    </author>
+    <author>
+      <name>Parker Henry DeYoung</name>
+    </author>
+    <author>
+      <name>Fateme Hashemi Chaleshtori</name>
+    </author>
+    <author>
+      <name>Nathan Stringham</name>
+    </author>
+    <author>
+      <name>Kenneth Marino</name>
+    </author>
+    <author>
+      <name>Ana Marasović</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.30435v1</id>
+    <title>Self-Assessment Reinforcement Learning for Search-State Awareness in Retrieval-Augmented Large Language Models</title>
+    <updated>2026-10-21T20:46:24Z</updated>
+    <link href="https://arxiv.org/abs/2610.30435v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.30435v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances in search agents have enabled large language models to tackle complex tasks by retrieving and synthesizing external information. However, existing search agents often lack search-state awareness, i.e., the ability to recognize what information has been obtained and what remains missing, leading to hallucinated reasoning and prematurely terminated search. To address this limitation, we propose Self-Assessment Reinforcement Learning (SARL), a reinforcement learning framework in which models learn to recognize their own search state during training and improve their search behavior accordingly, without requiring additional assessment at test time. SARL achieves this through a dual reward design that captures the corrective effect of each assessment while penalizing excessive reliance on it, jointly encouraging effective and efficient search trajectories. Under this setup, SARL achieves a 24.3% relative improvement over the strongest baseline, with average gains of 35.9% on multi-hop reasoning and 27.9% on deep research benchmarks against the strongest per-benchmark baselines. SARL further surpasses methods built on auxiliary supervision or multi-agent coordination, despite operating as a standalone RL framework with no inference-time scaffolding. Beyond final performance, SARL maintains training stability under extended search horizons, a regime where existing methods consistently degrade, enabling sustained gains as task complexity grows.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T20:46:24Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Taewhoo Lee</name>
+    </author>
+    <author>
+      <name>Minju Song</name>
+    </author>
+    <author>
+      <name>Jungwoo Park</name>
+    </author>
+    <author>
+      <name>Chanwoong Yoon</name>
+    </author>
+    <author>
+      <name>Junha Jung</name>
+    </author>
+    <author>
+      <name>Hyeon Hwang</name>
+    </author>
+    <author>
+      <name>Sanghoon Lee</name>
+    </author>
+    <author>
+      <name>Minbyul Jeong</name>
+    </author>
+    <author>
+      <name>Jaewoo Kang</name>
+    </author>
+  </entry>
+</feed>

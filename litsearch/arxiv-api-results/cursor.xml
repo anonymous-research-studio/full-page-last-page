@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/u9m2MN77urd3MrT1U0gatqBgCGU</id>
+  <title>arXiv Query: search_query=abs:cursor AND abs:API AND (abs:agent OR abs:agents OR abs:LLM)&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:04:48Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:cursor+AND+(abs:API+AND+(abs:agent+OR+(abs:agents+OR+abs:LLM)))&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>10</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.17598v1</id>
+    <title>Not All Agents Are Equal: Code Quality and Post-Merge Maintenance Across Five Autonomous Coding Agents in the Wild</title>
+    <updated>2026-09-12T19:51:53Z</updated>
+    <link href="https://arxiv.org/abs/2609.17598v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.17598v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Autonomous coding agents now open pull requests in public repositories at a scale that was out of reach two years ago, yet little is known about what happens to that code after it lands. This paper studies 37,623 provenance-labeled pull requests (PRs) from five commercial agents (OpenAI Codex, Devin, GitHub Copilot, Cursor, and Claude Code) and a matched human baseline, drawn from 2,807 GitHub repositories between December 2024 and July 2025. We combine the AIDev dataset with 58,792 cached GitHub API responses to measure security smells in added code, structural maintainability, post-merge churn, revert rates, and human review behavior. Three results stand out. First, quality differences are vendor-specific rather than uniform: Codex-authored PRs were reverted about half as often as human PRs (6.1% vs. 11.5%, odds ratio 0.50), while Devin PRs were reverted more often (14.5%, odds ratio 1.31). Second, agent code pooled across vendors was less likely than human code to contain a security smell (odds ratio 0.63), driven by fewer hardcoded credentials and eval-style constructs. Third, review effort concentrates unevenly: Copilot PRs drew the most human reviews and change requests, and Claude Code PRs waited the longest for a first human review (median 12.6 hours). All pipeline code, statistical reports, and figures are released for replication.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-12T19:51:53Z</published>
+    <arxiv:comment>9 pages, 5 figures, 2 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Obada Kraishan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.25619v1</id>
+    <title>SkillGate: Cost Efficient Runtime Malicious Skill File Detection in Coding Agents</title>
+    <updated>2026-07-28T11:50:19Z</updated>
+    <link href="https://arxiv.org/abs/2607.25619v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.25619v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Software engineering teams now deploy AI coding agents (Cursor, Claude Code, GitHub Copilot) as first-class productivity tools, installing domain-specific skill files to tailor agent behavior to project APIs, framework conventions, and organizational workflows. These complex Markdown files are easily downloaded from public registries with a single npx skills add command and no real security screening, representing a novel supply-chain attack surface: a malicious skill file can silently reprogram agent behavior, exfiltrating credentials, injecting backdoors into generated code, or redirecting agent actions to attacker-controlled endpoints. The threat is not hypothetical: recent reports document hundreds of malicious skill packages in public registries, including organized campaigns that distributed credential-stealing infostealers via fake productivity skills. No systematic toolchain defense exists for this attack surface. We present SkillGate, a deployable security gateway that screens AI skill packages before coding agent installation. SkillGate uses a hybrid regex-prefilter + LLM-judge pipeline: safe-signal files bypass the LLM entirely (skip savings); flagged files have only their matched snippet windows sent to the judge, not the full content (snippet savings). We answer four research questions covering detection effectiveness, screening cost, runtime overhead, and false positive behavior on the SkillsBench benchmark against two existing tools. On SkillsBench (n=1,650, 9.1% malicious), SkillGate achieves F1=0.817, FPR=1.13% while reducing LLM input tokens by 77% vs. full-file screening, and outperforming existing tools by 5-6x on threshold-independent AUPRC (0.830 vs. 0.144/0.162).</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-28T11:50:19Z</published>
+    <arxiv:comment>10 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Rui Yang</name>
+    </author>
+    <author>
+      <name>Michael Fu</name>
+    </author>
+    <author>
+      <name>Kla Tantithamthavorn</name>
+    </author>
+    <author>
+      <name>Chetan Arora</name>
+    </author>
+    <author>
+      <name>Joey Chua</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.20759v1</id>
+    <title>IssueTrojanBench: Benchmarking AI Coding Agents Against Malicious Issue Requests</title>
+    <updated>2026-07-22T22:20:02Z</updated>
+    <link href="https://arxiv.org/abs/2607.20759v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.20759v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI coding agents powered by LLMs are increasingly integrated into real-world software development, where they generate, edit, and execute code with autonomous access to local files and tools. Coding agents inherit security risks from both the LLM backbone, where adversarial prompts, poisoned training data, and backdoor triggers can cause models to emit insecure or attacker-chosen code, and their agentic architecture, where tool-using autonomy enables induced misuse of external APIs, data exfiltration, and persistent compromise of development environments. This paper presents a systematic evaluation of malicious issue requests against state-of-the-art coding agents (Cursor, Claude Code, and Codex Desktop), powered by two major model families (OpenAI GPT-5.3 Codex/GPT-5.4 and Anthropic Sonnet 4.6). Our novel benchmark IssueTrojanBench contains malicious issues that are constructed based on four novel attack categories (i.e., embedded as malicious instructions in issues), six delivery vectors (e.g., PDF, or issue comment), and further augmented by perturbations. Our results reveal critical vulnerabilities in the as-deployed modern coding agents, i.e., 66.5% of the malicious issues from IssueTrojanBench penetrate all the guardrails (agent- and LLM-level) of coding agents. Our further analysis shows that rejection is almost entirely from LLMs rather than the agent frameworks, with GPT models broadly vulnerable and Sonnet 4.6 exhibiting more selective, risk-aware blocking of high-impact actions. Our evaluation also highlights that the current agent-level defense strategy offers limited additional protection for coding agents. Our findings highlight the urgent need for stronger agent- and model-level safety mechanisms to protect AI coding agents.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-22T22:20:02Z</published>
+    <arxiv:comment>10 pages, 4 figures, 4 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Ankur Singh</name>
+    </author>
+    <author>
+      <name>Jinqiu Yang</name>
+    </author>
+    <author>
+      <name>Tse-Hsun Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.30697v1</id>
+    <title>LUMOS: A Semantic Operating-System Layer for Accessibility-Grounded AI Agents</title>
+    <updated>2026-06-29T03:19:40Z</updated>
+    <link href="https://arxiv.org/abs/2606.30697v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.30697v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Current operating systems expose interfaces optimized for human users but not for AI agents. Humans benefit from pixels, icons, windows, visual grouping, mouse movement, and keyboard shortcuts; AI agents instead need compact semantic state, grounded actions, and reliable feedback. As a result, many computer-use agents are forced to interpret screenshots, OCR output, and visual crops, introducing high token costs, visual ambiguity, latency, and coordinate uncertainty. This paper introduces LUMOS (Language Model Unified Machine-Readable Operating-System Semantics), a semantic interaction layer between AI agents and operating systems. LUMOS converts native accessibility metadata and browser UI structures into machine readable semantic blueprints with stable identifiers, roles, names, values, bounds, and action affordances. It also supports live semantic pointer grounding by querying the UI element under or near the cursor through operating-system automation APIs. An LLM then acts through an accessibility grounded observe act loop using constrained visible-UI primitives rather than application-specific scripts. LUMOS does not claim to replace visual agents; instead, it reduces dependence on screenshots when operating systems already provide semantic structure. These results suggest a path toward AI-native operating systems and machine-readable interaction layers.</summary>
+    <category term="cs.OS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-29T03:19:40Z</published>
+    <arxiv:comment>The LUMOS repository is available at https://github.com/thotayogeswarreddy/Lumos.git</arxiv:comment>
+    <arxiv:primary_category term="cs.OS"/>
+    <author>
+      <name>Yogeswar Reddy Thota</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.09863v1</id>
+    <title>Nautilus Compass: Black-box Persona Drift Detection for Production LLM Agents</title>
+    <updated>2026-05-11T01:49:17Z</updated>
+    <link href="https://arxiv.org/abs/2605.09863v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.09863v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Production LLM coding agents drift over long sessions: they forget user-specified constraints, slip into mistakes the user already flagged, and confabulate prior agreements. White-box approaches such as persona vectors require model weights and so cannot be applied to closed APIs (Claude, GPT-4) that most users actually interact with. We present Nautilus Compass, a black-box persona drift detector and agent memory layer for production coding agents. The method operates entirely at the prompt-text layer: cosine similarity between user prompts and behavioral anchor texts, aggregated by a weighted top-k mean using BGE-m3 embeddings. Compass is, to our knowledge, the only public agent memory layer (among Mem0, Letta, Cognee, Zep, MemOS, smrti verified May 2026) that does not call an LLM at index time to extract facts or build a graph; raw conversation text is embedded directly. The system ships as a Claude Code plugin, an MCP 2024-11-05 A2A server (Cursor, Cline, Hermes), a CLI, and a REST API on one daemon, with a Merkle-chained audit log for tamper-evident anchor updates. On a held-out test set built from real Claude Code session traces and labeled by an independent LLM judge, Compass reaches ROC AUC 0.83 for drift detection. The embedded retrieval pipeline scores 56.6% on LongMemEval-S v0.8 and 44.4% on EverMemBench-Dynamic (n=500), topping the four published EverMemBench Table 4 baselines. LongMemEval-S 56.6% is ~30 points below recent white-box leaders (90+%); we treat that as the architectural ceiling of the no-extraction design. End-to-end reproduction cost is $3.50 (~14x cheaper than GPT-4o-judged stacks). A paired cross-vendor behavior A/B accompanies these numbers as preliminary system-level evidence.
+  Code, anchors, frozen test data, and audit-log tooling are MIT-licensed at github.com/chunxiaoxx/nautilus-compass.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-11T01:49:17Z</published>
+    <arxiv:comment>19 pages, 6 figures. MIT-licensed code + reproduction scripts at github.com/chunxiaoxx/nautilus-compass</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Chunxiao Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.18334v1</id>
+    <title>Reliability of AI Bots Footprints in GitHub Actions CI/CD Workflows</title>
+    <updated>2026-04-20T14:34:14Z</updated>
+    <link href="https://arxiv.org/abs/2604.18334v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.18334v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Continuous Integration and Deployment (CI/CD) workflows are central to modern software delivery, yet the reliability of agentic AI bots operating within these workflows remain underexplored. Using pull requests (PRs), commits, and repositories from the AIDev dataset, we retrieved associated CI/CD workflow runs via the GitHub Actions API and analyzed 61,837 runs from 2,355 repositories, all triggered by PRs generated by five AI bots: Claude, Devin, Cursor, Copilot, and Codex. We observed substantial agent-dependent differences in workflow reliability, with Copilot and Codex achieving the highest success rates ~93% and ~94% respectively. At the repository level, we find a negative correlation between AI agent contribution frequency and workflow success rate, suggesting that a higher frequency of Agentic PRs may hinder CI/CD workflow reliability. We defined a taxonomy of 13 categories against 3,067 agentic PRs whose associated workflows failed, and observed a trend analysis that indicates visually observable shifts from functional to non-functional PR categories over time, although these trends are not statistically significant. Our findings motivate the need for actionable guidance on integrating AI agents into CI/CD workflows and prioritizing safeguards in workflows where failures are most likely to occur.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-20T14:34:14Z</published>
+    <arxiv:comment>5 pages, 3 figures. Submitted to the 23rd International Conference on Mining Software Repositories (MSR 2026) Mining Challenge</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Syed Muhammad Ashhar Shah</name>
+      <arxiv:affiliation>Lahore University of Management Sciences, Pakistan</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sehrish Habib</name>
+      <arxiv:affiliation>Lahore University of Management Sciences, Pakistan</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Muizz Hussain</name>
+      <arxiv:affiliation>Lahore University of Management Sciences, Pakistan</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Maryam Abdul Ghafoor</name>
+      <arxiv:affiliation>Lahore University of Management Sciences, Pakistan</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Abdul Ali Bangash</name>
+      <arxiv:affiliation>Lahore University of Management Sciences, Pakistan</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1145/3793302.3793569</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3793302.3793569" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.16265v1</id>
+    <title>AgentWall: A Runtime Safety Layer for Local AI Agents</title>
+    <updated>2026-03-24T11:39:35Z</updated>
+    <link href="https://arxiv.org/abs/2605.16265v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.16265v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The safety of autonomous AI agents is increasingly recognized as a critical open problem. As agents transition from passive text generators to active actors capable of executing shell commands, modifying files, calling APIs, and browsing the web, the consequences of unsafe or adversarially manipulated behavior become immediate and tangible. Existing AI safety work has focused primarily on model alignment and input filtering, but these approaches do not address what happens at the moment an agent's intent becomes a real action on a real machine. This gap is especially acute in local environments, where developers run agents against their own filesystems, credentials, and infrastructure with little runtime control. This paper introduces AgentWall, a runtime safety and observability layer for local AI agents. AgentWall intercepts every proposed agent action before it reaches the host environment, evaluates it against an explicit declarative policy, requires human approval for sensitive operations, and records a complete execution trail for audit and replay. It is implemented as a policy-enforcing MCP proxy and native OpenClaw plugin, working across Claude Desktop, Cursor, Windsurf, Claude Code, and OpenClaw with a single install command. We present the design, architecture, threat model, and policy model of AgentWall, and demonstrate 92.9% policy enforcement accuracy with sub-millisecond overhead across 14 benchmark tests. AgentWall is open-source at https://github.com/agentwall/Agentwall.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-24T11:39:35Z</published>
+    <arxiv:comment>16 pages, 2 figures, open-source implementation at https://github.com/agentwall/Agentwall</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Ashwin Aravind</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.08425v1</id>
+    <title>IronEngine: Towards General AI Assistant</title>
+    <updated>2026-03-09T14:18:50Z</updated>
+    <link href="https://arxiv.org/abs/2603.08425v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.08425v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper presents IronEngine, a general AI assistant platform organized around a unified orchestration core that connects a desktop user interface, REST and WebSocket APIs, Python clients, local and cloud model backends, persistent memory, task scheduling, reusable skills, 24-category tool execution, MCP-compatible extensibility, and hardware-facing integration. IronEngine introduces a three-phase pipeline -- Discussion (Planner--Reviewer collaboration), Model Switch (VRAM-aware transition), and Execution (tool-augmented action loop) -- that separates planning quality from execution capability. The system features a hierarchical memory architecture with multi-level consolidation, a vectorized skill repository backed by ChromaDB, an adaptive model management layer supporting 92 model profiles with VRAM-aware context budgeting, and an intelligent tool routing system with 130+ alias normalization and automatic error correction. We present experimental results on file operation benchmarks achieving 100\% task completion with a mean total time of 1541 seconds across four heterogeneous tasks, and provide detailed comparisons with representative AI assistant systems including ChatGPT, Claude Desktop, Cursor, Windsurf, and open-source agent frameworks. Without disclosing proprietary prompts or core algorithms, this paper analyzes the platform's architectural decomposition, subsystem design, experimental performance, safety boundaries, and comparative engineering advantages. The resulting study positions IronEngine as a system-oriented foundation for general-purpose personal assistants, automation frameworks, and future human-centered agent platforms.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-09T14:18:50Z</published>
+    <arxiv:comment>Technical Report</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xi Mo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.13943v3</id>
+    <title>RepoGenesis: Benchmarking End-to-End Microservice Generation from Readme to Repository</title>
+    <updated>2026-04-15T07:43:37Z</updated>
+    <link href="https://arxiv.org/abs/2601.13943v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.13943v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models and agents have achieved remarkable progress in code generation. However, existing benchmarks focus on isolated function/class-level generation (e.g., ClassEval) or modifications to existing codebases (e.g., SWE-Bench), neglecting complete microservice repository generation that reflects real-world 0-to-1 development workflows. To bridge this gap, we introduce RepoGenesis, the first multilingual benchmark for repository-level end-to-end web microservice generation, comprising 106 repositories (60 Python, 46 Java) across 18 domains and 11 frameworks, with 1,258 API endpoints and 2,335 test cases verified through a "review-rebuttal" quality assurance process. We evaluate open-source agents (e.g., DeepCode) and commercial IDEs (e.g., Cursor) using Pass@1, API Coverage (AC), and Deployment Success Rate (DSR). Results reveal that despite high AC (up to 73.91%) and DSR (up to 100%), the best-performing system achieves only 23.67% Pass@1 on Python and 21.45% on Java, exposing deficiencies in architectural coherence, dependency management, and cross-file consistency. Notably, GenesisAgent-8B, fine-tuned on RepoGenesis (train), achieves performance comparable to GPT-5 mini, demonstrating the quality of RepoGenesis for advancing microservice generation. We release our benchmark at https://github.com/pzy2000/RepoGenesis.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-20T13:19:20Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Zhiyuan Peng</name>
+    </author>
+    <author>
+      <name>Xin Yin</name>
+    </author>
+    <author>
+      <name>Pu Zhao</name>
+    </author>
+    <author>
+      <name>Fangkai Yang</name>
+    </author>
+    <author>
+      <name>Lu Wang</name>
+    </author>
+    <author>
+      <name>Ran Jia</name>
+    </author>
+    <author>
+      <name>Xu Chen</name>
+    </author>
+    <author>
+      <name>Qingwei Lin</name>
+    </author>
+    <author>
+      <name>Saravan Rajmohan</name>
+    </author>
+    <author>
+      <name>Dongmei Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.10112v1</id>
+    <title>Repository Intelligence Graph: Deterministic Architectural Map for LLM Code Assistants</title>
+    <updated>2026-01-15T06:42:45Z</updated>
+    <link href="https://arxiv.org/abs/2601.10112v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.10112v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Repository aware coding agents often struggle to recover build and test structure, especially in multilingual projects where cross language dependencies are encoded across heterogeneous build systems and tooling. We introduce the Repository Intelligence Graph (RIG), a deterministic, evidence backed architectural map that represents buildable components, aggregators, runners, tests, external packages, and package managers, connected by explicit dependency and coverage edges that trace back to concrete build and test definitions. We also present SPADE, a deterministic extractor that constructs RIG from build and test artifacts (currently with an automatic CMake plugin based on the CMake File API and CTest metadata), and exposes RIG as an LLM friendly JSON view that agents can treat as the authoritative description of repository structure.
+  We evaluate three commercial agents (Claude Code, Cursor, Codex) on eight repositories spanning low to high build oriented complexity, including the real world MetaFFI project. Each agent answers thirty structured questions per repository with and without RIG in context, and we measure accuracy, wall clock completion time, and efficiency (seconds per correct answer). Across repositories and agents, providing RIG improves mean accuracy by 12.2\% and reduces completion time by 53.9\%, yielding a mean 57.8\% reduction in seconds per correct answer. Gains are larger in multilingual repositories, which improve by 17.7\% in accuracy and 69.5\% in efficiency on average, compared to 6.6\% and 46.1\% in single language repositories. Qualitative analysis suggests that RIG shifts failures from structural misunderstandings toward reasoning mistakes over a correct structure, while rare regressions highlight that graph based reasoning quality remains a key factor.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-15T06:42:45Z</published>
+    <arxiv:comment>35 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Tsvi Cherny-Shahar</name>
+    </author>
+    <author>
+      <name>Amiram Yehudai</name>
+    </author>
+  </entry>
+</feed>

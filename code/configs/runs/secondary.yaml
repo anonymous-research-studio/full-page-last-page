@@ -1,0 +1,20 @@
+# Secondary conditions: descriptive and exploratory, decided by no hypothesis. Run on gpt-oss-120b
+# only, after the main study, and reported briefly. Core cells in the same config (same seed, so
+# items pair) are the bases: no signal for the one-factor arms, has_more for placement and for the
+# false "more" signal (a truthful has_more on a real last page). The documentation and answer-format
+# arms moved to main.yaml for every confirmatory model (amendment 1).
+name: secondary
+models: [gpt-oss-120b]
+signal_forms: [none, has_more, link_header, page_info, placeholder_row, nl_note]
+extents: [more_full, last_full, last_short]
+task_need: [needs_all, page1_sufficient]
+items_per_cell: 100
+page_limit: 20
+max_tool_calls: 12
+default_placement: bottom
+seed: 2               # fresh seed: no episode repeats a protocol check (seed 0)
+arms:
+  conflict: {levels: [false_more], task_need: [needs_all], answer_formats: [final_line, completeness]}
+  phrasing: {base_form: none, levels: [neutral, explicit], task_need: [needs_all]}
+  limit: {base_form: none, levels: [stated, unstated]}
+  placement: {base_form: has_more, levels: [top, bottom]}

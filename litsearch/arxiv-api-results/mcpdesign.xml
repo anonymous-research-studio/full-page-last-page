@@ -1,0 +1,1104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/J684vh4fQrGg7Q4mJek1jSK0GsQ</id>
+  <title>arXiv Query: search_query=abs:MCP AND (abs:"tool design" OR abs:"tool descriptions" OR abs:"tool results" OR abs:"server design")&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:05:54Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:MCP+AND+(abs:%22tool+design%22+OR+(abs:%22tool+descriptions%22+OR+(abs:%22tool+results%22+OR+abs:%22server+design%22)))&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>38</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.02861v1</id>
+    <title>Containing the Autonomous Operator: A Defense-in-Depth Framework and Reference Architecture for Securing AI Agents on Kubernetes</title>
+    <updated>2026-10-02T05:54:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.02861v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.02861v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents are moving from chat interfaces into infrastructure operations, where they read telemetry, call tools, generate and execute code, and change the state of production Kubernetes clusters. This collapses a boundary that conventional cloud-native security assumes: the boundary between data and control. Content that an agent merely reads (a log line, a ticket, a tool description) can redirect what it does. This paper argues that the model must not be treated as a security boundary and that agent safety on Kubernetes is therefore an infrastructure problem: every guarantee must continue to hold under the assumption that the agent is fully compromised by prompt injection. We contribute (i) a threat model and ten-class threat taxonomy for agents operating on and within Kubernetes, aligned with emerging OWASP guidance for agentic applications; (ii) nine design principles, centered on complete mediation at the tool boundary and on breaking the combination of untrusted input, sensitive access, and external egress; (iii) a seven-layer defense-in-depth framework that maps each principle to native or widely adopted Kubernetes mechanisms: workload identity, RBAC and ValidatingAdmissionPolicy, gVisor/Kata sandboxing via the SIG Apps Agent Sandbox project, FQDN-aware egress policy, an agent/MCP gateway with policy-as-code over tool arguments, and eBPF runtime enforcement; (iv) a reference architecture with concrete policy artifacts and per-layer bindings for Amazon EKS, Azure Kubernetes Service, and Google Kubernetes Engine; and (v) a qualitative evaluation comprising a threat-control coverage matrix and four attack walkthroughs, with a proposed empirical methodology. We report no measured attack-success or overhead figures; instead we identify residual risks and the measurements needed to validate the framework.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T05:54:52Z</published>
+    <arxiv:comment>22 pages, 2 figures, 4 tables, 6 listings</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Simhadri Podala Narasimha</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.39544v3</id>
+    <title>Growing an Agent/Prover Interface: Evolutionary Tool Design for Cost-Efficient Theorem Proving in Rocq and Lean</title>
+    <updated>2026-10-08T13:42:28Z</updated>
+    <link href="https://arxiv.org/abs/2609.39544v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.39544v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent achievements in AI-assisted mathematics require intensive interaction of agents with proof assistants to generate machine-checked proof certificates. Agents interact with proof assistants such as Rocq or Lean through an interface that controls what the agent receives from the prover and the cost of these interactions. Today, these interfaces are adapted from tools designed for humans and not optimized for agents. We propose an evolutionary method where a frontier model incrementally proposes new features and only keeps the ones that improve the overall performance of smaller models. We demonstrate the effectiveness of our method by growing, on a curated set of mathematical problems, ROCQ-MCP-EVOLVE, a new MCP server for the Rocq prover. On the held-out test split of miniF2F-Rocq, an agent equipped with ROCQ-MCP-EVOLVE outperforms both the baseline that only exposes the Rocq compiler and an established MCP server, across four models from two families, in success rate, cost per solve, and time per solve. Although evolved for Rocq, the resulting server transfers to Lean, improving cost and time per solve on a subset of PutnamBench. We release ROCQ-MCP-EVOLVE and its port to Lean.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T11:44:15Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jules Viennot</name>
+    </author>
+    <author>
+      <name>Guillaume Baudart</name>
+    </author>
+    <author>
+      <name>Marc Lelarge</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.00182v1</id>
+    <title>Localizing Post-Wire Semantic Changes in MCP Agent Frameworks</title>
+    <updated>2026-09-17T04:06:38Z</updated>
+    <link href="https://arxiv.org/abs/2610.00182v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.00182v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Valid Model Context Protocol (MCP) messages do not guarantee that an agent framework preserves the distinctions downstream software needs. We present a differential testing method that follows a fixed tool result through each framework's public interfaces and checks explicit consumer requirements. Applied to 18 designed fixtures in four pinned Python integrations, the method identifies 13 unique fixture-task divergences involving structured values, declared errors, and rich content. Google ADK satisfies every primary contract in its observed path; the other integrations show interface-specific changes or an execution failure. Whether a change matters depends on the consumer: treating absent optional fields as equivalent to null explains most of OpenAI's strict rich-content failures. In an exploratory replay, parsing JSON text recovers more structured values but also returns incorrect values and values for fields absent at the source. Documented settings help in conflicting-output stress cases without restoring a separate structured slot. Fault challenges expose an oracle weakness and test its repair on fresh cases. The study provides reproducible, interface-specific evidence from controlled cases, not production failure rates or model-behavior measurements. Its practical implication is that post-wire regression tests need to specify both the information required and how the consumer reads it.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-17T04:06:38Z</published>
+    <arxiv:comment>10 pages, 7 tables, 1 figure. Submitted to SE4AgenticAI 2026. Reproducibility artifact: https://doi.org/10.5281/zenodo.22784143</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Aditi Patodiya</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.18217v1</id>
+    <title>Measuring and Exploiting Implicit Trust in LLM Tool-Calling Pipelines</title>
+    <updated>2026-09-16T06:47:10Z</updated>
+    <link href="https://arxiv.org/abs/2609.18217v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.18217v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) enables LLMs to invoke external tools, but every tool interaction exposes the model to attacker-controlled text through multiple input channels (tool descriptions, tool results, sampling messages) that share a single context window without privilege separation. In this paper, we present a framework to measure the trust profile of an arbitrary LLM based on a variety of payload framings sent through different channels. Following this assessment, we devise cross-channel fragmentation attacks that distribute seemingly benign payloads across two or three channels; no individual channel carries a complete injection, yet the LLM compiles the fragments into credential exfiltration. We evaluated our attacks across 12 frontier models, three production clients, and six payloads, totalling over 15,000 trials. Our evaluation reveals that cross-channel attacks are an unexplored attack surface: models that fully resist single-channel injection (0% compliance) exfiltrate sensitive data at up to 100% under two-channel fragmentation (e.g., GPT-4o, Llama 70B, Composer 2, Haiku 4.5). We further demonstrate value-aligned exploitation, where a tool's stated purpose requires the data the attacker targets, and a sampling system prompt override that injects persistent instructions via VS Code's MCP implementation. Finally, we evaluated our attacks against seven third-party MCP security tools and three prompt-based defenses. All tools failed to detect fragmented payloads, and prompt defenses proved model-specific rather than universal.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-16T06:47:10Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Murali Ediga</name>
+    </author>
+    <author>
+      <name>Sudipta Chattopadhyay</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.14631v1</id>
+    <title>LLM Agent Capabilities Should Follow Task Intent and Context Source</title>
+    <updated>2026-09-13T16:04:31Z</updated>
+    <link href="https://arxiv.org/abs/2609.14631v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.14631v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents take real actions, including executing code, modifying files, calling services, and delegating tasks, driven by context sources: user requests, tool results, documents, shell outputs, Skill and MCP instructions, memory. Unlike traditional systems, where capability is predefined, the least-privilege capability an agent needs is dynamic, depending on its task intent: what it wants to do and how. This creates a security and safety challenge: all inputs enter one shared planning channel with equal influence, by adversarial injection or accidental scope widening, yet a user's explicit request and a document's extracted text carry different trust and should not share authority to choose a destination or widen access. Existing defenses constrain operations and information flow; we study task-scoped, multi-source authority composition.
+  We argue that agent capabilities should be scoped to the current task intent, not a sandbox or session lifetime, and that no single context source defines a complete capability. IntentCap composes capabilities from four such sources: user intent, workflow instructions, tool schemas, and runtime environment, with field-level ownership and monotonic narrowing. Each source contributes specific fields, none can fill another's, and the lease only narrows the user's authorized authority, never widens it. IntentCap uses an LLM to generate short-lived leases from these sources, validated by a deterministic checker before any side effect commits and enforced by tool- and OS-level information flow policies. Evaluation shows IntentCap blocks tested violations without rejecting benign actions, each source boundary is independently necessary, and the checker generalizes across tool, execution, placement, and delegation boundaries.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.OS" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-13T16:04:31Z</published>
+    <arxiv:comment>3 pages, 1 figure. Accepted at AgenticOS 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Yusheng Zheng</name>
+    </author>
+    <author>
+      <name>Wenhui Zhang</name>
+    </author>
+    <author>
+      <name>Yu Mao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.30293v1</id>
+    <title>Cartograph: Federated Tool Discovery with Operator-Attested Retrieval for AI Agents</title>
+    <updated>2026-09-13T09:07:29Z</updated>
+    <link href="https://arxiv.org/abs/2609.30293v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.30293v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) enables AI agents to discover and call tools, but loading every definition becomes expensive as connected catalogs grow. We present Cartograph, a federated MCP proxy that changes agent-visible tool discovery from $O(n)$ catalog traversal to $O(k)$ progressive disclosure. Cartograph combines three mechanisms: (1) operator-attested capability cards, Ed25519-signed descriptions generated under the deploying operator's control rather than ranked publisher copy; (2) Rift, a three-layer confusable-cluster analysis comprising density clustering, query-margin analysis, and token diagnosis; and (3) two-stage retrieval, which ranks servers before tools. On a 22-server, 374-tool deployment, Cartograph exposes three proxy tools instead of 374 definitions. A 49-query author-constructed benchmark yields R@5 of 0.816, compared with 0.592 for a Jaccard keyword baseline, while a measured top-5 discovery exchange uses 475 tokens rather than 42,450 under the stated full-catalog accounting. Rift identifies 49 confusable clusters, including four HIGH-risk clusters in bootstrap-generated cards. An exploratory comparison of 119 LLM-generated descriptions removes the observed zero-distance cluster but shows that mixing card-generation regimes can reduce R@5. Gateway measurements over ten trials add 5ms mean latency (0.8%) relative to direct stdio MCP calls. Cartograph is complementary to code-execution approaches: it controls which tool descriptions are surfaced and records the provenance of the descriptions used for ranking for each query.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-13T09:07:29Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Justice Owusu Agyemang</name>
+    </author>
+    <author>
+      <name>Michael Agyare</name>
+    </author>
+    <author>
+      <name>Kwame Opuni-Boachie Obour Agyekum</name>
+    </author>
+    <author>
+      <name>Kwame Agyeman-Prempeh Agyekum</name>
+    </author>
+    <author>
+      <name>Francisca Adoma Acheampong</name>
+    </author>
+    <author>
+      <name>Jerry John Kponyo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.10962v1</id>
+    <title>What a Random Draw from the MCP Registry Contains, and What Tool-Use Benchmarks Contain Instead</title>
+    <updated>2026-09-10T01:33:53Z</updated>
+    <link href="https://arxiv.org/abs/2609.10962v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.10962v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Studies of the Model Context Protocol (MCP) server ecosystem draw their samples in ways that quietly select for servers that work: reference sets, popularity lists, hand-curated frames, or pipelines that repair a server until it starts. We report what an unrepaired probability sample actually contains. From a 24,135-server registry census we draw 400 npm/stdio servers with a published seed and probe each one over the wire. Only 48.8% complete an initialize handshake, against 66.7% for a hand-curated frame measured with the same instrument, and the dominant failure is not missing credentials (13.3%) but servers that never start at all (37.5%). Among the 195 that do run, hard conformance is total: zero fatal JSON Schema violations across 2,766 advertised tools. Optional safety annotations are the real variance, and the tool-level omission rate on a random draw is 58.8% against 41.5% on the curated frame, so curation flatters this figure too. We then compare the tool descriptions these servers advertise against two tool-use benchmark corpora using one method held constant. Real MCP tools show 2.8% near-duplication at cosine 0.70, and all of it lies within single servers: cross-author near-duplication is 0.0% at every threshold tested. BFCL v4 shows 16.7%, of which 16.4 points lie between independently presented tasks. UltraTool shows 0.3%, cleaner than real tools, so this is a property of BFCL and not of synthetic corpora as a class. Separately, 68.8% of raw BFCL rows and 85.6% of raw UltraTool rows are exact name-plus-description repeats, against 0.4% for real MCP, so any statistic computed over these releases without global deduplication measures repetition rather than tools. All figures regenerate from released scripts and a published seed.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-10T01:33:53Z</published>
+    <arxiv:comment>10 pages, 3 figures. Seeded, re-runnable pipeline and per-server outcomes: https://github.com/itguruhaseeb/mcp-probe ; archived at doi:10.5281/zenodo.21347997</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Haseeb Mohammed Afsar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.26199v1</id>
+    <title>Benchmarking AI Agents for Hardware Design Automation via MCP Tool Calling</title>
+    <updated>2026-08-25T15:33:50Z</updated>
+    <link href="https://arxiv.org/abs/2608.26199v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.26199v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We ask whether AI agents powered by locally deployed large language models can reliably automate expert-defined hardware design workflows in an industry-realistic tool-calling setting. In these environments, engineers issue repetitive, dependency-ordered operations---such as creating components, adding ports, and wiring connections---through specialised tools. Confidentiality constraints on component specifications and naming conventions often preclude hosted proprietary APIs, motivating the use of locally deployed models. To study this setting, we build a Model Context Protocol (MCP) server that reproduces the state and dependency logic of a proprietary hardware design tool used in embedded system development and construct a benchmark covering single-operation edits, multi-step dependency chains, invalid requests, misspelled prompts, and multi-server tool contexts. We evaluate seven open-source models comparing pipeline choices including system prompts, tool-description detail, context scope, and single-agent versus multi-agent architectures. Results show that strong models can achieve near-complete expected-call coverage on the benchmarked workflows, but reliability depends strongly on both task structure and agent configuration. Comprehensive tool descriptions consistently reduce failures, few-shot prompting can cause severe inaction for some models, cumulative context harms constrained models, and multi-agent decomposition helps weak workers or long sessions at the cost of additional calls. These findings provide practical guidance for deploying local LLM agents in stateful hardware design environments.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-25T15:33:50Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Leonardo Liparulo</name>
+    </author>
+    <author>
+      <name>Francesco Pierri</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.22063v1</id>
+    <title>From SQL Generation to Tool Selection: A Domain-Oriented Pattern for MCP Servers</title>
+    <updated>2026-08-22T18:08:59Z</updated>
+    <link href="https://arxiv.org/abs/2608.22063v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.22063v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agents built on Large Language Models (LLMs) increasingly reach enterprise data through the Model Context Protocol (MCP), and many MCP database servers maximize flexibility by exposing a single generic SQL execution tool. This paper proposes the Domain-Oriented Tooling Pattern: instead of generating SQL at query time, the model selects from a small set of domain-aligned tools whose parameterized queries encapsulate schema navigation, joins and business rules on the server side. We formalize the pattern around three architectural invariants and introduce Model Demotion, the observation that replacing SQL synthesis with intent classification lowers the model tier required to serve routine requests. As a reference implementation we present MCP Blueprint, an open-source framework in which domain tools are defined declaratively as YAML metadata plus external parameterized SQL files. We evaluate the pattern with a public reproducibility benchmark comparing three MCP server designs - raw SQL execution, a thin generic tool pack, and a verticalized domain pack - on four local models (3B-8B) across seventeen customer-facing tasks over the Sakila database (609 completed cells; temperature 0; three repetitions per cell). The verticalized pack reaches a pooled mean score of 0.939 versus 0.666 for raw SQL and 0.605 for the generic pack; the smallest model improves from 0.583 to 0.929, matching or exceeding every larger configuration while cutting cost per correct answer by an order of magnitude. All harness code, prompts, gold answers, frozen packs and per-cell results are publicly available.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-22T18:08:59Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Bartolomeo Bogliolo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.08467v1</id>
+    <title>LLM within MCP Matters: Measuring Inefficient Resource Utilization Driven by LLMs</title>
+    <updated>2026-08-09T04:17:12Z</updated>
+    <link href="https://arxiv.org/abs/2608.08467v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.08467v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) standardizes how servers expose data and tools to Large Language Models (LLMs). A common server design embeds frequently used reference data, such as identifier lookup tables, directly in the server instructions: the system-prompt text a server hands to the host application. When a query concerns an entry of the embedded table, the model can act on it immediately instead of re-discovering the same information through a search tool. We test whether client LLMs actually consume such instruction-embedded data, reporting a 54,000-trial study across 24 LLMs (9 Claude, 6 Gemini, 9 GPT) on a production legal-information MCP server. A diagnostic condition that removes the competing search tool shows that failures are dominated by behavioral preference rather than missing capability. With search unavailable, 23 of 24 models read the embedded data reliably (hit ratio at least 98%); with a search tool merely present, 9 models drop below 15%. A 2^3 factorial analysis of three instruction-level interventions reveals strong interaction effects: combining all three restores at least 86% for 20 of 24 models, but individual interventions can backfire for specific model families. Per-server prompt engineering is therefore a workaround rather than a fix; we argue that MCP host applications should provide an explicit mechanism that places server instructions ahead of tool selection in the client LLM's deliberation.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-09T04:17:12Z</published>
+    <arxiv:comment>4 pages, 1 table. Accepted at the AgentSearch Workshop at SIGIR 2026, Melbourne, Australia (non-archival). Code and data: https://github.com/rabqatab/llm-in-mcp-matters</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Minhan Cho</name>
+    </author>
+    <author>
+      <name>Soyoung Park</name>
+    </author>
+    <author>
+      <name>Kihyeon Jeong</name>
+    </author>
+    <author>
+      <name>Byeongkyu Jeon</name>
+    </author>
+    <author>
+      <name>Daejin Choi</name>
+    </author>
+    <author>
+      <name>Jinyoung Han</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.07461v1</id>
+    <title>Mitigating Taint-Style Vulnerabilities in MCP Servers via Security-Aware Tool Descriptions</title>
+    <updated>2026-07-08T14:29:23Z</updated>
+    <link href="https://arxiv.org/abs/2607.07461v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.07461v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) are increasingly deployed as autonomous agents that interact with external tools and services via the Model Context Protocol (MCP), a standardized interface for dynamic tool invocation. While MCP simplifies integration, it also expands the attack surface and enables generic exploits across multiple servers. Despite prior work on malicious MCP servers, the vulnerability landscape of MCP servers remains underexplored. In this work, we systematically analyze MCP server vulnerabilities, focusing on metadata characteristics, vulnerable code patterns, and community responses. Our study reveals that taint-style vulnerabilities constitute a substantial fraction of MCP server vulnerabilities, require significant code modifications to remediate, and are met with slow community responses. Motivated by these findings, we propose SPELLSMITH, presenting a novel textbased avenue for shielding taint-style vulnerabilities in MCP servers. In particular, SPELLSMITH analyzes the high-risk capabilities exposed by an MCP server and combines them with tool descriptions and parameter semantics to identify potential taint-style vulnerability risks, thereby constructing a tool-level risk profile. Then, SPELLSMITH leverages the Description property of the protocol to embed behavioral guidance (Description Enhancement Module) and exploits LLMs' self-reflection capabilities (Self-Reflection Module) to iteratively evaluate and refine outputs. By strengthening LLM internal decision-making, SPELLSMITH provides an active and unified mitigation strategy that generalizes across multiple vulnerabilities, reducing reliance on context-specific code-level fixes. Our experiments demonstrate that SPELLSMITH effectively mitigates taint-style vulnerability exploitation in MCP servers, highlighting its practical applicability and advantages over traditional code-level mitigations.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-08T14:29:23Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Yang Shi</name>
+    </author>
+    <author>
+      <name>Jiaheng Fu</name>
+    </author>
+    <author>
+      <name>Yihe Huang</name>
+    </author>
+    <author>
+      <name>Ruixiang Wu</name>
+    </author>
+    <author>
+      <name>Chengyao Sun</name>
+    </author>
+    <author>
+      <name>Kaifeng Huang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.27027v1</id>
+    <title>ShareLock: A Stealthy Multi-Tool Threshold Poisoning Attack Against MCP</title>
+    <updated>2026-06-25T13:35:28Z</updated>
+    <link href="https://arxiv.org/abs/2606.27027v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.27027v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>With the rapid evolution of LLM-driven agents, Model Context Protocol (MCP), an open protocol bridging LLMs with external tools, has quickly become foundational to modern agent ecosystems. However, the expanding adoption of MCP has also introduced novel security concerns such as Tool Poisoning Attack (TPA), which exploit LLM-server interactions to inject malicious prompts. Existing poisoning schemes typically adopt a monolithic plaintext embedding paradigm, which fails to withstand manual inspection or automated detectors. Current research still lacks a systematic analysis on multi-tool poisoning, where multiple tools can be exploited cooperatively to disperse detection risk. In this paper, we introduce ShareLock, a multi-tool threshold poisoning framework that utilizes Shamir's threshold scheme to ensure exceptional stealth and fault tolerance. ShareLock distributes the malicious instruction as benign-looking secret shares across multiple tool descriptions, achieving both information-theoretic secrecy and attack robustness against moderate auditing. After a covert reconstruction trigger is planted during server update, the aggregated shares reconstruct the hidden instruction, resulting in critical breaches of system assets or private data. To evaluate the realistic threat of ShareLock, we constructed a comprehensive benchmark encompassing four multi-tool scenarios and conducted extensive experiments across mainstream LLMs on two distinct MCP clients. Our results demonstrate that ShareLock significantly outperforms existing single-tool poisoning strategies in tool description-based detection while maintaining an average attack success rate exceeding 90%.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-25T13:35:28Z</published>
+    <arxiv:comment>16 pages, 12 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Liwei Liu</name>
+    </author>
+    <author>
+      <name>Tianzhu Han</name>
+    </author>
+    <author>
+      <name>Zijian Liu</name>
+    </author>
+    <author>
+      <name>Zishu Dong</name>
+    </author>
+    <author>
+      <name>Na Ruan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.26649v1</id>
+    <title>Autoformalization of Agent Instructions into Policy-as-Code</title>
+    <updated>2026-06-25T06:23:15Z</updated>
+    <link href="https://arxiv.org/abs/2606.26649v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.26649v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agent safety in high-stakes domains requires formal policy enforcement, but most existing approaches either rely on probabilistic guardrails (fine-tuned classifiers, prompt-based steering) that offer no formal guarantees, or on hand-coded symbolic enforcement that does not scale to the breadth of real policy specifications. We present an autoformalization pipeline that translates agent prompts, MCP tool descriptions, and natural language policy documents into formally verified policies using an LLM-based generator-critic loop. The resulting policies are written in the Cedar Policy Language. On the MedAgentBench benchmark, our autoformalized policies cover substantially more of the source natural-language specification than the hand-coded symbolic enforcement in prior work.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-25T06:23:15Z</published>
+    <arxiv:comment>Accepted at the Second Workshop on Agents in the Wild: Safety, Security, and Beyond (AIWILD), ICML 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Adam Mondl</name>
+    </author>
+    <author>
+      <name>Matthew Maisel</name>
+    </author>
+    <author>
+      <name>John H. Brock</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.04769v1</id>
+    <title>Description-Code Inconsistency in Real-world MCP Servers: Measurement, Detection, and Security Implications</title>
+    <updated>2026-06-03T11:51:32Z</updated>
+    <link href="https://arxiv.org/abs/2606.04769v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.04769v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) has emerged as a critical standard empowering Large Language Models (LLMs) to utilize external tools. In this ecosystem, LLMs rely on natural language descriptions provided by MCP servers to select and execute functions. This interaction implicitly assumes that tool descriptions faithfully reflect their underlying implementations, while this assumption is not mandatorily verified in practice. As a result, MCP deployments may suffer from a problem named Description-Code Inconsistency (DCI), where a tool's description of its capabilities and security boundaries is not consistent with what the code actually does.
+  In this paper, we present a comprehensive study of DCI in real-world MCP servers. We formally define the problem and propose a comprehensive taxonomy spanning functionality inconsistencies and undeclared side effects. Guided by this taxonomy, we develop DCIChecker, an automated framework that combines structure-aware static analysis with the Direct-Reverse-Arbitration prompting method to cross-validate tool descriptions against actual code implementations. We apply this framework to a large-scale dataset comprising 19,200 description-code pairs extracted from 2,214 real-world MCP servers. Our measurement reveals that DCI is widespread, with 9.93% of these pairs exhibiting inconsistencies. We further demonstrate that DCI creates a critical defense blind spot, facilitating varied risks from operational failures to stealthy malicious behaviors. Finally, we propose mitigation strategies to enforce semantic consistency and enhance the reliability of the emerging agentic ecosystem.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-03T11:51:32Z</published>
+    <arxiv:comment>Preprint</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Yutao Shi</name>
+    </author>
+    <author>
+      <name>Xiaohan Zhang</name>
+    </author>
+    <author>
+      <name>Xiangjing Zhang</name>
+    </author>
+    <author>
+      <name>Xihua Shen</name>
+    </author>
+    <author>
+      <name>Hui Ouyang</name>
+    </author>
+    <author>
+      <name>Huming Qiu</name>
+    </author>
+    <author>
+      <name>Mi Zhang</name>
+    </author>
+    <author>
+      <name>Min Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.04494v1</id>
+    <title>Beyond Prompt-Based Planning: MCP-Native Graph Planning-based Biomedical Agent System</title>
+    <updated>2026-06-03T06:19:25Z</updated>
+    <link href="https://arxiv.org/abs/2606.04494v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.04494v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Biomedical agents promise to automate complex biological workflows, yet current systems face two fundamental bottlenecks: bioinformatics tools are highly heterogeneous in interfaces and execution environments, while agent planning still relies on flat prompt-retrieved tool descriptions. As biomedical software ecosystems grow, this coupling between tool coverage and context size leads to tool confusion, unstable planning, and inefficient execution. We introduce BioManus, an MCP-native biomedical agent built on graph-scaffolded planning over structured biological capabilities. BioManus first introduces the BioinfoMCP Compiler, which converts heterogeneous bioinformatics software into standardized MCP servers, yielding a large executable MCP ecosystem. It then organizes this ecosystem as a typed heterogeneous MCP graph over tools, operations, datatypes, and workflow stages. At inference time, BioManus retrieves compact task-specific subgraphs, synthesizes operation-level workflow scaffolds. This design decouples planning complexity from raw tool inventory size, achieving a context compression ratio of Theta(N / (h * m_bar)) under high-recall retrieval, where N is the total tool count, h is the workflow horizon, and m_bar (much smaller than N) is the average number of candidate tools per operation. Experiments on BioAgentBench and LAB-Bench show that BioManus improves execution accuracy, workflow validity, and context efficiency over advanced biomedical agent baselines. This work suggests a paradigm shift: scalable biomedical reasoning requires structured executable capability graphs rather than increasingly larger prompt-level tool retrieval.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-03T06:19:25Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zhangtianyi Chen</name>
+    </author>
+    <author>
+      <name>Florensia Widjaja</name>
+    </author>
+    <author>
+      <name>Wufei Dai</name>
+    </author>
+    <author>
+      <name>Xiangjun Zhang</name>
+    </author>
+    <author>
+      <name>Yuhao Shen</name>
+    </author>
+    <author>
+      <name>Juexiao Zhou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.24069v1</id>
+    <title>When the Manual Lies: A Realistic Benchmark to Evaluate MCP Poisoning Attacks for LLM Agents</title>
+    <updated>2026-05-22T08:34:48Z</updated>
+    <link href="https://arxiv.org/abs/2605.24069v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.24069v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rise of tool-using Large Language Model (LLM) agents, standardized by protocols like the Model Context Protocol (MCP), has unlocked unprecedented autonomous execution capabilities for LLM Agents by integrating external open-domain knowledge and tools. However, this interoperability introduces a covert attack surface targeting the agent's cognitive planning layer. This paper systematically investigates Tool Description Poisoning (TDP), a novel semantic attack. In TDP, malicious instructions are not embedded in a tool's executable code, but rather covertly injected into its descriptive metadata, the very "manual" an agent relies on for secure planning and decision-making. To rigorously and systematically evaluate this emerging threat, we introduce the MCP-TDP Security Benchmark. This high-fidelity sandbox environment comprises 32 realistic, real-world test cases spanning 6 distinct risk categories. Our evaluation of 8 mainstream LLMs reveals severe vulnerabilities, with leading models like GPT-4o exhibiting a nearly 100% Attack Success Rate (ASR) in six high-risk scenarios. Furthermore, our findings demonstrate that common prompt-guardrail defenses are largely ineffective and can, counterintuitively, even be counterproductive (a phenomenon which we term the "Firewall Fallacy"). Crucially, we also propose a defense mechanism: "Reactive Self-Correction," where an agent autonomously detects and reverts its own malicious actions post-execution. This work provides the first specialized security benchmark tailored for TDP, offering essential insights for securing the cognitive and planning layers of advanced agentic systems.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-22T08:34:48Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Shi Liu</name>
+    </author>
+    <author>
+      <name>Xuehai Tang</name>
+    </author>
+    <author>
+      <name>Xikang Yang</name>
+    </author>
+    <author>
+      <name>Liang Lin</name>
+    </author>
+    <author>
+      <name>Biyu Zhou</name>
+    </author>
+    <author>
+      <name>Wenjie Xiao</name>
+    </author>
+    <author>
+      <name>Wantao Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.21477v2</id>
+    <title>MCP Pitfall Lab: Exposing Developer Pitfalls in MCP Tool Server Security under Multi-Vector Attacks</title>
+    <updated>2026-07-14T16:11:06Z</updated>
+    <link href="https://arxiv.org/abs/2604.21477v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.21477v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Model Context Protocol (MCP) enables tool-integrated LLM agents, but its third-party tool-server ecosystem expands software supply-chain risk across tool metadata, untrusted outputs, cross-tool flows, multi-modal inputs, and privileged sink actions. Existing MCP benchmarks mainly measure robustness to malicious inputs, offering limited support for dependency vetting, semantic metadata auditing, and hardening regression. We present MCP Pitfall Lab, a protocol-aware security testing framework that models developer pitfalls as reproducible scenarios and validates outcomes using MCP traces and objective validators rather than agent self-report. We also introduce Semantic MCP-Bill-of-Material(MCP-BOM), representing that augments component inventory with security-relevant tool semantics, including descriptions, schemas, high-risk parameters, source/sink roles, trust boundaries, policy hooks, audit support, and trace provenance. Across 2,579 validator-completed runs over four models, Pitfall Lab observes 31.9% overall attack success rate(ASR), with multi-modal injection strongest at 38.7%. Semantic static fields detect pitfalls involving policy-bearing tool descriptions, permissive schemas, missing audit support, and absent server-side validation with F1=0.727, while BOM-backed findings drop from 27 to 16 after hardening. Decomposed risk metrics show Control Coverage increasing from 0.173 to 0.697 and Residual Risk decreasing from 15.31 to 6.09. A trace-linked case study further demonstrates that cross-tool forwarding and image-to-tool leakage require runtime provenance rather than static manifest fields alone. Overall, Pitfall Lab reframes MCP tool servers as AI software-supply-chain dependencies and provides BOM-backed artifacts for review, hardening, and trace-grounded regression testing</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-23T09:39:15Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Run Hao</name>
+    </author>
+    <author>
+      <name>Zhuoran Tan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.17125v3</id>
+    <title>Evaluating a Layered Prompt-Injection Defence for the Model Context Protocol: A Record-Level Audit of Decision Conventions, Corpus Provenance and Reproducibility</title>
+    <updated>2026-10-02T12:19:01Z</updated>
+    <link href="https://arxiv.org/abs/2604.17125v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.17125v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) extends the prompt-injection attack surface of large language model applications to tool descriptions, parameter schemas and tool outputs. Defences for it report detection figures that are not comparable, because each is measured on its authors' own corpus under a decision convention that is rarely stated. This paper audits one such evaluation at the level of individual decision records. Its object is CASCADE, a fully local layered defence (rule matching, embedding similarity and an optional local language-model review), run in three configurations on a frozen 5,000-sample corpus under a pinned code revision; the corpus, the per-sample records and the analysis scripts are public. Four findings result. First, the convention that collapses allow, review and block onto a binary label sets the headline: the pipeline without review reports an 11.70% false-positive rate when referrals count as positives and 1.51% when only denials do, while referring 68.5% of all traffic to a human. Second, the construction of the corpus shapes the aggregate: 65.6% of records are texts placed in one of five fixed wrappers, the wrapper alone identifies the label, and for the same text wrapping lowers the false-positive rate from 21.2% to 3.2% and raises detection from 86.0% to 98.0%. Third, the published description does not identify what ran: the rule module inside the pipeline is not the rule engine evaluated alone; the block threshold produced denials only among the first 48 requests; and, without review, every later denial, including all 23 denials of benign requests, came from an output guard run on an echo of the input. Fourth, the local review model, invoked on 32.6% of requests at 2.5 s each, changes no binary outcome but converts 1,492 referrals into denials. A ten-item reporting checklist is derived from these findings.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-18T19:53:09Z</published>
+    <arxiv:comment>Reproduction artifacts: https://zenodo.org/records/23101926</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>İpek Abasıkeleş Turgut</name>
+    </author>
+    <author>
+      <name>Edip Gümüş</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.10534v1</id>
+    <title>Machine Learning-Based Detection of MCP Attacks</title>
+    <updated>2026-04-12T08:54:58Z</updated>
+    <link href="https://arxiv.org/abs/2604.10534v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.10534v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) is a new and emerging technology that extends the functionality of large language models, improving workflows but also exposing users to a new attack surface. Several studies have highlighted related security flaws, but MCP attack detection remains underexplored. To address this research gap, this study develops and evaluates a range of supervised machine learning approaches, including both traditional and deep-learning models. We evaluated the systems on the detection of malicious MCP tool descriptions in two scenarios: (1) a binary classification task distinguishing malicious from benign tools, and (2) a multiclass classification task identifying the attack type while separating benign from malicious tools. In addition to the machine learning models, we compared a rule-based approach that serves as a baseline. The results indicate that several of the developed models achieved 100\% F1-score on the binary classification task. In the multiclass scenario, the SVC and BERT models performed best, achieving F1 scores of 90.56\% and 88.33\%, respectively. Confusion matrices were also used to visualize the full distribution of predictions often missed by traditional metrics, providing additional insight for selecting the best-fitting solution in real-world scenarios. This study presents an addition to the MCP defence area, showing that machine learning models can perform exceptionally well in separating malicious and benign data points. To apply the solution in a live environment, a middleware was developed to classify which MCP tools are safe to use before execution, and block the ones that are not safe. Furthermore, the study shows that these models can outperform traditional rule-based solutions currently in use in the field.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-12T08:54:58Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Tobias Mattsson</name>
+    </author>
+    <author>
+      <name>Samuel Nyberg</name>
+    </author>
+    <author>
+      <name>Anton Borg</name>
+    </author>
+    <author>
+      <name>Ricardo Britto</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.20405v2</id>
+    <title>Putnam 2025 Problems in Rocq using Opus 4.6 and Rocq-MCP</title>
+    <updated>2026-05-21T09:48:58Z</updated>
+    <link href="https://arxiv.org/abs/2603.20405v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.20405v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We report on an experiment in which Claude Opus~4.6, equipped with a suite of Model Context Protocol (MCP) tools for the Rocq proof assistant, autonomously proved 10 of 12 problems from the 2025 Putnam Mathematical Competition. The MCP tools, designed with Claude by analyzing logs from a prior experiment on miniF2F-Rocq, encode a "compile-first, interactive-fallback" strategy. Running on an isolated VM with no internet access, the agent deployed 141 subagents over 17.7 hours of active compute (51.6h wall-clock), consuming approximately 1.9 billion tokens. All proofs are publicly available.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-20T18:25:42Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Guillaume Baudart</name>
+    </author>
+    <author>
+      <name>Marc Lelarge</name>
+    </author>
+    <author>
+      <name>Tristan Stérin</name>
+    </author>
+    <author>
+      <name>Jules Viennot</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.18063v1</id>
+    <title>MCP-38: A Comprehensive Threat Taxonomy for Model Context Protocol Systems (v1.0)</title>
+    <updated>2026-03-18T02:22:41Z</updated>
+    <link href="https://arxiv.org/abs/2603.18063v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.18063v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) introduces a structurally distinct attack surface that existing threat frameworks, designed for traditional software systems or generic LLM deployments, do not adequately cover. This paper presents MCP-38, a protocol-specific threat taxonomy consisting of 38 threat categories (MCP-01 through MCP-38). The taxonomy was derived through a systematic four-phase methodology: protocol decomposition, multi-framework cross-mapping, real-world incident synthesis, and remediation-surface categorization. Each category is mapped to STRIDE, OWASP Top 10 for LLM Applications (2025, LLM01--LLM10), and the OWASP Top 10 for Agentic Applications (2026, ASI01--ASI10). MCP-38 addresses critical threats arising from MCP's semantic attack surface (tool description poisoning, indirect prompt injection, parasitic tool chaining, and dynamic trust violations), none of which are adequately captured by prior work. MCP-38 provides the definitional and empirical foundation for automated threat intelligence platforms.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-18T02:22:41Z</published>
+    <arxiv:comment>v1.0</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Yi Ting Shen</name>
+    </author>
+    <author>
+      <name>Kentaroh Toyoda</name>
+    </author>
+    <author>
+      <name>Alex Leung</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.15473v2</id>
+    <title>Agent Lifecycle Toolkit (ALTK): Reusable Middleware Components for Robust AI Agents</title>
+    <updated>2026-04-27T19:02:56Z</updated>
+    <link href="https://arxiv.org/abs/2603.15473v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.15473v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As AI agents move from demos into enterprise deployments, their failure modes become consequential: a misinterpreted tool argument can corrupt production data, a silent reasoning error can go undetected until damage is done, and outputs that violate organizational policy can create legal or compliance risk. Yet, most agent frameworks leave builders to handle these failure modes ad hoc, resulting in brittle, one-off safeguards that are hard to reuse or maintain. We present the Agent Lifecycle Toolkit (ALTK), an open-source collection of modular middleware components that systematically address these gaps across the full agent lifecycle.
+  Across the agent lifecycle, we identify opportunities to intervene and improve, namely, post-user-request, pre-LLM prompt conditioning, post-LLM output processing, pre-tool validation, post-tool result checking, and pre-response assembly. ALTK provides modular middleware that detects, repairs, and mitigates common failure modes. It offers consistent interfaces that fit naturally into existing pipelines. It is compatible with low-code and no-code tools such as the ContextForge MCP Gateway and Langflow. Finally, it significantly reduces the effort of building reliable, production-grade agents.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-16T16:06:54Z</published>
+    <arxiv:comment>to appear in CAIS 2026 demonstration track</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zidane Wright</name>
+    </author>
+    <author>
+      <name>Jason Tsay</name>
+    </author>
+    <author>
+      <name>Anupama Murthi</name>
+    </author>
+    <author>
+      <name>Osher Elhadad</name>
+    </author>
+    <author>
+      <name>Diego Del Rio</name>
+    </author>
+    <author>
+      <name>Saurabh Goyal</name>
+    </author>
+    <author>
+      <name>Kiran Kate</name>
+    </author>
+    <author>
+      <name>Jim Laredo</name>
+    </author>
+    <author>
+      <name>Koren Lazar</name>
+    </author>
+    <author>
+      <name>Vinod Muthusamy</name>
+    </author>
+    <author>
+      <name>Yara Rizk</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.18914v1</id>
+    <title>From Docs to Descriptions: Smell-Aware Evaluation of MCP Server Descriptions</title>
+    <updated>2026-02-21T17:45:07Z</updated>
+    <link href="https://arxiv.org/abs/2602.18914v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.18914v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) has rapidly become a de facto standard for connecting LLM-based agents with external tools via reusable MCP servers. In practice, however, server selection and onboarding rely heavily on free-text tool descriptions that are intentionally loosely constrained. Although this flexibility largely ensures the scalability of MCP servers, it also creates a reliability gap that descriptions often misrepresent or omit key semantics, increasing trial-and-error integration, degrading agent behavior, and potentially introducing security risks. To this end, we present the first systematic study of description smells in MCP tool descriptions and their impact on usability. Specifically, we synthesize software/API documentation practices and agentic tool-use requirements into a four-dimensional quality standard: accuracy, functionality, information completeness, and conciseness, covering 18 specific smell categories. Using this standard, we conducted a large-scale empirical study on a well-constructed dataset of 10,831 MCP servers. We find that description smells are pervasive (e.g., 73% repeated tool names, thousands with incorrect parameter semantics or missing return descriptions), reflecting a "code-first, description-last" pattern. Through a controlled mutation-based study, we show these smells significantly affect LLM tool selection, with functionality and accuracy having the largest effects (+11.6% and +8.8%, p &lt; 0.001). In competitive settings with functionally equivalent servers, standard-compliant descriptions reach 72% selection probability (260% over a 20% baseline), demonstrating that smell-guided remediation yields substantial practical benefits. We release our labeled dataset and standards to support future work on reliable and secure MCP ecosystems.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-21T17:45:07Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Peiran Wang</name>
+    </author>
+    <author>
+      <name>Ying Li</name>
+    </author>
+    <author>
+      <name>Yuqiang Sun</name>
+    </author>
+    <author>
+      <name>Chengwei Liu</name>
+    </author>
+    <author>
+      <name>Yang Liu</name>
+    </author>
+    <author>
+      <name>Yuan Tian</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.14878v3</id>
+    <title>Model Context Protocol (MCP) Tool Descriptions Are Smelly! Towards Improving AI Agent Efficiency with Augmented MCP Tool Descriptions</title>
+    <updated>2026-05-31T05:10:10Z</updated>
+    <link href="https://arxiv.org/abs/2602.14878v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.14878v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) introduces a standard specification that defines how Foundation Model (FM)-based agents should interact with external systems by invoking tools. However, to understand a tool's purpose and features, FMs rely on natural-language tool descriptions, making these descriptions a critical component in guiding FMs to select the optimal tool for a given (sub)task and to pass the right arguments to the tool. While defects or smells in these descriptions can misguide FM-based agents, their prevalence and consequences in the MCP ecosystem remain unclear.
+  Hence, we examine 856 tools spread across 103 MCP servers empirically, assess their description quality, and their impact on agent performance. We identify six components of tool descriptions from the literature, develop a scoring rubric utilizing these components, and then formalize tool description smells based on this rubric. By operationalizing this rubric through an FM-based scanner, we find that 97.1% of the analyzed tool descriptions contain at least one smell, with 56% failing to state their purpose clearly. While augmenting these descriptions for all components improves task success rates by a median of 5.85 percentage points and improves partial goal completion by 15.12%, it also increases the number of execution steps by 67.46% and regresses performance in 16.67% of cases. These results indicate that achieving performance gains is not straightforward; while execution cost can act as a trade-off, execution context can also impact. Furthermore, component ablations show that compact variants of different component combinations often preserve behavioral reliability while reducing unnecessary token overhead, enabling more efficient use of the FM context window and lower execution costs.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.ET" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-16T16:10:11Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Mohammed Mehedi Hasan</name>
+    </author>
+    <author>
+      <name>Hao Li</name>
+    </author>
+    <author>
+      <name>Gopi Krishnan Rajbahadur</name>
+    </author>
+    <author>
+      <name>Bram Adams</name>
+    </author>
+    <author>
+      <name>Ahmed E. Hassan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.03580v1</id>
+    <title>Don't believe everything you read: Understanding and Measuring MCP Behavior under Misleading Tool Descriptions</title>
+    <updated>2026-02-03T14:31:52Z</updated>
+    <link href="https://arxiv.org/abs/2602.03580v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.03580v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) enables large language models to invoke external tools through natural-language descriptions, forming the foundation of many AI agent applications. However, MCP does not enforce consistency between documented tool behavior and actual code execution, even though MCP Servers often run with broad system privileges. This gap introduces a largely unexplored security risk. We study how mismatches between externally presented tool descriptions and underlying implementations systematically shape the mental models and decision-making behavior of intelligent agents. Specifically, we present the first large-scale study of description-code inconsistency in the MCP ecosystem. We design an automated static analysis framework and apply it to 10,240 real-world MCP Servers across 36 categories. Our results show that while most servers are highly consistent, approximately 13% exhibit substantial mismatches that can enable undocumented privileged operations, hidden state mutations, or unauthorized financial actions. We further observe systematic differences across application categories, popularity levels, and MCP marketplaces. Our findings demonstrate that description-code inconsistency is a concrete and prevalent attack surface in MCP-based AI agents, and motivate the need for systematic auditing and stronger transparency guarantees in future agent ecosystems.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-03T14:31:52Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zhihao Li</name>
+    </author>
+    <author>
+      <name>Boyang Ma</name>
+    </author>
+    <author>
+      <name>Xuelong Dai</name>
+    </author>
+    <author>
+      <name>Minghui Xu</name>
+    </author>
+    <author>
+      <name>Yue Zhang</name>
+    </author>
+    <author>
+      <name>Biwei Yan</name>
+    </author>
+    <author>
+      <name>Kun Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.01241v2</id>
+    <title>MCP-SandboxScan: WASM-based Secure Execution and Runtime Analysis for MCP Tools</title>
+    <updated>2026-06-22T15:20:42Z</updated>
+    <link href="https://arxiv.org/abs/2601.01241v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.01241v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-augmented Large Language Model (LLM) agents create a new supply-chain surface: Model Context Protocol (MCP) tools are installed like third-party packages, yet their outputs can enter the agent's reasoning context. This enables confused-deputy risks in which attacker-controlled inputs cause otherwise benign tools to exercise legitimate authority over files, environment variables, or network-facing operations and reflect sensitive or instruction-like content into LLM-visible fields. We present SandScope, an MCP-aware audit framework that combines runtime witness detection with semantic tool profiling. SandScope executes portable tools under WebAssembly System Interface (WASI) or drives unmodified MCP servers over standard input/output (stdio), extracts LLM-visible sinks from tool results and prompt/message fields, and reports auditable source-to-sink witnesses from environment, file, and tool-input sources while separately recording network-intent and egress evidence. Its semantic layer recovers declared capabilities from tools/list metadata and static registrations to characterize attack surface when execution is incomplete. We evaluate SandScope on controlled cross-language subjects, an evasion benchmark, and a 100-repository MCP corpus. SandScope completes shallow dynamic scans for 35 repositories and, through a broader semantic profiling pass, recovers metadata for 1,127 tools across 71 repositories, including 886 tools with security-sensitive declared capabilities. A schema-guided exploration pass over the 35 dynamically scanned repositories re-executes 33 and observes source-to-sink witnesses in 12. These results show that SandScope provides practical, auditable evidence for MCP tool risk through controlled execution, MCP-aware sink extraction, runtime witness reporting, and semantic capability profiling.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-03T17:25:38Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zhuoran Tan</name>
+    </author>
+    <author>
+      <name>Run Hao</name>
+    </author>
+    <author>
+      <name>Jeremy Singer</name>
+    </author>
+    <author>
+      <name>Yutian Tang</name>
+    </author>
+    <author>
+      <name>Christos Anagnostopoulos</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.23367v1</id>
+    <title>HumanMCP: A Human-Like Query Dataset for Evaluating MCP Tool Retrieval Performance</title>
+    <updated>2025-12-18T01:27:48Z</updated>
+    <link href="https://arxiv.org/abs/2602.23367v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.23367v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Model Context Protocol (MCP) servers contain a collection of thousands of open-source standardized tools, linking LLMs to external systems; however, existing datasets and benchmarks lack realistic, human-like user queries, remaining a critical gap in evaluating the tool usage and ecosystems of MCP servers. Existing datasets often do contain tool descriptions but fail to represent how different users portray their requests, leading to poor generalization and inflated reliability of certain benchmarks. This paper introduces the first large-scale MCP dataset featuring diverse, high-quality diverse user queries generated specifically to match 2800 tools across 308 MCP servers, developing on the MCP Zero dataset. Each tool is paired with multiple unique user personas that we have generated, to capture varying levels of user intent ranging from precise task requests, and ambiguous, exploratory commands, reflecting the complexity of real-world interaction patterns.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-18T01:27:48Z</published>
+    <arxiv:comment>4 pages, 2 figures, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Shubh Laddha</name>
+    </author>
+    <author>
+      <name>Lucas Changbencharoen</name>
+    </author>
+    <author>
+      <name>Win Kuptivej</name>
+    </author>
+    <author>
+      <name>Surya Shringla</name>
+    </author>
+    <author>
+      <name>Archana Vaidheeswaran</name>
+    </author>
+    <author>
+      <name>Yash Bhaskar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.19483v1</id>
+    <title>Z-Space: A Multi-Agent Tool Orchestration Framework for Enterprise-Grade LLM Automation</title>
+    <updated>2025-11-23T03:59:14Z</updated>
+    <link href="https://arxiv.org/abs/2511.19483v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.19483v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models can break through knowledge and timeliness limitations by invoking external tools within the Model Context Protocol framework to achieve automated execution of complex tasks. However, with the rapid growth of enterprise-scale MCP services, efficiently and accurately matching target functionalities among thousands of heterogeneous tools has become a core challenge restricting system practicality. Existing approaches generally rely on full-prompt injection or static semantic retrieval, facing issues including semantic disconnection between user queries and tool descriptions, context inflation in LLM input, and high inference latency. To address these challenges, this paper proposes Z-Space, a data-generation-oriented multi-agent collaborative tool invocation framework Z-Space. The Z-Space framework establishes a multi-agent collaborative architecture and tool filtering algorithm: (1) A structured semantic understanding of user queries is achieved through an intent parsing model; (2) A tool filtering module (FSWW) based on fused subspace weighted algorithm realizes fine-grained semantic alignment between intents and tools without parameter tuning; (3) An inference execution agent is constructed to support dynamic planning and fault-tolerant execution for multi-step tasks. This framework has been deployed in the Eleme platform's technical division, serving large-scale test data generation scenarios across multiple business units including Taotian, Gaode, and Hema. Production data demonstrates that the system reduces average token consumption in tool inference by 96.26\% while achieving a 92\% tool invocation accuracy rate, significantly enhancing the efficiency and reliability of intelligent test data generation systems.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-23T03:59:14Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Qingsong He</name>
+    </author>
+    <author>
+      <name>Jing Nan</name>
+    </author>
+    <author>
+      <name>Jiayu Jiao</name>
+    </author>
+    <author>
+      <name>Liangjie Tang</name>
+    </author>
+    <author>
+      <name>Xiaodong Xu</name>
+    </author>
+    <author>
+      <name>Mengmeng Sun</name>
+    </author>
+    <author>
+      <name>Qingyao Wang</name>
+    </author>
+    <author>
+      <name>Minghui Yan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.03497v1</id>
+    <title>ROSBag MCP Server: Analyzing Robot Data with LLMs for Agentic Embodied AI Applications</title>
+    <updated>2025-11-05T14:27:58Z</updated>
+    <link href="https://arxiv.org/abs/2511.03497v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.03497v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic AI systems and Physical or Embodied AI systems have been two key research verticals at the forefront of Artificial Intelligence and Robotics, with Model Context Protocol (MCP) increasingly becoming a key component and enabler of agentic applications. However, the literature at the intersection of these verticals, i.e., Agentic Embodied AI, remains scarce. This paper introduces an MCP server for analyzing ROS and ROS 2 bags, allowing for analyzing, visualizing and processing robot data with natural language through LLMs and VLMs. We describe specific tooling built with robotics domain knowledge, with our initial release focused on mobile robotics and supporting natively the analysis of trajectories, laser scan data, transforms, or time series data. This is in addition to providing an interface to standard ROS 2 CLI tools ("ros2 bag list" or "ros2 bag info"), as well as the ability to filter bags with a subset of topics or trimmed in time. Coupled with the MCP server, we provide a lightweight UI that allows the benchmarking of the tooling with different LLMs, both proprietary (Anthropic, OpenAI) and open-source (through Groq). Our experimental results include the analysis of tool calling capabilities of eight different state-of-the-art LLM/VLM models, both proprietary and open-source, large and small. Our experiments indicate that there is a large divide in tool calling capabilities, with Kimi K2 and Claude Sonnet 4 demonstrating clearly superior performance. We also conclude that there are multiple factors affecting the success rates, from the tool description schema to the number of arguments, as well as the number of tools available to the models. The code is available with a permissive license at https://github.com/binabik-ai/mcp-rosbags.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-05T14:27:58Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Lei Fu</name>
+    </author>
+    <author>
+      <name>Sahar Salimpour</name>
+    </author>
+    <author>
+      <name>Leonardo Militano</name>
+    </author>
+    <author>
+      <name>Harry Edelman</name>
+    </author>
+    <author>
+      <name>Jorge Peña Queralta</name>
+    </author>
+    <author>
+      <name>Giovanni Toffetti</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.23601v1</id>
+    <title>Alita-G: Self-Evolving Generative Agent for Agent Generation</title>
+    <updated>2025-10-27T17:59:14Z</updated>
+    <link href="https://arxiv.org/abs/2510.23601v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.23601v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) have been shown to perform better when scaffolded into agents with memory, tools, and feedback. Beyond this, self-evolving agents have emerged, but current work largely limits adaptation to prompt rewriting or failure retries. Therefore, we present ALITA-G, a self-evolution framework that transforms a general-purpose agent into a domain expert by systematically generating, abstracting, and curating Model Context Protocol (MCP) tools. In this framework, a generalist agent executes a curated suite of target-domain tasks and synthesizes candidate MCPs from successful trajectories. These are then abstracted to parameterized primitives and consolidated into an MCP Box. At inference time, ALITA-G performs retrieval-augmented MCP selection with the help of each tool's descriptions and use cases, before executing an agent equipped with the MCP Executor. Across several benchmarks GAIA, PathVQA, and Humanity's Last Exam, ALITA-G attains strong gains while reducing computation costs. On GAIA validation, it achieves 83.03% pass@1 and 89.09% pass@3, establishing a new state-of-the-art result while reducing mean tokens per example by approximately 15% relative to a strong baseline agent. ALITA-G thus provides a principled pathway from generalist capability to reusable, domain-specific competence, improving both accuracy and efficiency on complex reasoning tasks.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-27T17:59:14Z</published>
+    <arxiv:comment>15 pages, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jiahao Qiu</name>
+    </author>
+    <author>
+      <name>Xuan Qi</name>
+    </author>
+    <author>
+      <name>Hongru Wang</name>
+    </author>
+    <author>
+      <name>Xinzhe Juan</name>
+    </author>
+    <author>
+      <name>Yimin Wang</name>
+    </author>
+    <author>
+      <name>Zelin Zhao</name>
+    </author>
+    <author>
+      <name>Jiayi Geng</name>
+    </author>
+    <author>
+      <name>Jiacheng Guo</name>
+    </author>
+    <author>
+      <name>Peihang Li</name>
+    </author>
+    <author>
+      <name>Jingzhe Shi</name>
+    </author>
+    <author>
+      <name>Shilong Liu</name>
+    </author>
+    <author>
+      <name>Mengdi Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.15994v2</id>
+    <title>MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents</title>
+    <updated>2026-03-24T15:41:31Z</updated>
+    <link href="https://arxiv.org/abs/2510.15994v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.15994v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) standardizes how large language model (LLM) agents discover, describe, and call external tools. While MCP unlocks broad interoperability, it also enlarges the attack surface by making tools first-class, composable objects with natural-language metadata, and standardized I/O. We present MSB (MCP Security Benchmark), the first end-to-end evaluation suite that systematically measures how well LLM agents resist MCP-specific attacks throughout the full tool-use pipeline: task planning, tool invocation, and response handling. MSB contributes: (1) a taxonomy of 12 attacks including name-collision, preference manipulation, prompt injections embedded in tool descriptions, out-of-scope parameter requests, user-impersonating responses, false-error escalation, tool-transfer, retrieval injection, and mixed attacks; (2) an evaluation harness that executes attacks by running real tools (both benign and malicious) via MCP rather than simulation; and (3) a robustness metric that quantifies the trade-off between security and performance: Net Resilient Performance (NRP). We evaluate nine popular LLM agents across 10 domains and 405 tools, producing 2,000 attack instances. Results reveal the effectiveness of attacks against each stage of MCP. Models with stronger performance are more vulnerable to attacks due to their outstanding tool calling and instruction following capabilities. MSB provides a practical baseline for researchers and practitioners to study, compare, and harden MCP agents. Code: https://github.com/dongsenzhang/MSB</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-14T07:36:25Z</published>
+    <arxiv:comment>Accepted by ICLR 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Dongsen Zhang</name>
+    </author>
+    <author>
+      <name>Zekun Li</name>
+    </author>
+    <author>
+      <name>Xu Luo</name>
+    </author>
+    <author>
+      <name>Xuannan Liu</name>
+    </author>
+    <author>
+      <name>Peipei Li</name>
+    </author>
+    <author>
+      <name>Wenjun Xu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.10890v2</id>
+    <title>LLM$\times$MapReduce-V3: Enabling Interactive In-Depth Survey Generation through a MCP-Driven Hierarchically Modular Agent System</title>
+    <updated>2026-01-28T19:47:27Z</updated>
+    <link href="https://arxiv.org/abs/2510.10890v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.10890v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce LLM x MapReduce-V3, a hierarchically modular agent system designed for long-form survey generation. Building on the prior work, LLM x MapReduce-V2, this version incorporates a multi-agent architecture where individual functional components, such as skeleton initialization, digest construction, and skeleton refinement, are implemented as independent model-context-protocol (MCP) servers. These atomic servers can be aggregated into higher-level servers, creating a hierarchically structured system. A high-level planner agent dynamically orchestrates the workflow by selecting appropriate modules based on their MCP tool descriptions and the execution history. This modular decomposition facilitates human-in-the-loop intervention, affording users greater control and customization over the research process. Through a multi-turn interaction, the system precisely captures the intended research perspectives to generate a comprehensive skeleton, which is then developed into an in-depth survey. Human evaluations demonstrate that our system surpasses representative baselines in both content depth and length, highlighting the strength of MCP-based modular planning.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-13T01:38:37Z</published>
+    <arxiv:comment>Accepted by EMNLP2025 System Demonstration</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yu Chao</name>
+    </author>
+    <author>
+      <name>Siyu Lin</name>
+    </author>
+    <author>
+      <name>xiaorong wang</name>
+    </author>
+    <author>
+      <name>Zhu Zhang</name>
+    </author>
+    <author>
+      <name>Zihan Zhou</name>
+    </author>
+    <author>
+      <name>Haoyu Wang</name>
+    </author>
+    <author>
+      <name>Shuo Wang</name>
+    </author>
+    <author>
+      <name>Jie Zhou</name>
+    </author>
+    <author>
+      <name>Zhiyuan Liu</name>
+    </author>
+    <author>
+      <name>Maosong Sun</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.15957v1</id>
+    <title>EHR-MCP: Real-world Evaluation of Clinical Information Retrieval by Large Language Models via Model Context Protocol</title>
+    <updated>2025-09-19T13:17:16Z</updated>
+    <link href="https://arxiv.org/abs/2509.15957v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.15957v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Background: Large language models (LLMs) show promise in medicine, but their deployment in hospitals is limited by restricted access to electronic health record (EHR) systems. The Model Context Protocol (MCP) enables integration between LLMs and external tools.
+  Objective: To evaluate whether an LLM connected to an EHR database via MCP can autonomously retrieve clinically relevant information in a real hospital setting.
+  Methods: We developed EHR-MCP, a framework of custom MCP tools integrated with the hospital EHR database, and used GPT-4.1 through a LangGraph ReAct agent to interact with it. Six tasks were tested, derived from use cases of the infection control team (ICT). Eight patients discussed at ICT conferences were retrospectively analyzed. Agreement with physician-generated gold standards was measured.
+  Results: The LLM consistently selected and executed the correct MCP tools. Except for two tasks, all tasks achieved near-perfect accuracy. Performance was lower in the complex task requiring time-dependent calculations. Most errors arose from incorrect arguments or misinterpretation of tool results. Responses from EHR-MCP were reliable, though long and repetitive data risked exceeding the context window.
+  Conclusions: LLMs can retrieve clinical data from an EHR via MCP tools in a real hospital setting, achieving near-perfect performance in simple tasks while highlighting challenges in complex ones. EHR-MCP provides an infrastructure for secure, consistent data access and may serve as a foundation for hospital AI agents. Future work should extend beyond retrieval to reasoning, generation, and clinical impact assessment, paving the way for effective integration of generative AI into clinical practice.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-19T13:17:16Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Kanato Masayoshi</name>
+    </author>
+    <author>
+      <name>Masahiro Hashimoto</name>
+    </author>
+    <author>
+      <name>Ryoichi Yokoyama</name>
+    </author>
+    <author>
+      <name>Naoki Toda</name>
+    </author>
+    <author>
+      <name>Yoshifumi Uwamino</name>
+    </author>
+    <author>
+      <name>Shogo Fukuda</name>
+    </author>
+    <author>
+      <name>Ho Namkoong</name>
+    </author>
+    <author>
+      <name>Masahiro Jinzaki</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.20453v1</id>
+    <title>MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers</title>
+    <updated>2025-08-28T05:58:57Z</updated>
+    <link href="https://arxiv.org/abs/2508.20453v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.20453v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce MCP-Bench, a benchmark for evaluating large language models (LLMs) on realistic, multi-step tasks that demand tool use, cross-tool coordination, precise parameter control, and planning/reasoning for solving tasks. Built on the Model Context Protocol (MCP), MCP-Bench connects LLMs to 28 representative live MCP servers spanning 250 tools across domains such as finance, traveling, scientific computing, and academic search. Unlike prior API-based benchmarks, each MCP server provides a set of complementary tools designed to work together, enabling the construction of authentic, multi-step tasks with rich input-output coupling. Tasks in MCP-Bench test agents' ability to retrieve relevant tools from fuzzy instructions without explicit tool names, plan multi-hop execution trajectories for complex objectives, ground responses in intermediate tool outputs, and orchestrate cross-domain workflows - capabilities not adequately evaluated by existing benchmarks that rely on explicit tool specifications, shallow few-step workflows, and isolated domain operations. We propose a multi-faceted evaluation framework covering tool-level schema understanding and usage, trajectory-level planning, and task completion. Experiments on 20 advanced LLMs reveal persistent challenges in MCP-Bench. Code and data: https://github.com/Accenture/mcp-bench.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-28T05:58:57Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhenting Wang</name>
+    </author>
+    <author>
+      <name>Qi Chang</name>
+    </author>
+    <author>
+      <name>Hemani Patel</name>
+    </author>
+    <author>
+      <name>Shashank Biju</name>
+    </author>
+    <author>
+      <name>Cheng-En Wu</name>
+    </author>
+    <author>
+      <name>Quan Liu</name>
+    </author>
+    <author>
+      <name>Aolin Ding</name>
+    </author>
+    <author>
+      <name>Alireza Rezazadeh</name>
+    </author>
+    <author>
+      <name>Ankit Shah</name>
+    </author>
+    <author>
+      <name>Yujia Bao</name>
+    </author>
+    <author>
+      <name>Eugene Siow</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.12538v2</id>
+    <title>MCPXKIT: The Unified Toolkit for Analyzing Model Context Protocol Security</title>
+    <updated>2026-05-25T07:08:19Z</updated>
+    <link href="https://arxiv.org/abs/2508.12538v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.12538v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) has emerged as a universal standard that enables AI agents to seamlessly connect with external tools, significantly enhancing their functionality. However, while MCP brings notable benefits, it also introduces significant vulnerabilities, such as Tool Poisoning Attacks (TPA), where hidden malicious instructions exploit the sycophancy of large language models (LLMs) to manipulate agent behavior. Despite these risks, current academic research on MCP security remains limited, with most studies focusing on narrow or qualitative analyses that fail to capture the diversity of real-world threats. To address this gap, we present the MCP eXploit Toolkit (MCPXKIT), which categorizes and implements 31 distinct attack methods under four key classifications: direct tool injection, indirect tool injection, malicious user attacks, and LLM inherent attack. We further conduct a quantitative analysis of the efficacy of each attack. Our experiments reveal key insights into MCP vulnerabilities, including agents' blind reliance on tool descriptions, sensitivity to file-based attacks, chain attacks exploiting shared context, and difficulty distinguishing external data from executable commands. These insights, validated through attack experiments, underscore the urgency for robust defense strategies and informed MCP design. Our contributions include 1) constructing a comprehensive MCP attack taxonomy, 2) introducing a unified attack framework, MCPXKIT, and 3) conducting empirical vulnerability analysis to enhance MCP security mechanisms. This work provides a foundational framework, supporting the secure evolution of MCP ecosystems.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-18T00:23:41Z</published>
+    <arxiv:comment>Accepted by IEEE Transactions on Dependable and Secure Computing (TDSC). $\href{https://ieeexplore.ieee.org/abstract/document/11531012}{Official \ version}$</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Yongjian Guo</name>
+    </author>
+    <author>
+      <name>Puzhuo Liu</name>
+    </author>
+    <author>
+      <name>Wanlun Ma</name>
+    </author>
+    <author>
+      <name>Zehang Deng</name>
+    </author>
+    <author>
+      <name>Xiaogang Zhu</name>
+    </author>
+    <author>
+      <name>Peng Di</name>
+    </author>
+    <author>
+      <name>Xi Xiao</name>
+    </author>
+    <author>
+      <name>Sheng Wen</name>
+    </author>
+    <arxiv:doi>10.1109/TDSC.2026.3695553</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/TDSC.2026.3695553" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.10277v3</id>
+    <title>MCP-Enabled LLM for Meta-optics Inverse Design: Leveraging Differentiable Solver without LLM Expertise</title>
+    <updated>2026-04-09T18:34:43Z</updated>
+    <link href="https://arxiv.org/abs/2508.10277v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.10277v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Automatic differentiation (AD) enables powerful metasurface inverse design but requires extensive theoretical and programming expertise. We present a Model Context Protocol (MCP) assisted framework that allows researchers to conduct inverse design with differentiable solvers through large language models (LLMs). Since LLMs inherently lack knowledge of specialized solvers, our proposed solution provides dynamic access to verified code templates and comprehensive documentation through dedicated servers. The LLM autonomously accesses these resources to generate complete inverse design codes without prescribed coordination rules. Evaluation on the Huygens meta-atom design task with the differentiable TorchRDIT solver shows that while both natural language and structured prompting strategies achieve high success rates, structured prompting significantly outperforms in design quality, workflow efficiency, computational cost, and error reduction. The minimalist server design, using only 5 APIs, demonstrates how MCP makes sophisticated computational tools accessible to researchers without programming expertise, offering a generalizable integration solution for other scientific tasks.</summary>
+    <category term="physics.comp-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.optics" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-14T01:59:53Z</published>
+    <arxiv:primary_category term="physics.comp-ph"/>
+    <author>
+      <name>Yi Huang</name>
+    </author>
+    <author>
+      <name>Bowen Zheng</name>
+    </author>
+    <author>
+      <name>Yunxi Dong</name>
+    </author>
+    <author>
+      <name>Hong Tang</name>
+    </author>
+    <author>
+      <name>Huan Zhao</name>
+    </author>
+    <author>
+      <name>S. M. Rakibul Hasan Shawon</name>
+    </author>
+    <author>
+      <name>Sensong An</name>
+    </author>
+    <author>
+      <name>Hualiang Zhang</name>
+    </author>
+    <arxiv:doi>10.1515/nanoph-2025-0507</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1515/nanoph-2025-0507" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.18135v2</id>
+    <title>Tool Preferences in Agentic LLMs are Unreliable</title>
+    <updated>2025-09-21T22:21:20Z</updated>
+    <link href="https://arxiv.org/abs/2505.18135v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.18135v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) can now access a wide range of external tools, thanks to the Model Context Protocol (MCP). This greatly expands their abilities as various agents. However, LLMs rely entirely on the text descriptions of tools to decide which ones to use--a process that is surprisingly fragile. In this work, we expose a vulnerability in prevalent tool/function-calling protocols by investigating a series of edits to tool descriptions, some of which can drastically increase a tool's usage from LLMs when competing with alternatives. Through controlled experiments, we show that tools with properly edited descriptions receive over 10 times more usage from GPT-4.1 and Qwen2.5-7B than tools with original descriptions. We further evaluate how various edits to tool descriptions perform when competing directly with one another and how these trends generalize or differ across a broader set of 17 different models. These phenomena, while giving developers a powerful way to promote their tools, underscore the need for a more reliable foundation for agentic LLMs to select and utilize tools and resources. Our code is publicly available at https://github.com/kazemf78/llm-unreliable-tool-preferences.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-23T17:43:48Z</published>
+    <arxiv:comment>Conference on Empirical Methods in Natural Language Processing (EMNLP) 2025, main</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Kazem Faghih</name>
+    </author>
+    <author>
+      <name>Wenxiao Wang</name>
+    </author>
+    <author>
+      <name>Yize Cheng</name>
+    </author>
+    <author>
+      <name>Siddhant Bharti</name>
+    </author>
+    <author>
+      <name>Gaurang Sriramanan</name>
+    </author>
+    <author>
+      <name>Sriram Balasubramanian</name>
+    </author>
+    <author>
+      <name>Parsa Hosseini</name>
+    </author>
+    <author>
+      <name>Soheil Feizi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.03275v1</id>
+    <title>RAG-MCP: Mitigating Prompt Bloat in LLM Tool Selection via Retrieval-Augmented Generation</title>
+    <updated>2025-05-06T08:05:35Z</updated>
+    <link href="https://arxiv.org/abs/2505.03275v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.03275v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) struggle to effectively utilize a growing number of external tools, such as those defined by the Model Context Protocol (MCP)\cite{IntroducingMCP}, due to prompt bloat and selection complexity. We introduce RAG-MCP, a Retrieval-Augmented Generation framework that overcomes this challenge by offloading tool discovery. RAG-MCP uses semantic retrieval to identify the most relevant MCP(s) for a given query from an external index before engaging the LLM. Only the selected tool descriptions are passed to the model, drastically reducing prompt size and simplifying decision-making. Experiments, including an MCP stress test, demonstrate RAG-MCP significantly cuts prompt tokens (e.g., by over 50%) and more than triples tool selection accuracy (43.13% vs 13.62% baseline) on benchmark tasks. RAG-MCP enables scalable and accurate tool integration for LLMs.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-06T08:05:35Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tiantian Gan</name>
+    </author>
+    <author>
+      <name>Qiyao Sun</name>
+    </author>
+  </entry>
+</feed>

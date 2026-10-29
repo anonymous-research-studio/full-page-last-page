@@ -1,0 +1,8 @@
+# Per-model fetch rates for `fplp power --test amended`, read off the protocol checks (19 Oct 2026,
+# about 8 items per cell; not results). Format: form=needed/page-1-sufficient/last-full. Forms the
+# checks did not run (next_cursor, total_count) are set equal to has_more, an assumption. The
+# no-signal rate on a full last page is set equal to its rate when more rows exist (identical pages).
+# Page-1-sufficient rates use 0.1 where the lookup wording has since changed.
+gpt-oss-120b: "none=0.80/0.02/0.80,has_more=0.98/0.02/0.02,next_cursor=0.98/0.02/0.02,total_count=0.98/0.02/0.02,nl_note_json=0.88/0.02/0.02,cursor_plus_note=0.88/0.02/0.02"
+mistral-medium-3-5: "none=0.27/0.02/0.27,has_more=0.98/0.02/0.02,next_cursor=0.98/0.02/0.02,total_count=0.98/0.02/0.02,nl_note_json=0.88/0.02/0.29,cursor_plus_note=0.88/0.02/0.02"
+claude-sonnet-5-5: "none=0.98/0.10/0.98,has_more=0.98/0.10/0.29,next_cursor=0.98/0.10/0.29,total_count=0.98/0.10/0.29,nl_note_json=0.98/0.10/0.71,cursor_plus_note=0.98/0.10/0.43"

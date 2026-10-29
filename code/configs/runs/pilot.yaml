@@ -1,0 +1,15 @@
+# Pilot, 20 Oct 2026: 2 models x 4 forms x (more rows exist | full page that is the last). Decides
+# go/no-go only (prereg section 6); its episodes are not pooled into the confirmatory analysis.
+# The last_full cells separate "reads the signal" from "fetches whenever a page is full".
+name: pilot
+models: [gpt-oss-120b, claude-sonnet-5-5]   # one known to fail, one strong
+signal_forms: [none, has_more, next_cursor, nl_note_json]
+extents: [more_full, last_full]
+task_need: [needs_all, page1_sufficient]
+task_types: [filtered_count, exists, export_all, count_out_of_stock, name_one, lookup]
+items_per_cell: 50    # distinct items; pre-registered (prereg section 5; power in docs/power.md)
+page_limit: 20
+max_tool_calls: 12
+default_placement: bottom
+replicates: 1
+seed: 3               # fresh seed: no episode repeats a protocol check (seed 0)

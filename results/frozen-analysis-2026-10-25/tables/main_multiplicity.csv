@@ -1,0 +1,82 @@
+model,hypothesis,part,test,diff,p,within_part,holm_all,bh_all
+claude-sonnet-5-5,A1,a,has_more: fetch when more rows exist - fetch on a real last page,0.7472527472527473,6.776263578034403e-21,True,True,True
+claude-sonnet-5-5,A1,a,next_cursor: fetch when more rows exist - fetch on a real last page,0.0659340659340659,0.03125,True,False,True
+claude-sonnet-5-5,A1,a,total_count: fetch when more rows exist - fetch on a real last page,0.3736263736263736,1.1641532182693479e-10,True,True,True
+claude-sonnet-5-5,A1,a,nl_note_json: fetch when more rows exist - fetch on a real last page,0.5384615384615384,3.552713678800501e-15,True,True,True
+claude-sonnet-5-5,A1,a,cursor_plus_note: fetch when more rows exist - fetch on a real last page,0.7692307692307693,1.694065894508601e-21,True,True,True
+claude-sonnet-5-5,H1,a,"has_more - none, fetch when needed",0.0,1.0,False,False,False
+claude-sonnet-5-5,H1,a,"next_cursor - none, fetch when needed",0.0,1.0,False,False,False
+claude-sonnet-5-5,H1,a,"total_count - none, fetch when needed",0.0,1.0,False,False,False
+claude-sonnet-5-5,H1,a,"nl_note_json - none, fetch when needed",0.0,1.0,False,False,False
+claude-sonnet-5-5,H1,a,"cursor_plus_note - none, fetch when needed",0.0,1.0,False,False,False
+claude-sonnet-5-5,H1,b (information-matched),"nl_note_json - total_count, fetch when needed (90% CI)",0.0,1.0,False,False,False
+claude-sonnet-5-5,H2,a,"none - has_more, fetch past a full last page",0.7472527472527473,6.776263578034403e-21,True,True,True
+claude-sonnet-5-5,H2,a,"none - next_cursor, fetch past a full last page",0.0659340659340659,0.03125,True,False,True
+claude-sonnet-5-5,H2,a,"none - total_count, fetch past a full last page",0.3736263736263736,1.1641532182693479e-10,True,True,True
+claude-sonnet-5-5,H2,a,"none - nl_note_json, fetch past a full last page",0.5384615384615384,3.552713678800501e-15,True,True,True
+claude-sonnet-5-5,H2,a,"none - cursor_plus_note, fetch past a full last page",0.7692307692307693,1.694065894508601e-21,True,True,True
+claude-sonnet-5-5,H2b,a,"nl_note_json - total_count, fetch when page 1 suffices",0.0,1.0,False,False,False
+claude-sonnet-5-5,H3,control: full vs short last page,truthful signal: fetch past a full last page - past a short one,0.4769230769230768,9.999000099990002e-05,True,True,True
+claude-sonnet-5-5,H4,a,"incomplete answers: false end signals - no signal, more rows exist",0.46,9.999000099990002e-05,True,True,True
+claude-sonnet-5-5,H6,a,"visible conflicts - the same false ends alone, pooled",0.425,9.999000099990002e-05,True,True,True
+claude-sonnet-5-5,A1u,a,"has_more, undocumented: fetch when more rows exist - on a real last page",0.7582417582417582,3.388131789017202e-21,True,True,True
+claude-sonnet-5-5,A1u,a,"nl_note_json, undocumented: fetch when more rows exist - on a real last page",0.3846153846153846,5.820766091346741e-11,True,True,True
+claude-sonnet-5-5,H1u,a,"has_more - none, undocumented, fetch when needed",0.0,1.0,False,False,False
+claude-sonnet-5-5,H1u,a,"nl_note_json - none, undocumented, fetch when needed",0.0,1.0,False,False,False
+claude-sonnet-5-5,H2u,a,"none - has_more, undocumented, fetch past a full last page",0.7582417582417582,3.388131789017202e-21,True,True,True
+claude-sonnet-5-5,H2u,a,"none - nl_note_json, undocumented, fetch past a full last page",0.3846153846153846,5.820766091346741e-11,True,True,True
+claude-sonnet-5-5,H5b,a,"silent incomplete answers: without the field - with it, warranted cells; rule-based flag (not yet validated)",0.0,1.0,False,False,False
+gpt-oss-120b,A1,a,has_more: fetch when more rows exist - fetch on a real last page,0.934065934065934,5.169878828456423e-26,True,True,True
+gpt-oss-120b,A1,a,next_cursor: fetch when more rows exist - fetch on a real last page,0.7802197802197802,8.470329472543003e-22,True,True,True
+gpt-oss-120b,A1,a,total_count: fetch when more rows exist - fetch on a real last page,0.4505494505494505,9.094947017729282e-13,True,True,True
+gpt-oss-120b,A1,a,nl_note_json: fetch when more rows exist - fetch on a real last page,0.6923076923076923,2.1684043449710093e-19,True,True,True
+gpt-oss-120b,A1,a,cursor_plus_note: fetch when more rows exist - fetch on a real last page,0.7802197802197802,8.470329472543003e-22,True,True,True
+gpt-oss-120b,H1,a,"has_more - none, fetch when needed",0.57,1.6410484082740597e-15,True,True,True
+gpt-oss-120b,H1,a,"next_cursor - none, fetch when needed",0.45,4.355626970209414e-12,True,True,True
+gpt-oss-120b,H1,a,"total_count - none, fetch when needed",0.42,3.0752289603697136e-11,True,True,True
+gpt-oss-120b,H1,a,"nl_note_json - none, fetch when needed",0.43,1.6044054973463062e-11,True,True,True
+gpt-oss-120b,H1,a,"cursor_plus_note - none, fetch when needed",0.44,8.363087999896379e-12,True,True,True
+gpt-oss-120b,H1,b (information-matched),"nl_note_json - total_count, fetch when needed (90% CI)",0.01,1.0,False,False,False
+gpt-oss-120b,H2,a,"none - has_more, fetch past a full last page",0.3846153846153846,5.820766091346741e-11,True,True,True
+gpt-oss-120b,H2,a,"none - next_cursor, fetch past a full last page",0.3736263736263736,1.1641532182693479e-10,True,True,True
+gpt-oss-120b,H2,a,"none - total_count, fetch past a full last page",0.0549450549450549,0.4995598332025112,False,False,False
+gpt-oss-120b,H2,a,"none - nl_note_json, fetch past a full last page",0.3076923076923077,2.463348209857941e-07,True,True,True
+gpt-oss-120b,H2,a,"none - cursor_plus_note, fetch past a full last page",0.3846153846153846,5.820766091346741e-11,True,True,True
+gpt-oss-120b,H2b,a,"nl_note_json - total_count, fetch when page 1 suffices",0.0,1.0,False,False,False
+gpt-oss-120b,H3,control: full vs short last page,truthful signal: fetch past a full last page - past a short one,0.0835164835164835,9.999000099990002e-05,True,True,True
+gpt-oss-120b,H4,a,"incomplete answers: false end signals - no signal, more rows exist",0.25,9.999000099990002e-05,True,True,True
+gpt-oss-120b,H6,a,"visible conflicts - the same false ends alone, pooled",0.73,9.999000099990002e-05,True,True,True
+gpt-oss-120b,A1u,a,"has_more, undocumented: fetch when more rows exist - on a real last page",0.7362637362637363,1.3552527156068804e-20,True,True,True
+gpt-oss-120b,A1u,a,"nl_note_json, undocumented: fetch when more rows exist - on a real last page",0.6263736263736264,2.0816681711721683e-16,True,True,True
+gpt-oss-120b,H1u,a,"has_more - none, undocumented, fetch when needed",0.14,0.000518798828125,True,True,True
+gpt-oss-120b,H1u,a,"nl_note_json - none, undocumented, fetch when needed",0.13,0.000244140625,True,True,True
+gpt-oss-120b,H2u,a,"none - has_more, undocumented, fetch past a full last page",0.6373626373626373,6.938893903907228e-18,True,True,True
+gpt-oss-120b,H2u,a,"none - nl_note_json, undocumented, fetch past a full last page",0.5164835164835165,1.7763568394002505e-13,True,True,True
+gpt-oss-120b,H5b,a,"silent incomplete answers: without the field - with it, warranted cells; rule-based flag (not yet validated)",0.085,0.0215978402159784,True,False,True
+mistral-medium-3-5,A1,a,has_more: fetch when more rows exist - fetch on a real last page,0.934065934065934,5.169878828456423e-26,True,True,True
+mistral-medium-3-5,A1,a,next_cursor: fetch when more rows exist - fetch on a real last page,0.7472527472527473,6.776263578034403e-21,True,True,True
+mistral-medium-3-5,A1,a,total_count: fetch when more rows exist - fetch on a real last page,0.5494505494505495,2.3536728122053322e-14,True,True,True
+mistral-medium-3-5,A1,a,nl_note_json: fetch when more rows exist - fetch on a real last page,0.6813186813186813,4.336808689942019e-19,True,True,True
+mistral-medium-3-5,A1,a,cursor_plus_note: fetch when more rows exist - fetch on a real last page,0.8351648351648352,2.646977960169689e-23,True,True,True
+mistral-medium-3-5,H1,a,"has_more - none, fetch when needed",0.76,2.646977960169689e-23,True,True,True
+mistral-medium-3-5,H1,a,"next_cursor - none, fetch when needed",0.59,3.469446951953614e-18,True,True,True
+mistral-medium-3-5,H1,a,"total_count - none, fetch when needed",0.55,5.551115123125783e-17,True,True,True
+mistral-medium-3-5,H1,a,"nl_note_json - none, fetch when needed",0.55,5.551115123125783e-17,True,True,True
+mistral-medium-3-5,H1,a,"cursor_plus_note - none, fetch when needed",0.63,2.1684043449710093e-19,True,True,True
+mistral-medium-3-5,H1,b (information-matched),"nl_note_json - total_count, fetch when needed (90% CI)",0.0,1.0,False,False,False
+mistral-medium-3-5,H2,a,"none - has_more, fetch past a full last page",0.1428571428571428,0.000244140625,True,True,True
+mistral-medium-3-5,H2,a,"none - next_cursor, fetch past a full last page",0.1428571428571428,0.000244140625,True,True,True
+mistral-medium-3-5,H2,a,"none - total_count, fetch past a full last page",-0.0109890109890109,1.0,False,False,False
+mistral-medium-3-5,H2,a,"none - nl_note_json, fetch past a full last page",0.1098901098901098,0.001953125,True,True,True
+mistral-medium-3-5,H2,a,"none - cursor_plus_note, fetch past a full last page",0.1868131868131868,1.52587890625e-05,True,True,True
+mistral-medium-3-5,H2b,a,"nl_note_json - total_count, fetch when page 1 suffices",0.0612244897959183,0.03125,True,False,True
+mistral-medium-3-5,H3,control: full vs short last page,truthful signal: fetch past a full last page - past a short one,-0.0197802197802197,0.3334666533346665,False,False,False
+mistral-medium-3-5,H4,a,"incomplete answers: false end signals - no signal, more rows exist",0.1175,9.999000099990002e-05,True,True,True
+mistral-medium-3-5,H6,a,"visible conflicts - the same false ends alone, pooled",0.65,9.999000099990002e-05,True,True,True
+mistral-medium-3-5,A1u,a,"has_more, undocumented: fetch when more rows exist - on a real last page",0.945054945054945,2.5849394142282115e-26,True,True,True
+mistral-medium-3-5,A1u,a,"nl_note_json, undocumented: fetch when more rows exist - on a real last page",0.5054945054945055,2.8421709430404014e-14,True,True,True
+mistral-medium-3-5,H1u,a,"has_more - none, undocumented, fetch when needed",0.78,6.617444900424223e-24,True,True,True
+mistral-medium-3-5,H1u,a,"nl_note_json - none, undocumented, fetch when needed",0.35,5.820766091346741e-11,True,True,True
+mistral-medium-3-5,H2u,a,"none - has_more, undocumented, fetch past a full last page",0.1978021978021978,7.62939453125e-06,True,True,True
+mistral-medium-3-5,H2u,a,"none - nl_note_json, undocumented, fetch past a full last page",0.1758241758241758,3.0517578125e-05,True,True,True
+mistral-medium-3-5,H5b,a,"silent incomplete answers: without the field - with it, warranted cells; rule-based flag (not yet validated)",-0.005,1.0,False,False,False

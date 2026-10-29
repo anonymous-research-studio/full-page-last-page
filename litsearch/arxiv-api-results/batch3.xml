@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/QJMATqr7+Xbm5q88FYVCLKkO33c</id>
+  <title>arXiv Query: search_query=&amp;id_list=2601.06112,2606.05806,2510.05968,2406.19228,2510.25726,2509.24002,2508.14704,2306.06624,2410.16464,2407.18901&amp;start=0&amp;max_results=50</title>
+  <updated>2026-10-24T21:09:38Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=50&amp;id_list=2601.06112,2606.05806,2510.05968,2406.19228,2510.25726,2509.24002,2508.14704,2306.06624,2410.16464,2407.18901" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+  <opensearch:totalResults>10</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2306.06624v2</id>
+    <title>RestGPT: Connecting Large Language Models with Real-World RESTful APIs</title>
+    <updated>2023-08-27T02:55:36Z</updated>
+    <link href="https://arxiv.org/abs/2306.06624v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2306.06624v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-augmented large language models (LLMs) have achieved remarkable progress in tackling a broad range of tasks. However, existing methods are mainly restricted to specifically designed tools and fail to fulfill complex instructions, having great limitations when confronted with real-world scenarios. In this paper, we explore a more realistic scenario by connecting LLMs with RESTful APIs, which adhere to the widely adopted REST software architectural style for web service development. To address the practical challenges of tackling complex instructions, we propose RestGPT, which exploits the power of LLMs and conducts a coarse-to-fine online planning mechanism to enhance the abilities of task decomposition and API selection. RestGPT also contains an API executor tailored for calling RESTful APIs, which can meticulously formulate parameters and parse API responses. To fully evaluate the performance of RestGPT, we propose RestBench, a high-quality benchmark which consists of two real-world scenarios and human-annotated instructions with gold solution paths. Experiments show that RestGPT is able to achieve impressive results in complex tasks and has strong robustness, which paves a new way towards AGI. RestGPT and RestBench is publicly available at https://restgpt.github.io/.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-06-11T08:53:12Z</published>
+    <arxiv:comment>Add RestBench to evaluate RestGPT</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yifan Song</name>
+    </author>
+    <author>
+      <name>Weimin Xiong</name>
+    </author>
+    <author>
+      <name>Dawei Zhu</name>
+    </author>
+    <author>
+      <name>Wenhao Wu</name>
+    </author>
+    <author>
+      <name>Han Qian</name>
+    </author>
+    <author>
+      <name>Mingbo Song</name>
+    </author>
+    <author>
+      <name>Hailiang Huang</name>
+    </author>
+    <author>
+      <name>Cheng Li</name>
+    </author>
+    <author>
+      <name>Ke Wang</name>
+    </author>
+    <author>
+      <name>Rong Yao</name>
+    </author>
+    <author>
+      <name>Ye Tian</name>
+    </author>
+    <author>
+      <name>Sujian Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.25726v2</id>
+    <title>The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution</title>
+    <updated>2026-02-26T09:46:48Z</updated>
+    <link href="https://arxiv.org/abs/2510.25726v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.25726v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Real-world language agents must handle complex, multi-step workflows across diverse Apps. For instance, an agent may manage emails by coordinating with calendars and file systems, or monitor a production database to detect anomalies and generate reports following an operating manual. However, existing language agent benchmarks often focus on narrow domains or simplified tasks that lack the diversity, realism, and long-horizon complexity required to evaluate agents' real-world performance. To address this gap, we introduce the Tool Decathlon (dubbed as Toolathlon), a benchmark for language agents offering diverse Apps and tools, realistic environment setup, and reliable execution-based evaluation. Toolathlon spans 32 software applications and 604 tools, ranging from everyday platforms such as Google Calendar and Notion to professional ones like WooCommerce, Kubernetes, and BigQuery. Most of the tools are based on a high-quality set of Model Context Protocol (MCP) servers that we may have revised or implemented ourselves. Unlike prior works, which primarily ensure functional realism but offer limited environment state diversity, we provide realistic initial environment states from real software, such as Canvas courses with dozens of students or real financial spreadsheets. This benchmark includes 108 manually sourced or crafted tasks in total, requiring interacting with multiple Apps over around 20 turns on average to complete. Each task is strictly verifiable through dedicated evaluation scripts. Comprehensive evaluation of SOTA models highlights their significant shortcomings: the best-performing model, Claude-4.5-Sonnet, achieves only a 38.6% success rate with 20.2 tool calling turns on average, while the top open-weights model DeepSeek-V3.2-Exp reaches 20.1%. We expect Toolathlon to drive the development of more capable language agents for real-world, long-horizon task execution.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-29T17:32:49Z</published>
+    <arxiv:comment>ICLR 2026, Website: https://toolathlon.xyz/</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Junlong Li</name>
+    </author>
+    <author>
+      <name>Wenshuo Zhao</name>
+    </author>
+    <author>
+      <name>Jian Zhao</name>
+    </author>
+    <author>
+      <name>Weihao Zeng</name>
+    </author>
+    <author>
+      <name>Haoze Wu</name>
+    </author>
+    <author>
+      <name>Xiaochen Wang</name>
+    </author>
+    <author>
+      <name>Rui Ge</name>
+    </author>
+    <author>
+      <name>Yuxuan Cao</name>
+    </author>
+    <author>
+      <name>Yuzhen Huang</name>
+    </author>
+    <author>
+      <name>Wei Liu</name>
+    </author>
+    <author>
+      <name>Junteng Liu</name>
+    </author>
+    <author>
+      <name>Zhaochen Su</name>
+    </author>
+    <author>
+      <name>Yiyang Guo</name>
+    </author>
+    <author>
+      <name>Fan Zhou</name>
+    </author>
+    <author>
+      <name>Lueyang Zhang</name>
+    </author>
+    <author>
+      <name>Juan Michelini</name>
+    </author>
+    <author>
+      <name>Xingyao Wang</name>
+    </author>
+    <author>
+      <name>Xiang Yue</name>
+    </author>
+    <author>
+      <name>Shuyan Zhou</name>
+    </author>
+    <author>
+      <name>Graham Neubig</name>
+    </author>
+    <author>
+      <name>Junxian He</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.14704v1</id>
+    <title>MCP-Universe: Benchmarking Large Language Models with Real-World Model Context Protocol Servers</title>
+    <updated>2025-08-20T13:28:58Z</updated>
+    <link href="https://arxiv.org/abs/2508.14704v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.14704v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol has emerged as a transformative standard for connecting large language models to external data sources and tools, rapidly gaining adoption across major AI providers and development platforms. However, existing benchmarks are overly simplistic and fail to capture real application challenges such as long-horizon reasoning and large, unfamiliar tool spaces. To address this critical gap, we introduce MCP-Universe, the first comprehensive benchmark specifically designed to evaluate LLMs in realistic and hard tasks through interaction with real-world MCP servers. Our benchmark encompasses 6 core domains spanning 11 different MCP servers: Location Navigation, Repository Management, Financial Analysis, 3D Design, Browser Automation, and Web Searching. To ensure rigorous evaluation, we implement execution-based evaluators, including format evaluators for agent format compliance, static evaluators for time-invariant content matching, and dynamic evaluators that automatically retrieve real-time ground truth for temporally sensitive tasks. Through extensive evaluation of leading LLMs, we find that even SOTA models such as GPT-5 (43.72%), Grok-4 (33.33%) and Claude-4.0-Sonnet (29.44%) exhibit significant performance limitations. In addition, our benchmark poses a significant long-context challenge for LLM agents, as the number of input tokens increases rapidly with the number of interaction steps. Moreover, it introduces an unknown-tools challenge, as LLM agents often lack familiarity with the precise usage of the MCP servers. Notably, enterprise-level agents like Cursor cannot achieve better performance than standard ReAct frameworks. Beyond evaluation, we open-source our extensible evaluation framework with UI support, enabling researchers and practitioners to seamlessly integrate new agents and MCP servers while fostering innovation in the rapidly evolving MCP ecosystem.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-20T13:28:58Z</published>
+    <arxiv:comment>Website: https://mcp-universe.github.io</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Ziyang Luo</name>
+    </author>
+    <author>
+      <name>Zhiqi Shen</name>
+    </author>
+    <author>
+      <name>Wenzhuo Yang</name>
+    </author>
+    <author>
+      <name>Zirui Zhao</name>
+    </author>
+    <author>
+      <name>Prathyusha Jwalapuram</name>
+    </author>
+    <author>
+      <name>Amrita Saha</name>
+    </author>
+    <author>
+      <name>Doyen Sahoo</name>
+    </author>
+    <author>
+      <name>Silvio Savarese</name>
+    </author>
+    <author>
+      <name>Caiming Xiong</name>
+    </author>
+    <author>
+      <name>Junnan Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.05806v1</id>
+    <title>When Tools Fail: Benchmarking Dynamic Replanning and Anomaly Recovery in LLM Agents</title>
+    <updated>2026-06-04T07:38:46Z</updated>
+    <link href="https://arxiv.org/abs/2606.05806v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.05806v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing benchmarks evaluate Tool-Integrated Reasoning (TIR) in LLMs on idealized ''happy paths'', largely overlooking real-world tool failures. We introduce ToolMaze, a benchmark for dynamic path discovery and error recovery in TIR agents. To separate systematic replanning from blind trial-and-error, ToolMaze adopts a two-dimensional design: DAG-based topological complexity and a $2 \times 2$ taxonomy of tool perturbations (explicit/implicit, transient/permanent). Evaluations show that perturbations degrade performance across nearly all models, with the sharpest drops under implicit semantic failures. Driven by systemic over-trust in corrupted outputs, Perturbation Recovery Rate (PRR) plummets by around 37\% in these scenarios, while complex topologies trap agents in futile trial-and-error loops. Crucially, agentic fault-tolerance improves with model scale $3.66\times$ slower than basic task execution, highlighting dynamic replanning as a distinct bottleneck unaddressed by model scaling or prompting. Data and code are available at https://github.com/Zhudongsheng75/ToolMaze.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-04T07:38:46Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Dongsheng Zhu</name>
+    </author>
+    <author>
+      <name>Xuchen Ma</name>
+    </author>
+    <author>
+      <name>Yucheng Shen</name>
+    </author>
+    <author>
+      <name>Xiang Li</name>
+    </author>
+    <author>
+      <name>Yukun Zhao</name>
+    </author>
+    <author>
+      <name>Shuaiqiang Wang</name>
+    </author>
+    <author>
+      <name>Lingyong Yan</name>
+    </author>
+    <author>
+      <name>Dawei Yin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.05968v1</id>
+    <title>Extending ResourceLink: Patterns for Large Dataset Processing in MCP Applications</title>
+    <updated>2025-10-07T14:23:24Z</updated>
+    <link href="https://arxiv.org/abs/2510.05968v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.05968v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models translate natural language into database queries, yet context window limitations prevent direct deployment in reporting systems where complete datasets exhaust available tokens. The Model Context Protocol specification defines ResourceLink for referencing external resources, but practical patterns for implementing scalable reporting architectures remain undocumented. This paper presents patterns for building LLM-powered reporting systems that decouple query generation from data retrieval. We introduce a dual-response pattern extending ResourceLink to support both iterative query refinement and out-of-band data access, accompanied by patterns for multi-tenant security and resource lifecycle management. These patterns address fundamental challenges in LLM-driven reporting applications and provide practical guidance for developers building them.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-07T14:23:24Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Scott Frees</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.06112v1</id>
+    <title>ReliabilityBench: Evaluating LLM Agent Reliability Under Production-Like Stress Conditions</title>
+    <updated>2026-01-03T13:41:33Z</updated>
+    <link href="https://arxiv.org/abs/2601.06112v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.06112v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing benchmarks for tool-using LLM agents primarily report single-run success rates and miss reliability properties required in production. We introduce \textbf{ReliabilityBench}, a benchmark for evaluating agent reliability across three dimensions: (i) consistency under repeated execution using $\mathrm{pass}^k$, (ii) robustness to semantically equivalent task perturbations at intensity $ε$, and (iii) fault tolerance under controlled tool/API failures at intensity $λ$. ReliabilityBench contributes a unified reliability surface $R(k,ε,λ)$, \textit{action metamorphic relations} that define correctness via end-state equivalence rather than text similarity, and a chaos-engineering-style fault injection framework (timeouts, rate limits, partial responses, schema drift). We evaluate two models (Gemini 2.0 Flash, GPT-4o) and two agent architectures (ReAct, Reflexion) across four domains (scheduling, travel, customer support, e-commerce) over 1,280 episodes. Perturbations alone reduce success from 96.9% at $ε=0$ to 88.1% at $ε=0.2$. Rate limiting is the most damaging fault in ablations. ReAct is more robust than Reflexion under combined stress, and Gemini 2.0 Flash achieves comparable reliability to GPT-4o at much lower cost. ReliabilityBench provides a systematic framework for assessing production readiness of LLM agents.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-03T13:41:33Z</published>
+    <arxiv:comment>18 pages, 5 figures, 8 tables. Evaluates ReAct vs Reflexion across four tool-using domains with perturbation (epsilon) and fault-injection (lambda) stress testing; 1,280 total episodes</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Aayush Gupta</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2406.19228v1</id>
+    <title>Tools Fail: Detecting Silent Errors in Faulty Tools</title>
+    <updated>2024-06-27T14:52:34Z</updated>
+    <link href="https://arxiv.org/abs/2406.19228v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2406.19228v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tools have become a mainstay of LLMs, allowing them to retrieve knowledge not in their weights, to perform tasks on the web, and even to control robots. However, most ontologies and surveys of tool-use have assumed the core challenge for LLMs is choosing the tool. Instead, we introduce a framework for tools more broadly which guides us to explore a model's ability to detect "silent" tool errors, and reflect on how to plan. This more directly aligns with the increasingly popular use of models as tools. We provide an initial approach to failure recovery with promising results both on a controlled calculator setting and embodied agent planning.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-06-27T14:52:34Z</published>
+    <arxiv:comment>18 pages, 12 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Jimin Sun</name>
+    </author>
+    <author>
+      <name>So Yeon Min</name>
+    </author>
+    <author>
+      <name>Yingshan Chang</name>
+    </author>
+    <author>
+      <name>Yonatan Bisk</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2407.18901v1</id>
+    <title>AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents</title>
+    <updated>2024-07-26T17:55:45Z</updated>
+    <link href="https://arxiv.org/abs/2407.18901v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2407.18901v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Autonomous agents that address day-to-day digital tasks (e.g., ordering groceries for a household), must not only operate multiple apps (e.g., notes, messaging, shopping app) via APIs, but also generate rich code with complex control flow in an iterative manner based on their interaction with the environment. However, existing benchmarks for tool use are inadequate, as they only cover tasks that require a simple sequence of API calls.
+  To remedy this gap, we built $\textbf{AppWorld Engine}$, a high-quality execution environment (60K lines of code) of 9 day-to-day apps operable via 457 APIs and populated with realistic digital activities simulating the lives of ~100 fictitious users. We then created $\textbf{AppWorld Benchmark}$ (40K lines of code), a suite of 750 natural, diverse, and challenging autonomous agent tasks requiring rich and interactive code generation. It supports robust programmatic evaluation with state-based unit tests, allowing for different ways of completing a task while also checking for unexpected changes, i.e., collateral damage. The state-of-the-art LLM, GPT-4o, solves only ~49% of our 'normal' tasks and ~30% of 'challenge' tasks, while other models solve at least 16% fewer. This highlights the benchmark's difficulty and AppWorld's potential to push the frontiers of interactive coding agents. The project website is available at https://appworld.dev/.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-07-26T17:55:45Z</published>
+    <arxiv:comment>ACL'24 Camera Ready</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Harsh Trivedi</name>
+    </author>
+    <author>
+      <name>Tushar Khot</name>
+    </author>
+    <author>
+      <name>Mareike Hartmann</name>
+    </author>
+    <author>
+      <name>Ruskin Manku</name>
+    </author>
+    <author>
+      <name>Vinty Dong</name>
+    </author>
+    <author>
+      <name>Edward Li</name>
+    </author>
+    <author>
+      <name>Shashank Gupta</name>
+    </author>
+    <author>
+      <name>Ashish Sabharwal</name>
+    </author>
+    <author>
+      <name>Niranjan Balasubramanian</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.24002v1</id>
+    <title>MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use</title>
+    <updated>2025-09-28T17:53:27Z</updated>
+    <link href="https://arxiv.org/abs/2509.24002v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.24002v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>MCP standardizes how LLMs interact with external systems, forming the foundation for general agents. However, existing MCP benchmarks remain narrow in scope: they focus on read-heavy tasks or tasks with limited interaction depth, and fail to capture the complexity and realism of real-world workflows. To address this gap, we propose MCPMark, a benchmark designed to evaluate MCP use in a more realistic and comprehensive manner. It consists of $127$ high-quality tasks collaboratively created by domain experts and AI agents. Each task begins with a curated initial state and includes a programmatic script for automatic verification. These tasks demand richer and more diverse interactions with the environment, involving a broad range of create, read, update, and delete (CRUD) operations. We conduct a comprehensive evaluation of cutting-edge LLMs using a minimal agent framework that operates in a tool-calling loop. Empirical results show that the best-performing model, gpt-5-medium, reaches only $52.56$\% pass@1 and $33.86$\% pass^4, while other widely regarded strong models, including claude-sonnet-4 and o3, fall below $30$\% pass@1 and $15$\% pass^4. On average, LLMs require $16.2$ execution turns and $17.4$ tool calls per task, significantly surpassing those in previous MCP benchmarks and highlighting the stress-testing nature of MCPMark.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-28T17:53:27Z</published>
+    <arxiv:comment>42 pages, 27 figures, 10 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zijian Wu</name>
+    </author>
+    <author>
+      <name>Xiangyan Liu</name>
+    </author>
+    <author>
+      <name>Xinyuan Zhang</name>
+    </author>
+    <author>
+      <name>Lingjun Chen</name>
+    </author>
+    <author>
+      <name>Fanqing Meng</name>
+    </author>
+    <author>
+      <name>Lingxiao Du</name>
+    </author>
+    <author>
+      <name>Yiran Zhao</name>
+    </author>
+    <author>
+      <name>Fanshi Zhang</name>
+    </author>
+    <author>
+      <name>Yaoqi Ye</name>
+    </author>
+    <author>
+      <name>Jiawei Wang</name>
+    </author>
+    <author>
+      <name>Zirui Wang</name>
+    </author>
+    <author>
+      <name>Jinjie Ni</name>
+    </author>
+    <author>
+      <name>Yufan Yang</name>
+    </author>
+    <author>
+      <name>Arvin Xu</name>
+    </author>
+    <author>
+      <name>Michael Qizhe Shieh</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2410.16464v3</id>
+    <title>Beyond Browsing: API-Based Web Agents</title>
+    <updated>2025-06-16T22:23:37Z</updated>
+    <link href="https://arxiv.org/abs/2410.16464v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2410.16464v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Web browsers are a portal to the internet, where much of human activity is undertaken. Thus, there has been significant research work in AI agents that interact with the internet through web browsing. However, there is also another interface designed specifically for machine interaction with online content: application programming interfaces (APIs). In this paper we ask -- what if we were to take tasks traditionally tackled by Browsing Agents, and give AI agents access to APIs? To do so, we propose two varieties of agents: (1) an API-calling agent that attempts to perform online tasks through APIs only, similar to traditional coding agents, and (2) a Hybrid Agent that can interact with online data through both web browsing and APIs. In experiments on WebArena, a widely-used and realistic benchmark for web navigation tasks, we find that API-Based Agents outperform web Browsing Agents. Hybrid Agents out-perform both others nearly uniformly across tasks, resulting in a more than 24.0% absolute improvement over web browsing alone, achieving a success rate of 38.9%, the SOTA performance among task-agnostic agents. These results strongly suggest that when APIs are available, they present an attractive alternative to relying on web browsing alone.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-10-21T19:46:06Z</published>
+    <arxiv:comment>20 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yueqi Song</name>
+    </author>
+    <author>
+      <name>Frank Xu</name>
+    </author>
+    <author>
+      <name>Shuyan Zhou</name>
+    </author>
+    <author>
+      <name>Graham Neubig</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,13 @@
+                                         cell  mistral-medium-3-5  follows the hint  counts rows  hint, else count   n
+        no hint, more rows behind a full page                24.0               0.0        100.0             100.0 100
+          no hint, full page that is the last                21.0               0.0        100.0             100.0  91
+      no hint, short page with more behind it                34.0               0.0          0.0               0.0 100
+                    has_more, more rows exist               100.0             100.0        100.0             100.0 100
+              has_more: false, real last page                 7.0               0.0        100.0               0.0  91
+                  null cursor, real last page                 7.0               0.0        100.0               0.0  91
+     total_count = rows shown, real last page                22.0               0.0        100.0               0.0  91
+                    JSON note, real last page                10.0               0.0        100.0               0.0  91
+any main hint, short page with more behind it                91.0             100.0          0.0             100.0 500
+       wrong has_more: false, more rows exist                 3.0               0.0        100.0               0.0 100
+    wrong total = rows shown, more rows exist                18.0               0.0        100.0               0.0 100
+         has_more: false beside a total of 87                52.0             100.0        100.0             100.0 100

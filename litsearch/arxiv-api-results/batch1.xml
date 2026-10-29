@@ -1,0 +1,428 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/V9Y8tjoU3hr3eLoH+ScsS53MmZU</id>
+  <title>arXiv Query: search_query=&amp;id_list=2610.10062,2606.30531,2606.28733,2606.22936,2608.29128,2605.05247,2609.17985,2609.37125,2609.18217,2609.10962,2607.21674,2607.12056,2502.17443,2609.35789,2510.15955,2610.02627,2609.31906,2607.25765,2511.22729&amp;start=0&amp;max_results=50</title>
+  <updated>2026-10-24T21:06:14Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=50&amp;id_list=2610.10062,2606.30531,2606.28733,2606.22936,2608.29128,2605.05247,2609.17985,2609.37125,2609.18217,2609.10962,2607.21674,2607.12056,2502.17443,2609.35789,2510.15955,2610.02627,2609.31906,2607.25765,2511.22729" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+  <opensearch:totalResults>19</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2605.05247v1</id>
+    <title>DADL: A Declarative Description Language for Enterprise Tool Libraries in LLM Agent Systems</title>
+    <updated>2026-05-04T23:59:40Z</updated>
+    <link href="https://arxiv.org/abs/2605.05247v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.05247v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) is the standard interface between large language model (LLM) agents and external tools. At organizational scale, however, it exposes two structural problems. First, every API integration is shipped as a dedicated server process with its own deployment, dependency tree, and credential handling; recent empirical work shows the overwhelming majority of these servers are thin wrappers around REST APIs. Second, the per-tool registration model causes context window consumption to grow linearly with catalog size, forcing real deployments to expose only a small fraction of the APIs an organization actually uses.
+  We present DADL (Dunkel API Description Language), a YAML format describing a REST API's endpoints, authentication, pagination, response shaping, and access classification in a single declarative file. A DADL file is interpreted by an execution layer at runtime; no per-API server process is deployed and no integration code is generated, though the runtime is itself a server. Because all tools share that runtime, credentials and authorization are managed centrally, and the catalog reaches the LLM through a fixed-size Code Mode interface independent of size. The result is an Enterprise Tool Library: a versioned, auditable collection of API integrations any team can extend, share, and consume through one authentication and authorization boundary.
+  The DADL v0.1 specification is released under CC BY-SA 4.0, and a public registry contains 1,833 tool definitions across 20 services. On this catalog, Code Mode reduces the context cost of tool advertisement from approximately 142,000 tokens to approximately 1,000, a 142x reduction; the per-call cost of search and execute invocations is additional and depends on the task.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-04T23:59:40Z</published>
+    <arxiv:comment>14 pages, 1 figure. Also published on Zenodo: https://doi.org/10.5281/zenodo.19931788</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Axel Dunkel</name>
+    </author>
+    <arxiv:doi>10.5281/zenodo.19931788</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.5281/zenodo.19931788" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.21674v1</id>
+    <title>Output Format x Model Identity: Interaction Effects in Single-Round Coding Agent Performance</title>
+    <updated>2026-07-23T10:18:42Z</updated>
+    <link href="https://arxiv.org/abs/2607.21674v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.21674v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Output format is not a neutral implementation detail -- it can reorder model rankings, amplify or suppress individual model differences, and determine whether a coding agent succeeds or fails. We conducted a controlled single-round experiment with 3 models (DeepSeek V4, Doubao 2.0 Pro, Qwen 3.7 Max) x 3 output formats (full file, JSON Patch, unified diff) x 6 tasks x 20 repetitions, totaling 4,013 runs across 4 open-source projects. Only one project (tqdm) yielded non-zero success rates: dotenv, requests, and jsoup yielded zero successes in 2,551 runs. Our central finding is a format x model interaction with no universally optimal format. Doubao achieves 94% success with JSON Patch (Cohen's h = 1.57, p &lt; 0.001), DeepSeek excels at unified diff (66%, h = 0.63), and Qwen shows a small but significant full-file preference (50%, h = 0.29, p &lt; 0.05). Beyond these headline results, we identify a distinct failure mechanism -- format misuse -- where agents correctly diagnose a problem but execute it with excessive scope, most vividly when a one-line fix is applied as a full-file replacement. We propose a model-specific output strategy, a tool-design principle that constrains format semantics to the agent's own localization step, and release all data and templates for reproducibility. All experimental data are available at https://doi.org/10.5281/zenodo.21505157.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-23T10:18:42Z</published>
+    <arxiv:comment>16 pages, 7 tables, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Yang Yang</name>
+    </author>
+    <arxiv:doi>10.5281/zenodo.21505157</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.5281/zenodo.21505157" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.22729v1</id>
+    <title>Solving Context Window Overflow in AI Agents</title>
+    <updated>2025-11-27T19:22:20Z</updated>
+    <link href="https://arxiv.org/abs/2511.22729v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.22729v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) have become increasingly capable of interacting with external tools, granting access to specialized knowledge beyond their training data - critical in dynamic, knowledge-intensive domains such as Chemistry and Materials Science. However, large tool outputs can overflow the LLMs' context window, preventing task completion. Existing solutions such as truncation or summarization fail to preserve complete outputs, making them unsuitable for workflows requiring the full data. This work introduces a method that enables LLMs to process and utilize tool responses of arbitrary length without loss of information. By shifting the model's interaction from raw data to memory pointers, the method preserves tool functionality, allows seamless integration into agentic workflows, and reduces token usage and execution time. The proposed method is validated on a real-world Materials Science application that cannot be executed with conventional workflows, and its effectiveness is demonstrated via a comparative analysis where both methods succeed. In this experiment, the proposed approach consumed approximately seven times fewer tokens than the traditional workflow.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-27T19:22:20Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Anton Bulle Labate</name>
+    </author>
+    <author>
+      <name>Valesca Moura de Sousa</name>
+    </author>
+    <author>
+      <name>Sandro Rama Fiorini</name>
+    </author>
+    <author>
+      <name>Leonardo Guerreiro Azevedo</name>
+    </author>
+    <author>
+      <name>Raphael Melo Thiago</name>
+    </author>
+    <author>
+      <name>Viviane Torres da Silva</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.31906v1</id>
+    <title>EmailBench: A Benchmark for Evaluating LLM Agents on Enterprise Email and Productivity Tasks</title>
+    <updated>2026-09-25T18:49:33Z</updated>
+    <link href="https://arxiv.org/abs/2609.31906v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.31906v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Enterprise email agents must combine information retrieval, structured state changes, temporal reasoning, and multi-step coordination. Recent agent benchmarks include productivity tasks, but few center on typed email workflows in a self-contained environment. We introduce EmailBench, a benchmark of 206 email and productivity scenarios across 16 task categories. The benchmark couples a typed email API specification with provider-neutral naming, a deterministic synthetic Enron-inspired corpus, and a scenario suite whose topic selection was informed by aggregate task-intent telemetry from an interactive prototype. Its hybrid evaluation protocol combines 258 executable static assertions with 211 LLM rubrics. We evaluate eight LM configurations on a fixed single-user corpus. The best-performing configuration passes only 33.5% of scenarios despite 99.7% of its tool calls completing without an observed API failure, with pass rates varying substantially across task categories. This gap shows that valid tool execution is not equivalent to task completion. EmailBench provides a self-contained environment for end-to-end email-agent evaluation, with broader tool coverage, multi-persona testing, and repeated-run evaluation as future work areas.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-25T18:49:33Z</published>
+    <arxiv:comment>32 pages, including references and appendices</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Mukul Singh</name>
+    </author>
+    <author>
+      <name>Mansi Uniyal</name>
+    </author>
+    <author>
+      <name>Devin Devlin</name>
+    </author>
+    <author>
+      <name>Wen Xie</name>
+    </author>
+    <author>
+      <name>Big Thadawasin</name>
+    </author>
+    <author>
+      <name>Ritam Dutt</name>
+    </author>
+    <author>
+      <name>Vivian Lai</name>
+    </author>
+    <author>
+      <name>Hyeonsu B. Kang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.15955v2</id>
+    <title>How Good Are LLMs at Processing Tool Outputs?</title>
+    <updated>2026-01-24T21:33:56Z</updated>
+    <link href="https://arxiv.org/abs/2510.15955v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.15955v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Most realistic task automation problems require large language models (LLMs) to call tools, which often return complex JSON responses. These responses must be further processed to derive the information necessary for task completion. The ability of LLMs to do so is under-studied. In this paper, we study the tool response processing task and LLMs' abilities to process structured (JSON) responses. We created a dataset for this task, and evaluated 15 open and closed weight models using multiple prompting approaches. Our results show that JSON processing remains a difficult task even for frontier models across multiple prompting strategies. The optimal response processing strategy depends on both the nature and size of the tool outputs, as well as the complexity of the required reasoning. Variations in processing approaches can lead to performance differences ranging from 3\% to 50\%.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-10T23:59:22Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Kiran Kate</name>
+    </author>
+    <author>
+      <name>Yara Rizk</name>
+    </author>
+    <author>
+      <name>Poulami Ghosh</name>
+    </author>
+    <author>
+      <name>Ashu Gulati</name>
+    </author>
+    <author>
+      <name>Tathagata Chakraborti</name>
+    </author>
+    <author>
+      <name>Zidane Wright</name>
+    </author>
+    <author>
+      <name>Mayank Agarwal</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.30531v1</id>
+    <title>Entity Binding Failures in Tool-Augmented Agents</title>
+    <updated>2026-06-29T16:34:30Z</updated>
+    <link href="https://arxiv.org/abs/2606.30531v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.30531v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-augmented language-model agents are often evaluated by whether they select the correct tool, produce valid API arguments, and complete the requested task. However, an agent may choose the right tool and still act on the wrong external entity. For example, a request to "email Alex about the launch" may lead the agent to contact the wrong Alex, attach the wrong launch document, reply in the wrong thread, or update the wrong customer account. We call these errors entity binding failures. This paper studies entity binding failures as a distinct reliability and safety problem in tool-augmented agents. We formalize the separation between tool correctness and entity correctness, introduce a taxonomy of wrong-entity failures in enterprise workflows, and evaluate entity-aware execution mechanisms including entity-resolution preconditions, confidence-gated binding, clarification under ambiguity, and provenance tracking. In a controlled diagnostic evaluation across 60 tasks, five model backends, and six tool-use methods, all methods achieved 0.0 percent wrong-tool error, yet action-oriented baselines still produced wrong-entity actions in 24.0-26.0 percent of runs. Entity-aware methods eliminated wrong-entity actions and risk-weighted wrong-entity exposure in this setting, but reduced direct task completion by deferring under ambiguity. These findings show that safe tool use requires not only selecting the correct tool, but also reliably binding natural-language references to the correct real-world entity before action.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-29T16:34:30Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Rahul Suresh Babu</name>
+    </author>
+    <author>
+      <name>Shashank Indukuri</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.17443v1</id>
+    <title>AI Agentic workflows and Enterprise APIs: Adapting API architectures for the age of AI agents</title>
+    <updated>2025-01-22T05:55:16Z</updated>
+    <link href="https://arxiv.org/abs/2502.17443v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.17443v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rapid advancement of Generative AI has catalyzed the emergence of autonomous AI agents, presenting unprecedented challenges for enterprise computing infrastructures. Current enterprise API architectures are predominantly designed for human-driven, predefined interaction patterns, rendering them ill-equipped to support intelligent agents' dynamic, goal-oriented behaviors. This research systematically examines the architectural adaptations for enterprise APIs to support AI agentic workflows effectively. Through a comprehensive analysis of existing API design paradigms, agent interaction models, and emerging technological constraints, the paper develops a strategic framework for API transformation. The study employs a mixed-method approach, combining theoretical modeling, comparative analysis, and exploratory design principles to address critical challenges in standardization, performance, and intelligent interaction. The proposed research contributes a conceptual model for next-generation enterprise APIs that can seamlessly integrate with autonomous AI agent ecosystems, offering significant implications for future enterprise computing architectures.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-01-22T05:55:16Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Vaibhav Tupe</name>
+    </author>
+    <author>
+      <name>Shrinath Thube</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.35789v1</id>
+    <title>Agent-Callable Feature Coverage: Measuring Software Readiness for AI Agents</title>
+    <updated>2026-07-18T22:23:02Z</updated>
+    <link href="https://arxiv.org/abs/2609.35789v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.35789v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI agents already operate graphical software through screenshot-based computer use, so the pressing question is not whether agents can operate software, but how well software supports them through structured, controllable channels. We formalize this need as the GUI-API parity principle: every capability available to human users through a graphical interface should also be accessible to agents through a structured, callable interface with appropriate safety metadata. To operationalize this principle, we introduce two contributions. First, Agent-Callable Feature Coverage (ACFC), a product-level readiness metric quantifying how much of a system's human-facing functionality agents can access and use. Second, Agent Readiness Conformance (ARC), a framework that scores each capability on three axes: Accessibility (can an agent call it), Discoverability (can an agent find and understand it), and Controllability (can an agent use it safely), each on a 0-3 scale, yielding a composite 0-9 readiness score. Drawing on the Richardson Maturity Model, ARC provides finer-grained assessment than binary coverage. In an empirical study of 30 software systems across five categories, ARC-based ACFC scores are substantially lower than Accessibility-only metrics would suggest: most systems achieve moderate API coverage but lag on agent-oriented documentation and safety governance. In a controlled testbed of ten deployed systems, API-only agents completed 56 of 58 tasks whose target capabilities were exposed through structured interfaces; a documentation ablation reduced this to 50 of 58, showing that Discoverability affects execution even among accessible capabilities, while inaccessible capabilities, included as negative controls, were not solved. These findings hold across three agent models, including Google's open-weights Gemma4 run locally.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-18T22:23:02Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Zedong Peng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.18217v1</id>
+    <title>Measuring and Exploiting Implicit Trust in LLM Tool-Calling Pipelines</title>
+    <updated>2026-09-16T06:47:10Z</updated>
+    <link href="https://arxiv.org/abs/2609.18217v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.18217v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) enables LLMs to invoke external tools, but every tool interaction exposes the model to attacker-controlled text through multiple input channels (tool descriptions, tool results, sampling messages) that share a single context window without privilege separation. In this paper, we present a framework to measure the trust profile of an arbitrary LLM based on a variety of payload framings sent through different channels. Following this assessment, we devise cross-channel fragmentation attacks that distribute seemingly benign payloads across two or three channels; no individual channel carries a complete injection, yet the LLM compiles the fragments into credential exfiltration. We evaluated our attacks across 12 frontier models, three production clients, and six payloads, totalling over 15,000 trials. Our evaluation reveals that cross-channel attacks are an unexplored attack surface: models that fully resist single-channel injection (0% compliance) exfiltrate sensitive data at up to 100% under two-channel fragmentation (e.g., GPT-4o, Llama 70B, Composer 2, Haiku 4.5). We further demonstrate value-aligned exploitation, where a tool's stated purpose requires the data the attacker targets, and a sampling system prompt override that injects persistent instructions via VS Code's MCP implementation. Finally, we evaluated our attacks against seven third-party MCP security tools and three prompt-based defenses. All tools failed to detect fragmented payloads, and prompt defenses proved model-specific rather than universal.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-16T06:47:10Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Murali Ediga</name>
+    </author>
+    <author>
+      <name>Sudipta Chattopadhyay</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.28733v1</id>
+    <title>Agentic Abstention: Do Agents Know When to Stop Instead of Act?</title>
+    <updated>2026-06-27T04:49:37Z</updated>
+    <link href="https://arxiv.org/abs/2606.28733v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.28733v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents are expected to act over multiple turns, using search, browsing interfaces, and terminal tools to complete user goals. Yet not every goal is well specified or achievable in the available environment. In such cases, a reliable agent should recognize that further interaction is unlikely to help and abstain from additional tool calls. We define Agentic Abstention, the problem of deciding when an agent should stop acting under uncertainty. Unlike standard LLM abstention, which is usually evaluated as a single-turn answer-or-abstain decision, agentic abstention is a sequential decision problem: an agent can answer, abstain, or gather more information at each turn, and the need to abstain may only become clear after interacting with the environment. We study this problem across web shopping, terminal environments, and question answering, evaluating 13 LLM-as-agent systems and 2 agent scaffolds on more than 28,000 tasks. Our results show that the main challenge is not only whether agents can abstain, but also when they abstain. Some agents never abstain when they should, while others do so only after many unnecessary interactions. This gap is especially large on tasks where the instruction appears feasible until the environment reveals otherwise (e.g., no valid result matches the instruction). We further find that model scale, reasoning, and agent scaffolding affect abstention in different ways, where larger or more capable models sometimes perform worse at timely abstention. Finally, we introduce CONVOLVE, a context engineering method for improving agentic abstention that distills full interaction trajectories into reusable stopping rules. On WebShop, CONVOLVE substantially improves timely abstention without updating model parameters, raising Llama-3.3-70B's timely recall rate from 26.7 to 57.4. Our dataset and code are available at https://lhannnn.github.io/agentic-abstention</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-27T04:49:37Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Han Luo</name>
+    </author>
+    <author>
+      <name>Bingbing Wen</name>
+    </author>
+    <author>
+      <name>Lucy Lu Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.29128v1</id>
+    <title>APIFlow-Bench: Measuring Whether Agents Survive Long, Dependent API Workflows</title>
+    <updated>2026-08-29T08:12:11Z</updated>
+    <link href="https://arxiv.org/abs/2608.29128v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.29128v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using agents are commonly evaluated by a single bit: whether an end-to-end workflow completed. This metric fails to distinguish failures that matter in production, such as expired credentials, malformed payloads, or correct execution followed by incorrect final delivery. We introduce APIFlow-Bench, a fully auditable benchmark for long-horizon, dependent REST-API workflows that decomposes performance into seven engineering capabilities and requires agents to produce answers supported by the actual call path. We generate synthetic API worlds forward, subtask by subtask; each subtask is admitted only after a zero-LLM self-test triad verifies its grader and an oracle establishes solvability, and an adversarial audit identified and fixed six grader exploits. Grading is deterministic and provenance-sensitive: a state check traces a mock-minted canary through the API data flow to the response the answer must originate from, and a typed answer card is verified field by field. We release all answer keys and 44,362 unredacted execution transcripts. Across 19 frontier and open-weight models under one neutral scaffold, we find: (1) longer dependency chains degrade success, from 93% on individual subtasks to 74% on clean 20-subtask chains and 61% when including the 8% of chain trials that a model-consensus screen flags as passed by no model; (2) reliability separates models more than best-case capability, with best-of-five spanning seven points but all-five-of-five reliability spanning 44 points; (3) the independent-error account of compounding failure does not fit the data: pass rates on 20-subtask chains are 33 percentage points above the product of subtask-level rates, and on the clean slice 77% of failing runs reached the correct final state and failed only at delivery.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-29T08:12:11Z</published>
+    <arxiv:comment>15 pages, 8 figures. Under review at the NeurIPS 2026 Workshop on Evaluation of Interactive Agents (IAEval). Harness, frozen task bank, and 44,362 execution transcripts: https://github.com/postmanlabs/APIFlow-Bench</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zelin Wan</name>
+    </author>
+    <author>
+      <name>Arash Nourian</name>
+    </author>
+    <author>
+      <name>Xiaoxiao Li</name>
+    </author>
+    <author>
+      <name>Nihar Nandan</name>
+    </author>
+    <author>
+      <name>Kamalakannan Nandagopal</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.17985v1</id>
+    <title>RideWay: Benchmarking Efficient Task Completion for Tool-Using Language Agents</title>
+    <updated>2026-09-16T01:15:21Z</updated>
+    <link href="https://arxiv.org/abs/2609.17985v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.17985v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI agents are usually evaluated by whether they complete a task. In interactive service settings, a successful agent can still frustrate users by asking repeated questions, performing redundant searches, or making avoidable revisions. We introduce RideWay, an efficiency-centered benchmark for ridehailing agents in a stateful tool-calling environment, together with Efficiency Utility, a success-gated metric that discounts successful trajectories for excess tool calls and user-facing turns relative to task-specific reference effort. Human paired preferences calibrate the relative penalties, reflecting an aggregate service-workflow trade-off: extra dialogue often creates visible friction, whereas extra tool use can sometimes verify constraints or preserve user intent. Across 58 tasks and 24 models, the fitted penalty for excess turns is about twice that for excess tool calls. On task-disjoint held-out preferences, Efficiency Utility achieves 78.7% accuracy overall: 90.6% when trajectories differ in turns, but chance-level accuracy when they differ solely in tool calls - the axis on which human annotators agree least. RideWay therefore makes interaction efficiency measurable alongside task success, while exposing the boundary of count-based tool-use evaluation.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-16T01:15:21Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Qingnuan Han</name>
+    </author>
+    <author>
+      <name>Boli Fang</name>
+    </author>
+    <author>
+      <name>Mingzhi Hou</name>
+    </author>
+    <author>
+      <name>Claire Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.10962v1</id>
+    <title>What a Random Draw from the MCP Registry Contains, and What Tool-Use Benchmarks Contain Instead</title>
+    <updated>2026-09-10T01:33:53Z</updated>
+    <link href="https://arxiv.org/abs/2609.10962v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.10962v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Studies of the Model Context Protocol (MCP) server ecosystem draw their samples in ways that quietly select for servers that work: reference sets, popularity lists, hand-curated frames, or pipelines that repair a server until it starts. We report what an unrepaired probability sample actually contains. From a 24,135-server registry census we draw 400 npm/stdio servers with a published seed and probe each one over the wire. Only 48.8% complete an initialize handshake, against 66.7% for a hand-curated frame measured with the same instrument, and the dominant failure is not missing credentials (13.3%) but servers that never start at all (37.5%). Among the 195 that do run, hard conformance is total: zero fatal JSON Schema violations across 2,766 advertised tools. Optional safety annotations are the real variance, and the tool-level omission rate on a random draw is 58.8% against 41.5% on the curated frame, so curation flatters this figure too. We then compare the tool descriptions these servers advertise against two tool-use benchmark corpora using one method held constant. Real MCP tools show 2.8% near-duplication at cosine 0.70, and all of it lies within single servers: cross-author near-duplication is 0.0% at every threshold tested. BFCL v4 shows 16.7%, of which 16.4 points lie between independently presented tasks. UltraTool shows 0.3%, cleaner than real tools, so this is a property of BFCL and not of synthetic corpora as a class. Separately, 68.8% of raw BFCL rows and 85.6% of raw UltraTool rows are exact name-plus-description repeats, against 0.4% for real MCP, so any statistic computed over these releases without global deduplication measures repetition rather than tools. All figures regenerate from released scripts and a published seed.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-10T01:33:53Z</published>
+    <arxiv:comment>10 pages, 3 figures. Seeded, re-runnable pipeline and per-server outcomes: https://github.com/itguruhaseeb/mcp-probe ; archived at doi:10.5281/zenodo.21347997</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Haseeb Mohammed Afsar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.22936v2</id>
+    <title>When Agents Commit Too Soon: Diagnosing Premature Commitment in LLM Agents</title>
+    <updated>2026-10-12T19:16:13Z</updated>
+    <link href="https://arxiv.org/abs/2606.22936v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.22936v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using LLM agents make early choices about what to search for, which evidence to trust, and what to do next. A wrong early choice can steer every later tool call, so an agent may produce a coherent but incorrect result. Existing evaluation does not reveal this process: final-answer scoring comes only after completion, and agreement across runs can be high even when every run is wrong. We ask whether hidden states reveal that repeated runs have already settled into stable behavior. Our contributions are threefold. First, we introduce representational commitment, which measures hidden-state similarity across repeated runs at the same step. On Llama-3.1-70B running ReAct on HotpotQA, we show that higher step-4 similarity is associated with lower whole-trajectory variability (r = -0.35); we find the same pattern in action sequences and replicate it on two other models and StrategyQA. This provides an internal measure for studying when agent behavior stabilizes. Second, we establish the measure's scope. Shared evidence explains much of the observed association, the HotpotQA result disappears on hard questions, and correct and confidently wrong questions overlap. We therefore show that the measure detects stability, not correctness, and cannot by itself establish that commitment was premature. Third, we evaluate monitoring and intervention. A monitor built from three partial runs predicts whole-trajectory variability (mean AUROC 0.81). A commitment prompt reduces variability by 28% relative to a token-matched filler, but not significantly relative to the standard agent after correction, and it does not improve accuracy. Together, these contributions provide a measurement and evaluation framework for studying how agent trajectories stabilize and for testing when additional evidence, sampling, or review may be useful.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-22T07:13:13Z</published>
+    <arxiv:comment>23 pages, 16 figures. Camera-ready version, Workshop on Agent Behavior at COLM 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Aman Mehta</name>
+    </author>
+    <author>
+      <name>Anupam Datta</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.10062v1</id>
+    <title>Loud Failures, Quiet Failures: Fault Detection and Recovery in Tool-Using Language Model Agents</title>
+    <updated>2026-10-07T13:29:59Z</updated>
+    <link href="https://arxiv.org/abs/2610.10062v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.10062v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using agents are usually scored on whether they finish a task while the tools work. Deployments are less forgiving: services time out, endpoints disappear, parameter names change, and results come back well formed but wrong. Prior work has shown that language models over-trust tool outputs that fail silently; we ask how that over-trust plays out across the stages of failure handling in multi-turn agents. Wrapping the executable environments of an established function-calling benchmark in a fault-injection layer, we inject one of four typed faults at a controlled point in the trajectory and record whether the agent notices, changes plan, recovers the task, or repeats itself. Six models from three families, half of them reasoning variants, ran 1,920 trials over 24 multi-step tasks. Agents treat a failure as a problem in 91.3% of trials when the tool returns an explicit error, but in 58.8% of trials when it returns a plausible wrong value, against a 26.8% rate of reporting problems when nothing was wrong. Reasoning models are not better placed: paired against instruct siblings, they notice less (-9.3 points, p &lt; .001) and change plan more (+10.4 points, p &lt; .001), and recovery is unchanged (p = .512). Because agents are stochastic, two fault-free runs of the same task end in the same state only 63.3% of the time; against that baseline, only a missing tool clearly lowers recovery (39.9%), while timeouts, schema drift, and corruption stay within run-to-run variation. After a fault, agents return to the same tool three or more times in a row in up to 22.2% of trials, though strictly identical repeats are rare. A prompt line asking the agent to check each result did not move detection. Agents respond to the error channel rather than to the content of what a tool returns, so failures that stay inside the expected format pass through.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-07T13:29:59Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Obada Kraishan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.37125v3</id>
+    <title>When Should Agents Check External State? Budgeting Observations for Stored Intentions</title>
+    <updated>2026-10-16T01:24:20Z</updated>
+    <link href="https://arxiv.org/abs/2609.37125v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.37125v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Prospective memory allows an agent to retain an intention tied to a future condition, but the stored intention does not reveal whether that condition currently holds. Checking it may require web access, multi-step tool use, and paid calls. Existing systems decide when intentions require attention, but do not allocate the resulting observations under a shared budget. We introduce the first resource-allocation formulation for the external observations required by stored intentions under a shared episode budget. BudgetPM offers two policy variants that share a hard-budget executor. BudgetPM-Static uses a lightweight Logistic scorer to learn whether a check improves the current decision. BudgetPM-Sequential distills full-episode hindsight schedules into a lightweight policy that decides when to spend or reserve capacity using only pre-query information at deployment. We evaluate BudgetPM against two public memory-agent systems, five matched controls, and four hand-designed monitoring or budget-adaptation rules. Across two benchmarks and three backbones, BudgetPM-Static outperforms adapted Mem0 and PMA workflows. On PM-Bench, its Logistic scorer reaches competitive quality--cost operating points alongside higher-capacity scorers and retains 99.9--100\% of unconstrained quality with 42--54\% fewer observations. Under severe scarcity and the same hard caps, BudgetPM-Sequential exceeds the strongest tested natural monitoring schedule by 1.92--2.58 Set F1 points. It reaches the same Set F1 and on-time recall with 16--33\% fewer observations. Matched attribution, exact-cost analysis, and a fixed-budget load intervention link this gain to competition between present and future opportunities. These results yield a demand--capacity design rule: local gating works when capacity covers demand, while future-aware supervision adds value when observations compete across time.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T09:32:43Z</published>
+    <arxiv:comment>23 pages, 2 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zhengkun Di</name>
+    </author>
+    <author>
+      <name>Bin Shi</name>
+    </author>
+    <author>
+      <name>Kai Sun</name>
+    </author>
+    <author>
+      <name>Yiming Xu</name>
+    </author>
+    <author>
+      <name>Bo Dong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.12056v1</id>
+    <title>Designing Agent-Ready Websites for AI Web Agents: A Framework for Machine Readability, Actionability, and Decision Reliability</title>
+    <updated>2026-07-13T18:16:58Z</updated>
+    <link href="https://arxiv.org/abs/2607.12056v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.12056v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Online shopping is increasingly shifting toward a model in which AI agents independently search for products, compare options, evaluate constraints, and carry out parts of the purchasing process for users. Website design must now support both human and agent-mediated interaction. This paper introduces the agent-ready website, a design framework for enhancing the readability, interpretability, verifiability, and actionability of e-commerce platforms for AI agents. Existing web design, SEO, and generative engine optimization (GEO) metrics do not fully assess a website's capacity for agent-mediated interaction. The proposed framework is structured around three dimensions agent interpretability, agent executability, and agent decision reliability supported by features such as machine readability, semantic clarity, agent actionability, and contextual decision-reliability signals. The framework is evaluated through a controlled experiment comparing a human-oriented baseline and an agent-ready version of an identical website prototype, with identical catalogs, pricing, stock, and shopping workflows. The evaluation involved five tasks, three browser-agent models (GPT-4.1, Gemini-2.5 Flash, and Grok-4 Fast), and 300 runs, measuring PASS,PARTIAL,FAIL outcomes, strict and functional success rates, error patterns, step counts, and token consumption. The agent-ready website achieved 134 PASS runs out of 150 versus 74 out of 150 for the baseline (strict success rates of 89.3% vs. 49.3%), with the largest gains in product detail extraction, comparison, and multi-constraint selection. It also reduced PARTIAL outcomes from 43 to 3 and lowered the average step count from 9.31 to 6.49. These results provide preliminary evidence that enhanced structural clarity, action cues, evidence signals, and temporal validity indicators can substantially improve the reliability and efficiency of AI browser agents.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-13T18:16:58Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Said Elnaffar</name>
+    </author>
+    <author>
+      <name>Farzad Rashidi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.25765v1</id>
+    <title>WorkSurface-Bench: Benchmarking Enterprise Agents on Multi-Surface Knowledge Routing</title>
+    <updated>2026-07-28T14:19:59Z</updated>
+    <link href="https://arxiv.org/abs/2607.25765v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.25765v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Enterprise agents often need to integrate heterogeneous knowledge sources: documents for narrative facts, tables for computation, and dependency graphs for file relationships. Existing benchmarks typically evaluate retrieval or tool use without distinguishing whether an agent first selects the appropriate knowledge sources. We introduce WorkSurface-Bench, a benchmark for evaluating this capability as surface routing. It contains 1,151 atomic tasks derived from persona-scoped Workspace-Bench-Lite workspaces, spanning document, table, graph, and cross-surface questions. Its reference answers are auditable: table answers are reproduced through executed DuckDB queries, document answers are grounded in verified text spans, and graph answers are traced to source dependency annotations. We evaluate four model backbones across six controlled agent settings, yielding 27,624 protocol-error-free trajectories. Under gold-constrained tool access, agents achieve 98.7-99.8 Route F1, while Answer remains only 56.1-75.3 percent, showing that correct surface selection is necessary but insufficient for task completion. Matched interventions further show that surface hints improve Answer for three of four models, whereas removing irrelevant tools primarily improves routing and efficiency. In an independent three-annotator audit, all 200 sampled tasks pass all six quality criteria by majority vote, with 192 receiving unanimous judgments on every criterion. We release the dataset, construction pipeline, scoring code, and agent harness at https://github.com/haolpku/WorkSurface-Bench.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-28T14:19:59Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Hao Liang</name>
+    </author>
+    <author>
+      <name>Meiyi Qiang</name>
+    </author>
+    <author>
+      <name>Sizhe Qiu</name>
+    </author>
+    <author>
+      <name>Linzhuang Sun</name>
+    </author>
+    <author>
+      <name>Wentao Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.02627v1</id>
+    <title>Lost in the Request: How Communication Variation Disrupts Retrieval and Action in Email Agents</title>
+    <updated>2026-10-02T00:35:05Z</updated>
+    <link href="https://arxiv.org/abs/2610.02627v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.02627v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>An email assistant should not complete less work simply because a user phrases the same request differently. Yet most benchmarks test each task with only one canonical request, leaving this form of robustness largely unmeasured. We test whether email assistants remain reliable when the requested information, available evidence, and expected outcome stay fixed, but the communication style or English variety changes. We construct validated variants along five communication-style axes and four rule-based dialect conditions, and evaluate them on three benchmarks: a retrieval-augmented generation (RAG) pipeline and two tool-using agents. Indirect requests reduce performance on all three benchmarks, while formal requests reduce performance on both agentic benchmarks. Examining the systems more closely shows that these failures have different causes. Verbose requests mainly hurt a lexical retriever by making the relevant email harder to find. By contrast, indirect and dialect variants remain harmful even when the relevant email is retrieved. In the agentic setting, indirect and formal requests mainly cause the agents to omit required actions, not to take more unsupported actions. These results show that a successful response is not enough to establish robustness: evaluations should vary how requests are expressed and separately measure whether agents complete the requested work.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T00:35:05Z</published>
+    <arxiv:comment>Accepted by NeurIPS 2026 Workshop on Evaluation of Interactive Agents</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Feng Chen</name>
+    </author>
+    <author>
+      <name>Ritam Dutt</name>
+    </author>
+    <author>
+      <name>Atnaz Taheri</name>
+    </author>
+    <author>
+      <name>Alex Williams</name>
+    </author>
+  </entry>
+</feed>

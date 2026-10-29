@@ -1,0 +1,20 @@
+# Exploratory checks (prereg/AMENDMENT-2.md), formed after the interim look at gpt-oss-120b's main
+# study and before mistral-medium-3-5 and claude-sonnet-5-5 run. They decide no hypothesis.
+#  C1 wording: is "when it includes one" in the tool description an end cue? The plain wording drops
+#     only that clause; compared with the default wording on the same forms, extents and items.
+#  C2 total name: does a total equal to the rows shown read as "done" when the field is unambiguously
+#     named? total_matches carries the same number as total_count; the two are compared on the same items.
+# Fresh items (seed 11), so no episode repeats one from another run; every comparison is within this run.
+name: robustness
+models: [gpt-oss-120b]
+signal_forms: [none, has_more, nl_note_json, total_count, total_matches]
+extents: [more_full, last_full]
+task_need: [needs_all]
+items_per_cell: 100
+page_limit: 20
+max_tool_calls: 12
+default_placement: bottom
+replicates: 1
+seed: 11
+arms:
+  doc_wording: {base_forms: [none, has_more, nl_note_json], levels: [plain], task_need: [needs_all], extents: [more_full, last_full]}

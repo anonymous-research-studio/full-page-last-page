@@ -1,0 +1,998 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ANy0QfTJdO5vC68W7h3ue8aoU/8</id>
+  <title>arXiv Query: search_query=abs:"premature termination" AND (abs:agent OR abs:agents OR abs:LLM)&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:05:10Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22premature+termination%22+AND+(abs:agent+OR+(abs:agents+OR+abs:LLM))&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>26</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.30435v1</id>
+    <title>Self-Assessment Reinforcement Learning for Search-State Awareness in Retrieval-Augmented Large Language Models</title>
+    <updated>2026-10-21T20:46:24Z</updated>
+    <link href="https://arxiv.org/abs/2610.30435v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.30435v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances in search agents have enabled large language models to tackle complex tasks by retrieving and synthesizing external information. However, existing search agents often lack search-state awareness, i.e., the ability to recognize what information has been obtained and what remains missing, leading to hallucinated reasoning and prematurely terminated search. To address this limitation, we propose Self-Assessment Reinforcement Learning (SARL), a reinforcement learning framework in which models learn to recognize their own search state during training and improve their search behavior accordingly, without requiring additional assessment at test time. SARL achieves this through a dual reward design that captures the corrective effect of each assessment while penalizing excessive reliance on it, jointly encouraging effective and efficient search trajectories. Under this setup, SARL achieves a 24.3% relative improvement over the strongest baseline, with average gains of 35.9% on multi-hop reasoning and 27.9% on deep research benchmarks against the strongest per-benchmark baselines. SARL further surpasses methods built on auxiliary supervision or multi-agent coordination, despite operating as a standalone RL framework with no inference-time scaffolding. Beyond final performance, SARL maintains training stability under extended search horizons, a regime where existing methods consistently degrade, enabling sustained gains as task complexity grows.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-21T20:46:24Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Taewhoo Lee</name>
+    </author>
+    <author>
+      <name>Minju Song</name>
+    </author>
+    <author>
+      <name>Jungwoo Park</name>
+    </author>
+    <author>
+      <name>Chanwoong Yoon</name>
+    </author>
+    <author>
+      <name>Junha Jung</name>
+    </author>
+    <author>
+      <name>Hyeon Hwang</name>
+    </author>
+    <author>
+      <name>Sanghoon Lee</name>
+    </author>
+    <author>
+      <name>Minbyul Jeong</name>
+    </author>
+    <author>
+      <name>Jaewoo Kang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.05831v1</id>
+    <title>Selecting Long-Horizon Trajectories for Reliable and Efficient Terminal-Agent Training</title>
+    <updated>2026-10-05T05:35:28Z</updated>
+    <link href="https://arxiv.org/abs/2610.05831v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.05831v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Terminal agents are commonly trained by imitating long teacher trajectories, yet how much of each trajectory to supervise remains unexplored. We study the \emph{supervision horizon}, the number of trajectory tokens retained for training, and show that it is a key design axis for reliability and cost. Reliability improves with longer horizons but saturates: on Terminal-Bench, a 12K-token horizon solves more tasks than 16K ($29\pm0.7$ vs.\ $26\pm0.8$) while requiring 30\% less training time. The horizon also shapes agent behavior: short horizons cause premature termination, intermediate horizons yield productive error recovery, and long horizons induce over-persistence. We analyze this saturation through a bias--complexity bound, in which longer supervision reduces temporal supervision bias but increases finite-sample estimation error from more heterogeneous late-stage histories. Guided by this analysis, we propose \emph{selective long-horizon refinement}, which first trains on short prefixes and then refines only on continuations that are most likely under the warm-start model. It consistently outperforms full long-horizon training. At 16K, it raises successful attempts from $110\pm2.7$ to $126\pm2.1$ and tasks solved in at least six of eight attempts from $9\pm0.7$ to $14\pm0.6$; with half of the long-horizon data, it still reaches $122\pm2.4$ while cutting training time by 23\%. The gains transfer across benchmarks, from $64\pm2.6$ to $73\pm2.1$ on Terminal-Bench v2.0 and from $137\pm2.7$ to $155\pm2.2$ on OpenThoughts-TBLite. For long-horizon supervision, selecting the right trajectories matters more than training on all of them.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T05:35:28Z</published>
+    <arxiv:comment>Submitted to ICLR 2027</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Cuong Dang</name>
+    </author>
+    <author>
+      <name>Hoang Anh Just</name>
+    </author>
+    <author>
+      <name>Ruoxi Jia</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.36573v1</id>
+    <title>CyberPersistBench: Evaluating LLM-Based Cyber Attackers on Installation and Persistence</title>
+    <updated>2026-09-29T02:52:18Z</updated>
+    <link href="https://arxiv.org/abs/2609.36573v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.36573v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While LLM-based attackers exhibit growing proficiency in vulnerability exploitation, most existing cybersecurity benchmarks suffer from single-stage truncation, prematurely terminating evaluation upon initial access. In practice, initial footholds are exceptionally fragile across operational disruptions such as service restarts and host reboots. Whether LLM-based attackers can establish and maintain durable footholds beyond initial compromise remains a central blind spot in cybersecurity evaluation. To bridge this gap, we introduce CyberPersistBench, the first benchmark dedicated to post-compromise installation and persistence. Decoupled from upfront exploitation, CyberPersistBench frames persistence as an adversarial survival task in which agents use native host mechanisms to maintain footholds across staged system disruptions. Deterministic checks support a six-level scoring method (L1--L6) spanning installation and persistence. The benchmark comprises 203 core tasks across seven categories, augmented by multi-host and active defense extensions. Empirical evaluations across five frontier agents show that autonomous persistence remains limited (27.6%--44.8%) and drops further on defense-enabled tasks (5.5%--13.3%); nonetheless, these results reveal an emerging cyberattack risk, underscoring the necessity of benchmarking post-compromise persistence. CyberPersistBench thus establishes a foundational benchmark for post-compromise installation and persistence, delineating the operational boundaries of autonomous cyber agents.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T02:52:18Z</published>
+    <arxiv:comment>29 pages, 15 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Sujin Chen</name>
+    </author>
+    <author>
+      <name>Lijun Li</name>
+    </author>
+    <author>
+      <name>Xuhong Wang</name>
+    </author>
+    <author>
+      <name>Jing Shao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.32081v1</id>
+    <title>Toward Interactive Understanding of Code APIs</title>
+    <updated>2026-09-25T23:37:27Z</updated>
+    <link href="https://arxiv.org/abs/2609.32081v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.32081v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Empowered by advances in Language Model agents, systems have made substantial strides in code generation and understanding. However, these approaches often rely on read access to the relevant code, an assumption which does not hold when dealing with external APIs. In this work, we introduce the PAU (Python API Understanding) benchmark, where we provide models with black-box, API-level access to code snippets. Models must query the API with exploratory inputs and draw insights from the resulting outputs, with the goal of describing the snippet's true functionality. By treating the code snippets as external tools that must be understood via interaction alone, PAU studies the more general problem of unsupervised tool understanding, specifically for tools implemented as Python methods. Despite recent progress in coding agents, even frontier models struggle to achieve high performance on PAU, with the best model (Claude-4-Opus) failing to understand over 45% of the PAU test set. An investigation into the common error modes reveals that models are overconfident; they often overrate the quality of their current hypothesis, leading to insufficient exploration and premature termination. Finally, we take inspiration from the Asymmetric Actor Critic (AAC) paradigm, frequently used in robot learning, to post-train models for interactive code understanding. Models trained with AAC conduct more active exploration of the APIs, with an AAC-tuned Qwen3-8B model matching the performance of GPT-5-mini.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-25T23:37:27Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Dhananjay Ashok</name>
+    </author>
+    <author>
+      <name>Jesse Thomason</name>
+    </author>
+    <author>
+      <name>Jonathan May</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.30337v1</id>
+    <title>Parameters vs. Context: TRACE Fine-Tuning for Robust Retrieval-Augmented Generation</title>
+    <updated>2026-09-24T09:53:39Z</updated>
+    <link href="https://arxiv.org/abs/2609.30337v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.30337v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Retrieval-Augmented Generation (RAG) mitigates knowledge obsolescence and factual hallucination in large language models by introducing external context. However, when retrieved knowledge conflicts with the model's internal parametric knowledge, the model may either blindly follow misleading context or incorrectly rely on parametric knowledge, leading to unreliable responses. To address this issue, this paper proposes TRACE (Debate-TRace and Answer-Completeness rEgularized fine-tuning), a robust fine-tuning framework for RAG under knowledge conflicts. First, we propose a fine-tuning method that leverages multi-agent debate traces to extract correct candidates, incorrect candidates, and answer-shift patterns, providing fine-grained supervision for reliable knowledge-source selection. In addition, we design an answer completeness regularization mechanism to alleviate empty, overly short, and prematurely terminated responses via answer-tail token reinforcement and premature termination suppression. The fine-tuning objective combines correct-answer supervision, incorrect-candidate suppression, answer-tail token reinforcement, and premature termination suppression, enabling the model to use reliable external context, resist misleading or irrelevant retrieved content, and fall back to parametric knowledge when retrieved evidence is unreliable. Experiments across multiple knowledge-conflict scenarios and datasets show that TRACE improves robustness against misleading retrieved knowledge and reduces incomplete answers. These results demonstrate that multi-agent debate traces and answer completeness regularization jointly enhance knowledge-source selection, conflict robustness, and answer quality in RAG models. Our code is available at https://github.com/PHD-lanyu/TRACE.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-24T09:53:39Z</published>
+    <arxiv:comment>Accepted by ICDM 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Zhengchen Huang</name>
+    </author>
+    <author>
+      <name>Yundong Sun</name>
+    </author>
+    <author>
+      <name>Minrui Song</name>
+    </author>
+    <author>
+      <name>Shuanglong Yao</name>
+    </author>
+    <author>
+      <name>Ye Liu</name>
+    </author>
+    <author>
+      <name>Ji Chen</name>
+    </author>
+    <author>
+      <name>Xing Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.10412v1</id>
+    <title>When the Interviewer Is a Bot: Behavior, Breakdowns, and Trust in MLLM-Led Interviews</title>
+    <updated>2026-08-11T03:01:36Z</updated>
+    <link href="https://arxiv.org/abs/2608.10412v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.10412v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Semi-structured interviews are a cornerstone of qualitative research but remain labor-intensive. We report an empirical study of what actually happens when the interviewer is an off-the-shelf real-time multimodal LLM (MLLM). We built InterviewBot, a voice-based interviewing system that wraps a real-time MLLM with a researcher-authored outline, and deployed it not as a novel architecture but as a research instrument for observing default MLLM interviewing behavior. In a practice study (N=15), participants completed a bot-led semi-structured interview and then a human-led reflection session about that experience. We contribute (i) a turn-level behavioral analysis of an MLLM interviewer (N_turns=428) showing that it is acknowledgment-heavy but probe-light (deepening probes account for 4.9% of all turns), and that 28.7% of question-bearing turns pack multiple questions into one turn despite an explicit one-question-at-a-time instruction; (ii) an inductive catalogue of four data-collection breakdowns (information loss, premature termination, latency, and interruption) observed in a deployed rather than simulated system; and (iii) three social dynamics from participants' reflections: disclosure calibration, where reduced social pressure coincided with shallower elaboration; institutional legitimacy, where trust tracked perceived stakes and what delegation to AI signaled about the organizer rather than conversational competence; and conversational grounding, where content-grounded paraphrase, not generic social filler, was what participants read as listening. We conclude with design implications for depth control, transparent handoffs, and non-templated listening mechanisms in human-centered interview automation.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-11T03:01:36Z</published>
+    <arxiv:comment>Accepted to ACM HCOMP 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>He Zhang</name>
+    </author>
+    <author>
+      <name>Kambinachi Chukwuma</name>
+    </author>
+    <author>
+      <name>ChanMin Kim</name>
+    </author>
+    <author>
+      <name>John M. Carroll</name>
+    </author>
+    <arxiv:doi>10.1145/3834580.3838754</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3834580.3838754" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.08219v1</id>
+    <title>VTO: Visual Tool Orchestration for Video Anomaly Detection</title>
+    <updated>2026-08-08T16:28:36Z</updated>
+    <link href="https://arxiv.org/abs/2608.08219v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.08219v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Video anomaly detection (VAD) is a critical yet challenging task due to the complex and diverse nature of real-world scenarios. Traditional deep learning approaches are fundamentally limited by poor generalization across diverse scenarios. While multimodal agents offer a promising tool-learning paradigm for VAD, current systems relying on supervised fine-tuning struggle with complex orchestration, and standard reinforcement learning often causes premature termination due to coarse-grained outcome rewards. To address these challenges, we propose VTO, a process-supervised reinforcement learning framework. Moving beyond static tool usage, VTO enables the agent to dynamically explore and interact with the environment. Specifically, we introduce a foundation model-driven cognitive evaluator to provide context-aware semantic feedback, which is seamlessly integrated into a Process-Supervised Cognitive Alignment that delivers fine-grained, step-wise supervision. By explicitly penalizing logical truncation and rewarding complete causal chains, the agent optimizes its multi-step reasoning policy for interrelated tool orchestration. To support our proposed framework, we meticulously crafted VAD-Tool, a hierarchical visual tool set comprising 12 specialized vision tools spanning from entity tracking to high-stakes hazard detection, and established the corresponding benchmark for rigorous multi-step reasoning evaluation. Extensive experiments on VAD-Tool demonstrate that VTO significantly outperforms baselines, achieving up to a 10.2\% absolute accuracy improvement in tool scheduling. Code and data are available at https://github.com/MICLAB-BUPT/VTO.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-08T16:28:36Z</published>
+    <arxiv:comment>Accepted by ACM MM 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Rui Wang</name>
+    </author>
+    <author>
+      <name>Yeteng Wu</name>
+    </author>
+    <author>
+      <name>Xianling Zhang</name>
+    </author>
+    <author>
+      <name>Mengshi Qi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.08983v1</id>
+    <title>SCATE: Learning to Supervise Coding Agents for Cost-Effective Test Generation</title>
+    <updated>2026-07-09T23:13:46Z</updated>
+    <link href="https://arxiv.org/abs/2607.08983v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.08983v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While autonomous coding agents have significantly advanced automated test generation, they remain fundamentally limited by lazy generation, a phenomenon where agents prematurely terminate tasks and systematically avoid complex programmatic logic, resulting in inadequate code coverage. Currently, mitigating this premature termination requires continuous human-in-the-loop supervision. This heavy reliance on human intuition creates a bottleneck that negates the efficiency gains of automated generation. We propose SCATE, a framework for adaptive, automated supervision of coding agents that replaces human intervention during test generation. By formulating supervision as a contextual bandit problem, SCATE learns to select the most promising testing actions based on the current coverage and class testability metrics, maximizing coverage gains while minimizing wasted generation effort. Our empirical evaluation demonstrates that SCATE integrates seamlessly with different coding agents. When applied to GEMINI-CLI, it achieves 32.3% higher line coverage and 30.9% higher branch coverage than the agent-only baseline. A comparison with CLAUDE CODE confirms the framework dynamically adapts its policy to optimize each agent's unique strengths. SCATE also consistently outperforms state-of-the-art non-agentic approaches across all metrics.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-09T23:13:46Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Sijia Gu</name>
+    </author>
+    <author>
+      <name>Noor Nashid</name>
+    </author>
+    <author>
+      <name>Ali Mesbah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.03792v1</id>
+    <title>From Region Arrival to Instance-Level Grounding in Vision-and-Language Navigation</title>
+    <updated>2026-07-04T09:44:57Z</updated>
+    <link href="https://arxiv.org/abs/2607.03792v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.03792v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Vision-and-Language Navigation (VLN) agents may satisfy conventional success criteria while still failing to establish reliable object-level grounding, because current evaluation protocols mainly reward stopping within a 3-meter radius and largely ignore the agent's final orientation and target visibility. We formalize this limitation as the Last-3-Meter Grounding Gap and introduce three instance-centric metrics to quantify proximity precision, target visibility, and final-view grounding. To mitigate this gap, we propose REALM (Region-to-Entity Alignment for Last-3-Meter Navigation), a plug-and-play, architecture-agnostic refinement module that decouples fine-grained target approaching from long-horizon navigation. REALM uses a visibility-aware stopping strategy to reduce premature termination and improve final viewpoint alignment. We further construct REVERIE-AIM, which provides object-instance-level goals and 180K short-horizon training samples for final-stage target approaching. Extensive evaluations across four diverse VLN backbones show that REALM consistently improves proximity precision and visual grounding success, demonstrating its broad applicability.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-04T09:44:57Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Xiangyu Shi</name>
+    </author>
+    <author>
+      <name>Ruoxi Yang</name>
+    </author>
+    <author>
+      <name>Wei Tao</name>
+    </author>
+    <author>
+      <name>Jiwen Zhang</name>
+    </author>
+    <author>
+      <name>Yanyuan Qiao</name>
+    </author>
+    <author>
+      <name>Qi Wu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.29718v2</id>
+    <title>Diagnosing and Mitigating Context Rot in Long-horizon Search</title>
+    <updated>2026-08-04T16:37:54Z</updated>
+    <link href="https://arxiv.org/abs/2606.29718v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.29718v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Extensive context has become the norm as Large Language Models (LLMs) are increasingly deployed in long-horizon search tasks. The concern that increasing context length degrades model capabilities, known as context rot, has become a widely recognized issue for these applications. However, in deep search scenarios, it remains unclear how models actually fail under extensive context, and to what extent existing methods can mitigate such failures. Through a systematic study of four flagship models across three benchmarks, we identify a previously overlooked phenomenon, which we term premature termination: under extensive context, models give up or provide uncertain incorrect answers long before exhausting the context window. By controlling for query difficulty, we show that the premature termination rate is positively correlated with context length. Based on the findings, we revisit methods to mitigate context rot, including context management and parallel sampling. For context management, we analyze seven methods across three categories and show that they are inherently test-time scaling strategies that reduce the premature termination rate to enable more exploration, and we further provide model-dependent principles for method selection. For parallel sampling, we develop a behavior-aware filtering strategy and observe a performance gain of 2.6% to 4.9% across three aggregation methods.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-29T02:53:28Z</published>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Shijie Xia</name>
+    </author>
+    <author>
+      <name>Yikun Wang</name>
+    </author>
+    <author>
+      <name>Zhen Huang</name>
+    </author>
+    <author>
+      <name>Pengfei Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.20487v2</id>
+    <title>OctoNest: Adaptive Cross-Device Execution through Stateful Control</title>
+    <updated>2026-09-30T09:53:30Z</updated>
+    <link href="https://arxiv.org/abs/2606.20487v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.20487v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Computer use agents are expanding from single-device operation toward cross-device systems that coordinate tasks across heterogeneous environments. Execution conditions are often only partially known at planning time and revealed through interaction. Failures may require intra-device modality switching or inter-device reassignment; failing to distinguish these cases can lead to repeated failures or premature termination. However, existing systems primarily scale up single-device agents without sufficiently distinguishing device-level and modality-specific execution conditions. We propose OctoNest, which coordinates stateful cross-device orchestration and iterative device-local modality control. Device Agents refine subtasks and select modalities, while an Orchestrator uses execution feedback to revise plans and device assignments. We also introduce CAPEBench, comprising 158 instances from 23 cross-device seed tasks with controlled perturbations. OctoNest leads all three quality metrics, improving Perfect Pass over the strongest baseline by 18.35 percentage points and reducing token cost per perfect pass by 39.8\%. Further analyses support the complementary roles of local refinement and global revision and demonstrate CAPEBench's ability to distinguish control limitations under changing execution conditions.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-18T17:04:17Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Shu Yao</name>
+    </author>
+    <author>
+      <name>Yuhua Luo</name>
+    </author>
+    <author>
+      <name>Qian Long</name>
+    </author>
+    <author>
+      <name>Jingru Fan</name>
+    </author>
+    <author>
+      <name>Yuheng Wang</name>
+    </author>
+    <author>
+      <name>Lin Wu</name>
+    </author>
+    <author>
+      <name>Zhuoyuan Yu</name>
+    </author>
+    <author>
+      <name>Yufan Dang</name>
+    </author>
+    <author>
+      <name>Huatao Li</name>
+    </author>
+    <author>
+      <name>Chen Qian</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.20724v2</id>
+    <title>When Web Agents Finish but Still Fail: Reproducible Triggers and Trace Diagnostics for Parallel Web Exploration</title>
+    <updated>2026-06-29T04:16:15Z</updated>
+    <link href="https://arxiv.org/abs/2606.20724v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.20724v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Long-horizon web agents often fail in ways hidden by final-answer evaluation: they may visit useful pages, produce a well-formed answer, and terminate confidently while still missing fields, over-including unsupported items, or relying on stale evidence. We study these failures with Parallel WebBench, a parallel web-exploration benchmark containing 1,679 verified records: 350 manually curated parallel tasks and 1,329 reconstructed records with verified URL-based trajectories. We train WebExplorer-style agents with GRPO under human-only, balanced human-synthetic, and synthetic-heavy data mixtures. At 16k context and 16 interaction rounds, the best GRPO model improves completion over WebExplorer-8B from 50.7% to 96.0% and GPT-4.1-mini-judged element-wise F1 from 0.2489 to 0.4529, but binary accuracy remains far below completion. Trace-level analysis identifies three persistent failure modes: context-bound search loops, premature termination on partial answers, and synthesis collapse after relevant evidence has already been retrieved. These results show that synthetic-data GRPO reduces abstention and improves partial correctness, but leaves a completion-correctness gap that requires evidence-grounded coverage and synthesis diagnostics.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-16T23:00:25Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Aagam Sogani</name>
+    </author>
+    <author>
+      <name>Botao Rui</name>
+    </author>
+    <author>
+      <name>Swetha Vaidyanathan</name>
+    </author>
+    <author>
+      <name>Rishi Agarwal</name>
+    </author>
+    <author>
+      <name>Minghao Yan</name>
+    </author>
+    <author>
+      <name>Shivaram Venkataraman</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.07682v1</id>
+    <title>SWE-Marathon: Can Agents Autonomously Complete Ultra-Long-Horizon Software Work?</title>
+    <updated>2026-06-05T00:39:44Z</updated>
+    <link href="https://arxiv.org/abs/2606.07682v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.07682v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI agents are increasingly expected to complete long-horizon workflows that require sustained progress over hours, millions of tokens, and complex environments. Yet current agent benchmarks largely evaluate short-form tasks, such as single pull requests, small tickets, or 5-10 minute exercises, limiting our ability to measure agents' capabilities in planning, long-context understanding, and memory use. We introduce SWE-Marathon, a benchmark of 20 long-horizon tasks spanning software engineering and adjacent technical domains. Each task consists of a unique executable environment, a human-written reference solution, and a multi-layer verification suite. Logged agent attempts average 27.2M total tokens, making SWE-Marathon substantially longer-horizon than existing SWE and command-line agent benchmarks. Current frontier coding agents solve fewer than 30% of tasks. Failures often arise from poor self-verification, self-reported infeasibility, and premature termination. We also observe reward-hacking behavior in 13.8% of rollouts, where agents attempt to exploit the environment or verifier to bypass the intended workflow. SWE-Marathon includes adversarial review of test suites and execution environments, as well as multi-layer checks designed to prevent shortcut solutions. We release SWE-Marathon, evaluation code, and agent trajectories at https://swe-marathon.org/.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-05T00:39:44Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Rishi Desai</name>
+    </author>
+    <author>
+      <name>Jesse Hu</name>
+    </author>
+    <author>
+      <name>Joan Cabezas</name>
+    </author>
+    <author>
+      <name>Neel Harsola</name>
+    </author>
+    <author>
+      <name>Pratyush Shukla</name>
+    </author>
+    <author>
+      <name>Roey Ben Chaim</name>
+    </author>
+    <author>
+      <name>Adnan El Assadi</name>
+    </author>
+    <author>
+      <name>Omkaar Mukund Kamath</name>
+    </author>
+    <author>
+      <name>Fenil Faldu</name>
+    </author>
+    <author>
+      <name>Prannay Hebbar</name>
+    </author>
+    <author>
+      <name>Jiankai Sun</name>
+    </author>
+    <author>
+      <name>Yiyuan Li</name>
+    </author>
+    <author>
+      <name>Pramod Srinivasan</name>
+    </author>
+    <author>
+      <name>Ishan Gupta</name>
+    </author>
+    <author>
+      <name>Christopher Settles</name>
+    </author>
+    <author>
+      <name>Daniel Wang</name>
+    </author>
+    <author>
+      <name>Derek Chen</name>
+    </author>
+    <author>
+      <name>Pranav Raja</name>
+    </author>
+    <author>
+      <name>Albert Liu</name>
+    </author>
+    <author>
+      <name>Marek Šuppa</name>
+    </author>
+    <author>
+      <name>Nevasini Sasikumar</name>
+    </author>
+    <author>
+      <name>Luyang Kong</name>
+    </author>
+    <author>
+      <name>Erik Quintanilla</name>
+    </author>
+    <author>
+      <name>Xiangyi Li</name>
+    </author>
+    <author>
+      <name>Ivan Bercovich</name>
+    </author>
+    <author>
+      <name>Steven Dillmann</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.11388v2</id>
+    <title>Deep Reasoning in General Purpose Agents via Structured Meta-Cognition</title>
+    <updated>2026-10-21T02:42:02Z</updated>
+    <link href="https://arxiv.org/abs/2605.11388v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.11388v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Humans intuitively solve complex problems by flexibly shifting among reasoning modes: they plan, execute, revise intermediate goals, resolve ambiguity through associative judgment, and apply formal procedures to well-specified subproblems. Current LLM agents lack this flexibility, as their scaffolds hard-code such reasoning decisions in advance. These scaffolds are effective when their prescribed structure matches the task, but brittle when solving the task requires adapting the structure of reasoning itself. We introduce Deep Reasoning -- an inference-time approach for constructing task-specific scaffolds through structured meta-reasoning. Deep Reasoning uses a formal language that represents meta-reasoning as executable decompositions over associative inference, formal computation, and recursive subproblem solving, enabling decomposition principles to be encoded as in-context examples that guide test-time scaffold construction. We instantiate this approach in a general-purpose agent (DOLORES) that distributes complex tasks across more controlled reasoning threads. We evaluate it against state-of-the-art scaffolding methods across four hard benchmarks: multi-hop reasoning, long-chain question answering, long-context aggregation, and deep research-style information seeking. DOLORES outperforms all evaluated scaffolds across three model sizes and two model families, improving over the strongest evaluated scaffold baseline by 24.8% on average. DOLORES distributes cognition across structured, lower-load reasoning threads, thereby reducing premature termination and hallucinations. This advantage can even bridge the scaling gap, with an 8B version surpassing all evaluated 32B baselines from the same family in more than half the settings. These results point toward future agentic systems that treat scaffolding as adaptive reasoning, constructing the structure each task requires just-in-time.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-12T01:21:37Z</published>
+    <arxiv:comment>Accepted to Neurips 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Dean Light</name>
+    </author>
+    <author>
+      <name>Michael Theologitis</name>
+    </author>
+    <author>
+      <name>Kshitish Ghate</name>
+    </author>
+    <author>
+      <name>Shuyue Stella Li</name>
+    </author>
+    <author>
+      <name>Benjamin Newman</name>
+    </author>
+    <author>
+      <name>Chirag Shah</name>
+    </author>
+    <author>
+      <name>Aylin Caliskan</name>
+    </author>
+    <author>
+      <name>Pang Wei Koh</name>
+    </author>
+    <author>
+      <name>Dan Suciu</name>
+    </author>
+    <author>
+      <name>Yulia Tsvetkov</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.11270v3</id>
+    <title>Evaluating LLM Agents on Automated Software Analysis Tasks</title>
+    <updated>2026-07-30T10:58:23Z</updated>
+    <link href="https://arxiv.org/abs/2604.11270v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.11270v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Numerous software analysis tools exist today, yet applying them to diverse open-source projects remains challenging due to environment setup, dependency resolution, and analysis tool configuration. LLM-based agents offer a potential solution, yet their effectiveness on the specific task of automated software analysis has not been systematically studied. Unlike issue solving or general environment setup, this task requires installing and configuring a separate analysis tool alongside the target project, generating tool-specific prerequisites, and validating that the analysis tool produces meaningful analysis outputs rather than merely declaring successful termination without evidence. We introduce AnalysisBench, a benchmark of 35 tool-project pairs spanning seven analysis tools and ten diverse C/C++ and Java projects, each with a manually constructed reference setup. Using AnalysisBench, we evaluate four agent architectures across four LLM backends. Our custom agent, AnalysisAgent, achieves manually verified success rates of 94% (Gemini-3-Flash, 33/35 tasks), compared to 77% for the best baseline (ExecutionAgent). Beyond quantitative results, we identify key limitations in existing agents, including stage mixing, poor error localization, and premature termination, and show that agentic architecture plays a critical role beyond LLM capability alone. We further find that whole-program analyses and Java-specific tools are the most difficult tasks, that Java toolchains pose greater challenges than C/C++, and that self-validated success consistently overstates manually verified success. Extended runs with AnalysisAgent-produced setups also surface two previously unknown defects in masscan and radare2, confirming that the produced setups support real downstream analysis.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-13T10:24:28Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Islem Bouzenia</name>
+    </author>
+    <author>
+      <name>Cristian Cadar</name>
+    </author>
+    <author>
+      <name>Michael Pradel</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.07853v1</id>
+    <title>SynPlanResearch-R1: Encouraging Tool Exploration for Deep Research with Synthetic Plans</title>
+    <updated>2026-03-09T00:05:29Z</updated>
+    <link href="https://arxiv.org/abs/2603.07853v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.07853v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Research Agents enable models to gather information from the web using tools to answer user queries, requiring them to dynamically interleave internal reasoning with tool use. While such capabilities can in principle be learned via reinforcement learning with verifiable rewards (RLVR), we observe that agents often exhibit poor exploration behaviors, including premature termination and biased tool usage. As a result, RLVR alone yields limited improvements. We propose SynPlanResearch-R1, a framework that synthesizes tool-use trajectories that encourage deeper exploration to shape exploration during cold-start supervised fine-tuning, providing a strong initialization for subsequent RL. Across seven multi-hop and open-web benchmarks, \framework improves performance by up to 6.0% on Qwen3-8B and 5.8% on Qwen3-4B backbones respectively compared to SOTA baselines. Further analyses of tool-use patterns and training dynamics compared to baselines shed light on the factors underlying these gains. Our code is publicly available at https://github.com/HansiZeng/syn-plan-research.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-09T00:05:29Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Hansi Zeng</name>
+    </author>
+    <author>
+      <name>Zoey Li</name>
+    </author>
+    <author>
+      <name>Yifan Gao</name>
+    </author>
+    <author>
+      <name>Chenwei Zhang</name>
+    </author>
+    <author>
+      <name>Xiaoman Pan</name>
+    </author>
+    <author>
+      <name>Tao Yang</name>
+    </author>
+    <author>
+      <name>Fengran Mo</name>
+    </author>
+    <author>
+      <name>Jiacheng Lin</name>
+    </author>
+    <author>
+      <name>Xian Li</name>
+    </author>
+    <author>
+      <name>Jingbo Shang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.05294v3</id>
+    <title>STRUCTUREDAGENT: Planning with AND/OR Trees for Long-Horizon Web Tasks</title>
+    <updated>2026-09-19T02:21:42Z</updated>
+    <link href="https://arxiv.org/abs/2603.05294v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.05294v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing LLM-based web agents struggle on complex, long-horizon tasks due to limited in-context memory, weak planning abilities, and greedy behaviors that lead to premature termination. To address these challenges, we propose \SA{}, a hierarchical planning framework that interleaves planning and execution via dynamic $\ANDOR$ trees. The framework separates structural planning from LLM-based reasoning, enabling principled error recovery through node repair, systematic exploration of alternatives via OR nodes, and modular plans that can facilitate human intervention. On WebArena (630 tasks), \SA{} achieves a $\sim$53\% success rate vs.\ $\sim$46\% for AgentOccam, and on complex multi-constraint Amazon shopping tasks, gains reach 10\% over the strongest baseline.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-05T15:37:06Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>ELita Lobo</name>
+    </author>
+    <author>
+      <name>Xu Chen</name>
+    </author>
+    <author>
+      <name>Jingjing Meng</name>
+    </author>
+    <author>
+      <name>Nan Xi</name>
+    </author>
+    <author>
+      <name>Yang Jiao</name>
+    </author>
+    <author>
+      <name>Chirag Agarwal</name>
+    </author>
+    <author>
+      <name>Yair Zick</name>
+    </author>
+    <author>
+      <name>Yan Gao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.22724v1</id>
+    <title>AgentSentry: Mitigating Indirect Prompt Injection in LLM Agents via Temporal Causal Diagnostics and Context Purification</title>
+    <updated>2026-02-26T07:59:10Z</updated>
+    <link href="https://arxiv.org/abs/2602.22724v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.22724v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents increasingly rely on external tools and retrieval systems to autonomously complete complex tasks. However, this design exposes agents to indirect prompt injection (IPI), where attacker-controlled context embedded in tool outputs or retrieved content silently steers agent actions away from user intent. Unlike prompt-based attacks, IPI unfolds over multi-turn trajectories, making malicious control difficult to disentangle from legitimate task execution. Existing inference-time defenses primarily rely on heuristic detection and conservative blocking of high-risk actions, which can prematurely terminate workflows or broadly suppress tool usage under ambiguous multi-turn scenarios. We propose AgentSentry, a novel inference-time detection and mitigation framework for tool-augmented LLM agents. To the best of our knowledge, AgentSentry is the first inference-time defense to model multi-turn IPI as a temporal causal takeover. It localizes takeover points via controlled counterfactual re-executions at tool-return boundaries and enables safe continuation through causally guided context purification that removes attack-induced deviations while preserving task-relevant evidence. We evaluate AgentSentry on the \textsc{AgentDojo} benchmark across four task suites, three IPI attack families, and multiple black-box LLMs. AgentSentry eliminates successful attacks and maintains strong utility under attack, achieving an average Utility Under Attack (UA) of 74.55 %, improving UA by 20.8 to 33.6 percentage points over the strongest baselines without degrading benign performance.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-26T07:59:10Z</published>
+    <arxiv:comment>23 pages, 8 figures. Under review</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Tian Zhang</name>
+    </author>
+    <author>
+      <name>Yiwei Xu</name>
+    </author>
+    <author>
+      <name>Juan Wang</name>
+    </author>
+    <author>
+      <name>Keyan Guo</name>
+    </author>
+    <author>
+      <name>Xiaoyang Xu</name>
+    </author>
+    <author>
+      <name>Bowen Xiao</name>
+    </author>
+    <author>
+      <name>Quanlong Guan</name>
+    </author>
+    <author>
+      <name>Jinlin Fan</name>
+    </author>
+    <author>
+      <name>Jiawei Liu</name>
+    </author>
+    <author>
+      <name>Zhiquan Liu</name>
+    </author>
+    <author>
+      <name>Hongxin Hu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.20708v1</id>
+    <title>ICON: Indirect Prompt Injection Defense for Agents based on Inference-Time Correction</title>
+    <updated>2026-02-24T09:13:05Z</updated>
+    <link href="https://arxiv.org/abs/2602.20708v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.20708v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Model (LLM) agents are susceptible to Indirect Prompt Injection (IPI) attacks, where malicious instructions in retrieved content hijack the agent's execution. Existing defenses typically rely on strict filtering or refusal mechanisms, which suffer from a critical limitation: over-refusal, prematurely terminating valid agentic workflows. We propose ICON, a probing-to-mitigation framework that neutralizes attacks while preserving task continuity. Our key insight is that IPI attacks leave distinct over-focusing signatures in the latent space. We introduce a Latent Space Trace Prober to detect attacks based on high intensity scores. Subsequently, a Mitigating Rectifier performs surgical attention steering that selectively manipulate adversarial query key dependencies while amplifying task relevant elements to restore the LLM's functional trajectory. Extensive evaluations on multiple backbones show that ICON achieves a competitive 0.4% ASR, matching commercial grade detectors, while yielding a over 50% task utility gain. Furthermore, ICON demonstrates robust Out of Distribution(OOD) generalization and extends effectively to multi-modal agents, establishing a superior balance between security and efficiency.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-24T09:13:05Z</published>
+    <arxiv:comment>11 pages,</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Che Wang</name>
+    </author>
+    <author>
+      <name>Fuyao Zhang</name>
+    </author>
+    <author>
+      <name>Jiaming Zhang</name>
+    </author>
+    <author>
+      <name>Ziqi Zhang</name>
+    </author>
+    <author>
+      <name>Yinghui Wang</name>
+    </author>
+    <author>
+      <name>Longtao Huang</name>
+    </author>
+    <author>
+      <name>Jianbo Gao</name>
+    </author>
+    <author>
+      <name>Zhong Chen</name>
+    </author>
+    <author>
+      <name>Wei Yang Bryan Lim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.09574v2</id>
+    <title>Aligning Tree-Search Policies with Fixed Token Budgets in Test-Time Scaling of LLMs</title>
+    <updated>2026-06-04T09:49:18Z</updated>
+    <link href="https://arxiv.org/abs/2602.09574v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.09574v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tree-search decoding is an effective form of test-time scaling for large language models (LLMs), but real-world deployment often imposes a fixed per-query token budget that varies across settings. Existing tree-search policies are largely budget-agnostic, treating the budget merely as a termination condition, thereby risking late-stage over-branching or premature termination. We propose Budget-Guided MCTS (BG-MCTS), a tree-search decoding algorithm that aligns its search policy with the remaining token budget: it starts with broad exploration, then prioritizes refinement and answer completion as the remaining budget decreases while reducing late-stage branching from shallow nodes. BG-MCTS consistently outperforms budget-agnostic tree-search baselines across inference budgets on mathematical reasoning benchmarks and an additional physics reasoning benchmark with open-weight LLMs.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-10T09:23:26Z</published>
+    <arxiv:comment>Accepted at ICML 2026. Code: https://github.com/Sora-Miyamoto/bg-mcts</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Sora Miyamoto</name>
+    </author>
+    <author>
+      <name>Daisuke Oba</name>
+    </author>
+    <author>
+      <name>Naoaki Okazaki</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.03304v1</id>
+    <title>To Search or Not to Search: Aligning the Decision Boundary of Deep Search Agents via Causal Intervention</title>
+    <updated>2026-02-03T09:29:06Z</updated>
+    <link href="https://arxiv.org/abs/2602.03304v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.03304v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deep search agents, which autonomously iterate through multi-turn web-based reasoning, represent a promising paradigm for complex information-seeking tasks. However, current agents suffer from critical inefficiency: they conduct excessive searches as they cannot accurately judge when to stop searching and start answering. This stems from outcome-centric training that prioritize final results over the search process itself. We identify the root cause as misaligned decision boundaries, the threshold determining when accumulated information suffices to answer. This causes over-search (redundant searching despite sufficient knowledge) and under-search (premature termination yielding incorrect answers). To address these errors, we propose a comprehensive framework comprising two key components. First, we introduce causal intervention-based diagnosis that identifies boundary errors by comparing factual and counterfactual trajectories at each decision point. Second, we develop Decision Boundary Alignment for Deep Search agents (DAS), which constructs preference datasets from causal feedback and aligns policies via preference optimization. Experiments on public datasets demonstrate that decision boundary errors are pervasive across state-of-the-art agents. Our DAS method effectively calibrates these boundaries, mitigating both over-search and under-search to achieve substantial gains in accuracy and efficiency. Our code and data are publicly available at: https://github.com/Applied-Machine-Learning-Lab/WWW2026_DAS.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-03T09:29:06Z</published>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Wenlin Zhang</name>
+    </author>
+    <author>
+      <name>Kuicai Dong</name>
+    </author>
+    <author>
+      <name>Junyi Li</name>
+    </author>
+    <author>
+      <name>Yingyi Zhang</name>
+    </author>
+    <author>
+      <name>Xiaopeng Li</name>
+    </author>
+    <author>
+      <name>Pengyue Jia</name>
+    </author>
+    <author>
+      <name>Yi Wen</name>
+    </author>
+    <author>
+      <name>Derong Xu</name>
+    </author>
+    <author>
+      <name>Maolin Wang</name>
+    </author>
+    <author>
+      <name>Yichao Wang</name>
+    </author>
+    <author>
+      <name>Yong Liu</name>
+    </author>
+    <author>
+      <name>Xiangyu Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.12730v2</id>
+    <title>NL2Repo-Bench: Towards Long-Horizon Repository Generation Evaluation of Coding Agents</title>
+    <updated>2026-01-08T02:42:06Z</updated>
+    <link href="https://arxiv.org/abs/2512.12730v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.12730v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances in coding agents suggest rapid progress toward autonomous software development, yet existing benchmarks fail to rigorously evaluate the long-horizon capabilities required to build complete software systems. Most prior evaluations focus on localized code generation, scaffolded completion, or short-term repair tasks, leaving open the question of whether agents can sustain coherent reasoning, planning, and execution over the extended horizons demanded by real-world repository construction. To address this gap, we present NL2Repo Bench, a benchmark explicitly designed to evaluate the long-horizon repository generation ability of coding agents. Given only a single natural-language requirements document and an empty workspace, agents must autonomously design the architecture, manage dependencies, implement multi-module logic, and produce a fully installable Python library. Our experiments across state-of-the-art open- and closed-source models reveal that long-horizon repository generation remains largely unsolved: even the strongest agents achieve below 40% average test pass rates and rarely complete an entire repository correctly. Detailed analysis uncovers fundamental long-horizon failure modes, including premature termination, loss of global coherence, fragile cross-file dependencies, and inadequate planning over hundreds of interaction steps. NL2Repo Bench establishes a rigorous, verifiable testbed for measuring sustained agentic competence and highlights long-horizon reasoning as a central bottleneck for the next generation of autonomous coding agents.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-14T15:12:13Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Jingzhe Ding</name>
+    </author>
+    <author>
+      <name>Shengda Long</name>
+    </author>
+    <author>
+      <name>Changxin Pu</name>
+    </author>
+    <author>
+      <name>Huan Zhou</name>
+    </author>
+    <author>
+      <name>Hongwan Gao</name>
+    </author>
+    <author>
+      <name>Xiang Gao</name>
+    </author>
+    <author>
+      <name>Chao He</name>
+    </author>
+    <author>
+      <name>Yue Hou</name>
+    </author>
+    <author>
+      <name>Fei Hu</name>
+    </author>
+    <author>
+      <name>Zhaojian Li</name>
+    </author>
+    <author>
+      <name>Weiran Shi</name>
+    </author>
+    <author>
+      <name>Zaiyuan Wang</name>
+    </author>
+    <author>
+      <name>Daoguang Zan</name>
+    </author>
+    <author>
+      <name>Chenchen Zhang</name>
+    </author>
+    <author>
+      <name>Xiaoxu Zhang</name>
+    </author>
+    <author>
+      <name>Qizhi Chen</name>
+    </author>
+    <author>
+      <name>Xianfu Cheng</name>
+    </author>
+    <author>
+      <name>Bo Deng</name>
+    </author>
+    <author>
+      <name>Qingshui Gu</name>
+    </author>
+    <author>
+      <name>Kai Hua</name>
+    </author>
+    <author>
+      <name>Juntao Lin</name>
+    </author>
+    <author>
+      <name>Pai Liu</name>
+    </author>
+    <author>
+      <name>Mingchen Li</name>
+    </author>
+    <author>
+      <name>Xuanguang Pan</name>
+    </author>
+    <author>
+      <name>Zifan Peng</name>
+    </author>
+    <author>
+      <name>Yujia Qin</name>
+    </author>
+    <author>
+      <name>Yong Shan</name>
+    </author>
+    <author>
+      <name>Zhewen Tan</name>
+    </author>
+    <author>
+      <name>Weihao Xie</name>
+    </author>
+    <author>
+      <name>Zihan Wang</name>
+    </author>
+    <author>
+      <name>Yishuo Yuan</name>
+    </author>
+    <author>
+      <name>Jiayu Zhang</name>
+    </author>
+    <author>
+      <name>Enduo Zhao</name>
+    </author>
+    <author>
+      <name>Yunfei Zhao</name>
+    </author>
+    <author>
+      <name>He Zhu</name>
+    </author>
+    <author>
+      <name>Liya Zhu</name>
+    </author>
+    <author>
+      <name>Chenyang Zou</name>
+    </author>
+    <author>
+      <name>Ming Ding</name>
+    </author>
+    <author>
+      <name>Jianpeng Jiao</name>
+    </author>
+    <author>
+      <name>Jiaheng Liu</name>
+    </author>
+    <author>
+      <name>Minghao Liu</name>
+    </author>
+    <author>
+      <name>Qian Liu</name>
+    </author>
+    <author>
+      <name>Chongyang Tao</name>
+    </author>
+    <author>
+      <name>Jian Yang</name>
+    </author>
+    <author>
+      <name>Tong Yang</name>
+    </author>
+    <author>
+      <name>Zhaoxiang Zhang</name>
+    </author>
+    <author>
+      <name>Xinjie Chen</name>
+    </author>
+    <author>
+      <name>Wenhao Huang</name>
+    </author>
+    <author>
+      <name>Ge Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.16773v1</id>
+    <title>When LLMs Copy to Think: Uncovering Copy-Guided Attacks in Reasoning LLMs</title>
+    <updated>2025-07-22T17:21:36Z</updated>
+    <link href="https://arxiv.org/abs/2507.16773v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.16773v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) have become integral to automated code analysis, enabling tasks such as vulnerability detection and code comprehension. However, their integration introduces novel attack surfaces. In this paper, we identify and investigate a new class of prompt-based attacks, termed Copy-Guided Attacks (CGA), which exploit the inherent copying tendencies of reasoning-capable LLMs. By injecting carefully crafted triggers into external code snippets, adversaries can induce the model to replicate malicious content during inference. This behavior enables two classes of vulnerabilities: inference length manipulation, where the model generates abnormally short or excessively long reasoning traces; and inference result manipulation, where the model produces misleading or incorrect conclusions. We formalize CGA as an optimization problem and propose a gradient-based approach to synthesize effective triggers. Empirical evaluation on state-of-the-art reasoning LLMs shows that CGA reliably induces infinite loops, premature termination, false refusals, and semantic distortions in code analysis tasks. While highly effective in targeted settings, we observe challenges in generalizing CGA across diverse prompts due to computational constraints, posing an open question for future research. Our findings expose a critical yet underexplored vulnerability in LLM-powered development pipelines and call for urgent advances in prompt-level defense mechanisms.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-07-22T17:21:36Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Yue Li</name>
+    </author>
+    <author>
+      <name>Xiao Li</name>
+    </author>
+    <author>
+      <name>Hao Wu</name>
+    </author>
+    <author>
+      <name>Yue Zhang</name>
+    </author>
+    <author>
+      <name>Fengyuan Xu</name>
+    </author>
+    <author>
+      <name>Xiuzhen Cheng</name>
+    </author>
+    <author>
+      <name>Sheng Zhong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2504.15917v2</id>
+    <title>Towards Test Generation from Task Description for Mobile Testing with Multi-modal Reasoning</title>
+    <updated>2025-09-11T15:22:50Z</updated>
+    <link href="https://arxiv.org/abs/2504.15917v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.15917v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In Android GUI testing, generating an action sequence for a task that can be replayed as a test script is common. Generating sequences of actions and respective test scripts from task goals described in natural language can eliminate the need for manually writing test scripts. However, existing approaches based on large language models (LLM) often struggle with identifying the final action, and either end prematurely or continue past the final screen. In this paper, we introduce VisiDroid, a multi-modal, LLM-based, multi-agent framework that iteratively determines the next action and leverages visual images of screens to detect the task's completeness. The multi-modal approach enhances our model in two significant ways. First, this approach enables it to avoid prematurely terminating a task when textual content alone provides misleading indications of task completion. Additionally, visual input helps the tool avoid errors when changes in the GUI do not directly affect functionality toward task completion, such as adjustments to font sizes or colors. Second, the multi-modal approach also ensures the tool not progress beyond the final screen, which might lack explicit textual indicators of task completion but could display a visual element indicating task completion, which is common in GUI apps. Our evaluation shows that VisiDroid achieves an accuracy of 87.3%, outperforming the best baseline relatively by 23.5%. We also demonstrate that our multi-modal framework with images and texts enables the LLM to better determine when a task is completed.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-22T14:02:57Z</published>
+    <arxiv:comment>Change the method and experimentation</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Hieu Huynh</name>
+    </author>
+    <author>
+      <name>Hai Phung</name>
+    </author>
+    <author>
+      <name>Hao Pham</name>
+    </author>
+    <author>
+      <name>Tien N. Nguyen</name>
+    </author>
+    <author>
+      <name>Vu Nguyen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2405.05955v4</id>
+    <title>Smurfs: Multi-Agent System using Context-Efficient DFSDT for Tool Planning</title>
+    <updated>2025-06-14T01:36:54Z</updated>
+    <link href="https://arxiv.org/abs/2405.05955v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2405.05955v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Teaching large language models (LLMs) to use tools for solving complex problems can grant them human-like reasoning abilities. ReAct and its variants are popular frameworks for tool use in both single-agent and multi-agent systems. To address issues like error propagation and limited exploration in ReAct, the Deep First Search Decision Tree (DFSDT) was proposed, but it faces challenges such as rollback instability, redundant context, and premature termination in single-agent settings. We introduce "Smurfs," a novel multi-agent system (MAS) that enhances DFSDT with a modular, context-efficient, and training-free design. Smurfs surpasses baseline methods in both the open-ended StableToolBench and the closed-ended HotpotQA tasks, reducing token usage by 60.9\% compared to DFSDT and enabling Mistral-7b to perform on par with GPT-4-DFSDT. Extensive ablation studies confirm the effectiveness of Smurfs' core components, offering valuable insights for the construction and interpretation of MAS, and paving the way for future exploration.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-05-09T17:49:04Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <arxiv:journal_ref>Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)</arxiv:journal_ref>
+    <author>
+      <name>Junzhi Chen</name>
+    </author>
+    <author>
+      <name>Juhao Liang</name>
+    </author>
+    <author>
+      <name>Benyou Wang</name>
+    </author>
+    <arxiv:doi>10.18653/v1/2025.naacl-long.169</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.18653/v1/2025.naacl-long.169" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2208.12531v2</id>
+    <title>Real-Time Distributed Model Predictive Control with Limited Communication Data Rates</title>
+    <updated>2023-08-05T13:50:28Z</updated>
+    <link href="https://arxiv.org/abs/2208.12531v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2208.12531v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The application of distributed model predictive controllers (DMPC) for multi-agent systems (MASs) necessitates communication between agents, yet the consequence of communication data rates is typically overlooked. This work focuses on developing stability-guaranteed control methods for MASs with limited data rates. Initially, a distributed optimization algorithm with dynamic quantization is considered for solving the DMPC problem. Due to the limited data rate, the optimization process suffers from inexact iterations caused by quantization noise and premature termination, leading to sub-optimal solutions. In response, we propose a novel real-time DMPC framework with a quantization refinement scheme that updates the quantization parameters on-line so that both the quantization noise and the optimization sub-optimality decrease asymptotically. To facilitate the stability analysis, we treat the sub-optimally controlled MAS, the quantization refinement scheme, and the optimization process as three interconnected subsystems. The cyclic-small-gain theorem is used to derive sufficient conditions on the quantization parameters for guaranteeing the stability of the system under a limited data rate. Finally, the proposed algorithm and theoretical findings are demonstrated in a multi-AUV formation control example.</summary>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-08-26T09:43:01Z</published>
+    <arxiv:primary_category term="eess.SY"/>
+    <author>
+      <name>Yujia Yang</name>
+    </author>
+    <author>
+      <name>Ye Wang</name>
+    </author>
+    <author>
+      <name>Chris Manzie</name>
+    </author>
+    <author>
+      <name>Ye Pu</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,8 @@
+# Review is double-blind: author names are added at camera-ready.
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the paper."
+title: "A Full Page Is Not the Last Page: Which Completeness Signals Do LLM Agents Act On?"
+type: dataset
+license: MIT
+authors:
+  - name: "Anonymous authors"

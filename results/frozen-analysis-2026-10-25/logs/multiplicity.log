@@ -1,0 +1,3 @@
+claude-sonnet-5-5: 17 of 27 contrasts significant within their part; 15 under Holm across all, 17 under Benjamini-Hochberg; lost under Holm across all: next_cursor: fetch when more rows exist - fetch on a real last page, none - next_cursor, fetch past a full last page
+gpt-oss-120b: 24 of 27 contrasts significant within their part; 23 under Holm across all, 24 under Benjamini-Hochberg; lost under Holm across all: silent incomplete answers: without the field - with it, warranted cells; rule-based flag (not yet validated)
+mistral-medium-3-5: 23 of 27 contrasts significant within their part; 22 under Holm across all, 23 under Benjamini-Hochberg; lost under Holm across all: nl_note_json - total_count, fetch when page 1 suffices

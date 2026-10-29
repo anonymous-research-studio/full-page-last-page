@@ -1,0 +1,14 @@
+# Live check of the forced final answer at the tool-call cap, before the pilot. Not study data: its
+# own seed and run name keep it apart from the pilot and main study. With a cap of 1 call, an agent
+# that follows has_more to page 2 hits the cap, gets the limit notice, and must answer with tool use
+# disabled (tool_choice none). Pass: every episode that hits the cap ends with a non-empty final reply.
+name: capcheck
+models: [gpt-oss-120b, claude-sonnet-5-5, nemotron-3-super]
+signal_forms: [has_more]
+extents: [more_full]
+task_need: [needs_all]
+task_types: [filtered_count]
+items_per_cell: 3
+page_limit: 20
+max_tool_calls: 1
+seed: 9               # its own seed: no item shared with the checks (0) or the study (1, 2, 3)

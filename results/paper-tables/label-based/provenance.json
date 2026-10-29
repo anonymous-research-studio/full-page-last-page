@@ -1,0 +1,15 @@
+{
+ "harness_version": "0.1.0",
+ "git_sha": "1b7f7762a891552ac4f963a954876b80f1d9cbf9",
+ "git_dirty": false,
+ "python": "3.12.13",
+ "openai_sdk": "3.35.1",
+ "anthropic_sdk": "1.15.0",
+ "created_at": "2026-10-25T20:35:35.488297+00:00",
+ "inputs": {
+  "results/h5-on-hand-labels/tables/main_hypotheses.csv": "045daacb4e9b413db5960047502a40f199de3ab1c0d48e4cd7b5634c47557041",
+  "results/h5-on-hand-labels/tables/main_hypotheses_retest.csv": "adb4c767996e0e91c31975eff450014b8cd734488cd6851422e5494353247cc3",
+  "data/processed/main.csv.gz (gunzip first)": "b8f9bade97ac51f15e47567953d8a83b5362a5006748740002ca0d25cd8deb0a"
+ },
+ "note": "input paths rewritten relative to the artifact root for anonymity; SHA-256 values unchanged"
+}

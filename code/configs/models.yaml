@@ -1,0 +1,113 @@
+# One entry per model. Run configs refer to models by `name`.
+# Target: at least 3 families spanning mid-tier to strong. The protocol checks showed both a ceiling and a
+# floor in no-signal fetching anyway; the amended tests (prereg/AMENDMENT-1.md) mark such cases not estimable.
+# Record the snapshot date each model was first run; the paper reports model IDs and dates.
+#
+# Providers:
+#   anthropic          models served through the Anthropic SDK (ANTHROPIC_API_KEY). Some reject
+#                      non-default temperature; leave `temperature` unset for those, fix `effort`
+#                      explicitly, and let the run config's `replicates` repeat each item.
+#   openai_compatible  any Chat Completions-compatible endpoint: OpenRouter, a hosted provider,
+#                      or vLLM. `extra_body` carries provider-specific fields.
+#   scripted           no API calls; deterministic policies for testing the harness.
+#
+# `replicates` caps the run config's replicates for one model (1 for models run at temperature 0).
+# `max_rpm` spaces requests to stay under a provider's requests-per-minute limit.
+# `price_in` / `price_out`: USD per million tokens (checked 2026-10-19), used by `fplp cost`.
+# `snapshot`: the served model version, copied from the episode logs' `served_model` after the first
+# live episodes of the pilot (amendment 1); `fplp score` warns if a model's served version changes.
+models:
+  - {name: scripted-follow, provider: scripted, policy: follow_all, family: test}
+  - {name: scripted-never, provider: scripted, policy: never_follow, family: test}
+  - {name: scripted-if-full, provider: scripted, policy: follow_if_full, family: test}
+  - {name: scripted-signal, provider: scripted, policy: follow_signal, family: test}
+  - {name: scripted-hybrid, provider: scripted, policy: signal_else_full, family: test}
+
+  # Mid-tier, open-weight. Shown to read a full first page as the last (cuga-agent #750).
+  # Pinned to one full-precision host on OpenRouter so every episode is served the same way.
+  # Host choice (tested 2026-10-19, 5 multi-page episodes each): deepinfra/bf16 and groq dropped
+  # the model's tool call into its reasoning in 5/5 and 4/5 episodes (empty reply mid-pagination);
+  # crusoe/bf16, akashml/bf16 and cerebras/fp16 completed 5/5.
+  - name: gpt-oss-120b
+    provider: openai_compatible
+    family: openai-oss
+    model_id: openai/gpt-oss-120b
+    base_url: https://openrouter.ai/api/v1
+    api_key_env: OPENROUTER_API_KEY
+    temperature: 0
+    seed: 0
+    replicates: 1
+    max_rpm: 90        # the Crusoe host returned 429s at 8 parallel workers
+    snapshot: openai/gpt-oss-120b   # served model, recorded from the capcheck run (20 Oct 2026)
+    price_in: 0.05     # Crusoe endpoint on OpenRouter
+    price_out: 0.25
+    extra_body:
+      provider: {order: [crusoe/bf16], allow_fallbacks: false, require_parameters: true}
+      reasoning: {effort: medium}   # the model's default, fixed explicitly (decided 19 Oct 2026)
+
+  # Mid-tier. Also shown to fail in cuga-agent #750. First-party host only.
+  - name: mistral-medium-3-5
+    provider: openai_compatible
+    family: mistral
+    model_id: mistralai/mistral-medium-3-5
+    base_url: https://openrouter.ai/api/v1
+    api_key_env: OPENROUTER_API_KEY
+    temperature: 0
+    seed: 0
+    replicates: 1
+    max_rpm: 18        # OpenRouter caps new accounts at 20 requests/minute on this model
+    price_in: 1.50
+    price_out: 7.50
+    snapshot: mistralai/mistral-medium-3-5   # served model, recorded from the cap check (20 Oct 2026)
+    extra_body:
+      provider: {order: [mistral], allow_fallbacks: false, require_parameters: true}
+
+  # Strong. Called directly rather than through a router. Rejects non-default temperature.
+  - name: claude-sonnet-5-5
+    provider: anthropic
+    family: anthropic
+    model_id: claude-sonnet-5-5
+    effort: high        # the model's default, fixed explicitly (decided 19 Oct 2026)
+    price_in: 2.00
+    price_out: 10.00
+    # Prompt caching (20 Oct 2026, before the pilot): each turn rereads the conversation so far from
+    # Anthropic's cache instead of paying full input price for it again. The prompt is unchanged, so
+    # it is not a behavior setting. Cache prices: Anthropic's 1.25x (5-minute write) and 0.1x (read)
+    # of price_in; confirm on Anthropic's pricing page.
+    prompt_cache: true
+    price_cache_write: 2.50
+    price_cache_read: 0.20
+    snapshot: claude-sonnet-5-5   # served model, recorded from the cap check (20 Oct 2026)
+
+  # Optional frontier check, on a subset if the budget is tight. Rejects non-default temperature.
+  - name: claude-opus-5-5
+    provider: anthropic
+    family: anthropic
+    model_id: claude-opus-5-5
+    effort: medium      # fixed explicitly; not part of the confirmatory set
+    price_in: 4.00
+    price_out: 20.00
+
+  # Exploratory, not confirmatory (added 20 Oct 2026, before the pilot): a second open-weight family.
+  # NVIDIA Nemotron 3 Super, a 120B hybrid MoE with 12B active parameters. Runs the main design in
+  # configs/runs/exploratory.yaml and is reported separately; it counts toward no verdict. Pinned to
+  # DeepInfra's bf16 endpoint, the only full-precision host for it on OpenRouter (dekallm/fp8 does not
+  # accept tool_choice; crusoe/fp8 costs about five times more). Checked live with nemotron-check.yaml
+  # and capcheck.yaml before use.
+  - name: nemotron-3-super
+    provider: openai_compatible
+    family: nvidia
+    model_id: nvidia/nemotron-3-super-120b-a12b
+    base_url: https://openrouter.ai/api/v1
+    api_key_env: OPENROUTER_API_KEY
+    temperature: 0
+    seed: 0
+    replicates: 1
+    max_rpm: 40        # the check hit DeepInfra's shared-capacity 429s in 2 of 30 episodes at 60
+    snapshot: nvidia/nemotron-3-super-120b-a12b   # served model, recorded from the checks (20 Oct 2026)
+    max_retries: 10    # more SDK retries with backoff for those transient overloads
+    price_in: 0.085    # DeepInfra endpoint on OpenRouter (checked 2026-10-20)
+    price_out: 0.40
+    extra_body:
+      provider: {order: [deepinfra/bf16], allow_fallbacks: false, require_parameters: true}
+      reasoning: {enabled: true}   # fixed explicitly: the other models reason too

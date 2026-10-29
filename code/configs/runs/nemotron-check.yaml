@@ -1,0 +1,14 @@
+# Live check of an exploratory model before it runs (here nemotron-3-super): two items per cell across
+# the main forms, both full-page extents and both task needs (30 episodes). Looks for dropped tool
+# calls, empty replies, refusals, parse failures and token counts, not effects. Its own seed keeps it
+# apart from the checks (0, 9) and the study (1, 2, 3). Not study data.
+name: nemotron-check
+models: [nemotron-3-super]
+signal_forms: [none, has_more, next_cursor, nl_note_json, cursor_plus_note]
+extents: [more_full, last_full]
+task_need: [needs_all, page1_sufficient]
+items_per_cell: 2
+page_limit: 20
+max_tool_calls: 12
+default_placement: bottom
+seed: 10

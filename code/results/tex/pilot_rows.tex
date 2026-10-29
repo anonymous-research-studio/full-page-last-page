@@ -1,0 +1,12 @@
+\multicolumn{3}{p{0.9\linewidth}}{\emph{gpt-oss-120b: no signal when needed 24\%; empty replies 0\%}} \\
+RQ1: \code{has\_more} $-$ no signal & +62 [+46, +73] & yes \\
+RQ1: \code{next\_cursor} $-$ no signal & +44 [+27, +57] & yes \\
+RQ1: NL note (JSON) $-$ no signal & +48 [+32, +60] & yes \\
+RQ2: No signal $-$ \code{has\_more} & +16 [+4, +27] & yes \\
+RQ2: No signal $-$ \code{next\_cursor} & +16 [+4, +27] & yes \\
+RQ2: No signal $-$ NL note (JSON) & +14 [+1, +26] & no \\
+\midrule
+\multicolumn{3}{p{0.9\linewidth}}{\emph{Claude Sonnet 5.5: no signal when needed 100\% (RQ1 not counted); empty replies 0\%}} \\
+RQ2: No signal $-$ \code{has\_more} & +84 [+68, +92] & yes \\
+RQ2: No signal $-$ \code{next\_cursor} & +7 [-2, +15] & no \\
+RQ2: No signal $-$ NL note (JSON) & +79 [+62, +89] & yes \\

@@ -1,0 +1,1140 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/mCoMK0566rgvPRH88z0u9Szc1bA</id>
+  <title>arXiv Query: search_query=(abs:"tool overuse" OR abs:"unnecessary tool calls" OR abs:"redundant tool calls" OR abs:"over-fetching" OR abs:"excessive tool")&amp;id_list=&amp;start=0&amp;max_results=200</title>
+  <updated>2026-10-24T21:05:40Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22tool+overuse%22+OR+(abs:%22unnecessary+tool+calls%22+OR+(abs:%22redundant+tool+calls%22+OR+(abs:%22over-fetching%22+OR+abs:%22excessive+tool%22)))&amp;start=0&amp;max_results=200&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>200</opensearch:itemsPerPage>
+  <opensearch:totalResults>36</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.32660v1</id>
+    <title>InterTab: Interleaved Visual-Structure Alignment for Multi-Modal Table Reasoning</title>
+    <updated>2026-09-26T14:18:58Z</updated>
+    <link href="https://arxiv.org/abs/2609.32660v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.32660v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Table images preserve structural information that are often lost in text serialization, and reasoning over them requires locating relevant rows, columns, and cells step by step. Current multimodal large language models (MLLMs) encode the whole image once before reasoning, so they cannot pick up row-, column-, and cell-level evidence as the question unfolds. Encoder-side table structure and generic interleaved visual chain-of-thought still do not bind each reasoning step to that structure. We propose \textbf{InterTab}, an \textbf{Inter}leaved structure-aware framework for CoT reasoning over \textbf{Tab}le images, interleaves chain-of-thought with tool calls that crop structure-aligned table regions. First, we build InterTab-22K, includes reasoning trajectories in which each step is tied to both a structural location and a bounding box. InterTab is trained in two stages: supervised structure-aware alignment (SSA) on InterTab-22K teaches the model to interleave reasoning with structure-aligned crops, and active localization optimization (ALO) further optimizes answer correctness, localization IoU, and output format, while penalizing missing or excessive tool calls. Experiments on nine table benchmarks show that InterTab improves the average accuracy of its backbone from 68.28% to 73.17% and achieves the best average performance among all compared methods. Code and data will be released soon.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-26T14:18:58Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Hanqian Li</name>
+    </author>
+    <author>
+      <name>Sirui Huang</name>
+    </author>
+    <author>
+      <name>Chen Ling</name>
+    </author>
+    <author>
+      <name>Jungang Li</name>
+    </author>
+    <author>
+      <name>Yu Huang</name>
+    </author>
+    <author>
+      <name>Kening Zheng</name>
+    </author>
+    <author>
+      <name>Yonghua Hei</name>
+    </author>
+    <author>
+      <name>Xiangrong He</name>
+    </author>
+    <author>
+      <name>Shiyi Wang</name>
+    </author>
+    <author>
+      <name>Pengcheng Zhu</name>
+    </author>
+    <author>
+      <name>Dongnan Liu</name>
+    </author>
+    <author>
+      <name>Wei Zhou</name>
+    </author>
+    <author>
+      <name>Linjian Mo</name>
+    </author>
+    <author>
+      <name>Nai Ding</name>
+    </author>
+    <author>
+      <name>Xuming Hu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.17985v1</id>
+    <title>RideWay: Benchmarking Efficient Task Completion for Tool-Using Language Agents</title>
+    <updated>2026-09-16T01:15:21Z</updated>
+    <link href="https://arxiv.org/abs/2609.17985v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.17985v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI agents are usually evaluated by whether they complete a task. In interactive service settings, a successful agent can still frustrate users by asking repeated questions, performing redundant searches, or making avoidable revisions. We introduce RideWay, an efficiency-centered benchmark for ridehailing agents in a stateful tool-calling environment, together with Efficiency Utility, a success-gated metric that discounts successful trajectories for excess tool calls and user-facing turns relative to task-specific reference effort. Human paired preferences calibrate the relative penalties, reflecting an aggregate service-workflow trade-off: extra dialogue often creates visible friction, whereas extra tool use can sometimes verify constraints or preserve user intent. Across 58 tasks and 24 models, the fitted penalty for excess turns is about twice that for excess tool calls. On task-disjoint held-out preferences, Efficiency Utility achieves 78.7% accuracy overall: 90.6% when trajectories differ in turns, but chance-level accuracy when they differ solely in tool calls - the axis on which human annotators agree least. RideWay therefore makes interaction efficiency measurable alongside task success, while exposing the boundary of count-based tool-use evaluation.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-16T01:15:21Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Qingnuan Han</name>
+    </author>
+    <author>
+      <name>Boli Fang</name>
+    </author>
+    <author>
+      <name>Mingzhi Hou</name>
+    </author>
+    <author>
+      <name>Claire Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.08025v1</id>
+    <title>Eliciting Self-Verification in Multimodal Reasoning Agents with Reinforcement Learning</title>
+    <updated>2026-09-07T22:15:47Z</updated>
+    <link href="https://arxiv.org/abs/2609.08025v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.08025v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reasoning agents increasingly rely on external tools such as web search to answer complex queries. Reinforcement learning (RL) finetuning algorithms such as GRPO have improved long-form reasoning in text-only language models, particularly for coding and mathematics. Reliable tool use in multimodal agents, however, remains challenging because models must interpret text and images while integrating noisy retrieved evidence, often under sparse outcome-level supervision without explicit verification signals. We present Self-Verification via Reinforcement Learning (SVRL), an RL-only finetuning framework that trains multimodal agents to verify and filter retrieved evidence within their own reasoning traces, reducing reliance on external verifiers at inference time. SVRL also introduces a search-aware penalty that discourages unnecessary tool calls and a query-diversity reward that encourages diverse, well-formed search queries, providing fine-grained feedback on when and what to search. Finetuning Qwen-2.5-VL-7B with SVRL on only 5{,}000 visual question answering examples yields consistent gains in multi-hop VQA generalization and tool efficiency across benchmarks. Overall, SVRL narrows the gap between compact agents and much larger proprietary models while requiring substantially lower training and inference cost.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-07T22:15:47Z</published>
+    <arxiv:comment>To appear in ECCV 2026. 11 main pages. 7 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Vishwas Sathish</name>
+    </author>
+    <author>
+      <name>Viresh Ranjan</name>
+    </author>
+    <author>
+      <name>Xinliang Zhu</name>
+    </author>
+    <author>
+      <name>Arnab Dhua</name>
+    </author>
+    <author>
+      <name>Douglas Gray</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.00967v1</id>
+    <title>CoBRA: Learning Tool-Use Boundaries via Counterfactual Margins</title>
+    <updated>2026-09-01T09:24:11Z</updated>
+    <link href="https://arxiv.org/abs/2609.00967v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00967v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As large language models increasingly act through external tools, deciding when to call a tool has become a central problem alongside deciding how to use it. Unnecessary tool calls introduce latency, cost, retrieval noise, and error propagation, while missed calls hurt knowledge-intensive queries or questions requiring up-to-date evidence. Existing methods typically trigger tools from absolute query or generation signals, such as difficulty, confidence, or final task reward, and therefore lack an explicit estimate of the instance-level marginal benefit of tool use. We propose CoBRA, a counterfactual boundary-learning framework for tool-augmented language models. CoBRA first constructs internal and external experts from the same base model, collects paired trajectories, and estimates the reward margin between answering with and without tools. This margin partitions data into internal-favored, external-favored, and ambiguous cases. CoBRA then uses clear-margin samples for Boundary-Aware Cold-Start SFT, followed by MARS-RL with reference-split rollouts and counterfactual marginal advantages to optimize boundary decisions. Experiments with retrieval as the main tool on Qwen3-4B show that CoBRA improves tool-use efficiency and boundary-sensitive answer accuracy while maintaining strong performance on tool-dependent out-of-distribution questions.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-01T09:24:11Z</published>
+    <arxiv:comment>Acceptedy by EMNLP2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Wenhao Zou</name>
+    </author>
+    <author>
+      <name>Xianglong Liu</name>
+    </author>
+    <author>
+      <name>Wendong Bi</name>
+    </author>
+    <author>
+      <name>Hanjie Wang</name>
+    </author>
+    <author>
+      <name>Simin Zhao</name>
+    </author>
+    <author>
+      <name>Gong Zhi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.26442v1</id>
+    <title>Don't Overthink, Don't Underthink: Toward Adaptive Reasoning in Agentic AI</title>
+    <updated>2026-08-26T22:45:36Z</updated>
+    <link href="https://arxiv.org/abs/2608.26442v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.26442v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances in Large Language Models (LLMs) have shown that increased inference-time reasoning can improve performance on complex tasks. However, many existing approaches rely on fixed or preallocated reasoning controls, such as fixed token budgets, pre-execution difficulty estimates, or activation-space interventions, and are often evaluated on standalone reasoning benchmarks rather than full agentic workflows. These assumptions may not hold in agentic AI systems, where reasoning requirements evolve dynamically through planning, tool use, memory retrieval, and agent-to-agent interactions. Consequently, reasoning can become either excessive or insufficient, resulting in unnecessary computation, increased latency, planning drift, excessive tool use, or incomplete solutions. We argue that a major challenge for next-generation agentic AI is not merely how much reasoning a language model should perform, but how it should allocate reasoning according to evolving task demands. We characterize over-reasoning and under-reasoning as recurring failure modes of misallocated reasoning and evaluate them on MATH-500 and the GAIA public validation benchmark. Using tool-decision latency, token consumption, token-limit exhaustion, and answer correctness, our results suggest that cases classified as over-reasoning are associated with higher computational cost without proportional accuracy gains, whereas cases classified as under-reasoning are consistently associated with incorrect or incomplete solutions. These findings motivate future research on adaptive reasoning mechanisms for agentic AI.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-26T22:45:36Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Md Jueal Mia</name>
+    </author>
+    <author>
+      <name>M. Hadi Amini</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.13988v1</id>
+    <title>TRACE: Turn-level Reward Assignment via Credit Estimation for Long-Horizon Agents</title>
+    <updated>2026-07-15T16:16:42Z</updated>
+    <link href="https://arxiv.org/abs/2607.13988v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.13988v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-turn agents solve complex tasks through extended sequences of tool interactions before producing a final answer, making credit assignment a fundamental challenge during post-training. Outcome rewards provide reliable supervision for short-horizon reasoning, but become sparse and high-variance as trajectories grow to tens or hundreds of tool calls. They can also be misleading: a failed rollout may contain many useful actions that move the agent closer to the goal, yet outcome-only training assigns them the same negative advantage as the eventual mistake. We propose TRACE (Turn-level Reward Assignment via Credit Estimation), a dense credit-assignment method for agentic reinforcement learning. TRACE represents rollouts as state transitions at tool-call boundaries, obtains gold-answer log-probabilities from a frozen reference model, transforms them into log-ratio state values, and derives per-action rewards as Temporal-Difference changes in those values. This requires no additional critic or process-label training, and its one-step log-ratio TD component telescopes across redundant tool calls. On long-horizon complex search, TRACE substantially improves base-model tool-use ability using pure RL, without a cold-start supervised fine-tuning stage, an agentic mid-training stage, or training on live-web data. On the closed-web BrowseComp-Plus benchmark, it raises Qwen3-4B from $7.2$ to $35.6$ and Qwen3-30B-A3B from $8.4$ to $42.6$. The learned search behavior also transfers to open-web benchmarks, and the learning curves show earlier improvement and faster convergence during RL training.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-15T16:16:42Z</published>
+    <arxiv:comment>26 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Leitian Tao</name>
+    </author>
+    <author>
+      <name>Baolin Peng</name>
+    </author>
+    <author>
+      <name>Wenlin Yao</name>
+    </author>
+    <author>
+      <name>Tao Ge</name>
+    </author>
+    <author>
+      <name>Hao Cheng</name>
+    </author>
+    <author>
+      <name>Mike Hang Wang</name>
+    </author>
+    <author>
+      <name>Jianfeng Gao</name>
+    </author>
+    <author>
+      <name>Sharon Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.21375v1</id>
+    <title>SchemaRouter: Field-Aware Tool Routing for Efficient Heterogeneous Agentic RAG</title>
+    <updated>2026-07-03T02:03:22Z</updated>
+    <link href="https://arxiv.org/abs/2608.21375v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.21375v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Heterogeneous agentic retrieval-augmented generation (RAG) systems increasingly orchestrate external APIs, internal databases, vector stores, and graph stores. Exposing all tool descriptions to an LLM agent, or selecting tools only by vector similarity, causes two costly failures: over-fetching, which increases payload size, token use, and latency, and under-fetching, which omits fields needed to answer the query.
+  We present SchemaRouter, a lightweight routing layer that represents tools, endpoints, parameters, response fields, domain concepts, units, provenance, and license policies as a schema graph. Given a query, SchemaRouter emits an executable tool plan specifying which tools to call and which fields to retrieve. A small LLM extracts intent, concepts, and source constraints, while field selection is deterministic over the graph through intent-group projection and concept-field matching with an alias layer.
+  On a materials-science benchmark of 110 queries, SchemaRouter achieves answer accuracy of 0.71, matching fetch-everything within overlapping confidence intervals and exceeding prompt-all's 0.66, though their intervals overlap. It uses 227 retrieved-context tokens versus 2,066 for fetch-everything and achieves 2.7x lower end-to-end latency than prompt-all. It also obtains the best tool-exact rate of 0.93 and parameter validity of 1.0. SchemaRouter grounds provenance and license information in 62 percent of answers, compared with approximately 0 percent for all baselines.
+  We also find that minimizing selected-field count is counterproductive: it reduces answer accuracy to 0.56 with negligible token savings, while recall-preserving projection restores top accuracy. SchemaRouter improves efficiency, schema-size-independent scaling, and verifiable provenance/license-grounded answering at competitive accuracy.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-03T02:03:22Z</published>
+    <arxiv:comment>13 pages, 4 figures, 6 tables. Code, benchmark, and fixtures: https://github.com/JDeun/SchemaRouter_research</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yong-eun Cho</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.14193v1</id>
+    <title>Revisiting Filtered ANN Benchmarks: A Hardness-Controlled Benchmark Generator for Realistic Evaluation</title>
+    <updated>2026-06-12T07:21:09Z</updated>
+    <link href="https://arxiv.org/abs/2606.14193v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.14193v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Filtered approximate nearest neighbor (FANN) search must satisfy both vector similarity and structured predicates, yet evaluations remain brittle because real hybrid workloads are rarely shareable and existing benchmarks rely on ad-hoc synthetic or semi-real constructions. We argue that realism hinges on execution-driven query difficulty: failures in early filtering trigger over-fetching of additional candidates, shaping latency, throughput, and recall. Building on this insight, we propose $α$-Hardness, a query-level hardness metric that models the conditional execution chain via the over-fetch factor and extends naturally to strategy-conditioned settings. Across diverse datasets and hybrid strategies, $α$-Hardness exhibits strong monotonic alignment with empirical performance, while common proxies such as selectivity or attribute-vector correlation are frequently unstable or strategy-inconsistent. We further introduce HCBGen, a hardness-controlled benchmark generator that uses $α$-Hardness as an explicit control signal to synthesize workloads under coarse bias modes or to match a target hardness profile. Our experiments show that widely used benchmarks occupy a narrow, relatively easy portion of the hardness spectrum, masking robustness gaps that emerge under harder queries. Finally, we demonstrate that matching hardness distributions enables privacy-preserving proxy workloads that closely reproduce performance trends, bridging research benchmarks and real evaluation.</summary>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-12T07:21:09Z</published>
+    <arxiv:comment>Accepted for publication in PVLDB Volume 19, Issue 10 and presentation at VLDB 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.DB"/>
+    <author>
+      <name>Mintaek Lim</name>
+    </author>
+    <author>
+      <name>Dogeun Kim</name>
+    </author>
+    <author>
+      <name>Minwoo Kim</name>
+    </author>
+    <author>
+      <name>Jaeyoung Do</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.20661v1</id>
+    <title>From Knowing to Acting: Benchmarking Self-Awareness Capability of LLM Agents</title>
+    <updated>2026-06-09T17:17:08Z</updated>
+    <link href="https://arxiv.org/abs/2606.20661v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.20661v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The integration of external tools has transitioned LLM agents from passive responders to autonomous systems. However, current benchmarks prioritize execution success, neglecting self-awareness capability, the ability to discern whether a problem requires necessary external resources or can be solved via internal parametric knowledge. To address this, we introduce KAPRO (Knowing-Acting Quadrant PRObe), a framework that evaluates cognitive-behavioral alignment by decoupling an agent's metacognitive judgment (Knowing) from its spontaneous execution (Acting). We further construct KAware, a dataset rigorously partitioning tasks into external, internal, and hybrid subspaces to systematically probe these epistemic boundaries. Extensive experiments across diverse agent architectures show that self-awareness capability is strongly correlated with task success but degrades sharply in internal-capability settings. Moreover, open-source and instruction-following models exhibit stronger tool overuse due to shallow pattern matching, while proprietary and reasoning-oriented models demonstrate more reliable cognitive gating. Benchmark and codes are available at https://github.com/AI-Santiago/KAware.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-09T17:17:08Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yifan Li</name>
+    </author>
+    <author>
+      <name>Shengbin Yue</name>
+    </author>
+    <author>
+      <name>Boyu Feng</name>
+    </author>
+    <author>
+      <name>Jinhu Qi</name>
+    </author>
+    <author>
+      <name>Bo Ke</name>
+    </author>
+    <author>
+      <name>Zixing Song</name>
+    </author>
+    <author>
+      <name>Hongru Wang</name>
+    </author>
+    <author>
+      <name>Zhongyu Wei</name>
+    </author>
+    <author>
+      <name>Irwin King</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.02132v2</id>
+    <title>Learning When Not to Act: Mitigating Tool Abuse in Agentic Reinforcement Learning</title>
+    <updated>2026-06-02T07:53:40Z</updated>
+    <link href="https://arxiv.org/abs/2606.02132v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.02132v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic reinforcement learning can induce tool abuse, where models overuse external tools even for queries solvable by internal reasoning. Existing approaches mitigate this issue with uniform tool-use penalties or hard limits, which reduce tool frequency but may also suppress useful tool-assisted exploration. We propose EAPO, an Efficient Agentic Policy Optimization framework that learns selective tool use. EAPO introduces tool-free trajectories into each rollout group, applies difficulty-aware reward shaping to penalize redundant tool calls mainly on easier queries, and uses confidence-aware token reweighting to improve policy learning. Across nine mathematical and knowledge-intensive reasoning benchmarks, EAPO consistently improves the accuracy efficiency trade-off on Qwen2.5-3B, Qwen2.5-7B, and Llama3.1-8B. Compared with GRPO, EAPO improves average performance by 10.45%, 7.27%, and 9.69%, while reducing average tool calls by 18.33%, 18.33%, and 24.59%, respectively. These results show that agents can learn when not to use tools without compromising tool-integrated reasoning.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-01T11:58:55Z</published>
+    <arxiv:comment>Under review</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Liuji Chen</name>
+    </author>
+    <author>
+      <name>Dianxing Tang</name>
+    </author>
+    <author>
+      <name>Xing Shi</name>
+    </author>
+    <author>
+      <name>Dingshuo Chen</name>
+    </author>
+    <author>
+      <name>Qiang Liu</name>
+    </author>
+    <author>
+      <name>Shu Wu</name>
+    </author>
+    <author>
+      <name>Liang Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.02109v1</id>
+    <title>BADGER: Bridging Agentic and Deterministic Evaluation for Generative Enterprise Reasoning</title>
+    <updated>2026-06-01T11:42:37Z</updated>
+    <link href="https://arxiv.org/abs/2606.02109v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.02109v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Enterprise AI systems that translate natural language into SQL queries and orchestrate multi-step agentic reasoning pipelines require evaluation approaches fundamentally different from academic benchmarks. Spider and BIRD established execution-accuracy protocols; G-Eval and RAGAS advanced LLM-based assessment; and recent work such as Spider 2.0, BEAVER, and BIRD-Interact has begun to address enterprise and agentic dimensions. No single framework unifies text-to-SQL assessment with agentic behavior evaluation into a production-grade pipeline calibrated against human expert judgment.
+  We present BADGER, developed at Merkle, a unified evaluation framework integrating text-to-SQL assessment with agentic behavior evaluation. BADGER offers three contributions. First, LLM-assisted SQL component extraction extending Spider methodology to handle CTE-heavy, dialect-specific SQL. Second, a hybrid execution accuracy metric (Hybrid-EX) resolving column-aliasing and numeric-tolerance brittleness by using an LLM to infer structural alignments before deterministic cell-level scoring. Validated on 150 human-annotated industry queries, Hybrid-EX achieves Cohen's kappa=0.717 [95% CI: 0.600-0.822] (Substantial agreement) and 87.3% balanced accuracy, outperforming all six competing frameworks (Delta-kappa: 0.322-0.502, all p&lt;=0.001). Third, an enterprise agentic evaluation suite assembling RAGAS, G-Eval, and agent benchmark metrics into a unified pipeline; Excess Tool Usage is the sole novel element.
+  BADGER runs entirely within the client's governed data environment, supports configurable LLM judge backends, and enables rapid prototyping of client-specific judges and metrics, serving as a continuous evaluation backbone rather than a one-time quality gate.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-01T11:42:37Z</published>
+    <arxiv:comment>30 pages, 2 figures, 6 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Shannon Serrao</name>
+    </author>
+    <author>
+      <name>Soumitra Chatterjee</name>
+    </author>
+    <author>
+      <name>Dorina Strori</name>
+    </author>
+    <author>
+      <name>Abhishek Sharma</name>
+    </author>
+    <author>
+      <name>Nathan Miller</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.26952v1</id>
+    <title>Efficient Agentic Reinforcement Learning with On-Policy Intrinsic Knowledge Boundary Enhancement</title>
+    <updated>2026-05-26T12:42:23Z</updated>
+    <link href="https://arxiv.org/abs/2605.26952v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.26952v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic reinforcement learning (RL) has proven effective for training LLM-based agents with external tool-use capabilities. However, we identify that agentic RL training induces increasing redundant tool calls and blurs the model's intrinsic knowledge boundary, where the model fails to distinguish when tools are needed versus when parametric knowledge suffices. Existing solutions based on reward shaping create coarse-grained optimization targets that tend to incentivize indiscriminate tool-call suppression, leading to reward hacking. In this paper, we propose AKBE (Agentic Knowledge Boundary Enhancement), an on-policy method that dynamically probes the model's intrinsic knowledge boundary through dual-path (with-tool and no-tool) rollouts during training. We define the knowledge boundary as the per-instance determination of whether tools are required and the minimum tool calls necessary. By comparing correctness across paths, AKBE categorizes trajectories and constructs targeted supervisory signals that guide efficient tool-use patterns for each question. These signals are integrated seamlessly into the agentic RL training loop. Experiments on seven QA benchmarks demonstrate that AKBE improves task accuracy by +1.85 on average and reduces tool calls by 18% over standard agentic RL, yielding 25% higher tool productivity without any accuracy-efficiency trade-off. Further analysis suggests its plug-and-play compatibility across different RL algorithms and the mechanism of each signal category. Our code is available at https://github.com/CuSO4-Chen/AKBE.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-26T12:42:23Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Dingwei Chen</name>
+    </author>
+    <author>
+      <name>Zefang Zong</name>
+    </author>
+    <author>
+      <name>Zhipeng Ma</name>
+    </author>
+    <author>
+      <name>Leo Luo</name>
+    </author>
+    <author>
+      <name>Yang Li</name>
+    </author>
+    <author>
+      <name>Chengming Li</name>
+    </author>
+    <author>
+      <name>Peng Chen</name>
+    </author>
+    <author>
+      <name>Jie Jiang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.27385v1</id>
+    <title>An Experimental Modular Instrument With a Haptic Feedback Framework for Robotic Surgery Training</title>
+    <updated>2026-04-30T03:55:05Z</updated>
+    <link href="https://arxiv.org/abs/2604.27385v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.27385v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Robotic-assisted surgery offers significant clinical advantages but largely eliminates direct haptic feedback, increasing the risk of excessive tool-tissue interaction forces. Although recent commercial systems have begun to introduce force feedback, their high cost limits accessibility, particularly for surgical training. This paper presents a modular experimental robotic laparoscopic instrument integrated with a real-time haptic feedback framework. The proposed instrument employs a wrist-mounted force/torque (F/T) sensor to estimate tool-tissue interaction forces while avoiding the durability and integration challenges of tip-mounted sensors. A haptic feedback framework is developed to extract the external contact forces, render them to the haptic device, and generate stable and perceptually meaningful feedback. The instrument is integrated into the robotic surgery training system (RoboScope) and evaluated through a controlled user study involving a force regulation task. Experimental results demonstrate that haptic feedback significantly improves task success rate, force regulation accuracy, and task efficiency compared to visual-only feedback. The proposed instrument enables stable, high-fidelity haptic interaction, supporting effective robotic surgery training.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-30T03:55:05Z</published>
+    <arxiv:comment>Accepted to the 11th IEEE RAS/EMBS International Conference on Biomedical Robotics and Biomechatronics (BioRob 2026)</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Walid Shaker</name>
+    </author>
+    <author>
+      <name>Mustafa Suphi Erden</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.08545v1</id>
+    <title>Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models</title>
+    <updated>2026-04-09T17:59:57Z</updated>
+    <link href="https://arxiv.org/abs/2604.08545v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.08545v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The advent of agentic multimodal models has empowered systems to actively interact with external environments. However, current agents suffer from a profound meta-cognitive deficit: they struggle to arbitrate between leveraging internal knowledge and querying external utilities. Consequently, they frequently fall prey to blind tool invocation, resorting to reflexive tool execution even when queries are resolvable from the raw visual context. This pathological behavior precipitates severe latency bottlenecks and injects extraneous noise that derails sound reasoning. Existing reinforcement learning protocols attempt to mitigate this via a scalarized reward that penalizes tool usage. Yet, this coupled formulation creates an irreconcilable optimization dilemma: an aggressive penalty suppresses essential tool use, whereas a mild penalty is entirely subsumed by the variance of the accuracy reward during advantage normalization, rendering it impotent against tool overuse. To transcend this bottleneck, we propose HDPO, a framework that reframes tool efficiency from a competing scalar objective to a strictly conditional one. By eschewing reward scalarization, HDPO maintains two orthogonal optimization channels: an accuracy channel that maximizes task correctness, and an efficiency channel that enforces execution economy exclusively within accurate trajectories via conditional advantage estimation. This decoupled architecture naturally induces a cognitive curriculum-compelling the agent to first master task resolution before refining its self-reliance. Extensive evaluations demonstrate that our resulting model, Metis, reduces tool invocations by orders of magnitude while simultaneously elevating reasoning accuracy.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-09T17:59:57Z</published>
+    <arxiv:comment>Project Page: https://Accio-Lab.github.io/Metis</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Shilin Yan</name>
+    </author>
+    <author>
+      <name>Jintao Tong</name>
+    </author>
+    <author>
+      <name>Hongwei Xue</name>
+    </author>
+    <author>
+      <name>Xiaojun Tang</name>
+    </author>
+    <author>
+      <name>Yangyang Wang</name>
+    </author>
+    <author>
+      <name>Kunyu Shi</name>
+    </author>
+    <author>
+      <name>Guannan Zhang</name>
+    </author>
+    <author>
+      <name>Ruixuan Li</name>
+    </author>
+    <author>
+      <name>Yixiong Zou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.30031v3</id>
+    <title>Cognitive Friction: A Decision-Theoretic Framework for Bounded Deliberation in Tool-Using Agents</title>
+    <updated>2026-04-02T16:42:15Z</updated>
+    <link href="https://arxiv.org/abs/2603.30031v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.30031v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Autonomous tool-using agents in networked environments must decide which information source to query and when to stop querying and act. Without principled bounds on information-acquisition costs, unconstrained agents exhibit systematic failure modes: excessive tool use under congestion, prolonged deliberation under time decay, and brittle behavior under ambiguous evidence. We propose the Triadic Cognitive Architecture (TCA), a decision-theoretic framework that formalizes these failure modes via cognitive friction. By combining nonlinear filtering, congestion-dependent cost dynamics, and HJB optimal stopping, TCA models deliberation as stochastic control over a joint belief-congestion state, explicitly pricing information by tool signal quality and live network load. TCA yields an HJB-inspired stopping boundary and a computable rollout-based approximation of belief-dependent value-of-information with a net-utility halting condition. We validate TCA in two controlled environments (EMDG and NSTG) designed to isolate stopping quality, action selection under congestion, and temporal urgency. TCA improves resource outcomes while reducing time-to-action without degrading accuracy, gaining 36 viability points in EMDG and 33 integrity points in NSTG over greedy baselines. Ablations show that selection and stopping must be optimized jointly, as stopping rules alone recover at most 4 viability points. Sensitivity sweeps over alpha, beta, and lambda_S yield stable accuracy and interpretable trade-offs, and a continuation-value sweep over eta values 0, 0.1, 0.3, and 0.5 finds eta equal to zero is optimal under high temporal urgency. Finally, we demonstrate an illustrative instantiation around a black-box LLM on a memorisation-free corpus, where the same stopping principle executes using empirically computable uncertainty and value-of-information proxies.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-31T17:30:25Z</published>
+    <arxiv:comment>Preprint</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Davide Di Gioia</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.25021v3</id>
+    <title>VideoTIR: Accurate Understanding for Long Videos with Efficient Tool-Integrated Reasoning</title>
+    <updated>2026-09-09T03:27:47Z</updated>
+    <link href="https://arxiv.org/abs/2603.25021v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.25021v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing Multimodal Large Language Models (MLLMs) often suffer from hallucinations in long video understanding (LVU), primarily due to the imbalance between textual and visual tokens. Observing that MLLMs handle short visual inputs well, recent LVU works alleviate hallucinations by automatically parsing the vast visual data into manageable segments that can be effectively processed by MLLMs. SFT-based tool-calling methods can serve this purpose, but they typically require vast amounts of fine-grained, high-quality data and suffer from constrained tool-calling trajectories. We propose a novel VideoTIR that leverages Reinforcement Learning (RL) to encourage proper usage of comprehensive multi-level toolkits for efficient long video understanding. VideoTIR explores both Zero-RL and SFT cold-starting to enable MLLMs to retrieve and focus on meaningful video segments/images/regions, enhancing long video understanding both accurately and efficiently. To reduce redundant tool-calling, we propose Toolkit Action Grouped Policy Optimization (TAGPO), which enhances the efficiency of the calling process through stepwise reward assignment and reuse of failed rollouts. Additionally, we develop a sandbox-based trajectory synthesis framework to generate high-quality trajectories data. Extensive experiments on three long-video QA benchmarks demonstrate the effectiveness and efficiency of our method.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-26T04:37:54Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Zhe Gao</name>
+    </author>
+    <author>
+      <name>Shiyu Shen</name>
+    </author>
+    <author>
+      <name>Taifeng Chai</name>
+    </author>
+    <author>
+      <name>Weinong Wang</name>
+    </author>
+    <author>
+      <name>Haotian Xu</name>
+    </author>
+    <author>
+      <name>Xing Wu</name>
+    </author>
+    <author>
+      <name>Wenbin Li</name>
+    </author>
+    <author>
+      <name>Qi Fan</name>
+    </author>
+    <author>
+      <name>Yang Gao</name>
+    </author>
+    <author>
+      <name>Dacheng Tao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19896v2</id>
+    <title>Utility-Guided Agent Orchestration for Efficient LLM Tool Use</title>
+    <updated>2026-09-13T09:22:37Z</updated>
+    <link href="https://arxiv.org/abs/2603.19896v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19896v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using large language model (LLM) agents often face a fundamental tension between answer quality and execution cost. Fixed workflows are stable but inflexible, while free-form multi-step reasoning methods such as ReAct may improve task performance at the expense of excessive tool calls, longer trajectories, higher token consumption, and increased latency. In this paper, we study agent orchestration as an explicit decision problem rather than leaving it entirely to prompt-level behavior. We propose a utility-guided orchestration policy that selects among actions such as respond, retrieve, tool call, verify, and stop by balancing estimated gain, step cost, uncertainty, and redundancy. Our goal is not to claim universally best task performance, but to provide a controllable and analyzable policy framework for studying quality-cost trade-offs in tool-using LLM agents. Experiments across direct answering, threshold control, fixed workflows, ReAct, and several policy variants show that explicit orchestration signals substantially affect agent behavior. Additional analyses on cost definitions, workflow fairness, and redundancy control further demonstrate that lightweight utility design can provide a defensible and practical mechanism for agent control.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-20T12:29:12Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>2026 IEEE International Conference on Joint Cloud Computing (JCC), Fukuoka, Japan, 2026, pp. 333-338</arxiv:journal_ref>
+    <author>
+      <name>Boyan Liu</name>
+    </author>
+    <author>
+      <name>Gongming Zhao</name>
+    </author>
+    <author>
+      <name>Hongli Xu</name>
+    </author>
+    <arxiv:doi>10.1109/JCC72984.2026.00053</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/JCC72984.2026.00053" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.12634v1</id>
+    <title>Spend Less, Reason Better: Budget-Aware Value Tree Search for LLM Agents</title>
+    <updated>2026-03-13T04:10:27Z</updated>
+    <link href="https://arxiv.org/abs/2603.12634v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.12634v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Test-time scaling has become a dominant paradigm for improving LLM agent reliability, yet current approaches treat compute as an abundant resource, allowing agents to exhaust token and tool budgets on redundant steps or dead-end trajectories. Existing budget-aware methods either require expensive fine-tuning or rely on coarse, trajectory-level heuristics that cannot intervene mid-execution. We propose the Budget-Aware Value Tree (BAVT), a training-free inference-time framework that models multi-hop reasoning as a dynamic search tree guided by step-level value estimation within a single LLM backbone. Another key innovation is a budget-conditioned node selection mechanism that uses the remaining resource ratio as a natural scaling exponent over node values, providing a principled, parameter-free transition from broad exploration to greedy exploitation as the budget depletes. To combat the well-known overconfidence of LLM self-evaluation, BAVT employs a residual value predictor that scores relative progress rather than absolute state quality, enabling reliable pruning of uninformative or redundant tool calls. We further provide a theoretical convergence guarantee, proving that BAVT reaches a terminal answer with probability at least $1-ε$ under an explicit finite budget bound. Extensive evaluations on four multi-hop QA benchmarks across two model families demonstrate that BAVT consistently outperforms parallel sampling baselines. Most notably, BAVT under strict low-budget constraints surpasses baseline performance at $4\times$ the resource allocation, establishing that intelligent budget management fundamentally outperforms brute-force compute scaling.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-13T04:10:27Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yushu Li</name>
+    </author>
+    <author>
+      <name>Wenlong Deng</name>
+    </author>
+    <author>
+      <name>Jiajin Li</name>
+    </author>
+    <author>
+      <name>Xiaoxiao Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.19749v1</id>
+    <title>The Tool-Overuse Illusion: Why Does LLM Prefer External Tools over Internal Knowledge?</title>
+    <updated>2026-03-03T08:55:55Z</updated>
+    <link href="https://arxiv.org/abs/2604.19749v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.19749v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Equipping LLMs with external tools effectively addresses internal reasoning limitations. However, it introduces a critical yet under-explored phenomenon: tool overuse, the unnecessary tool-use during reasoning. In this paper, we first reveal this phenomenon is pervasive across diverse LLMs. We then experimentally elucidate its underlying mechanisms through two key lenses: (1) First, by analyzing tool-use behavior across different internal knowledge availability regions, we identify a \textit{knowledge epistemic illusion}: models misjudge internal knowledge boundaries and fail to accurately perceive their actual knowledge availability. To mitigate this, we propose a knowledge-aware epistemic boundary alignment strategy based on direct preference optimization, which reduces tool usage in by 82.8\% while yielding an accuracy improvement. (2) Second, we establish a causal link between reward structures and tool-use behavior by visualizing the tool-augmented training process. It reveals that \textit{outcome-only rewards} inadvertently encourage tool overuse by rewarding only final correctness, regardless of tool efficiency. To verify this, we balance reward signals during training rather than relying on outcome-only rewards, cutting unnecessary tool calls by 66.7\% (7B) and 60.7\% (32B) without sacrificing accuracy. Finally, we provide theoretical justification in this two lenses to understand tool overuse.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-03T08:55:55Z</published>
+    <arxiv:comment>17 pages, 9 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yirong Zeng</name>
+    </author>
+    <author>
+      <name>Shen You</name>
+    </author>
+    <author>
+      <name>Yufei Liu</name>
+    </author>
+    <author>
+      <name>Qunyao Du</name>
+    </author>
+    <author>
+      <name>Xiao Ding</name>
+    </author>
+    <author>
+      <name>Yutai Hou</name>
+    </author>
+    <author>
+      <name>Yuxian Wang</name>
+    </author>
+    <author>
+      <name>Wu Ning</name>
+    </author>
+    <author>
+      <name>Haonan Song</name>
+    </author>
+    <author>
+      <name>Dandan Tu</name>
+    </author>
+    <author>
+      <name>Bibo Cai</name>
+    </author>
+    <author>
+      <name>Ting Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.00846v1</id>
+    <title>Tiny-Critic RAG: Empowering Agentic Fallback with Parameter-Efficient Small Language Models</title>
+    <updated>2026-03-01T00:16:31Z</updated>
+    <link href="https://arxiv.org/abs/2603.00846v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.00846v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Retrieval-Augmented Generation (RAG) grounds Large Language Models (LLMs) to mitigate factual hallucinations. Recent paradigms shift from static pipelines to Modular and Agentic RAG frameworks, granting models autonomy for multi-hop reasoning or self-correction. However, current reflective RAG heavily relies on massive LLMs as universal evaluators. In high-throughput systems, executing complete forward passes for billion-parameter models merely for binary routing introduces severe computational redundancy. Furthermore, in autonomous agent scenarios, inaccurate retrieval causes models to expend excessive tokens on spurious reasoning and redundant tool calls, inflating Time-to-First-Token (TTFT) and costs. We propose Tiny-Critic RAG, decoupling evaluation by deploying a parameter-efficient Small Language Model (SLM) via Low-Rank Adaptation (LoRA). Acting as a deterministic gatekeeper, Tiny-Critic employs constrained decoding and non-thinking inference modes for ultra-low latency binary routing. Evaluations on noise-injected datasets demonstrate Tiny-Critic RAG achieves routing accuracy comparable to GPT-4o-mini while reducing latency by an order of magnitude, establishing a highly cost-effective paradigm for agent deployment.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-01T00:16:31Z</published>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Yichao Wu</name>
+    </author>
+    <author>
+      <name>Penghao Liang</name>
+    </author>
+    <author>
+      <name>Yafei Xiang</name>
+    </author>
+    <author>
+      <name>Mengwei Yuan</name>
+    </author>
+    <author>
+      <name>Jianan Liu</name>
+    </author>
+    <author>
+      <name>Jing Yang</name>
+    </author>
+    <author>
+      <name>Xianyou Li</name>
+    </author>
+    <author>
+      <name>Weiran Yan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.23949v1</id>
+    <title>HotelQuEST: Balancing Quality and Efficiency in Agentic Search</title>
+    <updated>2026-02-27T11:50:57Z</updated>
+    <link href="https://arxiv.org/abs/2602.23949v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.23949v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic search has emerged as a promising paradigm for adaptive retrieval systems powered by large language models (LLMs). However, existing benchmarks primarily focus on quality, overlooking efficiency factors that are critical for real-world deployment. Moreover, real-world user queries often contain underspecified preferences, a challenge that remains largely underexplored in current agentic search evaluation. As a result, many agentic search systems remain impractical despite their impressive performance. In this work, we introduce HotelQuEST, a benchmark comprising 214 hotel search queries that range from simple factual requests to complex queries, enabling evaluation across the full spectrum of query difficulty. We further address the challenge of evaluating underspecified user preferences by collecting clarifications that make annotators' implicit preferences explicit for evaluation. We find that LLM-based agents achieve higher accuracy than traditional retrievers, but at substantially higher costs due to redundant tool calls and suboptimal routing that fails to match query complexity to model capability. Our analysis exposes inefficiencies in current agentic search systems and demonstrates substantial potential for cost-aware optimization.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-27T11:50:57Z</published>
+    <arxiv:comment>To be published in EACL 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Guy Hadad</name>
+    </author>
+    <author>
+      <name>Shadi Iskander</name>
+    </author>
+    <author>
+      <name>Oren Kalinsky</name>
+    </author>
+    <author>
+      <name>Sofia Tolmach</name>
+    </author>
+    <author>
+      <name>Ran Levy</name>
+    </author>
+    <author>
+      <name>Haggai Roitman</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.22805v1</id>
+    <title>Optimizing SSD-Resident Graph Indexing for High-Throughput Vector Search</title>
+    <updated>2026-02-26T09:42:20Z</updated>
+    <link href="https://arxiv.org/abs/2602.22805v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.22805v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Graph-based approximate nearest neighbor search (ANNS) methods (e.g., HNSW) have become the de facto state of the art for their high precision and low latency. To scale beyond main memory, recent out-of-memory ANNS systems leverage SSDs to store large vector indexes. However, they still suffer from severe CPU underutilization and read amplification (i.e., storage stalls) caused by limited access locality during graph traversal. We present VeloANN, which mitigates storage stalls through a locality-aware data layout and a coroutine-based asynchronous runtime. VeloANN utilizes hierarchical compression and affinity-based data placement scheme to co-locate related vectors within the same page, effectively reducing fragmentation and over-fetching. We further design a record-level buffer pool, where each record groups the neighbors of a vector; by persistently retaining hot records in memory, it eliminates excessive page swapping under constrained memory budgets. To minimize CPU scheduling overheads during disk I/O interruptions, VeloANN employs a coroutine-based asynchronous runtime for lightweight task scheduling. On top of this, it incorporates asynchronous prefetching and a beam-aware search strategy to prioritize cached data, ultimately improving overall search efficiency. Extensive experiments show that VeloANN outperforms state-of-the-art disk-based ANN systems by up to 5.8x in throughput and 3.25x in latency reduction, while achieving 0.92x the throughput of in-memory systems using only 10% of their memory footprint.</summary>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-26T09:42:20Z</published>
+    <arxiv:primary_category term="cs.DB"/>
+    <author>
+      <name>Weichen Zhao</name>
+    </author>
+    <author>
+      <name>Yuncheng Lu</name>
+    </author>
+    <author>
+      <name>Yao Tian</name>
+    </author>
+    <author>
+      <name>Hao Zhang</name>
+    </author>
+    <author>
+      <name>Jiehui Li</name>
+    </author>
+    <author>
+      <name>Minghao Zhao</name>
+    </author>
+    <author>
+      <name>Yakun Li</name>
+    </author>
+    <author>
+      <name>Weining Qian</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.17937v1</id>
+    <title>Analyzing LLM Instruction Optimization for Tabular Fact Verification</title>
+    <updated>2026-02-20T01:56:27Z</updated>
+    <link href="https://arxiv.org/abs/2602.17937v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.17937v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Instruction optimization provides a lightweight, model-agnostic approach to enhancing the reasoning performance of large language models (LLMs). This paper presents the first systematic comparison of instruction optimization, based on the DSPy optimization framework, for tabular fact verification. We evaluate four out-of-the-box prompting techniques that cover both text-only prompting and code use: direct prediction, Chain-of-Thought (CoT), ReAct with SQL tools, and CodeAct with Python execution. We study three optimizers from the DSPy framework -- COPRO, MiPROv2, and SIMBA -- across four benchmarks and three model families. We find that instruction optimization consistently improves verification accuracy, with MiPROv2 yielding the most stable gains for CoT, and SIMBA providing the largest benefits for ReAct agents, particularly at larger model scales. Behavioral analyses reveal that SIMBA encourages more direct reasoning paths by applying heuristics, thereby improving numerical comparison abilities in CoT reasoning and helping avoid unnecessary tool calls in ReAct agents. Across different prompting techniques, CoT remains effective for tabular fact checking, especially with smaller models. Although ReAct agents built with larger models can achieve competitive performance, they require careful instruction optimization.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-20T01:56:27Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Xiaotang Du</name>
+    </author>
+    <author>
+      <name>Giwon Hong</name>
+    </author>
+    <author>
+      <name>Wai-Chung Kwan</name>
+    </author>
+    <author>
+      <name>Rohit Saxena</name>
+    </author>
+    <author>
+      <name>Ivan Titov</name>
+    </author>
+    <author>
+      <name>Pasquale Minervini</name>
+    </author>
+    <author>
+      <name>Emily Allaway</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.11689v1</id>
+    <title>A Preliminary Assessment of Coding Agents for CFD Workflows</title>
+    <updated>2026-02-12T08:09:54Z</updated>
+    <link href="https://arxiv.org/abs/2602.11689v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.11689v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We investigate the use of tool-using coding agents to automate end-to-end workflows in the open-source CFD package OpenFOAM. Building on general-purpose coding agent interfaces, we introduce a lightweight configuration that guides an agent toward tutorial reuse and log-driven repair to improve case setup and execution. We evaluate this approach on the FoamBench-Advanced benchmark, covering both tutorial-derivative and planar 2D obstacle-flow tasks. For tutorial-derivative cases, prompt guidance dramatically increases execution completion rates and reduces unnecessary tool calls. For obstacle-flow cases, stronger language models such as GPT-5.2 markedly improve mesh generation and overall task completion compared to earlier models. Our findings show that coding agents can correctly execute a range of CFD simulations with minimal configuration and that model capability significantly influences performance on tasks requiring geometry and mesh creation. These results suggest that coding agents have practical utility for automating portions of CFD workflows while highlighting areas that require further investigation.</summary>
+    <category term="physics.flu-dyn" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-12T08:09:54Z</published>
+    <arxiv:primary_category term="physics.flu-dyn"/>
+    <author>
+      <name>Ke Xiao</name>
+    </author>
+    <author>
+      <name>Haoze Zhang</name>
+    </author>
+    <author>
+      <name>Yangchen Xu</name>
+    </author>
+    <author>
+      <name>Runze Mao</name>
+    </author>
+    <author>
+      <name>Han Li</name>
+    </author>
+    <author>
+      <name>Zhi X. Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.18496v2</id>
+    <title>DEEPMED: Building a Medical DeepResearch Agent via Multi-hop Med-Search Data and Turn-Controlled Agentic Training &amp; Inference</title>
+    <updated>2026-02-04T11:31:10Z</updated>
+    <link href="https://arxiv.org/abs/2601.18496v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.18496v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Medical reasoning models remain constrained by parametric knowledge and are thus susceptible to forgetting and hallucinations. DeepResearch (DR) models ground outputs in verifiable evidence from tools and perform strongly in general domains, but their direct transfer to medical field yields relatively limited gains. We attribute this to two gaps: task characteristic and tool-use scaling. Medical questions require evidence interpretation in a knowledge-intensive clinical context; while general DR models can retrieve information, they often lack clinical-context reasoning and thus "find it but fail to use it," leaving performance limited by medical abilities. Moreover, in medical scenarios, blindly scaling tool-call can inject noisy context, derailing sensitive medical reasoning and prompting repetitive evidence-seeking along incorrect paths. Therefore, we propose DeepMed. For data, we deploy a multi-hop med-search QA synthesis method supporting the model to apply the DR paradigm in medical contexts. For training, we introduce a difficulty-aware turn-penalty to suppress excessive tool-call growth. For inference, we bring a monitor to help validate hypotheses within a controlled number of steps and avoid context rot. Overall, on seven medical benchmarks, DeepMed improves its base model by 9.79\% on average and outperforms larger medical reasoning and DR models.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-26T13:57:48Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zihan Wang</name>
+    </author>
+    <author>
+      <name>Hao Wang</name>
+    </author>
+    <author>
+      <name>Shi Feng</name>
+    </author>
+    <author>
+      <name>Xiaocui Yang</name>
+    </author>
+    <author>
+      <name>Daling Wang</name>
+    </author>
+    <author>
+      <name>Yiqun Zhang</name>
+    </author>
+    <author>
+      <name>Jinghao Lin</name>
+    </author>
+    <author>
+      <name>Haihua Yang</name>
+    </author>
+    <author>
+      <name>Xiaozhong Ji</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.17312v2</id>
+    <title>CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning</title>
+    <updated>2026-04-01T07:43:19Z</updated>
+    <link href="https://arxiv.org/abs/2512.17312v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.17312v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent releases such as o3 highlight human-like "thinking with images" reasoning that combines tool use with stepwise verification, yet most open-source approaches still rely on text-only chains, rigid visual schemas, or single-step pipelines, limiting flexibility, interpretability, and transferability on complex tasks. We introduce CodeDance, which explores executable code as a general solver for visual reasoning. Unlike fixed-schema calls (e.g., only predicting bounding-box coordinates), CodeDance defines, composes, and executes code to orchestrate multiple tools, compute intermediate results, and render visual artifacts (e.g., boxes, lines, plots) that support transparent, self-checkable reasoning. To guide this process, we introduce a reward for balanced and adaptive tool calling, which balances exploration with efficiency and mitigates tool overuse. Interestingly, beyond the expected capabilities taught by atomic supervision, we empirically observe novel emergent behaviors during RL training: CodeDance demonstrates novel tool invocations, unseen compositions, and cross-task transfer. These behaviors arise without task-specific fine-tuning, suggesting a general and scalable mechanism for executable visual reasoning. Extensive experiments across reasoning benchmarks (e.g., visual search, math, chart QA) show that CodeDance not only consistently outperforms schema-driven and text-only baselines, but also surpasses closed models such as GPT-4o and larger open-source models.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-19T07:52:23Z</published>
+    <arxiv:comment>CVPR 2026. Project page: https://codedance-vl.github.io/</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Qi Song</name>
+    </author>
+    <author>
+      <name>Honglin Li</name>
+    </author>
+    <author>
+      <name>Yingchen Yu</name>
+    </author>
+    <author>
+      <name>Haoyi Zhou</name>
+    </author>
+    <author>
+      <name>Lin Yang</name>
+    </author>
+    <author>
+      <name>Song Bai</name>
+    </author>
+    <author>
+      <name>Qi She</name>
+    </author>
+    <author>
+      <name>Zilong Huang</name>
+    </author>
+    <author>
+      <name>Yunqing Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.06653v3</id>
+    <title>LightSearcher: Efficient DeepSearch via Experiential Memory</title>
+    <updated>2025-12-10T07:22:24Z</updated>
+    <link href="https://arxiv.org/abs/2512.06653v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.06653v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>DeepSearch paradigms have become a core enabler for deep reasoning models, allowing them to invoke external search tools to access up-to-date, domain-specific knowledge beyond parametric boundaries, thereby enhancing the depth and factual reliability of reasoning. Building upon this foundation, recent advances in reinforcement learning (RL) have further empowered models to autonomously and strategically control search tool usage, optimizing when and how to query external knowledge sources. Yet, these RL-driven DeepSearch systems often reveal a see-saw trade-off between accuracy and efficiency-frequent tool invocations can improve factual correctness but lead to unnecessary computational overhead and diminished efficiency. To address this challenge, we propose LightSearcher, an efficient RL framework that incorporates textual experiential memory by learning contrastive reasoning trajectories to generate interpretable summaries of successful reasoning patterns. In addition, it employs an adaptive reward shaping mechanism that penalizes redundant tool calls only in correct-answer scenarios. This design effectively balances the inherent accuracy-efficiency trade-off in DeepSearch paradigms. Experiments on four multi-hop QA benchmarks show that LightSearcher maintains accuracy comparable to SOTA baseline ReSearch, while reducing search tool invocations by 39.6%, inference time by 48.6%, and token consumption by 21.2%, demonstrating its superior efficiency.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-07T04:29:52Z</published>
+    <arxiv:comment>10 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Hengzhi Lan</name>
+    </author>
+    <author>
+      <name>Yue Yu</name>
+    </author>
+    <author>
+      <name>Li Qian</name>
+    </author>
+    <author>
+      <name>Li Peng</name>
+    </author>
+    <author>
+      <name>Jie Wu</name>
+    </author>
+    <author>
+      <name>Wei Liu</name>
+    </author>
+    <author>
+      <name>Jian Luan</name>
+    </author>
+    <author>
+      <name>Ting Bai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.17673v6</id>
+    <title>Bridging Symbolic Control and Neural Reasoning in LLM Agents -- The Structured Cognitive Loop</title>
+    <updated>2026-07-01T04:49:42Z</updated>
+    <link href="https://arxiv.org/abs/2511.17673v6" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.17673v6" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model agents suffer from architectural fragilities such as entangled reasoning and execution, memory volatility, and uncontrolled action sequences. We introduce Structured Cognitive Loop (SCL), a modular agent architecture that separates cognition into Retrieval, Cognition, Control, Action, and Memory (R-CCAM). SCL introduces Regulation as a dedicated governance layer through which Soft Symbolic Control applies symbolic constraints to probabilistic inference, while Control remains a distinct deterministic runtime engine for duplicate-call prevention, error limits, and termination judgment. Through multi-step conditional reasoning experiments, we show that SCL achieves zero policy violations, prevents redundant tool calls, and maintains complete decision traceability. We position SCL within hybrid intelligence, distinguish it from prompt-centric, memory-only, and neuro-symbolic approaches, and derive three design principles for trustworthy agents: modular decomposition, adaptive symbolic governance, and transparent state management. With an open-source implementation and a live GPT-4o-powered travel planning agent, this work offers a practical path toward reliable, explainable, and governable LLM agents.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-21T05:19:34Z</published>
+    <arxiv:comment>This update clarifies the theoretical architecture by separating Regulation as the Soft Symbolic Control layer from Control as a deterministic runtime engine, while adding explicit discussion of how the current implementation should be interpreted in light of that distinction</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Myung Ho Kim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.10931v3</id>
+    <title>Proof-of-Use: Mitigating Tool-Call Hacking in Deep Research Agents</title>
+    <updated>2026-10-08T02:04:53Z</updated>
+    <link href="https://arxiv.org/abs/2510.10931v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.10931v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While reinforcement learning (RL) enhances their ability to plan and reason across retrieval steps, we identify a critical failure mode in this setting: Tool-Call Hacking. Unlike execution-based tools (e.g., code or math), whose effects are directly observable, the weak observability of causal dependencies between retrieved evidence and reasoning under format- and outcome-level supervision enables agents to maximize surface-level reward signals without genuinely grounding their reasoning in the returned evidence. This leads to distinctive pathologies, including mode collapse via tool overuse and hallucinated tool usage where tool calls are largely decorative.
+  To address this issue, we propose Proof-of-Use (PoU), an evidence grounded RL framework that explicitly optimizes the causal dependency from retrieval to reasoning and final answers. PoU re-fomulate a fine-grained stepwise interaction protocol in which agents must auditably cite normalized evidence identifiers. We operationalize this via a multi-objective reward design consisting of: (1) two progressive process rewards that constrain citation validity at intermediate steps; (2) a global Answer--Support Alignment reward that enforces consistency between final answers and retrieved evidence; and (3) a curriculum-style adaptive reward mixing mechanism that smoothly transitions agents from dense process supervision to sparse outcome-based objectives. Extensive experiments show the strong performance of PoU and demonstrate the effectiveness in mitigating tool-call hacking. Beyond this, PoU exhibits a notable emergent property: adaptive and robust tool-usage patterns naturally arise under domain and tool shifts, even though PoU does not explicitly optimize for tool adaptation.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-13T02:45:37Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Shengjie Ma</name>
+    </author>
+    <author>
+      <name>Chenlong Deng</name>
+    </author>
+    <author>
+      <name>Jiaxin Mao</name>
+    </author>
+    <author>
+      <name>Jiadeng Huang</name>
+    </author>
+    <author>
+      <name>Teng Wang</name>
+    </author>
+    <author>
+      <name>Junjie Wu</name>
+    </author>
+    <author>
+      <name>Changwang Zhang</name>
+    </author>
+    <author>
+      <name>Jun wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.25958v1</id>
+    <title>RoRecomp: Enhancing Reasoning Efficiency via Rollout Response Recomposition in Reinforcement Learning</title>
+    <updated>2025-09-30T08:54:38Z</updated>
+    <link href="https://arxiv.org/abs/2509.25958v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.25958v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning with verifiable rewards (RLVR) has proven effective in eliciting complex reasoning in large language models (LLMs). However, standard RLVR training often leads to excessively verbose processes (in reasoning tasks) and inefficient exploration trajectories (in agentic settings), as outcome-only rewards provide no incentive for efficiency and the high variance in response length within relatively small rollout groups results in noisy optimization signals. To address this, we propose Rollout Response Recomposition (RoRecomp), a plug-and-play method that guides models toward concise reasoning by strategically recomposing the training data. RoRecomp separates responses into two distinct batch types: 1) priority batches, which combine short-correct and long-incorrect responses selected from online batches to provide a clear gradient signal for brevity, and 2) compensation batches, which utilize remaining responses from a replay buffer to maintain stability and prevent model collapse. To comprehensively evaluate effectiveness, we test RoRecomp across three settings where results demonstrate substantial efficiency gains: reducing reasoning length by 27.7% in zero RL training, reducing unnecessary tool calls by 46.8% while improving accuracy in agentic RL, and achieving up to 52.5% length reduction in thinking compression, all with minimal performance impact.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-30T08:54:38Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Gang Li</name>
+    </author>
+    <author>
+      <name>Yulei Qin</name>
+    </author>
+    <author>
+      <name>Xiaoyu Tan</name>
+    </author>
+    <author>
+      <name>Dingkang Yang</name>
+    </author>
+    <author>
+      <name>Yuchen Shi</name>
+    </author>
+    <author>
+      <name>Zihan Xu</name>
+    </author>
+    <author>
+      <name>Xiang Li</name>
+    </author>
+    <author>
+      <name>Xing Sun</name>
+    </author>
+    <author>
+      <name>Ke Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.23285v2</id>
+    <title>Toward Effective Tool-Integrated Reasoning via Self-Evolved Preference Learning</title>
+    <updated>2025-09-30T02:56:53Z</updated>
+    <link href="https://arxiv.org/abs/2509.23285v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.23285v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-Integrated Reasoning (TIR) enables large language models (LLMs) to improve their internal reasoning ability by integrating external tools. However, models employing TIR often display suboptimal behaviors, such as insufficient or excessive tool usage and overthinking after tool calls. The challenge of incentivizing LLMs to perform TIR efficiently and accurately, while stabilizing the reasoning process, remains an open question. In this paper, we start by exploring the impact of tool calls on model reasoning from the perspective of information entropy. Our findings indicate that tool call results lead to a distinct change in the information entropy of subsequent reasoning, with the overall entropy of the reasoning chain varying based on the number of tool calls. Building on these insights, we propose Tool-Light, a framework designed to encourage LLMs to perform TIR efficiently and accurately. Our framework includes dataset construction and multi-stage fine-tuning. For dataset construction, we employ continuous self-evolved sampling using the fine-tuned model, integrating both vanilla sampling and entropy-guided sampling. Besides, we establish strict criteria for selecting positive-negative pairs during sampling. The training process involves a two-stage approach, comprising Supervised Fine-Tuning (SFT) and Self-Evolved Direct Preference Optimization (DPO). Experimental results on 10 datasets demonstrate the effectiveness of Tool-Light, significantly improving the model's efficiency in executing TIR tasks.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-27T12:53:37Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yifei Chen</name>
+    </author>
+    <author>
+      <name>Guanting Dong</name>
+    </author>
+    <author>
+      <name>Zhicheng Dou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.05107v5</id>
+    <title>Structured Cognitive Loop for Behavioral Intelligence in Large Language Model Agents (Extended Revision: From Behavioral Architecture to Epistemic Accountability)</title>
+    <updated>2026-06-17T14:35:08Z</updated>
+    <link href="https://arxiv.org/abs/2510.05107v5" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.05107v5" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The central challenge for AI agents is not only performance but accountability. Agents that act through opaque prompt sequences may produce correct outputs, but they provide little basis for verifying why an action was permitted, where an error occurred, or how responsibility should be assigned. This paper presents the Structured Cognitive Loop as an architecture for accountable behavior in large language model agents. SCL separates cognition, memory, control, and action into distinct modules. The language model proposes. External memory preserves verified state. A lightweight controller checks preconditions, prevents redundant actions, and authorizes execution before tools are used. We evaluate SCL against ReAct and common LangChain agent variants across travel planning, conditional email drafting, and constraint guided image generation. Across 360 episodes, SCL achieves 86.3 percent task success compared with 70.5 to 76.8 percent for prompt based baselines. It also improves goal fidelity, reduces redundant tool calls, increases reuse of intermediate state, and lowers unsupported assertions. This extended revision situates SCL within a broader architecture of epistemic accountability. Subsequent extensions integrate context aware Human in the Loop control, Pool Gated Retrieval, and the Horizon Warrant Commitment framework. Together these components define an agent architecture in which the model proposes, structure decides, evidence is warranted before use, and human judgment is embedded in the trace rather than imposed after the fact. The result is a foundation for AI agents whose decisions are not only effective but also authorized, inspectable, and accountable.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-23T17:43:17Z</published>
+    <arxiv:comment>This revised version extends the original SCL framework from a behavioral architecture for reliable LLM agents into a broader architecture of epistemic accountability, integrating context-aware Human-in-the-Loop control, Pool-Gated Retrieval, and the Horizon-Warrant-Commitment structure</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Myung Ho Kim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.00482v2</id>
+    <title>Talk Less, Call Right: Enhancing Role-Play LLM Agents with Automatic Prompt Optimization and Role Prompting</title>
+    <updated>2025-10-12T05:47:09Z</updated>
+    <link href="https://arxiv.org/abs/2509.00482v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.00482v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This report investigates approaches for prompting a tool-augmented large language model (LLM) to act as a role-playing dialogue agent in the API track of the Commonsense Persona-grounded Dialogue Challenge (CPDC) 2025. In this setting, dialogue agents often produce overly long in-character responses (over-speaking) while failing to use tools effectively according to the persona (under-acting), such as generating function calls that do not exist or making unnecessary tool calls before answering. We explore four prompting approaches to address these issues: 1) basic role prompting, 2) improved role prompting, 3) automatic prompt optimization (APO), and 4) rule-based role prompting. The rule-based role prompting (RRP) approach achieved the best performance through two novel techniques-character-card/scene-contract design and strict enforcement of function calling-which led to an overall score of 0.571, improving on the zero-shot baseline score of 0.519. These findings demonstrate that RRP design can substantially improve the effectiveness and reliability of role-playing dialogue agents compared with more elaborate methods such as APO. To support future efforts in developing persona prompts, we are open-sourcing all of our best-performing prompts and the APO tool Source code is available at https://github.com/scb-10x/apo</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-30T12:45:36Z</published>
+    <arxiv:comment>EMNLP 2025 Wordplay Workshop (Spotlight)</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Saksorn Ruangtanusak</name>
+    </author>
+    <author>
+      <name>Pittawat Taveekitworachai</name>
+    </author>
+    <author>
+      <name>Kunat Pipatanakul</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2504.14870v2</id>
+    <title>Acting Less is Reasoning More! Teaching Model to Act Efficiently</title>
+    <updated>2025-05-31T20:08:42Z</updated>
+    <link href="https://arxiv.org/abs/2504.14870v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.14870v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-integrated reasoning (TIR) augments large language models (LLMs) with the ability to invoke external tools during long-form reasoning, such as search engines and code interpreters, to solve tasks beyond the capabilities of internal reasoning. While reinforcement learning (RL) has shown promise in training such agents, most of existing approaches typically optimize only for final correctness without considering the efficiency or necessity of external tool use. This often leads to excessive tool calling, incurring high computational costs and hindering the development of internal reasoning capabilities - a phenomenon known as \textit{cognitive offloading}. To this end, we propose Optimal Tool Call-controlled Policy Optimization (OTC-PO), a simple yet effective RL-based framework that encourages models to produce accurate answers with minimal tool calls. Our method introduces a tool-integrated reward that jointly considers answer correctness and corresponding tool use behavior of model to reach that answer. To validate the effectiveness, we introduce the metric of \textit{tool productivity}, defined as the ratio between the number of correct answers and the total number of tool calls across all test cases. This metric reflects how efficiently tool usage contributes to successful task completion, with higher values indicating smarter and more autonomous reasoning. We instantiate this framework within both Proximal Policy Optimization (PPO) and Group Relative Preference Optimization (GRPO), resulting in OTC-PPO and OTC-GRPO. Experiments with Qwen-2.5 and Qwen-Math across multiple QA benchmarks show that our approach reduces tool calls by up to 68.3\% and improves tool productivity by up to 215.4\%, while maintaining comparable answer accuracy.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-21T05:40:05Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Hongru Wang</name>
+    </author>
+    <author>
+      <name>Cheng Qian</name>
+    </author>
+    <author>
+      <name>Wanjun Zhong</name>
+    </author>
+    <author>
+      <name>Xiusi Chen</name>
+    </author>
+    <author>
+      <name>Jiahao Qiu</name>
+    </author>
+    <author>
+      <name>Shijue Huang</name>
+    </author>
+    <author>
+      <name>Bowen Jin</name>
+    </author>
+    <author>
+      <name>Mengdi Wang</name>
+    </author>
+    <author>
+      <name>Kam-Fai Wong</name>
+    </author>
+    <author>
+      <name>Heng Ji</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.12961v2</id>
+    <title>Adaptive Tool Use in Large Language Models with Meta-Cognition Trigger</title>
+    <updated>2025-07-08T15:02:59Z</updated>
+    <link href="https://arxiv.org/abs/2502.12961v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.12961v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) have shown remarkable emergent capabilities, transforming the execution of functional tasks by leveraging external tools for complex problems that require specialized processing or up-to-date data. While existing research expands LLMs access to diverse tools (e.g., program interpreters, search engines, calculators), the necessity of using these tools is often overlooked, leading to indiscriminate tool invocation. This naive approach raises two key issues: increased latency due to unnecessary tool calls, and potential errors resulting from faulty interactions with external tools. In this paper, we introduce meta-cognition as a proxy for LLMs self-assessment of their capabilities, reflecting the model's awareness of its own limitations. Based on this, we propose MeCo, an adaptive decision-making strategy for external tool use. MeCo quantifies metacognitive scores by capturing high-level cognitive signals in the representation space, guiding when to invoke tools. Notably, MeCo is fine-tuning-free and incurs minimal cost. Experiments across multiple backbone models and benchmarks show that MeCo reliably detects LLMs' internal cognitive signals and significantly improves tool-use decision-making.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-18T15:45:01Z</published>
+    <arxiv:comment>25 pages, camera ready version for ACL-2025</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Wenjun Li</name>
+    </author>
+    <author>
+      <name>Dexun Li</name>
+    </author>
+    <author>
+      <name>Kuicai Dong</name>
+    </author>
+    <author>
+      <name>Cong Zhang</name>
+    </author>
+    <author>
+      <name>Hao Zhang</name>
+    </author>
+    <author>
+      <name>Weiwen Liu</name>
+    </author>
+    <author>
+      <name>Yasheng Wang</name>
+    </author>
+    <author>
+      <name>Ruiming Tang</name>
+    </author>
+    <author>
+      <name>Yong Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.11435v2</id>
+    <title>SMART: Self-Aware Agent for Tool Overuse Mitigation</title>
+    <updated>2025-05-24T05:48:39Z</updated>
+    <link href="https://arxiv.org/abs/2502.11435v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.11435v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Current Large Language Model (LLM) agents demonstrate strong reasoning and tool use capabilities, but often lack self-awareness, failing to balance these approaches effectively. This imbalance leads to Tool Overuse, where models unnecessarily rely on external tools for tasks solvable with parametric knowledge, increasing computational overhead. Inspired by human metacognition, we introduce SMART (Strategic Model-Aware Reasoning with Tools), a paradigm that enhances an agent's self-awareness to optimize task handling and reduce tool overuse. To support this paradigm, we introduce SMART-ER, a dataset spanning three domains, where reasoning alternates between parametric knowledge and tool-dependent steps, with each step enriched by rationales explaining when tools are necessary. Through supervised training, we develop SMARTAgent, a family of models that dynamically balance parametric knowledge and tool use. Evaluations show that SMARTAgent reduces tool use by 24% while improving performance by over 37%, enabling 7B-scale models to match its 70B counterpart and GPT-4o. Additionally, SMARTAgent generalizes to out-of-distribution test data like GSM8K and MINTQA, maintaining accuracy with just one-fifth the tool calls. These highlight the potential of strategic tool use to enhance reasoning, mitigate overuse, and bridge the gap between model size and performance, advancing intelligent and resource-efficient agent designs.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-17T04:50:37Z</published>
+    <arxiv:comment>18 pages, 11 tables, 7 figures, ACL 2025 Findings</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Cheng Qian</name>
+    </author>
+    <author>
+      <name>Emre Can Acikgoz</name>
+    </author>
+    <author>
+      <name>Hongru Wang</name>
+    </author>
+    <author>
+      <name>Xiusi Chen</name>
+    </author>
+    <author>
+      <name>Avirup Sil</name>
+    </author>
+    <author>
+      <name>Dilek Hakkani-Tür</name>
+    </author>
+    <author>
+      <name>Gokhan Tur</name>
+    </author>
+    <author>
+      <name>Heng Ji</name>
+    </author>
+  </entry>
+</feed>

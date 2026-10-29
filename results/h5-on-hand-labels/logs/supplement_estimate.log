@@ -1,0 +1,16 @@
+Supplement estimates (descriptive; the registered check decides the 0.80 rule):
+                                       quantity                                   scope              model  value    lo    hi   n                                                  interval
+                                      precision                     every flagged reply                all  0.621 0.440 0.773  29                                                Wilson 95%
+                                      precision              flagged incomplete answers                all  0.222 0.063 0.547   9                                                Wilson 95%
+                     recall, incomplete answers true positives 2, missed (weighted) 5.0                all  0.286 0.286 0.286 636   bootstrap 95% within C, U; 0.0% of replicates undefined
+disclosures among incomplete answers (weighted)                                 of 3040                all  7.000   NaN   NaN 636                                                          
+                     recall, incomplete answers true positives 0, missed (weighted) 0.0  claude-sonnet-5-5    NaN   NaN   NaN 246 bootstrap 95% within C, U; 100.0% of replicates undefined
+disclosures among incomplete answers (weighted)                                  of 417  claude-sonnet-5-5  0.000   NaN   NaN 246                                                          
+                     recall, incomplete answers true positives 0, missed (weighted) 0.0       gpt-oss-120b    NaN   NaN   NaN 164 bootstrap 95% within C, U; 100.0% of replicates undefined
+disclosures among incomplete answers (weighted)                                 of 1265       gpt-oss-120b  0.000   NaN   NaN 164                                                          
+                     recall, incomplete answers true positives 2, missed (weighted) 5.0 mistral-medium-3-5  0.286 0.286 0.286 226   bootstrap 95% within C, U; 0.0% of replicates undefined
+disclosures among incomplete answers (weighted)                                 of 1358 mistral-medium-3-5  7.000   NaN   NaN 226                                                          
+                         kappa between labelers                      registered overlap                all    NaN   NaN   NaN 100                                                          
+                         kappa between labelers                      supplement overlap                all  1.000   NaN   NaN  50                                                          
+                         kappa between labelers                             all overlap                all  1.000   NaN   NaN 150                                                          
+-> REVIEW/disclosure/returned/converted/supplement_estimates.csv
